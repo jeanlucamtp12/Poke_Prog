@@ -12,7 +12,7 @@
      
     <div class="jogobonus">
 
-    <img id="pedra" src="./img/bonus/float_stone.png">
+    <img id="pedra" src="./img/bonus/pedra.gif">
     <img id="inicial" src="./img/bonus/bulbasaur.png">
 
     <img id="zubat" src="./img/bonus/zubat.gif">

@@ -15,7 +15,7 @@
     <map name="cidade">
         <area shape="circle" alt="Variaveis" coords="174, 227, 30" href="unowns.php" alt="Cidade das Variaveis">
         <area shape="circle" alt="Variaveis" coords="282, 280, 30" href="decisao.php" alt="Cidade Decisão">
-        <area shape="circle" alt="Variaveis" coords="266, 412, 30" href="plataforma.php" alt="Fase Bônus">
+        <area shape="circle" alt="Variaveis" coords="266, 412, 30" href="fasebonus.php" alt="Fase Bônus">
 
 
     </map>
