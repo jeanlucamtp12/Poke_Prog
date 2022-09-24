@@ -69,15 +69,18 @@
 }
 
 
-
-#inicial{
-
-    animation: inicial_movimento 1s infinite linear;
+.poke{
     
     position: absolute;
     bottom: -30px;
  
     width:200px;
+}
+
+.movimento{
+
+    animation: inicial_movimento 1s infinite linear;
+    
 }
 
 #grama{
@@ -109,17 +112,17 @@
 
     }
     45%{
-        bottom: 30px;
+        bottom: 90px;
 
         
     }
     50%{
-        bottom: 30px;
+        bottom: 90px;
 
         
     }
     55%{
-        bottom: 30px;
+        bottom: 90px;
 
         
     }
