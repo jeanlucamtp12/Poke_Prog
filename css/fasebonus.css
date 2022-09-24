@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.jogobonus {
+    overflow: hidden;
+    position:relative;
+    height: 100vh;
+    width: 90%;
+    border: 1px solid #111;
+     margin-left: auto;
+    margin-right:  auto; 
+    background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
+
+}
+
+
+#zubat{
+    animation: pedra_movimento 5s infinite linear;
+     
+    width:100px;   
+    position: absolute;
+    bottom:410px;
+ 
+   
+}
+
+#venomoth{
+    animation: pedra_movimento 10s infinite linear;
+     
+    width:100px;   
+    position: absolute;
+    bottom:300px;
+ 
+   
+}
+
+#golbat{
+    animation: pedra_movimento 4s infinite linear;
+     
+    width:180px;   
+    position: absolute;
+    bottom:450px;
+ 
+   
+}
+
+#nuvens{
+    animation: pedra_movimento 9s infinite linear;
+     
+    width:480px;   
+    position: absolute;
+    bottom:390px;
+ 
+   
+}
+
+
+#pedra{
+    animation: pedra_movimento 2s infinite linear;
+     
+    width:100px;   
+    position: absolute;
+    bottom:-10px;
+ 
+   
+}
+
+
+
+#inicial{
+
+    animation: inicial_movimento 1s infinite linear;
+    
+    position: absolute;
+    bottom: -30px;
+ 
+    width:200px;
+}
+
+#grama{
+   
+
+    
+    position: absolute;
+    bottom: -210px;
+    width:100%;
+}
+
+@keyframes pedra_movimento{
+    0%{
+        right: 0%;
+
+    }
+    50%{
+        right: 50%;
+    }
+    100%{
+        right: 100%;
+
+    }
+}
+
+@keyframes inicial_movimento{
+    0%{
+        bottom: -30px;
+
+    }
+    45%{
+        bottom: 30px;
+
+        
+    }
+    50%{
+        bottom: 30px;
+
+        
+    }
+    55%{
+        bottom: 30px;
+
+        
+    }
+    100%{
+        bottom: -60px;
+
+        
+    }
+}
