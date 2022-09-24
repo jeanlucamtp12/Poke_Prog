@@ -1,4 +1,6 @@
-
+<?php
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +17,11 @@
     <div class="jogobonus">
 
     <img id="pedra" src="./img/bonus/pedra.gif">
+
+   
+    <img  class="poke " src="./img/bonus/<?php echo($id);?>.png"> ;
+
+
     <img  class="poke " src="./img/bonus/bulbasaur.png">
 
     <img id="zubat" src="./img/bonus/zubat.gif">

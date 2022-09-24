@@ -6,30 +6,23 @@ body{
 
 }
 
-#tittle{
-  
-    text-align: center;
-}
+#caixa{ 
+    
 
-.fundo_unowns {
-    position:relative;
-    height: 100vh;
-    width: 90%;
-     margin-left: auto;
-    margin-right:  auto; 
+   
+ 
+             left: 45%;
 
+    width:150px;   
+    position: absolute;
+    bottom:430px;
+   
 }
 #espaco{
+  position: absolute;
 
-    display:inline-block;
-    width: 8%;
-    height: 30px;
-    text-align: center; 
-
-}
-
-a{
-    display: inline-block;
+        left: 45%;
+ display: inline-block;
     width: 100;
     line-height: 30px;
     padding: 7px 10px;
@@ -38,9 +31,20 @@ a{
     border-radius: 90px;
     text-decoration: none;
     animation: pulsa 1.5s linear infinite;
+    
+    
 }
+.fundo_unowns {
+    position:relative;
+    height: 100vh;
+    width: 90%;
+     margin-left: auto;
+    margin-right:  auto; 
 
-/*
+}
+h1{
+    text-align:center;
+}
 #a{
      
     width:100px;   
@@ -114,10 +118,9 @@ a{
 }
 #j{
      
-    width:100px;   
+    width:130px;   
     position: absolute;
-    bottom:410px
-    right:0;
+    bottom:510px
 
  
 }
@@ -129,4 +132,4 @@ a{
         right:0;
 
  
-}*/
+}

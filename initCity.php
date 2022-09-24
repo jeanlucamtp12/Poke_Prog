@@ -16,7 +16,7 @@
 
     <div id="espaco">
 
-        <a href="city.php?id=charmander">
+        <a href="city.php?id=3">
             
         <img src="./videos/iniciais/char.png" width="350" height="300">
         <p id="charmander"><img id="icon" src="./videos/iniciais/icons/fire.png">Charmander</p>
@@ -26,7 +26,7 @@
 
     <div id="espaco">
 
-        <a href="city.php?id=squirtle">
+        <a href="city.php?id=2">
         <img src="./videos/iniciais/squir.png" width="350" height="300">
         <p  id="squirtle"><img id="icon" src="./videos/iniciais/icons/water.png">Charmander</p>
 
@@ -35,7 +35,7 @@
     </div>
 
     <div id="espaco">
-    <a href="city.php?id=bulbasaur">
+    <a href="city.php?id=1">
         <img src="./videos/iniciais/bulba.png" width="350" height="300">
          <p id="bulba"><img id="icon" src="./videos/iniciais/icons/leaf.png">Charmander</p>
 
