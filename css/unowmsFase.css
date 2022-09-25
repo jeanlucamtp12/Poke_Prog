@@ -1,135 +1,221 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
+    background: linear-gradient(#18c4e0, #a3c6d4) no-repeat;
 
 
 }
 
-#caixa{ 
-    
+.caixa{
+    position: relative;
+    left: 40%;
 
-   
- 
-             left: 45%;
+    width: 150px;
+  
+}
 
-    width:150px;   
+.caixa img{
+    width: 100%;
+}
+
+.texto{
     position: absolute;
-    bottom:430px;
-   
-}
-#espaco{
-  position: absolute;
+    left: 20%;
+    bottom:30%;
 
-        left: 45%;
- display: inline-block;
+}
+
+/*#caixa {
+
+    left: 45%;
+
+    width: 150px;
+    position: absolute;
+    bottom: 430px;
+
+}
+*/
+.inicial{
+    position:absolute;
+    right: 0;
+    top:0;
+    width:250px;
+}
+
+#espaco {
+    position: absolute;
+
+    left: 45%;
+    display: inline-block;
     width: 100;
     line-height: 30px;
     padding: 7px 10px;
-    background-color:  #b823ac;
+    background-color: #b823ac;
     color: #FFF;
     border-radius: 90px;
     text-decoration: none;
     animation: pulsa 1.5s linear infinite;
-    
-    
+
+
 }
+
 .fundo_unowns {
-    position:relative;
+    position: relative;
     height: 100vh;
     width: 90%;
-     margin-left: auto;
-    margin-right:  auto; 
+    margin-left: auto;
+    margin-right: auto;
 
 }
-h1{
-    text-align:center;
-}
-#a{
-     
-    width:100px;   
-    position: absolute;
-    bottom:150px;
- 
+
+h1 {
+    text-align: center;
 }
 
-#b{
-     
-    width:100px;   
-    position: absolute;
-    bottom:40px;
- 
-}
-#c{
-     
-    width:100px;   
-    position: absolute;
-    bottom:260px;
- 
-}
-#d{
-     
-    width:100px;   
-    position: absolute;
-    bottom:330px;
- 
-}
-#e{
-     
-    width:100px;   
-    position: absolute;
-    right:0;
-    bottom:10px;
- 
-}
-#f{
-     
-    width:100px;   
-    position: absolute;
-    bottom:100px;
-    right:0;
+#a {
 
- 
-}
-#g{
-     
-    width:80px;   
+    width: 100px;
     position: absolute;
-    bottom:210px;
-    right:0;
+    bottom: 150px;
 
- 
 }
-#h{
-     
-    width:100px;   
-    position: absolute;
-    bottom:500;
-    right:0;
 
- 
-}
-#i{
-     
-    width:100px;   
-    position: absolute;
-    bottom:0px;
- 
-}
-#j{
-     
-    width:130px;   
-    position: absolute;
-    bottom:510px
+#b {
 
- 
-}
-#k{
-     
-    width:100px;   
+    width: 100px;
     position: absolute;
-    bottom:410px;
-        right:0;
+    bottom: 40px;
 
- 
 }
+
+#c {
+
+    width: 100px;
+    position: absolute;
+    bottom: 260px;
+
+}
+
+#d {
+
+    width: 100px;
+    position: absolute;
+    bottom: 330px;
+
+}
+
+#e {
+
+    width: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+}
+
+#f {
+
+    width: 100px;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+
+
+}
+
+#g {
+
+    width: 80px;
+    position: absolute;
+    bottom: 210px;
+    right: 0;
+
+
+}
+
+#h {
+
+    width: 100px;
+    position: absolute;
+    bottom: 500;
+    right: 0;
+
+
+}
+
+#i {
+
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+
+}
+
+#j {
+
+    width: 130px;
+    position: absolute;
+    bottom: 510px
+}
+
+#k {
+
+    width: 100px;
+    position: absolute;
+    bottom: 410px;
+    right: 0;
+
+
+}
+
+.caixaResposta {
+
+    position: absolute;
+    text-align: center;
+
+    width: 50%;
+    height: 50%;
+
+    /* o float e o border Ã© sÃ³ para visualizar */
+
+    top: 60%;
+    right: 50%;
+    left: 50%;
+    border: 2px solid #ccc;
+    Transform: translate(-50%, -50%);
+    max-width: 350px;
+
+
+}
+
+button{
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    z-index: -1;
+  
+    Transform: translate(0%, 200%);
+
+}
+
+.teclado {
+
+    max-width: 350px;
+    border: 2px solid #ccc;
+
+
+}
+
+h2{
+    font-size: large;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+
+
+
+
+
+

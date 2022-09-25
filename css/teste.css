@@ -1,0 +1,12 @@
+.container{
+    position: relative;
+}
+
+.container img{
+    width: 100%;
+}
+
+.texto{
+    position: absolute;
+
+}

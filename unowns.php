@@ -59,9 +59,7 @@
         <img src="./img/unowns/b.gif">
 
         <a id="espaco" href="variaveis.php?id=b" >Fase B</a>
-        <img  src="./img/unowns/c.gif">
-
-        <a id="espaco" href="variaveis.php?id=c" >Fase C</a>
+       
         
     </div>
 

@@ -92,6 +92,27 @@
     width:100%;
 }
 
+
+#haunter{
+    animation: pedra_movimento 9s infinite linear;
+     
+    width:480px;   
+    position: absolute;
+    bottom:390px;
+ 
+   
+}
+
+#maca{
+    animation: pedra_movimento 20s infinite linear;
+     
+    width:480px;   
+    position: absolute;
+    bottom:390px;
+ 
+   
+}
+
 @keyframes pedra_movimento{
     0%{
         right: 0%;

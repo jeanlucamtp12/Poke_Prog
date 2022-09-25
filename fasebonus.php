@@ -28,7 +28,9 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
     <img id="golbat" src="./img/bonus/golbat.gif">
     <img id="nuvens" src="./img/bonus/clouds.png">
     <img id="venomoth" src="./img/bonus/venomoth.gif">
+    <img id="maca" src="./img/bonus/maca.png">
     <img id="grama" src="./img/bonus/grama.png">
+    <img id="haunter" src="./img/bonus/haunter.gif">
     </div>
 
 
