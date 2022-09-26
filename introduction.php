@@ -11,7 +11,7 @@
 </head>
 <body>
      
-    <div  id="meio"><a  id="meio"  href="initCity.php">Iniciar</a> </div>
+    <div><a  id="meio"  href="initCity.php">Iniciar</a> </div>
   
 
  
