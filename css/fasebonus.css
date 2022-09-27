@@ -114,7 +114,6 @@
 
 #maca{
     animation: maca_movimento 5s infinite linear;
-
     width:70px;   
     position: absolute;
     bottom:0;

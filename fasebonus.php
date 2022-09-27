@@ -138,10 +138,9 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                     maca.style.animation = 'none';
                     maca.style.left = '125px';
-                    window.alert("Vamos a pergunta!");
 
                     pedra.style.animation = 'none';
-                    pedra.style.left = '519px';
+                    pedra.style.left = '889px';
 
                     document.querySelector("#form").style.display = "block"; // ou "block"
 
