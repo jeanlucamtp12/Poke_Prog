@@ -1,10 +1,49 @@
+<?php
+
+
+/*
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "poke_city";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+$sql = mysqli_query($conn, "SELECT *
+                        FROM caixas
+                        WHERE status = 'nao'
+                        ");
+
+
+
+while ($tabela = mysqli_fetch_object($sql)) {
+      $frase = $tabela->frase;
+
+}
+
+$sql = mysqli_query($conn, "UPDATE caixas 
+            SET status = 'feito'
+            WHERE frase = '$frase' ");
+
+
+
+*/
+?> 
+
+
 <script>
     var palavra = '';
 
 
     const verificaTipo = () => {
 
+
+         
         var tipoCaixa = document.getElementById("alterar").innerText;
+        var limparTela = document.getElementsByClassName("caixaLetras");
+        console.log("Antes" + palavra);
 
         //var limparTela = document.querySelectorAll("#aU, #bU, #iU, #nU, #tU").remove();
 
@@ -15,38 +54,66 @@
 
             case 'int':
                 if (tipoCaixa.includes("Numero")) {
-                    conteudo = "Acertouuu";
+
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Nome = "Ana"';
                     palavra = '';
-                    document.querySelectorAll("#i, #t, #n").forEach(e => e.remove());
+                    if(tipoCaixa.includes("Numero = 222")){
+                        window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
+                        window.history.go(-2); 
+                    }
+                }else{
+                    window.alert("Resposta Errada");
+                    palavra = '';
                 }
                 break;
+
             case 'string':
                 if (tipoCaixa.includes("Nome")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Numero = 2,22';
                     palavra = '';
+                }else{
+                    window.alert("Resposta Errada");
+                    palavra = '';
+
                 }
-                case 'booleano':
-                    if (tipoCaixa.includes("Dado")) {
-                        conteudo = "Acertouuu";
-                        window.alert("Resposta Certa. Vamos ao proximo!");
-                        document.getElementById('alterar').innerHTML = 'Numero = 222';
-                        palavra = '';
-                    }
-                    case 'float':
-                        if (tipoCaixa.includes("Numero")) {
-                            conteudo = "Acertouuu";
-                            window.alert("Resposta Certa. Vamos ao proximo!");
-                            document.getElementById('alterar').innerHTML = 'Dado = Falso';
-                            palavra = '';
-                        }
-                        default:
-                            console.log("eroooou");
-                            window.alert("Resposta Errada");
-                            palavra = '';
+                break;
+
+            case 'booleano':
+                if (tipoCaixa.includes("Dado")) {
+                    conteudo = "Acertouuu";
+                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    document.getElementById('alterar').innerHTML = 'Numero = 222';
+                    palavra = '';
+                }else{
+                    window.alert("Resposta Errada");
+                    palavra = '';
+
+                }
+                break;
+
+            case 'float':
+                if (tipoCaixa.includes("Numero")) {
+                    conteudo = "Acertouuu";
+                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    document.getElementById('alterar').innerHTML = 'Dado = Falso';
+                    palavra = '';
+                }else{
+                    window.alert("Resposta Errada");
+                    palavra = '';
+
+                }
+                break;
+
+            default:
+                console.log("eroooou");
+                window.alert("Resposta Errada");
+                palavra = '';
+                //window.location.reload(false);
+                //document.querySelectorAll("#a, #b, #c, #d, #e, #f, #g, #h, #i,#h, #k, #l, #m, #n, #o, #p, #q, #r, #s, #t,#u, #v, #w, #x, #y, #z,  #n").forEach(e => e.remove());
+
 
         }
     }
@@ -54,33 +121,48 @@
 
     const mapearUnowm = (unowm) => {
 
-        const cont = document.querySelectorAll("#aU, #bU, #cU, #áU, #eU, #fU, #gU, #ãU ,#iU,#éU, #íU , #lU, #mU , #nU , #oU , #pU, #qU, #rU, #sU,  #tU, #uU, #vU, #wU, #xU, #yU, #zU, #àU, #úU");
+        const cont = document.querySelectorAll("#aU, #bU, #cU, #dU, #eU, #fU, #gU, #hU ,#iU,#jU, #kU , #lU, #mU , #nU , #oU , #pU, #qU, #rU, #sU,  #tU, #uU, #vU, #wU, #xU, #yU, #zU, #áU, #éU");
+
 
         for (var i = 0; i < cont.length; i++) {
 
             if (cont[i].id == unowm) {
-                console.log(cont[i]);
+
 
                 var remove_string = cont[i].id.replace('U', '');
+
+                //id.push(remove_string);s
+
 
                 palavra = palavra + remove_string;
                 console.log(palavra);
 
-                if (palavra == "A") {
+                //console.log(palavra);
+
+                /*if (palavra == "A") {
                     remove_string = 'ó';
 
 
                 }
                 if (palavra == "E") {
                     remove_string = 'ú';
-                }
+                }*/
 
                 //var final = caminho_imagem.toString();
-                var caminho_imagem = './img/unowns/' + remove_string + '.gif';
+                //var caminho_imagem = './img/unowns/' + remove_string + '.gif';
 
-                document.getElementById(remove_string).innerHTML = "<img src=" + caminho_imagem + ">";
+                const repeticaoLetra = document.getElementById(remove_string);
 
-                console.console(caminho_imagem);
+
+
+
+                console.log("Valor:" + repeticaoLetra);
+
+
+                repeticaoLetra.insertAdjacentHTML('afterend', remove_string)
+
+
+                //console.console(caminho_imagem);
 
 
 
@@ -113,6 +195,10 @@
 
 <body>
 
+<img id="j" src="./img/unowns/j.gif">
+<img id="h" src="./img/unowns/h.gif">
+<img id="e" src="./img/unowns/e.gif">
+
     <div class="tamanhoTela">
 
         <div class="titulo">
@@ -120,7 +206,7 @@
         </div>
 
         <div class="caixaConteudo">
-            <h2 id="alterar">Numero = 12</h2>
+            <h2 id="alterar">Numero = 10</h2>
             <img src="./img/fases unowms/caixa.png" width="130px">
         </div>
 
@@ -129,6 +215,7 @@
 
             <div class="filhoTela">
                 <div class="teclado">
+                    
                     <h1>Teclado Unowm</h1>
                     <div class="caixaTeclado">
                         <h6>A</h6>
@@ -144,7 +231,7 @@
                     </div>
                     <div class="caixaTeclado">
                         <h6>D</h6>
-                        <img class="circles" id="áU" src="./img/unowns/á.gif" onclick="mapearUnowm('áU')">
+                        <img class="circles" id="dU" src="./img/unowns/d.gif" onclick="mapearUnowm('dU')">
                     </div>
                     <div class="caixaTeclado">
                         <h6>E</h6>
@@ -160,7 +247,7 @@
                     </div>
                     <div class="caixaTeclado">
                         <h6>H</h6>
-                        <img class="circles" id="ãU" src="./img/unowns/ã.gif" onclick="mapearUnowm('ãU')" ;>
+                        <img class="circles" id="hU" src="./img/unowns/h.gif" onclick="mapearUnowm('hU')" ;>
                     </div>
                     <div class="caixaTeclado">
                         <h6>I</h6>
@@ -168,11 +255,11 @@
                     </div>
                     <div class="caixaTeclado">
                         <h6>J</h6>
-                        <img class="circles" id="éU" src="./img/unowns/é.gif" onclick="mapearUnowm('éU')" ;>
+                        <img class="circles" id="jU" src="./img/unowns/j.gif" onclick="mapearUnowm('jU')" ;>
                     </div>
                     <div class="caixaTeclado">
                         <h6>K</h6>
-                        <img class="circles" id="íU" src="./img/unowns/í.gif" onclick="mapearUnowm('íU')" ;>
+                        <img class="circles" id="kU" src="./img/unowns/k.gif" onclick="mapearUnowm('kU')" ;>
                     </div>
 
                     <div class="caixaTeclado">
@@ -239,11 +326,11 @@
                     </div>
                     <div class="caixaTeclado">
                         <h6>?</h6>
-                        <img class="circles" id="àU" src="./img/unowns/à.gif" onclick="mapearUnowm('àU')" ;>
+                        <img class="circles" id="áU" src="./img/unowns/á.gif" onclick="mapearUnowm('áU')" ;>
                     </div>
                     <div class="caixaTeclado">
                         <h6>!</h6>
-                        <img class="circles" id="úU" src="./img/unowns/ú.gif" onclick="mapearUnowm('úU')" ;>
+                        <img class="circles" id="éU" src="./img/unowns/é.gif" onclick="mapearUnowm('éU')" ;>
 
                     </div>
                 </div>
@@ -261,8 +348,11 @@
 
             <div class="filhoTela">
                 <div class="caixaResposta">
-                    <span id="a"></span> <span id="b"></span> <span id="c"> </span> <span id="á"></span> <span id="e"></span><span id="f"></span><span id="g"></span> <span id="ã"></span> <span id="i"></span> <span id="é"></span> <span id="í"></span> <span id="l"></span> <span id="m"></span> <span id="n"></span> <span id="o"></span><span id="p"></span><span id="q"></span> <span id="r"></span> <span id="s"></span> <span id="t"></span><span id="u"></span><span id="v"></span> <span id="w"></span> <span id="x"></span> <span id="y"></span><span id="z"></span><span id="àU"></span> <span id="úU"></span>
+                    <div class="caixaLetras">
+                        <span id="a"></span> <span id="b"></span> <span id="c"> </span> <span id="d"></span> <span id="e"></span><span id="f"></span><span id="g"></span> <span id="h"></span> <span id="i"></span> <span id="j"></span> <span id="k"></span> <span id="l"></span> <span id="m"></span> <span id="n"></span> <span id="o"></span><span id="p"></span><span id="q"></span> <span id="r"></span> <span id="s"></span> <span id="t"></span><span id="u"></span><span id="v"></span> <span id="w"></span> <span id="x"></span> <span id="y"></span><span id="z"></span><span id="áU"></span> <span id="éU"></span>
                     <button id="botaoResposta" onclick="verificaTipo()">Enviar</button>
+
+                    </div>
 
                 </div>
             </div>

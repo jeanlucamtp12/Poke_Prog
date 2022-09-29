@@ -45,8 +45,8 @@
         <img id="x" src="./img/unowns/x.gif">
         <img id="y" src="./img/unowns/y.gif">
         <img id="z" src="./img/unowns/z.gif">
-        <img id="exclamacao" src="./img/unowns/1.gif">
-        <img id="interrogacao" src="./img/unowns/2.gif">
+        <img id="exclamacao" src="./img/unowns/á.gif">
+        <img id="interrogacao" src="./img/unowns/é.gif">
         <h1>
             Algo  estranho vem acontecendo na cidade de Pewter. Um grupo de pokémon misteriosos que se parecem com letras do alfabeto está invadindo a cidade.         
         </h1>

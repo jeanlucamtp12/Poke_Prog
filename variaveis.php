@@ -38,7 +38,7 @@
 
         </h1>
 
-        <a id="espaco" href="caixas.php?" >Começar</a>
+        <a id="espaco" href="caixas.php?id=1" >Começar</a>
        
         
     </div>
