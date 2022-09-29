@@ -52,17 +52,17 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <div class="card" text-align: center>
                 <div class="card-body" text-align: center>
                     <form >
-                        <h3>Pergunta</h3>
+                       
                         <div class="form-row">
                             <div class="form-group col-md-9">
-                                <label for="nome">1 + 1 = </label>
+                                <label for="nome">Num = 2 <br>&nbsp if (Num == 2){<br>&nbsp print(Num)<br>} <br><br>O print será exibido??</label>
                                 <input type="text" class="form-control" >
                             </div>
                            
                            
                             <div class="form-group col-md-6">
 
-                               <a href="fasebonus.php?id=<?php echo ($id); ?>"  button type="submit" class="btn btn-primary">Enviar</button> </a>
+                               <a href="fasebonus.php?id=<?php echo ($id); ?>"  button type="submit" class="btn btn-primary" placeholder="Responda">Enviar</button> </a>
 
                             </div>
                     </form>
@@ -94,19 +94,21 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         <span>
    
-        <div class="form-group col-md-6">
-                               
+        <div class="form-group col-md-6">                
             <a href="fasebonus.php?id=<?php echo ($id); ?>" button type="submit" id="reiniciar" class="btn btn-primary" style="display:none">Tentar Novamente</button> </a>
-
         </div>
+      
+
 </span>
 
         <script>
+          
             var cont = document.querySelector("#form");
 
             const pedra = document.querySelector('#pedra');
             const pokemon = document.querySelector('.poke');
             const maca = document.querySelector('#maca');
+
 
 
             const loop = setInterval(() => {
@@ -163,14 +165,6 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
             }
             document.addEventListener('keydown', mover);
-
-
-
-
-
-
-
-
 
 
 

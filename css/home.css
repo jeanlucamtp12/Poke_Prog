@@ -18,6 +18,10 @@ body {
 
 }
 
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .espaco {
   padding-left: 50px;
 }
@@ -27,8 +31,8 @@ body {
     width: 100;
     line-height: 30px;
     padding: 7px 10px;
-    background-color:  #b823ac;
-    color: #FFF;
+    background-color:  #ffffff;
+    color: rgb(0, 0, 0);
     border-radius: 90px;
     text-decoration: none;
     animation: pulsa 1.5s linear infinite;
