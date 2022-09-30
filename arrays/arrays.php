@@ -1,6 +1,9 @@
 <?php
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,20 +28,21 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         <img id="piso" src="../img/arrays/piso.png">
-        <img id="zubat" src="../img/arrays/falink.gif">
-        <img id="golbat" src="../img/arrays/raio.png">
-        <img id="venomoth" src="../img/arrays/raio.png">
-        <img id="raio4" src="../img/arrays/raio.png">
-        <img id="raio5" src="../img/arrays/raio.png">
+
+        <img id="falink" src="../img/arrays/falink.gif">
+        <img id="raio2" src="../img/arrays/raio.gif">
+        <img id="raio3" src="../img/arrays/raio.gif">
+        <img id="raio4" src="../img/arrays/raio.gif">
+        <img id="raio5" src="../img/arrays/raio.gif">
 
 
 
+        <img class='poke' id="poke" src="../img/arrays/falink.gif">
 
         <img id="nuvens" src="../img/bonus/clouds.png">
 
         <img id="pikachu" src="../img/arrays/pikachu.gif">
 
-        <img class='poke' id="poke" src="../img/arrays/falink.gif">
 
 
         <div>
@@ -50,46 +54,19 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <script>
                 const loop = setInterval(() => {
 
+                const falink = document.querySelector('#falink');
+                const poaicoesFalinks = ["220", "520", "720", "1020"];
+                const posicaoVetor = Math.floor(Math.random() * poaicoesFalinks.length);
 
 
-                    /*const posicaoPedra = pedra.offsetLeft;
-                    const posicaoPoke = window.getComputedStyle(pokemon).bottom;
-                    const posicaoMaca = maca.offsetLeft;
-
-                    const removerPx = posicaoPoke.replace('px', '');
-                    valorConvertido = parseInt(removerPx);
-
-                    if (posicaoPedra <= 15 && valorConvertido < -20) {
-                        console.log(posicaoPoke);
-                        console.log(removerPx);
-
-                        pedra.style.animation = 'none';
-                        pedra.style.left = '125px';
-                        maca.style.animation = 'none';
-                        maca.style.left = '519px';
-                        document.querySelector("#reiniciar").style.display = "block"; // ou "block"
+                 console.log(posicaoVetor);
+                 falink.style.left = poaicoesFalinks[posicaoVetor]+"px";
 
 
-                    }*/
+                    
+                }, 5000);
 
 
-
-                    /*if (posicaoMaca <= 15) {
-
-
-                        maca.style.animation = 'none';
-                        maca.style.left = '125px';
-
-                        pedra.style.animation = 'none';
-                        pedra.style.left = '889px';
-
-                        document.querySelector("#form").style.display = "block"; // ou "block"
-
-
-
-                    }*/
-
-                }, 10);
 
                 const personagem = document.querySelector('.poke');
 
@@ -105,7 +82,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                     var numPx = valorNum + 10;
                     var soma = parseInt(value) + 10;
 
-                    personagem.style.left = soma+"px";
+                    personagem.style.left = soma + "px";
 
 
 
@@ -123,7 +100,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                     var numPx = valorNum + 10;
                     var soma = parseInt(value) - 10;
 
-                    personagem.style.left = soma+"px";
+                    personagem.style.left = soma + "px";
 
                 }
 
@@ -137,7 +114,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         moverDireita();
                     }
 
-                    if(tecla == 37){
+                    if (tecla == 37) {
                         moverEsquerda();
                     }
 

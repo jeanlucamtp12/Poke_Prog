@@ -17,12 +17,13 @@
 }
 
 
-#zubat{
+#falink{
     animation: pedra_movimento 5s infinite linear;
     width:80px;   
     position: absolute;
     bottom:410px;
     left: 220px;
+    /* 220, 500, 700, 1000 */
  
 }
 
@@ -34,7 +35,7 @@
    
 }
 
-#venomoth{
+#raio3{
     animation: pedra_movimento 10s infinite linear;
      
     width:80px;   
@@ -45,7 +46,7 @@
    
 }
 
-#golbat{
+#raio2{
     animation: pedra_movimento 4s infinite linear;
      
     width:80px;   
