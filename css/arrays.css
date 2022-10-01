@@ -36,7 +36,7 @@
 }
 
 #raio3{
-    animation: pedra_movimento 10s infinite linear;
+    animation: pedra_movimento 3s infinite linear;
      
     width:80px;   
     position: absolute;
@@ -47,7 +47,7 @@
 }
 
 #raio2{
-    animation: pedra_movimento 4s infinite linear;
+   animation: pedra_movimento 4s infinite linear;
      
     width:80px;   
     position: absolute;
@@ -58,7 +58,7 @@
 }
 
 #raio4{
-    animation: pedra_movimento 3s infinite linear;
+    animation: pedra_movimento 5s infinite linear;
      
     width:80px;   
     position: absolute;
@@ -68,7 +68,7 @@
    
 }
 #raio5{
-    animation: pedra_movimento 8s infinite linear;
+    animation: pedra_movimento 7s infinite linear;
      
     width:80px;   
     position: absolute;
@@ -278,4 +278,42 @@ input{
     padding: 08px;
     font-size: .8rem ;
     margin-bottom: 0px;
+}
+
+
+
+.vetor {
+   
+        padding: 10px;
+    
+        display: flex;
+        position:relative;
+        top:-80px;
+        flex-direction: row-reverse;
+    
+
+
+}
+.vetor h5{
+   
+       position: absolute;
+        top: -30px;
+    color:white;
+    
+
+
+}
+
+.filhoVetor{
+    color:white;
+    width:40px;
+    border: 2px solid #ccc;
+
+}
+
+.filhoVetor img{
+    color:white;
+    width:40px;
+    border: 2px solid #ccc;
+
 }
