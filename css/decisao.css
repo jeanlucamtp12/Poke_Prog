@@ -272,14 +272,14 @@
 .base1{
     position: absolute;
     bottom:10px;
-    left:250px;
+    left:350px;
     width: 400px;
 }
 
 .base2{
     position: absolute;
-    bottom:280px;
-    left:850px;
+    bottom:320px;
+    left:750px;
     width: 280px;
 }
 
@@ -293,21 +293,20 @@
 .poke{
     position: absolute;
     bottom:170px;
-    left:370px;
+    left:470px;
     width: 140px;
     z-index: 1;
 }
 .pokeAdversario{
     position: absolute;
-    bottom:350px;
-    left:850px;
+    bottom:400px;
+    left:750px;
     width: 230px;
     z-index: 1;
 }
 
 .barraVida{
     position: absolute;
-    border: solid 2px white;
     width: 200px;
     height:24px;
 
@@ -316,9 +315,20 @@
     left:340px;
 }
 
-.barraVidaAdversario{
+.barraVidaReal{
     position: absolute;
     border: solid 2px white;
+
+    width: 200px;
+    height:24px;
+
+    bottom: 80px;
+    left:340px;
+
+}
+
+.barraVidaAdversario{
+    position: absolute;
     width: 200px;
     height:24px;
 
@@ -327,11 +337,22 @@
     left:950px;
 }
 
+.barraVidaAdversarioReal{
+    position: absolute;
+    border: solid 2px white;
+    width: 200px;
+    height:24px;
+    bottom: 310px;
+    left:950px;
+
+}
 
 
 .nuvens{
-
+        position: absolute;
         width: 400px;
+        top:0px;
+        
 }
 
 .grama{
@@ -348,4 +369,54 @@
     left:0;
 }
 
+.form{
+    z-index:1;
+}
+
+
+.ataqueGrama{
+    position: absolute;
+    bottom: 190px;
+    left: 580px;
+    width: 250px;
+    animation: ataqueGrama_movimento 1s  linear;
+
+
+}
+
+
+
+@keyframes ataqueGrama_movimento{
+
+    0%{
+        bottom: 190px;
+        left: 580px;
+
+    }
+    50%{
+        bottom: 390px;
+        left:780px;
+
+
+    }
+    
+    100%{
+        bottom: 490px;
+        left:880px;
+
+    }
+}
+
+
+
+
+.ataqueVeneno{
+    position: absolute;
+    bottom: 190px;
+    left: 620px;
+    width: 200px;
+
+    transform: rotate(40deg);
+
+}
 

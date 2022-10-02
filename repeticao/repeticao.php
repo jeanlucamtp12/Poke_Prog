@@ -26,6 +26,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
+
+
         <img class="favo" src="../img/repeticao/favo.png">
 
         <img class="comeia" src="../img/repeticao/comeia.png">
@@ -189,7 +191,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 moverDireita();
             } else if (tecla == 37) {
                 moverEsquerda();
-            } else{
+            } else {
                 personagem.classList.add('movimento');
 
 
