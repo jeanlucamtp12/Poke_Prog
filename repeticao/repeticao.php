@@ -19,7 +19,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 <body>
 
-    <div class="jogobonus">
+    <div class="repeticao">
 
 
 
@@ -80,54 +80,66 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
     <script>
-        var cont = document.querySelector("#form");
+        var combeeShiny = document.querySelector('.combeeShiny');
+        var favo = document.querySelector('.favo');
+        var mime = document.querySelector('.mime');
 
-        const pedra = document.querySelector('#pedra');
-        const pokemon = document.querySelector('.poke');
-        const maca = document.querySelector('#maca');
+
+
+        console.log("Mime: " + mime);
+        console.log("Favo: " + favo);
+        console.log("Combee: " + combeeShiny);
+
+
+
 
 
 
         const loop = setInterval(() => {
 
-            const posicaoPedra = pedra.offsetLeft;
-            const posicaoPoke = window.getComputedStyle(pokemon).bottom;
-            const posicaoMaca = maca.offsetLeft;
+            posicaoCombeeShiny = window.getComputedStyle(combeeShiny).bottom;
+            posicaoMime = window.getComputedStyle(mime).bottom;
+            console.log(window.getComputedStyle(mime).bottom);
+            posicaoFavo = favo.offsetLeft;
 
-            const removerPx = posicaoPoke.replace('px', '');
-            valorConvertido = parseInt(removerPx);
+            const removerPxCombee = posicaoCombeeShiny.replace('px', '');
+            valorConvertidoCombee = parseInt(removerPxCombee);
 
-            if (posicaoPedra <= 15 && valorConvertido < -20) {
-                console.log(posicaoPoke);
-                console.log(removerPx);
+            const removerPxMime = posicaoMime.replace('px', '');
+            valorConvertidoMime = parseInt(removerPxMime);
 
-                pedra.style.animation = 'none';
-                pedra.style.left = '125px';
-                maca.style.animation = 'none';
-                maca.style.left = '519px';
-                document.querySelector("#reiniciar").style.display = "block"; // ou "block"
+            if (valorConvertidoCombee == valorConvertidoMime) {
+
+                window.alert("Bateu Menino");
+
+
+                //pedra.style.animation = 'none';
+                //pedra.style.left = '125px';
+                //maca.style.animation = 'none';
+                //maca.style.left = '519px';
+                //document.querySelector("#reiniciar").style.display = "block"; // ou "block"
+
+
+            }
+
+            if (posicaoFavo == valorConvertidoMime) {
+
+                window.alert("Pegou Menino");
+
+
+                //pedra.style.animation = 'none';
+                //pedra.style.left = '125px';
+                //maca.style.animation = 'none';
+                //maca.style.left = '519px';
+                //document.querySelector("#reiniciar").style.display = "block"; // ou "block"
 
 
             }
 
 
 
-            if (posicaoMaca <= 15) {
 
-
-                maca.style.animation = 'none';
-                maca.style.left = '125px';
-
-                pedra.style.animation = 'none';
-                pedra.style.left = '889px';
-
-                document.querySelector("#form").style.display = "block"; // ou "block"
-
-
-
-            }
-
-        }, 10);
+        }, 5);
 
 
 
@@ -143,7 +155,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-        const moverDireita = () => {
+        /*const moverDireita = () => {
 
             const el = document.querySelector('.mime');
             const value = getComputedStyle(el).getPropertyValue('left');
@@ -177,7 +189,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         }
 
-
+           */
 
 
         const personagem = document.querySelector('.mime');
@@ -187,22 +199,22 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             var tecla = event.keyCode;
 
 
-            if (tecla == 39) {
-                moverDireita();
-            } else if (tecla == 37) {
-                moverEsquerda();
-            } else {
-                personagem.classList.add('movimento');
+            /*  if (tecla == 39) {
+                  moverDireita();
+              } else if (tecla == 37) {
+                  moverEsquerda();
+              } else {*/
+            personagem.classList.add('movimento');
 
 
-                setTimeout(function() {
-                    personagem.classList.remove('movimento');
-                }, 1000);
-            }
-
-
-
+            setTimeout(function() {
+                personagem.classList.remove('movimento');
+            }, 1000);
         }
+
+
+
+        //  }
         document.addEventListener('keydown', mover);
     </script>
 
