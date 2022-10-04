@@ -61,10 +61,46 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         <img class="mime" src="../img/repeticao/mr.mime.gif">
 
+        <img class="tela" id="tela" src="../img/repeticao/tela.png" style="display:none">
+        <img class="piscarTela" id="piscarTela" src="../img/repeticao/tela.png" style="display:none">
+
+
+
 
 
 
         <div class="tronco"></div>
+
+
+
+
+
+        <div class="for">
+
+            <div class="caixas">
+               <h6 >Possui</h6>
+
+                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center"> </img>
+                <h6 id="inicializacao">0</h6>
+            </div>
+            <div class="caixas">
+                <h6 >Chuva para quando obtiver:</h6>
+                <img  src="../img/repeticao/favoCompleto.png" width="50px" align-items="center" align-items="center"> </img>
+                <h6 id="favoCompleto">0 de 5 Favos</h6>
+
+
+            </div>
+            <div class="caixas">
+                <h6 >Coletados</h6>
+                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center"> </img>
+                <h6 id="incremento">0</h6>
+
+
+            </div>
+
+
+
+        </div>
 
 
     </div>
@@ -80,6 +116,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
     <script>
+        let i = 0;
+        let favoCompleto = 0;
+
+
         var combeeShiny = document.querySelector('.combeeShiny');
         var favo = document.querySelector('.favo');
         var mime = document.querySelector('.mime');
@@ -92,7 +132,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-
+        //var numIncremento = document.getElementById("incremento").innerHTML;
 
 
         const loop = setInterval(() => {
@@ -108,88 +148,97 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             const removerPxMime = posicaoMime.replace('px', '');
             valorConvertidoMime = parseInt(removerPxMime);
 
-            if (valorConvertidoCombee == valorConvertidoMime) {
+            if ((posicaoFavo >= 110 && posicaoFavo <= 130) && valorConvertidoMime == 0) {
 
-                window.alert("Bateu Menino");
+                 i = i + 1;
+
+                document.getElementById("incremento").innerHTML = i;
+                document.getElementById("inicializacao").innerHTML = i;
+
+                if(i == 5 || i == 10 || i == 15 || i == 20 || i == 25 || i == 30 ){
+                    favoCompleto = favoCompleto + 1;
+                    
+                    document.getElementById("favoCompleto").innerHTML = favoCompleto + " de 5 Favos";
+                    document.getElementById("piscarTela").style.display = "block";
+
+                    setTimeout(function (){
+                        document.getElementById("piscarTela").style.display = "none";
+
+                    }, 4000);
 
 
-                //pedra.style.animation = 'none';
-                //pedra.style.left = '125px';
-                //maca.style.animation = 'none';
-                //maca.style.left = '519px';
-                //document.querySelector("#reiniciar").style.display = "block"; // ou "block"
+
+
+                }
+
+
+                
+
+
 
 
             }
 
-            if (posicaoFavo == valorConvertidoMime) {
-
-                window.alert("Pegou Menino");
-
-
-                //pedra.style.animation = 'none';
-                //pedra.style.left = '125px';
-                //maca.style.animation = 'none';
-                //maca.style.left = '519px';
-                //document.querySelector("#reiniciar").style.display = "block"; // ou "block"
-
-
-            }
-
-
-
-
-        }, 5);
 
 
 
 
 
+        }, 150);
 
-
-
-
-
-
-
-
-
-
-        /*const moverDireita = () => {
-
-            const el = document.querySelector('.mime');
-            const value = getComputedStyle(el).getPropertyValue('left');
-
-
-            var remove_string = value.replace('px', '');
-            var valorNum = parseInt(remove_string);
-
-            var numPx = valorNum + 10;
-            var soma = parseInt(value) + 10;
-
-            personagem.style.left = soma + "px";
-
-
+        const incrementar = () => {
+            i = i + 1;
 
         }
 
-        const moverEsquerda = () => {
-
-            const el = document.querySelector('.mime');
-            const value = getComputedStyle(el).getPropertyValue('left');
 
 
-            var remove_string = value.replace('px', '');
-            var valorNum = parseInt(remove_string);
 
-            var numPx = valorNum + 10;
-            var soma = parseInt(value) - 10;
 
-            personagem.style.left = soma + "px";
 
-        }
 
-           */
+
+
+
+        /*
+
+
+
+                const moverDireita = () => {
+
+                    const el = document.querySelector('.mime');
+                    const value = getComputedStyle(el).getPropertyValue('left');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) + 10;
+
+                    personagem.style.left = soma + "px";
+
+
+
+                }
+
+                const moverEsquerda = () => {
+
+                    const el = document.querySelector('.mime');
+                    const value = getComputedStyle(el).getPropertyValue('left');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) - 10;
+
+                    personagem.style.left = soma + "px";
+
+                }
+
+                   */
 
 
         const personagem = document.querySelector('.mime');
