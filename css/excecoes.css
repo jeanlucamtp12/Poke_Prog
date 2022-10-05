@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+}
+        
+
+.cidade {
+    overflow: hidden;
+    position:relative;
+    height: 100vh;
+    width: 100%;
+ 
+    background: linear-gradient( #000000, #0e0b47) no-repeat;
+
+
+}
+
+
+
+
+.estrela{
+    position: absolute;
+    width: 20px;
+    top: 100px;
+    left: 300px;
+    
+}
+
+
+
+
+
+.poste{
+    width: 400px;
+    position: absolute;
+
+
+}
+
+
+
+
+
+.grama{
+    position: absolute;
+    background-repeat:repeat-x;
+    bottom: -150px;
+    right: 0px;
+
+}
+
+
+
+
+.mato{
+    position: absolute;
+
+}
+.um{
+    width: 150px;
+    bottom: 50px;
+    right: 930px;
+}
+
+.dois{
+    width: 150px;
+    bottom: 40px;
+    right: 180px;
+}
+.arvore2{
+    position: absolute;
+    width: 300px;
+    bottom: 60px;
+    right: -30px;
+}
+
+.arvore{
+    position: absolute;
+    width: 300px;
+    bottom: 40px;
+    left: 0px;
+}
+
+.teia{
+    position: absolute;
+    border: 1px solid white;
+    height: 100px;
+    width: 0px;
+    top: 0px;
+    left: 720px;
+}
+
+.spinarak{
+    position: absolute;
+    width: 200px;
+    top: 0px;
+    left: -100px;
+}
+.mastro{
+    position: absolute;
+    border: 1px solid black;
+    height: 250px;
+    width:10px;
+    background-color: black;
+    bottom: 0px;
+    right: 80px;
+
+}
+.cacturne{
+    position: absolute;
+    width: 200px;
+    bottom: 120px;
+    right: -100px;
+}
+
+.zubats{
+    position: absolute;
+    width: 150px;
+    right: 200px;
+
+
+}
+
+.primeiro{
+    position: absolute;
+
+    top: -100px;
+    right: 200px;
+
+    animation: zubats_movimento 16s infinite linear;
+
+}
+.segundo{
+    position: absolute;
+    top: -80px;
+    right: 200px;
+
+    animation: zubats_movimento 15s infinite linear;
+
+}
+.terceiro{
+    position: absolute;
+    top: -50px;
+    right: 200px;
+
+    animation: zubats_movimento 12s infinite linear;
+
+}
+.quarto{
+    position: absolute;
+    top: -40px;
+    right: 200px;
+
+    animation: zubats_movimento 10s infinite linear;
+
+}
+
+
+
+
+@keyframes zubats_movimento{
+    0%{
+        right: 0px;
+
+    }
+    50%{
+        right: 950px;
+    }
+    100%{
+        right: 2000px;
+
+    }
+}
