@@ -94,6 +94,9 @@ body {
     width: 200px;
     top: 0px;
     left: -100px;
+
+    animation: aranha_movimento 3s infinite linear;
+
 }
 .mastro{
     position: absolute;
@@ -169,4 +172,65 @@ body {
         right: 2000px;
 
     }
+}
+
+.tumulo{
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+    width: 100px;
+
+}
+
+.rastelo{
+    position: absolute;
+    bottom: 100px;
+    right: 200px;
+    width:200px;
+    transform: rotate(150deg);
+
+}
+
+.arvoreMorta{
+    position: absolute;
+    width: 520px;
+    bottom: 100px;
+    right: 200px;
+}
+
+
+.cruz{
+    position: absolute;
+    width: 120px;
+    left: 10px;
+    bottom: 50px;
+    transform: rotate(-20deg);
+
+}
+
+
+@keyframes aranha_movimento{
+    0%{
+        top: 0px;
+    }
+    25%{
+        top: 10px;
+    }
+    50%{
+        top: 25px;
+
+    }
+    75%{
+        top: 20px;
+
+    }
+    85%{
+        top: -15px;
+
+    }
+    100%{
+        top: 0px;
+
+    }
+   
 }
