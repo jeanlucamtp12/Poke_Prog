@@ -28,6 +28,20 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         <div>
+            <img class="arvoreMorta" src="../img/excecoes/arvoreMorta.png"></img>
+            <img class="arvoreMorta" src="../img/excecoes/arvoreMorta2.png" style="right: 700px;"></img>
+
+
+        </div>
+
+        <div>
+            <img class="cruz" src="../img/excecoes/cruz.png" style="left: 100px;"></img>
+            <img class="cruz" src="../img/excecoes/cruz.png"></img>
+
+
+        </div>
+
+        <div>
             <img class="nuvens" src="../img/excecoes/nuvens.png"></img>
 
         </div>
@@ -36,12 +50,12 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <img class="arvore" src="../img/excecoes/arvore.png"></img>
 
         </div>
-        
+
         <div>
-            <img class="arvore2" src="../img/excecoes/arvore2.png" ></img>
+            <img class="arvore2" src="../img/excecoes/arvore2.png"></img>
 
         </div>
-        
+
         <div>
             <img class="mato um" src="../img/excecoes/mato.png"></img>
 
@@ -63,12 +77,28 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         <div class="zubats">
             <img class="zubat primeiro" src="../img/excecoes/zubat.png"></img>
-            <img class="zubat segundo" src="../img/excecoes/zubat.png" ></img>
-            <img class="zubat terceiro" src="../img/excecoes/zubat.png" ></img>
-            <img class="zubat quarto" src="../img/excecoes/zubat.png" ></img>
+            <img class="zubat segundo" src="../img/excecoes/zubat.png"></img>
+            <img class="zubat terceiro" src="../img/excecoes/zubat.png"></img>
+            <img class="zubat quarto" src="../img/excecoes/zubat.png"></img>
 
 
         </div>
+
+        <div class="cemiterio">
+            <img class="tumulo" src="../img/excecoes/tumulo.png"></img>
+            <img class="tumulo" src="../img/excecoes/tumulo.png" style="right: 300px;"></img>
+            <img class="tumulo" src="../img/excecoes/tumulo.png" style="right: 400px;"></img>
+            <img class="tumulo" src="../img/excecoes/tumulo.png" style="right: 500px;"></img>
+
+
+        </div>
+
+
+        <div>
+            <img class="rastelo" src="../img/excecoes/rastelo.png"></img>
+
+        </div>
+
 
 
 
@@ -121,7 +151,20 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
+    <script>
 
+        var teia = document.getElementById("teia").innerHTML;
+        const loop = setInterval(() => {
+
+            
+
+            
+
+
+
+
+        }, 5000);
+    </script>
 
 
 </body>
