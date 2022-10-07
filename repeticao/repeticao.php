@@ -78,9 +78,11 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <div class="for">
 
             <div class="caixas">
-               <h6 >Possui</h6>
+               <h6 >Iniciou com:</h6>
 
-                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center"> </img>
+                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center" style="width: 30px;"> </img>
+                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center" style="width: 30px;"> </img>
+
                 <h6 id="inicializacao">0</h6>
             </div>
             <div class="caixas">

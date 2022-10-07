@@ -14,7 +14,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 </head>
 <body>
 
-    <img id="tela-cheia" src="./img/cidade/KantoTwonMap.png" usemap="#cidade">
+    <img id="tela-cheia" src="./img/cidade/cidade.png" usemap="#cidade">
 
     <map name="cidade">
         <area shape="circle" alt="Variaveis" coords="174, 227, 30" href="unowns.php" alt="Cidade das Variaveis">

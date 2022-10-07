@@ -310,7 +310,7 @@
     width: 200px;
     height:24px;
 
-    background-color: #48e84d;
+    background-color: #40ba01;
     bottom: 80px;
     left:340px;
 }
@@ -331,8 +331,8 @@
     position: absolute;
     width: 200px;
     height:24px;
+    background-color: #40ba01;
 
-    background-color: #48e84d;
     bottom: 310px;
     left:950px;
 }

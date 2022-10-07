@@ -142,6 +142,55 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
+        <div>
+            <img class="pokebola" src="../img/excecoes/pokeball.gif"></img>
+        </div>
+
+
+        <div>
+            <img id="gasly1" class="gasly gasly1" src="../img/excecoes/fantasmas/gasly.png" style="right: 200px; display: block; opacity:1;"></img>
+            <img id="gasly2" class=" gasly gasly2" src="../img/excecoes/fantasmas/gasly_shiny.png" style="right: 100px;  bottom: 50px; display: block; opacity:1;"></img>
+            <img id="gasly3" class="gasly gasly3" src="../img/excecoes/fantasmas/gasly.png" style="right: 950px;  bottom: 50px; display: block; opacity:1;"></img>
+            <img id="gasly4" class="gasly gasly4" src="../img/excecoes/fantasmas/gasly.png" style=" display: block; opacity:1;"></img>
+
+        </div>
+
+
+        <div>
+            <img id="banette1" class="banette banette1" src="../img/excecoes/fantasmas/banette.png" style="display: block; opacity:1;"></img>
+            <img id="banette2" class="banette banette2" src="../img/excecoes/fantasmas/banette_shiny.png" style="display: block; opacity:1;"></img>
+            <img id="banette3" class="banette banette3" src="../img/excecoes/fantasmas/banette.png" style="display: block; opacity:1;"></img>
+            <img id="banette4" class="banette banette4" src="../img/excecoes/fantasmas/banette.png" style=" display: block; opacity:1;"></img>
+
+        </div>
+
+        <div>
+            <img id="frillish" class="frillish frillish1" src="../img/excecoes/fantasmas/frillish.png" style="display: block; opacity:1;"></img>
+            <img id="frillish2" class="frillish frillish2" src="../img/excecoes/fantasmas/frillish_shiny.png" style="display: block; opacity:1;"></img>
+            <img id="frillish3" class="frillish frillish3" src="../img/excecoes/fantasmas/frillish.png" style="display: block; opacity:1;"></img>
+            <img id="frillish4" class="frillish frillish4" src="../img/excecoes/fantasmas/frillish.png" style=" display: block; opacity:1;"></img>
+
+        </div>
+
+
+
+        <div>
+            <img id="litwick1" class="litwick litwick1" src="../img/excecoes/fantasmas/litwick.png" style="display: block; opacity:1;"></img>
+            <img id="litwick2" class="litwick litwick2" src="../img/excecoes/fantasmas/litwick_shiny.png" style="display: block; opacity:1;"></img>
+            <img id="litwick3" class="litwick litwick3" src="../img/excecoes/fantasmas/litwick.png" style="display: block; opacity:1;"></img>
+            <img id="litwick4" class="litwick litwick4" src="../img/excecoes/fantasmas/litwick.png" style=" display: block; opacity:1;"></img>
+
+        </div>
+
+        <div>
+            <img id="shedinja1" class="shedinja shedinja1" src="../img/excecoes/fantasmas/shedinja.png" style="display: block; opacity:1;"></img>
+            <img id="shedinja2" class="shedinja shedinja2" src="../img/excecoes/fantasmas/shedinja_shiny.png" style="display: block; opacity:1;"></img>
+            <img id="shedinja3" class="shedinja shedinja3" src="../img/excecoes/fantasmas/shedinja.png" style="display: block; opacity:1;"></img>
+            <img id="shedinja4" class="shedinja shedinja4" src="../img/excecoes/fantasmas/shedinja.png" style=" display: block; opacity:1;"></img>
+
+        </div>
+
+
 
 
 
@@ -152,14 +201,39 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
     <script>
-
-        var teia = document.getElementById("teia").innerHTML;
         const loop = setInterval(() => {
 
-            
 
-            
+            setTimeout(function() {
 
+                const gasly1 = document.getElementById("gasly1");
+                const gasly2 = document.getElementById("gasly2");
+                const gasly3 = document.getElementById("gasly3");
+                const gasly4 = document.getElementById("gasly4");
+
+
+                if (gasly1.style.opacity == "1") {
+                    gasly1.style.opacity = "0.2";
+                    gasly2.style.opacity = "1";
+                    gasly3.style.opacity = "0.2";
+                    gasly4.style.opacity = "1";
+
+
+
+                } else {
+                    gasly1.style.opacity = "1";
+                    gasly2.style.opacity = "0.2";
+                    gasly3.style.opacity = "1";
+                    gasly4.style.opacity = "0.2";
+
+
+
+
+
+                }
+
+
+            }, 50);
 
 
 

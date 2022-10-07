@@ -102,22 +102,21 @@ body {
     position: absolute;
     border: 1px solid black;
     height: 250px;
-    width:10px;
+    width:6px;
     background-color: black;
-    bottom: 0px;
+    bottom: -50px;
     right: 80px;
 
 }
 .cacturne{
     position: absolute;
-    width: 200px;
-    bottom: 120px;
-    right: -100px;
+    width: 150px;
+    bottom: 170px;
+    right: -75px;
 }
 
 .zubats{
     position: absolute;
-    width: 150px;
     right: 200px;
 
 
@@ -125,6 +124,7 @@ body {
 
 .primeiro{
     position: absolute;
+    width: 50px;
 
     top: -100px;
     right: 200px;
@@ -133,6 +133,8 @@ body {
 
 }
 .segundo{
+        width: 50px;
+
     position: absolute;
     top: -80px;
     right: 200px;
@@ -141,6 +143,10 @@ body {
 
 }
 .terceiro{
+        width: 50px;
+
+        width: 50px;
+
     position: absolute;
     top: -50px;
     right: 200px;
@@ -149,6 +155,8 @@ body {
 
 }
 .quarto{
+        width: 50px;
+
     position: absolute;
     top: -40px;
     right: 200px;
@@ -234,3 +242,464 @@ body {
     }
    
 }
+
+.pokebola{
+    position: absolute;
+    width: 120px;
+    left: 600px;
+    bottom: -20px;
+    z-index: 1;
+}
+
+.gasly{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+
+
+}
+
+.gasly1{
+
+    animation: gasly1_movimento 5s infinite linear;
+
+}
+.gasly2{
+
+    animation: gasly2_movimento 6s infinite linear;
+
+}
+.gasly3{
+
+    animation: gasly3_movimento 7s infinite linear;
+
+}
+.gasly4{
+
+    animation: gasly4_movimento 8s infinite linear;
+
+}
+
+
+
+@keyframes gasly1_movimento{
+    0%{
+        top: 0px;
+    }
+    25%{
+        top: 100px;
+        right: 200px;
+    }
+    50%{
+        top: 200px;
+        right: 900px;
+
+
+    }
+    75%{
+        top: 20px;
+
+    }
+    85%{
+        right: -15px;
+
+    }
+    100%{
+        top: 0px;
+
+    }
+   
+}
+
+
+@keyframes gasly2_movimento{
+    0%{
+        top: 100px;
+    }
+    25%{
+        top: 10px;
+        right: 200px;
+    }
+    50%{
+        top: 200px;
+        left: 600px;
+
+
+    }
+    75%{
+        top: 20px;
+
+    }
+    85%{
+        left: -15px;
+
+    }
+    100%{
+        top: 100px;
+
+    }
+   
+}
+@keyframes gasly3_movimento{
+    0%{
+        bottom: 0px;
+    }
+    25%{
+        bottom: 100px;
+        right: 200px;
+    }
+    50%{
+        bottom: 200px;
+        right: 900px;
+
+
+    }
+    75%{
+        bottom: 20px;
+
+    }
+    85%{
+        right: -15px;
+
+    }
+    100%{
+        bottom: 0px;
+
+    }
+   
+}
+
+@keyframes gasly4_movimento{
+    0%{
+        bottom: 0px;
+    }
+    25%{
+        bottom: 100px;
+        left: 200px;
+    }
+    50%{
+        bottom: 200px;
+        left: 900px;
+
+
+    }
+    75%{
+        bottom: 20px;
+
+    }
+    85%{
+        left: -15px;
+
+    }
+    100%{
+        bottom: 0px;
+
+    }
+   
+}
+
+
+
+.banette{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+
+
+}
+
+.banette1{
+    bottom: -30px;
+    animation: banette_movimento 10s infinite linear;
+
+}
+.banette2{
+    right: 600px;
+    bottom: -30px;
+    animation: banette_movimento 15s infinite linear;
+
+}
+.banette3{
+    right: 200px;
+    bottom: -30px;
+    animation: banette_movimento 20s infinite linear;
+
+}
+.banette4{ 
+    right: 400px;
+    bottom: -30px;
+    animation: banette_movimento 25s infinite linear;
+
+}
+
+
+@keyframes banette_movimento{
+    0%{
+        right: 0px;
+
+    }
+    50%{
+        right: 950px;
+    }
+    100%{
+        right: 2000px;
+
+    }
+}
+
+
+
+
+.frillish{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+
+
+}
+
+.frillish1{
+    bottom: -30px;
+    animation: frillish_movimento 10s infinite linear;
+
+}
+.frillish2{
+    right: 600px;
+    bottom: -30px;
+    animation: frillish_movimento 15s infinite linear;
+
+}
+.frillish3{
+    right: 200px;
+    animation: frillish_movimento 20s infinite linear;
+
+}
+.frillish4{ 
+    right: 400px;
+    bottom: -30px;
+    animation: frillish_movimento 25s infinite linear;
+
+}
+
+
+@keyframes frillish_movimento{
+    0%{
+        right: 0px;
+
+    }
+    25%{
+        bottom: 200px;
+        right: 550px;
+    }
+
+    50%{
+        bottom: 400px;
+        right: 650px;
+    }
+    60%{
+        bottom: 300px;
+        right: 800px;
+    }
+    70%{
+        bottom: 100px;
+        right: 1400px;
+    }
+    80%{
+        bottom: 50px;
+        right: 1900px;
+    }
+    100%{
+        right: 2000px;
+        bottom: -30px;
+
+
+    }
+}
+
+
+
+
+
+.litwick{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+
+
+}
+
+.litwick1{
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+
+}
+.litwick2{
+    right: 600px;
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+}
+.litwick3{
+    right: 200px;
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+}
+.litwick4{ 
+    right: 400px;
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+
+}
+
+
+@keyframes litwick_movimento{
+    0%{
+        bottom: -150px;
+        transform: rotate(0deg);
+
+
+    }
+    15%{
+        bottom: -60px;
+        transform: rotate(0deg);
+
+
+    }
+    20%{
+        bottom: -80px;
+        transform: rotate(0deg);
+
+    } 
+    30%{
+        bottom: -600px;
+        transform: rotate(0deg);
+
+    } 
+    40%{
+        bottom: -150px;
+        transform: rotate(0deg);
+
+    } 
+
+    50%{
+        transform: rotate(190deg);
+        top: -290px;
+
+    }
+
+    55%{
+        top: -190px;
+
+    } 
+
+    85%{
+        top: -80px;
+        transform: rotate(190deg);
+
+    }
+    90%{
+        top: -50px;
+        transform: rotate(190deg);
+
+    }
+    100%{
+        top: -190px;
+        transform: rotate(190deg);
+
+    }
+}
+
+
+
+
+
+
+
+.shedinja{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+
+
+}
+
+.shedinja1{
+    bottom: -150px;
+    right: 0px;
+    animation: shedinja_movimento 10s infinite linear;
+
+
+
+}
+.shedinja2{
+    right: 600px;
+    bottom: -150px;
+    animation: shedinja_movimento 12s infinite linear;
+
+}
+.shedinja3{
+    right: 200px;
+    bottom: -150px;
+    animation: shedinja_movimento 14s infinite linear;
+
+}
+.shedinja4{ 
+    right: 400px;
+    bottom: -150px;
+    animation: shedinja_movimento 16s infinite linear;
+
+
+}
+
+
+@keyframes shedinja_movimento{
+    0%{
+        bottom: -150px;
+        right: 0px;
+       
+
+
+    }
+    15%{
+        bottom: 250px;
+        right: 1000px;
+
+    }
+   
+    25%{
+        bottom: 550px;
+        right: 2000px;
+    } 
+    35%{
+        top: -850px;
+        right: 0px;
+    } 
+
+
+    50%{
+        top: -150px;
+        right: 0px;
+       
+
+
+    }
+    75%{
+        top: 250px;
+        right: 1000px;
+
+    }
+   
+    100%{
+        top: 550px;
+        right: 2000px;
+    } 
+}
+
+
+
+
+
+
