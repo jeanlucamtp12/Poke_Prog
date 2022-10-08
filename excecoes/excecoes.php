@@ -142,56 +142,86 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
+
+
         <div>
             <img class="pokebola" src="../img/excecoes/pokeball.gif"></img>
-        </div>
-
-
-        <div>
-            <img id="gasly1" class="gasly gasly1" src="../img/excecoes/fantasmas/gasly.png" style="right: 200px; display: block; opacity:1;"></img>
-            <img id="gasly2" class=" gasly gasly2" src="../img/excecoes/fantasmas/gasly_shiny.png" style="right: 100px;  bottom: 50px; display: block; opacity:1;"></img>
-            <img id="gasly3" class="gasly gasly3" src="../img/excecoes/fantasmas/gasly.png" style="right: 950px;  bottom: 50px; display: block; opacity:1;"></img>
-            <img id="gasly4" class="gasly gasly4" src="../img/excecoes/fantasmas/gasly.png" style=" display: block; opacity:1;"></img>
-
-        </div>
-
-
-        <div>
-            <img id="banette1" class="banette banette1" src="../img/excecoes/fantasmas/banette.png" style="display: block; opacity:1;"></img>
-            <img id="banette2" class="banette banette2" src="../img/excecoes/fantasmas/banette_shiny.png" style="display: block; opacity:1;"></img>
-            <img id="banette3" class="banette banette3" src="../img/excecoes/fantasmas/banette.png" style="display: block; opacity:1;"></img>
-            <img id="banette4" class="banette banette4" src="../img/excecoes/fantasmas/banette.png" style=" display: block; opacity:1;"></img>
 
         </div>
 
         <div>
-            <img id="frillish" class="frillish frillish1" src="../img/excecoes/fantasmas/frillish.png" style="display: block; opacity:1;"></img>
-            <img id="frillish2" class="frillish frillish2" src="../img/excecoes/fantasmas/frillish_shiny.png" style="display: block; opacity:1;"></img>
-            <img id="frillish3" class="frillish frillish3" src="../img/excecoes/fantasmas/frillish.png" style="display: block; opacity:1;"></img>
-            <img id="frillish4" class="frillish frillish4" src="../img/excecoes/fantasmas/frillish.png" style=" display: block; opacity:1;"></img>
+            <img id="gasly1" class="gasly gasly1" src="../img/excecoes/fantasmas/gasly.png" style="right: 200px; display: block; opacity:1;" onclick="resposta('0')"></img>
+            <img id="gasly2" class=" gasly gasly2" src="../img/excecoes/fantasmas/gasly_shiny.png" style="right: 100px;  bottom: 50px; display: block; opacity:1;" onclick="resposta('1')"></img>
+            <img id="gasly3" class="gasly gasly3" src="../img/excecoes/fantasmas/gasly.png" style="right: 950px;  bottom: 50px; display: block; opacity:1;" onclick="resposta('0')"></img>
+            <img id="gasly4" class="gasly gasly4" src="../img/excecoes/fantasmas/gasly.png" style=" display: block; opacity:1;" onclick="resposta('0')"></img>
 
         </div>
+
+
+
+
+
 
 
 
         <div>
-            <img id="litwick1" class="litwick litwick1" src="../img/excecoes/fantasmas/litwick.png" style="display: block; opacity:1;"></img>
-            <img id="litwick2" class="litwick litwick2" src="../img/excecoes/fantasmas/litwick_shiny.png" style="display: block; opacity:1;"></img>
-            <img id="litwick3" class="litwick litwick3" src="../img/excecoes/fantasmas/litwick.png" style="display: block; opacity:1;"></img>
-            <img id="litwick4" class="litwick litwick4" src="../img/excecoes/fantasmas/litwick.png" style=" display: block; opacity:1;"></img>
+            <img id="banette1" class="banette banette1" src="../img/excecoes/fantasmas/banette.png" style="display: none; " onclick="resposta('0')"></img>
+            <img id="banette2" class="banette banette2" src="../img/excecoes/fantasmas/banette_shiny.png" style="display: none; " onclick="resposta('1')"></img>
+            <img id="banette3" class="banette banette3" src="../img/excecoes/fantasmas/banette.png" style="display: none; " onclick="resposta('0')"></img>
+            <img id="banette4" class="banette banette4" src="../img/excecoes/fantasmas/banette.png" style=" display: none; " onclick="resposta('0')"></img>
+
+        </div>
+
+
+        <div>
+            <img id="litwick1" class="litwick litwick1" src="../img/excecoes/fantasmas/litwick.png" style="display: none;" onclick="resposta('0')"></img>
+            <img id="litwick2" class="litwick litwick2" src="../img/excecoes/fantasmas/litwick_shiny.png" style="display: none; " onclick="resposta('1')"></img>
+            <img id="litwick3" class="litwick litwick3" src="../img/excecoes/fantasmas/litwick.png" style="display: none; " onclick="resposta('0')"></img>
+            <img id="litwick4" class="litwick litwick4" src="../img/excecoes/fantasmas/litwick.png" style=" display: none; " onclick="resposta('0')"></img>
 
         </div>
 
         <div>
-            <img id="shedinja1" class="shedinja shedinja1" src="../img/excecoes/fantasmas/shedinja.png" style="display: block; opacity:1;"></img>
-            <img id="shedinja2" class="shedinja shedinja2" src="../img/excecoes/fantasmas/shedinja_shiny.png" style="display: block; opacity:1;"></img>
-            <img id="shedinja3" class="shedinja shedinja3" src="../img/excecoes/fantasmas/shedinja.png" style="display: block; opacity:1;"></img>
-            <img id="shedinja4" class="shedinja shedinja4" src="../img/excecoes/fantasmas/shedinja.png" style=" display: block; opacity:1;"></img>
+            <img id="frillish1" class="frillish frillish1" src="../img/excecoes/fantasmas/frillish.png" style="display: none;" onclick="resposta('0')"></img>
+            <img id="frillish2" class="frillish frillish2" src="../img/excecoes/fantasmas/frillish_shiny.png" style="display:none" onclick="resposta('1')"></img>
+            <img id="frillish3" class="frillish frillish3" src="../img/excecoes/fantasmas/frillish.png" style="display: none; " onclick="resposta('0')"></img>
+            <img id="frillish4" class="frillish frillish4" src="../img/excecoes/fantasmas/frillish.png" style=" display: none;" onclick="resposta('0')"></img>
 
         </div>
 
 
+        <div>
+            <img id="shedinja1" class="shedinja shedinja1" src="../img/excecoes/fantasmas/shedinja.png" style="display: none;" onclick="resposta('0')"></img>
+            <img id="shedinja2" class="shedinja shedinja2" src="../img/excecoes/fantasmas/shedinja_shiny.png" style="display: none; " onclick="resposta('1')"></img>
+            <img id="shedinja3" class="shedinja shedinja3" src="../img/excecoes/fantasmas/shedinja.png" style="display: none; " onclick="resposta('0')"></img>
+            <img id="shedinja4" class="shedinja shedinja4" src="../img/excecoes/fantasmas/shedinja.png" style=" display: none; " onclick="resposta('0')"></img>
 
+        </div>
+
+
+        <div class="caixaObjetivos">
+
+            <h6>Capturados:</h6>
+            <div class="caixas">
+                <img src="../img/excecoes/fantasmas/gasly_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img src="../img/excecoes/fantasmas/banette_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img src="../img/excecoes/fantasmas/litwick_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img src="../img/excecoes/fantasmas/frillish_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img src="../img/excecoes/fantasmas/shedinja_shiny.png"></img>
+            </div>
+
+
+
+
+        </div>
 
 
 
@@ -201,6 +231,97 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
     <script>
+        var cont = 1;
+        const gasly = document.querySelectorAll(".gasly");
+        const banette = document.querySelectorAll(".banette");
+        const frillish = document.querySelectorAll(".frillish");
+        const shedinja = document.querySelectorAll(".shedinja");
+        const litwick = document.querySelectorAll(".litwick");
+
+        const resposta = (shiny) => {
+
+            switch (cont) {
+
+                case 1:
+                    contabilizaSelecao(shiny, 1, gasly);
+                    break;
+
+                case 2:
+                    contabilizaSelecao(shiny, 2, banette);
+                    break;
+
+                case 3:
+                    contabilizaSelecao(shiny, 3, litwick);
+                    break;
+
+                case 4:
+                    contabilizaSelecao(shiny, 4, frillish);
+                    break;
+
+                case 5:
+                    contabilizaSelecao(shiny, 5, shedinja);
+                    break;
+
+                default:
+                    break;
+            }
+
+
+        }
+
+        const contabilizaSelecao = (shiny, nivel, pokemon) => {
+
+            for (var i = 0; i < pokemon.length; i++) {
+
+                if (shiny == 1) {
+                    window.alert("Parabens capturou o certo");
+                    cont = cont + 1;
+                    limpaTela(pokemon);
+                    exibeTela(cont);
+                    return;
+                } else {
+                    window.alert("Falhoou");
+                    return;
+
+                }
+
+            }
+        }
+
+        const limpaTela = (pokemon) => {
+
+            for (var i = 0; i < pokemon.length; i++) {
+
+                pokemon[i].style.display = "none";
+
+            }
+        }
+
+        const exibeTela = (contador) => {
+
+            for (var i = 0; i < 4; i++) {
+
+                if (cont == 2) {
+                    banette[i].style.display ="block";
+                }
+                if (cont == 3) {
+                    litwick[i].style.display ="block";
+                }
+                if (cont == 4) {
+                    frillish[i].style.display ="block";
+                } 
+                if (cont == 5)  {
+                    shedinja[i].style.display ="block";
+                }
+               
+
+            }
+        }
+
+
+
+
+
         const loop = setInterval(() => {
 
 

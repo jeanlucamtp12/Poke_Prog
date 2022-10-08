@@ -521,3 +521,11 @@
     }
 
 }
+
+.pokemon{
+    position: absolute;
+}
+
+.pokemon h5 {
+    position: absolute;
+}

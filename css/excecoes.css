@@ -255,28 +255,30 @@ body {
     position: absolute;
     width: 300px;
     z-index: 1;
+    cursor: pointer;
+
 
 
 }
 
 .gasly1{
 
-    animation: gasly1_movimento 5s infinite linear;
+    animation: gasly1_movimento 15s infinite linear;
 
 }
 .gasly2{
 
-    animation: gasly2_movimento 6s infinite linear;
+    animation: gasly2_movimento 16s infinite linear;
 
 }
 .gasly3{
 
-    animation: gasly3_movimento 7s infinite linear;
+    animation: gasly3_movimento 17s infinite linear;
 
 }
 .gasly4{
 
-    animation: gasly4_movimento 8s infinite linear;
+    animation: gasly4_movimento 18s infinite linear;
 
 }
 
@@ -404,6 +406,8 @@ body {
     position: absolute;
     width: 300px;
     z-index: 1;
+    cursor: pointer;
+
 
 
 }
@@ -454,6 +458,7 @@ body {
     position: absolute;
     width: 300px;
     z-index: 1;
+    cursor: pointer;
 
 
 }
@@ -524,6 +529,7 @@ body {
     position: absolute;
     width: 300px;
     z-index: 1;
+    cursor: pointer;
 
 
 }
@@ -622,6 +628,7 @@ body {
     position: absolute;
     width: 300px;
     z-index: 1;
+    cursor: pointer;
 
 
 }
@@ -701,5 +708,38 @@ body {
 
 
 
+.caixaObjetivos {
+    position: absolute;
+    width: 390px;
+    height: 120px;
+    top: 50px;
+    right: 0px;
+    display: grid;
+    display: flex;
+    flex-direction: row;
 
+}
+
+
+.caixas {
+
+    border: solid 2px white;
+    width: 60px;
+    height: 60px;
+    top: 50px;
+    left: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.caixaObjetivos h6{
+    position: absolute;
+    color: white;
+    right: 200px;
+    top: -30px;
+}
 
