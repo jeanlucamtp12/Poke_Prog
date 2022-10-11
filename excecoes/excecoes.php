@@ -203,19 +203,19 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
             <h6>Capturados:</h6>
             <div class="caixas">
-                <img src="../img/excecoes/fantasmas/gasly_shiny.png"></img>
+                <img id="1" class="imagem"  src="../img/excecoes/fantasmas/gasly_shiny.png"></img>
             </div>
             <div class="caixas">
-                <img src="../img/excecoes/fantasmas/banette_shiny.png"></img>
+                <img id="2" class="imagem"  src="../img/excecoes/fantasmas/banette_shiny.png"></img>
             </div>
             <div class="caixas">
-                <img src="../img/excecoes/fantasmas/litwick_shiny.png"></img>
+                <img id="3" class="imagem"  src="../img/excecoes/fantasmas/litwick_shiny.png"></img>
             </div>
             <div class="caixas">
-                <img src="../img/excecoes/fantasmas/frillish_shiny.png"></img>
+                <img id="4" class="imagem"  src="../img/excecoes/fantasmas/frillish_shiny.png"></img>
             </div>
             <div class="caixas">
-                <img src="../img/excecoes/fantasmas/shedinja_shiny.png"></img>
+                <img id="5" class="imagem"  src="../img/excecoes/fantasmas/shedinja_shiny.png"></img>
             </div>
 
 
@@ -275,6 +275,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                 if (shiny == 1) {
                     window.alert("Parabens capturou o certo");
+                    document.getElementById(cont).src = "../img/excecoes/pokeball.gif" ;
                     cont = cont + 1;
                     limpaTela(pokemon);
                     exibeTela(cont);
