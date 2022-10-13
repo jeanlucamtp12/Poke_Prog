@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
+
+
+}
+
+#espaco {
+    position: absolute;
+    left: 45%;
+    display: inline-block;
+    width: 100;
+    line-height: 30px;
+    padding: 7px 10px;
+    background-color: #000000;
+    color: #FFF;
+    border-radius: 90px;
+    text-decoration: none;
+    animation: pulsa 1.5s linear infinite;
+
+
+}
+
+/*#caixa {
+
+    left: 45%;
+
+    width: 150px;
+    position: absolute;
+    bottom: 430px;
+
+}
+*/
+
+
+
+
+.fundo_unowns {
+    position: relative;
+    height: 100vh;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+#a {
+
+    width: 100px;
+    position: absolute;
+    bottom: 150px;
+
+}
+
+#b {
+
+    width: 100px;
+    position: absolute;
+    bottom: 40px;
+
+}
+
+#c {
+
+    width: 100px;
+    position: absolute;
+    bottom: 260px;
+
+}
+
+#d {
+
+    width: 100px;
+    position: absolute;
+    bottom: 330px;
+
+}
+
+#e {
+
+    width: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+}
+
+#f {
+
+    width: 100px;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+
+
+}
+
+#g {
+
+    width: 80px;
+    position: absolute;
+    bottom: 210px;
+    right: 0;
+
+
+}
+
+#h {
+
+    width: 100px;
+    position: absolute;
+    bottom: 500;
+    right: 0;
+
+
+}
+
+#i {
+
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+
+}
+
+#j {
+
+    width: 130px;
+    position: absolute;
+    bottom: 510px
+}
+
+#k {
+
+    width: 100px;
+    position: absolute;
+    bottom: 410px;
+    right: 0;
+
+
+}
+
+
+
+button {
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    z-index: -1;
+
+    Transform: translate(0%, 200%);
+
+}
+
+
+
+h2 {
+    text-align: center;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+.blocoInicial {
+
+    position: absolute;
+
+    width: 40%;
+    height: 30%;
+
+    /* o float e o border ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© sÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³ para visualizar */
+
+    top: 60%;
+    right: 20%;
+    left: 80%;
+    Transform: translate(-50%, -50%);
+
+
+}
+
+.blocoInicial img {
+
+    position: fixed;
+
+
+
+    /* o float e o border ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© sÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³ para visualizar */
+
+    top: -70%;
+    right: 50%;
+    left: 50%;
+    Transform: translate(-50%, -50%);
+
+
+}
+
+.blocoInicial h2 {
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    right: 100%;
+    left: 45%;
+    white-space: nowrap;
+
+    /* o float e o border ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© sÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³ para visualizar */
+
+
+
+}
+
+
+
+
+#botaoResposta {
+    position: absolute;
+
+    Transform: translate(-50%, -50%);
+
+    bottom: 20px;
+    right: 50%;
+    left: 60%;
+
+    z-index: 1;
+
+    height: 30px;
+    width: 120px;
+
+}
+
+
+
+
+.caixaTeclado {
+    width: 70px;
+
+    display: inline-block;
+
+
+
+}
+
+
+.caixaTeclado h6 {
+
+    text-align: center;
+}
+
+
+/*---------*/
+.circles {
+    cursor: pointer;
+}
+
+.tamanhoTela {
+    padding: 10px;
+
+    display: flex;
+    border: 2px solid #ccc;
+    flex-direction: column;
+
+
+}
+
+.teclado {
+
+
+    float: left;
+    max-width: 550px;
+    border: 2px solid #ccc;
+
+
+}
+
+.caixaConteudo {
+
+    position: relative;
+    width: 120px;
+    left: 660px;
+
+}
+
+.caixaConteudo h2 {
+
+    position: absolute;
+    bottom: 40;
+    right: 10;
+}
+
+
+.caixaResposta {
+
+    display: grid;
+
+
+    border: 2px solid #ccc;
+    width: 440px;
+    height: 310px;
+
+
+
+
+
+}
+
+.inicial {
+    float: right;
+
+
+
+}
+
+.caixas {
+    padding: 20;
+    margin-left: 20;
+
+
+}

@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.repeticao {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /*border: 1px solid #111;
+     margin-left: auto;
+    margin-right:  auto; */
+    background: linear-gradient(#3800c1, #bf98c6) no-repeat;
+
+    min-width: 100px;
+
+
+
+}
+
+
+.repeticao {
+    min-width: 500px;
+
+}
+
+.chao {
+    display: block;
+    position: absolute;
+    width: 1900px;
+    height: 400px;
+    bottom: 290px;
+    padding: 0;
+    text-align: center;
+    color: white;
+    /* background: url(../img/for/chao.jpg) no-repeat bottom center scroll;*/
+    background-position: 30% 45%;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.jogador {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 280px;
+}
+
+
+
+.base1 {
+    position: absolute;
+    bottom: 10px;
+    left: 250px;
+    width: 400px;
+}
+
+.base2 {
+    position: absolute;
+    bottom: 280px;
+    left: 850px;
+    width: 280px;
+}
+
+.adversario {
+    position: absolute;
+    bottom: 430px;
+    right: 50px;
+    width: 250px;
+}
+
+.poke {
+    position: absolute;
+    bottom: 170px;
+    left: 370px;
+    width: 140px;
+    z-index: 1;
+}
+
+.pokeAdversario {
+    position: absolute;
+    bottom: 350px;
+    left: 850px;
+    width: 230px;
+    z-index: 1;
+}
+
+.tronco {
+    position: absolute;
+    width: 10px;
+    height: 64px;
+
+    background-color: #af692d;
+    bottom: 370px;
+    right: 323px;
+}
+
+
+
+
+.nuvens {
+
+    position: absolute;
+    width: 400px;
+    right: 300px;
+}
+
+.grama {
+    position: absolute;
+    width: 700px;
+    bottom: -160px;
+    left: 700px;
+}
+
+.grama2 {
+    position: absolute;
+    width: 700px;
+    bottom: -160px;
+
+    left: 0;
+}
+
+
+/* aaaa*/
+
+.arvore {
+    position: absolute;
+    width: 500px;
+    bottom: -10px;
+
+    right: -90px;
+
+}
+
+.movimento {
+
+    animation: inicial_movimento 1s infinite linear;
+
+}
+
+.comeia {
+    position: absolute;
+    width: 200px;
+    bottom: 180px;
+
+    right: 230px;
+}
+
+.combee {
+    animation: combees_movimento 5s infinite linear;
+
+    position: absolute;
+
+    width: 180px;
+    bottom: 280px;
+    right: 230px;
+    z-index: 1;
+}
+
+.combee2 {
+    animation: combees_movimento 8s infinite linear;
+
+    position: absolute;
+
+    width: 180px;
+    bottom: 80px;
+    right: 180px;
+    z-index: 1;
+}
+
+.combee3 {
+    animation: combees_movimento 15s infinite linear;
+
+    position: absolute;
+
+    width: 180px;
+    bottom: 130px;
+    right: 300px;
+    z-index: 1;
+}
+
+.combee4 {
+    animation: combees_movimento 10s infinite linear;
+
+    position: absolute;
+
+    width: 180px;
+    bottom: 220px;
+    right: 340px;
+    z-index: 1;
+}
+
+.combeeShiny {
+    animation: combeeShiny_movimento 4s infinite linear;
+
+    position: absolute;
+
+    width: 160px;
+    bottom: 220px;
+    right: 340px;
+    z-index: 1;
+}
+
+.vespiquen {
+    animation: combees_movimento 80s infinite linear;
+
+    position: absolute;
+
+    width: 280px;
+    bottom: 320px;
+    right: 1120px;
+    z-index: 1;
+}
+
+
+
+
+.estrela {
+    position: absolute;
+
+    width: 50px;
+    bottom: 510px;
+    right: 980px;
+    z-index: 1;
+
+}
+
+.estrela2 {
+    position: absolute;
+
+    width: 50px;
+    bottom: 550px;
+    right: 780px;
+    z-index: 1;
+
+}
+
+.timburr {
+    position: absolute;
+
+    width: 300px;
+    bottom: -10px;
+    left: 0px;
+    z-index: 1;
+
+}
+
+.chuva {
+
+    width: 1020px;
+
+
+}
+
+
+
+
+@keyframes inicial_movimento {
+    0% {
+        bottom: 0px;
+
+    }
+
+    45% {
+        bottom: 350px;
+
+
+    }
+
+    50% {
+        bottom: 400px;
+
+
+    }
+
+    55% {
+        bottom: 350px;
+
+
+    }
+
+
+    100% {
+        bottom: 0px;
+
+
+    }
+}
+
+
+
+@keyframes combees_movimento {
+    0% {
+        transform: translateY(0px);
+        left: 80%;
+
+    }
+
+    25% {
+        transform: translateY(-40px);
+        left: 70%;
+    }
+
+    30% {
+        transform: translateX(-100px);
+        left: 65%;
+
+    }
+
+    35% {
+        left: 70%;
+    }
+
+    50% {
+        transform: translateY(-60px);
+        left: 75%;
+    }
+
+    60% {
+        transform: translateX(-100px);
+        left: 80%;
+    }
+
+    72% {
+        transform: translateX(60px);
+        left: 90%;
+    }
+
+    75% {
+        transform: translateY(40px);
+        right: 25%;
+    }
+
+    100% {
+        transform: translateY(0px);
+        left: 80%;
+    }
+}
+
+
+
+
+@keyframes lanturn_movimento {
+    0% {
+        bottom: 440px;
+
+    }
+
+    50% {
+        bottom: 400px;
+
+
+    }
+
+
+
+    100% {
+        bottom: 440px;
+
+
+    }
+
+
+}
+
+
+.favo {
+    animation: favo_movimento 6s infinite linear;
+
+    position: absolute;
+
+    width: 50px;
+    bottom: 200px;
+    left: 320px;
+    z-index: 1;
+
+
+}
+
+@keyframes favo_movimento {
+
+    0% {
+        left: 910px;
+        bottom: 120px;
+
+    }
+
+    25% {
+        left: 750px;
+        bottom: 50px;
+
+    }
+
+    50% {
+        left: 400px;
+        bottom: 50px;
+
+    }
+
+    75% {
+        left: 150px;
+        bottom: 50px;
+    }
+
+    100% {
+        left: 0px;
+        bottom: 50px;
+    }
+}
+
+@keyframes combeeShiny_movimento {
+
+    0% {
+        left: 910px;
+        bottom: 150px;
+
+    }
+
+    25% {
+        left: 750px;
+        bottom: 40px;
+
+    }
+
+    50% {
+        left: 400px;
+        bottom: 10px;
+
+    }
+
+    75% {
+        left: 150px;
+        bottom: 5px;
+    }
+
+    100% {
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+
+
+.for {
+    position: absolute;
+    width: 390px;
+    height: 120px;
+    top: 50px;
+    display: grid;
+
+    display: flex;
+    flex-direction: row;
+
+
+
+}
+
+.caixas {
+
+    border: solid 2px white;
+    width: 330px;
+    height: 120px;
+    top: 50px;
+    left: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.caixas h6 {
+    color: white;
+}
+
+.troncos {
+    position: absolute;
+    width: 500px;
+    left: -120px;
+    bottom: -90px;
+    z-index: 1;
+}
+
+.piscarTela {
+    position: absolute;
+    width: 200px;
+    right: 1100px;
+    bottom: 430px;
+    animation: piscarTela 1s steps(1, end) infinite;
+}
+
+@keyframes piscarTela {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.pokemon{
+    position: absolute;
+}
+
+.pokemon h5 {
+    position: absolute;
+}

@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.jogobonus {
+    overflow: hidden;
+    position:relative;
+    height: 100vh;
+    width: 100%;
+    /*border: 1px solid #111;
+     margin-left: auto;
+    margin-right:  auto; */
+    background: linear-gradient( #141515, #a3c6d4) no-repeat;
+
+}
+
+
+#falink{
+    animation: pedra_movimento 5s infinite linear;
+    width:80px;   
+    position: absolute;
+    bottom:410px;
+    left: 220px;
+    /* 220, 500, 700, 1000 */
+ 
+}
+
+#piso{
+     position: absolute;
+    width:190px;   
+    top: 59px;
+ 
+   
+}
+
+#raio3{
+    animation: pedra_movimento 3s infinite linear;
+     
+    width:80px;   
+    position: absolute;
+    bottom:300px;
+    left:400px;
+ 
+   
+}
+
+#raio2{
+   animation: pedra_movimento 4s infinite linear;
+     
+    width:80px;   
+    position: absolute;
+    bottom:450px;
+    left:620px;
+ 
+
+}
+
+#raio4{
+    animation: pedra_movimento 5s infinite linear;
+     
+    width:80px;   
+    position: absolute;
+    bottom:450px;
+    left:920px;
+ 
+   
+}
+#raio5{
+    animation: pedra_movimento 7s infinite linear;
+     
+    width:80px;   
+    position: absolute;
+    bottom:450px;
+    left:1220px;
+ 
+   
+}
+
+#nuvens{
+    /*animation: pedra_movimento 9s infinite linear; */
+     
+    width:680px;   
+    position: absolute;
+    bottom:390px;
+    left:350px;
+ 
+   
+}
+
+
+#pedra{
+    animation: pedra_movimento 2s infinite linear;
+     
+    width:100px;   
+    position: absolute;
+    bottom:30px;
+    
+   
+}
+
+#sunflora{
+    
+    position: absolute;
+    bottom: 0px;
+ 
+    width:150px;
+    right:0;
+}
+
+
+.poke{
+   /*animation: inicial_movimento 2s infinite linear;*/
+
+
+    position: absolute;
+    bottom: -30px;
+    left: 650px;
+ 
+    width:120px;
+  
+}
+
+.movimento{
+
+    animation: inicial_movimento 1s infinite linear;
+    
+}
+
+#grama{
+   
+
+    
+    position: absolute;
+    bottom: -420px;
+    width:100%;
+}
+
+
+#haunter{
+    animation: haunter_movimento 5s infinite linear;
+
+    width:300px;   
+    position: absolute;
+    right:0;
+ 
+   
+}
+
+#maca{
+    animation: maca_movimento 5s infinite linear;
+    width:70px;   
+    position: absolute;
+    bottom:0;
+    right: 0;
+ 
+   
+}
+
+@keyframes maca_movimento{
+
+    0%{
+        right: 0%;
+        top: 20%;
+
+    }
+    5%{
+        right: 10%;
+        top: 50%;
+
+    }
+    15%{
+        right: 20%;
+        top: 80%;
+
+    }
+    20%{
+        right: 30%;
+        top: 90%;
+
+    }
+    50%{
+        right: 50%;
+    }
+    100%{
+        right: 100%;
+
+    }
+}
+
+
+@keyframes haunter_movimento{
+    0%{
+        transform: translateY(0px);
+        left: 80%;
+  
+    }
+    25%{
+        transform: translateY(-40px);
+        left: 60%;
+    }
+    30%{
+        transform: translateX(-100px);
+        left: 40%;
+
+    }
+    35%{
+        left: 20%;
+    }
+    50%{
+        transform: translateY(60px);
+        left: 45%;
+    }
+    60%{
+        transform: translateX(-100px);
+        left: 50%;
+    }
+   
+    72%{
+        transform: translateX(-100px);
+        left:60%;
+    }
+    75%{
+        transform: translateY(40px);
+        right: 25%;
+    }
+    100%{
+        transform: translateY(0px);
+        left: 80%;
+    }
+}
+
+
+@keyframes pedra_movimento{
+    0%{
+        top: 0%;
+
+    }
+    50%{
+        top: 50%;
+    }
+    100%{
+        top: 100%;
+
+    }
+}
+
+@keyframes inicial_movimento{
+    0%{
+        left: 50%;
+
+    }
+    100%{
+        left: 60%;
+
+        
+    }
+}
+
+#pikachu{
+    width: 200px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input{
+    border-bottom: 2px solid #610044;
+    padding: 08px;
+    font-size: .8rem ;
+    margin-bottom: 0px;
+}
+
+
+
+.vetor {
+   
+        padding: 10px;
+    
+        display: flex;
+        position:relative;
+        top:-80px;
+        flex-direction: row-reverse;
+    
+
+
+}
+.vetor h5{
+   
+       position: absolute;
+        top: -30px;
+    color:white;
+    
+
+
+}
+
+.filhoVetor{
+    color:white;
+    width:40px;
+    border: 2px solid #ccc;
+
+}
+
+.filhoVetor img{
+    color:white;
+    width:40px;
+    border: 2px solid #ccc;
+
+}

@@ -1,0 +1,748 @@
+body {
+    margin: 0;
+}
+        
+
+.cidade {
+    overflow: hidden;
+    position:relative;
+    height: 100vh;
+    width: 100%;
+ 
+    background: linear-gradient( #000000, #0e0b47) no-repeat;
+
+
+}
+
+
+
+
+.estrela{
+    position: absolute;
+    width: 20px;
+    top: 100px;
+    left: 300px;
+    
+}
+
+
+
+
+
+.poste{
+    width: 400px;
+    position: absolute;
+
+
+}
+
+
+
+
+
+.grama{
+    position: absolute;
+    background-repeat:repeat-x;
+    bottom: -150px;
+    right: 0px;
+
+}
+
+
+
+
+.mato{
+    position: absolute;
+
+}
+.um{
+    width: 150px;
+    bottom: 50px;
+    right: 930px;
+}
+
+.dois{
+    width: 150px;
+    bottom: 40px;
+    right: 180px;
+}
+.arvore2{
+    position: absolute;
+    width: 300px;
+    bottom: 60px;
+    right: -30px;
+}
+
+.arvore{
+    position: absolute;
+    width: 300px;
+    bottom: 40px;
+    left: 0px;
+}
+
+.teia{
+    position: absolute;
+    border: 1px solid white;
+    height: 100px;
+    width: 0px;
+    top: 0px;
+    left: 720px;
+}
+
+.spinarak{
+    position: absolute;
+    width: 200px;
+    top: 0px;
+    left: -100px;
+
+    animation: aranha_movimento 3s infinite linear;
+
+}
+.mastro{
+    position: absolute;
+    border: 1px solid black;
+    height: 250px;
+    width:6px;
+    background-color: black;
+    bottom: -50px;
+    right: 80px;
+
+}
+.cacturne{
+    position: absolute;
+    width: 150px;
+    bottom: 170px;
+    right: -75px;
+}
+
+.zubats{
+    position: absolute;
+    right: 200px;
+
+
+}
+
+.primeiro{
+    position: absolute;
+    width: 50px;
+
+    top: -100px;
+    right: 200px;
+
+    animation: zubats_movimento 16s infinite linear;
+
+}
+.segundo{
+        width: 50px;
+
+    position: absolute;
+    top: -80px;
+    right: 200px;
+
+    animation: zubats_movimento 15s infinite linear;
+
+}
+.terceiro{
+        width: 50px;
+
+        width: 50px;
+
+    position: absolute;
+    top: -50px;
+    right: 200px;
+
+    animation: zubats_movimento 12s infinite linear;
+
+}
+.quarto{
+        width: 50px;
+
+    position: absolute;
+    top: -40px;
+    right: 200px;
+
+    animation: zubats_movimento 10s infinite linear;
+
+}
+
+
+
+
+@keyframes zubats_movimento{
+    0%{
+        right: 0px;
+
+    }
+    50%{
+        right: 950px;
+    }
+    100%{
+        right: 2000px;
+
+    }
+}
+
+.tumulo{
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+    width: 100px;
+
+}
+
+.rastelo{
+    position: absolute;
+    bottom: 100px;
+    right: 200px;
+    width:200px;
+    transform: rotate(150deg);
+
+}
+
+.arvoreMorta{
+    position: absolute;
+    width: 520px;
+    bottom: 100px;
+    right: 200px;
+}
+
+
+.cruz{
+    position: absolute;
+    width: 120px;
+    left: 10px;
+    bottom: 50px;
+    transform: rotate(-20deg);
+
+}
+
+
+@keyframes aranha_movimento{
+    0%{
+        top: 0px;
+    }
+    25%{
+        top: 10px;
+    }
+    50%{
+        top: 25px;
+
+    }
+    75%{
+        top: 20px;
+
+    }
+    85%{
+        top: -15px;
+
+    }
+    100%{
+        top: 0px;
+
+    }
+   
+}
+
+.pokebola{
+    position: absolute;
+    width: 120px;
+    left: 600px;
+    bottom: -20px;
+    z-index: 1;
+}
+
+.gasly{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    cursor: pointer;
+
+
+
+}
+
+.gasly1{
+
+    animation: gasly1_movimento 15s infinite linear;
+
+}
+.gasly2{
+
+    animation: gasly2_movimento 16s infinite linear;
+
+}
+.gasly3{
+
+    animation: gasly3_movimento 17s infinite linear;
+
+}
+.gasly4{
+
+    animation: gasly4_movimento 18s infinite linear;
+
+}
+
+
+
+@keyframes gasly1_movimento{
+    0%{
+        top: 0px;
+    }
+    25%{
+        top: 100px;
+        right: 200px;
+    }
+    50%{
+        top: 200px;
+        right: 900px;
+
+
+    }
+    75%{
+        top: 20px;
+
+    }
+    85%{
+        right: -15px;
+
+    }
+    100%{
+        top: 0px;
+
+    }
+   
+}
+
+
+@keyframes gasly2_movimento{
+    0%{
+        top: 100px;
+    }
+    25%{
+        top: 10px;
+        right: 200px;
+    }
+    50%{
+        top: 200px;
+        left: 600px;
+
+
+    }
+    75%{
+        top: 20px;
+
+    }
+    85%{
+        left: -15px;
+
+    }
+    100%{
+        top: 100px;
+
+    }
+   
+}
+@keyframes gasly3_movimento{
+    0%{
+        bottom: 0px;
+    }
+    25%{
+        bottom: 100px;
+        right: 200px;
+    }
+    50%{
+        bottom: 200px;
+        right: 900px;
+
+
+    }
+    75%{
+        bottom: 20px;
+
+    }
+    85%{
+        right: -15px;
+
+    }
+    100%{
+        bottom: 0px;
+
+    }
+   
+}
+
+@keyframes gasly4_movimento{
+    0%{
+        bottom: 0px;
+    }
+    25%{
+        bottom: 100px;
+        left: 200px;
+    }
+    50%{
+        bottom: 200px;
+        left: 900px;
+
+
+    }
+    75%{
+        bottom: 20px;
+
+    }
+    85%{
+        left: -15px;
+
+    }
+    100%{
+        bottom: 0px;
+
+    }
+   
+}
+
+
+
+.banette{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    cursor: pointer;
+
+
+
+}
+
+.banette1{
+    bottom: -30px;
+    animation: banette_movimento 10s infinite linear;
+
+}
+.banette2{
+    right: 600px;
+    bottom: -30px;
+    animation: banette_movimento 15s infinite linear;
+
+}
+.banette3{
+    right: 200px;
+    bottom: -30px;
+    animation: banette_movimento 20s infinite linear;
+
+}
+.banette4{ 
+    right: 400px;
+    bottom: -30px;
+    animation: banette_movimento 25s infinite linear;
+
+}
+
+
+@keyframes banette_movimento{
+    0%{
+        right: 0px;
+
+    }
+    50%{
+        right: 950px;
+    }
+    100%{
+        right: 2000px;
+
+    }
+}
+
+
+
+
+.frillish{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    cursor: pointer;
+
+
+}
+
+.frillish1{
+    bottom: -30px;
+    animation: frillish_movimento 10s infinite linear;
+
+}
+.frillish2{
+    right: 600px;
+    bottom: -30px;
+    animation: frillish_movimento 15s infinite linear;
+
+}
+.frillish3{
+    right: 200px;
+    animation: frillish_movimento 20s infinite linear;
+
+}
+.frillish4{ 
+    right: 400px;
+    bottom: -30px;
+    animation: frillish_movimento 25s infinite linear;
+
+}
+
+
+@keyframes frillish_movimento{
+    0%{
+        right: 0px;
+
+    }
+    25%{
+        bottom: 200px;
+        right: 550px;
+    }
+
+    50%{
+        bottom: 400px;
+        right: 650px;
+    }
+    60%{
+        bottom: 300px;
+        right: 800px;
+    }
+    70%{
+        bottom: 100px;
+        right: 1400px;
+    }
+    80%{
+        bottom: 50px;
+        right: 1900px;
+    }
+    100%{
+        right: 2000px;
+        bottom: -30px;
+
+
+    }
+}
+
+
+
+
+
+.litwick{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    cursor: pointer;
+
+
+}
+
+.litwick1{
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+
+}
+.litwick2{
+    right: 600px;
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+}
+.litwick3{
+    right: 200px;
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+}
+.litwick4{ 
+    right: 400px;
+    bottom: -150px;
+    animation: litwick_movimento 5s infinite linear;
+
+
+}
+
+
+@keyframes litwick_movimento{
+    0%{
+        bottom: -150px;
+        transform: rotate(0deg);
+
+
+    }
+    15%{
+        bottom: -60px;
+        transform: rotate(0deg);
+
+
+    }
+    20%{
+        bottom: -80px;
+        transform: rotate(0deg);
+
+    } 
+    30%{
+        bottom: -600px;
+        transform: rotate(0deg);
+
+    } 
+    40%{
+        bottom: -150px;
+        transform: rotate(0deg);
+
+    } 
+
+    50%{
+        transform: rotate(190deg);
+        top: -290px;
+
+    }
+
+    55%{
+        top: -190px;
+
+    } 
+
+    85%{
+        top: -80px;
+        transform: rotate(190deg);
+
+    }
+    90%{
+        top: -50px;
+        transform: rotate(190deg);
+
+    }
+    100%{
+        top: -190px;
+        transform: rotate(190deg);
+
+    }
+}
+
+
+
+
+
+
+
+.shedinja{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    cursor: pointer;
+
+
+}
+
+.shedinja1{
+    bottom: -150px;
+    right: 0px;
+    animation: shedinja_movimento 10s infinite linear;
+
+
+
+}
+.shedinja2{
+    right: 600px;
+    bottom: -150px;
+    animation: shedinja_movimento 12s infinite linear;
+
+}
+.shedinja3{
+    right: 200px;
+    bottom: -150px;
+    animation: shedinja_movimento 14s infinite linear;
+
+}
+.shedinja4{ 
+    right: 400px;
+    bottom: -150px;
+    animation: shedinja_movimento 16s infinite linear;
+
+
+}
+
+
+@keyframes shedinja_movimento{
+    0%{
+        bottom: -150px;
+        right: 0px;
+       
+
+
+    }
+    15%{
+        bottom: 250px;
+        right: 1000px;
+
+    }
+   
+    25%{
+        bottom: 550px;
+        right: 2000px;
+    } 
+    35%{
+        top: -850px;
+        right: 0px;
+    } 
+
+
+    50%{
+        top: -150px;
+        right: 0px;
+       
+
+
+    }
+    75%{
+        top: 250px;
+        right: 1000px;
+
+    }
+   
+    100%{
+        top: 550px;
+        right: 2000px;
+    } 
+}
+
+
+
+
+.caixaObjetivos {
+    position: absolute;
+    width: 390px;
+    height: 120px;
+    top: 50px;
+    right: 0px;
+    display: grid;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.caixas {
+
+    border: solid 2px white;
+    width: 60px;
+    height: 60px;
+    top: 50px;
+    left: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.caixaObjetivos h6{
+    position: absolute;
+    color: white;
+    right: 200px;
+    top: -30px;
+}
+
+.imagem{
+    width: 80px;
+}
