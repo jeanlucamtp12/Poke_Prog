@@ -29,8 +29,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-        <img class="comeia" src="../img/repeticao/comeia.png">
-        <img class="troncos" src="../img/repeticao/troncos.png">
+       
 
 
 
@@ -46,30 +45,66 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         <img class="grama" src="../img/decisao/grama.png">
-        <img class="grama2" src="../img/decisao/grama.png">
 
         <img class="arvore" src="../img/repeticao/arvore.png" style.right="-220px">
 
-
+ 
+        <script>/*
         <img class="combee" src="../img/repeticao/combee.png">
         <img class="combee2" src="../img/repeticao/combee.png">
         <img class="combee3" src="../img/repeticao/combee.png">
         <img class="combee4" src="../img/repeticao/combee.png">
-        <img class="combeeShiny" src="../img/repeticao/combee-shiny.png">
+        <img class="combeeShiny" src="../img/repeticao/combee-shiny.png"> 
+        <img class="vespiquen" src="../img/repeticao/vespiquen.png"> 
+        <img class="comeia" src="../img/repeticao/comeia.png">*/ </script>
 
-        <img class="vespiquen" src="../img/repeticao/vespiquen.png">
 
+        
         <img class="timburr" id="timburr"  src="../img/repeticao/timburr_verso.png">
 
-        <img class="tela" id="tela" src="../img/repeticao/tela.png" style="display:block">
-        <img class="piscarTela" id="piscarTela" src="../img/repeticao/tela.png" style="display:none">
+        <div class="caixa">
+            <img class="madeira" id="madeira" src="../img/repeticao/tronco.png" style="display:none">
+        </div>
+
+        <img class="troncos" src="../img/repeticao/troncos.png">
 
 
+
+        <div class="obstaculo">
+            <div class="rio"></div>
+            <img class="entrada" id="entrada" src="../img/repeticao/obstaculo.png">
+            
+        </div>
+     
+
+
+        <img class="staryu" src="../img/repeticao/staryu.png">
+        <img class="goldeen" src="../img/repeticao/seadra.png">
+
+        <img class="bolhas" src="../img/repeticao/agua.png">
+
+        <img class="tijolo" src="../img/repeticao/tijolo.png">
 
 
 
 
         <div class="tronco"></div>
+
+
+
+        <div class="ponte">
+            <div class="filhoPonte" img src="" id="9" ></div>
+            <div class="filhoPonte" img src="" id="8"></div>
+            <div class="filhoPonte" img src="" id="7"></div>
+            <div class="filhoPonte" img src="" id="6"></div>
+            <div class="filhoPonte" img src="" id="5"></div>
+            <div class="filhoPonte" img src="" id="4"></div>
+            <div class="filhoPonte" img src="" id="3"></div>
+            <div class="filhoPonte" img src="" id="2"></div>
+            <div class="filhoPonte" img src="" id="1"></div>
+            <div class="filhoPonte" img src="" id="0" width="20px"></div>
+
+        </div>
 
 
 
@@ -124,17 +159,20 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
     <script>
         let i = 0;
         let favoCompleto = 0;
+        let tronco = 0;
 
 
-        var combeeShiny = document.querySelector('.combeeShiny');
-        var favo = document.querySelector('.favo');
+       // var combeeShiny = document.querySelector('.combeeShiny');
+        var troncos = document.querySelector('.troncos');
         var timburr = document.querySelector('.timburr');
+        var entrada = document.querySelector('.entrada');
+        var tijolo = document.querySelector('.tijolo');
 
 
 
-        console.log("timburr: " + timburr);
-        console.log("Favo: " + favo);
-        console.log("Combee: " + combeeShiny);
+
+        //console.log("timburr: " + timburr);
+        //console.log("Combee: " + combeeShiny);
 
 
 
@@ -143,42 +181,63 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         const loop = setInterval(() => {
 
-            posicaoCombeeShiny = window.getComputedStyle(combeeShiny).bottom;
-            posicaoTimburr = window.getComputedStyle(timburr).bottom;
-            //console.log(window.getComputedStyle(timburr).bottom);
-            posicaoFavo = favo.offsetLeft;
-
-            const removerPxCombee = posicaoCombeeShiny.replace('px', '');
-            valorConvertidoCombee = parseInt(removerPxCombee);
-
-            const removerPxTimburr = posicaoTimburr.replace('px', '');
+            //posicaoCombeeShiny = window.getComputedStyle(combeeShiny).bottom;
+            posicaoTimburrPulo = window.getComputedStyle(timburr).bottom;
+            const removerPxTimburr = posicaoTimburrPulo.replace('px', '');
             valorConvertidoTimburr = parseInt(removerPxTimburr);
 
-            if ((posicaoFavo >= 110 && posicaoFavo <= 130) && valorConvertidoTimburr == 0) {
-
-                 i = i + 1;
-
-                document.getElementById("incremento").innerHTML = i;
-                document.getElementById("inicializacao").innerHTML = i;
-
-                if(i == 5 || i == 10 || i == 15 || i == 20 || i == 25 || i == 30 ){
-                    favoCompleto = favoCompleto + 1;
-                    
-                    document.getElementById("favoCompleto").innerHTML = favoCompleto + " de 5 Favos";
-                    document.getElementById("piscarTela").style.display = "block";
-
-                    setTimeout(function (){
-                        document.getElementById("piscarTela").style.display = "none";
-
-                    }, 4000);
+            posicaoTijolo = window.getComputedStyle(tijolo).bottom;
 
 
+            posicaoTimburr = timburr.offsetLeft;
 
+            console.log("Bottom e left: ",posicaoTimburrPulo )
 
-                }
-
+            if(valorConvertidoTimburr >= 120 && (posicaoTimburr >= 360 && posicaoTimburr <= 470)){
+                personagem.style.bottom = "200px";
+                document.documentElement.style.setProperty('--my-start-bottom', '200px');
+                document.documentElement.style.setProperty('--my-end-bottom', '200px');
 
                 
+            }
+            if (posicaoTimburr < 360 || posicaoTimburr > 470) {
+                personagem.style.bottom = "-10px";
+                document.documentElement.style.setProperty('--my-start-bottom', '0px');
+                document.documentElement.style.setProperty('--my-end-bottom', '0px');
+
+            }
+
+            
+            console.log("timburr: " + posicaoTimburr);
+
+            //console.log(window.getComputedStyle(timburr).bottom);
+            posicaoTroncos = troncos.offsetLeft;
+
+            //const removerPxCombee = posicaoCombeeShiny.replace('px', '');
+            //valorConvertidoCombee = parseInt(removerPxCombee);
+
+            //const removerPxTimburr = posicaoTimburr.replace('px', '');
+            //valorConvertidoTimburr = parseInt(removerPxTimburr);
+
+            var estadoMadeira = document.getElementById("madeira").style.display;
+
+            if(posicaoTimburr == 590 && estadoMadeira == "block"){
+                document.getElementById(tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
+                document.getElementById("madeira").style.display = "none";
+
+                tronco = tronco + 1;
+            }
+
+
+            if (posicaoTroncos <= -120 && posicaoTimburr <= -10) {
+
+                 //i = i + 1;
+
+                //document.getElementById("incremento").innerHTML = i;
+                //document.getElementById("inicializacao").innerHTML = i;
+
+                
+                document.getElementById("madeira").style.display = "block";
 
 
 
@@ -190,7 +249,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-        }, 150);
+        }, 5);
 
         const incrementar = () => {
             i = i + 1;
@@ -212,6 +271,13 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                 const moverDireita = () => {
 
+                    posicaoTimburr = timburr.offsetLeft;
+        
+                    if(posicaoTimburr != 590){
+           
+
+
+
                     document.getElementById("timburr").src = "../img/repeticao/timburr_verso.png";
 
                     const el = document.querySelector('.timburr');
@@ -226,7 +292,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                     personagem.style.left = soma + "px";
 
-
+                }  
 
                 }
 
@@ -264,9 +330,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
               } else if (tecla == 37) {
                   moverEsquerda();
               } else {
+
             personagem.classList.add('movimento');
-
-
             setTimeout(function() {
                 personagem.classList.remove('movimento');
             }, 1000);
