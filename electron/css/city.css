@@ -45,3 +45,67 @@ img {
 	position: absolute;
 	transform: translate(500%, 150%);
 }
+
+.trofeu{
+	position: absolute;
+	transform: translate(650%, 200%);
+}
+
+.linha1{
+	border: solid 2px blue;
+	left: 90px;
+	bottom: -200px;
+	position: absolute;
+	transform: rotate(70deg);
+	width: 180px;
+	z-index: -1;
+}
+
+.linha2{
+	border: solid 2px blue;
+	left: 200px;
+	bottom: -320px;
+	position: absolute;
+	width: 180px;
+	z-index: -1;	
+}
+
+.linha3{
+	border: solid 2px blue;
+	left: 400px;
+	bottom: -220px;
+	position: absolute;
+	width: 180px;
+	transform: rotate(-70deg);
+	z-index: -1;	
+}
+
+.linha4{
+	border: solid 2px blue;
+	left: 600px;
+	bottom: -100px;
+	position: absolute;
+	width: 180px;
+	z-index: -1;	
+}
+
+
+.linha5{
+	border: solid 2px blue;
+	left: 720px;
+	bottom: -200px;
+	position: absolute;
+	transform: rotate(90deg);
+	width: 180px;
+	z-index: -1;	
+}
+
+.linha6{
+	border: solid 2px blue;
+	left: 820px;
+	bottom: -320px;
+	position: absolute;
+	width: 180px;
+	z-index: -1;	
+}
+

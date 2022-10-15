@@ -24,6 +24,9 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <a href="unowns.php"><img  src="./img/regiao/variaveis.png"></a>
         </div>
 
+        <div class="linha1" ></div>  <div class="linha2" ></div> <div class="linha3" ></div> <div class="linha4" ></div> <div class="linha5" ></div> <div class="linha6" ></div>
+
+
         <div class="decisao" >
             <h4>Escola das decisões</h4>
             <a href="decisao/decisao.php"><img class="" src="./img/regiao/decisao.png"></a>
@@ -47,6 +50,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <div class="excecoes">
             <h4>Misterio das exceções</h4>
             <a href="excecoes/excecoes.php"><img class=""   src="./img/regiao/excecoes.png"></a>
+        </div>
+
+        <div class="trofeu">
+            <img class=""   src="./img/regiao/trofeu.png">
         </div>
 
     
