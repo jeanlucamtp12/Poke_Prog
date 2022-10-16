@@ -1,10 +1,11 @@
 body{
+    height: 100vh;
     background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
 }
 
 img {
     border-radius: 40%;
-	width: 150px;;
+	width: 150px;
 }
 
 .mapa{
@@ -18,7 +19,7 @@ img {
 
 .variaveis{
 	position: absolute;
-	transform: translate(50%, 30%);
+	transform: translate(30%, 30%);
 }
 
 .decisao{
@@ -33,56 +34,73 @@ img {
 
 .arrays{
 	position: absolute;
-	transform: translate(300%, 30%);
+	transform: translate(325%, 30%);
 }
 
 .funcoes{
 	position: absolute;
-	transform: translate(500%, 30%);
+	transform: translate(450%, 30%);
 }
 
 .excecoes{
 	position: absolute;
-	transform: translate(500%, 150%);
+	transform: translate(550%, 150%);
 }
 
 .trofeu{
 	position: absolute;
-	transform: translate(650%, 200%);
+	transform: translate(680%, 200%);
 }
 
 .linha1{
-	border: solid 2px blue;
-	left: 90px;
-	bottom: -200px;
+	border: solid 15px #cc7203;
+	left: 10px;
+	bottom: -250px;
 	position: absolute;
-	transform: rotate(70deg);
+	transform: rotate(90deg);
 	width: 180px;
 	z-index: -1;
 }
 
+.linha1-1{
+	border: solid 15px #cc7203;
+	left: 100px;
+	bottom: -350px;
+	position: absolute;
+	width: 80px;
+	z-index: -1;
+}
+
 .linha2{
-	border: solid 2px blue;
+	border: solid 15px #cc7203;
 	left: 200px;
-	bottom: -320px;
+	bottom: -350px;
 	position: absolute;
 	width: 180px;
-	z-index: -1;	
+	z-index: -1;
 }
 
 .linha3{
-	border: solid 2px blue;
-	left: 400px;
+	border: solid 15px #cc7203;
+	left: 450px;
 	bottom: -220px;
 	position: absolute;
 	width: 180px;
-	transform: rotate(-70deg);
+	transform: rotate(-90deg);
+	z-index: -1;	
+}
+.linha3-3{
+	border: solid 15px #cc7203;
+	left: 450px;
+	bottom: -340px;
+	position: absolute;
+	width: 90px;
 	z-index: -1;	
 }
 
 .linha4{
-	border: solid 2px blue;
-	left: 600px;
+	border: solid 15px #cc7203;
+	left: 550px;
 	bottom: -100px;
 	position: absolute;
 	width: 180px;
@@ -91,21 +109,28 @@ img {
 
 
 .linha5{
-	border: solid 2px blue;
-	left: 720px;
-	bottom: -200px;
+	border: solid 15px #cc7203;
+	left: 650px;
+	bottom: -250px;
 	position: absolute;
 	transform: rotate(90deg);
 	width: 180px;
 	z-index: -1;	
 }
-
-.linha6{
-	border: solid 2px blue;
-	left: 820px;
-	bottom: -320px;
+.linha5-5{
+	border: solid 15px #cc7203;
+	left: 750px;
+	bottom: -340px;
 	position: absolute;
-	width: 180px;
+	width: 50px;
 	z-index: -1;	
 }
 
+.linha6{
+	border: solid 15px #cc7203;
+	left: 820px;
+	bottom: -340px;
+	position: absolute;
+	width: 200px;
+	z-index: -1;	
+}

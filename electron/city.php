@@ -24,7 +24,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <a href="unowns.php"><img  src="./img/regiao/variaveis.png"></a>
         </div>
 
-        <div class="linha1" ></div>  <div class="linha2" ></div> <div class="linha3" ></div> <div class="linha4" ></div> <div class="linha5" ></div> <div class="linha6" ></div>
+        <div class="linha1" ></div>   <div class="linha1-1" ></div> <div class="linha2" ></div> <div class="linha3" ></div> <div class="linha3-3" ></div>  <div class="linha4" ></div> <div class="linha5" ></div> <div class="linha5-5" ></div> <div class="linha6" ></div>
 
 
         <div class="decisao" >
@@ -56,7 +56,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <img class=""   src="./img/regiao/trofeu.png">
         </div>
 
-    
+ 
         
 
     </div>
