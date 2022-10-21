@@ -265,6 +265,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                           //console.log("O valor de i :" + i + "posicao: " + posicaoFalink);
 
                           i = i + 1;
+                          if(i == 10){
+                            window.alert("Você ganhou, retornando a cidade!");
+                            window.location.href = "http://localhost/jogo/electron/city.php";
+                          }
 
 
                       }
