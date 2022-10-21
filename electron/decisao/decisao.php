@@ -23,17 +23,36 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
     <div class="jogobonus">
 
-        <img class="poke" src="../img/decisao/bulbasaur_costa.gif">
-        <img class="pokeAdversario" src="../img/decisao/arbok.png">
+
+        <img class="poke" src="../img/decisao/bulbasaur.gif">
+
+         <img class="pokeAdversario" src="../img/decisao/arbok.gif">  
 
 
-        <img class="grama" src="../img/decisao/grama.png">
-        <img class="grama2" src="../img/decisao/grama.png">
 
+       
+        <div class="grass">
+            <div class="fio fio1"></div>
+            <div class="fio fio2"></div>
+            <div class="fio fio3"></div>
+            <div class="fio fio4"></div>
+            <div class="fio fio5"></div>
+            <div class="fio fio6"></div>
+            <div class="fio fio7"></div>
+            <div class="fio fio8"></div>
+            <div class="fio fio9"></div>
+            <div class="fio fio10"></div>
+            <div class="fio fio11"></div>
+            <div class="fio fio12"></div>
+            <div class="fio fio13"></div>
+            <div class="fio fio14"></div>
+            <div class="fio fio15"></div><div class="fio fio16"></div><div class="fio fio17"></div><div class="fio fio18"></div><div class="fio fio19"></div><div class="fio fio20"></div>
+            
+        </div>
 
 
         <img class="nuvens" src="../img/decisao/clouds.png">
-   
+
 
 
 
@@ -43,9 +62,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <img class="jogador" src="../img/decisao/menino.png"> </img>
         <img class="adversario" src="../img/decisao/adversario.png"> </img>
 
-        <img class="base1" src="../img/decisao/base.png"> </img>
-        <img class="base2" src="../img/decisao/base.png"> </img>
-
+      
         <div id="barraVidaAdversario" class="barraVidaAdversario">HP</div>
         <div class="barraVidaAdversarioReal"></div>
 
@@ -129,14 +146,14 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 if (resposta == "sim") {
 
                     document.getElementById("ataqueGrama").style.display = "block";
-                    setTimeout(function(){
+                    setTimeout(function() {
                         pararAnimacao(1)
                     }, 1000);
 
 
                 } else {
                     document.getElementById("ataqueVeneno").style.display = "block";
-                    setTimeout(function(){
+                    setTimeout(function() {
                         pararAnimacao(2)
                     }, 1000);
                 }
@@ -148,9 +165,9 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         const pararAnimacao = (id) => {
 
-           
+
             if (id == 1) {
-        
+
                 document.getElementById("ataqueGrama").style.display = "none";
                 //$('#barraVidaAdversario').width("150px");
 
@@ -161,7 +178,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 console.log(vida);
 
                 var vida = document.getElementById("barraVidaAdversario").style.width = vida - 50 + "px";
-            }else{
+            } else {
                 document.getElementById("ataqueVeneno").style.display = "none";
                 //$('#barraVidaAdversario').width("150px");
 

@@ -13,7 +13,6 @@
 <body>
 
 <div id="tittle">
-    <img src="./img/cidade/cidades_simbolo.png">
     <h1>Cidade de Pewter - O misterio dos Unown (As Variaveis)</h1>
 </div>
 

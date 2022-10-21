@@ -296,18 +296,24 @@ h2 {
 
 .caixaResposta {
 
-    display: grid;
-
-
-    border: 2px solid #ccc;
-    width: 440px;
-    height: 310px;
-
-
-
+    border: 2px solid white;
+    width: 650px;
+    height: 70px;
+    display: flex;
+   
+    flex-direction: row;
 
 
 }
+
+.filhoCaixaS{
+
+    width: 70px;
+    display: inline-block;
+    height: 70px;
+    flex-wrap: wrap;
+}
+
 
 .inicial {
     float: right;

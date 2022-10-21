@@ -7,9 +7,11 @@ img {
     border-radius: 40%;
 	width: 150px;
 }
+img:hover{
+	transform: scale(1.5);
 
+}
 .mapa{
-	background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
 
 	position: relative;
 	display: flex;
@@ -47,9 +49,15 @@ img {
 	transform: translate(550%, 150%);
 }
 
+
+.recursividade{
+	position: absolute;
+	transform: translate(680%, 150%);
+}
+
 .trofeu{
 	position: absolute;
-	transform: translate(680%, 200%);
+	transform: translate(680%, 50%);
 }
 
 .linha1{
@@ -134,3 +142,17 @@ img {
 	width: 200px;
 	z-index: -1;	
 }
+
+
+.linha7{
+	border: solid 15px #cc7203;
+	left: 980px;
+	transform: rotate(90deg);
+	bottom: -240px;
+	position: absolute;
+	width: 200px;
+	z-index: -1;	
+}
+
+
+

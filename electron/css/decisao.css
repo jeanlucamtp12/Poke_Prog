@@ -1,408 +1,169 @@
-*{
+* {
     margin: 0;
     padding: 0;
+
+
+}
+
+body {
+    overflow: hidden;
+    background: linear-gradient(#00ACC1, #98c6ac) no-repeat;
 
 }
 
 .jogobonus {
-    overflow: hidden;
-    position:relative;
+
+    position: relative;
     height: 100vh;
     width: 100%;
-    /*border: 1px solid #111;
-     margin-left: auto;
-    margin-right:  auto; */
-    background: linear-gradient( #00ACC1, #98c6ac) no-repeat;
 
 }
-/*
-
-#zubat{
-    animation: pedra_movimento 5s infinite linear;
-     
-    width:100px;   
-    position: absolute;
-    bottom:410px;
- 
-   
-}
-
-#venomoth{
-    animation: pedra_movimento 10s infinite linear;
-     
-    width:100px;   
-    position: absolute;
-    bottom:300px;
- 
-   
-}
-
-#golbat{
-    animation: pedra_movimento 4s infinite linear;
-     
-    width:180px;   
-    position: absolute;
-    bottom:450px;
- 
-   
-}
-
-#cidade{
-     
-    width:480px;   
-    position: absolute;
-    bottom:390px;
- 
-   
-}
-
-
-#pedra{
-    animation: pedra_movimento 2s infinite linear;
-     
-    width:100px;   
-    position: absolute;
-    bottom:30px;
-    
-   
-}
-
-#sunflora{
-    
-    position: absolute;
-    bottom: 0px;
- 
-    width:150px;
-    right:0;
-}
-
-
-.poke{
-    
-    position: absolute;
-    bottom: -30px;
- 
-    width:200px;
-}
-
-.movimento{
-
-    animation: inicial_movimento 1s infinite linear;
-    
-}
-
-#grama{
-   
-
-    
-    position: absolute;
-    bottom: -420px;
-    width:100%;
-}
-
-
-#haunter{
-    animation: haunter_movimento 5s infinite linear;
-
-    width:300px;   
-    position: absolute;
-    right:0;
- 
-   
-}
-
-#maca{
-    animation: maca_movimento 5s infinite linear;
-    width:70px;   
-    position: absolute;
-    bottom:0;
-    right: 0;
- 
-   
-}
-@keyframes maca_movimento{
-
-    0%{
-        right: 0%;
-        top: 20%;
-
-    }
-    5%{
-        right: 10%;
-        top: 50%;
-
-    }
-    15%{
-        right: 20%;
-        top: 80%;
-
-    }
-    20%{
-        right: 30%;
-        top: 90%;
-
-    }
-    50%{
-        right: 50%;
-    }
-    100%{
-        right: 100%;
-
-    }
-}
-
-
-@keyframes haunter_movimento{
-    0%{
-        transform: translateY(0px);
-        left: 80%;
-  
-    }
-    25%{
-        transform: translateY(-40px);
-        left: 60%;
-    }
-    30%{
-        transform: translateX(-100px);
-        left: 40%;
-
-    }
-    35%{
-        left: 20%;
-    }
-    50%{
-        transform: translateY(60px);
-        left: 45%;
-    }
-    60%{
-        transform: translateX(-100px);
-        left: 50%;
-    }
-   
-    72%{
-        transform: translateX(-100px);
-        left:60%;
-    }
-    75%{
-        transform: translateY(40px);
-        right: 25%;
-    }
-    100%{
-        transform: translateY(0px);
-        left: 80%;
-    }
-}
-
-
-@keyframes pedra_movimento{
-    0%{
-        right: 0%;
-
-    }
-    50%{
-        right: 50%;
-    }
-    100%{
-        right: 100%;
-
-    }
-}
-
-@keyframes inicial_movimento{
-    0%{
-        bottom: -30px;
-
-    }
-    45%{
-        bottom: 90px;
-
-        
-    }
-    50%{
-        bottom: 90px;
-
-        
-    }
-    55%{
-        bottom: 90px;
-
-        
-    }
-    100%{
-        bottom: -60px;
-
-        
-    }
-}
-
-*/
-
 
 /* de fato */
 
 
-.chao {
-    display: block;
-    position:absolute;
-    width: 1900px;
-    height: 400px;
-    bottom: 290px;
-    padding: 0;
-    text-align: center;
-    color: white;
-   /* background: url(../img/for/chao.jpg) no-repeat bottom center scroll;*/
-   background-position: 30% 45%;
-    background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
 
 
-.jogador{
+.jogador {
     position: absolute;
-    bottom:0px;
-    left:0px;
-    width: 280px;
+    bottom: 0%;
+    left: 0%;
+    width: 15%;
 }
 
 
 
-.base1{
+.base1 {
     position: absolute;
-    bottom:10px;
-    left:350px;
-    width: 400px;
+    bottom: 15%;
+    left: 20%;
+    width: 20%;
 }
 
-.base2{
+.base2 {
     position: absolute;
-    bottom:320px;
-    left:750px;
-    width: 280px;
+    bottom: 35%;
+    left: 60%;
+    width: 20%;
 }
 
-.adversario{
+.adversario {
     position: absolute;
-    bottom:430px;
-    right:50px;
-    width: 250px;
+    bottom: 55%;
+    left: 75%;
+    width: 15%;
 }
 
-.poke{
+.poke {
     position: absolute;
-    bottom:170px;
-    left:470px;
-    width: 140px;
-    z-index: 1;
-}
-.pokeAdversario{
-    position: absolute;
-    bottom:400px;
-    left:750px;
-    width: 230px;
+    bottom: 0%;
+    left: 25%;
+    width: 35%;
     z-index: 1;
 }
 
-.barraVida{
+.pokeAdversario {
+    position: absolute;
+    bottom: 40%;
+    left: 60%;
+    width: 15%;
+    z-index: 1;
+}
+
+.barraVida {
     position: absolute;
     width: 200px;
-    height:24px;
+    height: 24px;
 
     background-color: #40ba01;
-    bottom: 80px;
-    left:340px;
+     bottom: 18.4%;
+    left: 30%;
 }
 
-.barraVidaReal{
+.barraVidaReal {
     position: absolute;
     border: solid 2px white;
 
     width: 200px;
-    height:24px;
-
-    bottom: 80px;
-    left:340px;
+    height: 24px;
+    
+    bottom: 18.4%;
+    left: 30%;
 
 }
 
-.barraVidaAdversario{
+.barraVidaAdversario {
     position: absolute;
     width: 200px;
-    height:24px;
+    height: 24px;
     background-color: #40ba01;
 
-    bottom: 310px;
-    left:950px;
+    bottom: 46%;
+    left: 61%;
 }
 
-.barraVidaAdversarioReal{
+.barraVidaAdversarioReal {
     position: absolute;
     border: solid 2px white;
     width: 200px;
-    height:24px;
-    bottom: 310px;
-    left:950px;
+    height: 24px;
+     bottom: 46%;
+    left: 61%;
 
 }
 
 
-.nuvens{
-        position: absolute;
-        width: 400px;
-        top:0px;
-        
+.nuvens {
+    position: absolute;
+    width: 30%;;
+    top: 0%;
+    left: 10%;
 }
 
-.grama{
-    position:absolute;
-    width: 700px;
-    bottom:-160px;
-    left:700px;
-}
-.grama2{
-    position:absolute;
-    width: 700px;
-    bottom:-160px;
-
-    left:0;
-}
-
-.form{
-    z-index:1;
+.grama {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: 0%;
+    left: 0%;
 }
 
 
-.ataqueGrama{
+.form {
+    z-index: 1;
+}
+
+
+.ataqueGrama {
     position: absolute;
     bottom: 190px;
     left: 580px;
     width: 250px;
-    animation: ataqueGrama_movimento 1s  linear;
+    animation: ataqueGrama_movimento 1s linear;
 
 
 }
 
 
 
-@keyframes ataqueGrama_movimento{
+@keyframes ataqueGrama_movimento {
 
-    0%{
+    0% {
         bottom: 190px;
         left: 580px;
 
     }
-    50%{
+
+    50% {
         bottom: 390px;
-        left:780px;
+        left: 780px;
 
 
     }
-    
-    100%{
+
+    100% {
         bottom: 490px;
-        left:880px;
+        left: 880px;
 
     }
 }
@@ -410,7 +171,7 @@
 
 
 
-.ataqueVeneno{
+.ataqueVeneno {
     position: absolute;
     bottom: 190px;
     left: 620px;
@@ -419,4 +180,92 @@
     transform: rotate(40deg);
 
 }
+.fio{
+    transform: translate(-50%,0%) translate3d(0, 0, 0);
+    position: absolute;
+    border: 5px solid green;
+    border-radius: 50%;
+    width: 0%;
+    height: 20%;
+    bottom: -10%;
+    animation: fio 10s infinite linear;
+}
 
+.fio fio1{
+    left: 0%;
+}
+
+.fio fio2{
+    left: 0.2%;
+}
+
+.fio3{
+    left: 0.5%;
+}
+
+.fio4{
+    left: 0.9%;
+}
+
+.fio5{
+    left: 1%;
+}
+.fio6{
+    left: 1.5%;
+}
+.fio7{
+    left: 1.8%;
+}
+
+.fio8{
+    left: 2.1%;
+}
+.fio9{
+    left: 2.6%;
+}
+.fio10{
+    left: 3%;
+}
+.fio11{
+    left: 10.1%;
+}
+.fio12{
+    left: 10.5%;
+}
+.fio13{
+    left: 10.9%;
+}
+.fio14{
+    left: 12%;
+}
+.fio15{
+    left: 12.5%;
+}
+.fio16{
+    left: 13%;
+}
+.fio17{
+    left: 13.5%;
+}
+.fio18{
+    left: 13.9%;
+}
+.fio19{
+    left: 14%;
+}
+.fio20{
+    left: 14.5%;
+}
+
+@keyframes fio {
+      0%, 30%, 50%, 55%, 82%, 97%, 100%{border-top-right-radius: 50%;}
+      20%{border-top-right-radius: 100%;}
+      40%{border-top-right-radius: 500%;}
+      70%{border-top-right-radius: 1000%;}
+      90%{border-top-right-radius: 2000%;}
+}
+
+
+base{
+    border: solid 2px white;
+}

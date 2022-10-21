@@ -1,0 +1,205 @@
+body{
+    height: 100vh;
+    overflow: hidden;    
+    background: linear-gradient( #01000c, #0d0266) no-repeat;
+}
+
+
+
+.campo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.bloco1{
+    position: absolute;
+
+    width: 100%;
+    height: 40px;
+    bottom: 55%;
+    left: 0px;
+}
+
+.bloco2{
+    position: absolute;
+    width:  100%;
+    height: 40px;
+    bottom: 33%;
+    left: 0%;
+}
+
+.bloco3{
+    position: absolute;
+    width:  100%;
+    height: 40px;
+    bottom: 18%;
+    left: 0%;
+}
+
+.bloco4{
+    position: absolute;
+    width:  100%;
+    height: 40px;
+    bottom: 0%;
+    left: 0%;
+}
+
+.escada1{
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    bottom: 0%;
+    left: 20%;
+}
+
+.escada2{
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    bottom: 0%;
+    left: 60%;
+}
+
+
+.escada3{
+    position: absolute;
+    width: 40%;
+    height: 45%;
+    bottom: 13%;
+    left: 10%;
+}
+
+
+.escada4{
+    position: absolute;
+   width: 40%;
+    height: 45%;
+    bottom: 13%;
+    left: 50%;
+    
+}
+
+.escada5{
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    bottom: 23%;
+    left: 30%;
+    
+    
+}
+
+
+.porta1{
+    position: absolute;
+    width: 100px;
+    bottom: 58%;
+    left: 10%;
+    z-index: -1;
+}
+
+
+.porta2{
+    position: absolute;
+    width: 100px;
+    bottom: 58%;
+    left: 30%;
+    z-index: -1;
+
+}
+
+.porta3{
+    position: absolute;
+    width: 100px;
+    bottom: 58%;
+    left: 60%;
+    z-index: -1;
+
+}
+.porta4{
+    position: absolute;
+    width: 100px;
+    bottom: 58%;
+    left: 80%;
+    z-index: -1;
+
+}
+
+
+.personagem{
+    position: absolute;
+    width: 200px;
+    height: 45%;
+    bottom: -2%;
+    left: 0%;
+}
+
+
+.tronco{
+    position: absolute;
+    width: 80px;
+    height: 30%;
+    bottom: 22%;
+    left: 0%;
+}
+
+
+
+#pedra1{
+    animation: pedra_movimento 3s infinite linear;
+
+    width:80px;   
+    position: absolute;
+    bottom: 30%;
+    left:30%;
+ 
+   
+}
+
+#pedra2{
+    animation: pedra_movimento 7s infinite linear;
+
+    width:80px;   
+    position: absolute;
+    bottom: 50%;
+    left: 46%;
+ 
+
+}
+
+#pedra3{
+    animation: pedra_movimento 4s infinite linear;
+
+    width:80px;   
+    position: absolute;
+    bottom:20%;
+    left:65%;
+ 
+   
+}
+#pedra4{
+    animation: pedra_movimento 9s infinite linear;
+
+    width:80px;   
+    position: absolute;
+    bottom: 45%;
+    left:90%;
+   
+}
+
+@keyframes pedra_movimento{
+    0%{
+        top: 0%;
+
+    }
+    50%{
+        top: 50%;
+    }
+    100%{
+        top: 100%;
+
+    }
+}
+     
