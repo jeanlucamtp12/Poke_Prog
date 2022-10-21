@@ -96,6 +96,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         const areaSoltar = (event) => {
             event.preventDefault();
+           
+
         }
 
         const soltarElemento = (event) => {
