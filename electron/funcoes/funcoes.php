@@ -69,13 +69,17 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         </div><br></br>
 
-
+  
         <div class="caixaSelecionados" id="caixaSelecionados" style="display: none; ">
             <div id="slot1" class="filhoCaixaS"></div>
             <div id="slot2" class="filhoCaixaS"></div>
             <div id="slot3" class="filhoCaixaS"></div>
             <div id="slot4" class="filhoCaixaS"></div>
         </div> <br></br>
+
+        <div class="botao">
+          
+        </div>
 
         <div class="caixaResposta" id="caixaResposta" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)" style="display: none; ">
             <img src="../img/funcoes/espiral.gif"></img>
@@ -96,7 +100,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         const areaSoltar = (event) => {
             event.preventDefault();
-           
+
 
         }
 
@@ -137,10 +141,31 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         const resetarTela = (tipoR) => {
+            if (tipoR == "x") {
+                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/x.png'>";
+            } else {
+                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/" + tipoR + ".png'>";
 
-            document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/" + tipoR + ".png'>";
-         
-        } 
+            }
+
+            var continuar = document.createElement('button');
+          
+            continuar.style.width = '10%';
+            continuar.style.left = "46.5%";
+            continuar.style.color = '#f00';
+            continuar.style.background = 'white';
+            continuar.style.position = "absolute";
+
+            var texto = document.createTextNode("Continuar!");
+            continuar.appendChild(texto);
+            continuar.onclick = function() {
+                window.location.reload(true);
+            }
+            document.body.appendChild(continuar);
+
+
+
+        }
 
         const verificaLista = (tiporR) => {
             var grama = 0;
@@ -159,10 +184,9 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         }
                     }
                     if (grama == 4) {
-                        window.alert("Parabens acertou");
                         resetarTela(tipoR);
                     } else {
-                        window.alert("Errou feio parceiro");
+                        resetarTela("x");
 
                     }
                     break;
@@ -174,11 +198,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         }
                     }
                     if (forno == 4) {
-                        window.alert("Parabens acertou");
                         resetarTela(tipoR);
 
                     } else {
-                        window.alert("Errou feio parceiro");
+                        resetarTela("x");
 
                     }
                     break;
@@ -189,11 +212,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         }
                     }
                     if (vento == 4) {
-                        window.alert("Parabens acertou");
                         resetarTela(tipoR);
 
                     } else {
-                        window.alert("Errou feio parceiro");
+                        resetarTela("x");
 
                     }
                     break;
@@ -204,11 +226,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         }
                     }
                     if (frio == 4) {
-                        window.alert("Parabens acertou");
                         resetarTela(tipoR);
 
                     } else {
-                        window.alert("Errou feio parceiro");
+                        resetarTela("x");
 
                     }
                     break;
@@ -219,11 +240,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         }
                     }
                     if (agua == 4) {
-                        window.alert("Parabens acertou");
                         resetarTela(tipoR);
 
                     } else {
-                        window.alert("Errou feio parceiro");
+                        resetarTela("x");
 
                     }
                     break;
