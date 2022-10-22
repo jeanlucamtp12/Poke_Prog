@@ -32,7 +32,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         </div>
 
         <div class="repeticao" >
-            <h4>Lago Repetição</h4>
+            <h4>Lago repetição</h4>
             <a href="repeticao/repeticao.php"><img class="" src="./img/regiao/repeticao.png"></a>
         </div>
 

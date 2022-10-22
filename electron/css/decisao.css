@@ -56,16 +56,16 @@ body {
 
 .poke {
     position: absolute;
-    bottom: 0%;
-    left: 25%;
-    width: 35%;
+    bottom: 25%;
+    left: 30%;
+    width: 15%;
     z-index: 1;
 }
 
 .pokeAdversario {
     position: absolute;
-    bottom: 40%;
-    left: 60%;
+    bottom: 50%;
+    left: 65%;
     width: 15%;
     z-index: 1;
 }
@@ -98,8 +98,8 @@ body {
     height: 24px;
     background-color: #40ba01;
 
-    bottom: 46%;
-    left: 61%;
+    bottom: 85%;
+    left: 70%;
 }
 
 .barraVidaAdversarioReal {
@@ -107,8 +107,8 @@ body {
     border: solid 2px white;
     width: 200px;
     height: 24px;
-     bottom: 46%;
-    left: 61%;
+  bottom: 85%;
+    left: 70%;
 
 }
 
@@ -136,10 +136,11 @@ body {
 
 .ataqueGrama {
     position: absolute;
-    bottom: 190px;
-    left: 580px;
-    width: 250px;
-    animation: ataqueGrama_movimento 1s linear;
+    bottom: 20%;
+    left: 40%;
+    width: 25%;
+    transform: rotate(20deg); 
+    animation: ataqueGrama_movimento 0.9s linear;
 
 
 }
@@ -149,21 +150,21 @@ body {
 @keyframes ataqueGrama_movimento {
 
     0% {
-        bottom: 190px;
-        left: 580px;
+        bottom: 20%;
+        left: 40%;
 
     }
 
     50% {
-        bottom: 390px;
-        left: 780px;
+        bottom: 40%;
+        left: 60%;
 
 
     }
 
     100% {
-        bottom: 490px;
-        left: 880px;
+         bottom: 60%;
+        left: 80%;
 
     }
 }
@@ -173,11 +174,12 @@ body {
 
 .ataqueVeneno {
     position: absolute;
-    bottom: 190px;
-    left: 620px;
-    width: 200px;
+    bottom: 20%;
+    left: 48%;
+    width: 15%;
 
-    transform: rotate(40deg);
+    transform: rotate(60deg);
+    z-index: 1;
 
 }
 .fio{
@@ -268,4 +270,19 @@ body {
 
 base{
     border: solid 2px white;
+}
+
+.caixaFormulario{
+    width: 15%;
+    height: 15%;
+    top: 5%;
+    left: 40%;
+    position: absolute;
+    border: solid 2px white;
+    background-color: white;
+}
+
+.caixaFormulario form{
+    width: 100%;
+
 }

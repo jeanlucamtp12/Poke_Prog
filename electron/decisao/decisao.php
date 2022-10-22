@@ -26,11 +26,11 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         <img class="poke" src="../img/decisao/bulbasaur.gif">
 
-         <img class="pokeAdversario" src="../img/decisao/arbok.gif">  
+        <img class="pokeAdversario" src="../img/decisao/arbok.gif">
 
 
 
-       
+
         <div class="grass">
             <div class="fio fio1"></div>
             <div class="fio fio2"></div>
@@ -46,8 +46,13 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <div class="fio fio12"></div>
             <div class="fio fio13"></div>
             <div class="fio fio14"></div>
-            <div class="fio fio15"></div><div class="fio fio16"></div><div class="fio fio17"></div><div class="fio fio18"></div><div class="fio fio19"></div><div class="fio fio20"></div>
-            
+            <div class="fio fio15"></div>
+            <div class="fio fio16"></div>
+            <div class="fio fio17"></div>
+            <div class="fio fio18"></div>
+            <div class="fio fio19"></div>
+            <div class="fio fio20"></div>
+
         </div>
 
 
@@ -62,7 +67,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <img class="jogador" src="../img/decisao/menino.png"> </img>
         <img class="adversario" src="../img/decisao/adversario.png"> </img>
 
-      
+
         <div id="barraVidaAdversario" class="barraVidaAdversario">HP</div>
         <div class="barraVidaAdversarioReal"></div>
 
@@ -80,50 +85,56 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-
-        <span>
-
+        <div class="caixaFormulario">
             <div class="form" id="form" method="POST">
 
-                |<div class="d-flex justify-content-center">
-                    <div justify-content-center>
-                        <div text-align: center>
-                            <div text-align: center>
-                                <form>
+                <form>
 
-                                    <div">
-                                        <div>
-                                            <label for="nome">Num = 2 <br>&nbsp if (Num == 2){<br>&nbsp print(Num)<br>} <br><br>O print será exibido??</label>
-                                            <input type="text" class="form-control" id="resposta">
-                                        </div>
-
-
-                                        <div class="form-group col-md-6">
-
-                                            <button class="btn btn-primary">Enviar</button>
-
-                                        </div>
-                                </form>
-
-                            </div>
-                        </div>
+                    <div>
+                        <label id="nome" for="nome"> 1 > 2?</label>
+                        <input type="text" class="form-control" id="resposta">
                     </div>
-                </div>
-
-
-
+                    <button class="btn btn-primary">Enviar</button>
+                </form>
 
 
             </div>
-        </span>
 
 
 
+
+        </div>
     </div>
 
 
 
+
+
+
     <script>
+        var i = 1;
+        var jogador = 0;
+        var adversario = 0;
+
+
+        const realizaAtaque = (resposta) => {
+
+            if (resposta == "grama") {
+
+                document.getElementById("ataqueGrama").style.display = "block";
+                setTimeout(function() {
+                    pararAnimacao(1)
+                }, 1000);
+
+
+            } else {
+                document.getElementById("ataqueVeneno").style.display = "block";
+                setTimeout(function() {
+                    pararAnimacao(2)
+                }, 1000);
+            }
+        }
+
         $('#form').submit(function(evento) { //utilização de ajax para realizar o envio do form sem atualizar a pagina 
 
             evento.preventDefault();
@@ -142,21 +153,108 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
             }).done(function(result) {
 
+                switch (i) {
+                    case 1:
+                        if (resposta == "sim" || resposta == "verdade") {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        } else {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        }
+                        document.getElementById('nome').innerHTML = ' 26, 24, 20, 18, 14,... Qual é o próximo?'; 
+                        i = i + 1;
+                        break;
+                    case 2:
+                        if (resposta == "12" ) {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        } else {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        }
+                        document.getElementById('nome').innerHTML = ' O valor de pi é aproximadamente 3,131415...?';
+                        i = i + 1;
+                        break;
+                    case 3:
+                        if (resposta == "sim" || resposta == "verdade") {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        } else {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        }
+                        document.getElementById('nome').innerHTML = '20 = 25?';
+                        i = i + 1;
+                        break;
+                    case 4:
+                        if (resposta == "sim" || resposta == "verdade") {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        } else {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        }
+                        document.getElementById('nome').innerHTML = 'Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
+                        i = i + 1;
+                        break;
 
-                if (resposta == "sim") {
-
-                    document.getElementById("ataqueGrama").style.display = "block";
-                    setTimeout(function() {
-                        pararAnimacao(1)
-                    }, 1000);
-
-
-                } else {
-                    document.getElementById("ataqueVeneno").style.display = "block";
-                    setTimeout(function() {
-                        pararAnimacao(2)
-                    }, 1000);
+                    case 5:
+                        if (resposta == "18") {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        } else {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        }
+                        document.getElementById('nome').innerHTML = 'Quantos números 1 eu tenho de 1 até 191?';
+                        i = i + 1;
+                        break;
+                    case 6:
+                        if (resposta == "132") {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        } else {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        }
+                        document.getElementById('nome').innerHTML = 'Quanto é o dobro 1500?';
+                        i = i + 1;
+                        break;
+                    case 7:
+                        if (resposta == "3000") {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        } else {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        }
+                        document.getElementById('nome').innerHTML = 'DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?';
+                        i = i + 1;
+                        break;
+                    case 8:
+                        if ( resposta == "sim" || resposta == "verdade"  || resposta == "v") {
+                            realizaAtaque("grama");
+                            jogador = jogador + 1; 
+                        } else {
+                            realizaAtaque("veneno");
+                            adversario = adversario + 1;
+                        }
+                        i = i + 1;
+                        break;
+                        
                 }
+
+                if(jogador == 5){
+                    window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
+                    window.location.href = "http://localhost/jogo/electron/city.php";
+                }else if(adversario == 5){
+                    window.alert("Você perdeu. Tente novamente!");
+                    window.location.href = "http://localhost/jogo/electron/decisao/decisao.php";
+                }
+
+
+
 
             });
         });
@@ -177,7 +275,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                 console.log(vida);
 
-                var vida = document.getElementById("barraVidaAdversario").style.width = vida - 50 + "px";
+                var vida = document.getElementById("barraVidaAdversario").style.width = vida - 40 + "px";
             } else {
                 document.getElementById("ataqueVeneno").style.display = "none";
                 //$('#barraVidaAdversario').width("150px");
@@ -188,7 +286,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                 console.log(vida);
 
-                var vida = document.getElementById("barraVida").style.width = vida - 50 + "px";
+                var vida = document.getElementById("barraVida").style.width = vida - 40 + "px";
 
             }
 

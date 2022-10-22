@@ -1,6 +1,7 @@
 body{
     height: 100vh;
-    background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
+	overflow: hidden;
+	background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
 }
 
 img {
@@ -57,7 +58,7 @@ img:hover{
 
 .trofeu{
 	position: absolute;
-	transform: translate(680%, 50%);
+	transform: translate(760%, 50%);
 }
 
 .linha1{
@@ -146,7 +147,7 @@ img:hover{
 
 .linha7{
 	border: solid 15px #cc7203;
-	left: 980px;
+	left: 1100px;
 	transform: rotate(90deg);
 	bottom: -240px;
 	position: absolute;
@@ -154,5 +155,34 @@ img:hover{
 	z-index: -1;	
 }
 
+.linha7-1{
+	border: solid 15px #cc7203;
+	left: 980px;
+	transform: rotate(0deg);
+	bottom: -340px;
+	position: absolute;
+	width: 200px;
+	z-index: -1;	
+}
+
+
+.mapa h4{
+	color: white;
+	display: center;
+	justify-content: center;
+	align-items: center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+.mapa h2{
+	width: 20%;
+	color: white;
+	display: center;
+	justify-content: center;
+	align-items: center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
 
 

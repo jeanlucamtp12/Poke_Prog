@@ -165,6 +165,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
        // var combeeShiny = document.querySelector('.combeeShiny');
         var troncos = document.querySelector('.troncos');
         var timburr = document.querySelector('.timburr');
+        var staryu = document.querySelector('.staryu');
+        var bolhas = document.querySelector('.bolhas');
         var entrada = document.querySelector('.entrada');
         var tijolo = document.querySelector('.tijolo');
 
@@ -191,8 +193,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
             posicaoTimburr = timburr.offsetLeft;
 
-            console.log("Bottom e left: ",posicaoTimburrPulo )
+            posicaoStaryu = staryu.offsetLeft;
+            posicaoBolhas = bolhas.offsetLeft;
 
+        
             if(valorConvertidoTimburr >= 120 && (posicaoTimburr >= 360 && posicaoTimburr <= 470)){
                 personagem.style.bottom = "200px";
                 document.documentElement.style.setProperty('--my-start-bottom', '200px');
@@ -207,8 +211,18 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
             }
 
+            if((posicaoTimburr >= 500 && posicaoTimburr <= 550) && (posicaoStaryu >= 500 && posicaoStaryu <= 550)){
+                window.alert("Bateu!");
+            }
             
-            console.log("timburr: " + posicaoTimburr);
+         
+
+
+            if(Math.floor(posicaoBolhas) == posicaoTimburr ){
+                window.alert("Bateu!");
+            }
+            
+        
 
             //console.log(window.getComputedStyle(timburr).bottom);
             posicaoTroncos = troncos.offsetLeft;
@@ -226,6 +240,11 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 document.getElementById("madeira").style.display = "none";
 
                 tronco = tronco + 1;
+
+                if(tronco == 10){
+                    window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
+                    window.location.href = "http://localhost/jogo/electron/city.php";
+                }
             }
 
 

@@ -141,22 +141,26 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         const resetarTela = (tipoR) => {
-            if (tipoR == "x") {
-                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/x.png'>";
-            } else {
-                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/" + tipoR + ".png'>";
-
-            }
-
             var continuar = document.createElement('button');
           
             continuar.style.width = '10%';
             continuar.style.left = "46.5%";
             continuar.style.color = '#f00';
             continuar.style.background = 'white';
-            continuar.style.position = "absolute";
+            continuar.style.position = "absolute"
 
-            var texto = document.createTextNode("Continuar!");
+            if (tipoR == "x") {            
+                var texto = document.createTextNode("Tentar Novamente!");
+                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/x.png'>";
+            } else {
+                var texto = document.createTextNode("Continuar!");
+                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/" + tipoR + ".png'>";
+
+            }
+
+         
+
+            
             continuar.appendChild(texto);
             continuar.onclick = function() {
                 window.location.reload(true);

@@ -320,7 +320,7 @@
 
 
 .bolhas {
-    animation: bolhas_movimento 3s infinite linear;
+    animation: bolhas_movimento 4s infinite linear;
 
     position: absolute;
 
@@ -505,7 +505,7 @@
 .goldeen{
     width: 150px;
     position: absolute;
-    left: 1100px;
+    left: 1150px;
     bottom: -40px;
 }
 

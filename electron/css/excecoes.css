@@ -261,7 +261,7 @@ body {
 
 .gasly{
     position: absolute;
-    width: 300px;
+    width: 12%;
     z-index: 1;
     cursor: pointer;
 
@@ -412,8 +412,9 @@ body {
 
 .banette{
     position: absolute;
-    width: 300px;
+    width: 12%;
     z-index: 1;
+    bottom: 0%;
     cursor: pointer;
 
 
@@ -421,25 +422,25 @@ body {
 }
 
 .banette1{
-    bottom: -30px;
+   
     animation: banette_movimento 10s infinite linear;
 
 }
 .banette2{
     right: 600px;
-    bottom: -30px;
+  
     animation: banette_movimento 15s infinite linear;
 
 }
 .banette3{
     right: 200px;
-    bottom: -30px;
+  
     animation: banette_movimento 20s infinite linear;
 
 }
 .banette4{ 
     right: 400px;
-    bottom: -30px;
+   
     animation: banette_movimento 25s infinite linear;
 
 }
@@ -464,7 +465,7 @@ body {
 
 .frillish{
     position: absolute;
-    width: 300px;
+    width: 13%;
     z-index: 1;
     cursor: pointer;
 
@@ -472,24 +473,22 @@ body {
 }
 
 .frillish1{
-    bottom: -30px;
+   
     animation: frillish_movimento 10s infinite linear;
 
 }
 .frillish2{
-    right: 600px;
-    bottom: -30px;
+   
     animation: frillish_movimento 15s infinite linear;
 
 }
 .frillish3{
-    right: 200px;
+   
     animation: frillish_movimento 20s infinite linear;
 
 }
 .frillish4{ 
-    right: 400px;
-    bottom: -30px;
+   
     animation: frillish_movimento 25s infinite linear;
 
 }
@@ -535,7 +534,7 @@ body {
 
 .litwick{
     position: absolute;
-    width: 300px;
+    width: 10%;
     z-index: 1;
     cursor: pointer;
 
@@ -543,26 +542,26 @@ body {
 }
 
 .litwick1{
-    bottom: -150px;
+   left: 10%;
     animation: litwick_movimento 5s infinite linear;
 
 
 }
 .litwick2{
-    right: 600px;
-    bottom: -150px;
+    left: 25%;
+   
     animation: litwick_movimento 5s infinite linear;
 
 }
 .litwick3{
-    right: 200px;
-    bottom: -150px;
+    left: 50%;
+  
     animation: litwick_movimento 5s infinite linear;
 
 }
 .litwick4{ 
-    right: 400px;
-    bottom: -150px;
+   left: 80%;
+ 
     animation: litwick_movimento 5s infinite linear;
 
 
@@ -571,56 +570,56 @@ body {
 
 @keyframes litwick_movimento{
     0%{
-        bottom: -150px;
+        bottom: -10%;
         transform: rotate(0deg);
 
 
     }
     15%{
-        bottom: -60px;
+        bottom: 1%;
         transform: rotate(0deg);
 
 
     }
     20%{
-        bottom: -80px;
+        bottom: 2%;
         transform: rotate(0deg);
 
     } 
     30%{
-        bottom: -600px;
+        bottom: -2%;
         transform: rotate(0deg);
 
     } 
     40%{
-        bottom: -150px;
+        bottom: -5%;
         transform: rotate(0deg);
 
     } 
 
     50%{
         transform: rotate(190deg);
-        top: -290px;
+        top: -50%;
 
     }
 
     55%{
-        top: -190px;
+        top: 0%;
 
     } 
 
     85%{
-        top: -80px;
+        top: 2%;
         transform: rotate(190deg);
 
     }
     90%{
-        top: -50px;
+        top: 1%;
         transform: rotate(190deg);
 
     }
     100%{
-        top: -190px;
+        top: -10%;
         transform: rotate(190deg);
 
     }
@@ -634,7 +633,7 @@ body {
 
 .shedinja{
     position: absolute;
-    width: 300px;
+    width: 11%;
     z-index: 1;
     cursor: pointer;
 
@@ -642,28 +641,24 @@ body {
 }
 
 .shedinja1{
-    bottom: -150px;
-    right: 0px;
+   
     animation: shedinja_movimento 10s infinite linear;
 
 
 
 }
 .shedinja2{
-    right: 600px;
-    bottom: -150px;
+   
     animation: shedinja_movimento 12s infinite linear;
 
 }
 .shedinja3{
-    right: 200px;
-    bottom: -150px;
+   
     animation: shedinja_movimento 14s infinite linear;
 
 }
 .shedinja4{ 
-    right: 400px;
-    bottom: -150px;
+
     animation: shedinja_movimento 16s infinite linear;
 
 

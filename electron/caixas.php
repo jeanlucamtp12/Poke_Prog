@@ -75,7 +75,7 @@
                  
                     if (tipoCaixa.includes("Numero = 222")) {
                         window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                        window.history.go(-2);
+                        window.location.href = "http://localhost/jogo/electron/city.php";
                     }
                 } else {
                     window.alert("Resposta Errada");
