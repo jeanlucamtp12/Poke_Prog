@@ -1,5 +1,5 @@
 *{
-    background-color: blue;
+    background-color: #141472;
 }
 
 .tela{
@@ -61,5 +61,11 @@
 
 .filhoCaixaS img{
     width: 60px;
+
+}
+
+.tela h6{
+	color: white;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
 
 }

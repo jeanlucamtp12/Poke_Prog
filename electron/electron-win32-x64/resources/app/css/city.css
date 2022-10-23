@@ -1,9 +1,188 @@
-#tela-cheia{
+body{
+    height: 100vh;
+	overflow: hidden;
+	background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
+}
 
-    width: 100%;
-	height: 728px;
-	position: relative;
-
-    
+img {
+    border-radius: 30%;
+	width: 150px;
+}
+img:hover{
+	transform: scale(1.5);
 
 }
+.mapa{
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-left: 100px;
+}
+
+.variaveis{
+	position: absolute;
+	transform: translate(30%, 30%);
+}
+
+.decisao{
+	position: absolute;
+	transform: translate(100%, 150%);
+}
+
+.repeticao{
+	position: absolute;
+	transform: translate(250%, 150%);
+}
+
+.arrays{
+	position: absolute;
+	transform: translate(325%, 30%);
+}
+
+.funcoes{
+	position: absolute;
+	transform: translate(450%, 30%);
+}
+
+.excecoes{
+	position: absolute;
+	transform: translate(550%, 150%);
+}
+
+
+.recursividade{
+	position: absolute;
+	transform: translate(680%, 150%);
+}
+
+.trofeu{
+	position: absolute;
+	transform: translate(760%, 50%);
+}
+
+.linha1{
+	border: solid 15px #cc7203;
+	left: 10px;
+	bottom: -250px;
+	position: absolute;
+	transform: rotate(90deg);
+	width: 180px;
+	z-index: -1;
+}
+
+.linha1-1{
+	border: solid 15px #cc7203;
+	left: 100px;
+	bottom: -350px;
+	position: absolute;
+	width: 80px;
+	z-index: -1;
+}
+
+.linha2{
+	border: solid 15px #cc7203;
+	left: 200px;
+	bottom: -350px;
+	position: absolute;
+	width: 180px;
+	z-index: -1;
+}
+
+.linha3{
+	border: solid 15px #cc7203;
+	left: 450px;
+	bottom: -220px;
+	position: absolute;
+	width: 180px;
+	transform: rotate(-90deg);
+	z-index: -1;	
+}
+.linha3-3{
+	border: solid 15px #cc7203;
+	left: 450px;
+	bottom: -340px;
+	position: absolute;
+	width: 90px;
+	z-index: -1;	
+}
+
+.linha4{
+	border: solid 15px #cc7203;
+	left: 550px;
+	bottom: -100px;
+	position: absolute;
+	width: 180px;
+	z-index: -1;	
+}
+
+
+.linha5{
+	border: solid 15px #cc7203;
+	left: 650px;
+	bottom: -250px;
+	position: absolute;
+	transform: rotate(90deg);
+	width: 180px;
+	z-index: -1;	
+}
+.linha5-5{
+	border: solid 15px #cc7203;
+	left: 750px;
+	bottom: -340px;
+	position: absolute;
+	width: 50px;
+	z-index: -1;	
+}
+
+.linha6{
+	border: solid 15px #cc7203;
+	left: 820px;
+	bottom: -340px;
+	position: absolute;
+	width: 200px;
+	z-index: -1;	
+}
+
+
+.linha7{
+	border: solid 15px #cc7203;
+	left: 1100px;
+	transform: rotate(90deg);
+	bottom: -240px;
+	position: absolute;
+	width: 200px;
+	z-index: -1;	
+}
+
+.linha7-1{
+	border: solid 15px #cc7203;
+	left: 980px;
+	transform: rotate(0deg);
+	bottom: -340px;
+	position: absolute;
+	width: 200px;
+	z-index: -1;	
+}
+
+
+.mapa h4{
+	color: white;
+	display: center;
+	justify-content: center;
+	align-items: center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+.mapa h2{
+	width: 20%;
+	color: white;
+	display: center;
+	justify-content: center;
+	align-items: center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+

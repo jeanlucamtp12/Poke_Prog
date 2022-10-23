@@ -13,7 +13,7 @@ app.whenReady().then(() => {
 
 
     //carregando a pagina html
-    janela.loadFile('index.html');
+    janela.loadFile('city.html');
 
     //carregando o console 
     janela.webContents.openDevTools();

@@ -1,49 +1,55 @@
-<?php
-
-
-/*
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "poke_city";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-$sql = mysqli_query($conn, "SELECT *
-                        FROM caixas
-                        WHERE status = 'nao'
-                        ");
-
-
-
-while ($tabela = mysqli_fetch_object($sql)) {
-      $frase = $tabela->frase;
-
-}
-
-$sql = mysqli_query($conn, "UPDATE caixas 
-            SET status = 'feito'
-            WHERE frase = '$frase' ");
-
-
-
-*/
-?> 
-
-
 <script>
     var palavra = '';
+    var i = 1;
+    var lista = [];
 
+
+    const itemSelecionado = (event) => {
+        event.dataTransfer.setData("img", event.target.id.replace('U', ''));
+
+    }
+
+    const areaSoltar = (event) => {
+        event.preventDefault();
+
+
+    }
+
+    const soltarElemento = (event) => {
+        event.preventDefault();
+
+        var imagem = event.dataTransfer.getData("img");
+        var slot = "slot" + i;
+
+        document.getElementById(slot).innerHTML = "<img src='./img/unowns/" + imagem + ".gif'>";
+
+        i = i + 1;
+
+        palavra = palavra + imagem;
+
+        console.log("A palavra e ", imagem);
+
+        lista.push(imagem);
+
+
+
+    }
+
+    const limparUnowns = (i) =>{
+
+        for (j = 1; j < i; j++){
+              document.getElementById("slot" + j).style.display='none';
+        }
+        i = 1;
+    }
 
     const verificaTipo = () => {
 
 
-         
+
         var tipoCaixa = document.getElementById("alterar").innerText;
         var limparTela = document.getElementsByClassName("caixaLetras");
-        console.log("Antes" + palavra);
+        //console.log("Antes" + palavra);
 
         //var limparTela = document.querySelectorAll("#aU, #bU, #iU, #nU, #tU").remove();
 
@@ -56,15 +62,25 @@ $sql = mysqli_query($conn, "UPDATE caixas
                 if (tipoCaixa.includes("Numero")) {
 
                     window.alert("Resposta Certa. Vamos ao proximo!");
+
+
+
+                    
+                    limparUnowns(i);
+                  
+
+
                     document.getElementById('alterar').innerHTML = 'Nome = "Ana"';
                     palavra = '';
-                    if(tipoCaixa.includes("Numero = 222")){
+                 
+                    if (tipoCaixa.includes("Numero = 222")) {
                         window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                        window.history.go(-2); 
+                        window.location.href = "http://localhost/jogo/electron/city.php";
                     }
-                }else{
+                } else {
                     window.alert("Resposta Errada");
                     palavra = '';
+                    limparUnowns(i);
                 }
                 break;
 
@@ -74,9 +90,11 @@ $sql = mysqli_query($conn, "UPDATE caixas
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Numero = 2,22';
                     palavra = '';
-                }else{
+                    limparUnowns(i);
+                } else {
                     window.alert("Resposta Errada");
                     palavra = '';
+                    limparUnowns(i);
 
                 }
                 break;
@@ -87,9 +105,11 @@ $sql = mysqli_query($conn, "UPDATE caixas
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Numero = 222';
                     palavra = '';
-                }else{
+                    limparUnowns(i);
+                } else {
                     window.alert("Resposta Errada");
                     palavra = '';
+                    limparUnowns(i);
 
                 }
                 break;
@@ -100,9 +120,11 @@ $sql = mysqli_query($conn, "UPDATE caixas
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Dado = Falso';
                     palavra = '';
-                }else{
+                    limparUnowns(i);
+                } else {
                     window.alert("Resposta Errada");
                     palavra = '';
+                    limparUnowns(i);
 
                 }
                 break;
@@ -111,6 +133,7 @@ $sql = mysqli_query($conn, "UPDATE caixas
                 console.log("eroooou");
                 window.alert("Resposta Errada");
                 palavra = '';
+                limparUnowns(i);
                 //window.location.reload(false);
                 //document.querySelectorAll("#a, #b, #c, #d, #e, #f, #g, #h, #i,#h, #k, #l, #m, #n, #o, #p, #q, #r, #s, #t,#u, #v, #w, #x, #y, #z,  #n").forEach(e => e.remove());
 
@@ -195,9 +218,9 @@ $sql = mysqli_query($conn, "UPDATE caixas
 
 <body>
 
-<img id="j" src="./img/unowns/j.gif">
-<img id="h" src="./img/unowns/h.gif">
-<img id="e" src="./img/unowns/e.gif">
+    <img id="j" src="./img/unowns/j.gif">
+    <img id="h" src="./img/unowns/h.gif">
+    <img id="e" src="./img/unowns/e.gif">
 
     <div class="tamanhoTela">
 
@@ -215,122 +238,122 @@ $sql = mysqli_query($conn, "UPDATE caixas
 
             <div class="filhoTela">
                 <div class="teclado">
-                    
+
                     <h1>Teclado Unowm</h1>
                     <div class="caixaTeclado">
                         <h6>A</h6>
-                        <img class="circles" id="aU" src="./img/unowns/a.gif" onclick="mapearUnowm('aU')">
+                        <img class="circles" id="aU" src="./img/unowns/a.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>B</h6>
-                        <img class="circles" id="bU" src="./img/unowns/b.gif" onclick="mapearUnowm('bU')">
+                        <img class="circles" id="bU" src="./img/unowns/b.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>C</h6>
-                        <img class="circles" id="cU" src="./img/unowns/c.gif" onclick="mapearUnowm('cU')">
+                        <img class="circles" id="cU" src="./img/unowns/c.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>D</h6>
-                        <img class="circles" id="dU" src="./img/unowns/d.gif" onclick="mapearUnowm('dU')">
+                        <img class="circles" id="dU" src="./img/unowns/d.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>E</h6>
-                        <img class="circles" id="eU" src="./img/unowns/e.gif" onclick="mapearUnowm('eU')">
+                        <img class="circles" id="eU" src="./img/unowns/e.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>F</h6>
-                        <img class="circles" id="fU" src="./img/unowns/f.gif" onclick="mapearUnowm('fU')" ;>
+                        <img class="circles" id="fU" src="./img/unowns/f.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>G</h6>
-                        <img class="circles" id="gU" src="./img/unowns/g.gif" onclick="mapearUnowm('gU')" ;>
+                        <img class="circles" id="gU" src="./img/unowns/g.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>H</h6>
-                        <img class="circles" id="hU" src="./img/unowns/h.gif" onclick="mapearUnowm('hU')" ;>
+                        <img class="circles" id="hU" src="./img/unowns/h.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>I</h6>
-                        <img class="circles" id="iU" src="./img/unowns/i.gif" onclick="mapearUnowm('iU')" ;>
+                        <img class="circles" id="iU" src="./img/unowns/i.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>J</h6>
-                        <img class="circles" id="jU" src="./img/unowns/j.gif" onclick="mapearUnowm('jU')" ;>
+                        <img class="circles" id="jU" src="./img/unowns/j.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>K</h6>
-                        <img class="circles" id="kU" src="./img/unowns/k.gif" onclick="mapearUnowm('kU')" ;>
+                        <img class="circles" id="kU" src="./img/unowns/k.gif" ondragstart="itemSelecionado(event)">
                     </div>
 
                     <div class="caixaTeclado">
                         <h6>L</h6>
-                        <img class="circles" id="lU" src="./img/unowns/l.gif" onclick="mapearUnowm('lU')" ;>
+                        <img class="circles" id="lU" src="./img/unowns/l.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>M</h6>
-                        <img class="circles" id="mU" src="./img/unowns/m.gif" onclick="mapearUnowm('mU')" ;>
+                        <img class="circles" id="mU" src="./img/unowns/m.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>N</h6>
-                        <img class="circles" id="nU" src="./img/unowns/n.gif" onclick="mapearUnowm('nU')" ;>
+                        <img class="circles" id="nU" src="./img/unowns/n.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>O</h6>
-                        <img class="circles" id="oU" src="./img/unowns/o.gif" onclick="mapearUnowm('oU')" ;>
+                        <img class="circles" id="oU" src="./img/unowns/o.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>P</h6>
-                        <img class="circles" id="pU" src="./img/unowns/p.gif" onclick="mapearUnowm('pU')" ;>
+                        <img class="circles" id="pU" src="./img/unowns/p.gif" ondragstart="itemSelecionado(event)">
                     </div>
 
                     <div class="caixaTeclado">
                         <h6>Q</h6>
-                        <img class="circles" id="qU" src="./img/unowns/q.gif" onclick="mapearUnowm('qU')" ;>
+                        <img class="circles" id="qU" src="./img/unowns/q.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>R</h6>
-                        <img class="circles" id="rU" src="./img/unowns/r.gif" onclick="mapearUnowm('rU')" ;>
+                        <img class="circles" id="rU" src="./img/unowns/r.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>S</h6>
-                        <img class="circles" id="sU" src="./img/unowns/s.gif" onclick="mapearUnowm('sU')" ;>
+                        <img class="circles" id="sU" src="./img/unowns/s.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>T</h6>
-                        <img class="circles" id="tU" src="./img/unowns/t.gif" onclick="mapearUnowm('tU')" ;>
+                        <img class="circles" id="tU" src="./img/unowns/t.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>U</h6>
-                        <img class="circles" id="uU" src="./img/unowns/u.gif" onclick="mapearUnowm('uU')" ;>
+                        <img class="circles" id="uU" src="./img/unowns/u.gif" ondragstart="itemSelecionado(event)">
                     </div>
 
                     <div class="caixaTeclado">
                         <h6>V</h6>
-                        <img class="circles" id="vU" src="./img/unowns/v.gif" onclick="mapearUnowm('vU')" ;>
+                        <img class="circles" id="vU" src="./img/unowns/v.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>W</h6>
-                        <img class="circles" id="wU" src="./img/unowns/w.gif" onclick="mapearUnowm('wU')" ;>
+                        <img class="circles" id="wU" src="./img/unowns/w.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>X</h6>
-                        <img class="circles" id="xU" src="./img/unowns/x.gif" onclick="mapearUnowm('xU')" ;>
+                        <img class="circles" id="xU" src="./img/unowns/x.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>Y</h6>
-                        <img class="circles" id="yU" src="./img/unowns/y.gif" onclick="mapearUnowm('yU')" ;>
+                        <img class="circles" id="yU" src="./img/unowns/y.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>Z</h6>
-                        <img class="circles" id="zU" src="./img/unowns/z.gif" onclick="mapearUnowm('zU')" ;>
+                        <img class="circles" id="zU" src="./img/unowns/z.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>?</h6>
-                        <img class="circles" id="áU" src="./img/unowns/á.gif" onclick="mapearUnowm('áU')" ;>
+                        <img class="circles" id="áU" src="./img/unowns/á.gif" ondragstart="itemSelecionado(event)">
                     </div>
                     <div class="caixaTeclado">
                         <h6>!</h6>
-                        <img class="circles" id="éU" src="./img/unowns/é.gif" onclick="mapearUnowm('éU')" ;>
+                        <img class="circles" id="éU" src="./img/unowns/é.gif" ondragstart="itemSelecionado(event)">
 
                     </div>
                 </div>
@@ -346,16 +369,49 @@ $sql = mysqli_query($conn, "UPDATE caixas
 
             </div>
 
-            <div class="filhoTela">
-                <div class="caixaResposta">
-                    <div class="caixaLetras">
-                        <span id="a"></span> <span id="b"></span> <span id="c"> </span> <span id="d"></span> <span id="e"></span><span id="f"></span><span id="g"></span> <span id="h"></span> <span id="i"></span> <span id="j"></span> <span id="k"></span> <span id="l"></span> <span id="m"></span> <span id="n"></span> <span id="o"></span><span id="p"></span><span id="q"></span> <span id="r"></span> <span id="s"></span> <span id="t"></span><span id="u"></span><span id="v"></span> <span id="w"></span> <span id="x"></span> <span id="y"></span><span id="z"></span><span id="áU"></span> <span id="éU"></span>
-                    <button id="botaoResposta" onclick="verificaTipo()">Enviar</button>
+            <div class="caixaResposta" id="caixaResposta" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)">
 
-                    </div>
+                <div id="slot1" class="filhoCaixaS"></div>
+                <div id="slot2" class="filhoCaixaS"></div>
+                <div id="slot3" class="filhoCaixaS"></div>
+                <div id="slot4" class="filhoCaixaS"></div>
+                <div id="slot5" class="filhoCaixaS"></div>
+                <div id="slot6" class="filhoCaixaS"></div>
+                <div id="slot7" class="filhoCaixaS"></div>
+                <div id="slot8" class="filhoCaixaS"></div>
+                <div id="slot9" class="filhoCaixaS"></div>
+                <div id="slot10" class="filhoCaixaS"></div>
+                <div id="slot11" class="filhoCaixaS"></div>
+                <div id="slot12" class="filhoCaixaS"></div>
+                <div id="slot13" class="filhoCaixaS"></div>
+                <div id="slot14" class="filhoCaixaS"></div>
+                <div id="slot15" class="filhoCaixaS"></div>
+                <div id="slot16" class="filhoCaixaS"></div>
+                <div id="slot17" class="filhoCaixaS"></div>
+                <div id="slot18" class="filhoCaixaS"></div>
+                <div id="slot19" class="filhoCaixaS"></div>
+                <div id="slot20" class="filhoCaixaS"></div>
+                <div id="slot21" class="filhoCaixaS"></div>
+                <div id="slot22" class="filhoCaixaS"></div>
+                <div id="slot23" class="filhoCaixaS"></div>
+                <div id="slot24" class="filhoCaixaS"></div>
+                <div id="slot25" class="filhoCaixaS"></div>
+                <div id="slot26" class="filhoCaixaS"></div>
+                <div id="slot27" class="filhoCaixaS"></div>
+                <div id="slot28" class="filhoCaixaS"></div>
+                <div id="slot29" class="filhoCaixaS"></div>
+                <div id="slot30" class="filhoCaixaS"></div>
+                <div id="slot31" class="filhoCaixaS"></div>
+                <div id="slot32" class="filhoCaixaS"></div>
+                <div id="slot33" class="filhoCaixaS"></div>
+                <div id="slot34" class="filhoCaixaS"></div>
+                <div id="slot35" class="filhoCaixaS"></div>
+                <div id="slot36" class="filhoCaixaS"></div>
+                <div id="slot37" class="filhoCaixaS"></div>
 
-                </div>
+                <button id="botaoResposta" onclick="verificaTipo()">Enviar</button>
             </div>
+
 
 
 
