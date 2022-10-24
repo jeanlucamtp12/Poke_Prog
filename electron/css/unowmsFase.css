@@ -3,148 +3,52 @@ body {
     padding: 0;
     background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
 
+    overflow: hidden;  
 
 }
 
-#espaco {
-    position: absolute;
-    left: 45%;
-    display: inline-block;
-    width: 100;
-    line-height: 30px;
-    padding: 7px 10px;
-    background-color: #000000;
-    color: #FFF;
-    border-radius: 90px;
-    text-decoration: none;
-    animation: pulsa 1.5s linear infinite;
-
-
-}
-
-/*#caixa {
-
-    left: 45%;
-
-    width: 150px;
-    position: absolute;
-    bottom: 430px;
-
-}
-*/
-
-
-
-
-.fundo_unowns {
-    position: relative;
-    height: 100vh;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-
-}
 
 h1 {
     text-align: center;
     padding: 10px;
 }
 
-#a {
 
-    width: 100px;
-    position: absolute;
-    bottom: 150px;
 
-}
 
-#b {
-
-    width: 100px;
-    position: absolute;
-    bottom: 40px;
-
-}
-
-#c {
-
-    width: 100px;
-    position: absolute;
-    bottom: 260px;
-
-}
-
-#d {
-
-    width: 100px;
-    position: absolute;
-    bottom: 330px;
-
-}
 
 #e {
 
-    width: 100px;
+    width: 5%;
     position: absolute;
     right: 0;
-    bottom: 10px;
+    bottom: 20%;
 
 }
 
-#f {
 
-    width: 100px;
-    position: absolute;
-    bottom: 100px;
-    right: 0;
-
-
-}
-
-#g {
-
-    width: 80px;
-    position: absolute;
-    bottom: 210px;
-    right: 0;
-
-
-}
 
 #h {
 
-    width: 100px;
+    width: 5%;
     position: absolute;
-    bottom: 500;
+    bottom: 70%;
     right: 0;
 
 
 }
 
-#i {
 
-    width: 100px;
-    position: absolute;
-    bottom: 0px;
-
-}
 
 #j {
 
-    width: 130px;
+    width: 5%;
     position: absolute;
-    bottom: 510px
+    bottom: 0%;
 }
 
-#k {
-
-    width: 100px;
-    position: absolute;
-    bottom: 410px;
-    right: 0;
 
 
-}
 
 
 
@@ -260,6 +164,7 @@ h2 {
 
 .tamanhoTela {
     padding: 10px;
+   
 
     display: flex;
 
@@ -316,8 +221,9 @@ h2 {
 
 
 .inicial {
-    float: right;
-
+    position: absolute;
+    left: 90%;
+    top: 1%;
 
 
 }
