@@ -76,11 +76,11 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
                     const falink = document.querySelector('#falink');
-                    const posicoesFalinks = ["220", "520", "720", "1020"];
+                    const posicoesFalinks = ["12", "27", "37.5", "53"];
                     const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
 
 
-                    falink.style.left = posicoesFalinks[posicaoVetor] + "px";
+                    falink.style.left = posicoesFalinks[posicaoVetor] + "%";
 
 
 
