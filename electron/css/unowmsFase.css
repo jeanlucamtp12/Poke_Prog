@@ -175,9 +175,10 @@ h2 {
 
 .teclado {
 
+    top: 15%;
+    width: 40%;
+    position: absolute;
 
-    float: left;
-    max-width: 550px;
     border: 2px solid #ccc;
 
 
@@ -202,12 +203,10 @@ h2 {
 .caixaResposta {
 
     border: 2px solid white;
-    width: 650px;
-    height: 70px;
-    display: flex;
-   
-    flex-direction: row;
-
+    width: 40%;
+    height: 10%;
+    position: absolute;
+    left: 44%;
 
 }
 
@@ -222,15 +221,12 @@ h2 {
 
 .inicial {
     position: absolute;
-    left: 90%;
+    left: 85%;
     top: 1%;
 
 
 }
 
 .caixas {
-    padding: 20;
-    margin-left: 20;
-
-
+    margin-left: 2%;
 }

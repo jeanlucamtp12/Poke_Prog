@@ -33,6 +33,14 @@
             <img class="porta4" src="../img/recursividade/porta.png">
         </div>
 
+        <div class="portaAberta1"  >
+            <img class="portaAberta1"id="portaAberta1"  src="../img/recursividade/porta_aberta1.png">
+        </div>
+
+        <div class="portaAberta2"  >
+            <img class="portaAberta2" id="portaAberta2" src="../img/recursividade/porta_aberta2.png">
+        </div>
+
 
         <div class="chao1">
             <img class="bloco1" src="../img/recursividade/chao.png">
@@ -48,23 +56,29 @@
         </div>
 
 
-        <div class="escada1">
-            <img class="escada1" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
-        </div>
-        <div class="escada2">
-            <img class="escada2" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+        <div class="escadas">
+            <div class="escada1" id="1">
+                <img class="escada1" id="escada1" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+            <div class="escada2" id="2">
+                <img class="escada2" id="escada2" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+
+            <div class="escada3" id="3">
+                <img class="escada3" id="escada3" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+            <div class="escada4" id="4">
+                <img class="escada4" id="escada4" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+
+            <div class="escada5" id="5">
+                <img class="escada5" id="escada5" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+
+
         </div>
 
-        <div class="escada3">
-            <img class="escada3" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
-        </div>
-        <div class="escada4">
-            <img class="escada4" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
-        </div>
-
-        <div class="escada5">
-            <img class="escada5" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
-        </div>
+        
 
 
         <div class="pedra1">
@@ -85,7 +99,8 @@
 
 
         <div class="personagem">
-            <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)" src="../img/recursividade/1_direita.png">
+            <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)"
+                src="../img/recursividade/1_direita.png">
         </div>
 
     </div>
@@ -106,13 +121,16 @@
 
 
     <script>
+
+
+
+
         const personagemIniciado = (event) => {
             event.dataTransfer.setData("img", event.target.id);
         }
 
         const areaColisao = (event) => {
             event.preventDefault();
-            console.log("Aqquiii");
         }
 
         /*const detecarColisao = (event) => {
@@ -130,17 +148,32 @@
             }
 
         }*/
+
+
+
+
+
+
+
+
+        const loop = setInterval(() => {
+
+            var bulbasaur = document.getElementById("personagem");
+            var escada1 = document.getElementById("escada1");
+
+
+            const posicaoBulbasaurEsquerda = bulbasaur.offsetLeft;
+            const posicaoBulbasaurDireita = bulbasaur.offsetRight;
+            const posicaoEscada = escada1.offsetLeft;
+
+
+            if (posicaoEscada == posicaoBulbasaurEsquerda || posicaoEscada == posicaoBulbasaurDireita) {
+            }
+
+        }, 5);
+
+
     </script>
-
-
-    </div>
-
-
-
-
-
-
-
 
 
 
@@ -155,7 +188,14 @@
 
 
 
+
+        listaEscada = [];
+        valor = "livre";
+
+
+
         const moverDireita = () => {
+
 
 
 
@@ -173,7 +213,6 @@
 
             personagem.style.left = soma + "px";
 
-            console.log("asa ", personagem.style.left);
 
 
         }
@@ -224,6 +263,7 @@
             document.getElementById("personagem").src = "../img/recursividade/1_cima.png";
 
             const el = document.querySelector('.personagem');
+            
             const value = getComputedStyle(el).getPropertyValue('bottom');
 
 
@@ -242,26 +282,100 @@
 
         const personagem = document.querySelector('.personagem');
 
+
+
+
         const mover = () => {
+
+
+            var chao = document.querySelector('.bloco4');
+
+            var per = document.getElementById("personagem");
+
+
+
+            var escadas = document.querySelectorAll("#escada1, #escada2, #escada3, #escada4, #escada5");
+
+            for (var i = 0; i < escadas.length; i++) {
+                escadas[i].getBoundingClientRect();
+                listaEscada.push(escadas[i]);
+
+            }
+            var posicaoPer = window.getComputedStyle(per).bottom;
+
+
+            var portaAberta1 = document.getElementById("portaAberta1");
+            var portaAberta2 = document.getElementById("portaAberta2");
+
+            per.getBoundingClientRect();
+            //escada.getBoundingClientRect();
+            portaAberta1.getBoundingClientRect();
+            portaAberta2.getBoundingClientRect();
 
             var tecla = event.keyCode;
 
 
-            if (tecla == 39) {
+            if ((per.x < portaAberta1.x + portaAberta1.width && per.x  + per.width > portaAberta1.x && per.y < portaAberta1.y  + portaAberta1.height && per.y  + per.height > portaAberta1.y)   || (per.x < portaAberta2.x + portaAberta2.width && per.x  + per.width > portaAberta2.x && per.y < portaAberta2.y  + portaAberta2.height && per.y  + per.height > portaAberta2.y) ) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+
+            }
+            
+            if (tecla == 39 && valor == "livre") {
                 moverDireita();
 
-            } else if (tecla == 37) {
+            } else if (tecla == 37 && valor == "livre") {
                 moverEsquerda();
-            } else if (tecla == 38 && getComputedStyle(personagem).getPropertyValue('left') == "590px") {
-                moverCima();
-
-            } else if (tecla == 40) {
-                moverBaixo();
             }
+
+
+            else if (tecla == 38) { //x=lagura y=altura
+
+                for (var i = 0; i < escadas.length; i++) {
+                    if ((per.x + 30 < escadas[i].x + escadas[i].width && per.x - 30 + per.width > escadas[i].x) && (per.y < escadas[i].y + 10 + escadas[i].height && per.y - 10 + per.height > escadas[i].y)) {
+
+                        valor = "bloqueado";
+
+                        moverCima();
+                    }
+                    if(per.y <= escadas[i].y -80){
+                        valor = "livre";
+
+                    }
+
+
+                }
+            }
+
+            /*else if (tecla == 40) {
+
+
+                for (var i = 0; i < escadas.length; i++) {
+
+                    if ((per.x + 30 < escadas[i].x + escadas[i].width && per.x - 30 + per.width > escadas[i].x) && (per.y + 100 < escadas[i].y + escadas[i].height && per.y -100 + per.height > escadas[i].y)) {
+                        valor = "bloqueado";
+
+                        moverBaixo();
+                    }
+                    if(per.y >= escadas[i].y){
+                        valor = "livre";
+
+                    }
+
+
+                }
+                
+            }*/
+
+
 
 
 
         }
+
+
+
+
 
         document.addEventListener('keydown', mover);
     </script>

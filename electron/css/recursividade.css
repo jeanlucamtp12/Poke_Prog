@@ -18,7 +18,7 @@ body{
 
     width: 100%;
     height: 5%;
-    bottom: 55%;
+    bottom: 60%;
     left: 0%;
 }
 
@@ -26,7 +26,7 @@ body{
     position: absolute;
     width:  100%;
     height: 5%;
-    bottom: 33%;
+    bottom: 40%;
     left: 0%;
 }
 
@@ -48,16 +48,16 @@ body{
 
 .escada1{
     position: absolute;
-    width: 40%;
-    height: 50%;
+    width: 25%;
+    height: 45%;
     bottom: 0%;
     left: 20%;
 }
 
 .escada2{
     position: absolute;
-    width: 40%;
-    height: 50%;
+    width: 25%;
+    height: 45%;
     bottom: 0%;
     left: 60%;
 }
@@ -65,27 +65,27 @@ body{
 
 .escada3{
     position: absolute;
-    width: 40%;
-    height: 45%;
-    bottom: 13%;
+    width: 25%;
+    height: 48%;
+    bottom: 15%;
     left: 10%;
 }
 
 
 .escada4{
     position: absolute;
-   width: 40%;
-    height: 45%;
-    bottom: 13%;
+    width: 25%;
+    height: 48%;
+    bottom: 15%;
     left: 50%;
     
 }
 
 .escada5{
     position: absolute;
-    width: 40%;
-    height: 50%;
-    bottom: 23%;
+    width: 25%;
+    height: 47%;
+    bottom: 29%;
     left: 30%;
     
     
@@ -103,8 +103,8 @@ body{
 
 .porta1{
     position: absolute;
-    width: 25%;
-    bottom: 58%;
+    width: 28%;
+    bottom: 62%;
     left: 10%;
     z-index: -1;
 }
@@ -112,8 +112,8 @@ body{
 
 .porta2{
     position: absolute;
-    width: 25%;
-    bottom: 58%;
+    width: 28%;
+    bottom: 62%;
     left: 30%;
     z-index: -1;
 
@@ -121,26 +121,44 @@ body{
 
 .porta3{
     position: absolute;
-    width: 25%;
-    bottom: 58%;
+    width: 28%;
+    bottom: 62%;
     left: 50%;
     z-index: -1;
 
 }
 .porta4{
     position: absolute;
-    width: 25%;
-    bottom: 58%;
+    width: 28%;
+    bottom: 62%;
     left: 60%;
     z-index: -1;
 
 }
 
 
+.portaAberta1{
+    position: absolute;
+    width: 28%;
+    bottom: 43%;
+    left: 70%;
+    z-index: 1;
+
+}
+
+.portaAberta2{
+    position: absolute;
+    width: 28%;
+    bottom: 21%;
+    left: 2%;
+    z-index: 1;
+
+}
+
 .personagem{
     position: absolute;
-    width: 38%;
-    bottom: -8%;
+    width: 25%;
+    bottom: 1%;
     left: 0%;
     z-index: 1;
 }
