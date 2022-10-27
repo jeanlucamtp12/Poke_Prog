@@ -51,7 +51,7 @@ body{
     width: 25%;
     height: 45%;
     bottom: 0%;
-    left: 20%;
+    left: 30%;
 }
 
 .escada2{
@@ -59,7 +59,7 @@ body{
     width: 25%;
     height: 45%;
     bottom: 0%;
-    left: 60%;
+    left: 65%;
 }
 
 
@@ -77,7 +77,7 @@ body{
     width: 25%;
     height: 48%;
     bottom: 15%;
-    left: 50%;
+    left: 48%;
     
 }
 
@@ -93,7 +93,7 @@ body{
 
 .porta0{
     position: absolute;
-    width: 28%;
+    width: 20%;
     bottom: 2%;
     left: 0%;
 
@@ -103,35 +103,35 @@ body{
 
 .porta1{
     position: absolute;
-    width: 28%;
+    width: 30%;
     bottom: 62%;
-    left: 10%;
+    left: 5%;
     z-index: -1;
 }
 
 
 .porta2{
     position: absolute;
-    width: 28%;
+    width: 30%;
     bottom: 62%;
-    left: 30%;
+    left: 15%;
     z-index: -1;
 
 }
 
 .porta3{
     position: absolute;
-    width: 28%;
+    width: 30%;
     bottom: 62%;
-    left: 50%;
+    left: 55%;
     z-index: -1;
 
 }
 .porta4{
     position: absolute;
-    width: 28%;
+    width: 30%;
     bottom: 62%;
-    left: 60%;
+    left: 70%;
     z-index: -1;
 
 }
@@ -139,7 +139,7 @@ body{
 
 .portaAberta1{
     position: absolute;
-    width: 28%;
+    width: 22%;
     bottom: 43%;
     left: 70%;
     z-index: 1;
@@ -148,16 +148,16 @@ body{
 
 .portaAberta2{
     position: absolute;
-    width: 28%;
+    width: 22%;
     bottom: 21%;
-    left: 2%;
+    left: 0%;
     z-index: 1;
 
 }
 
 .personagem{
     position: absolute;
-    width: 25%;
+    width: 23%;
     bottom: 1%;
     left: 0%;
     z-index: 1;
@@ -168,11 +168,10 @@ body{
 
 #pedra1{
     animation: pedra_movimento 3s infinite linear;
-
     width: 5%;   
     position: absolute;
     bottom: 30%;
-    left:30%;
+    left: 25%;
  
    
 }
@@ -183,7 +182,7 @@ body{
     width: 5%;    
     position: absolute;
     bottom: 50%;
-    left: 46%;
+    left: 48%;
  
 
 }
@@ -194,7 +193,7 @@ body{
     width: 5%;   
     position: absolute;
     bottom:20%;
-    left:65%;
+    left:70%;
  
    
 }
@@ -221,4 +220,77 @@ body{
 
     }
 }
-     
+
+
+.pergunta{
+    position: absolute;
+    left: 30%;
+    width: 30%;
+    height: 20%;
+}
+
+.pergunta{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+.porta1 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 0%;
+    left: 16%;
+    color: white;
+}
+
+.porta2 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 0%;
+    left: 26%;
+    color: white;
+}
+
+
+.porta3 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 62%;
+    left: 64%;
+    color: white;
+}
+
+.porta4 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 62%;
+    left: 78%;
+    color: white;
+}
+
+.espaco{
+    position: absolute;
+    width: 30%;
+    top: 2%;
+    left: 5%;
+    color: white;
+
+    animation: piscarTela 0.8s steps(1, end) infinite;
+}
+
+@keyframes piscarTela {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}

@@ -12,25 +12,29 @@
 <body>
 
     <div class="campo">
-
+    
         <div class="porta0">
-            <img class="porta0" src="../img/recursividade/porta.png">
+            <img class="porta0" src="../img/recursividade/porta_aberta2.png">
         </div>
 
         <div class="porta1">
-            <img class="porta1" src="../img/recursividade/porta.png">
+            <h2 id="resposta1">7</h2>
+            <img class="porta1" id="porta1"  src="../img/recursividade/porta.png">
         </div>
 
         <div class="porta2">
-            <img class="porta2" src="../img/recursividade/porta.png">
+            <h2 id="resposta2">2</h2>
+            <img class="porta2" id="porta2"  src="../img/recursividade/porta.png">
         </div>
 
         <div class="porta3">
-            <img class="porta3" src="../img/recursividade/porta.png">
+            <h2 id="resposta3">28</h2>
+          <img class="porta3" id="porta3"  src="../img/recursividade/porta.png">
         </div>
 
         <div class="porta4">
-            <img class="porta4" src="../img/recursividade/porta.png">
+            <h2 id="resposta4">100</h2>
+            <img class="porta4" id="porta4"  src="../img/recursividade/porta.png">
         </div>
 
         <div class="portaAberta1"  >
@@ -81,19 +85,19 @@
         
 
 
-        <div class="pedra1">
+        <div class="pedra">
             <img class="pedra1" id="pedra1" src="../img/recursividade/tronco.png">
         </div>
 
-        <div class="pedra2">
+        <div class="pedra">
             <img class="pedra2" id="pedra2" src="../img/recursividade/tronco.png">
         </div>
 
-        <div class="pedra3">
+        <div class="pedra">
             <img class="pedra3" id="pedra3" src="../img/recursividade/tronco.png">
         </div>
 
-        <div class="pedra4">
+        <div class="pedra">
             <img class="pedra4" id="pedra4" src="../img/recursividade/tronco.png">
         </div>
 
@@ -101,6 +105,17 @@
         <div class="personagem">
             <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)"
                 src="../img/recursividade/1_direita.png">
+        </div>
+
+
+
+        <div class="pergunta">
+            <h3>Quanto é 1+1=</h3>
+
+        </div>
+       
+        <div class="espaco">
+            <img class="espaco" id="espaco" src="../img/recursividade/space.png" style="display:none">
         </div>
 
     </div>
@@ -159,18 +174,24 @@
         const loop = setInterval(() => {
 
             var bulbasaur = document.getElementById("personagem");
-            var escada1 = document.getElementById("escada1");
+            bulbasaur.getBoundingClientRect();
 
 
-            const posicaoBulbasaurEsquerda = bulbasaur.offsetLeft;
-            const posicaoBulbasaurDireita = bulbasaur.offsetRight;
-            const posicaoEscada = escada1.offsetLeft;
+
+            var pedras = document.querySelectorAll("div.pedra #pedra1, div.pedra #pedra2, div.pedra #pedra3, div.pedra #pedra4");
+            console.log(pedras.length);
 
 
-            if (posicaoEscada == posicaoBulbasaurEsquerda || posicaoEscada == posicaoBulbasaurDireita) {
-            }
 
-        }, 5);
+            for (var i = 0; i < pedras.length; i++) {
+                    if ((bulbasaur.x  < pedras[i].x + pedras[i].width && bulbasaur.x + bulbasaur.width > pedras[i].x) && (bulbasaur.y < pedras[i].y + pedras[i].height && bulbasaur.y + bulbasaur.height > pedras[i].y)) {
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";                        
+                    }
+                }
+                
+
+            }, 5);
 
 
     </script>
@@ -195,7 +216,6 @@
 
 
         const moverDireita = () => {
-
 
 
 
@@ -287,14 +307,39 @@
 
         const mover = () => {
 
+            var tecla = event.keyCode;
 
             var chao = document.querySelector('.bloco4');
 
             var per = document.getElementById("personagem");
 
 
-
+            var portas = document.querySelectorAll("#porta1, #porta2, #porta3, #porta4");
             var escadas = document.querySelectorAll("#escada1, #escada2, #escada3, #escada4, #escada5");
+            var respostas = document.querySelectorAll("div.porta1  h2, div.porta2  h2, div.porta3  h2, div.porta4  h2");
+
+
+
+            for (var i = 0; i < portas.length; i++) {
+                    if ((per.x  < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
+                        if(tecla == 32 && respostas[i].id == "resposta2"){
+                            window.alert("proxima fase!");
+                            document.getElementById("espaco").style.display = "none";
+                            break;
+
+                        }else if(tecla == 32 && respostas[i].id != "resposta2"){
+                            personagem.style.bottom = "1%";
+                            personagem.style.left = "0%";
+                            document.getElementById("espaco").style.display = "none";
+                            break;
+
+                        }
+                        document.getElementById("espaco").style.display = "block";
+                    }
+            }
+
+
+          
 
             for (var i = 0; i < escadas.length; i++) {
                 escadas[i].getBoundingClientRect();
@@ -312,7 +357,7 @@
             portaAberta1.getBoundingClientRect();
             portaAberta2.getBoundingClientRect();
 
-            var tecla = event.keyCode;
+       
 
 
             if ((per.x < portaAberta1.x + portaAberta1.width && per.x  + per.width > portaAberta1.x && per.y < portaAberta1.y  + portaAberta1.height && per.y  + per.height > portaAberta1.y)   || (per.x < portaAberta2.x + portaAberta2.width && per.x  + per.width > portaAberta2.x && per.y < portaAberta2.y  + portaAberta2.height && per.y  + per.height > portaAberta2.y) ) {
@@ -338,11 +383,12 @@
 
                         moverCima();
                     }
-                    if(per.y <= escadas[i].y -80){
+                    if(per.y <= escadas[i].y -40){
                         valor = "livre";
 
                     }
 
+                    console.log(valor);
 
                 }
             }
