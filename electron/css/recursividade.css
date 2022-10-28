@@ -233,6 +233,7 @@ body{
     color: white;
     text-align: center;
     justify-content: center;
+    font-size:2vw;
     font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
 
 }
@@ -277,7 +278,7 @@ body{
     left: 5%;
     color: white;
 
-    animation: piscarTela 0.8s steps(1, end) infinite;
+    animation: piscarTela 0.7s steps(1, end) infinite;
 }
 
 @keyframes piscarTela {

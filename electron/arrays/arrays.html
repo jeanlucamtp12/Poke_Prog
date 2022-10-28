@@ -30,10 +30,22 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <img id="piso" src="../img/arrays/piso.png">
 
         <img id="falink" src="../img/arrays/falink.gif">
-        <img id="raio2" src="../img/arrays/raio.gif">
-        <img id="raio3" src="../img/arrays/raio.gif">
-        <img id="raio4" src="../img/arrays/raio.gif">
-        <img id="raio5" src="../img/arrays/raio.gif">
+
+        <div>
+            <div class="raio">
+                <img id="raio2" src="../img/arrays/raio.gif">
+            </div>
+            <div class="raio">
+                <img id="raio3" src="../img/arrays/raio.gif">
+            </div>
+            <div class="raio">
+                <img id="raio4" src="../img/arrays/raio.gif">
+            </div>
+            <div class="raio">
+                <img id="raio5" src="../img/arrays/raio.gif">
+            </div>        
+        </div>
+       
 
 
 
@@ -62,14 +74,9 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <div>
 
             <script>
-                let i = 0;
+                let j = 0;
 
-                const raio2 = document.querySelector('#raio2');
-                const raio3 = document.querySelector('#raio3');
-                const raio4 = document.querySelector('#raio4');
-                const raio5 = document.querySelector('#raio5');
                 const falinkQueda = document.querySelector('#falink');
-
                 const falink = document.querySelector('#poke');
 
                 const loop = setInterval(() => {
@@ -81,6 +88,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
                     falink.style.left = posicoesFalinks[posicaoVetor] + "%";
+                    falinkQueda.style.display = 'block';
+
 
 
 
@@ -102,119 +111,99 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 const loop2 = setInterval(() => {
 
 
-                    const posicaoRaio2 = window.getComputedStyle(raio2).top;
-                    const posicaoRaio3 = window.getComputedStyle(raio3).top;
-                    const posicaoRaio4 = window.getComputedStyle(raio4).top;
-                    const posicaoRaio5 = window.getComputedStyle(raio5).top;
-                    const posicaoFalinkQueda = window.getComputedStyle(falinkQueda).top;
-
-                    const posicaoFalink = falink.offsetLeft;
-                    const posicaoFalinkEsquerda = falink.offsetLeft;
-
-
-
-                    console.log(posicaoFalink);
-
-                    const removerPxRaio2 = posicaoRaio2.replace('px', '');
-                    valorConvertidoRaio2 = parseInt(removerPxRaio2);
-                    const removerPxRaio3 = posicaoRaio3.replace('px', '');
-                    valorConvertidoRaio3 = parseInt(removerPxRaio3);
-                    const removerPxRaio4 = posicaoRaio4.replace('px', '');
-                    valorConvertidoRaio4 = parseInt(removerPxRaio4);
-                    const removerPxRaio5 = posicaoRaio5.replace('px', '');
-                    valorConvertidoRaio5 = parseInt(removerPxRaio5);
+                    falink.getBoundingClientRect();
+                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5");
 
 
 
 
-
-
-
-                    const removerPxFalinkQueda = posicaoFalinkQueda.replace('px', '');
-                    valorConvertidoFalinkQueda = parseInt(removerPxFalinkQueda);
-                    //console.log("Apos a conversao: "+ valorConvertidoFalinkQueda );
-
-
-
-                    if (valorConvertidoRaio2 <= 40 && (posicaoFalink >= 600 && posicaoFalink <= 620)) {
-
-
-                        raio2.style.animation = 'none';
-                        raio3.style.animation = 'none';
-                        raio4.style.animation = 'none';
-                        raio5.style.animation = 'none';
-                        falinkQueda.style.animation = 'none';
-                        //window.alert("Bateu! Tente Novamente!");
-                        resetar();
-                        falink.style.left = '650px';
-                        window.alert("Bateu! Tente Novamente!");
-
+                    for(var i = 0; i < raios.length; i++){
+                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y -30 + falink.height > raios[i].y)) {
+                            window.alert("enconstou");
+                            raios[i].style.animation = 'none';
+                            falinkQueda.style.animation = 'none';
+                            resetar();
+                            //falink.style.left = '650px';
+                        }  
                     }
 
-                    if (valorConvertidoRaio3 <= 50 && (posicaoFalink >= 370 && posicaoFalink <= 390)) {
+                 
 
+                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y -30 + falink.height > falinkQueda.y)) {
+                            //falink.style.left = '150px';
+                            falinkQueda.style.display = 'none';
+                            document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
 
-                        raio2.style.animation = 'none';
-                        raio3.style.animation = 'none';
-                        raio4.style.animation = 'none';
-                        raio5.style.animation = 'none';
-                        falinkQueda.style.animation = 'none';
-                        //window.alert("Bateu! Tente Novamente!");
-                        resetar();
-                        falink.style.left = '650px';
-                        window.alert("Bateu! Tente Novamente!");
+                            j = j + 1;
+                            if(j == 10){
+                            window.alert("Você ganhou, retornando a cidade!");
+                            window.location.href = "http://localhost/jogo/electron/city.php";
+                          }
 
-
-
-                    }
-
-                    if (valorConvertidoRaio4 <= 50 && (posicaoFalink >= 890 && posicaoFalink <= 910)) {
-
-
-                        raio2.style.animation = 'none';
-                        raio3.style.animation = 'none';
-                        raio4.style.animation = 'none';
-                        raio5.style.animation = 'none';
-                        falinkQueda.style.animation = 'none';
-                        //window.alert("Bateu! Tente Novamente!");
-                        resetar();
-                        falink.style.left = '650px';
-                        window.alert("Bateu! Tente Novamente!");
-
-
-                    }
-
-                    if (valorConvertidoRaio5 <= 50 && (posicaoFalink >= 1190 && posicaoFalink <= 1210)) {
-
-                        raio2.style.animation = 'none';
-                        raio3.style.animation = 'none';
-                        raio4.style.animation = 'none';
-                        raio5.style.animation = 'none';
-                        falinkQueda.style.animation = 'none';
-                        //window.alert("Bateu! Tente Novamente!");
-                        resetar();
-                        falink.style.left = '650px';
-                        window.alert("Bateu! Tente Novamente!");
+                    }  
+                    
 
 
 
-                    }
-
-                    if (valorConvertidoRaio5 <= 50 && (posicaoFalink >= 1190 && posicaoFalink <= 1210)) {
-
-                        raio2.style.animation = 'none';
-                        raio3.style.animation = 'none';
-                        raio4.style.animation = 'none';
-                        raio5.style.animation = 'none';
-                        falinkQueda.style.animation = 'none';
-                        //window.alert("Bateu! Tente Novamente!");
-                        resetar();
-                        falink.style.left = '650px';
-                        window.alert("Bateu! Tente Novamente!");
 
 
 
-                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+                
+
+                  
 
 
 
@@ -253,25 +242,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-                    if (valorConvertidoFalinkQueda <= 50 && (posicaoFalink >= 190 && posicaoFalink <= 210)  || valorConvertidoFalinkQueda <= 51 && (posicaoFalink >= 990 && posicaoFalink <= 1010) || valorConvertidoFalinkQueda <= 52 && (posicaoFalink >= 490 && posicaoFalink <= 510) || valorConvertidoFalinkQueda <= 53 && (posicaoFalink >= 690 && posicaoFalink <= 700) ) {
-
-                        
-                          // console.log("Ele descendo " + posicaoFalinkQueda);
-
-                          falink.style.left = '650px';
-                          document.getElementById(i).innerHTML = "<img src='../img/arrays/falink.gif'>";
-                          //window.alert("Falink! Tente Novamente!");
-
-                          //console.log("O valor de i :" + i + "posicao: " + posicaoFalink);
-
-                          i = i + 1;
-                          if(i == 10){
-                            window.alert("Você ganhou, retornando a cidade!");
-                            window.location.href = "http://localhost/jogo/electron/city.php";
-                          }
-
-
-                      }
+                   
 
 
 
