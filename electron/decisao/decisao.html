@@ -64,7 +64,7 @@
 
 
         <div class="caixaFormulario">
-            <div class="form" id="form" method="POST">
+            <div class="form" id="form" method="GET" enctype='multipart/form-data'>
 
                 <form>
 
@@ -159,8 +159,10 @@
 
 
             $.ajax({
+                
                 url: 'decisao.html',
-                method: 'POST',
+                method: 'GET',
+                
                 data: {
                     Resposta: resposta
                 }

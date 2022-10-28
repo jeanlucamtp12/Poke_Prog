@@ -158,7 +158,6 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
     <script>
         let i = 0;
-        let favoCompleto = 0;
         let tronco = 0;
 
 
@@ -169,16 +168,13 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         var bolhas = document.querySelector('.bolhas');
         var entrada = document.querySelector('.entrada');
         var tijolo = document.querySelector('.tijolo');
+        entrada.getBoundingClientRect();
+        tijolo.getBoundingClientRect();
 
 
 
 
-        //console.log("timburr: " + timburr);
-        //console.log("Combee: " + combeeShiny);
-
-
-
-        //var numIncremento = document.getElementById("incremento").innerHTML;
+      
 
 
         const loop = setInterval(() => {
@@ -196,46 +192,84 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             posicaoStaryu = staryu.offsetLeft;
             posicaoBolhas = bolhas.offsetLeft;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            bolhas.getBoundingClientRect();
+            timburr.getBoundingClientRect();
+            staryu.getBoundingClientRect();
+
+
+
+
+
         
-            if(valorConvertidoTimburr >= 120 && (posicaoTimburr >= 360 && posicaoTimburr <= 470)){
-                personagem.style.bottom = "200px";
-                document.documentElement.style.setProperty('--my-start-bottom', '200px');
-                document.documentElement.style.setProperty('--my-end-bottom', '200px');
-
-                
-            }
-            if (posicaoTimburr < 360 || posicaoTimburr > 470) {
-                personagem.style.bottom = "-10px";
-                document.documentElement.style.setProperty('--my-start-bottom', '0px');
-                document.documentElement.style.setProperty('--my-end-bottom', '0px');
-
-            }
-
-            if((posicaoTimburr >= 500 && posicaoTimburr <= 550) && (posicaoStaryu >= 500 && posicaoStaryu <= 550)){
-                window.alert("Bateu!");
+            if ((timburr.x + 40 < bolhas.x + bolhas.width && timburr.x - 40 + timburr.width > bolhas.x) && (timburr.y + 40 < bolhas.y + bolhas.height && timburr.y -40 + timburr.height > bolhas.y)) {
+                window.alert("bateuuu na agua");
+                personagem.style.bottom = "-1%";
+                personagem.style.left = "0%";                        
             }
             
+
+            if ((timburr.x + 40 < staryu.x + staryu.width && timburr.x - 40 + timburr.width > staryu.x) && (timburr.y + 40 < staryu.y + staryu.height && timburr.y -40 + timburr.height > staryu.y)) {
+                window.alert("bateuuu na estrela");
+                personagem.style.bottom = "-1%";
+                personagem.style.left = "0%";                        
+            }
+            
+
+
+
+
+
+
+            if ((timburr.x + 40 < tijolo.x + tijolo.width && timburr.x - 40 + timburr.width > tijolo.x) && (timburr.y + 40 < tijolo.y + tijolo.height && timburr.y -40 + timburr.height > tijolo.y)) {
+                
+                personagem.style.bottom = "30%";                        
+                document.documentElement.style.setProperty('--my-start-bottom', '30%');
+                document.documentElement.style.setProperty('--my-end-bottom', '30%');  
+                            
+            }
+            else if (!(timburr.x + 40 < tijolo.x + tijolo.width && timburr.x - 40 + timburr.width > tijolo.x)) {
+                    personagem.style.bottom = "-1%";                        
+                    document.documentElement.style.setProperty('--my-start-bottom', '-1%');
+                    document.documentElement.style.setProperty('--my-end-bottom', '-1%');   
+            }  
+
+
+
+
+
+
+
+
+        
+       
+
          
 
-
-//            if(Math.floor(posicaoBolhas) == posicaoTimburr ){
-  //              window.alert("Bateu!");
-    //        }
-            
         
 
-            //console.log(window.getComputedStyle(timburr).bottom);
             posicaoTroncos = troncos.offsetLeft;
 
-            //const removerPxCombee = posicaoCombeeShiny.replace('px', '');
-            //valorConvertidoCombee = parseInt(removerPxCombee);
-
-            //const removerPxTimburr = posicaoTimburr.replace('px', '');
-            //valorConvertidoTimburr = parseInt(removerPxTimburr);
 
             var estadoMadeira = document.getElementById("madeira").style.display;
 
-            if(posicaoTimburr == 590 && estadoMadeira == "block"){
+
+            
+
+            if((timburr.x + 40 < entrada.x + entrada.width && timburr.x - 40 + timburr.width > entrada.x)&& estadoMadeira == "block"){
                 document.getElementById(tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
                 document.getElementById("madeira").style.display = "none";
 
@@ -243,25 +277,18 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                 if(tronco == 10){
                     window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                    window.location.href = "http://localhost/jogo/electron/city.php";
+                    window.location.href = "../telaInicial/city.html";
                 }
             }
 
-
-            if (posicaoTroncos <= -120 && posicaoTimburr <= -10) {
-
-                 //i = i + 1;
-
-                //document.getElementById("incremento").innerHTML = i;
-                //document.getElementById("inicializacao").innerHTML = i;
-
-                
-                document.getElementById("madeira").style.display = "block";
+            troncos.getBoundingClientRect();
 
 
-
-
+            if ((timburr.x + 40 < troncos.x + troncos.width && timburr.x - 40 + timburr.width > troncos.x) && (timburr.y + 40 < troncos.y + troncos.height && timburr.y -40 + timburr.height > troncos.y)) {
+                document.getElementById("madeira").style.display = "block";                       
             }
+            
+
 
 
 
@@ -290,9 +317,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
                 const moverDireita = () => {
 
-                    posicaoTimburr = timburr.offsetLeft;
-        
-                    if(posicaoTimburr != 590){
+
+                    if (!(timburr.x + 40 < entrada.x + entrada.width && timburr.x - 40 + timburr.width > entrada.x)) {
            
 
 

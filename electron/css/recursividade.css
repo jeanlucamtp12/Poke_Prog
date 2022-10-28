@@ -68,7 +68,7 @@ body{
     width: 25%;
     height: 48%;
     bottom: 15%;
-    left: 10%;
+    left: 20%;
 }
 
 
@@ -139,16 +139,16 @@ body{
 
 .portaAberta1{
     position: absolute;
-    width: 22%;
+    width: 38%;
     bottom: 43%;
-    left: 70%;
+    left: 60%;
     z-index: 1;
 
 }
 
 .portaAberta2{
     position: absolute;
-    width: 22%;
+    width: 38%;
     bottom: 21%;
     left: 0%;
     z-index: 1;
@@ -171,7 +171,7 @@ body{
     width: 5%;   
     position: absolute;
     bottom: 30%;
-    left: 25%;
+    left: 15%;
  
    
 }
@@ -278,7 +278,7 @@ body{
     left: 5%;
     color: white;
 
-    animation: piscarTela 0.7s steps(1, end) infinite;
+    animation: piscarTela 1.7s steps(1, end) infinite;
 }
 
 @keyframes piscarTela {
@@ -294,4 +294,70 @@ body{
         opacity: 1;
     }
 
+}
+
+.cherrim{
+    position: absolute;
+    width: 25%;
+    bottom: 20%;
+    z-index: 1;
+    right: 0%;
+    animation: cherrim_movimento 8s infinite linear;
+
+}
+
+
+@keyframes cherrim_movimento {
+
+    0% {
+        left: 75%;
+        bottom: 20%;
+
+    }
+
+    25% {
+        bottom:  20%;
+
+    }
+    30% {
+        left: 50%;
+        bottom: 45%;
+
+    }
+    35% {
+        left: 40%;
+        bottom: 25%;
+
+    }
+    45% {
+        left: 30%;
+        bottom: 20%;
+
+    }
+   
+
+    50% {
+        left: 20%;
+        bottom: 45%;
+
+    }
+    55% {
+        left: 10%;
+        bottom: 25%;
+
+    }
+    60% {
+        bottom: 20%;
+
+    }
+
+
+    75% {
+        bottom: 20%;
+    }
+
+    100% {
+        left: -10%;
+        bottom:  20%;
+    }
 }
