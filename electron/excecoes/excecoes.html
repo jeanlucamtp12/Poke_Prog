@@ -67,12 +67,14 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
         </div>
 
-        <div class="teia">
+        <div >
+            <img class="teia" src="../img/excecoes/teia.png"></img>
+
             <img class="spinarak" src="../img/excecoes/spinarak.png"></img>
 
         </div>
 
-        <div class="mastro">
+        <div>
             <img class="cacturne" src="../img/excecoes/cacturne.png"></img>
 
         </div>
@@ -251,26 +253,23 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         var j = 0;
         for (var i = 1; j <= 100; i++) {
 
-            var novoMato = document.createElement("div");
-            novoMato.classList.add('fio');
-            novoMato.id = 'fio' + i;
 
-            novoMato.style.height = "10%";
-
-            novoMato.style.left = j + "%";
-
+            var img = document.createElement('img');
+            img.src = '../img/excecoes/grama.png';
+            img.classList.add('mato');
+            img.id = 'mato' + i;
+            img.style.bottom = "-1%";
+            img.style.width = "4%";
+            img.style.left = j + "%";
 
             var body = document.querySelector("body");
+            j = j + 3.8;
 
-            j = j + 0.5;
-
-
-
-
-
-            body.appendChild(novoMato);
+            body.appendChild(img);
 
         }
+
+
 
 
         var cont = 1;

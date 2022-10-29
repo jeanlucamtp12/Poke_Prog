@@ -23,6 +23,7 @@ body {
     width: 2%;
     top: 20%;
     left: 20%;
+    z-index: 0;
     
 }
 
@@ -60,7 +61,7 @@ body {
     width: 20%;
     bottom: -2%;
     right: -30px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .arvore{
@@ -74,88 +75,64 @@ body {
 
 .teia{
     position: absolute;
-    border: 1px solid white;
-    height: 11%;
-    top: 0%;
-    left: 40%;
+    top: -2.3%;
+    width: 12%;
+    right: -1.2%;
+    
 }
 
 .spinarak{
     position: absolute;
-    width: 200px;
-    top: 0%;
-    left: -100px;
-
-    animation: aranha_movimento 3s infinite linear;
-
-}
-.mastro{
-    position: absolute;
-    border: 1px solid black;
-    height: 20%;
-    width:0.5%;
-    background-color: black;
-    bottom: -8%;
-    right: 5%;
+    width: 6%;
+    top: 2%;
+    right: 0%;
     z-index: 1;
 
 
 }
+
 .cacturne{
     position: absolute;
-    width: 150px;
-    bottom: 50%;
-    right: -75px;
+    width: 10%;
+    bottom: 0%;
+    right: 0%;
     z-index: 1;
 }
 
-.zubats{
-    position: absolute;
-    right: 15%;
 
-
-}
 
 .primeiro{
     position: absolute;
-    width: 50px;
+    width: 4%;
 
-    top: -100px;
-    right: 200px;
+    top: 10%;
+    animation: zubats_movimento 24s infinite linear;
 
-    animation: zubats_movimento 16s infinite linear;
 
 }
 .segundo{
-        width: 50px;
+    width: 4%;
 
     position: absolute;
-    top: -80px;
-    right: 200px;
+    top: 5%;
 
-    animation: zubats_movimento 15s infinite linear;
+    animation: zubats_movimento 26s infinite linear;
 
 }
 .terceiro{
-        width: 50px;
-
-        width: 50px;
+    width: 4%;
 
     position: absolute;
-    top: -50px;
-    right: 200px;
-
-    animation: zubats_movimento 12s infinite linear;
+    top: 6%;
+    animation: zubats_movimento 30s infinite linear;
 
 }
 .quarto{
-        width: 50px;
+    width: 4%;
 
     position: absolute;
-    top: -40px;
-    right: 200px;
-
-    animation: zubats_movimento 10s infinite linear;
+    top: 2%;
+    animation: zubats_movimento 32s infinite linear;
 
 }
 
@@ -164,14 +141,14 @@ body {
 
 @keyframes zubats_movimento{
     0%{
-        right: 0px;
+        right: 0%;
 
     }
     50%{
-        right: 950px;
+        right: 100%;
     }
     100%{
-        right: 2000px;
+        right: 200%;
 
     }
 }
@@ -716,8 +693,8 @@ body {
     position: absolute;
     width: 20%;
     height: 20%;
-    top: 10%;
-    right: 5%;
+    top: 15%;
+    right: 8%;
     display: grid;
     display: flex;
     flex-direction: row;
@@ -750,26 +727,15 @@ body {
 }
 
 
-.fio{
+.mato{
     position: absolute;
-    border: 4px solid rgb(74, 0, 77);
-    border-radius: 90%;
-    height: 10%;
-    bottom: -5%;
-    animation: fio 8s infinite linear;
-}
-   
+    z-index: 0;
 
-@keyframes fio {
-      0%, 30%, 50%, 55%, 82%, 97%, 100%{border-top-right-radius: 50%;}
-      20%{border-top-right-radius: 100%;}
-      40%{border-top-right-radius: 500%;}
-      70%{border-top-right-radius: 1000%;}
-      90%{border-top-right-radius: 2000%;}
 }
 
 .lua{
     width: 10%;
     top: 0%;
     position: absolute;
+    z-index:0;
 }

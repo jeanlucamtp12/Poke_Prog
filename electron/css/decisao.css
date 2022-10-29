@@ -183,28 +183,6 @@ body {
 
 }
 
-
-
-.fio{
-    position: absolute;
-    border: 4px solid green;
-    border-radius: 20%;
-    height: 10%;
-    bottom: 0%;
-    animation: fio 8s infinite linear;
-    z-index: -1;
-}
-   
-
-@keyframes fio {
-      0%, 30%, 50%, 55%, 82%, 97%, 100%{border-top-right-radius: 50%;}
-      20%{border-top-right-radius: 100%;}
-      40%{border-top-right-radius: 500%;}
-      70%{border-top-right-radius: 1000%;}
-      90%{border-top-right-radius: 2000%;}
-}
-
-
 base{
     border: solid 2px white;
 }
@@ -221,5 +199,13 @@ base{
 
 .caixaFormulario form{
     width: 100%;
+
+}
+
+.mato{
+    position: absolute;
+    width: 4%;
+    bottom: 0%;
+    z-index: -1;
 
 }
