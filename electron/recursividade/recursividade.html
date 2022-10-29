@@ -14,7 +14,14 @@
     <div class="campo">
 
         <div class="cherrim">
-            <img class="cherrim" src="../img/recursividade/cherrim-sunshine.gif">
+            <img class="cherrim" id="cherrim" src="../img/recursividade/cherrim-sunshine.gif">
+        </div>
+
+        <div class="teleport">
+            <img id="teleport1" style="display: none" src="../img/recursividade/teleport.gif">
+            <img id="teleport2" style="display: none" src="../img/recursividade/teleport.gif">
+            <img id="teleport3" style="display: none" src="../img/recursividade/teleport.gif">
+
         </div>
 
         <div class="porta0">
@@ -23,29 +30,29 @@
 
         <div class="porta1">
             <h2 id="resposta1">7</h2>
-            <img class="porta1" id="porta1"  src="../img/recursividade/porta.png">
+            <img class="porta1" id="porta1" src="../img/recursividade/porta.png">
         </div>
 
         <div class="porta2">
             <h2 id="resposta2">2</h2>
-            <img class="porta2" id="porta2"  src="../img/recursividade/porta.png">
+            <img class="porta2" id="porta2" src="../img/recursividade/porta.png">
         </div>
 
         <div class="porta3">
             <h2 id="resposta3">28</h2>
-          <img class="porta3" id="porta3"  src="../img/recursividade/porta.png">
+            <img class="porta3" id="porta3" src="../img/recursividade/porta.png">
         </div>
 
         <div class="porta4">
             <h2 id="resposta4">100</h2>
-            <img class="porta4" id="porta4"  src="../img/recursividade/porta.png">
+            <img class="porta4" id="porta4" src="../img/recursividade/porta.png">
         </div>
 
-        <div class="portaAberta1"  >
-            <img class="portaAberta1"id="portaAberta1"  src="../img/recursividade/orbeetle-gigantamax_esquerda.gif">
+        <div class="portaAberta1">
+            <img class="portaAberta1" id="portaAberta1" src="../img/recursividade/orbeetle-gigantamax_esquerda.gif">
         </div>
 
-        <div class="portaAberta2"  >
+        <div class="portaAberta2">
             <img class="portaAberta2" id="portaAberta2" src="../img/recursividade/orbeetle-gigantamax_direita.gif">
         </div>
 
@@ -86,7 +93,7 @@
 
         </div>
 
-        
+
 
 
         <div class="pedra">
@@ -117,7 +124,7 @@
             <h3>Quanto é 1+1=</h3>
 
         </div>
-       
+
         <div class="espaco">
             <img class="espaco" id="espaco" src="../img/recursividade/space.png" style="display:none">
         </div>
@@ -183,19 +190,27 @@
 
 
             var pedras = document.querySelectorAll("div.pedra #pedra1, div.pedra #pedra2, div.pedra #pedra3, div.pedra #pedra4");
-            console.log(pedras.length);
 
 
 
             for (var i = 0; i < pedras.length; i++) {
-                    if ((bulbasaur.x  < pedras[i].x + pedras[i].width && bulbasaur.x + bulbasaur.width > pedras[i].x) && (bulbasaur.y < pedras[i].y + pedras[i].height && bulbasaur.y + bulbasaur.height > pedras[i].y)) {
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";                        
-                    }
+                if ((bulbasaur.x < pedras[i].x + pedras[i].width && bulbasaur.x + bulbasaur.width > pedras[i].x) && (bulbasaur.y < pedras[i].y + pedras[i].height && bulbasaur.y + bulbasaur.height > pedras[i].y)) {
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
+                }
             }
-                
 
-            }, 5);
+
+            var cherrim = document.querySelector("#cherrim");
+            cherrim.getBoundingClientRect();
+
+            if ((bulbasaur.x < cherrim.x + cherrim.width && bulbasaur.x + bulbasaur.width > cherrim.x && bulbasaur.y < cherrim.y + cherrim.height && bulbasaur.y + bulbasaur.height > cherrim.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+
+            }
+
+        }, 5);
 
 
     </script>
@@ -287,7 +302,7 @@
             document.getElementById("personagem").src = "../img/recursividade/1_cima.png";
 
             const el = document.querySelector('.personagem');
-            
+
             const value = getComputedStyle(el).getPropertyValue('bottom');
 
 
@@ -318,6 +333,7 @@
             var per = document.getElementById("personagem");
 
 
+
             var portas = document.querySelectorAll("#porta1, #porta2, #porta3, #porta4");
             var escadas = document.querySelectorAll("#escada1, #escada2, #escada3, #escada4, #escada5");
             var respostas = document.querySelectorAll("div.porta1  h2, div.porta2  h2, div.porta3  h2, div.porta4  h2");
@@ -325,25 +341,25 @@
 
 
             for (var i = 0; i < portas.length; i++) {
-                    if ((per.x  < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
-                        if(tecla == 32 && respostas[i].id == "resposta2"){
-                            window.alert("proxima fase!");
-                            document.getElementById("espaco").style.display = "none";
-                            break;
+                if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
+                    if (tecla == 32 && respostas[i].id == "resposta2") {
+                        window.alert("proxima fase!");
+                        document.getElementById("espaco").style.display = "none";
+                        break;
 
-                        }else if(tecla == 32 && respostas[i].id != "resposta2"){
-                            personagem.style.bottom = "1%";
-                            personagem.style.left = "0%";
-                            document.getElementById("espaco").style.display = "none";
-                            break;
+                    } else if (tecla == 32 && respostas[i].id != "resposta2") {
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";
+                        document.getElementById("espaco").style.display = "none";
+                        break;
 
-                        }
-                        document.getElementById("espaco").style.display = "block";
                     }
+                    document.getElementById("espaco").style.display = "block";
+                }
             }
 
 
-          
+
 
             for (var i = 0; i < escadas.length; i++) {
                 escadas[i].getBoundingClientRect();
@@ -361,15 +377,36 @@
             portaAberta1.getBoundingClientRect();
             portaAberta2.getBoundingClientRect();
 
-       
 
 
-            if ((per.x < portaAberta1.x + portaAberta1.width && per.x  + per.width > portaAberta1.x && per.y < portaAberta1.y  + portaAberta1.height && per.y  + per.height > portaAberta1.y)   || (per.x < portaAberta2.x + portaAberta2.width && per.x  + per.width > portaAberta2.x && per.y < portaAberta2.y  + portaAberta2.height && per.y  + per.height > portaAberta2.y) ) {
-                personagem.style.bottom = "1%";
-                personagem.style.left = "0%";
+            console.log(per.x, portaAberta1.x);
 
-            }
-            
+            if ((per.x < portaAberta1.x + portaAberta1.width && per.x + per.width > portaAberta1.x && per.y < portaAberta1.y + portaAberta1.height && per.y + per.height > portaAberta1.y) || (per.x < portaAberta2.x + portaAberta2.width && per.x + per.width > portaAberta2.x && per.y < portaAberta2.y + portaAberta2.height && per.y + per.height > portaAberta2.y)) {
+           
+                if(per.x + 100 > portaAberta2.x && per.x < 500){
+                    var teleport = "teleport1";
+                }else if (per.x  > portaAberta2.x) {
+                    var teleport = "teleport3";
+                }
+                setTimeout(function () {
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
+                    document.getElementById("teleport2").style.display = 'block';
+                    document.getElementById(teleport).style.display = 'block';
+                }, 500);
+
+                setTimeout(function () {
+                    document.getElementById("teleport2").style.display = 'none';
+                    document.getElementById(teleport).style.display = 'none';
+                }, 1000);
+
+              
+
+            }                      
+
+         
+
+
             if (tecla == 39 && valor == "livre") {
                 moverDireita();
 
@@ -387,12 +424,12 @@
 
                         moverCima();
                     }
-                    if(per.y <= escadas[i].y -40){
+                    if (per.y <= escadas[i].y - 40) {
                         valor = "livre";
 
                     }
 
-                    console.log(valor);
+                    //console.log(valor);
 
                 }
             }

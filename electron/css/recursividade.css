@@ -160,7 +160,7 @@ body{
     width: 23%;
     bottom: 1%;
     left: 0%;
-    z-index: 1;
+    z-index: 0;
 }
 
 
@@ -360,4 +360,27 @@ body{
         left: -10%;
         bottom:  20%;
     }
+}
+
+#teleport1{
+    position: absolute;
+    width: 5%;
+    bottom: 20%;
+    left: 10%;
+    z-index: 1;
+
+}
+#teleport2{
+    position: absolute;
+    width: 5%;
+    bottom: 0%;
+    left: 0%;
+    z-index: +1;
+}
+#teleport3{
+    position: absolute;
+    width: 5%;
+    bottom: 42%;
+    left: 82%;
+    z-index: 1;
 }
