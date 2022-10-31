@@ -453,7 +453,6 @@
             for (var i = 0; i < portas.length; i++) {
                 if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
                     if (tecla == 32 && respostas[i].id == "resposta2") {
-                        window.alert("proxima fase!");
                         cenario = cenario + 1;
                         mudarCenario();
                         document.getElementById("espaco").style.display = "none";
