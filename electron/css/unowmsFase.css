@@ -3,14 +3,14 @@ body {
     padding: 0%;
     background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
 
-    /*overflow: hidden;  */
+    overflow: hidden;  
 
 }
 
 
 h1 {
     text-align: center;
-    padding: 1%;
+
     font-size: 2vw;
 }
 
@@ -84,7 +84,7 @@ h1 {
 .caixaTeclado {
     position: relative;
     width: 13%;
-    height: 10%;
+    height: 122%;
 
     left: 3%;
     display: inline-grid;

@@ -1,7 +1,7 @@
 body{
     height: 100vh;
     overflow: hidden;    
-    background: linear-gradient( #01000c, #0d0266) no-repeat;
+    background: linear-gradient( #8a007e, #0d0266) no-repeat;
 }
 
 
@@ -45,14 +45,7 @@ body{
     bottom: 0%;
     left: 0%;
 }
-
-.escada1{
-    position: absolute;
-    width: 25%;
-    height: 45%;
-    bottom: 0%;
-    left: 30%;
-}
+/* dar display block na escada1 e escada3 cherrim*/
 
 .escada2{
     position: absolute;
@@ -63,13 +56,7 @@ body{
 }
 
 
-.escada3{
-    position: absolute;
-    width: 25%;
-    height: 48%;
-    bottom: 15%;
-    left: 20%;
-}
+
 
 
 .escada4{
@@ -296,72 +283,6 @@ body{
 
 }
 
-.cherrim{
-    position: absolute;
-    width: 25%;
-    bottom: 20%;
-    z-index: 1;
-    right: 0%;
-    animation: cherrim_movimento 10s infinite linear;
-
-}
-
-
-@keyframes cherrim_movimento {
-
-    0% {
-        left: 75%;
-        bottom: 20%;
-
-    }
-
-    25% {
-        bottom:  20%;
-
-    }
-    30% {
-        left: 50%;
-        bottom: 45%;
-
-    }
-    35% {
-        left: 40%;
-        bottom: 25%;
-
-    }
-    45% {
-        left: 30%;
-        bottom: 20%;
-
-    }
-   
-
-    50% {
-        left: 20%;
-        bottom: 45%;
-
-    }
-    55% {
-        left: 10%;
-        bottom: 25%;
-
-    }
-    60% {
-        bottom: 20%;
-
-    }
-
-
-    75% {
-        bottom: 20%;
-    }
-
-    100% {
-        left: -10%;
-        bottom:  20%;
-    }
-}
-
 #teleport1{
     position: absolute;
     width: 5%;
@@ -384,3 +305,5 @@ body{
     left: 82%;
     z-index: 1;
 }
+
+

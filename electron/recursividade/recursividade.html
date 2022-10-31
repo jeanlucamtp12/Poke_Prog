@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/recursividade.css">
+    <link rel="stylesheet" id="diretorio" href="../css/recursividade.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -14,7 +14,20 @@
     <div class="campo">
 
         <div class="cherrim">
-            <img class="cherrim" id="cherrim" src="../img/recursividade/cherrim-sunshine.gif">
+            <img class="cherrim" id="cherrim"  src="../img/recursividade/cherrim-sunshine.gif">
+        </div>
+
+    
+        <div class="dewgong">
+            <img class="dewgong" id="dewgong" style="display: none"src="../img/recursividade/dewgong.gif">
+        </div>
+
+        <div>
+            <img class="chuva" id="chuva"  style="display: none" src="../img/repeticao/chuva.gif">
+        </div>
+
+        <div class="rio" id="rio"  style="display: none">
+
         </div>
 
         <div class="teleport">
@@ -345,6 +358,15 @@
                     if (tecla == 32 && respostas[i].id == "resposta2") {
                         window.alert("proxima fase!");
                         document.getElementById("espaco").style.display = "none";
+                        document.getElementById("diretorio").href = "../css/recursividade1.css";
+                        document.getElementById("rio").style.display = "block";
+                        document.getElementById("dewgong").style.display = "block";
+                        document.getElementById("chuva").style.display = "block";
+                        document.getElementById("cherrim").style.display = "none";
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";
+
+
                         break;
 
                     } else if (tecla == 32 && respostas[i].id != "resposta2") {
