@@ -13,13 +13,30 @@
 
     <div class="campo">
 
-        <div class="cherrim">
+        <div class="cherrim" style="display: block">
             <img class="cherrim" id="cherrim"  src="../img/recursividade/cherrim-sunshine.gif">
         </div>
 
     
         <div class="dewgong">
             <img class="dewgong" id="dewgong" style="display: none"src="../img/recursividade/dewgong.gif">
+        </div>
+
+        <div class="pidgeot" >
+            <img class="pidgeot" id="pidgeot" style="display: none" src="../img/recursividade/pidgeot.gif">
+        </div>
+
+        <div class="Weezing" >
+            <img class="Weezing" id="Weezing" style="display: none" src="../img/recursividade/Weezing.gif">
+        </div>
+
+        <div class="arbok">
+            <img class="arbok" id="arbok" style="display: none" src="../img/recursividade/arbok.gif">
+        </div>
+
+
+        <div class="equipeRocket">
+            <img class="equipeRocket" id="equipeRocket" style="display: none" src="../img/recursividade/equipe rocket.png">
         </div>
 
         <div>
@@ -108,8 +125,10 @@
 
 
 
+     
 
-        <div class="pedra">
+
+        <div class="pedra" >
             <img class="pedra1" id="pedra1" src="../img/recursividade/tronco.png">
         </div>
 
@@ -121,10 +140,11 @@
             <img class="pedra3" id="pedra3" src="../img/recursividade/tronco.png">
         </div>
 
+        
         <div class="pedra">
             <img class="pedra4" id="pedra4" src="../img/recursividade/tronco.png">
         </div>
-
+    
 
         <div class="personagem">
             <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)"
@@ -160,9 +180,7 @@
 
 
     <script>
-
-
-
+        var cenario = 1;
 
         const personagemIniciado = (event) => {
             event.dataTransfer.setData("img", event.target.id);
@@ -214,10 +232,23 @@
             }
 
 
-            var cherrim = document.querySelector("#cherrim");
-            cherrim.getBoundingClientRect();
+            if (cenario == 1 || cenario == 5){
+                var pokemon = "cherrim";
+            }else if(cenario == 2 || cenario == 6){
+                var pokemon = "dewgong";
+            }else if(cenario == 3 || cenario == 7){
+                var pokemon = "pidgeot";
+            }else if(cenario == 4){
+                var pokemon = "arbok";
+            }else{
+                var pokemon = "Weezing";
 
-            if ((bulbasaur.x < cherrim.x + cherrim.width && bulbasaur.x + bulbasaur.width > cherrim.x && bulbasaur.y < cherrim.y + cherrim.height && bulbasaur.y + bulbasaur.height > cherrim.y)) {
+            }
+
+            var poke = document.querySelector("#"+pokemon);
+            poke.getBoundingClientRect();
+
+            if ((bulbasaur.x < poke.x + poke.width && bulbasaur.x + bulbasaur.width > poke.x && bulbasaur.y < poke.y + poke.height && bulbasaur.y + bulbasaur.height > poke.y)) {
                 personagem.style.bottom = "1%";
                 personagem.style.left = "0%";
 
@@ -246,6 +277,72 @@
         valor = "livre";
 
 
+        const mudarCenario = () =>{
+            switch (cenario){
+                case 1: case 5:
+                        document.getElementById("diretorio").href = "../css/recursividade.css";
+                        document.getElementById("rio").style.display = "none";
+                        document.getElementById("dewgong").style.display = "none";
+                        document.getElementById("chuva").style.display = "none";
+                        document.getElementById("cherrim").style.display = "block";
+                        document.getElementById("arbok").style.display = "none";
+                        document.getElementById("Weezing").style.display = "none";
+                        document.getElementById("equipeRocket").style.display = "none";
+                        document.getElementById("pidgeot").style.display = "none";
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";
+                    break;
+                case 2: case 6:
+                        document.getElementById("diretorio").href = "../css/recursividade1.css";
+                        document.getElementById("rio").style.display = "block";
+                        document.getElementById("dewgong").style.display = "block";
+                        document.getElementById("chuva").style.display = "block";
+                        document.getElementById("cherrim").style.display = "none";
+                        document.getElementById("arbok").style.display = "none";
+                        document.getElementById("Weezing").style.display = "none";
+                        document.getElementById("equipeRocket").style.display = "none";
+                        document.getElementById("pidgeot").style.display = "none";
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";
+                    break;
+                case 3: case 7:
+                        document.getElementById("diretorio").href = "../css/recursividade2.css";
+                        document.getElementById("rio").style.display = "none";
+                        document.getElementById("dewgong").style.display = "none";
+                        document.getElementById("chuva").style.display = "none";
+                        document.getElementById("cherrim").style.display = "none";
+                        document.getElementById("arbok").style.display = "none";
+                        document.getElementById("Weezing").style.display = "none";
+                        document.getElementById("equipeRocket").style.display = "none";
+                        document.getElementById("pidgeot").style.display = "block";
+                        document.getElementById("escada1").style.display = "none";
+                        document.getElementById("escada3").style.display = "none";
+
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";
+                    break;
+                case 4: case 8:
+                        document.getElementById("diretorio").href = "../css/recursividade3.css";
+                        document.getElementById("rio").style.display = "none";
+                        document.getElementById("dewgong").style.display = "none";
+                        document.getElementById("chuva").style.display = "none";
+                        document.getElementById("cherrim").style.display = "none";
+                        document.getElementById("arbok").style.display = "block";
+                        if(cenario == 8){
+                            document.getElementById("Weezing").style.display = "block";
+                            document.getElementById("arbok").style.display = "none";
+                            document.getElementById("escada1").style.display = "block";
+                        }
+                        document.getElementById("equipeRocket").style.display = "block";
+                        document.getElementById("pidgeot").style.display = "none";
+                        personagem.style.bottom = "1%";
+                        personagem.style.left = "0%";
+                    break;
+
+            }
+                    console.log("pelo amor0", cenario);
+
+        }
 
         const moverDireita = () => {
 
@@ -357,14 +454,10 @@
                 if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
                     if (tecla == 32 && respostas[i].id == "resposta2") {
                         window.alert("proxima fase!");
+                        cenario = cenario + 1;
+                        mudarCenario();
                         document.getElementById("espaco").style.display = "none";
-                        document.getElementById("diretorio").href = "../css/recursividade1.css";
-                        document.getElementById("rio").style.display = "block";
-                        document.getElementById("dewgong").style.display = "block";
-                        document.getElementById("chuva").style.display = "block";
-                        document.getElementById("cherrim").style.display = "none";
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";
+                      
 
 
                         break;

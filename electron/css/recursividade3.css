@@ -1,7 +1,7 @@
 body{
     height: 100vh;
     overflow: hidden;    
-    background: linear-gradient( #8a007e, #0d0266) no-repeat;
+    background: linear-gradient( #0e0314, #380035) no-repeat;
 }
 
 
@@ -45,7 +45,14 @@ body{
     bottom: 0%;
     left: 0%;
 }
-/* dar display block na escada1 e escada3 cherrim*/
+
+.escada1{
+    position: absolute;
+    width: 25%;
+    height: 45%;
+    bottom: 0%;
+    left: 30%;
+}
 
 .escada2{
     position: absolute;
@@ -56,7 +63,13 @@ body{
 }
 
 
-
+.escada3{
+    position: absolute;
+    width: 25%;
+    height: 48%;
+    bottom: 15%;
+    left: 20%;
+}
 
 
 .escada4{
@@ -92,7 +105,7 @@ body{
     position: absolute;
     width: 30%;
     bottom: 62%;
-    left: 5%;
+    left: 2%;
     z-index: -1;
 }
 
@@ -101,7 +114,7 @@ body{
     position: absolute;
     width: 30%;
     bottom: 62%;
-    left: 15%;
+    left: 10%;
     z-index: -1;
 
 }
@@ -110,7 +123,7 @@ body{
     position: absolute;
     width: 30%;
     bottom: 62%;
-    left: 55%;
+    left: 35%;
     z-index: -1;
 
 }
@@ -118,7 +131,7 @@ body{
     position: absolute;
     width: 30%;
     bottom: 62%;
-    left: 70%;
+    left: 50%;
     z-index: -1;
 
 }
@@ -151,14 +164,12 @@ body{
 }
 
 
-
-
 #pedra1{
     animation: pedra_movimento 3s infinite linear;
     width: 5%;   
     position: absolute;
     bottom: 30%;
-    left: 15%;
+    left: 10%;
  
    
 }
@@ -169,18 +180,18 @@ body{
     width: 5%;    
     position: absolute;
     bottom: 50%;
-    left: 48%;
+    left: 43%;
  
 
 }
 
 #pedra3{
-    animation: pedra_movimento 4s infinite linear;
+    animation: pedra_movimento 8s infinite linear;
 
     width: 5%;   
     position: absolute;
     bottom:20%;
-    left:70%;
+    left:45%;
  
    
 }
@@ -190,7 +201,7 @@ body{
     width: 5%;     
     position: absolute;
     bottom: 45%;
-    left:90%;
+    left:75%;
    
 }
 
@@ -207,7 +218,6 @@ body{
 
     }
 }
-
 
 .pergunta{
     position: absolute;
@@ -229,7 +239,7 @@ body{
     position: absolute;
     font-size:3vw;
     bottom: 0%;
-    left: 16%;
+    left: 15%;
     color: white;
 }
 
@@ -237,7 +247,7 @@ body{
     position: absolute;
     font-size:3vw;
     bottom: 0%;
-    left: 26%;
+    left: 22%;
     color: white;
 }
 
@@ -246,7 +256,7 @@ body{
     position: absolute;
     font-size:3vw;
     bottom: 62%;
-    left: 64%;
+    left: 45%;
     color: white;
 }
 
@@ -254,7 +264,7 @@ body{
     position: absolute;
     font-size:3vw;
     bottom: 62%;
-    left: 78%;
+    left: 58%;
     color: white;
 }
 
@@ -283,6 +293,9 @@ body{
 
 }
 
+
+
+
 #teleport1{
     position: absolute;
     width: 5%;
@@ -307,69 +320,110 @@ body{
 }
 
 
-.pidgeot{
+.arbok{
     position: absolute;
-    width: 35%;
+    width: 32%;
     bottom: 20%;
     z-index: 1;
     right: 0%;
-    animation: pidgeot_movimento 10s infinite linear;
+    animation: arbok_movimento 35s infinite linear;
+
+}
+
+.Weezing{
+    position: absolute;
+    width: 35%;
+    bottom: 2%;
+    z-index: 1;
+    right: 0%;
+    animation: Weezing_movimento 18s infinite linear;
+}
+
+.equipeRocket{
+    position: absolute;
+    width: 40%;
+    bottom: 62%;
+    z-index: 1;
+    right: 2%;
 
 }
 
 
-@keyframes pidgeot_movimento {
+
+@keyframes Weezing_movimento {
 
     0% {
-        right: 0%;
-        bottom: 0%;
+        right: 2%;
+        bottom: 2%;
 
     }
+    10% {
+        right: 20%;
+        bottom: 2%;
 
-    25% {
-        right: 0%;
-        bottom:  20%;
+    }
+    20% {
+        right: 30%;
+        bottom: 15%;
 
     }
     30% {
-        right: 0%;
-        bottom: 85%;
-
-    }
-    35% {
-        bottom: 80%;
-
-    }
-    45% {
-        right: 20%;
-        bottom: 60%;
-
-    }
-   
-
-    50% {
-        right: 40%;
-        bottom: 40%;
-
-    }
-    55% {
-        right: 50%;
-        bottom: 0%;
-
-    }
-    60% {
-        right: 60%;
+        right: 10%;
         bottom: 10%;
     }
 
+    40% {
+        right: 2%;
+        bottom: 2%;
+    }
+    50% {
+        right: 15%;
+        bottom: 2%;
 
-    75% {
-        right: 80%;
-        bottom: 20%;    
+    }
+    60% {
+        right: 25%;
+        bottom: 2%;
+    }
+
+    70% {
+        right: 50%;
+        bottom: 2%;
+    }
+    80% {
+        right: 25%;
+        bottom: 2%;
+
+    }
+    90% {
+        right: 12%;
+        bottom: 2%;
     }
 
     100% {
-        right: 110%;
-        bottom: 50%;
+        right: 2%;
+        bottom:  2%;
+    }
+}
+
+
+
+
+
+@keyframes arbok_movimento {
+
+    0% {
+        right: 2%;
+        bottom: 20%;
+
+    }
+    50% {
+        right: 50%;
+        bottom: 20%;
+
+    }
+    100% {
+        right: 100%;
+        bottom:  20%;
     }
 }
