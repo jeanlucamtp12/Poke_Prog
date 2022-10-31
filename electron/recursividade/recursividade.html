@@ -158,6 +158,12 @@
 
         </div>
 
+        <div class="andar">
+            <h3>Andar:</h3>
+            <h3 id="andar">1/8</h3>
+
+        </div>
+
         <div class="espaco">
             <img class="espaco" id="espaco" src="../img/recursividade/space.png" style="display:none">
         </div>
@@ -251,7 +257,7 @@
             if ((bulbasaur.x < poke.x + poke.width && bulbasaur.x + bulbasaur.width > poke.x && bulbasaur.y < poke.y + poke.height && bulbasaur.y + bulbasaur.height > poke.y)) {
                 personagem.style.bottom = "1%";
                 personagem.style.left = "0%";
-
+                valor = "livre";
             }
 
         }, 5);
@@ -454,6 +460,8 @@
                 if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
                     if (tecla == 32 && respostas[i].id == "resposta2") {
                         cenario = cenario + 1;
+                        document.getElementById("andar").innerHTML = cenario+"/8";
+              
                         mudarCenario();
                         document.getElementById("espaco").style.display = "none";
                       

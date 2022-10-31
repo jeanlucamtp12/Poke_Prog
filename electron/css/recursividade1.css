@@ -4,6 +4,17 @@ body{
     background: linear-gradient( #2017a3, #160d5e) no-repeat;
 }
 
+.andar{
+    position: absolute;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size:1.2vw;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    left: 0%;
+    top: 2%;
+}    
+
 
 
 .campo{
