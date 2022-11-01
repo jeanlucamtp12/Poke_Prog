@@ -14,19 +14,19 @@
     <div class="campo">
 
         <div class="cherrim" style="display: block">
-            <img class="cherrim" id="cherrim"  src="../img/recursividade/cherrim-sunshine.gif">
+            <img class="cherrim" id="cherrim" src="../img/recursividade/cherrim-sunshine.gif">
         </div>
 
-    
+
         <div class="dewgong">
-            <img class="dewgong" id="dewgong" style="display: none"src="../img/recursividade/dewgong.gif">
+            <img class="dewgong" id="dewgong" style="display: none" src="../img/recursividade/dewgong.gif">
         </div>
 
-        <div class="pidgeot" >
+        <div class="pidgeot">
             <img class="pidgeot" id="pidgeot" style="display: none" src="../img/recursividade/pidgeot.gif">
         </div>
 
-        <div class="Weezing" >
+        <div class="Weezing">
             <img class="Weezing" id="Weezing" style="display: none" src="../img/recursividade/Weezing.gif">
         </div>
 
@@ -36,14 +36,15 @@
 
 
         <div class="equipeRocket">
-            <img class="equipeRocket" id="equipeRocket" style="display: none" src="../img/recursividade/equipe rocket.png">
+            <img class="equipeRocket" id="equipeRocket" style="display: none"
+                src="../img/recursividade/equipe rocket.png">
         </div>
 
         <div>
-            <img class="chuva" id="chuva"  style="display: none" src="../img/repeticao/chuva.gif">
+            <img class="chuva" id="chuva" style="display: none" src="../img/repeticao/chuva.gif">
         </div>
 
-        <div class="rio" id="rio"  style="display: none">
+        <div class="rio" id="rio" style="display: none">
 
         </div>
 
@@ -125,10 +126,10 @@
 
 
 
-     
 
 
-        <div class="pedra" >
+
+        <div class="pedra">
             <img class="pedra1" id="pedra1" src="../img/recursividade/tronco.png">
         </div>
 
@@ -140,11 +141,11 @@
             <img class="pedra3" id="pedra3" src="../img/recursividade/tronco.png">
         </div>
 
-        
+
         <div class="pedra">
             <img class="pedra4" id="pedra4" src="../img/recursividade/tronco.png">
         </div>
-    
+
 
         <div class="personagem">
             <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)"
@@ -154,13 +155,12 @@
 
 
         <div class="pergunta">
-            <h3>Quanto é 1+1=</h3>
+            <h3 id="pergunta">Escolha uma porta:</h3>
 
         </div>
 
         <div class="andar">
-            <h3>Andar:</h3>
-            <h3 id="andar">1/8</h3>
+            <h1 id="andar">1/8</h1>
 
         </div>
 
@@ -187,6 +187,9 @@
 
     <script>
         var cenario = 1;
+        var pergunta = 0;
+        var controle = 0;
+
 
         const personagemIniciado = (event) => {
             event.dataTransfer.setData("img", event.target.id);
@@ -234,24 +237,25 @@
                 if ((bulbasaur.x < pedras[i].x + pedras[i].width && bulbasaur.x + bulbasaur.width > pedras[i].x) && (bulbasaur.y < pedras[i].y + pedras[i].height && bulbasaur.y + bulbasaur.height > pedras[i].y)) {
                     personagem.style.bottom = "1%";
                     personagem.style.left = "0%";
+                    valor = "livre";
                 }
             }
 
 
-            if (cenario == 1 || cenario == 5){
+            if (cenario == 1 || cenario == 5) {
                 var pokemon = "cherrim";
-            }else if(cenario == 2 || cenario == 6){
+            } else if (cenario == 2 || cenario == 6) {
                 var pokemon = "dewgong";
-            }else if(cenario == 3 || cenario == 7){
+            } else if (cenario == 3 || cenario == 7) {
                 var pokemon = "pidgeot";
-            }else if(cenario == 4){
+            } else if (cenario == 4) {
                 var pokemon = "arbok";
-            }else{
+            } else {
                 var pokemon = "Weezing";
 
             }
 
-            var poke = document.querySelector("#"+pokemon);
+            var poke = document.querySelector("#" + pokemon);
             poke.getBoundingClientRect();
 
             if ((bulbasaur.x < poke.x + poke.width && bulbasaur.x + bulbasaur.width > poke.x && bulbasaur.y < poke.y + poke.height && bulbasaur.y + bulbasaur.height > poke.y)) {
@@ -283,70 +287,244 @@
         valor = "livre";
 
 
-        const mudarCenario = () =>{
-            switch (cenario){
+
+        function alteraPerguntas(resp) {
+            console.log("Oiuiiiii ", pergunta);
+
+            switch (resp) {
+                case 0:
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
+                    controle = 0;
+                    
+
+                    return 0;
+                    break;
+                case 1:
+                    document.getElementById("pergunta").innerHTML = "Quantos dias tem um ano? ";
+                    document.getElementById("resposta1").innerHTML = "300";
+                    document.getElementById("resposta2").innerHTML = "365";
+                    document.getElementById("resposta3").innerHTML = "400";
+                    break;
+                case 2:
+                    document.getElementById("pergunta").innerHTML = "25 < 36?";
+                    document.getElementById("resposta1").innerHTML = "Sim";
+                    document.getElementById("resposta2").innerHTML = "Não";
+                    document.getElementById("resposta3").innerHTML = "Talvez";
+                    document.getElementById("resposta4").innerHTML = "Igual";
+                    break;
+                case 3:
+                    document.getElementById("pergunta").innerHTML = "Em quantas regiões é dividido o Brasil?";
+                    document.getElementById("resposta1").innerHTML = "4";
+                    document.getElementById("resposta2").innerHTML = "5";
+                    document.getElementById("resposta3").innerHTML = "6";
+                    document.getElementById("resposta4").innerHTML = "7";
+                    break;
+                case 4:
+                    document.getElementById("pergunta").innerHTML = "Qual o nome do acento usado em 'não'?";
+                    document.getElementById("resposta1").innerHTML = "til";
+                    document.getElementById("resposta2").innerHTML = "teu";
+                    document.getElementById("resposta3").innerHTML = "tiu";
+                    document.getElementById("resposta4").innerHTML = "tui";
+                    break;
+                case 5:
+                    document.getElementById("pergunta").innerHTML = "Prato típico da Itália?";
+                    document.getElementById("resposta1").innerHTML = "brigadeiro";
+                    document.getElementById("resposta2").innerHTML = "feijoada";
+                    document.getElementById("resposta3").innerHTML = "omelete";
+                    document.getElementById("resposta4").innerHTML = "pizza";
+                    break;
+                case 6:
+                    document.getElementById("pergunta").innerHTML = "Quanto é 30 x 30? ";
+                    document.getElementById("resposta1").innerHTML = "500";
+                    document.getElementById("resposta2").innerHTML = "30";
+                    document.getElementById("resposta3").innerHTML = "900";
+                    document.getElementById("resposta4").innerHTML = "800";
+                    break;
+                case 7:
+                    document.getElementById("pergunta").innerHTML = "Quantos ossos tem um bebê recém-nascido? ";
+                    document.getElementById("resposta1").innerHTML = "276";
+                    document.getElementById("resposta2").innerHTML = "280";
+                    document.getElementById("resposta3").innerHTML = "300";
+                    document.getElementById("resposta4").innerHTML = "256";
+                    break;
+                case 8:
+                    document.getElementById("pergunta").innerHTML = "Em qual país foi inventado o chuveiro elétrico? ";
+                    document.getElementById("resposta1").innerHTML = "Uruguai";
+                    document.getElementById("resposta2").innerHTML = "Brasil";
+                    document.getElementById("resposta3").innerHTML = "Inglaterra";
+                    document.getElementById("resposta4").innerHTML = "Alemanha";
+                    break;
+                default:
+                  
+                    return 0;
+                    break;
+            }
+        }
+
+
+
+        function perguntas(resp) {
+
+            switch (pergunta) {
+                case 0:
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
+                    controle = 0;
+                    return 0;
+                    break;
+                case 1:
+                    if (resp == "resposta2") {
+                        return 1;
+
+                    }else{
+
+                        //pergunta = pergunta + 1;
+                        return 0;
+                    }
+                    break;
+                case 2:
+    
+                    if (resp == "resposta1") {
+
+                        //pergunta = pergunta + 1;
+                        controle = 1;
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
+                case 3:
+                 
+                    if (resp == "resposta2") {
+                        controle = 1;
+                       // pergunta = pergunta + 1;
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
+                case 4:
+          
+                    if (resp == "resposta1") {
+                        controle = 1;
+                        //pergunta = pergunta + 1;
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
+                case 5:
+        
+                    if (resp == "resposta4") {
+                        controle = 1;
+                        //pergunta = pergunta + 1;
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
+                case 6:
+   
+                    if (resp == "resposta3") {
+                        controle = 1;
+                        //pergunta = pergunta + 1;
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
+                case 7:
+
+                    if (resp == "resposta1") {
+                        controle = 1;
+                        //pergunta = pergunta + 1;
+                        return 1; 
+                    }else{
+                        return 0;
+                    }
+                    break;
+                case 8:
+  
+                    if (resp == "resposta2") {
+                        controle = 1;
+                        //pergunta = pergunta + 1;
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                    break;
+                default:
+                  
+                    return 0;
+                    break;
+            }
+        }
+
+
+        const mudarCenario = () => {
+            switch (cenario) {
                 case 1: case 5:
-                        document.getElementById("diretorio").href = "../css/recursividade.css";
-                        document.getElementById("rio").style.display = "none";
-                        document.getElementById("dewgong").style.display = "none";
-                        document.getElementById("chuva").style.display = "none";
-                        document.getElementById("cherrim").style.display = "block";
-                        document.getElementById("arbok").style.display = "none";
-                        document.getElementById("Weezing").style.display = "none";
-                        document.getElementById("equipeRocket").style.display = "none";
-                        document.getElementById("pidgeot").style.display = "none";
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";
+                    document.getElementById("diretorio").href = "../css/recursividade.css";
+                    document.getElementById("rio").style.display = "none";
+                    document.getElementById("dewgong").style.display = "none";
+                    document.getElementById("chuva").style.display = "none";
+                    document.getElementById("cherrim").style.display = "block";
+                    document.getElementById("arbok").style.display = "none";
+                    document.getElementById("Weezing").style.display = "none";
+                    document.getElementById("equipeRocket").style.display = "none";
+                    document.getElementById("pidgeot").style.display = "none";
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
                     break;
                 case 2: case 6:
-                        document.getElementById("diretorio").href = "../css/recursividade1.css";
-                        document.getElementById("rio").style.display = "block";
-                        document.getElementById("dewgong").style.display = "block";
-                        document.getElementById("chuva").style.display = "block";
-                        document.getElementById("cherrim").style.display = "none";
-                        document.getElementById("arbok").style.display = "none";
-                        document.getElementById("Weezing").style.display = "none";
-                        document.getElementById("equipeRocket").style.display = "none";
-                        document.getElementById("pidgeot").style.display = "none";
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";
+                    document.getElementById("diretorio").href = "../css/recursividade1.css";
+                    document.getElementById("rio").style.display = "block";
+                    document.getElementById("dewgong").style.display = "block";
+                    document.getElementById("chuva").style.display = "block";
+                    document.getElementById("cherrim").style.display = "none";
+                    document.getElementById("arbok").style.display = "none";
+                    document.getElementById("Weezing").style.display = "none";
+                    document.getElementById("equipeRocket").style.display = "none";
+                    document.getElementById("pidgeot").style.display = "none";
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
                     break;
                 case 3: case 7:
-                        document.getElementById("diretorio").href = "../css/recursividade2.css";
-                        document.getElementById("rio").style.display = "none";
-                        document.getElementById("dewgong").style.display = "none";
-                        document.getElementById("chuva").style.display = "none";
-                        document.getElementById("cherrim").style.display = "none";
-                        document.getElementById("arbok").style.display = "none";
-                        document.getElementById("Weezing").style.display = "none";
-                        document.getElementById("equipeRocket").style.display = "none";
-                        document.getElementById("pidgeot").style.display = "block";
-                        document.getElementById("escada1").style.display = "none";
-                        document.getElementById("escada3").style.display = "none";
+                    document.getElementById("diretorio").href = "../css/recursividade2.css";
+                    document.getElementById("rio").style.display = "none";
+                    document.getElementById("dewgong").style.display = "none";
+                    document.getElementById("chuva").style.display = "none";
+                    document.getElementById("cherrim").style.display = "none";
+                    document.getElementById("arbok").style.display = "none";
+                    document.getElementById("Weezing").style.display = "none";
+                    document.getElementById("equipeRocket").style.display = "none";
+                    document.getElementById("pidgeot").style.display = "block";
+                    document.getElementById("escada1").style.display = "none";
+                    document.getElementById("escada3").style.display = "none";
 
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
                     break;
                 case 4: case 8:
-                        document.getElementById("diretorio").href = "../css/recursividade3.css";
-                        document.getElementById("rio").style.display = "none";
-                        document.getElementById("dewgong").style.display = "none";
-                        document.getElementById("chuva").style.display = "none";
-                        document.getElementById("cherrim").style.display = "none";
-                        document.getElementById("arbok").style.display = "block";
-                        if(cenario == 8){
-                            document.getElementById("Weezing").style.display = "block";
-                            document.getElementById("arbok").style.display = "none";
-                            document.getElementById("escada1").style.display = "block";
-                        }
-                        document.getElementById("equipeRocket").style.display = "block";
-                        document.getElementById("pidgeot").style.display = "none";
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";
+                    document.getElementById("diretorio").href = "../css/recursividade3.css";
+                    document.getElementById("rio").style.display = "none";
+                    document.getElementById("dewgong").style.display = "none";
+                    document.getElementById("chuva").style.display = "none";
+                    document.getElementById("cherrim").style.display = "none";
+                    document.getElementById("arbok").style.display = "block";
+                    if (cenario == 8) {
+                        document.getElementById("Weezing").style.display = "block";
+                        document.getElementById("arbok").style.display = "none";
+                        document.getElementById("escada1").style.display = "block";
+                    }
+                    document.getElementById("equipeRocket").style.display = "block";
+                    document.getElementById("pidgeot").style.display = "none";
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
                     break;
 
             }
-                    console.log("pelo amor0", cenario);
 
         }
 
@@ -458,24 +636,43 @@
 
             for (var i = 0; i < portas.length; i++) {
                 if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
-                    if (tecla == 32 && respostas[i].id == "resposta2") {
-                        cenario = cenario + 1;
-                        document.getElementById("andar").innerHTML = cenario+"/8";
-              
-                        mudarCenario();
-                        document.getElementById("espaco").style.display = "none";
-                      
+                    var temp = (respostas[i].id);
 
 
-                        break;
+                    if (tecla == 32) {
 
-                    } else if (tecla == 32 && respostas[i].id != "resposta2") {
-                        personagem.style.bottom = "1%";
-                        personagem.style.left = "0%";
-                        document.getElementById("espaco").style.display = "none";
-                        break;
+                        var retorno = perguntas(temp);                            
+                        if(retorno == 1){
+                            
+                            cenario = cenario + 1;
+                            document.getElementById("andar").innerHTML = cenario + "/8";
+                            mudarCenario();                            
 
-                    }
+                            pergunta = pergunta + 1;
+                            alteraPerguntas(pergunta);
+
+                            document.getElementById("espaco").style.display = "none";
+                            break;
+                        }else{
+                            perguntas(temp) ;  
+                            console.log("Mdasss111", pergunta);
+
+                            if(pergunta == 0){
+                                console.log("Mdasss");
+                                pergunta = pergunta + 1;
+
+                                alteraPerguntas(pergunta);
+                                personagem.style.bottom = "1%";
+                                personagem.style.left = "0%";
+                            }
+                            personagem.style.bottom = "1%";
+                            personagem.style.left = "0%";
+                            document.getElementById("espaco").style.display = "none";
+                            
+                            break; 
+                        }
+                       
+                    } 
                     document.getElementById("espaco").style.display = "block";
                 }
             }
@@ -501,13 +698,12 @@
 
 
 
-            console.log(per.x, portaAberta1.x);
 
             if ((per.x < portaAberta1.x + portaAberta1.width && per.x + per.width > portaAberta1.x && per.y < portaAberta1.y + portaAberta1.height && per.y + per.height > portaAberta1.y) || (per.x < portaAberta2.x + portaAberta2.width && per.x + per.width > portaAberta2.x && per.y < portaAberta2.y + portaAberta2.height && per.y + per.height > portaAberta2.y)) {
-           
-                if(per.x + 100 > portaAberta2.x && per.x < 500){
+
+                if (per.x + 100 > portaAberta2.x && per.x < 500) {
                     var teleport = "teleport1";
-                }else if (per.x  > portaAberta2.x) {
+                } else if (per.x > portaAberta2.x) {
                     var teleport = "teleport3";
                 }
                 setTimeout(function () {
@@ -522,11 +718,11 @@
                     document.getElementById(teleport).style.display = 'none';
                 }, 1000);
 
-              
 
-            }                      
 
-         
+            }
+
+
 
 
             if (tecla == 39 && valor == "livre") {
@@ -551,7 +747,6 @@
 
                     }
 
-                    //console.log(valor);
 
                 }
             }
