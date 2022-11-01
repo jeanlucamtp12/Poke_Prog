@@ -283,7 +283,7 @@ body{
     left: 5%;
     color: white;
 
-    animation: piscarTela 1.7s steps(1, end) infinite;
+    animation: piscarTela 0.4s steps(1, end) infinite;
 }
 
 @keyframes piscarTela {

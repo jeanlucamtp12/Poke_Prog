@@ -296,7 +296,7 @@
                     personagem.style.bottom = "1%";
                     personagem.style.left = "0%";
                     controle = 0;
-                    
+
 
                     return 0;
                     break;
@@ -356,7 +356,7 @@
                     document.getElementById("resposta4").innerHTML = "Alemanha";
                     break;
                 default:
-                  
+
                     return 0;
                     break;
             }
@@ -377,60 +377,60 @@
                     if (resp == "resposta2") {
                         return 1;
 
-                    }else{
+                    } else {
 
                         //pergunta = pergunta + 1;
                         return 0;
                     }
                     break;
                 case 2:
-    
+
                     if (resp == "resposta1") {
 
                         //pergunta = pergunta + 1;
                         controle = 1;
                         return 1;
-                    }else{
+                    } else {
                         return 0;
                     }
                     break;
                 case 3:
-                 
+
                     if (resp == "resposta2") {
                         controle = 1;
-                       // pergunta = pergunta + 1;
+                        // pergunta = pergunta + 1;
                         return 1;
-                    }else{
+                    } else {
                         return 0;
                     }
                     break;
                 case 4:
-          
+
                     if (resp == "resposta1") {
                         controle = 1;
                         //pergunta = pergunta + 1;
                         return 1;
-                    }else{
+                    } else {
                         return 0;
                     }
                     break;
                 case 5:
-        
+
                     if (resp == "resposta4") {
                         controle = 1;
                         //pergunta = pergunta + 1;
                         return 1;
-                    }else{
+                    } else {
                         return 0;
                     }
                     break;
                 case 6:
-   
+
                     if (resp == "resposta3") {
                         controle = 1;
                         //pergunta = pergunta + 1;
                         return 1;
-                    }else{
+                    } else {
                         return 0;
                     }
                     break;
@@ -439,23 +439,23 @@
                     if (resp == "resposta1") {
                         controle = 1;
                         //pergunta = pergunta + 1;
-                        return 1; 
-                    }else{
+                        return 1;
+                    } else {
                         return 0;
                     }
                     break;
                 case 8:
-  
+
                     if (resp == "resposta2") {
                         controle = 1;
                         //pergunta = pergunta + 1;
                         return 1;
-                    }else{
+                    } else {
                         return 0;
                     }
                     break;
                 default:
-                  
+
                     return 0;
                     break;
             }
@@ -639,25 +639,32 @@
                     var temp = (respostas[i].id);
 
 
+
                     if (tecla == 32) {
 
-                        var retorno = perguntas(temp);                            
-                        if(retorno == 1){
-                            
+                        var retorno = perguntas(temp);
+                        if (retorno == 1) {
+
                             cenario = cenario + 1;
                             document.getElementById("andar").innerHTML = cenario + "/8";
-                            mudarCenario();                            
+                            mudarCenario();
 
                             pergunta = pergunta + 1;
                             alteraPerguntas(pergunta);
 
                             document.getElementById("espaco").style.display = "none";
+                            if (cenario == 9) {
+                                window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
+                                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                            }
+                            document.getElementById("espaco").style.display = "none";
+
                             break;
-                        }else{
-                            perguntas(temp) ;  
+                        } else {
+                            perguntas(temp);
                             console.log("Mdasss111", pergunta);
 
-                            if(pergunta == 0){
+                            if (pergunta == 0) {
                                 console.log("Mdasss");
                                 pergunta = pergunta + 1;
 
@@ -668,11 +675,11 @@
                             personagem.style.bottom = "1%";
                             personagem.style.left = "0%";
                             document.getElementById("espaco").style.display = "none";
-                            
-                            break; 
+
+                            break;
                         }
-                       
-                    } 
+
+                    }
                     document.getElementById("espaco").style.display = "block";
                 }
             }

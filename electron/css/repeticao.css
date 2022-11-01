@@ -173,14 +173,14 @@
 
 
 .bolhas {
-    animation: bolhas_movimento 4s infinite linear;
 
     position: absolute;
 
     bottom: 0%;
     left: 70%;
-    width: 8%;
+    width: 6%;
 
+    animation: bolhas_movimento 6s infinite linear;
 
 
     
