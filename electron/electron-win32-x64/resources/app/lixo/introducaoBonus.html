@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/seila.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="sun"></div>
+    <div class="grass">
+      <div class="grass__blade grass__blade--1"></div>
+      <div class="grass__blade grass__blade--2"></div>
+      <div class="grass__blade grass__blade--3"></div>
+    </div>
+
+    <script>
+// for more grass
+    (function(){
+      function getRndNum(min, max) {
+        return Math.round(Math.random() * (max - min)) + min;
+      }
+      for(let x = 0; x < 120; x += getRndNum(2,6)){
+        let rndNum = getRndNum(70,100)
+        let el = document.createElement('div');
+        el.classList.add('grass');
+        el.style.width = rndNum + 'vmin';
+        el.style.height = rndNum + 'vmin';
+        for (let y = 0; y < 3; y++){
+          let blade = document.createElement('div');
+          blade.classList.add('grass__blade--' + (y + 1));
+          blade.classList.add('grass__blade');
+          blade.style.setProperty("animation-delay", x + "0ms");
+          el.appendChild(blade);
+        }
+        el.style.left = x + 'vw';
+        document.querySelector('body').appendChild(el);
+      }
+    })();
+
+    </script>
+    
+</body>
+</html>

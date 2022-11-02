@@ -18,62 +18,62 @@
 
 
 #falink{
-    animation: pedra_movimento 5s infinite linear;
-    width:80px;   
+    animation: raio_movimento 5s infinite linear;
+    width:4.5%;   
     position: absolute;
-    bottom:410px;
-    left: 220px;
+    top:48%;
     /* 220, 500, 700, 1000 */
  
 }
 
 #piso{
-     position: absolute;
-    width:190px;   
-    top: 59px;
+    position: absolute;
+    width: 10%;   
+    top: 6.5%;
+    color: white;
  
    
 }
 
 #raio3{
-    animation: pedra_movimento 3s infinite linear;
+    animation: raio_movimento 3s infinite linear;
      
-    width:80px;   
+    width:4.2%;   
     position: absolute;
-    bottom:300px;
-    left:400px;
+    bottom:30%;
+    left:20.8%;
  
    
 }
 
+
 #raio2{
-   animation: pedra_movimento 4s infinite linear;
-     
-    width:80px;   
+    animation:  raio_movimento 4s infinite linear;
+      
+    width:4.2%;   
     position: absolute;
-    bottom:450px;
-    left:620px;
+    bottom:48%;
+    left:32%;
+ }
  
 
-}
-
 #raio4{
-    animation: pedra_movimento 5s infinite linear;
+    animation:  raio_movimento 5s infinite linear;
      
-    width:80px;   
+    width:4.2%;   
     position: absolute;
-    bottom:450px;
-    left:920px;
+    bottom:48%;
+    left:48%;
  
    
 }
 #raio5{
-    animation: pedra_movimento 7s infinite linear;
+    animation:  raio_movimento 7s infinite linear;
      
-    width:80px;   
+    width:4.2%;   
     position: absolute;
-    bottom:450px;
-    left:1220px;
+    bottom:48%;
+    left:64%;
  
    
 }
@@ -81,44 +81,25 @@
 #nuvens{
     /*animation: pedra_movimento 9s infinite linear; */
      
-    width:680px;   
+    width:20%;   
     position: absolute;
-    bottom:390px;
-    left:350px;
+    top:0%;
+    left:40%;
  
    
 }
 
 
-#pedra{
-    animation: pedra_movimento 2s infinite linear;
-     
-    width:100px;   
-    position: absolute;
-    bottom:30px;
-    
-   
-}
 
-#sunflora{
-    
-    position: absolute;
-    bottom: 0px;
- 
-    width:150px;
-    right:0;
-}
 
 
 .poke{
-   /*animation: inicial_movimento 2s infinite linear;*/
-
 
     position: absolute;
-    bottom: -30px;
-    left: 650px;
+    bottom: -3%;
+    left: 10%;
  
-    width:120px;
+    width:6%;
   
 }
 
@@ -138,101 +119,12 @@
 }
 
 
-#haunter{
-    animation: haunter_movimento 5s infinite linear;
-
-    width:300px;   
-    position: absolute;
-    right:0;
- 
-   
-}
-
-#maca{
-    animation: maca_movimento 5s infinite linear;
-    width:70px;   
-    position: absolute;
-    bottom:0;
-    right: 0;
- 
-   
-}
-
-@keyframes maca_movimento{
-
-    0%{
-        right: 0%;
-        top: 20%;
-
-    }
-    5%{
-        right: 10%;
-        top: 50%;
-
-    }
-    15%{
-        right: 20%;
-        top: 80%;
-
-    }
-    20%{
-        right: 30%;
-        top: 90%;
-
-    }
-    50%{
-        right: 50%;
-    }
-    100%{
-        right: 100%;
-
-    }
-}
 
 
-@keyframes haunter_movimento{
-    0%{
-        transform: translateY(0px);
-        left: 80%;
-  
-    }
-    25%{
-        transform: translateY(-40px);
-        left: 60%;
-    }
-    30%{
-        transform: translateX(-100px);
-        left: 40%;
-
-    }
-    35%{
-        left: 20%;
-    }
-    50%{
-        transform: translateY(60px);
-        left: 45%;
-    }
-    60%{
-        transform: translateX(-100px);
-        left: 50%;
-    }
-   
-    72%{
-        transform: translateX(-100px);
-        left:60%;
-    }
-    75%{
-        transform: translateY(40px);
-        right: 25%;
-    }
-    100%{
-        transform: translateY(0px);
-        left: 80%;
-    }
-}
 
 
-@keyframes pedra_movimento{
+
+@keyframes raio_movimento{
     0%{
         top: 0%;
 
@@ -259,45 +151,33 @@
 }
 
 #pikachu{
-    width: 200px;
+    width: 10.3%;
 }
 
-form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
-label{
-    font-weight: bold;
-    font-size: .8rem;
-}
 
-input{
-    border-bottom: 2px solid #610044;
-    padding: 08px;
-    font-size: .8rem ;
-    margin-bottom: 0px;
-}
+
 
 
 
 .vetor {
    
-        padding: 10px;
-    
+        padding: 1%;
         display: flex;
         position:relative;
-        top:-80px;
+        top:0%;
         flex-direction: row-reverse;
+
+        left: 70%;
+        width: 30%;
     
 
 
 }
 .vetor h5{
    
-       position: absolute;
-        top: -30px;
+    position: absolute;
+    top: -40%;
     color:white;
     
 
@@ -306,14 +186,14 @@ input{
 
 .filhoVetor{
     color:white;
-    width:40px;
+    width:8%;
     border: 2px solid #ccc;
 
 }
 
 .filhoVetor img{
     color:white;
-    width:40px;
-    border: 2px solid #ccc;
+    width:100%;
 
 }
+

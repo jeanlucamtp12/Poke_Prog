@@ -1,8 +1,3 @@
-<?php
-$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +5,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/decisao.css">
 
@@ -32,26 +29,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         <div class="grass">
-            <div class="fio fio1"></div>
-            <div class="fio fio2"></div>
-            <div class="fio fio3"></div>
-            <div class="fio fio4"></div>
-            <div class="fio fio5"></div>
-            <div class="fio fio6"></div>
-            <div class="fio fio7"></div>
-            <div class="fio fio8"></div>
-            <div class="fio fio9"></div>
-            <div class="fio fio10"></div>
-            <div class="fio fio11"></div>
-            <div class="fio fio12"></div>
-            <div class="fio fio13"></div>
-            <div class="fio fio14"></div>
-            <div class="fio fio15"></div>
-            <div class="fio fio16"></div>
-            <div class="fio fio17"></div>
-            <div class="fio fio18"></div>
-            <div class="fio fio19"></div>
-            <div class="fio fio20"></div>
+
 
         </div>
 
@@ -86,7 +64,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         <div class="caixaFormulario">
-            <div class="form" id="form" method="POST">
+            <div class="form" id="form" method="GET" enctype='multipart/form-data'>
 
                 <form>
 
@@ -112,6 +90,37 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
     <script>
+
+
+
+
+
+        var j = 0;
+        for (var i = 1; j <= 100; i++) {
+
+
+            var img = document.createElement('img');
+            img.src = '../img/decisao/mato.png';
+            img.classList.add('mato');
+            img.id = 'mato' + i;
+            img.style.bottom = "-1%";
+            img.style.width = "4%";
+            img.style.left = j + "%";
+
+            var body = document.querySelector("body");
+            j = j + 3.8;
+
+            body.appendChild(img);
+
+        }
+
+
+
+
+
+
+
+
         var i = 1;
         var jogador = 0;
         var adversario = 0;
@@ -122,20 +131,20 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             if (resposta == "grama") {
 
                 document.getElementById("ataqueGrama").style.display = "block";
-                setTimeout(function() {
+                setTimeout(function () {
                     pararAnimacao(1)
                 }, 1000);
 
 
             } else {
                 document.getElementById("ataqueVeneno").style.display = "block";
-                setTimeout(function() {
+                setTimeout(function () {
                     pararAnimacao(2)
                 }, 1000);
             }
         }
 
-        $('#form').submit(function(evento) { //utilização de ajax para realizar o envio do form sem atualizar a pagina 
+        $('#form').submit(function (evento) { //utilização de ajax para realizar o envio do form sem atualizar a pagina 
 
             evento.preventDefault();
 
@@ -144,14 +153,16 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
             $.ajax({
-                url: 'decisao.php',
-                method: 'POST',
+
+                url: 'decisao.html',
+                method: 'GET',
+
                 data: {
                     Resposta: resposta
                 }
 
 
-            }).done(function(result) {
+            }).done(function (result) {
 
                 switch (i) {
                     case 1:
@@ -160,15 +171,15 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                             adversario = adversario + 1;
                         } else {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         }
-                        document.getElementById('nome').innerHTML = ' 26, 24, 20, 18, 14,... Qual é o próximo?'; 
+                        document.getElementById('nome').innerHTML = ' 26, 24, 20, 18, 14,... Qual é o próximo?';
                         i = i + 1;
                         break;
                     case 2:
-                        if (resposta == "12" ) {
+                        if (resposta == "12") {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         } else {
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
@@ -179,7 +190,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                     case 3:
                         if (resposta == "sim" || resposta == "verdade") {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         } else {
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
@@ -193,7 +204,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                             adversario = adversario + 1;
                         } else {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         }
                         document.getElementById('nome').innerHTML = 'Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
                         i = i + 1;
@@ -202,7 +213,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                     case 5:
                         if (resposta == "18") {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         } else {
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
@@ -213,7 +224,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                     case 6:
                         if (resposta == "132") {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         } else {
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
@@ -224,7 +235,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                     case 7:
                         if (resposta == "3000") {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         } else {
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
@@ -233,24 +244,24 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         i = i + 1;
                         break;
                     case 8:
-                        if ( resposta == "sim" || resposta == "verdade"  || resposta == "v") {
+                        if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
                             realizaAtaque("grama");
-                            jogador = jogador + 1; 
+                            jogador = jogador + 1;
                         } else {
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
                         }
                         i = i + 1;
                         break;
-                        
+
                 }
 
-                if(jogador == 5){
+                if (jogador == 5) {
                     window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                    window.location.href = "http://localhost/jogo/electron/city.php";
-                }else if(adversario == 5){
+                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                } else if (adversario == 5) {
                     window.alert("Você perdeu. Tente novamente!");
-                    window.location.href = "http://localhost/jogo/electron/decisao/decisao.php";
+                    window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
                 }
 
 
@@ -299,6 +310,20 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 

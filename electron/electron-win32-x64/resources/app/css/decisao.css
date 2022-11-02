@@ -182,91 +182,6 @@ body {
     z-index: 1;
 
 }
-.fio{
-    transform: translate(-50%,0%) translate3d(0, 0, 0);
-    position: absolute;
-    border: 5px solid green;
-    border-radius: 50%;
-    width: 0%;
-    height: 20%;
-    bottom: -10%;
-    animation: fio 10s infinite linear;
-}
-
-.fio fio1{
-    left: 0%;
-}
-
-.fio fio2{
-    left: 0.2%;
-}
-
-.fio3{
-    left: 0.5%;
-}
-
-.fio4{
-    left: 0.9%;
-}
-
-.fio5{
-    left: 1%;
-}
-.fio6{
-    left: 1.5%;
-}
-.fio7{
-    left: 1.8%;
-}
-
-.fio8{
-    left: 2.1%;
-}
-.fio9{
-    left: 2.6%;
-}
-.fio10{
-    left: 3%;
-}
-.fio11{
-    left: 10.1%;
-}
-.fio12{
-    left: 10.5%;
-}
-.fio13{
-    left: 10.9%;
-}
-.fio14{
-    left: 12%;
-}
-.fio15{
-    left: 12.5%;
-}
-.fio16{
-    left: 13%;
-}
-.fio17{
-    left: 13.5%;
-}
-.fio18{
-    left: 13.9%;
-}
-.fio19{
-    left: 14%;
-}
-.fio20{
-    left: 14.5%;
-}
-
-@keyframes fio {
-      0%, 30%, 50%, 55%, 82%, 97%, 100%{border-top-right-radius: 50%;}
-      20%{border-top-right-radius: 100%;}
-      40%{border-top-right-radius: 500%;}
-      70%{border-top-right-radius: 1000%;}
-      90%{border-top-right-radius: 2000%;}
-}
-
 
 base{
     border: solid 2px white;
@@ -284,5 +199,13 @@ base{
 
 .caixaFormulario form{
     width: 100%;
+
+}
+
+.mato{
+    position: absolute;
+    width: 4%;
+    bottom: 0%;
+    z-index: -1;
 
 }

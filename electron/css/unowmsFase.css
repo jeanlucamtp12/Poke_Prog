@@ -104,6 +104,12 @@ h1 {
 /*---------*/
 .circles {
     cursor: pointer;
+    
+}
+
+.circles:hover{
+	transform: scale(1.5);
+
 }
 
 .tamanhoTela {

@@ -13,9 +13,9 @@ app.whenReady().then(() => {
 
 
     //carregando a pagina html
-    janela.loadFile('index.html');
+    janela.loadFile('./telaInicial/index.html');
 
     //carregando o console 
-    janela.webContents.openDevTools();
+    //janela.webContents.openDevTools();
 
 })
