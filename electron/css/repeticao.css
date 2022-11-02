@@ -176,9 +176,9 @@
 
     position: absolute;
 
-    bottom: 0%;
+    bottom: 2%;
     left: 70%;
-    width: 6%;
+    width: 3%;
 
     animation: bolhas_movimento 6s infinite linear;
 
@@ -192,7 +192,7 @@
 
     0% {
         left: 75%;
-        bottom: 0%;
+        bottom: 4%;
 
     }
 
@@ -203,7 +203,7 @@
 
     50% {
         left: 40%;
-        bottom: 0%;
+        bottom: 4%;
 
     }
 
@@ -213,7 +213,7 @@
 
     100% {
         left: 0%;
-        bottom:  0%;
+        bottom:  4%;
     }
 }
        
