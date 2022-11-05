@@ -34,6 +34,9 @@
             <img class="arbok" id="arbok" style="display: none" src="../img/recursividade/arbok.gif">
         </div>
 
+        
+            <img class="klefki" id="klefki" src="../img/recursividade/klefki.gif">
+        
 
         <div class="equipeRocket">
             <img class="equipeRocket" id="equipeRocket" style="display: none"
@@ -155,12 +158,13 @@
 
 
         <div class="pergunta">
-            <h3 id="pergunta">Escolha uma porta:</h3>
+            <h5 id="pergunta">Pegue as chaves para abrir as portas</h5>
 
         </div>
 
         <div class="andar">
-            <h1 id="andar">1/8</h1>
+            <img class="sinalizador" id="sinalizador" src="../img/recursividade/klefki.gif">
+            <h1 id="andar">0/1</h1>
 
         </div>
 
@@ -264,9 +268,40 @@
                 valor = "livre";
             }
 
+            if ((bulbasaur.x < klefki.x + klefki.width && bulbasaur.x + bulbasaur.width > klefki.x && bulbasaur.y < klefki.y + klefki.height && bulbasaur.y + bulbasaur.height > klefki.y)) {
+
+                var esquerda = ["12", "22", "32", "42", "52", "62"];
+                var esquerdaEmbaralhar = Math.floor(Math.random() * esquerda.length);
+
+                var baixo = ["45", "65", "85"];
+                var baixoEmbaralhar = Math.floor(Math.random() * baixo.length);
+
+                klefki.style.left = esquerdaEmbaralhar*18 + "%";
+                klefki.style.bottom = baixoEmbaralhar*32 + "%";
+
+            }
+
+
+          
+
+
         }, 5);
 
 
+
+        const loop2 = setInterval(() => {
+
+            var esquerda = ["12", "22", "32", "42", "52", "62"];
+            var esquerdaEmbaralhar = Math.floor(Math.random() * esquerda.length);
+
+            var baixo = ["45", "65", "85"];
+            var baixoEmbaralhar = Math.floor(Math.random() * baixo.length);
+
+            klefki.style.left = esquerdaEmbaralhar*18 + "%";
+            klefki.style.bottom = baixoEmbaralhar*32 + "%";
+
+
+        }, 8000);
     </script>
 
 
@@ -289,7 +324,6 @@
 
 
         function alteraPerguntas(resp) {
-            console.log("Oiuiiiii ", pergunta);
 
             switch (resp) {
                 case 0:
