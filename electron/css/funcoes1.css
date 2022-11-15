@@ -1,0 +1,160 @@
+body{
+    height: 100vh;
+    overflow: hidden;    
+    background: linear-gradient( #01000c, #0d0266) no-repeat;
+}
+
+
+
+.campo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.bloco1{
+    position: absolute;
+
+    width: 100%;
+    height: 5%;
+    bottom: 0%;
+    left: 0%;
+}
+
+
+.bloco2{
+    position: absolute;
+
+    width: 100%;
+    height: 5%;
+    top: 10%;
+    left: 0%;
+}
+
+
+
+.mato{
+    position: absolute;
+    bottom: 0%;
+    z-index: 0;
+
+}
+
+.alien{
+    position: absolute;
+
+    width: 20%;
+    top: 0%;
+    left: 40%;
+    animation: alien_movimento 8s infinite linear;
+    
+
+}
+
+
+.alien2{
+    position: absolute;
+
+    width: 20%;
+    top: 0%;
+    left: 45%;
+}
+
+.hoppip{
+    position: absolute;
+
+    width: 30%;
+    bottom: 6%;
+    left: 45%;
+}
+
+
+.ataque{
+    position: absolute;
+    width: 15%;
+    bottom: 12%;
+    animation: hoppip_ataque 0.5s infinite linear;
+}
+/*
+@keyframes hoppip_ataque {
+
+    0% {
+        transform: translateY(0); 
+
+    }
+    50% {
+        transform: translateY(-3000%); 
+
+    }
+    100% {
+        transform: translateY(-5000%); 
+
+    }
+
+}*/
+@keyframes hoppip_ataque {
+
+    0% {
+        bottom: 12%;
+
+    }
+    50% {
+        bottom:  50%;
+
+    }
+    100% {
+        bottom:  100%;
+
+    }
+
+}
+
+
+@keyframes alien_movimento {
+    0%{ 
+        transform: translateY(0); 
+    }
+    50%{ 
+        transform: translateY(-10px); 
+    }
+    100%{ 
+        transform: translateY(0); 
+    }
+}
+
+.cortador {
+    position: absolute;
+
+    width: 32%;
+    bottom: -2%;
+    right: 0%;
+    z-index: 1;
+    animation: cortador_animation  80s infinite linear;
+    animation-play-state: paused;
+
+}
+
+
+@keyframes cortador_animation {
+
+    0% {
+        right: 0%;
+
+    }
+    50% {
+        right: 500%;
+
+    }
+    100% {
+        right: 1000%;
+
+    }
+
+}
+
+.eletricidade{
+    position: absolute;
+    width: 19%;   
+}
+

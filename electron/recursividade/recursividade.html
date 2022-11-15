@@ -35,7 +35,7 @@
         </div>
 
         
-            <img class="klefki" id="klefki" src="../img/recursividade/klefki.gif">
+        <img class="klefki" id="klefki" src="../img/recursividade/klefki.gif">
         
 
         <div class="equipeRocket">
@@ -193,7 +193,10 @@
         var cenario = 1;
         var pergunta = 0;
         var controle = 0;
+        var estado_Porta = 0;
 
+
+        var contador = 0;
 
         const personagemIniciado = (event) => {
             event.dataTransfer.setData("img", event.target.id);
@@ -242,6 +245,12 @@
                     personagem.style.bottom = "1%";
                     personagem.style.left = "0%";
                     valor = "livre";
+                    if(contador > 0){
+                        document.getElementById("andar").innerHTML = (contador - 1) + "/1";
+                    }                    
+                    contador = contador - 1;
+
+                    verificaQtd();
                 }
             }
 
@@ -266,6 +275,11 @@
                 personagem.style.bottom = "1%";
                 personagem.style.left = "0%";
                 valor = "livre";
+                if(contador > 0){
+                    document.getElementById("andar").innerHTML = (contador - 1) + "/1";
+                }
+                contador = contador - 1;
+                verificaQtd();
             }
 
             if ((bulbasaur.x < klefki.x + klefki.width && bulbasaur.x + bulbasaur.width > klefki.x && bulbasaur.y < klefki.y + klefki.height && bulbasaur.y + bulbasaur.height > klefki.y)) {
@@ -278,6 +292,37 @@
 
                 klefki.style.left = esquerdaEmbaralhar*18 + "%";
                 klefki.style.bottom = baixoEmbaralhar*32 + "%";
+
+                if (cenario == 1){
+                    contador = contador + 1;
+                    document.getElementById("andar").innerHTML = contador + "/1";
+                    verificaQtd();
+                }else if(cenario == 2){
+                    contador = contador + 1;
+                    document.getElementById("andar").innerHTML = contador + "/1";                    
+                    verificaQtd();
+                }else if(cenario == 3){
+                    document.getElementById("andar").innerHTML = contador + "/2";
+                    contador = contador + 1;
+                    verificaQtd();
+                }else if(cenario == 4){
+                    document.getElementById("andar").innerHTML = contador + "/3";
+                    contador = contador + 1;
+                    verificaQtd();
+                }else if(cenario == 5){
+                    document.getElementById("andar").innerHTML = contador + "/5";
+                    contador = contador + 1;
+                    verificaQtd();
+                }else if(cenario == 6){
+                    document.getElementById("andar").innerHTML = contador + "/8";
+                    contador = contador + 1;
+                    verificaQtd();
+                }else{
+                    document.getElementById("andar").innerHTML = contador + "/13";              
+                    contador = contador + 1;
+                    verificaQtd();
+                }
+
 
             }
 
@@ -300,8 +345,11 @@
             klefki.style.left = esquerdaEmbaralhar*18 + "%";
             klefki.style.bottom = baixoEmbaralhar*32 + "%";
 
+            var id = document.getElementById("porta1"); 
+                
 
-        }, 8000);
+
+        }, 10000);
     </script>
 
 
@@ -323,182 +371,63 @@
 
 
 
-        function alteraPerguntas(resp) {
-
-            switch (resp) {
-                case 0:
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    controle = 0;
+       
 
 
-                    return 0;
-                    break;
-                case 1:
-                    document.getElementById("pergunta").innerHTML = "Quantos dias tem um ano? ";
-                    document.getElementById("resposta1").innerHTML = "300";
-                    document.getElementById("resposta2").innerHTML = "365";
-                    document.getElementById("resposta3").innerHTML = "400";
-                    break;
-                case 2:
-                    document.getElementById("pergunta").innerHTML = "25 < 36?";
-                    document.getElementById("resposta1").innerHTML = "Sim";
-                    document.getElementById("resposta2").innerHTML = "Não";
-                    document.getElementById("resposta3").innerHTML = "Talvez";
-                    document.getElementById("resposta4").innerHTML = "Igual";
-                    break;
-                case 3:
-                    document.getElementById("pergunta").innerHTML = "Em quantas regiões é dividido o Brasil?";
-                    document.getElementById("resposta1").innerHTML = "4";
-                    document.getElementById("resposta2").innerHTML = "5";
-                    document.getElementById("resposta3").innerHTML = "6";
-                    document.getElementById("resposta4").innerHTML = "7";
-                    break;
-                case 4:
-                    document.getElementById("pergunta").innerHTML = "Qual o nome do acento usado em 'não'?";
-                    document.getElementById("resposta1").innerHTML = "til";
-                    document.getElementById("resposta2").innerHTML = "teu";
-                    document.getElementById("resposta3").innerHTML = "tiu";
-                    document.getElementById("resposta4").innerHTML = "tui";
-                    break;
-                case 5:
-                    document.getElementById("pergunta").innerHTML = "Prato típico da Itália?";
-                    document.getElementById("resposta1").innerHTML = "brigadeiro";
-                    document.getElementById("resposta2").innerHTML = "feijoada";
-                    document.getElementById("resposta3").innerHTML = "omelete";
-                    document.getElementById("resposta4").innerHTML = "pizza";
-                    break;
-                case 6:
-                    document.getElementById("pergunta").innerHTML = "Quanto é 30 x 30? ";
-                    document.getElementById("resposta1").innerHTML = "500";
-                    document.getElementById("resposta2").innerHTML = "30";
-                    document.getElementById("resposta3").innerHTML = "900";
-                    document.getElementById("resposta4").innerHTML = "800";
-                    break;
-                case 7:
-                    document.getElementById("pergunta").innerHTML = "Quantos ossos tem um bebê recém-nascido? ";
-                    document.getElementById("resposta1").innerHTML = "276";
-                    document.getElementById("resposta2").innerHTML = "280";
-                    document.getElementById("resposta3").innerHTML = "300";
-                    document.getElementById("resposta4").innerHTML = "256";
-                    break;
-                case 8:
-                    document.getElementById("pergunta").innerHTML = "Em qual país foi inventado o chuveiro elétrico? ";
-                    document.getElementById("resposta1").innerHTML = "Uruguai";
-                    document.getElementById("resposta2").innerHTML = "Brasil";
-                    document.getElementById("resposta3").innerHTML = "Inglaterra";
-                    document.getElementById("resposta4").innerHTML = "Alemanha";
-                    break;
-                default:
 
-                    return 0;
-                    break;
+        const verificaQtd = () =>{
+            if(contador == 1 && cenario == 1){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            }else if(contador == 1 && cenario == 2){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            }else if(contador == 2 && cenario == 3){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            }else if(contador == 3 && cenario == 4){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            }else if(contador == 5 && cenario == 5){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            }else if(contador == 8 && cenario == 6){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            } else if(contador == 13 && cenario == 7){
+                document.getElementById("porta1").src =  "../img/recursividade/porta_aberta2.png";
+                document.getElementById("porta1").style.width = "18%";
+                estado_Porta = 1;
+            }else{
+                document.getElementById("porta1").src =  "../img/recursividade/porta.png";
+                document.getElementById("porta1").style.width = "30%";
+                estado_Porta = 0;
+
             }
+
         }
 
-
-
-        function perguntas(resp) {
-
-            switch (pergunta) {
-                case 0:
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    controle = 0;
-                    return 0;
-                    break;
-                case 1:
-                    if (resp == "resposta2") {
-                        return 1;
-
-                    } else {
-
-                        //pergunta = pergunta + 1;
-                        return 0;
-                    }
-                    break;
-                case 2:
-
-                    if (resp == "resposta1") {
-
-                        //pergunta = pergunta + 1;
-                        controle = 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 3:
-
-                    if (resp == "resposta2") {
-                        controle = 1;
-                        // pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 4:
-
-                    if (resp == "resposta1") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 5:
-
-                    if (resp == "resposta4") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 6:
-
-                    if (resp == "resposta3") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 7:
-
-                    if (resp == "resposta1") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 8:
-
-                    if (resp == "resposta2") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                default:
-
-                    return 0;
-                    break;
-            }
-        }
+    
 
 
         const mudarCenario = () => {
+
+            document.getElementById("porta1").src =  "../img/recursividade/porta.png";
+            document.getElementById("porta1").style.width = "30%";
+            contador = 0;           
+
+
             switch (cenario) {
                 case 1: case 5:
+                    if (cenario == 5) {
+                        document.getElementById("andar").innerHTML = contador + "/5";
+                    }
                     document.getElementById("diretorio").href = "../css/recursividade.css";
                     document.getElementById("rio").style.display = "none";
                     document.getElementById("dewgong").style.display = "none";
@@ -512,6 +441,11 @@
                     personagem.style.left = "0%";
                     break;
                 case 2: case 6:
+                    if (cenario == 2) {
+                        document.getElementById("andar").innerHTML = contador + "/1";
+                    }else{
+                        document.getElementById("andar").innerHTML = contador + "/8";
+                    }
                     document.getElementById("diretorio").href = "../css/recursividade1.css";
                     document.getElementById("rio").style.display = "block";
                     document.getElementById("dewgong").style.display = "block";
@@ -525,6 +459,11 @@
                     personagem.style.left = "0%";
                     break;
                 case 3: case 7:
+                    if (cenario == 3) {
+                        document.getElementById("andar").innerHTML = contador + "/2";
+                    }else{
+                        document.getElementById("andar").innerHTML = contador + "/13";
+                    }
                     document.getElementById("diretorio").href = "../css/recursividade2.css";
                     document.getElementById("rio").style.display = "none";
                     document.getElementById("dewgong").style.display = "none";
@@ -541,6 +480,9 @@
                     personagem.style.left = "0%";
                     break;
                 case 4: case 8:
+                    if (cenario == 4) {
+                        document.getElementById("andar").innerHTML = contador + "/3";
+                    }
                     document.getElementById("diretorio").href = "../css/recursividade3.css";
                     document.getElementById("rio").style.display = "none";
                     document.getElementById("dewgong").style.display = "none";
@@ -668,33 +610,32 @@
 
 
 
-            for (var i = 0; i < portas.length; i++) {
-                if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
-                    var temp = (respostas[i].id);
+           // for (var i = 0; i < portas.length; i++) {
+              //  if ((per.x < portas[i].x + portas[i].width && per.x + per.width > portas[i].x) && (per.y < portas[i].y + portas[i].height && per.y - 10 + per.height > portas[i].y)) {
+              if ((per.x < portas[0].x + portas[0].width && per.x + per.width > portas[0].x) && (per.y < portas[0].y + portas[0].height && per.y - 10 + per.height > portas[0].y)) {
 
+                document.getElementById("espaco").style.display = "block";
 
+                    if (tecla == 32 && estado_Porta == 1) {
 
-                    if (tecla == 32) {
-
-                        var retorno = perguntas(temp);
-                        if (retorno == 1) {
-
+                           
                             cenario = cenario + 1;
-                            document.getElementById("andar").innerHTML = cenario + "/8";
+                            contador = 0;
+                            //document.getElementById("andar").innerHTML = cenario + "/8";
                             mudarCenario();
 
-                            pergunta = pergunta + 1;
-                            alteraPerguntas(pergunta);
+                            //pergunta = pergunta + 1;
+                            //alteraPerguntas(pergunta);
 
-                            document.getElementById("espaco").style.display = "none";
+                            //document.getElementById("espaco").style.display = "none";
                             if (cenario == 9) {
                                 window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
                                 window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
                             }
                             document.getElementById("espaco").style.display = "none";
 
-                            break;
-                        } else {
+                           // break;
+                        } /*else {
                             perguntas(temp);
                             console.log("Mdasss111", pergunta);
 
@@ -711,12 +652,11 @@
                             document.getElementById("espaco").style.display = "none";
 
                             break;
-                        }
+                        }*/
 
-                    }
-                    document.getElementById("espaco").style.display = "block";
                 }
-            }
+              //  }
+            
 
 
 

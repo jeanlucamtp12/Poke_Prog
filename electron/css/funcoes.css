@@ -2,70 +2,66 @@
     background-color: #141472;
 }
 
-.tela{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-
-}
-
 .rotom{
+    position: absolute;
+    width: 15%;
+    left: 45%;
+    top: 5%;
+    z-index: 1;
+}
+
+
+.texto{
+    position: absolute;
+    font-size: 2vw;
+    color: white;
+    left: 40%;
+}
+
+
+
+.cortador{
+    position: absolute;
+    width: 10%;
+    left: 29%;
+    top: 40%;
     cursor: pointer;
-    width: 150px;
 }
 
-.rotomNormal{
-    width: 120px;
-}
-.rotomNormal h6{
-    width: 420px;
-}
-
-.item{
-    width: 70px;
-    border: 2px solid #d13030;
-
+.forno{
+    position: absolute;
+    width: 10%;
+    left: 39%;
+    top: 40%;
+    cursor: pointer;
 }
 
-.caixaResposta{
-    width: 200px;
-    height: 200px;
-    left: 150px;
-
-
+.lavadeira{
+    position: absolute;
+    width: 10%;
+    left: 49%;
+    top: 40%;
+    cursor: pointer;
 }
 
-.caixaResposta img{
-    width: 250px;
-    height: 250px;
-
-
+.ventilador{
+    position: absolute;
+    width: 10%;
+    left: 59%;
+    top: 40%;
+    cursor: pointer;
 }
 
-.caixaSelecionados{
-    width: 300px;
-    height: 80px;
-    display: flex;
-    flex-direction: row-reverse;
+.geladeira{
+    position: absolute;
+    width: 10%;
+    left: 69%;
+    top: 40%;
+    cursor: pointer;
 }
 
-.filhoCaixaS{
-    border: 1px solid #ccc;
-    width: 70px;
-    display: inline-block;
-    height: 70px;
-}
-
-.filhoCaixaS img{
-    width: 60px;
-
-}
-
-.tela h6{
-	color: white;
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-
+h5{
+    color: white;
+    font-size: 0.9vw;
+    top: 20%;
 }

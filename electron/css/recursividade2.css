@@ -4,14 +4,7 @@ body{
     background: linear-gradient( #8a007e, #0d0266) no-repeat;
 }
 
-.andar{
-    position: absolute;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    font-size:1.2vw;
-    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-}
+
 
 
 .campo{
@@ -380,4 +373,35 @@ body{
         right: 110%;
         bottom: 50%;
     }
+}
+
+
+
+
+.andar{ /* tirar de todos*/
+    position: absolute;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size:1.2vw;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    left: 3%;
+    z-index: 1;
+}
+
+
+.klefki{
+    position: absolute;
+    width: 6%;
+    bottom: 22%;
+    left: 12%;
+    z-index: 1;
+}
+
+
+.sinalizador{
+    position: absolute;
+    width: 70%;
+    left: -80%;
+    bottom: 25%;
 }
