@@ -125,15 +125,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
                         //console.log (ataque.y , forno.y + forno.height , "  &&  ",ataque.y + forno.height, forno.y);
                         if (document.getElementById("ataque").style.display == 'block' && (ataque.y < forno.y + forno.height && ataque.y + ataque.height > forno.y)) {
 
@@ -149,7 +140,7 @@
 
 
 
-                            if (especial == "-12px") {
+                            if (especial == "10px") {
                                 document.getElementById("barraEspecial_h3").style.display = "block";
 
                             }
@@ -223,7 +214,7 @@
                         
                             
 
-                        if (tecla == 65 && (especial <= 8)) {
+                        if (tecla == 65 && (especial <= 10)) {
 
 
                             var posicaoJumpluff = per.style.bottom;
@@ -231,7 +222,7 @@
                             var remove_string = posicaoJumpluff.replace('px', '');
                             var valorNum = parseInt(remove_string);
 
-                            raio_solar.style.bottom = (valorNum + 50) + "px";
+                            raio_solar.style.bottom = (valorNum ) + "px";
 
                             document.getElementById("raio_solar").style.display = 'block';
                             raio_solar.style.animationPlayState = "running";
