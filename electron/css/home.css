@@ -12,10 +12,9 @@ body {
     flex-direction: column;
     justify-content: space-around;/* flex-end; center;*/
     align-items: center;
-     border:none;
-
-  
-
+    border:none;
+    min-width: 800px;
+    min-height: 800px;
 }
 
 h2{
