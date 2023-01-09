@@ -85,13 +85,13 @@ body{
 .pino1{    
     position: absolute;
     left: 50%;
-    bottom: -10%;
+    bottom: 0%;
     border: solid 0.3vw black;
     border-radius: 8px;
     outline: none;
     border-color: #cad807;
     box-shadow: 0 0 5px #9ecaed;
-    height: 115%;
+    height: 25vw;
 }
 
 
@@ -124,7 +124,7 @@ body{
     outline: none;
     border-color: #cad807;
     box-shadow: 0 0 5px #9ecaed;
-    height: 100%;
+    height: 25vw;
 }
 
 .estaca3{
@@ -148,7 +148,7 @@ body{
     outline: none;
     border-color: #cad807;
     box-shadow: 0 0 5px #9ecaed;
-    height: 100%;
+    height: 25vw;
     
 }
 
