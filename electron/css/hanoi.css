@@ -1,0 +1,154 @@
+body{
+    background: linear-gradient( #10181a, #a3c6d4) no-repeat;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*
+.Umpino, .Umpino2,  .Umpino3, .Doispinos, .Doispinos2, .Doispinos3, .Trespinos, .Trespinos3,.Trespinos2, .Quatropinos, .Quatropinos2, .Quatropinos3, .Cincopinos,  .Cincopinos2, .Cincopinos3{
+    border: solid 2px rgb(255, 0, 0); z-index: +1;
+}*/
+.Umpino, .Umpino2,  .Umpino3, .Doispinos, .Doispinos2, .Doispinos3, .Trespinos, .Trespinos3,.Trespinos2, .Quatropinos, .Quatropinos2, .Quatropinos3, .Cincopinos,  .Cincopinos2, .Cincopinos3{
+    z-index: +1;
+}
+
+
+.Umpino img, .Umpino2 img { 
+    margin-left: 38%;
+    width: 25%; 
+}
+
+.Doispinos img{
+    margin-left: 25%;
+    width: 50%;
+}
+
+.Trespinos img{
+    margin-left: 15%;
+    width: 70%;
+}
+
+.Quatropinos img {
+    margin-left: 5%;
+    width: 90%;
+}
+
+.Cincopinos img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.estaca1{
+    position: absolute;
+    left: 10%;
+    bottom: 0%;
+    float: left;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 20%;
+    height: 50%;
+}
+
+
+
+
+
+.pino1{    
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    border: solid 0.3vw black;
+    border-radius: 8px;
+    outline: none;
+    border-color: #cad807;
+    box-shadow: 0 0 5px #9ecaed;
+    height: 115%;
+}
+
+
+
+
+
+
+.estaca2{    
+
+    position: absolute;
+    left: 40%;
+    bottom: 0%;
+    float: left;
+    display: flex;
+    flex-direction: column-reverse; 
+    width: 20%;
+    height: 50%;    
+
+}
+
+
+
+
+.pino2{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    border: solid 0.3vw black;
+    border-radius: 8px;
+    outline: none;
+    border-color: #cad807;
+    box-shadow: 0 0 5px #9ecaed;
+    height: 100%;
+}
+
+.estaca3{
+    position: absolute;
+    left: 70%;
+    bottom: 0%;
+    float: left;
+    display: flex; 
+    flex-direction: column-reverse;
+    width: 20%;
+    height: 50%;    
+}
+
+.pino3{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    border: solid 0.3vw black;
+    
+    border-radius: 8px;
+    outline: none;
+    border-color: #cad807;
+    box-shadow: 0 0 5px #9ecaed;
+    height: 100%;
+    
+}
+
