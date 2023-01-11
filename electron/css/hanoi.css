@@ -84,14 +84,16 @@ body{
 
 .pino1{    
     position: absolute;
-    left: 50%;
-    bottom: 0%;
+    left: 46%;
+    bottom: -5%;
     border: solid 0.3vw black;
     border-radius: 8px;
     outline: none;
     border-color: #cad807;
     box-shadow: 0 0 5px #9ecaed;
     height: 25vw;
+    background-color:  #cad807;
+    width: 1vw;
 }
 
 
@@ -117,14 +119,16 @@ body{
 
 .pino2{
     position: absolute;
-    left: 50%;
-    bottom: 0%;
+    left: 46%;
+    bottom: -5%;
     border: solid 0.3vw black;
     border-radius: 8px;
     outline: none;
     border-color: #cad807;
     box-shadow: 0 0 5px #9ecaed;
     height: 25vw;
+    background-color:  #cad807;
+    width: 1vw;
 }
 
 .estaca3{
@@ -140,8 +144,8 @@ body{
 
 .pino3{
     position: absolute;
-    left: 50%;
-    bottom: 0%;
+    left: 46%;
+    bottom: -5%;
     border: solid 0.3vw black;
     
     border-radius: 8px;
@@ -149,6 +153,8 @@ body{
     border-color: #cad807;
     box-shadow: 0 0 5px #9ecaed;
     height: 25vw;
+    background-color:  #cad807;
+    width: 1vw;
     
 }
 
