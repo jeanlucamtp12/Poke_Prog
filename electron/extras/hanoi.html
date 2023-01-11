@@ -1,184 +1,3 @@
-<script>
-    var estaca1 = 5;
-    var estaca2 = 0;
-    var estaca3 = 0;
-    var classeImagem = "";
-
-
-    const removerMagnemite = (e) => {
-
-        
-        var elemento = document.querySelector("."+e+" img");
-
-        
-      
-        if (elemento.parentNode) {
-            elemento.parentNode.removeChild(elemento);
-        }
-    }
-
-
-        const decrementarEstacas = (classeImagem) => {
-
-
-
-            // console.log("Estaca1: "+estaca1+ " Estaca2: "+estaca2);
-            if (classeImagem.includes('2')) {
-                estaca2 = estaca2 - 1;
-
-            } else if (classeImagem.includes('3')) {
-                estaca3 = estaca3 - 1;
-
-            } else {
-                estaca1 = estaca1 - 1;
-
-            }
-        }
-
-        const moveMoagnemite = (pino, slot, imagem) => {
-
-
-            var img = document.createElement('img');
-            img.src = "../img/extras/" + imagem + ".gif";
-
-            if (pino == "estaca2") {
-                var div = document.querySelector("." + slot + "2");
-                img.classList.add(slot + "2");
-                img.id = imagem;
-            } else if (pino == "estaca3") {
-                var div = document.querySelector("." + slot + "3");
-                img.classList.add(slot + "3");
-                img.id = imagem;
-            } else {
-                var div = document.querySelector("." + slot);
-                img.classList.add(slot);
-                img.id = imagem;
-            }
-
-
-            if (imagem == "1") {
-                img.style.width = "25%";
-                img.style.marginLeft = "38%";
-
-            } else if (imagem == "2") {
-                img.style.width = " 50%";
-                img.style.marginLeft = "25%";
-            } else if (imagem == "3") {
-                img.style.width = "70%";
-                img.style.marginLeft = "15%";
-            } else if (imagem == "4") {
-                img.style.width = "90%";
-                img.style.marginLeft = "5%";
-            } else {
-                img.style.width = "100%";
-                img.style.marginLeft = "0%";
-            }
-
-
-            img.setAttribute('ondragstart', 'itemSelecionado(event)');
-
-          
-            div.appendChild(img);
-          
-
-        }
-        const verificaEstaca = (estaca, imagem, pino) => {
-
-
-            switch (estaca) {
-                case 0:
-                    moveMoagnemite(pino, 'Cincopinos', imagem);
-                    break;
-                case 1:
-                    moveMoagnemite(pino, 'Quatropinos', imagem);
-                    break;
-                case 2:
-                    moveMoagnemite(pino, 'Trespinos', imagem);
-                    break;
-                case 3:
-                    moveMoagnemite(pino, 'Doispinos', imagem);
-                    break;
-                case 4:
-                    moveMoagnemite(pino, 'Umpino', imagem);
-                    break;
-                case 5:
-                    window.alert("Esse pino está cheio");
-                    break;
-            }
-
-        }
-
-
-
-
-
-
-        const itemSelecionado = (event) => {
-            event.dataTransfer.setData("img", event.target.id);
-
-            //classe = event.dataTransfer.setData("img", event.target.parentNode.id);
-            classeImagem = (("img", event.target.parentNode.className));
-
-        }
-
-        const areaSoltar = (event) => {
-            event.preventDefault();
-
-
-        }
-
-        const soltarElemento = (event) => {
-            event.preventDefault();
-
-            var imagem = event.dataTransfer.getData("img");
-
-            var pino = event.target.id;
-            pino = "estaca" + pino;
-
-
-
-            var blocos = document.querySelectorAll("div." + pino + " #slot1, div." + pino + " #slot2, div." + pino + " #slot3, div." + pino + " #slot4, div." + pino + " #slot5");
-
-
-
-            if (pino == "estaca1") {
-                if ((estaca1 => 0) && (estaca1 < 5)) {
-                    verificaEstaca(estaca1, imagem, pino);
-                    estaca1 = estaca1 + 1;
-                    decrementarEstacas(classeImagem, estaca1);
-                    removerMagnemite(classeImagem);
-                   
-                } else {
-                    window.alert("Pino indisponivel");
-                }
-
-            } else if (pino == "estaca2") {
-                if ((estaca2 => 0) && (estaca2 < 5)) {
-                    verificaEstaca(estaca2, imagem, pino);  
-                    estaca2 = estaca2 + 1;
-                    decrementarEstacas(classeImagem, estaca2);
-                    removerMagnemite(classeImagem); 
-                    
-                } else {
-                    window.alert("Pino indisponivel");
-                }
-            } else {
-                if ((estaca3 => 0) && (estaca3 < 5)) {
-                    verificaEstaca(estaca3, imagem, pino);
-                    estaca3 = estaca3 + 1;
-                    decrementarEstacas(classeImagem, estaca3);
-                    removerMagnemite(classeImagem);
-                } else {
-                    window.alert("Pino indisponivel");
-                }
-            }
-
-
-        }
-</script>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,23 +18,23 @@
 
             <div class="pino1" id="1" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
 
-            <div class="Cincopinos">
+            <div class="Cincopinos" id="5">
                 <img src="../img/extras/5.gif" ondragstart="itemSelecionado(event)" id="5"></img>
             </div>
 
-            <div class="Quatropinos">
+            <div class="Quatropinos" id="4">
                 <img src="../img/extras/4.gif" ondragstart="itemSelecionado(event)" id="4"></img>
             </div>
 
-            <div class="Trespinos">
+            <div class="Trespinos" id="3">
                 <img src="../img/extras/3.gif" ondragstart="itemSelecionado(event)" id="3"></img>
             </div>
 
-            <div class="Doispinos">
+            <div class="Doispinos" id="2">
                 <img src="../img/extras/2.gif" ondragstart="itemSelecionado(event)" id="2"></img>
             </div>
 
-            <div class="Umpino">
+            <div class="Umpino" id="1">
                 <img src="../img/extras/1.gif" ondragstart="itemSelecionado(event)" id="1"></img>
             </div>
 
@@ -249,3 +68,310 @@
 </body>
 
 </html>
+
+<script>
+    var estaca1 = 5;
+    var estaca2 = 0;
+    var estaca3 = 0;
+    var classeImagem = "";
+
+    var ultimoE1 = [1, 2, 3, 4, 5];
+    var ultimoE2 = [0, 0, 0, 0, 0];
+    var ultimoE3 = [0, 0, 0, 0, 0];
+
+
+    const removerMagnemite = (e, pino, id) => {
+
+        if (e.includes('2')) {
+            for (var i = 4; i >= 0; i--) {
+                if (ultimoE2[i] == id) {
+                    ultimoE2.splice(i, 1, 0);
+                }
+            }
+
+        } else if (e.includes('3')) {
+            for (var i = 4; i >= 0; i--) {
+                if (ultimoE3[i] == id) {
+                    ultimoE3.splice(i, 1, 0);
+                }
+            }
+        } else {
+            for (var i = 4; i >= 0; i--) {
+                if (ultimoE1[i] == id) {
+                    ultimoE1.splice(i, 1, 0);
+                }
+            }
+        }
+
+
+
+        var elemento = document.querySelector("." + e + " img");
+
+
+
+        if (elemento.parentNode) {
+            elemento.parentNode.removeChild(elemento);
+        }
+    }
+
+
+    const decrementarEstacas = (classeImagem) => {
+
+
+        if (classeImagem.includes('2')) {
+            estaca2 = estaca2 - 1;
+
+
+
+        } else if (classeImagem.includes('3')) {
+            estaca3 = estaca3 - 1;
+
+
+        } else {
+            estaca1 = estaca1 - 1;
+
+        }
+    }
+
+    const moveMoagnemite = (pino, slot, imagem) => {
+
+
+        var img = document.createElement('img');
+        img.src = "../img/extras/" + imagem + ".gif";
+
+        if (pino == "estaca2") {
+            var div = document.querySelector("." + slot + "2");
+            img.classList.add(slot + "2");
+            img.id = imagem;
+            div.id = imagem;
+        } else if (pino == "estaca3") {
+            var div = document.querySelector("." + slot + "3");
+            img.classList.add(slot + "3");
+            img.id = imagem;
+        } else {
+            var div = document.querySelector("." + slot);
+            img.classList.add(slot);
+            img.id = imagem;
+        }
+
+
+        if (imagem == "1") {
+            img.style.width = "25%";
+            img.style.marginLeft = "38%";
+
+        } else if (imagem == "2") {
+            img.style.width = " 50%";
+            img.style.marginLeft = "25%";
+        } else if (imagem == "3") {
+            img.style.width = "70%";
+            img.style.marginLeft = "15%";
+        } else if (imagem == "4") {
+            img.style.width = "90%";
+            img.style.marginLeft = "5%";
+        } else {
+            img.style.width = "100%";
+            img.style.marginLeft = "0%";
+        }
+
+
+        img.setAttribute('ondragstart', 'itemSelecionado(event)');
+
+
+        div.appendChild(img);
+
+
+    }
+    const verificaEstaca = (estaca, imagem, pino) => {
+
+
+        switch (estaca) {
+            case 0:
+                moveMoagnemite(pino, 'Cincopinos', imagem);
+                break;
+            case 1:
+                moveMoagnemite(pino, 'Quatropinos', imagem);
+                break;
+            case 2:
+                moveMoagnemite(pino, 'Trespinos', imagem);
+                break;
+            case 3:
+                moveMoagnemite(pino, 'Doispinos', imagem);
+                break;
+            case 4:
+                moveMoagnemite(pino, 'Umpino', imagem);
+                break;
+            case 5:
+                window.alert("Esse pino está cheio");
+                break;
+        }
+
+    }
+
+
+    const verificaMovimentacao = (divImagem, idImagem) => {
+
+        if (classeImagem.includes('2')) {
+            bloqueiaMovimentacao(estaca2, divImagem);
+        } else if (classeImagem.includes('3')) {
+            bloqueiaMovimentacao(estaca3, divImagem);
+        } else {
+            bloqueiaMovimentacao(estaca1, divImagem);
+        }
+
+    }
+
+    const bloqueiaMovimentacao = (estaca, divImagem) => {
+        switch (estaca) {
+            case 1:
+                if ((divImagem != "Cincopinos") && (divImagem != "Cincopinos2") && (divImagem != "Cincopinos3")) {
+                    window.alert("Peça bloqueada!");
+                }
+
+                break;
+            case 2:
+                if ((divImagem != "Quatropinos") && (divImagem != "Quatropinos2") && (divImagem != "Quatropinos3")) {
+                    window.alert("Peça bloqueada!");
+                }
+
+                break;
+            case 3:
+                if ((divImagem != "Trespinos") && (divImagem != "Trespinos2") && (divImagem != "Trespinos3")) {
+                    window.alert("Peça bloqueada!");
+                }
+
+                break;
+            case 4:
+                if ((divImagem != "Doispinos") && (divImagem != "Doispinos2") && (divImagem != "Doispinos3")) {
+                    window.alert("Peça bloqueada!");
+                }
+
+                break;
+            case 5:
+                if ((divImagem != "Umpino") && (divImagem != "Umpino2") && (divImagem != "Umpino3")) {
+                    window.alert("Peça bloqueada!");
+                }
+                break;
+        }
+    }
+
+    const alteraVetores = (pino, imagem) => {
+
+
+        for (var i = 4; i >= 0; i--) {
+                if (pino[i] == 0) {
+
+                    if (i == 4) {
+                        pino.splice(i, 1, imagem);
+                        return true;
+                    } else {
+                        if (imagem < pino[i + 1]) {
+                            pino.splice(i, 1, imagem);
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                }
+            }
+    }
+
+
+    const itemSelecionado = (event) => {
+        event.dataTransfer.setData("img", event.target.id);
+
+        //classe = event.dataTransfer.setData("img", event.target.parentNode.id);
+        classeImagem = (("img", event.target.parentNode.className));
+
+        verificaMovimentacao(classeImagem, event.dataTransfer.getData("img"));
+
+
+    }
+
+    const areaSoltar = (event) => {
+        event.preventDefault();
+
+
+    }
+
+    const soltarElemento = (event) => {
+        event.preventDefault();
+
+
+
+
+        var imagem = event.dataTransfer.getData("img");
+
+
+        var pino = event.target.id;
+        pino = "estaca" + pino;
+
+
+
+
+
+
+
+
+
+
+        var blocos = document.querySelectorAll("div." + pino + " #slot1, div." + pino + " #slot2, div." + pino + " #slot3, div." + pino + " #slot4, div." + pino + " #slot5");
+ 
+
+
+        if ((pino == "estaca1") && (alteraVetores(ultimoE1, imagem) == true)) {
+   
+
+            if ((estaca1 => 0) && (estaca1 < 5)) {
+                verificaEstaca(estaca1, imagem, pino);
+                estaca1 = estaca1 + 1;
+                decrementarEstacas(classeImagem, estaca1);
+                removerMagnemite(classeImagem, "1", imagem);
+
+            } else {
+                window.alert("Pino indisponivel");
+            }
+
+
+        }
+
+        if ((pino == "estaca2") && (alteraVetores(ultimoE2, imagem) == true)) {
+
+            if ((estaca2 => 0) && (estaca2 < 5)) {
+                verificaEstaca(estaca2, imagem, pino);
+                estaca2 = estaca2 + 1;
+                decrementarEstacas(classeImagem, estaca2);
+                removerMagnemite(classeImagem, "2", imagem);
+
+            } else {
+                window.alert("Pino indisponivel");
+            }
+
+            if(ultimoE2[0] == 1){
+                window.alert("Você ganhou!!");
+            }
+
+        }
+        if ((pino == "estaca3") && (alteraVetores(ultimoE3, imagem) == true)) {
+
+            if ((estaca3 => 0) && (estaca3 < 5)) {
+                if ((estaca3 => 0) && (estaca3 < 5)) {
+                    verificaEstaca(estaca3, imagem, pino);
+                    estaca3 = estaca3 + 1;
+                    decrementarEstacas(classeImagem, estaca3);
+                    removerMagnemite(classeImagem, "3", imagem);
+                } else {
+                    window.alert("Pino indisponivel");
+                }
+            }
+            if(ultimoE3[0] == 1){
+                window.alert("Você ganhou!!");
+            }
+
+        }
+
+        console.log("Depois: ", ultimoE1, ultimoE2, ultimoE3);
+
+    }
+
+</script>
