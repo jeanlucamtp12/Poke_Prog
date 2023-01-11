@@ -28,8 +28,8 @@
 
         <div style="left: 35%; top: 1%; position: absolute;">
             <p  class="choque"><span aria-hidden="true">Torre de Hanoi</span>Torre de Hanoi<span aria-hidden="true">Torre de Hanoi</span></p>
-
-        </div>
+            <h1 id="contador" style="font-size: 1vw; margin-top: -5%; color: #d6cc3c;">Movimentos Minimos: 31</h1>
+        </div> 
 
 
         <div class="estaca1">
@@ -96,6 +96,8 @@
     var ultimoE1 = [1, 2, 3, 4, 5];
     var ultimoE2 = [0, 0, 0, 0, 0];
     var ultimoE3 = [0, 0, 0, 0, 0];
+
+    var contador = 31;
 
 
     const removerMagnemite = (e, pino, id) => {
@@ -350,6 +352,8 @@
                 window.alert("Pino indisponivel");
             }
 
+            document.getElementById("contador").innerHTML = "Movimentos Minimos: "+(contador-1);
+            contador = contador - 1;
 
         }
 
@@ -367,7 +371,13 @@
 
             if(ultimoE2[0] == 1){
                 window.alert("Você ganhou!!");
+                if(contador < 0){
+                    window.alert("Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!!");
+                }
             }
+
+            document.getElementById("contador").innerHTML = "Movimentos Minimos: "+(contador-1);
+            contador = contador - 1;
 
         }
         if ((pino == "estaca3") && (alteraVetores(ultimoE3, imagem) == true)) {
@@ -384,7 +394,12 @@
             }
             if(ultimoE3[0] == 1){
                 window.alert("Você ganhou!!");
+                if(contador < 0){
+                    window.alert("Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!!");
+                }
             }
+            document.getElementById("contador").innerHTML = "Movimentos Minimos: "+(contador-1);
+            contador = contador - 1;
 
         }
 

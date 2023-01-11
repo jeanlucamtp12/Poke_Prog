@@ -273,8 +273,9 @@ body{
 p{
     color: rgb(229, 233, 19); 
     font-size: 5vw; 
-    margin-top: 10%;
     left: 50%;
+    margin: 0;
+    margin-top: 10%;
     transform: translate(-50%, -50%); /*centraliza do jeito que left 50% nao deixa */
 }
 .choque{
