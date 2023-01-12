@@ -92,7 +92,7 @@ O jogador deve arrastar os itens para os quadrados correspondentes para conserta
 
 ![](./electron/img/README/10.jpg)
 
-### Fase 6
+## Fase 6
 
 Na sexta fase o usuário é colocado em um templo recursivo onde a missão do mesmo
 é subir as escadas coletando chaves que utilizam o conceito da sequência de Fibonacci para
@@ -110,7 +110,7 @@ conceitos de tratamento de exceções e sobre a importância de tratar esses err
 
 ![](./electron/img/README/12.jpg)
 
-### Extras
+## Extras
 
 Jogos extras também serão implementados com o objetivo de estimular o raciocínio lógico dos jogadores,
 como por exemplo o famoso jogo torre de hanoi.
