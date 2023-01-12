@@ -119,5 +119,5 @@ como por exemplo o famoso jogo torre de hanoi.
 ![](./electron/img/README/13.jpg)
 
 
-Atualmente o jogo se encontra em prossesso de desenvolvimento e pode ser acessado através desse link:
+Atualmente o jogo se encontra em prossesso de desenvolvimento e aprimoramento, podendo ser acessado através desse link:
 https://jeanlucamtp12.github.io/Poke_Prog/electron/telaInicial/city.html
