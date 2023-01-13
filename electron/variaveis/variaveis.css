@@ -1,0 +1,17 @@
+body{
+    background-color: aqua;
+}
+
+.teclado{
+    border: solid 2px white; 
+    width: 30%;
+    height: 40%;   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.letras img{
+    width: 5vw;
+}
+
