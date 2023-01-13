@@ -102,7 +102,6 @@ h1 {
 
 .filhoCaixaS{
     width: 2.8vw;
-    border: solid 2px white;
     display: inline-block;
     height: 5vw;
     flex-wrap: wrap;
