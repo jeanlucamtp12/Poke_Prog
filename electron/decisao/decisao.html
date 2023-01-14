@@ -18,82 +18,67 @@
 
 <body>
 
-    <div class="jogobonus">
+    <div class="arena">
 
 
-        <img class="poke" src="../img/decisao/bulbasaur.gif">
-
-        <img class="pokeAdversario" src="../img/decisao/arbok.gif">
-
-
-
-
-        <div class="grass">
-
-
-        </div>
-
+      
+        <div class="grass"></div>
 
         <img class="nuvens" src="../img/decisao/clouds.png">
+        <img class="nuvens2" src="../img/decisao/clouds.png">
 
 
+        <img class="jogador" src="../img/decisao/menino.png"> </img>  
+
+        <div>
+            <img class="poke" src="../img/decisao/bulba.png">
+            <img class="base" src="../img/decisao/base.png">
+            <div class="barraVida" id="barraVida">HP</div>
+            <div class="barraVidaReal"></div>
+        </div>
+      
+        <div>
+            <img class="pokeAdversario" src="../img/decisao/arbok.gif"> 
+            <div id="barraVidaAdversario" class="barraVidaAdversario">HP</div>
+            <div class="barraVidaAdversarioReal"></div>
+
+        </div>
+        
+        <img class="ataqueVeneno" id="ataqueVeneno" src="../img/decisao/ataqueVeneno.gif" style="display:none"> </img>
 
 
-
-
-
-        <img class="jogador" src="../img/decisao/menino.png"> </img>
         <img class="adversario" src="../img/decisao/adversario.png"> </img>
-
-
-        <div id="barraVidaAdversario" class="barraVidaAdversario">HP</div>
-        <div class="barraVidaAdversarioReal"></div>
-
-
-        <div class="barraVida" id="barraVida">HP</div>
-        <div class="barraVidaReal"></div>
 
 
         <img class="ataqueGrama" id="ataqueGrama" src="../img/decisao/ataqueGrama.png" style="display:none"> </img>
 
-        <img class="ataqueVeneno" id="ataqueVeneno" src="../img/decisao/ataqueVeneno.gif" style="display:none"> </img>
 
 
-
-
-
-
-        <div class="caixaFormulario">
             <div class="form" id="form" method="GET" enctype='multipart/form-data'>
 
                 <form>
-
                     <div>
                         <label id="nome" for="nome"> 1 > 2?</label>
                         <input type="text" class="form-control" id="resposta">
                     </div>
-                    <button class="btn btn-primary">Enviar</button>
+                    <button>Enviar</button>
                 </form>
 
-
-            </div>
-
+             </div>
 
 
-
-        </div>
     </div>
 
 
 
+    
 
 
+</body>
 
-    <script>
+</html>
 
-
-
-
+<script>
 
         var j = 0;
         for (var i = 1; j <= 100; i++) {
@@ -113,12 +98,6 @@
             body.appendChild(img);
 
         }
-
-
-
-
-
-
 
 
         var i = 1;
@@ -149,8 +128,6 @@
             evento.preventDefault();
 
             var resposta = $('#resposta').val();
-
-
 
             $.ajax({
 
@@ -264,13 +241,8 @@
                     window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
                 }
 
-
-
-
             });
         });
-
-
 
         const pararAnimacao = (id) => {
 
@@ -302,31 +274,6 @@
             }
 
 
-
-
-
-
-
-
-
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
-
-
-</body>
-
-</html>

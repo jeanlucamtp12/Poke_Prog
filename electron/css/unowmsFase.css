@@ -5,11 +5,12 @@ body {
 
 .teclado{
     border: solid 2px white; 
-    width: 35vw;
-    height: 32vw;
+    width: 100%;
+    height: 37vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: -5vw;
 }
 
 .letras:hover {
@@ -17,10 +18,11 @@ body {
     cursor: pointer;
 }
 
-.letras img{
-    width: 5vw;
-}
 
+
+.letras{
+    margin-left: 1vw;
+}
 
 .letras h6{
     font-size: 1vw;
@@ -126,3 +128,8 @@ h1 {
     width: 7vw;
 }
 
+
+
+#slot1 img, #slot2 img, #slot3 img, #slot4 img, #slot5 img, #slot6 img, #slot7 img, #slot8 img, #slot9 img, #slot10 img, #slot11 img, #slot12 img{
+    width: 100%;
+}
