@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/arrays.css">
 
@@ -17,12 +16,12 @@
 
 <body>
 
-    <div class="jogobonus">
+    <div class="tela">
 
 
 
 
-        <img id="piso" src="../img/arrays/piso.png">
+
 
         <img id="falink" src="../img/arrays/falink.gif">
 
@@ -38,17 +37,25 @@
             </div>
             <div class="raio">
                 <img id="raio5" src="../img/arrays/raio.gif">
-            </div>        
+            </div>
         </div>
-       
+
 
 
 
         <img class='poke' id="poke" src="../img/arrays/falink.gif">
 
-        <img id="nuvens" src="../img/bonus/clouds.png">
+        
 
-        <img id="pikachu" src="../img/arrays/pikachu.gif">
+
+        <div>
+            <img id="pikachu" src="../img/arrays/pikachu.gif">
+            <div id="piso"></div>
+            <div id="piso2"></div>
+
+        </div>
+        <img id="nuvens" src="../img/bonus/clouds.png">
+        <img id="nuvens2" src="../img/bonus/clouds.png">
 
 
 
@@ -114,31 +121,30 @@
 
 
 
-                    for(var i = 0; i < raios.length; i++){
-                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y -30 + falink.height > raios[i].y)) {
+                    for (var i = 0; i < raios.length; i++) {
+                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y - 30 + falink.height > raios[i].y)) {
                             window.alert("enconstou");
                             raios[i].style.animation = 'none';
                             falinkQueda.style.animation = 'none';
                             resetar();
                             //falink.style.left = '650px';
-                        }  
+                        }
                     }
 
-                 
 
-                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y -30 + falink.height > falinkQueda.y)) {
-                            //falink.style.left = '150px';
-                            falinkQueda.style.display = 'none';
-                            document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
 
-                            j = j + 1;
-                            if(j == 10){
+                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y - 30 + falink.height > falinkQueda.y)) {
+                        //falink.style.left = '150px';
+                        falinkQueda.style.display = 'none';
+                        document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
+
+                        j = j + 1;
+                        if (j == 10) {
                             window.alert("Você ganhou, vamos a proxima fase!");
                             window.location.href = "./falinksAtribuicao.html";
-                          }
+                        }
 
-                    }  
-                    
+                    }
 
 
 
@@ -159,7 +165,6 @@
 
 
 
-                 
 
 
 
@@ -196,11 +201,8 @@
 
 
 
-                
 
-                
 
-                  
 
 
 
@@ -226,7 +228,6 @@
 
 
 
-                    
 
 
 
@@ -239,7 +240,13 @@
 
 
 
-                   
+
+
+
+
+
+
+
 
 
 
@@ -344,7 +351,6 @@
 
                 document.addEventListener('keydown', mover);
             </script>
-
 
 
 </body>

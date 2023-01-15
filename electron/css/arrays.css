@@ -4,7 +4,7 @@
 
 }
 
-.jogobonus {
+.tela {
     overflow: hidden;
     position:relative;
     height: 100vh;
@@ -26,14 +26,7 @@
  
 }
 
-#piso{
-    position: absolute;
-    width: 10%;   
-    top: 6.5%;
-    color: white;
- 
-   
-}
+
 
 #raio3{
     animation: raio_movimento 3s infinite linear;
@@ -79,17 +72,23 @@
 }
 
 #nuvens{
-    /*animation: pedra_movimento 9s infinite linear; */
-     
+    animation: nuvem_movimento 40s infinite linear; 
     width:20%;   
     position: absolute;
     top:0%;
     left:40%;
- 
-   
+  
 }
 
 
+#nuvens2{
+    animation: nuvem_movimento 30s infinite linear; 
+    width:20%;   
+    position: absolute;
+    top:0%;
+    left:40%;
+
+}
 
 
 
@@ -97,9 +96,9 @@
 
     position: absolute;
     bottom: -3%;
-    left: 10%;
+    left: 40vw;
  
-    width:6%;
+    width:6vw;
   
 }
 
@@ -122,6 +121,19 @@
 
 
 
+@keyframes nuvem_movimento{
+    0%{
+        left: 0%;
+
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: 100%;
+
+    }
+}
 
 
 @keyframes raio_movimento{
@@ -151,11 +163,27 @@
 }
 
 #pikachu{
-    width: 10.3%;
+    width: 12vw;
+
+    z-index: 2;
 }
 
 
+#piso{
+    border: solid 0.5vw black;
+    width: 10vw;   
+    margin-top: -2.6vw;
+    background-color: rgb(0, 0, 0);
+}
 
+#piso2{
+    border: solid 0.3vw black;
+    width: 11vw;   
+    margin-top: 1vw;
+    margin-left: -1.5vw;
+    background-color: rgb(0, 0, 0);
+    transform: rotate(160deg);
+}
 
 
 
@@ -165,11 +193,11 @@
         padding: 1%;
         display: flex;
         position:relative;
-        top:0%;
+        top: 0%;
         flex-direction: row-reverse;
-
         left: 70%;
         width: 30%;
+        height: 5vw;
     
 
 
@@ -179,6 +207,7 @@
     position: absolute;
     top: -40%;
     color:white;
+    font-size: 1.5vw;
     
 
 
@@ -186,14 +215,15 @@
 
 .filhoVetor{
     color:white;
-    width:8%;
-    border: 2px solid #ccc;
+    width: 8vw;
+    border: 0.1vw solid #ccc;
+    font-size: 1vw;
 
 }
 
 .filhoVetor img{
     color:white;
-    width:100%;
+    width: 3vw;
 
 }
 

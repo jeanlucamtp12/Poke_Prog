@@ -59,6 +59,11 @@
     top: 40%;
     cursor: pointer;
 }
+ 
+.cortador:hover, .geladeira:hover, .ventilador:hover, .lavadeira:hover, .forno:hover{
+    transform: scale(1.5);
+}
+ 
 
 h5{
     color: white;
