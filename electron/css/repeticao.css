@@ -14,9 +14,6 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    /*border: 1px solid #111;
-     margin-left: auto;
-    margin-right:  auto; */
     background: linear-gradient(#3800c1, #bf98c6) no-repeat;
 
   
@@ -25,52 +22,27 @@
 }
 
 
-.chao {
-    display: block;
-    position: absolute;
-    width: 1900px;
-    height: 400px;
-    bottom: 290px;
-    padding: 0;
-    text-align: center;
-    color: white;
-    /* background: url(../img/for/chao.jpg) no-repeat bottom center scroll;*/
-    background-position: 30% 45%;
-    background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-
-.jogador {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 280px;
-}
 
 
 
-
-
-.nuvens {
+.nuvens2 {
 
     position: absolute;
     width: 20%;
-    right: 40%;
+    right: 80%;
+    top: 10%;
 }
 
 
-
-.grama {
+.nuvens {
     position: absolute;
-    width: 700px;
-    bottom: -190px;
-    left: 0px;
-
+    width: 20%;
+    right: 40%;
+    top: 5%;
 }
+
+
+
 
 
 /* aaaa*/
@@ -137,35 +109,27 @@
 
 @keyframes inicial_movimento {
     0% {
-        /*bottom: 0px;*/
         bottom: var(--my-start-bottom); 
 
     }
 
     45% {
-        bottom: 350px;
-
+        bottom: 20%;
 
     }
 
     50% {
-        bottom: 400px;
-
+        bottom: 40%;
 
     }
 
     55% {
-        bottom: 350px;
-
-
+        bottom: 20%;
     }
 
 
     100% {
-        /*bottom: 0px;*/
         bottom: var(--my-end-bottom);
-
-
     }
 }
 
@@ -314,7 +278,7 @@
 
 .caixa{
     position: absolute;
-    border: solid 2px white;
+    border: solid 0.2vw white;
     width: 4%;
     height: 5%;
     bottom: 30%;
@@ -322,7 +286,6 @@
 }
 
 .ponte{
-   /* border: solid 2px white;*/
     width: 52%;
     height: 10%;
     bottom: 10%;
@@ -339,8 +302,6 @@
 .filhoPonte{ 
     color:white;
     width: 20%;
-    /*border: solid 2px white;*/
-
 }
 
 .filhoPonte img{ 
