@@ -6,6 +6,8 @@
 body {
     overflow: hidden;
     background: linear-gradient(#00ACC1, #98c6ac) no-repeat;
+
+  
 }
 
 .arena {
@@ -181,11 +183,11 @@ body {
 
 
 .form{
-    width: 20vw;
+    width: 25vw;
     height: 8vw;
     position: absolute;
-    left: 40vw;
-    bottom: 35vw;
+    left: 35vw;
+    top: 1vw;
     background-color: rgb(255, 255, 255);
 }
 .form #nome{
@@ -214,3 +216,19 @@ button:hover{
     z-index: -1;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

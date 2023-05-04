@@ -1,7 +1,7 @@
 body{
     height: 100vh;
     overflow: hidden;    
-    background: linear-gradient( #01000c, #0d0266) no-repeat;
+    background: linear-gradient( #7e74c7, #14142c) no-repeat;
 }
 
 
@@ -16,23 +16,23 @@ body{
     position: absolute;
 
     width: 100%;
-    height: 5%;
-    bottom: 60%;
+    height: 3%;
+    bottom: 70%;
     left: 0%;
 }
 
 .bloco2{
     position: absolute;
     width:  100%;
-    height: 5%;
-    bottom: 40%;
+    height: 3%;
+    bottom: 45%;
     left: 0%;
 }
 
 .bloco3{
     position: absolute;
     width:  100%;
-    height: 5%;
+    height: 3%;
     bottom: 18%;
     left: 0%;
 }
@@ -40,22 +40,30 @@ body{
 .bloco4{
     position: absolute;
     width:  100%;
-    height: 5%;
+    height: 3%;
     bottom: 0%;
+    left: 0%;
+}
+
+.bloco5{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    top: -1%;
     left: 0%;
 }
 
 .escada1{
     position: absolute;
-    width: 25%;
+    width: 20%;
     height: 45%;
     bottom: 0%;
-    left: 30%;
+    left: 35%;
 }
 
 .escada2{
     position: absolute;
-    width: 25%;
+    width: 20%;
     height: 45%;
     bottom: 0%;
     left: 65%;
@@ -64,28 +72,28 @@ body{
 
 .escada3{
     position: absolute;
-    width: 25%;
-    height: 48%;
-    bottom: 15%;
-    left: 20%;
+    width: 20%;
+    height: 52%;
+    bottom: 13%;
+    left: 25%;
 }
 
 
 .escada4{
     position: absolute;
-    width: 25%;
-    height: 48%;
-    bottom: 15%;
+    width: 20%;
+    height: 52%;
+    bottom: 13%;
     left: 48%;
     
 }
 
 .escada5{
     position: absolute;
-    width: 25%;
-    height: 47%;
-    bottom: 29%;
-    left: 30%;
+    width: 20%;
+    height: 52%;
+    bottom: 30%;
+    left: 35%;
     
     
 }
@@ -96,7 +104,7 @@ body{
     bottom: 2%;
     left: 0%;
 
-    z-index: -1;
+    z-index: 0;
 }
 
 
@@ -138,17 +146,26 @@ body{
 
 .portaAberta1{
     position: absolute;
-    width: 36.2%;
-    bottom: 43%;
-    left: 60%;
+    width: 33%;
+    bottom: 47%;
+    left: 67%;
     z-index: 1;
 
 }
 
 .portaAberta2{
     position: absolute;
-    width: 37%;
+    width: 33%;
     bottom: 21%;
+    left: 0%;
+    z-index: 1;
+
+}
+
+.portaAberta3{
+    position: absolute;
+    width: 33%;
+    bottom: 72%;
     left: 0%;
     z-index: 1;
 
@@ -305,6 +322,25 @@ body{
 
 }
 
+.Weezing{
+    position: absolute;
+    width: 35%;
+    bottom: 2%;
+    z-index: 1;
+    right: 0%;
+    animation: Weezing_movimento 22s infinite linear;
+}
+
+
+.arbok{
+    position: absolute;
+    width: 32%;
+    bottom: 20%;
+    z-index: 1;
+    right: 0%;
+    animation: arbok_movimento 35s infinite linear;
+
+}
 
 @keyframes cherrim_movimento {
 
@@ -361,6 +397,83 @@ body{
     }
 }
 
+@keyframes Weezing_movimento {
+
+    0% {
+        right: 2%;
+        bottom: 2%;
+
+    }
+    10% {
+        right: 20%;
+        bottom: 5%;
+
+    }
+    20% {
+        right: 30%;
+        bottom: 25%;
+
+    }
+    30% {
+        right: 10%;
+        bottom: 35%;
+    }
+
+    40% {
+        right: 2%;
+        bottom: 22%;
+    }
+    50% {
+        right: 15%;
+        bottom: 12%;
+
+    }
+    60% {
+        right: 25%;
+        bottom: 2%;
+    }
+
+    70% {
+        right: 50%;
+        bottom: 2%;
+    }
+    80% {
+        right: 25%;
+        bottom: 2%;
+
+    }
+    90% {
+        right: 12%;
+        bottom: 2%;
+    }
+
+    100% {
+        right: 2%;
+        bottom:  2%;
+    }
+}
+
+
+
+@keyframes arbok_movimento {
+
+    0% {
+        right: 2%;
+        bottom: 20%;
+
+    }
+    50% {
+        right: 50%;
+        bottom: 20%;
+
+    }
+    100% {
+        right: 100%;
+        bottom:  20%;
+    }
+}
+
+
 #teleport1{
     position: absolute;
     width: 5%;
@@ -379,11 +492,18 @@ body{
 #teleport3{
     position: absolute;
     width: 5%;
-    bottom: 42%;
-    left: 82%;
+    bottom: 45%;
+    left: 85%;
     z-index: 1;
 }
 
+#teleport4{
+    position: absolute;
+    width: 5%;
+    bottom: 5%;
+    left: 0%;
+    z-index: 1;
+}
 
 
 .andar{ /* tirar de todos*/
@@ -398,9 +518,9 @@ body{
 }
 
 
-.klefki{
+.ingrediente{
     position: absolute;
-    width: 6%;
+    width: 3%;
     bottom: 22%;
     left: 12%;
     z-index: 1;
@@ -412,4 +532,194 @@ body{
     width: 70%;
     left: -80%;
     bottom: 25%;
+}
+
+.mesa{
+    position: absolute;
+    width: 13%;
+    left: 80%;
+    bottom: 69%;
+}
+
+
+.geladeira{
+    position: absolute;
+    width: 10%;
+    left: 63%;
+    bottom: 71.5%;
+}
+
+.fogao{
+    position: absolute;
+    width: 8%;
+    left: 55%;
+    bottom: 71%;
+}
+
+.pia{
+    position: absolute;
+    width: 12%;
+    left: 30%;
+    bottom: 71%;
+}
+
+
+
+.mesaFlor{
+    position: absolute;
+    width: 11%;
+    left: 15%;
+    bottom: 70%;
+}
+
+.mesaJantar{
+    position: absolute;
+    width: 10%;
+    left: 15%;
+    bottom: 20%;
+}
+
+.escorredor{
+    position: absolute;
+    width: 10%;
+    left: 75%;
+    bottom:  19%;
+}
+
+
+
+.lampada1{
+    position: absolute;
+    width: 3%;
+    left: 40%;
+    bottom: 37.2%;
+    transform: rotate(180deg);
+}
+
+
+
+.lampada3{
+    position: absolute;
+    width: 3%;
+    left: 65%;
+    bottom: 62.6%;
+    transform: rotate(180deg);
+}
+
+.lampada4{
+    position: absolute;
+    width: 3%;
+    left: 25%;
+    top: 1.8%;
+    transform: rotate(180deg);
+}
+
+
+.quadro {
+    background-color: #fff; /* cor do quadro */
+    width: 5vw;
+    height: 6vh;
+    position: absolute;
+    top: 2vw;
+    left: 75%;
+    border: 0.3vw solid #000; /* borda do quadro */
+  }
+  
+  .quadro img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+
+
+  .wall {
+    width: 110%;
+    background-color: #1b0303;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tile {
+    width: 7.5vw;
+    height: 8vw;
+    background-color: #1b104b;
+    border: 1px solid #ffffff83;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+.MenuFuncoes{
+    margin-top: 4vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.square {
+    width: 6vw;
+    height: 5vw;
+    margin: 0.8vw;
+    background-color: #4c76c5;
+    animation: hover 1.5s infinite;
+    border-radius: 1vw;
+
+}
+
+.square img {
+    margin-top: -1.5vw;
+}
+
+h6 {
+    text-align: center;
+}
+
+@keyframes hover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.circulos{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 45%;
+
+}
+
+.circulo{
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;  
+    margin: 0.2vw;
+    background-color: rgb(255, 0, 0);
+}
+
+#textoIngredientes{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 40%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
 }

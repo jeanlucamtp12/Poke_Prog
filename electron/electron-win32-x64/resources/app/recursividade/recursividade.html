@@ -228,37 +228,19 @@
             bulbasaur.getBoundingClientRect();
 
 
-
-            var pedras = document.querySelectorAll("div.pedra #pedra1, div.pedra #pedra2, div.pedra #pedra3, div.pedra #pedra4");
-
-
-
-            for (var i = 0; i < pedras.length; i++) {
-                if ((bulbasaur.x < pedras[i].x + pedras[i].width && bulbasaur.x + bulbasaur.width > pedras[i].x) && (bulbasaur.y < pedras[i].y + pedras[i].height && bulbasaur.y + bulbasaur.height > pedras[i].y)) {
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    valor = "livre";
-                }
+            if ((bulbasaur.x < Weezing.x + Weezing.width && bulbasaur.x + bulbasaur.width > Weezing.x && bulbasaur.y < Weezing.y + Weezing.height && bulbasaur.y + bulbasaur.height > Weezing.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+                valor = "livre";
             }
 
-
-            if (cenario == 1 || cenario == 5) {
-                var pokemon = "cherrim";
-            } else if (cenario == 2 || cenario == 6) {
-                var pokemon = "dewgong";
-            } else if (cenario == 3 || cenario == 7) {
-                var pokemon = "pidgeot";
-            } else if (cenario == 4) {
-                var pokemon = "arbok";
-            } else {
-                var pokemon = "Weezing";
-
+            if ((bulbasaur.x < arbok.x + arbok.width && bulbasaur.x + bulbasaur.width > arbok.x && bulbasaur.y < arbok.y + arbok.height && bulbasaur.y + bulbasaur.height > arbok.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+                valor = "livre";
             }
 
-            var poke = document.querySelector("#" + pokemon);
-            poke.getBoundingClientRect();
-
-            if ((bulbasaur.x < poke.x + poke.width && bulbasaur.x + bulbasaur.width > poke.x && bulbasaur.y < poke.y + poke.height && bulbasaur.y + bulbasaur.height > poke.y)) {
+            if ((bulbasaur.x < cherrim.x + cherrim.width && bulbasaur.x + bulbasaur.width > cherrim.x && bulbasaur.y < cherrim.y + cherrim.height && bulbasaur.y + bulbasaur.height > cherrim.y)) {
                 personagem.style.bottom = "1%";
                 personagem.style.left = "0%";
                 valor = "livre";
@@ -288,246 +270,10 @@
 
 
 
-        function alteraPerguntas(resp) {
-            console.log("Oiuiiiii ", pergunta);
-
-            switch (resp) {
-                case 0:
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    controle = 0;
+        
 
 
-                    return 0;
-                    break;
-                case 1:
-                    document.getElementById("pergunta").innerHTML = "Quantos dias tem um ano? ";
-                    document.getElementById("resposta1").innerHTML = "300";
-                    document.getElementById("resposta2").innerHTML = "365";
-                    document.getElementById("resposta3").innerHTML = "400";
-                    break;
-                case 2:
-                    document.getElementById("pergunta").innerHTML = "25 < 36?";
-                    document.getElementById("resposta1").innerHTML = "Sim";
-                    document.getElementById("resposta2").innerHTML = "Não";
-                    document.getElementById("resposta3").innerHTML = "Talvez";
-                    document.getElementById("resposta4").innerHTML = "Igual";
-                    break;
-                case 3:
-                    document.getElementById("pergunta").innerHTML = "Em quantas regiões é dividido o Brasil?";
-                    document.getElementById("resposta1").innerHTML = "4";
-                    document.getElementById("resposta2").innerHTML = "5";
-                    document.getElementById("resposta3").innerHTML = "6";
-                    document.getElementById("resposta4").innerHTML = "7";
-                    break;
-                case 4:
-                    document.getElementById("pergunta").innerHTML = "Qual o nome do acento usado em 'não'?";
-                    document.getElementById("resposta1").innerHTML = "til";
-                    document.getElementById("resposta2").innerHTML = "teu";
-                    document.getElementById("resposta3").innerHTML = "tiu";
-                    document.getElementById("resposta4").innerHTML = "tui";
-                    break;
-                case 5:
-                    document.getElementById("pergunta").innerHTML = "Prato típico da Itália?";
-                    document.getElementById("resposta1").innerHTML = "brigadeiro";
-                    document.getElementById("resposta2").innerHTML = "feijoada";
-                    document.getElementById("resposta3").innerHTML = "omelete";
-                    document.getElementById("resposta4").innerHTML = "pizza";
-                    break;
-                case 6:
-                    document.getElementById("pergunta").innerHTML = "Quanto é 30 x 30? ";
-                    document.getElementById("resposta1").innerHTML = "500";
-                    document.getElementById("resposta2").innerHTML = "30";
-                    document.getElementById("resposta3").innerHTML = "900";
-                    document.getElementById("resposta4").innerHTML = "800";
-                    break;
-                case 7:
-                    document.getElementById("pergunta").innerHTML = "Quantos ossos tem um bebê recém-nascido? ";
-                    document.getElementById("resposta1").innerHTML = "276";
-                    document.getElementById("resposta2").innerHTML = "280";
-                    document.getElementById("resposta3").innerHTML = "300";
-                    document.getElementById("resposta4").innerHTML = "256";
-                    break;
-                case 8:
-                    document.getElementById("pergunta").innerHTML = "Em qual país foi inventado o chuveiro elétrico? ";
-                    document.getElementById("resposta1").innerHTML = "Uruguai";
-                    document.getElementById("resposta2").innerHTML = "Brasil";
-                    document.getElementById("resposta3").innerHTML = "Inglaterra";
-                    document.getElementById("resposta4").innerHTML = "Alemanha";
-                    break;
-                default:
-
-                    return 0;
-                    break;
-            }
-        }
-
-
-
-        function perguntas(resp) {
-
-            switch (pergunta) {
-                case 0:
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    controle = 0;
-                    return 0;
-                    break;
-                case 1:
-                    if (resp == "resposta2") {
-                        return 1;
-
-                    } else {
-
-                        //pergunta = pergunta + 1;
-                        return 0;
-                    }
-                    break;
-                case 2:
-
-                    if (resp == "resposta1") {
-
-                        //pergunta = pergunta + 1;
-                        controle = 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 3:
-
-                    if (resp == "resposta2") {
-                        controle = 1;
-                        // pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 4:
-
-                    if (resp == "resposta1") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 5:
-
-                    if (resp == "resposta4") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 6:
-
-                    if (resp == "resposta3") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 7:
-
-                    if (resp == "resposta1") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                case 8:
-
-                    if (resp == "resposta2") {
-                        controle = 1;
-                        //pergunta = pergunta + 1;
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                    break;
-                default:
-
-                    return 0;
-                    break;
-            }
-        }
-
-
-        const mudarCenario = () => {
-            switch (cenario) {
-                case 1: case 5:
-                    document.getElementById("diretorio").href = "../css/recursividade.css";
-                    document.getElementById("rio").style.display = "none";
-                    document.getElementById("dewgong").style.display = "none";
-                    document.getElementById("chuva").style.display = "none";
-                    document.getElementById("cherrim").style.display = "block";
-                    document.getElementById("arbok").style.display = "none";
-                    document.getElementById("Weezing").style.display = "none";
-                    document.getElementById("equipeRocket").style.display = "none";
-                    document.getElementById("pidgeot").style.display = "none";
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    break;
-                case 2: case 6:
-                    document.getElementById("diretorio").href = "../css/recursividade1.css";
-                    document.getElementById("rio").style.display = "block";
-                    document.getElementById("dewgong").style.display = "block";
-                    document.getElementById("chuva").style.display = "block";
-                    document.getElementById("cherrim").style.display = "none";
-                    document.getElementById("arbok").style.display = "none";
-                    document.getElementById("Weezing").style.display = "none";
-                    document.getElementById("equipeRocket").style.display = "none";
-                    document.getElementById("pidgeot").style.display = "none";
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    break;
-                case 3: case 7:
-                    document.getElementById("diretorio").href = "../css/recursividade2.css";
-                    document.getElementById("rio").style.display = "none";
-                    document.getElementById("dewgong").style.display = "none";
-                    document.getElementById("chuva").style.display = "none";
-                    document.getElementById("cherrim").style.display = "none";
-                    document.getElementById("arbok").style.display = "none";
-                    document.getElementById("Weezing").style.display = "none";
-                    document.getElementById("equipeRocket").style.display = "none";
-                    document.getElementById("pidgeot").style.display = "block";
-                    document.getElementById("escada1").style.display = "none";
-                    document.getElementById("escada3").style.display = "none";
-
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    break;
-                case 4: case 8:
-                    document.getElementById("diretorio").href = "../css/recursividade3.css";
-                    document.getElementById("rio").style.display = "none";
-                    document.getElementById("dewgong").style.display = "none";
-                    document.getElementById("chuva").style.display = "none";
-                    document.getElementById("cherrim").style.display = "none";
-                    document.getElementById("arbok").style.display = "block";
-                    if (cenario == 8) {
-                        document.getElementById("Weezing").style.display = "block";
-                        document.getElementById("arbok").style.display = "none";
-                        document.getElementById("escada1").style.display = "block";
-                    }
-                    document.getElementById("equipeRocket").style.display = "block";
-                    document.getElementById("pidgeot").style.display = "none";
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    break;
-
-            }
-
-        }
-
+       
         const moverDireita = () => {
 
 

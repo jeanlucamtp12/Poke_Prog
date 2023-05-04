@@ -14,14 +14,14 @@ body {
 }
 
 .letras:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 
 
 .letras{
-    margin-left: 1vw;
+    margin: auto;
 }
 
 .letras h6{
@@ -99,7 +99,7 @@ h1 {
 }
 
 #botaoResposta:hover {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .filhoCaixaS{
@@ -131,5 +131,5 @@ h1 {
 
 
 #slot1 img, #slot2 img, #slot3 img, #slot4 img, #slot5 img, #slot6 img, #slot7 img, #slot8 img, #slot9 img, #slot10 img, #slot11 img, #slot12 img{
-    width: 100%;
+    width: 500%;
 }

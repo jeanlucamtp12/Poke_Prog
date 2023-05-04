@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/funcoes1.css">
 
@@ -19,299 +17,531 @@
 <body>
 
     <div class="tela">
-      
-    
 
-        <div class="cortador">
-            <img class="cortador" id="cortador" src="../img/funcoes/cortador.png">
+
+        <div class="objetivos">
+            <div class="vidas">
+                <div class="vidas1">
+                    <img src="../img/recursividade/cortar/vida.png"></img>
+                </div>
+                <div class="vidas2">
+                    <img src="../img/recursividade/cortar/vida.png"></img>
+                </div>
+                <div class="vidas3">
+                    <img src="../img/recursividade/cortar/vida.png"></img>
+                </div>
+            </div>
+            <div class="berrys">
+                <div class="berrys1">
+                    <img src="../img/recursividade/cortar/berry.png"></img>
+                </div>
+                <div class="berrys2">
+                    <img src="../img/recursividade/cortar/berry.png"></img>
+                </div>
+                <div class="berrys3">
+                    <img src="../img/recursividade/cortar/berry.png"></img>
+                </div>
+                <div class="berrys4">
+                    <img src="../img/recursividade/cortar/berry.png"></img>
+                </div>
+            </div>
+            <div class="energia">
+                <div class="energia1">
+                    <img src="../img/arrays/raio.gif"></img>
+                </div>
+                <div class="energia2">
+                    <img src="../img/arrays/raio.gif"></img>
+                </div>
+                <div class="energia3">
+                    <img src="../img/arrays/raio.gif"></img>
+                </div>
+                <div class="energia4">
+                    <img src="../img/arrays/raio.gif"></img>
+                </div>
+                <div class="energia5">
+                    <img src="../img/arrays/raio.gif"></img>
+                </div>
+                <div class="energia6">
+                    <img src="../img/arrays/raio.gif"></img>
+                </div>
+            </div>
         </div>
 
-        <div class="hoppip">
-            <img class="hoppip" id="hoppip" src="../img/funcoes/fase1/hoppip.gif">
-        </div>
 
-        <div class="ataque">
-            <img class="ataque" id="ataque" style="display: none" src="../img/funcoes/fase1/ataque.png">
-        </div>
+        <img id="raio" src="../img/arrays/raio.gif">
 
+        <div>
+            <div class="combee">
+                <img id="combee2" src="../img/funcoes/fase1/combee.png">
+            </div>
+            <div class="combee">
+                <img id="combee3" src="../img/funcoes/fase1/combee.png">
+            </div>
+            <div class="combee">
+                <img id="combee4" src="../img/funcoes/fase1/combee.png">
+            </div>
+            <div class="combee">
+                <img id="combee5" src="../img/funcoes/fase1/combee.png">
+            </div>
+            <div class="combee">
 
 
+                <div>
+                    <img class="vespiqueen" src="../img/recursividade/cortar/vespiqueen.png">
+                </div>
+            </div>
 
+            <div class="natureza">
+                <img class="comeia" src="../img/repeticao/comeia.png">
+                <img class="arvore" src="../img/repeticao/arvore.png">
+            </div>
 
+            <img id="nuvens" src="../img/bonus/clouds.png">
+            <img id="nuvens2" src="../img/bonus/clouds.png">
 
-        <script>
-            var vetorAliens = [];
-            var controle = 1;
-            var aliensMortos = [];
 
-            var inicio = 10;
-            var final = 90;
-            for (var k = 0; k < 4; k++) {
 
-                for (var i = inicio; i <= final; i++) {
 
-                    if (k == 0) {
-                        var img = document.createElement('img');
-                        img.src = '../img/funcoes/fase1/combee.png';
-                        img.classList.add('alien');
-                        img.id = 'alien' + i;
-                        img.style.top = "0%";
-                        img.style.width = "6%";
-                        img.style.left = i + "%";
 
-                        var body = document.querySelector("body");
-                        i = i + 6;
 
-                        vetorAliens.push(img);
-                        body.appendChild(img);
-                    } else if (k == 1) {
-                        var img = document.createElement('img');
-                        img.src = '../img/funcoes/fase1/combee.png';
-                        img.classList.add('alien');
-                        img.id = 'alien' + i;
-                        img.style.top = "7%";
-                        img.style.width = "6%";
-                        img.style.left = i + "%";
 
-                        var body = document.querySelector("body");
-                        i = i + 6;
+            <img class='poke' id="poke" src="../img/recursividade/cortar/chandelure.png">
 
-                        vetorAliens.push(img);
-                        body.appendChild(img);
-                    } if (k == 2) {
-                        var img = document.createElement('img');
-                        img.src = '../img/funcoes/fase1/combee.png';
-                        img.classList.add('alien');
-                        img.id = 'alien' + i;
-                        img.style.top = "14%";
-                        img.style.width = "6%";
-                        img.style.left = i + "%";
+            <div class="cortador">
+                <img class="cortador" id="cortador" src="../img/funcoes/cortador.png">
+            </div>
 
-                        var body = document.querySelector("body");
-                        i = i + 6;
+            <div class="ventilador">
+                <img class="ventilador" id="ventilador" src="../img/funcoes/ventilador.png">
+            </div>
 
-                        vetorAliens.push(img);
-                        body.appendChild(img);
-                    } else if (k == 3) {
-                        var img = document.createElement('img');
-                        img.src = '../img/funcoes/fase1/combee.png';
-                        img.classList.add('alien');
-                        img.id = 'alien' + i;
-                        img.style.top = "22%";
-                        img.style.width = "6%";
-                        img.style.left = i + "%";
+            <div class="jumpluff" id="jumpluff">
+                <img class="jumpluff" id="jumpluff" src="../img/recursividade/cortar/jumpluff.png">
+            </div>
 
-                        var body = document.querySelector("body");
-                        i = i + 6;
+            <div class="frutas">
+                <img class="frutas" id="frutas" src="../img/recursividade/cortar/berry.png">
+            </div>
 
-                        vetorAliens.push(img);
-                        body.appendChild(img);
-                    }
+            <div class="frutasQ">
+                <img class="frutas2" id="frutas2" style="display: none;" src="../img/recursividade/cortar/berry.png">
+            </div>
+            <div class="frutasQ">
+                <img class="frutas3" id="frutas3" style="display: none;" src="../img/recursividade/cortar/berry.png">
+            </div>
+            <div class="frutasQ">
+                <img class="frutas4" id="frutas4" style="display: none;" src="../img/recursividade/cortar/berry.png">
+            </div>
 
+            <div class="vento">
+                <img class="vento" id="vento" style="display: block;" src="../img/funcoes/fase2/vento.gif">
+            </div>
+            <div class="vento2">
+                <img class="vento2" id="vento2" style="display: block" src="../img/funcoes/fase2/vento.gif">
+            </div>
+            <div class="vento3">
+                <img class="vento3" id="vento3" style="display: block" src="../img/funcoes/fase2/vento.gif">
+            </div>
 
-                }
 
-                inicio = inicio + 10;
-                final = final - 10;
-            }
+            <div class="wormadam1">
+                <img class="wormadam1" id="wormadam1" src="../img/recursividade/cortar/wormadam1.png">
+            </div>
 
+            <div class="wormadam2">
+                <img class="wormadam2" id="wormadam2" src="../img/recursividade/cortar/wormadam2.png">
+            </div>
 
+            <div class="wormadam3">
+                <img class="wormadam3" id="wormadam3" src="../img/recursividade/cortar/wormadam3.png">
+            </div>
 
-            var j = 0;
-            for (var i = 1; j <= 91; i++) {
 
 
-                var img = document.createElement('img');
-                img.src = '../img/decisao/mato.png';
-                img.classList.add('mato');
-                img.id = 'mato' + i;
-                img.style.bottom = "-1%";
-                img.style.width = "3%";
-                img.style.left = j + "%";
+            <div>
 
-                var body = document.querySelector("body");
-                j = j + 3.8;
-
-                body.appendChild(img);
-
-            }
-
-            const loop = setInterval(() => {
-
-                var ataque = document.getElementById("ataque");
-                ataque.getBoundingClientRect();
-
-
-
-
-
-                for (var i = 0; i < vetorAliens.length; i++) {
-
-                    if ((ataque.x + 80 < vetorAliens[i].x + vetorAliens[i].width && ataque.x - 80 + ataque.width < vetorAliens[i].x) && (ataque.y + 30 < vetorAliens[i].y + vetorAliens[i].height && ataque.y - 30 + ataque.height < vetorAliens[i].y)) {
-
-                    //if ((ataque.x > vetorAliens[i].x + vetorAliens[i].width - 80 && ataque.x + ataque.width < vetorAliens[i].x + 80) && (ataque.y < vetorAliens[i].y + vetorAliens[i].height && ataque.y + ataque.height > vetorAliens[i].y)) {
-
-                        if (vetorAliens[i].src.includes('servico-eletrico.png')) {
-
-                            const cortador = document.querySelector('#cortador');
-                            cortador.getBoundingClientRect();
-
-                           
-
-                            var matos = document.querySelectorAll('.mato');
-                            var ultimo = matos[matos.length -1];
-
-
-                            cortador.style.animationPlayState = "running"; //running
-
-                            setTimeout(function () {
-                                cortador.style.animationPlayState = "paused"; //running
-                            }, 1000);
-
-                            ultimo.remove();
-                            
-
-                            vetorAliens[i].src = '../img/funcoes/fase1/combee.png';
-                            vetorAliens[i].style.width = "6%";
-
-                        }
-
-                        document.getElementById("ataque").style.display = 'none';
-                        vetorAliens[i].style.display = "none";
-
-                        aliensMortos.push(vetorAliens[i]);
-                        controle = controle + 1;
-                        break;
-
-                    }
-
-                }
-
-                if (controle == 5 || controle == 10 || controle == 15 || controle == 22 || controle == 28) {
-
-                    for (var i = 0; i < aliensMortos.length; i++) {
-
-
-
-                        aliensMortos[i].style.display = "block";
-                        aliensMortos.splice(i, 1);
-
-                        if (i == aliensMortos.length - 1) {
-                            aliensMortos[i].src = '../img/funcoes/fase1/servico-eletrico.png';
-                            aliensMortos[i].style.width = "4%";
-                        }
-
-                    }
-                }
-
-
-            }, 5);
-
-
-            const moverDireita = () => {
-
-
-
-                document.getElementById("hoppip").src = "../img/funcoes/fase1/hoppip.gif";
-
-                const el = document.querySelector('.hoppip');
-                const value = getComputedStyle(el).getPropertyValue('left');
-
-
-                var remove_string = value.replace('px', '');
-                var valorNum = parseInt(remove_string);
-
-                var numPx = valorNum + 10;
-                var soma = parseInt(value) + 10;
-
-                el.style.left = soma + "px";
-
-
-
-            }
-
-
-
-            const moverEsquerda = () => {
-
-                document.getElementById("hoppip").src = "../img/funcoes/fase1/hoppip_costa.gif";
-
-                const el = document.querySelector('.hoppip');
-                const value = getComputedStyle(el).getPropertyValue('left');
-
-
-                var remove_string = value.replace('px', '');
-                var valorNum = parseInt(remove_string);
-
-                var numPx = valorNum + 10;
-                var soma = parseInt(value) - 10;
-
-                el.style.left = soma + "px";
-
-            }
-
-
-
-
-
-
-
-
-            const mover = () => {
-
-                var tecla = event.keyCode;
-
-                var per = document.getElementById("hoppip");
-                var ataque = document.getElementById("ataque");
-
-
-                per.getBoundingClientRect();
-                ataque.getBoundingClientRect();
-
-
-                if (tecla == 32) {
-
-
-                    var posicaoHoppip = per.x;
-
-                    ataque.style.left = (posicaoHoppip + 50) + "px";
-
-
-                    document.getElementById("ataque").style.display = 'block';
-
-                    ataque.style.animation = 'none';
-
-                    window.requestAnimationFrame(function () {
-                        ataque.style.animation = 'hoppip_ataque 0.5s linear';
-                    });
-
-
-                    setTimeout(function () {
-                        document.getElementById("ataque").style.display = 'none';
-
-                    }, 400);
-
-
-
-
-
-
-                }
-
-                if (tecla == 39) {
-                    moverDireita();
-
-                } else if (tecla == 37) {
-                    moverEsquerda();
-                }
-
-
-            }
-
-
-            document.addEventListener('keydown', mover);
-
-        </script>
 </body>
 
 </html>
+<script>
+
+
+
+    var frutas = document.querySelectorAll("div.frutasQ #frutas2, div.frutasQ #frutas3, div.frutasQ #frutas4");
+
+    //const fru = document.querySelector('.frutas2');
+
+    var sorteaWormadam = Math.floor(Math.random() * 3);
+
+    function startAnimation() {
+
+        sorteaWormadam = Math.floor(Math.random() * 3);
+
+        frutas[sorteaWormadam].style.animationPlayState = "running";
+        frutas[sorteaWormadam].style.display = "block";
+
+
+    }
+
+    function restartAnimation() {
+        frutas[sorteaWormadam].style.animation = "none";
+        frutas[sorteaWormadam].offsetHeight; // Forçar o repaint para reiniciar a animação 
+        frutas[sorteaWormadam].style.animation = "fruta_queda 10s linear";
+
+    }
+
+
+    frutas[sorteaWormadam].addEventListener("animationend", function () {
+
+
+        document.querySelector("#frutas2").style.display = "none";
+        document.querySelector("#frutas3").style.display = "none";
+        document.querySelector("#frutas4").style.display = "none";
+
+        console.log(frutas[sorteaWormadam].style.display);
+
+
+        setTimeout(restartAnimation, 10000); // Reiniciar a animação após 10 segundos 
+    });
+
+    setInterval(startAnimation, 10000);
+
+
+
+
+
+
+
+
+    var k = 0;
+    for (var i = 1; k <= 91; i++) {
+
+
+        var img = document.createElement('img');
+        img.src = '../img/decisao/mato.png';
+        img.classList.add('mato');
+        img.id = 'mato' + i;
+        img.style.bottom = "-1%";
+        img.style.width = "3%";
+        img.style.left = k + "%";
+
+        var body = document.querySelector("body");
+        k = k + 3.8;
+
+        body.appendChild(img);
+
+    }
+
+
+
+    const raio = document.querySelector('#raio');
+    var combees = document.querySelectorAll("div.combee #combee2, div.combee #combee3, div.combee #combee4, div.combee #combee4, div.combee #combee5, div.combee #combee6");
+    var frutasQ = document.querySelectorAll("div.frutasQ #frutas2, div.frutasQ #frutas3, div.frutasQ #frutas4");
+
+    let j = 0;
+
+    const chandelure = document.querySelector('#poke');
+
+    const loop = setInterval(() => {
+
+
+
+        const posicoesRaio = ["12", "27", "37.5", "53", "75", "83"];
+        const posicaoVetor = Math.floor(Math.random() * posicoesRaio.length);
+
+        raio.style.left = posicoesRaio[posicaoVetor] + "%";
+        raio.style.display = 'block';
+
+    }, 5000);
+
+    const resetar = () => {
+        //raio2.style.bottom = 'none';
+
+        for (var i = 0; i < combees.length; i++) {
+            combees[i].style.animation = "";
+            combees[i].style.display = "block";
+        }
+        raio.style.animation = "";
+
+
+
+
+    }
+
+    var vidas = 3;
+    var energias = 6;
+    var berrys = 4;
+    const loop2 = setInterval(() => {
+
+
+        chandelure.getBoundingClientRect();
+
+
+
+
+        for (var i = 0; i < combees.length; i++) {
+            if ((chandelure.x + 30 < combees[i].x + combees[i].width && chandelure.x - 30 + chandelure.width > combees[i].x) && (chandelure.y + 30 < combees[i].y + combees[i].height && chandelure.y - 30 + chandelure.height > combees[i].y)) {
+                // window.alert("enconstou");
+
+                raio.style.animation = 'none';
+
+
+                resetar();
+
+                if (vidas == 3) {
+                    document.querySelector(".vidas3").remove();
+                    combees[i].style.animation = 'none';
+                    combees[i].style.display = 'none';
+                    vidas = vidas - 1;
+                } else if (vidas == 2) {
+                    document.querySelector(".vidas2").remove();
+                    combees[i].style.animation = 'none';
+                    combees[i].style.display = 'none';
+                    vidas = vidas - 1;
+                } else if (vidas == 1) {
+                    document.querySelector(".vidas1").remove();
+                    combees[i].style.animation = 'none';
+                    combees[i].style.display = 'none';
+                    vidas = vidas - 1;
+                }
+
+
+
+
+            }
+        }
+
+
+
+        if ((chandelure.x + 30 < raio.x + raio.width && chandelure.x - 30 + chandelure.width > raio.x) && (chandelure.y + 30 < raio.y + raio.height && chandelure.y - 30 + chandelure.height > raio.y)) {
+            //falink.style.left = '150px';
+
+            raio.style.display = 'none';
+
+            //document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
+
+
+            if (energias == 6) {
+                document.querySelector(".energia6").remove();
+                energias = energias - 1;
+            } else if (energias == 5) {
+                document.querySelector(".energia5").remove();
+                energias = energias - 1;
+            } else if (energias == 4) {
+                document.querySelector(".energia4").remove();
+                energias = energias - 1;
+            } else if (energias == 3) {
+                document.querySelector(".energia3").remove();
+                energias = energias - 1;
+            } else if (energias == 2) {
+                document.querySelector(".energia2").remove();
+                energias = energias - 1;
+            } else if (energias == 1) {
+                document.querySelector(".energia1").remove();
+                energias = energias - 1;
+            }
+
+
+
+
+
+
+
+
+
+
+
+            const cortador = document.querySelector('#cortador');
+            cortador.getBoundingClientRect();
+
+                           
+
+            var matos = document.querySelectorAll('.mato');
+
+            var numerosRemover = 4;
+
+            var removerr = Array.prototype.slice.call(matos, -numerosRemover);
+
+            removerr.forEach(function (mato) {
+                mato.remove();
+            });
+
+            var remove = matos[matos.length -1];
+
+            cortador.style.animationPlayState = "running"; //running
+
+            setTimeout(function () {
+                    cortador.style.animationPlayState = "paused"; //running
+            }, 4000);
+
+           
+            ultimo.remove();
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            j = j + 1;
+            if (j == 10) {
+                window.alert("Você ganhou, vamos a proxima fase!");
+                window.location.href = "./falinksAtribuicao.html";
+            }
+
+        }
+
+
+
+
+
+       
+    
+
+
+    }, 10);
+
+
+
+
+
+    
+
+
+
+
+    const loop3 = setInterval(() => {
+        
+    chandelure.getBoundingClientRect();
+
+    for (var i = 0; i < frutasQ.length; i++) {
+           
+        if ((chandelure.x + 30 < frutasQ[i].x + frutasQ[i].width && chandelure.x - 30 + chandelure.width > frutasQ[i].x) && (chandelure.y + 30 < frutasQ[i].y + frutasQ[i].height && chandelure.y - 30 + chandelure.height > frutasQ[i].y)) {
+            //window.alert("enconstou");
+
+            frutasQ[i].style.display = 'none';
+
+            //document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
+
+
+            if (berrys == 4) {
+                document.querySelector(".berrys4").remove();
+                berrys = berrys - 1;
+            } else if (berrys == 3) {
+                document.querySelector(".berrys3").remove();
+                berrys = berrys - 1;
+            } else if (berrys == 2) {
+                document.querySelector(".berrys2").remove();
+                berrys = berrys - 1;
+            } else if (berrys == 1) {
+                document.querySelector(".berrys1").remove();
+                berrys = berrys - 1;
+            } 
+
+
+
+        }
+        }
+    
+
+
+    }, 10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const personagem = document.querySelector('.poke');
+
+    const moverDireita = () => {
+
+        document.getElementById("poke").src = "../img/recursividade/cortar/chandelure2.png";
+
+        const el = document.querySelector('.poke');
+        const value = getComputedStyle(el).getPropertyValue('left');
+
+
+        var remove_string = value.replace('px', '');
+        var valorNum = parseInt(remove_string);
+
+        var numPx = valorNum + 10;
+        var soma = parseInt(value) + 10;
+
+        personagem.style.left = soma + "px";
+
+
+
+    }
+
+    const moverEsquerda = () => {
+        document.getElementById("poke").src = "../img/recursividade/cortar/chandelure.png";
+
+
+        const el = document.querySelector('.poke');
+        const value = getComputedStyle(el).getPropertyValue('left');
+
+
+        var remove_string = value.replace('px', '');
+        var valorNum = parseInt(remove_string);
+
+        var numPx = valorNum + 10;
+        var soma = parseInt(value) - 10;
+
+        personagem.style.left = soma + "px";
+
+    }
+
+    const mover = () => {
+
+        var tecla = event.keyCode;
+
+        console.log(tecla);
+
+        if (tecla == 39) {
+            moverDireita();
+        }
+
+        if (tecla == 37) {
+            moverEsquerda();
+        }
+
+    }
+
+    document.addEventListener('keydown', mover);
+</script>

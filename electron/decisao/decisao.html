@@ -20,8 +20,7 @@
 
     <div class="arena">
 
-
-      
+        
         <div class="grass"></div>
 
         <img class="nuvens" src="../img/decisao/clouds.png">
@@ -58,10 +57,11 @@
 
                 <form>
                     <div>
-                        <label id="nome" for="nome"> 1 > 2?</label>
+                        <label id="nome" for="nome"> Se 1 > 2?</label>
                         <input type="text" class="form-control" id="resposta">
+                        <!-- <img src="../img/decisao/complemento.jpg" style="width: 25vw;"></img> -->
                     </div>
-                    <button>Enviar</button>
+                    <button style="margin: auto;">Enviar</button>
                 </form>
 
              </div>
@@ -150,7 +150,7 @@
                             realizaAtaque("grama");
                             jogador = jogador + 1;
                         }
-                        document.getElementById('nome').innerHTML = ' 26, 24, 20, 18, 14,... Qual é o próximo?';
+                        document.getElementById('nome').innerHTML = 'Se 26, 24, 20, 18, 14,... Qual é o próximo?';
                         i = i + 1;
                         break;
                     case 2:
@@ -172,7 +172,7 @@
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
                         }
-                        document.getElementById('nome').innerHTML = '20 = 25?';
+                        document.getElementById('nome').innerHTML = 'Se 20 = 25?';
                         i = i + 1;
                         break;
                     case 4:
@@ -183,7 +183,7 @@
                             realizaAtaque("grama");
                             jogador = jogador + 1;
                         }
-                        document.getElementById('nome').innerHTML = 'Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
+                        document.getElementById('nome').innerHTML = 'Se Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
                         i = i + 1;
                         break;
 
@@ -217,7 +217,7 @@
                             realizaAtaque("veneno");
                             adversario = adversario + 1;
                         }
-                        document.getElementById('nome').innerHTML = 'DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?';
+                        document.getElementById('nome').innerHTML = 'Se DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?';
                         i = i + 1;
                         break;
                     case 8:

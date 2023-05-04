@@ -47,7 +47,7 @@
 
         switch (palavra) {
 
-            case 'INT':
+            case 'inteiro':
                     if (tipoCaixa.includes("Numero")) {
 
                     window.alert("Resposta Certa. Vamos ao proximo!");
@@ -67,7 +67,7 @@
                 }
                 break;
 
-            case 'STRING':
+            case 'palavra':
                 if (tipoCaixa.includes("Nome")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
@@ -82,7 +82,7 @@
                 }
                 break;
 
-            case 'BOOLEANO':
+            case 'booleano':
                 if (tipoCaixa.includes("Dado")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
@@ -97,7 +97,22 @@
                 }
                 break;
 
-            case 'FLOAT':
+            case 'letra':
+                if (tipoCaixa.includes("Dado")) {
+                    conteudo = "Acertouuu";
+                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    document.getElementById('alterar').innerHTML = 'Numero = 222';
+                    palavra = '';
+                    limparUnowns(i);
+                } else {
+                    window.alert("Resposta Errada");
+                    palavra = '';
+                    limparUnowns(i);
+
+                }
+                break;
+
+            case 'decimal':
                 if (tipoCaixa.includes("Numero")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
@@ -159,11 +174,66 @@
         <div class="teclado">
 
             <div class="letras">
-                <h6>A</h6>
-                <img id="A" style="width: 5vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+                <h6>I N T E I R O</h6>
+                <img id="inteiro" style="width: 4vw;"  src="../img/unowns/i.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="inteiro" style="width: 4.5vw;"  src="../img/unowns/n.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="inteiro" style="width: 2.5vw;"  src="../img/unowns/t.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="inteiro" style="width: 4vw;"  src="../img/unowns/e.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="inteiro" style="width: 4vw;"  src="../img/unowns/i.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="inteiro" style="width: 3.5vw;"  src="../img/unowns/r.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="inteiro" style="width: 3.6vw;"  src="../img/unowns/o.gif" ondragstart="itemSelecionado(event)"></img>
             </div>
 
             <div class="letras">
+                <h6>D E C I M A L</h6>
+                <img id="decimal" style="width: 3.5vw;"  src="../img/unowns/d.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="decimal" style="width: 4vw;"  src="../img/unowns/e.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="decimal" style="width: 4vw;"  src="../img/unowns/c.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="decimal" style="width: 4vw;"  src="../img/unowns/i.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="decimal" style="width: 3.3vw;"  src="../img/unowns/m.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="decimal" style="width: 4vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="decimal" style="width: 4vw;"  src="../img/unowns/l.gif" ondragstart="itemSelecionado(event)"></img>
+            </div>
+
+
+            <div class="letras">
+                <h6>B O O L E A N O</h6>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/b.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/o.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/o.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/l.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/e.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/n.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="booleano" style="width: 4vw;"  src="../img/unowns/o.gif" ondragstart="itemSelecionado(event)"></img>
+
+            </div>
+
+
+            <div class="letras">
+                <h6>P A L A V R A</h6>
+                <img id="palavra" style="width: 4vw;"  src="../img/unowns/p.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="palavra" style="width: 4vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="palavra" style="width: 4vw;"  src="../img/unowns/l.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="palavra" style="width: 4vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="palavra" style="width: 3vw;"  src="../img/unowns/v.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="palavra" style="width: 4vw;"  src="../img/unowns/r.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="palavra" style="width: 4vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+            </div>
+
+
+            <div class="letras">
+                <h6>L E T R A</h6>
+                <img id="letra" style="width: 4vw;"  src="../img/unowns/l.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="letra" style="width: 4vw;"  src="../img/unowns/e.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="letra" style="width: 2.5vw;"  src="../img/unowns/t.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="letra" style="width: 4vw;"  src="../img/unowns/r.gif" ondragstart="itemSelecionado(event)"></img>
+                <img id="letra" style="width: 4vw;"  src="../img/unowns/a.gif" ondragstart="itemSelecionado(event)"></img>
+            </div>
+
+            <!--
+
+                 <div class="letras">
                 <h6>B</h6>
                 <img id="B" style="width: 5vw;"  src="../img/unowns/b.gif" ondragstart="itemSelecionado(event)"></img>
             </div>
@@ -299,6 +369,8 @@
                 <h6>?</h6>
                 <img id="ia" style="width: 4vw;"  src="../img/unowns/ia.gif" ondragstart="itemSelecionado(event)"></img>
             </div>
+            -->
+            
 
         </div>
 

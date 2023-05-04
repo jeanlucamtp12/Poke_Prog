@@ -1,127 +1,244 @@
+:root {
+    --esquerda: 35%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
+    overflow: hidden;
+
+}
+
+.tela {
+    overflow: hidden;
+    position:relative;
     height: 100vh;
-    overflow: hidden;    
-    background: linear-gradient( #01000c, #0d0266) no-repeat;
-}
-
-
-
-.campo{
-    position: relative;
     width: 100%;
-    height: 100%;
+    /*border: 1px solid #111;
+     margin-left: auto;
+    margin-right:  auto; */
+    background: linear-gradient( #50d3d3, #a3c6d4) no-repeat;
 
 }
 
-.bloco1{
+
+#raio{
+    animation: raio_movimento 5s infinite linear;
+    width:4.5%;   
     position: absolute;
-
-    width: 100%;
-    height: 5%;
-    bottom: 0%;
-    left: 0%;
+    top:48%;
+    /* 220, 500, 700, 1000 */
+ 
 }
 
 
-.bloco2{
-    position: absolute;
 
-    width: 100%;
-    height: 5%;
+#combee3{
+    animation: raio_movimento 3s infinite linear;
+     
+    width:7%;   
+    position: absolute;
+    bottom:30%;
+    left:5%;
+ 
+   
+}
+
+#combee2{
+    animation:  raio_movimento 4s infinite linear;
+      
+    width:7%;   
+    position: absolute;
+    bottom:48%;
+    left:50%;
+ }
+ 
+
+#combee4{
+    animation:  raio_movimento 5s infinite linear;
+     
+    width:7%;   
+    position: absolute;
+    bottom:48%;
+    left:25%;
+ 
+   
+}
+#combee5{
+    animation:  raio_movimento 7s infinite linear;
+     
+    width:7%;   
+    position: absolute;
+    bottom:48%;
+    left:58%;
+ 
+   
+}
+
+
+
+#nuvens{
+    width:20%;   
+    position: absolute;
+    top:0%;
+    left: 5%;
+  
+}
+
+
+#nuvens2{
+    width:20%;   
+    position: absolute;
     top: 10%;
-    left: 0%;
+    left:40%;
+
 }
-
-
 
 .mato{
     position: absolute;
+    width: 4%;
     bottom: 0%;
-    z-index: 0;
+    z-index: 1;
 
 }
 
-.alien{
+
+
+.poke{
     position: absolute;
-
-    width: 20%;
-    top: 0%;
-    left: 40%;
-    animation: alien_movimento 8s infinite linear;
-    
-
+    bottom: 2%;
+    left: 40vw;
+    width: 10vw;
 }
 
+.movimento{
+    animation: inicial_movimento 1s infinite linear;
+}
 
-.alien2{
+#grama{
     position: absolute;
-
-    width: 20%;
-    top: 0%;
-    left: 45%;
+    bottom: -420px;
+    width:100%;
 }
 
-.hoppip{
+
+
+@keyframes nuvem_movimento{
+    0%{
+        left: 0%;
+
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: 100%;
+
+    }
+}
+
+
+@keyframes raio_movimento{
+    0%{
+        top: 0%;
+
+    }
+    50%{
+        top: 50%;
+    }
+    100%{
+        top: 100%;
+
+    }
+}
+
+@keyframes inicial_movimento{
+    0%{
+        left: 50%;
+
+    }
+    100%{
+        left: 60%;
+
+        
+    }
+}
+
+
+
+#piso{
+    border: solid 0.5vw black;
+    width: 10vw;   
+    margin-top: -2.6vw;
+    background-color: rgb(0, 0, 0);
+}
+
+#piso2{
+    border: solid 0.3vw black;
+    width: 11vw;   
+    margin-top: 1vw;
+    margin-left: -1.5vw;
+    background-color: rgb(0, 0, 0);
+    transform: rotate(160deg);
+}
+
+
+.vespiqueen{
     position: absolute;
+    width: 15vw;
+    animation: vespiqueen_movimento 5s infinite linear;
+    z-index: 1;
 
-    width: 30%;
-    bottom: 6%;
-    left: 45%;
 }
 
+@keyframes vespiqueen_movimento{
+    0%{
+        left: 80%;
+        bottom: 70%;
+    }
+    20%{
+        left: 60%;
+        bottom: 60%;
+    }
+    40%{
+        left: 80%;
+        bottom: 50%;
+    }
+    60%{
+        left: 20%;
+        bottom: 60%;
+    }
+    80%{
+        left: 30%;        
+        bottom: 40%;
+    }
+    100%{
+        left: 80%;
+        bottom: 70%;
+    }
+}
 
-.ataque{
+.natureza{
     position: absolute;
-    width: 15%;
-    bottom: 12%;
-    animation: hoppip_ataque 0.5s infinite linear;
-}
-/*
-@keyframes hoppip_ataque {
-
-    0% {
-        transform: translateY(0); 
-
-    }
-    50% {
-        transform: translateY(-3000%); 
-
-    }
-    100% {
-        transform: translateY(-5000%); 
-
-    }
-
-}*/
-@keyframes hoppip_ataque {
-
-    0% {
-        bottom: 12%;
-
-    }
-    50% {
-        bottom:  50%;
-
-    }
-    100% {
-        bottom:  100%;
-
-    }
-
+    width: 100%; 
+    left: 70%;
+    bottom: -2%;
 }
 
-
-@keyframes alien_movimento {
-    0%{ 
-        transform: translateY(0); 
-    }
-    50%{ 
-        transform: translateY(-10px); 
-    }
-    100%{ 
-        transform: translateY(0); 
-    }
+.comeia{   
+    width: 13%;
+    margin-right: -12%;
+    margin-bottom: -3%;
 }
+
+.arvore{
+    width: 40%;
+    left: 70%;
+    bottom: -2%;
+}
+
 
 .cortador {
     position: absolute;
@@ -153,8 +270,270 @@ body{
 
 }
 
-.eletricidade{
+.ventilador{
     position: absolute;
-    width: 19%;   
+    width: 33%;
+    bottom: 80%;
+    left: 65%;
+    z-index: 1;
 }
 
+.vento{
+    position: absolute;
+    width: 30%;
+    top: 0%;
+    right: 0%;
+    animation: vento_movimento 9s infinite linear;
+}
+
+.vento2{
+    position: absolute;
+    width: 30%;
+    top: 5%;
+    right: 0%;
+    animation: vento_movimento 7s infinite linear;  
+}
+
+
+.vento3{
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    right: 0%;
+    animation: vento_movimento 8s infinite linear;  
+}
+
+@keyframes vento_movimento {
+
+    0%{
+        right: 8%;
+    }
+    50%{
+        right: 50%;
+    }
+    
+    100%{
+        right: 100%;
+    }
+    
+}
+
+
+.jumpluff{
+    position: absolute;
+    width: 28%;
+    bottom: 15%;
+    right: 15%;
+    z-index: 1;
+    animation: jumpluff_movimento 8s infinite linear;  
+}
+
+@keyframes jumpluff_movimento {
+
+    0%{
+        right: 0%;
+        bottom: 15%;
+    }
+    30%{
+        right: 15%;
+        bottom: 25%;
+    }
+    70%{
+        right: 15%;
+        bottom: 85%;    
+    }
+    
+    100%{
+        bottom: 85%;
+        right: 100%;
+    }
+    
+}
+
+.frutas{
+    position: absolute;
+    width: 15%;
+    animation: fruta_movimento 8s infinite linear;  
+    animation-fill-mode: forwards;
+
+
+}
+
+
+
+
+#frutas2{
+    position: absolute;
+    width: 2%;
+    left: 20%;
+    animation: fruta_queda 8.5s  linear;  
+    animation-play-state: paused;
+}
+
+#frutas3{
+    position: absolute;
+    width: 2%;
+    left: 40%;
+    animation: fruta_queda 8.5s  linear;  
+    animation-play-state: paused;
+}
+#frutas4{
+    position: absolute;
+    width: 2%;
+    left: 60%;
+    animation: fruta_queda 8.5s  linear;  
+    animation-play-state: paused;
+}
+
+
+
+@keyframes fruta_movimento {
+
+    0%{
+        right: 20%;
+        bottom: 28%;
+        width: 15%;
+    }
+    5%{
+        right: 20%;
+        bottom: 28%;
+        width: 16%;
+    }
+    10%{
+        right: 20%;
+        bottom: 28%;
+        width: 15%;
+    }
+    15%{
+        right: 20%;
+        bottom: 28%;
+        width: 16%;
+    }
+    20%{
+        right: 20%;
+        bottom: 28%;
+        width: 15%;
+    }
+    25%{
+        right: 20%;
+        bottom: 28%;
+        width: 16%;
+    }
+    30%{
+        right: 20%;
+        bottom: 28%;
+        opacity: 1;
+        width: 15%;
+    }
+    70%{
+        right: 20%;
+        bottom: 88%;
+        opacity: 0;
+    }
+    
+    100%{
+        bottom: 88%;
+        right: 120%;
+        opacity: 0;
+    }
+    
+}
+
+
+
+@keyframes fruta_queda {
+
+    0%{
+        bottom: 90%;
+    }
+    
+    50%{
+        bottom: 60%;
+    }
+    80%{
+        bottom: 30%;
+    }
+    99%{
+        bottom: 0%;
+    }
+    100%{
+        bottom: 0%;
+    }
+    
+}
+
+
+.wormadam1{
+    position: absolute;
+    width: 37%;
+    top: -5%;
+    left: 10%;
+}
+.wormadam2{
+    position: absolute;
+    width: 37%;
+    top: -5%;
+    left: 25%;
+}
+.wormadam3{
+    position: absolute;
+    width: 37%;
+    top: -5%;
+    left: 40%;
+}
+
+
+
+
+
+
+
+
+.objetivos{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 10%;
+    height: 10%;
+    top: 25%;
+    left: 2%;
+}
+
+.berrys{
+    height: 33.3%;
+    display: flex;
+    flex-direction: row;
+}
+.berrys img{
+    width: 70%;
+}
+
+.berrys1, .berrys2, .berrys3, .berrys4{
+    width: 18%;
+    border: solid 1px black;
+}
+.vidas{
+    height: 33.3%;
+    display: flex;
+    flex-direction: row;
+}
+.vidas1, .vidas2, .vidas3{
+    width: 18%;
+    border: solid 1px black;
+}
+.vidas img{
+    width: 100%;
+}
+.energia{
+    height: 33.3%;
+    display: flex;
+    flex-direction: row;
+}
+
+.energia img{
+    width: 100%;
+}
+.energia1, .energia2, .energia3, .energia4, .energia5, .energia6{
+    width: 18%;
+    border: solid 1px black;
+}

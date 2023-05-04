@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" id="diretorio" href="../css/recursividade.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="campo">
+
+        <div class="cherrim" style="display: block">
+            <img class="cherrim" id="cherrim" src="../img/recursividade/cherrim-sunshine.gif">
+        </div>
+
+        <div class="Weezing">
+            <img class="Weezing" id="Weezing" style="display: none" src="../img/recursividade/Weezing.gif">
+        </div>
+
+        <div class="arbok">
+            <img class="arbok" id="arbok" style="display: none" src="../img/recursividade/arbok.gif">
+        </div>
+
+        <div>
+            <img class="ingrediente" id="ingrediente" src="../img/recursividade/receita/1.png">
+        </div>
+
+
+        <div class="teleport">
+            <img id="teleport1" style="display: none" src="../img/recursividade/teleport.gif">
+            <img id="teleport2" style="display: none" src="../img/recursividade/teleport.gif">
+            <img id="teleport3" style="display: none" src="../img/recursividade/teleport.gif">
+        </div>
+
+        <div class="porta0">
+            <img class="porta0" src="../img/recursividade/porta_aberta2.png">
+        </div>
+
+      
+
+     
+
+        <div class="portaAberta1">
+            <img class="portaAberta1" id="portaAberta1" src="../img/recursividade/orbeetle-gigantamax_esquerda.gif">
+        </div>
+
+        <div class="portaAberta2">
+            <img class="portaAberta2" id="portaAberta2" src="../img/recursividade/orbeetle-gigantamax_direita.gif">
+        </div>
+
+        <div class="portaAberta3">
+            <img class="portaAberta3" id="portaAberta3" src="../img/recursividade/orbeetle-gigantamax_direita.gif">
+        </div>
+
+        <div class="chao1">
+            <img class="bloco1" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao2">
+            <img class="bloco2" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao3">
+            <img class="bloco3" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao4">
+            <img class="bloco4" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao5">
+            <img class="bloco5" src="../img/recursividade/chao.jpg">
+        </div>
+
+        <div class="escadas">
+            <div class="escada1" id="1">
+                <img class="escada1" id="escada1" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+            <div class="escada2" id="2">
+                <img class="escada2" id="escada2" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+
+            <div class="escada3" id="3">
+                <img class="escada3" id="escada3" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+            <div class="escada4" id="4">
+                <img class="escada4" id="escada4" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+
+            <div class="escada5" id="5">
+                <img class="escada5" id="escada5" ondragover="areaColisao(event)" src="../img/recursividade/escada.png">
+            </div>
+        </div>
+
+
+
+
+        <div class="personagem">
+            <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)"
+                src="../img/recursividade/1_direita.png">
+        </div>
+
+
+        <div>
+            <img class="mesa" id="mesa" src="../img/recursividade/mesa1.png">
+        </div>
+        
+        <div>
+            <img class="geladeira" id="geladeira" src="../img/recursividade/geladeira.png">
+        </div>
+        
+        <div>
+            <img class="fogao" id="fogao" src="../img/recursividade/fogao.png">
+        </div>
+
+        <div>
+            <img class="pia" id="pia" src="../img/recursividade/pia.png">
+        </div>
+
+        <div>
+            <img class="escorredor" id="escorredor" src="../img/recursividade/lavadeira.png">
+        </div>
+        
+        <div>
+            <img class="mesaFlor" id="mesaFlor" src="../img/recursividade/mesa2.png">
+        </div>
+
+        <div>
+            <img class="mesaJantar" id="mesaJantar" src="../img/recursividade/armario.png">
+        </div>
+
+        <div>
+            <img class="lampada1" id="lampada1" src="../img/recursividade/lampada.png">
+        </div>
+
+   
+        <div>
+            <img class="lampada3" id="lampada3" src="../img/recursividade/lampada.png">
+        </div>
+
+        <div>
+            <img class="lampada4" id="lampada3" src="../img/recursividade/lampada.png">
+        </div>
+
+        <div>
+            <div class="quadro">
+              <img src="../img/recursividade/cerulean.webp" >
+            </div>
+          </div>
+
+
+
+
+          <div class="wall" style="opacity: 0.1;"></div>
+
+          <div>
+            <h3 id="textoIngredientes">Colete 5 Ingredientes Para Fazer Um Bolo</h3>
+
+          <div class="circulos">
+            <div class="circulo" id="c1"></div>
+            <div class="circulo" id="c2"></div>
+            <div class="circulo" id="c3"></div>
+            <div class="circulo" id="c4"></div>
+            <div class="circulo" id="c5"></div>            
+           </div>
+          </div>
+          
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <script>
+
+
+
+
+
+
+        var wall = document.querySelector(".wall");
+
+		for (var i = 0; i < 100; i++) {
+			var tile = document.createElement("div");
+			tile.className = "tile";
+			wall.appendChild(tile);
+        }
+
+
+
+        var contadorIngredientes = 1;
+
+        var controle = 0;
+
+        var contador = 0;
+
+        const personagemIniciado = (event) => {
+            event.dataTransfer.setData("img", event.target.id);
+        }
+
+        const areaColisao = (event) => {
+            event.preventDefault();
+        }
+
+        const loop = setInterval(() => {
+
+            var bulbasaur = document.getElementById("personagem");
+            bulbasaur.getBoundingClientRect();
+
+
+            if ((bulbasaur.x < cherrim.x + cherrim.width && bulbasaur.x + bulbasaur.width > cherrim.x && bulbasaur.y < cherrim.y + cherrim.height && bulbasaur.y + bulbasaur.height > cherrim.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+                valor = "livre";
+                contador = contador - 1;
+                if(contadorIngredientes >= 1){
+                    document.getElementById("c"+(contadorIngredientes-1)).style.backgroundColor = "red";
+                    contadorIngredientes = contadorIngredientes - 1;
+                }
+            }
+            if ((bulbasaur.x < arbok.x + arbok.width && bulbasaur.x + bulbasaur.width > arbok.x && bulbasaur.y < arbok.y + arbok.height && bulbasaur.y + bulbasaur.height > arbok.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+                valor = "livre";
+                contador = contador - 1;
+                if(contadorIngredientes >= 1){
+                    document.getElementById("c"+(contadorIngredientes-1)).style.backgroundColor = "red";
+                    contadorIngredientes = contadorIngredientes - 1;
+                }
+            }
+            if ((bulbasaur.x < Weezing.x + Weezing.width && bulbasaur.x + bulbasaur.width > Weezing.x && bulbasaur.y < Weezing.y + Weezing.height && bulbasaur.y + bulbasaur.height > Weezing.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+                valor = "livre";
+                contador = contador - 1;
+                if(contadorIngredientes >= 1){
+                    document.getElementById("c"+(contadorIngredientes-1)).style.backgroundColor = "red";
+                    contadorIngredientes = contadorIngredientes - 1;
+                }
+            }
+
+
+
+            if ((bulbasaur.x < ingrediente.x + ingrediente.width && bulbasaur.x + bulbasaur.width > ingrediente.x && bulbasaur.y < ingrediente.y + ingrediente.height && bulbasaur.y + bulbasaur.height > ingrediente.y)) {
+
+            
+                if(contadorIngredientes == 5){
+                    window.alert("Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!");
+                    window.location.href = "./funcoes.html";
+
+                }
+
+                document.getElementById("c"+contadorIngredientes).style.backgroundColor = "green";
+
+                if(contadorIngredientes == 3){
+                    document.getElementById("Weezing").style.display = "block";
+                }else if(contadorIngredientes == 4){
+                    document.getElementById("arbok").style.display = "block";
+                }
+
+                alteraAlimentos();
+
+            }
+        }, 5);
+
+
+    
+        const alteraAlimentos = () => {
+
+            if(contadorIngredientes == 5){
+                contadorIngredientes = 0;
+            };
+
+            document.getElementById("ingrediente").src = "../img/recursividade/receita/"+(contadorIngredientes + 1)+".png";
+
+            var locais = [
+                {x: 20, y: 20},  {x: 40, y: 20},  {x: 60, y: 20},  {x: 80, y: 20},// pontos parte 1
+                {x: 25, y: 45}, {x: 35, y: 45}, {x: 65, y: 45}, {x: 75, y: 45}, // pontos parte 2
+                {x: 20, y: 74}, {x: 30, y: 74}, {x: 55, y: 74}, {x: 70, y: 74}, // pontos parte 3
+                {x: 30, y: 90}, {x: 55, y: 90}, {x: 80, y: 90}  // pontos párte 4
+            ];
+
+
+            var pontoEscolhido = locais[Math.floor(Math.random() * locais.length)];
+            ingrediente.style.left = pontoEscolhido.x + '%';
+            ingrediente.style.top = pontoEscolhido.y + '%';
+
+            contadorIngredientes = contadorIngredientes + 1;
+
+
+        }
+
+
+    </script>
+
+
+    <script>
+        listaEscada = [];
+        valor = "livre";
+
+        
+
+     
+
+        const moverDireita = () => {
+
+            document.getElementById("personagem").src = "../img/recursividade/1_direita.png";
+
+            const el = document.querySelector('.personagem');
+            const value = getComputedStyle(el).getPropertyValue('left');
+
+
+            var remove_string = value.replace('px', '');
+            var valorNum = parseInt(remove_string);
+
+            var numPx = valorNum + 10;
+            var soma = parseInt(value) + 10;
+
+            personagem.style.left = soma + "px";
+
+        }
+
+        const moverEsquerda = () => {
+
+            document.getElementById("personagem").src = "../img/recursividade/1_esquerda.png";
+
+            const el = document.querySelector('.personagem');
+            const value = getComputedStyle(el).getPropertyValue('left');
+
+
+            var remove_string = value.replace('px', '');
+            var valorNum = parseInt(remove_string);
+
+            var numPx = valorNum + 10;
+            var soma = parseInt(value) - 10;
+
+            personagem.style.left = soma + "px";
+
+        }
+
+        const moverCima = () => {
+
+            document.getElementById("personagem").src = "../img/recursividade/1_cima.png";
+
+            const el = document.querySelector('.personagem');
+            const value = getComputedStyle(el).getPropertyValue('bottom');
+
+            var remove_string = value.replace('px', '');
+            var valorNum = parseInt(remove_string);
+
+            var numPx = valorNum + 10;
+            var soma = parseInt(value) + 10;
+
+            personagem.style.bottom = soma + "px";
+
+        }
+
+        const moverBaixo = () => {
+
+            document.getElementById("personagem").src = "../img/recursividade/1_cima.png";
+
+            const el = document.querySelector('.personagem');
+
+            const value = getComputedStyle(el).getPropertyValue('bottom');
+
+
+            var remove_string = value.replace('px', '');
+            var valorNum = parseInt(remove_string);
+
+            var numPx = valorNum + 10;
+            var soma = parseInt(value) - 10;
+
+            personagem.style.bottom = soma + "px";
+
+        }
+
+
+        const personagem = document.querySelector('.personagem');
+
+
+        const mover = () => {
+
+            var tecla = event.keyCode;
+
+            var chao = document.querySelector('.bloco4');
+
+            var per = document.getElementById("personagem");
+
+
+            var escadas = document.querySelectorAll("#escada1, #escada2, #escada3, #escada4, #escada5");
+            
+
+
+            for (var i = 0; i < escadas.length; i++) {
+                escadas[i].getBoundingClientRect();
+                listaEscada.push(escadas[i]);
+
+            }
+            var posicaoPer = window.getComputedStyle(per).bottom;
+
+
+            var portaAberta1 = document.getElementById("portaAberta1");
+            var portaAberta2 = document.getElementById("portaAberta2");
+            var portaAberta3 = document.getElementById("portaAberta3");
+
+
+            per.getBoundingClientRect();
+            portaAberta1.getBoundingClientRect();
+            portaAberta2.getBoundingClientRect();
+            portaAberta3.getBoundingClientRect();
+
+
+            if ((per.x < portaAberta1.x + portaAberta1.width && per.x + per.width > portaAberta1.x && per.y < portaAberta1.y + portaAberta1.height && per.y + per.height > portaAberta1.y) || (per.x < portaAberta2.x + portaAberta2.width && per.x + per.width > portaAberta2.x && per.y < portaAberta2.y + portaAberta2.height && per.y + per.height > portaAberta2.y) || (per.x < portaAberta3.x + portaAberta3.width && per.x + per.width > portaAberta3.x && per.y < portaAberta3.y + portaAberta3.height && per.y + per.height > portaAberta3.y)) {
+
+                if (per.x + 100 > portaAberta2.x && per.x < 500) {
+                    var teleport = "teleport1";
+                } else if (per.x > portaAberta2.x) {
+                    var teleport = "teleport3";
+                }
+
+                
+                setTimeout(function () {
+                    personagem.style.bottom = "1%";
+                    personagem.style.left = "0%";
+                    document.getElementById("teleport2").style.display = 'block';
+                    document.getElementById(teleport).style.display = 'block';
+                }, 500);
+
+                setTimeout(function () {
+                    document.getElementById("teleport2").style.display = 'none';
+                    document.getElementById(teleport).style.display = 'none';
+                }, 1000);
+
+            }
+
+            if (tecla == 39 && valor == "livre") {
+                moverDireita();
+
+            } else if (tecla == 37 && valor == "livre") {
+                moverEsquerda();
+            }
+
+
+            else if (tecla == 38) { //x=lagura y=altura
+
+                for (var i = 0; i < escadas.length; i++) {
+                    if ((per.x + 30 < escadas[i].x + escadas[i].width && per.x - 30 + per.width > escadas[i].x) && (per.y < escadas[i].y + 10 + escadas[i].height && per.y - 10 + per.height > escadas[i].y)) {
+
+                        valor = "bloqueado";
+
+                        moverCima();
+                    }
+                    if (per.y <= escadas[i].y - 40) {
+                        valor = "livre";
+
+                    }
+
+
+                }
+            }
+
+        }
+        document.addEventListener('keydown', mover);
+    </script>
+</body>
+
+</html>
