@@ -1,112 +1,452 @@
-body{
-    height: 100vh;
+body, html{
 	overflow: hidden;
 	background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
-}
-
-img {
-    border-radius: 35%;
-	width: 20%;
-}
-img:hover{
-	transform: scale(1.2);
-}
-
-.mapa{
-	margin-left: 50px;
-	margin-bottom: 250px;
-	display: grid;
-	grid-template-areas:
-    "div div div div";
-	/*grid-template-columns:  1fr 1fr 1fr 1fr;*/
-
-}
-
-
-.variaveis img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.decisao img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.repeticao img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.arrays img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.funcoes img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.excecoes img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-
-.recursividade img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.trofeu img{
-	width: 50%;
-	display: block; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.mapa h4{
-	color: white;
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-	text-align: center;
-	margin-top: 0;
-
-}
-
-.mapa h2{
-	color: white;
-	font-size: 10%;
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-
+	height: 100%;
 }
 
 .mapa h1{
-	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(42, 111, 167), rgb(64, 67, 224));
+	background: linear-gradient(to bottom, rgb(255, 255, 255),  rgba(216, 168, 255, 0.801));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font-size: 5vw;
+	font-size: 1.5vw;
 	margin: 0;
     text-align: center;
 }
 
+
 .titulo{
+	position: absolute;
 	color: white;
-	margin-top: 3vw;
-	text-align: center;
+	z-index: 2;
+	left: 45%;
+	top: -2%;
+	border: solid 0.5vw #333537;
+	background-color: #333537;
+	border-radius: 50%;
+	font-size: 1.5vw;
+}
+
+
+#escola{
+	position: absolute;
+	bottom: 49%;
+	left: 32%;
+	width: 18vw;
+	z-index: 1;
+
+}
+
+#fabrica{
+	position: absolute;
+	bottom: 49%;
+	left: 12%;
+	width: 13vw;
+	z-index: 1;
+
+}
+
+#rio{
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	width: 25vw;
+	z-index: 0;
+
+}
+
+
+
+#predio1{
+	position: absolute;
+    bottom: 1%;
+    left: 62%;
+    width: 15vw;
+	z-index: 1;
+}
+
+#predio2{
+	position: absolute;
+	bottom: 1%;
+	left: 49%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#trofeu{
+	position: absolute;
+	bottom: 0%;
+	left: 83%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#bosque{
+	position: absolute;
+	bottom: 51%;
+	left: 75.5%;
+	width: 25vw;
+	z-index: 0;
+}
+
+#casa{
+	position: absolute;
+	bottom: 1%;
+	left: 0%;
+	width: 15vw;
+	z-index: 1;
+}
+
+#cemiterio1{
+	position: absolute;
+	bottom: 0%;
+	left: 40%;
+	width: 11vw;
+	z-index: 1;
+}
+
+#cemiterio2{
+	position: absolute;
+	bottom: 1%;
+	left: 26%;
+	width: 12vw;
+	z-index: 1;
+}
+
+
+#nuvem1{
+	position: absolute;
+	bottom: 73%;
+	left: 77%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#nuvem2{
+	position: absolute;
+	bottom: 80%;
+	left: 88%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#nuvem3{
+	position: absolute;
+	bottom: 80%;
+	left: 54%;
+	width: 10vw;
+	z-index: 1;
+}
+
+
+.parede1, .parede2, .parede3{
+    position: absolute;
+    width:  0.4vw;
+    height: 100vw;
+    transform: rotate(180deg);
+	z-index: 0;
+}
+
+.parede1{
+	bottom: 0%;
+    left: 25%;
+}
+
+.parede2{
+	bottom: 0%;
+    left: 50%;
+}
+.parede3{
+	bottom: 0%;
+    left: 75%;
+}
+
+
+.bloco1{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: 48%;
+    left: 0%;
+}
+
+
+.bloco2{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: -0.3%;
+    left: 0%;
+}
+
+.bloco3{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    top: -0.2%;
+    left: 0%;
+}
+
+
+/* Incio dos personagens*/
+
+/* Unows*/
+
+#a, #b, #c, #d, #e, #f, #g{
+	position: absolute;
+	width: 4vw;
+}
+#a{
+	left: 0%;
+	bottom: 75%;
+}
+#b{
+	left: 7%;
+	bottom: 78%;
+}
+#c{
+	left: 14%;
+	bottom: 73%;
+}
+#d{
+	left: 19%;
+	bottom: 79%;
+}
+#e{
+	left: 1%;
+	bottom: 65%;
+}
+#f{
+	left: 8%;
+	bottom: 65%;
+}
+#g{
+	left: 3%;
+	width: 3vw;
+	bottom: 50%;
+}
+
+/* Arbok e Bulba*/
+
+#arbok, #bulbassaur{
+	position: absolute;
+	z-index: 1;
+}
+#arbok{
+	left: 25%;
+	width: 9vw;
+	bottom: 47%;
+}
+#bulbassaur{
+	left: 41%;
+	width: 12vw;
+	bottom: 42%;
+}
+
+/* Timburr*/
+
+#timburr{
+	position: absolute;
+	left: 65%;
+	width: 10vw;
+	bottom: 49%;
+}
+
+
+/* Falinks*/
+
+#falinks1, #falinks2 , #falinks3, #falinks4, #falinks5, #falinks6{
+	position: absolute;
+	width: 4vw;
+	bottom: 49%;
+}
+
+#falinks1{
+	left: 95%;
+}
+#falinks2{
+	left: 92%;
+}
+#falinks3{
+	left: 89%;
+}
+
+#falinks4{
+	left: 82%;
+}
+#falinks5{
+	left: 79%;
+}
+#falinks6{
+	left: 76%;
+}
+
+
+
+/* Rotoms*/
+
+#rotom, #cortador , #geladeira, #lavadeira, #ventilador, #forno{
+	position: absolute;
+	width: 8vw;
+	z-index: 1;
+}
+
+#rotom{
+	left: 10%;
+	bottom: 22%;
+}
+#cortador{
+	left: 18%;
+	bottom: -1%;
+}
+#geladeira{
+	left: 0%;
+	bottom: 1%;
+	transform: scaleX(-1);
+}
+
+#lavadeira{
+	left: 12%;
+	bottom: 8%;
+}
+#ventilador{
+	left: 17%;
+	bottom: 28%;
+}
+#forno{
+	left: -1%;
+	bottom: 32%;
+	transform: scaleX(-1);
+}
+
+
+/* Gaslys*/
+
+#gasly1, #gasly2 , #gasly3, #gasly4{
+	position: absolute;
+	width: 6vw;
+	z-index: 1;
+}
+
+#gasly1{
+	left: 43%;
+	bottom: 28%;
+}
+#gasly2{
+	left: 43%;
+	bottom: 10%;
+}
+#gasly3{
+	left: 32%;
+	bottom: 15%;
+	transform: scaleX(-1);
+}
+
+#gasly4{
+	left: 26%;
+	bottom: 25%;
+	transform: scaleX(-1);
+}
+
+
+
+
+
+/* Magnemite e Masgneton*/
+
+#magnemite1, #magnemite2 , #magneton1, #magneton2{
+	position: absolute;
+	width: 5vw;
+	z-index: 1;
+}
+
+#magnemite1{
+	left: 69%;
+	bottom: 28%;
+}
+#magnemite2{
+	left: 57%;
+	bottom: 0%;
+	width: 8vw;
+}
+#magneton1{
+	left: 50%;
+	bottom: 28%;
+	transform: scaleX(-1);
+	width: 8vw;
+}
+
+#magneton2{
+	left: 60%;
+	bottom: 18%;
+	transform: scaleX(-1);
+}
+
+
+
+/* Victinis*/
+
+#victini1, #victini2{
+	position: absolute;
+	width: 11vw;
+	z-index: 1;
+	bottom: -2%;
+}
+
+#victini1{
+	left: 75%;
+}
+
+#victini2{
+	left: 90%;
+	transform: scaleX(-1);
+}
+
+
+
+/* Titulos fase*/
+#fase1, #fase2, #fase3, #fase4, #fase5, #fase6, #fase7, #extras{
+	position: absolute;
+	z-index: 1;
+}
+
+#fase1{
+	left: 5%;
+	bottom: 90%;
+}
+
+#fase2{
+	left: 32%;
+	bottom: 90%;
+}
+
+#fase3{
+	left: 58%;
+	bottom: 90%;
+}
+
+#fase4{
+	left: 82%;
+	bottom: 90%;
+}
+
+#fase5{
+	left: 7%;
+	bottom: 40%;
+}
+
+#fase6{
+	left: 30%;
+	bottom: 40%;
+}
+
+#fase7{
+	left: 58%;
+	bottom: 40%;
+}
+
+#extras{
+	left: 84.5%;
+	bottom: 40%;
+	font-size: 2.5vw;
 }
