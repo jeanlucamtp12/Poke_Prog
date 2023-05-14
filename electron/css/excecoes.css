@@ -204,13 +204,6 @@ body {
    
 }
 
-.pokebola{
-    position: absolute;
-    width: 6vw;
-    left: 47%;
-    bottom: -2%;
-    z-index: 1;
-}
 
 .gasly{
     position: absolute;

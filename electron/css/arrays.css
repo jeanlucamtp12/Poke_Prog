@@ -1,7 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-
+body{
+    overflow: hidden;
 }
 
 .tela {
@@ -12,7 +10,7 @@
     /*border: 1px solid #111;
      margin-left: auto;
     margin-right:  auto; */
-    background: linear-gradient( #141515, #a3c6d4) no-repeat;
+    background: linear-gradient( #1c375a, #86b5c7) no-repeat;
 
 }
 
@@ -72,22 +70,30 @@
 }
 
 #nuvens{
-    animation: nuvem_movimento 40s infinite linear; 
+    animation: nuvem_movimento1 40s infinite linear; 
     width:20%;   
     position: absolute;
-    top:0%;
-    left:40%;
+    top:10%;
+    left:50%;
   
 }
 
 
 #nuvens2{
-    animation: nuvem_movimento 30s infinite linear; 
+    animation: nuvem_movimento2 30s infinite linear; 
     width:20%;   
     position: absolute;
-    top:0%;
-    left:40%;
+    top:-5%;
+    left:20%;
 
+}
+
+#nuvens3{
+    animation: nuvem_movimento3 30s infinite linear; 
+    width:20%;   
+    position: absolute;
+    top:5%;
+    left:0%;
 }
 
 
@@ -97,7 +103,7 @@
     position: absolute;
     bottom: -3%;
     left: 40vw;
- 
+    z-index: 1;
     width:6vw;
   
 }
@@ -121,20 +127,49 @@
 
 
 
-@keyframes nuvem_movimento{
+@keyframes nuvem_movimento1{
+    0%{
+        left: 50%;
+
+    }
+    50%{
+        left: 60%;
+    }
+    100%{
+        left: 50%;
+
+    }
+}
+
+
+@keyframes nuvem_movimento2{
+    0%{
+        left: 20%;
+
+    }
+    50%{
+        left: 30%;
+    }
+    100%{
+        left: 20%;
+
+    }
+}
+
+
+@keyframes nuvem_movimento3{
     0%{
         left: 0%;
 
     }
     50%{
-        left: 50%;
+        left: 10%;
     }
     100%{
-        left: 100%;
+        left: 0%;
 
     }
 }
-
 
 @keyframes raio_movimento{
     0%{
@@ -164,25 +199,28 @@
 
 #pikachu{
     width: 12vw;
-
     z-index: 2;
+    position: absolute;
+    bottom: 42%;
+    left: 15%;
 }
 
 
 #piso{
-    border: solid 0.5vw black;
-    width: 10vw;   
-    margin-top: -2.6vw;
+    position: absolute;
+    border: solid 0.5vw rgb(48, 13, 61);
+    width: 13vw;   
     background-color: rgb(0, 0, 0);
+    bottom: 60%;
 }
 
 #piso2{
-    border: solid 0.3vw black;
-    width: 11vw;   
-    margin-top: 1vw;
-    margin-left: -1.5vw;
+    position: absolute;
+    border: solid 0.5vw rgb(75, 10, 88);
+    width: 15vw;   
     background-color: rgb(0, 0, 0);
-    transform: rotate(160deg);
+    bottom: 60%;
+    right: 0%;
 }
 
 
@@ -193,7 +231,7 @@
         padding: 1%;
         display: flex;
         position:relative;
-        top: 0%;
+        top: 5%;
         flex-direction: row-reverse;
         left: 70%;
         width: 30%;
@@ -227,3 +265,127 @@
 
 }
 
+.togepi, .cleffa, .pichu, .igglybuff{
+    position: absolute;
+    width: 12vw;
+}
+
+.togepi{
+    bottom: 54%;
+    left: 90%;
+}
+.cleffa{
+    left: -3%;
+    transform: scaleX(-1);
+    bottom: 53%;
+}
+.pichu{
+    bottom: 55%;
+    transform: scaleX(-1);
+    left: 5%;
+}
+.igglybuff{
+    left: 80%;
+    bottom: 56%;
+}
+
+.vida{
+    position: absolute;
+    width: 2%;
+    animation: vida_movimento 5s infinite linear;
+}
+
+.vida2{
+    position: absolute;
+    width: 2%;
+    animation: vida2_movimento 5s infinite linear;
+
+}
+
+@keyframes vida_movimento{
+    0%{
+        bottom: 65%;
+        left: 10%;
+    }
+    20%{
+        bottom: 80%;
+        left: 30%;
+    }
+    30%{
+        bottom: 70%;
+        left: 35%;
+    }
+    50%{
+        bottom: 50%;
+        left: 30%;
+    }80%{
+        bottom: 25%;
+        left: 35%;
+    }
+    100%{
+        bottom: 0%;
+        left: 30%;
+    }
+}
+
+
+@keyframes vida2_movimento{
+    0%{
+        bottom: 65%;
+        right: 8%;
+    }
+    20%{
+        bottom: 80%;
+        right: 30%;
+    }
+    30%{
+        bottom: 70%;
+        right: 35%;
+    }
+    50%{
+        bottom: 50%;
+        right: 30%;
+    }80%{
+        bottom: 25%;
+        right: 35%;
+    }
+    100%{
+        bottom: 0%;
+        right: 30%;
+    }
+}
+
+.mato{
+    position: absolute;
+}
+
+#arvore1, #arvore2{
+    position: absolute;
+    width: 30vw;
+}
+#arvore1{
+    left: -8%;
+    bottom: 0%;
+    transform: scaleX(-1);
+}
+#arvore2{
+    right: -8%;
+    bottom: 0%;
+}
+
+
+.life{
+    position: absolute;
+    top: 14%;
+    left: 92%;
+    height: 2vw;
+    width: 150vw;
+    display: flex;
+    flex-direction: row;
+}
+.vidas1, .vidas2, .vidas3{
+    width: 1.5%;
+}
+.life img{
+    width: 100%;
+}
