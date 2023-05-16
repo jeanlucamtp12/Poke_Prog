@@ -38,7 +38,7 @@ body{
 
     position: absolute;
     width: 20%;
-    right: 50%;
+    right: 58%;
     bottom: 80%;
 }
 
@@ -91,7 +91,7 @@ body{
 
     width: 2%;
     bottom: 80%;
-    right: 70%;
+    right: 50%;
     z-index: 1;
 }
 
@@ -107,10 +107,29 @@ body{
 .viga{
     position: absolute;
     width: 2%;
-    height: 20%;
-    bottom: 18%;
+    height: 30%;
+    bottom: 15%;
     z-index: 1;
+    animation: viga_efeito 0.8s infinite linear;
+
 }
+
+@keyframes viga_efeito {
+    0% {
+        width: 2%;
+        height: 30%;    
+    }
+
+    50% {
+        width: 2.5%;
+        height: 35.5%;    
+    }
+    100% {
+        width: 2%;
+        height: 30%;    
+    }
+}
+
 
 .chuva {
 
@@ -264,11 +283,11 @@ body{
 
 
 
-.staryu{
-    width: 7%;
+.starmie{
+    width: 8%;
     position: absolute;
     left: 93%;
-    animation: staryu_movimento 5s infinite linear;
+    animation: starmie_movimento 5s infinite linear;
     z-index: 1;
 }
 
@@ -324,7 +343,7 @@ body{
  
 
 
-@keyframes staryu_movimento {
+@keyframes starmie_movimento {
     0% {
         bottom: 14%;
         left: 100%;
@@ -742,5 +761,92 @@ body{
 
 .indicador img{
     width: 4vw;
-    animation: piscarTela 0.8s steps(1, end) infinite;
+    animation: piscarTela 0.4s steps(1, end) infinite;
 }
+
+.sinalizacao{
+    position: absolute;
+    width: 4vw;
+    left: 48%;
+    z-index: 2;
+    bottom: 3%;
+    animation: piscarTela 0.4s steps(1, end) infinite;
+
+} 
+
+.octillery{
+    position: absolute;
+    width: 16vw;
+    left: 25%;
+    z-index: 2;
+    --my-bottom: -13%;
+    bottom: var(--my-bottom); 
+    animation: animacao_pulo 14s infinite linear;
+
+} 
+
+.tentacruel{
+    position: absolute;
+    width: 16vw;
+    --my-bottom: -19%;
+    bottom: var(--my-bottom); 
+    left: 65%;
+    z-index: 2;
+    animation: animacao_pulo 10s infinite linear;
+
+} 
+
+@keyframes animacao_pulo {
+    0% {
+        bottom: --my-bottom;
+    }
+    45% {
+        bottom: --my-bottom;
+        opacity: 1;
+    }
+    48% {
+        bottom: --my-bottom;
+        opacity: 1;
+    }
+    50% {
+        bottom: --my-bottom;
+        opacity: 0;
+    }
+    52% {
+        opacity: 1;
+        bottom: --my-bottom;
+    }
+    54% {
+        opacity: 0;
+        bottom: --my-bottom;
+    }
+    56% {
+        opacity: 1;
+        bottom: --my-bottom;
+    }
+    58% {
+        opacity: 0;
+        bottom: --my-bottom;
+    }
+    59% {
+        opacity: 1;
+        bottom: calc(var(--my-bottom) - 0.1%);
+    }
+    60% {
+        bottom: calc(var(--my-bottom) + 33%);
+    }
+    80% {
+        bottom: calc(var(--my-bottom) + 33%);
+    }
+    90% {
+        bottom: calc(var(--my-bottom) + 33%);
+    }
+    98% {
+        bottom: --my-bottom;
+    }
+    100% {
+        bottom: --my-bottom;
+    }
+
+}
+

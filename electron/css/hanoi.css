@@ -61,10 +61,10 @@ body{
     left: 46%;
     bottom: -15%;
     border: solid 0.3vw black;
-    border-radius: 10px;
+    border-radius: 0.7vw;
     outline: none;
     height: 32vw;
-    width: 1vw;
+    width: 1.5vw;
     animation: mudaCor 5s infinite ease-in-out;
 
 }
@@ -116,11 +116,11 @@ body{
     left: 46%;
     bottom: -15%;
     border: solid 0.3vw black;
-    border-radius: 8px;
+    border-radius: 0.7vw;
     outline: none;
     box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 1vw;
+    width: 1.5vw;
     animation: mudaCor 5s infinite ease-in-out;
 }
 
@@ -141,11 +141,11 @@ body{
     bottom: -15%;
     border: solid 0.3vw black;
     
-    border-radius: 8px;
+    border-radius: 0.7vw;
     outline: none;
     box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 1vw;
+    width: 1.5vw;
     animation: mudaCor 5s infinite ease-in-out;
 
 }

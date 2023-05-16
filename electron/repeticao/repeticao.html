@@ -37,7 +37,7 @@
             <img style="display: none;" class="viga" id="viga" src="../img/repeticao/viga.png">
 
             <div class="infoViga" id="infoViga" style="display: none;">
-                <h5  class="textoViga"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; não conseguem perfurar seu bastão,
+                <h5 class="textoViga"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; não conseguem perfurar seu bastão,
                     use-o com para se proteger.</h5>>
                 <img class="mantykeTexto" id="mantykeTexto" src="../img/repeticao/mantyke.png">
                 <img class="exclamacaoAzul" id="exclamacaoAzul" src="../img/repeticao/exclamacaoAzul.png">
@@ -73,6 +73,12 @@
             <img class="mantyke2" id="mantyke2" src="../img/repeticao/mantyke.png">
         </div>
 
+        <div class="tentaLlery" style="display: none;">
+            <img class="tentacruel" id="tentacruel" src="../img/repeticao/tentacruel.png">
+            <img class="octillery" id="octillery" src="../img/repeticao/octillery.png">
+        </div>
+        <img style="display: none;" class="sinalizacao" id="sinalizacao" src="../img/repeticao/exclamacao.png">
+
 
 
 
@@ -86,7 +92,7 @@
 
 
         <div>
-            <img style="display: none;" class="staryu" src="../img/repeticao/staryu.png">
+            <img style="display: none;" class="starmie" src="../img/repeticao/starmie.png">
 
         </div>
 
@@ -102,20 +108,20 @@
 
 
         <div class="ponte">
-            <div class="filhoPonte" img src="" id="id16"></div>
+            <div class="filhoPonte" id="id16"></div>
 
-            <div class="filhoPonte" img src="" id="id15"></div>
-            <div class="filhoPonte" img src="" id="id14"></div>
-            <div class="filhoPonte" img src="" id="id13"></div>
-            <div class="filhoPonte" img src="" id="id12"></div>
-            <div class="filhoPonte" img src="" id="id11"></div>
-            <div class="filhoPonte" img src="" id="id10"></div>
+            <div class="filhoPonte" id="id15"></div>
+            <div class="filhoPonte" id="id14"></div>
+            <div class="filhoPonte" id="id13"></div>
+            <div class="filhoPonte" id="id12"></div>
+            <div class="filhoPonte" id="id11"></div>
+            <div class="filhoPonte" id="id10"></div>
 
-            <div class="filhoPonte" img src="" id="id9"></div>
-            <div class="filhoPonte" img src="" id="id8"></div>
-            <div class="filhoPonte" img src="" id="id7"></div>
-            <div class="filhoPonte" img src="" id="id6"></div>
-            <div class="filhoPonte" img src="" id="id5"></div>
+            <div class="filhoPonte" id="id9"></div>
+            <div class="filhoPonte" id="id8"></div>
+            <div class="filhoPonte" id="id7"></div>
+            <div class="filhoPonte" id="id6"></div>
+            <div class="filhoPonte" id="id5"></div>
             <div class="filhoPonte" id="id4"></div>
             <div class="filhoPonte" id="id3"></div>
             <div class="filhoPonte" id="id2"></div>
@@ -141,6 +147,7 @@
 
         <div class="indicador">
             <img id="imgIndicador" src="../img/repeticao/tronco_queda.png" style="display:none"></img>
+            <img id="xIndicador" src="../img/repeticao/x.png" style="display:block"></img>
         </div>
 
 
@@ -154,14 +161,14 @@
     <script>
 
 
-
-
         var elementoPonte = document.getElementById("id" + 4);
         var loc = elementoPonte.getBoundingClientRect();
 
         var localizacao = loc.left + window.pageXOffset;
 
-
+        var entradaP = document.getElementById("entrada");                //pega localizacao madeira entrada da ponte 
+        var localizacaoEntradaP = entradaP.getBoundingClientRect();
+        var locEntrada = localizacaoEntradaP.left + window.pageXOffset;
 
 
         var viga = "desativada";
@@ -169,6 +176,7 @@
         let tronco = 0;
         vidas = 3
         var vidinhas = document.querySelectorAll("#vida1, #vida2, #vida3");
+        var textoVida = 0;
 
 
         const alteraVida = () => {
@@ -199,7 +207,7 @@
         // var combeeShiny = document.querySelector('.combeeShiny');
         var troncos = document.querySelector('.troncos');
         var timburr = document.querySelector('.timburr');
-        var staryu = document.querySelector('.staryu');
+        var starmie = document.querySelector('.starmie');
         var bolhas = document.querySelector('.bolhas');
         var entrada = document.querySelector('.entrada');
         entrada.getBoundingClientRect();
@@ -213,31 +221,53 @@
         const loop = setInterval(() => {
 
 
+            if (tronco == 17 && vidas >= 0) {
+                
+                setInterval(function () {
+                    window.alert("Voce terminou, parabens");
+                }, 50);
+            }
+
+            //defini qual inimigo aparecera em determinado momento da fase
+
             if (tronco == 6) {
-                document.querySelector(".staryu").style.display = "block";
-            } if (tronco == 7) {
-                document.querySelector(".qwilfish").style.animationPlayState = "running";
-            }
-            if (tronco == 9) {
-                document.querySelector(".seaking").style.animationPlayState = "running";
-            }
-            if (tronco == 11) {
+                document.querySelector(".starmie").style.display = "block";
                 document.querySelector(".basculin").style.animationPlayState = "running";
+            } if (tronco == 7) {
                 document.querySelector(".goldeen").style.animationPlayState = "running";
             }
-            if (tronco == 12) {
+            if (tronco == 9) {
+                document.querySelector(".qwilfish").style.animationPlayState = "running";
+                document.querySelector(".seaking").style.animationPlayState = "running";
+            }
+            if (tronco == 10) {
                 document.querySelector(".mantineMantyke").style.display = "block";
                 document.querySelector(".infoViga").style.display = "block";
-                document.querySelector(".staryu").style.display = "none";
+                document.querySelector(".starmie").style.display = "none";
             }
-            if (tronco == 13) {
+            if (tronco == 11) {
                 document.querySelector(".infoViga").style.display = "none";
             }
+            if (tronco == 14) {
+                document.querySelector(".goldeen").style.display = "none";
+                document.querySelector(".qwilfish").style.display = "none";
+                document.querySelector(".basculin").style.display = "none";
+                document.querySelector(".seaking").style.display = "none";
+                document.querySelector(".mantineMantyke").style.display = "none";
+                document.querySelector(".tentaLlery").style.display = "block";
+                document.querySelector(".sinalizacao").style.display = "block";
+            }
+            if (tronco == 15) {
+                document.querySelector(".sinalizacao").style.display = "none";
+            }
 
-            if (vidas == 2 || vidas == 1) {
+
+            if (vidas <= 2) {
+                if (textoVida == 0) {
+                    document.querySelector(".textoVidaExtra").style.display = "block";
+                    textoVida = textoVida + 1;
+                }
                 document.querySelector(".vidaExtra").style.display = "block";
-                document.querySelector(".textoVidaExtra").style.display = "block";
-
             }
 
             //posicaoCombeeShiny = window.getComputedStyle(combeeShiny).bottom;
@@ -249,7 +279,7 @@
 
             posicaoTimburr = timburr.offsetLeft;
 
-            posicaoStaryu = staryu.offsetLeft;
+            posicaostarmie = starmie.offsetLeft;
             posicaoBolhas = bolhas.offsetLeft;
 
 
@@ -268,14 +298,35 @@
 
             bolhas.getBoundingClientRect();
             timburr.getBoundingClientRect();
-            staryu.getBoundingClientRect();
+            starmie.getBoundingClientRect();
 
 
             mantykes = document.querySelectorAll("div.mantineMantyke #mantyke1, div.mantineMantyke #mantyke2");
+            tentaLlery = document.querySelectorAll("div.tentaLlery #octillery, div.tentaLlery #tentacruel");
+
 
 
             drifloon = document.getElementById("drifloon");
             troncos_queda = document.getElementById("tronco_queda");
+
+
+            for (var i = 0; i < tentaLlery.length; i++) {
+
+                if ((timburr.x + 30 < tentaLlery[i].x + tentaLlery[i].width && timburr.x - 30 + timburr.width > tentaLlery[i].x) && (timburr.y + 30 < tentaLlery[i].y + tentaLlery[i].height && timburr.y - 30 + timburr.height > tentaLlery[i].y)) {
+
+                    document.querySelector("#octillery").style.animation = 'none';
+                    document.querySelector("#tentacruel").style.animation = 'none';
+                    setInterval(function () {
+                        document.querySelector("#octillery").style.animation = "";
+                        document.querySelector("#tentacruel").style.animation = "";
+                    }, 10);
+
+                    alteraVida();
+
+
+                }
+
+            }
 
 
 
@@ -289,6 +340,7 @@
                 }, 10);
 
                 document.getElementById("imgIndicador").style.display = "block";
+                document.getElementById("xIndicador").style.display = "none";
 
 
 
@@ -347,43 +399,34 @@
 
             }
 
+
+
             peixes = document.querySelectorAll("div.peixes #goldeen, div.peixes #seaking, div.peixes #basculin, div.peixes #qwilfish");
 
             for (var i = 0; i < peixes.length; i++) {
 
                 if ((timburr.x + 30 < peixes[i].x + peixes[i].width && timburr.x - 30 + timburr.width > peixes[i].x) && (timburr.y + 30 < peixes[i].y + peixes[i].height && timburr.y - 30 + timburr.height > peixes[i].y)) {
 
+                    document.getElementById("xIndicador").style.display = "block";
+                    document.getElementById("imgIndicador").style.display = "none";
+                    personagem.style.left = "0%";
 
-                    window.alert("bateuuu no peixe");
-
-                    setInterval(function () {
-                        document.querySelector("." + peixes[i]).style.animation = "";
-                    }, 10);
-
-                    alteraVida();
+                    //alteraVida();
 
 
                 }
             }
 
 
-            if ((timburr.x + 40 < staryu.x + staryu.width && timburr.x - 40 + timburr.width > staryu.x) && (timburr.y + 40 < staryu.y + staryu.height && timburr.y - 40 + timburr.height > staryu.y)) {
+            if ((timburr.x + 40 < starmie.x + starmie.width && timburr.x - 40 + timburr.width > starmie.x) && (timburr.y + 40 < starmie.y + starmie.height && timburr.y - 40 + timburr.height > starmie.y)) {
                 //window.alert("bateuuu na estrela");
-                personagem.style.bottom = "22%";
                 personagem.style.left = "0%";
-                document.querySelector(".staryu").style.animation = 'none';
+                document.querySelector(".starmie").style.animation = 'none';
                 setInterval(function () {
-                    document.querySelector(".staryu").style.animation = "";
+                    document.querySelector(".starmie").style.animation = "";
                 }, 50);
                 alteraVida();
             }
-
-
-
-
-
-
-
 
 
 
@@ -456,6 +499,7 @@
                 localizacao = loc.left + window.pageXOffset;
                 tronco = tronco + 1;
                 document.getElementById("imgIndicador").style.display = "none";
+                document.getElementById("xIndicador").style.display = "block";
             }
 
 
@@ -465,19 +509,24 @@
 
         const moverEsquerda = () => {
 
-            document.getElementById("timburr").src = "../img/repeticao/timburr.png";
-
-            const el = document.querySelector('.timburr');
-            const value = getComputedStyle(el).getPropertyValue('left');
+            if (((timburr.offsetLeft + 30) > locEntrada)) {
 
 
-            var remove_string = value.replace('px', '');
-            var valorNum = parseInt(remove_string);
+                document.getElementById("timburr").src = "../img/repeticao/timburr.png";
 
-            var numPx = valorNum + 10;
-            var soma = parseInt(value) - 10;
+                const el = document.querySelector('.timburr');
+                const value = getComputedStyle(el).getPropertyValue('left');
 
-            personagem.style.left = soma + "px";
+
+                var remove_string = value.replace('px', '');
+                var valorNum = parseInt(remove_string);
+
+                var numPx = valorNum + 10;
+                var soma = parseInt(value) - 10;
+
+                personagem.style.left = soma + "px";
+
+            }
 
         }
 

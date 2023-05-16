@@ -205,22 +205,26 @@ body{
 }
 
 
-#piso{
+
+#galho1{
     position: absolute;
-    border: solid 0.5vw rgb(48, 13, 61);
-    width: 13vw;   
-    background-color: rgb(0, 0, 0);
-    bottom: 60%;
+    width: 22vw;   
+    height: 15vw;
+    bottom: 50%;
+    transform: scaleX(-1);
+    left: -3%;
 }
 
-#piso2{
+
+
+#galho2{
     position: absolute;
-    border: solid 0.5vw rgb(75, 10, 88);
-    width: 15vw;   
-    background-color: rgb(0, 0, 0);
-    bottom: 60%;
-    right: 0%;
+    width: 22vw;   
+    height: 15vw;
+    bottom: 50%;
+    right: -3%;
 }
+
 
 
 
@@ -279,12 +283,12 @@ body{
     bottom: 53%;
 }
 .pichu{
-    bottom: 55%;
+    bottom: 54%;
     transform: scaleX(-1);
     left: 5%;
 }
 .igglybuff{
-    left: 80%;
+    left: 83%;
     bottom: 56%;
 }
 
