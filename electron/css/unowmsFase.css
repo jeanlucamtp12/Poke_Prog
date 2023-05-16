@@ -18,8 +18,6 @@ body {
     cursor: pointer;
 }
 
-
-
 .letras{
     margin: auto;
 }
@@ -30,31 +28,12 @@ body {
     margin-bottom: 0;
 }
 
-h1 {
+h3 {
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
-#ee {
-    width: 5vw;
-    position: absolute;
-    right: 20vw;
-    bottom: 5vw;
-}
 
-#hh {
-    width: 5vw;
-    position: absolute;
-    top: 10vw;
-    right: 2vw;
-}
-
-#jj {
-    width: 5vw;
-    position: absolute;
-    top: 2vw;
-    left: 10vw;
-}
 
 .caixaConteudo {
     text-align: center;
@@ -132,4 +111,9 @@ h1 {
 
 #slot1 img, #slot2 img, #slot3 img, #slot4 img, #slot5 img, #slot6 img, #slot7 img, #slot8 img, #slot9 img, #slot10 img, #slot11 img, #slot12 img{
     width: 500%;
+}
+
+#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib{
+    position: absolute;
+    left: 50%;
 }

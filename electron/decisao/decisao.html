@@ -20,14 +20,14 @@
 
     <div class="arena">
 
-        
+
         <div class="grass"></div>
 
         <img class="nuvens" src="../img/decisao/clouds.png">
         <img class="nuvens2" src="../img/decisao/clouds.png">
 
 
-        <img class="jogador" src="../img/decisao/menino.png"> </img>  
+        <img class="jogador" src="../img/decisao/menino.png"> </img>
 
         <div>
             <img class="poke" src="../img/decisao/bulba.png">
@@ -35,43 +35,55 @@
             <div class="barraVida" id="barraVida">HP</div>
             <div class="barraVidaReal"></div>
         </div>
-      
+
         <div>
-            <img class="pokeAdversario" src="../img/decisao/arbok.gif"> 
+            <img class="pokeAdversario" src="../img/decisao/arbok.gif">
             <div id="barraVidaAdversario" class="barraVidaAdversario">HP</div>
             <div class="barraVidaAdversarioReal"></div>
 
         </div>
-        
+
         <img class="ataqueVeneno" id="ataqueVeneno" src="../img/decisao/ataqueVeneno.gif" style="display:none"> </img>
 
 
         <img class="adversario" src="../img/decisao/adversario.png"> </img>
 
 
+        <div>
+            <h3 id="ajuda">Ajuda</h3>
+            <img class="lampent" src="../img/decisao/lampent.png" onclick="abrirAjuda()" style="cursor: pointer;">
+            </img>
+
+            <div class="abrirAjuda" style="display: none;">
+                <img id="imagemAjuda" src="../img/decisao/complemento.jpg" ></img>
+            </div>
+        </div>
+
+
+
         <img class="ataqueGrama" id="ataqueGrama" src="../img/decisao/ataqueGrama.png" style="display:none"> </img>
 
 
 
-            <div class="form" id="form" method="GET" enctype='multipart/form-data'>
+        <div class="form" id="form" method="GET" enctype='multipart/form-data'>
 
-                <form>
-                    <div>
-                        <label id="nome" for="nome"> Se 1 > 2?</label>
-                        <input type="text" class="form-control" id="resposta">
-                        <!-- <img src="../img/decisao/complemento.jpg" style="width: 25vw;"></img> -->
-                    </div>
-                    <button style="margin: auto;">Enviar</button>
-                </form>
+            <form>
+                <div>
+                    <label id="nome" for="nome"> Se 1 > 2?</label>
+                    <input type="text" class="form-control" id="resposta">
+                    <!-- <img src="../img/decisao/complemento.jpg" style="width: 25vw;"></img> -->
+                    <button>Enviar</button>
+                </div>
+            </form>
 
-             </div>
+        </div>
 
 
     </div>
 
 
 
-    
+
 
 
 </body>
@@ -80,200 +92,213 @@
 
 <script>
 
-        var j = 0;
-        for (var i = 1; j <= 100; i++) {
+    var j = 0;
+    for (var i = 1; j <= 100; i++) {
 
 
-            var img = document.createElement('img');
-            img.src = '../img/decisao/mato.png';
-            img.classList.add('mato');
-            img.id = 'mato' + i;
-            img.style.bottom = "-1%";
-            img.style.width = "4%";
-            img.style.left = j + "%";
+        var img = document.createElement('img');
+        img.src = '../img/decisao/mato.png';
+        img.classList.add('mato');
+        img.id = 'mato' + i;
+        img.style.bottom = "-1%";
+        img.style.width = "4%";
+        img.style.left = j + "%";
 
-            var body = document.querySelector("body");
-            j = j + 3.8;
+        var body = document.querySelector("body");
+        j = j + 3.8;
 
-            body.appendChild(img);
+        body.appendChild(img);
 
+    }
+
+
+    var i = 1;
+    var jogador = 0;
+    var adversario = 0;
+
+
+    const realizaAtaque = (resposta) => {
+
+        if (resposta == "grama") {
+
+            document.getElementById("ataqueGrama").style.display = "block";
+            setTimeout(function () {
+                pararAnimacao(1)
+            }, 1000);
+
+
+        } else {
+            document.getElementById("ataqueVeneno").style.display = "block";
+            setTimeout(function () {
+                pararAnimacao(2)
+            }, 1000);
         }
+    }
 
+    $('#form').submit(function (evento) { //utilização de ajax para realizar o envio do form sem atualizar a pagina 
 
-        var i = 1;
-        var jogador = 0;
-        var adversario = 0;
+        evento.preventDefault();
 
+        var resposta = $('#resposta').val();
 
-        const realizaAtaque = (resposta) => {
+        $.ajax({
 
-            if (resposta == "grama") {
+            url: 'decisao.html',
+            method: 'GET',
 
-                document.getElementById("ataqueGrama").style.display = "block";
-                setTimeout(function () {
-                    pararAnimacao(1)
-                }, 1000);
-
-
-            } else {
-                document.getElementById("ataqueVeneno").style.display = "block";
-                setTimeout(function () {
-                    pararAnimacao(2)
-                }, 1000);
+            data: {
+                Resposta: resposta
             }
-        }
-
-        $('#form').submit(function (evento) { //utilização de ajax para realizar o envio do form sem atualizar a pagina 
-
-            evento.preventDefault();
-
-            var resposta = $('#resposta').val();
-
-            $.ajax({
-
-                url: 'decisao.html',
-                method: 'GET',
-
-                data: {
-                    Resposta: resposta
-                }
 
 
-            }).done(function (result) {
+        }).done(function (result) {
 
-                switch (i) {
-                    case 1:
-                        if (resposta == "sim" || resposta == "verdade") {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        } else {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        }
-                        document.getElementById('nome').innerHTML = 'Se 26, 24, 20, 18, 14,... Qual é o próximo?';
-                        i = i + 1;
-                        break;
-                    case 2:
-                        if (resposta == "12") {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        } else {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        }
-                        document.getElementById('nome').innerHTML = ' O valor de pi é aproximadamente 3,131415...?';
-                        i = i + 1;
-                        break;
-                    case 3:
-                        if (resposta == "sim" || resposta == "verdade") {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        } else {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        }
-                        document.getElementById('nome').innerHTML = 'Se 20 = 25?';
-                        i = i + 1;
-                        break;
-                    case 4:
-                        if (resposta == "sim" || resposta == "verdade") {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        } else {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        }
-                        document.getElementById('nome').innerHTML = 'Se Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
-                        i = i + 1;
-                        break;
+            switch (i) {
+                case 1:
+                    if (resposta == "sim" || resposta == "verdade") {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    } else {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Se 26, 24, 20, 18, 14,... Qual é o próximo?';
+                    i = i + 1;
+                    break;
+                case 2:
+                    if (resposta == "12") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = ' O valor de pi é aproximadamente 3,131415...?';
+                    i = i + 1;
+                    break;
+                case 3:
+                    if (resposta == "sim" || resposta == "verdade") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Se 20 = 25?';
+                    i = i + 1;
+                    break;
+                case 4:
+                    if (resposta == "sim" || resposta == "verdade") {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    } else {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Se Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
+                    i = i + 1;
+                    break;
 
-                    case 5:
-                        if (resposta == "18") {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        } else {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        }
-                        document.getElementById('nome').innerHTML = 'Quantos números 1 eu tenho de 1 até 191?';
-                        i = i + 1;
-                        break;
-                    case 6:
-                        if (resposta == "132") {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        } else {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        }
-                        document.getElementById('nome').innerHTML = 'Quanto é o dobro 1500?';
-                        i = i + 1;
-                        break;
-                    case 7:
-                        if (resposta == "3000") {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        } else {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        }
-                        document.getElementById('nome').innerHTML = 'Se DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?';
-                        i = i + 1;
-                        break;
-                    case 8:
-                        if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
-                            realizaAtaque("grama");
-                            jogador = jogador + 1;
-                        } else {
-                            realizaAtaque("veneno");
-                            adversario = adversario + 1;
-                        }
-                        i = i + 1;
-                        break;
+                case 5:
+                    if (resposta == "18") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Quantos números 1 eu tenho de 1 até 191?';
+                    i = i + 1;
+                    break;
+                case 6:
+                    if (resposta == "132") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Quanto é o dobro 1500?';
+                    i = i + 1;
+                    break;
+                case 7:
+                    if (resposta == "3000") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Se DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?';
+                    i = i + 1;
+                    break;
+                case 8:
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    i = i + 1;
+                    break;
 
-                }
+            }
 
-                if (jogador == 5) {
-                    window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
-                } else if (adversario == 5) {
-                    window.alert("Você perdeu. Tente novamente!");
-                    window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
-                }
+            if (jogador == 5) {
+                window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
+                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+            } else if (adversario == 5) {
+                window.alert("Você perdeu. Tente novamente!");
+                window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
+            }
 
-            });
         });
+    });
 
-        const pararAnimacao = (id) => {
+    const pararAnimacao = (id) => {
 
 
-            if (id == 1) {
+        if (id == 1) {
 
-                document.getElementById("ataqueGrama").style.display = "none";
-                //$('#barraVidaAdversario').width("150px");
+            document.getElementById("ataqueGrama").style.display = "none";
+            //$('#barraVidaAdversario').width("150px");
 
-                var vida = document.getElementById("barraVidaAdversario");
+            var vida = document.getElementById("barraVidaAdversario");
 
-                vida = vida.offsetWidth;
+            vida = vida.offsetWidth;
 
-                console.log(vida);
+            console.log(vida);
 
-                var vida = document.getElementById("barraVidaAdversario").style.width = vida - 40 + "px";
-            } else {
-                document.getElementById("ataqueVeneno").style.display = "none";
-                //$('#barraVidaAdversario').width("150px");
+            var vida = document.getElementById("barraVidaAdversario").style.width = vida - 40 + "px";
+        } else {
+            document.getElementById("ataqueVeneno").style.display = "none";
+            //$('#barraVidaAdversario').width("150px");
 
-                var vida = document.getElementById("barraVida");
+            var vida = document.getElementById("barraVida");
 
-                vida = vida.offsetWidth;
+            vida = vida.offsetWidth;
 
-                console.log(vida);
+            console.log(vida);
 
-                var vida = document.getElementById("barraVida").style.width = vida - 40 + "px";
-
-            }
-
+            var vida = document.getElementById("barraVida").style.width = vida - 40 + "px";
 
         }
 
-    </script>
+
+    }
+
+
+
+    const abrirAjuda = () => {
+
+        if (document.querySelector(".abrirAjuda").style.display == "block") {
+            document.querySelector(".abrirAjuda").style.display = "none";
+        } else {
+            document.querySelector(".abrirAjuda").style.display = "block"
+        }
+    }
+
+
+
+</script>
