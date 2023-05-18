@@ -59,7 +59,7 @@ h3 {
     width: 45vw;
     height: 8vw;
     margin-top: 5vw;
-    margin-left: 5vw;
+    margin-left: 1vw;
 }
 
 
@@ -80,6 +80,21 @@ h3 {
 #botaoResposta:hover {
     transform: scale(1);
 }
+#botaoDeletar {
+    height: 2vw;
+    width: 5vw;
+    font-size: 1vw;
+    margin-left: 50%;
+    margin-top: 1vw;
+    border-radius: 1vw;
+
+    color: #000000;
+    background-color: #61cddd;
+}
+
+#botaoDeletar:hover {
+    transform: scale(1);
+}
 
 .filhoCaixaS{
     width: 2.8vw;
@@ -95,13 +110,17 @@ h3 {
 
 
 .inicial {
-    margin-top: 5vw;
-    margin-left: 5vw;
+    margin-left: 2vw;
     width: 30vw;
 }
 .inicial h2{
-    font-size: 1vw;
+    font-size: 1vw;   
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 2;
+    color: rgb(0, 0, 0);
+    border: solid 2px white;
+    border-radius: 5%;
+    background-color: white;
 }
 .inicial img {
     width: 5vw;

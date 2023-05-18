@@ -3,6 +3,9 @@
     padding: 0;
 
 }
+body{
+    overflow: hidden;
+}
 
 .campo {
     overflow: hidden;
@@ -12,7 +15,7 @@
     /*border: 1px solid #111;
      margin-left: auto;
     margin-right:  auto; */
-    background: linear-gradient( #141515, #a3c6d4) no-repeat;
+    background: linear-gradient( #1c375a, #86b5c7) no-repeat;
 
 }
 
@@ -36,17 +39,14 @@
     position: absolute;
     top: -40%;
     color:white;
-   
-    
-
+    font-size: 0.9vw;
 
 }
 
 .filhoVetor{
     color:white;
     width:8%;
-    border: 2px solid #ccc;
-
+    border: 2px solid #86b5c7;
 }
 
 .filhoVetor img{
@@ -91,38 +91,109 @@
     width: 8%;
 }
 
+
+
+
 #botao{
     position: absolute;
     top: 60%;
     left: 48%;
+    height: 2vw;
+    width: 5vw;
+    font-size: 1vw;
+    border-radius: 1vw;
+    color: #000000;
+    background-color: #86b5c7;
 }
 
 
 
 h1{
     position: absolute;
-    top: 5%;
-    left: 10%;
+    bottom: 85%;
+    left: 33%;
     font-size: 2vw;
     color: white;
+    font-size: 1vw;
 }
 
 
 
-.nome {
-   
-    display: flex;
-    position:relative;
-    flex-direction: row;
+#nome1,#nome2, #nome3 , #nome4, #nome5{
+    position: absolute;
+    font-size: 1vw;
+    color: white;
+    bottom: 45%;
+}
+
+#nome1{
     left: 30%;
-    top: 50%;
-    height: 10%;
-    width: 40%;
+}
+#nome2{
+    left: 38.5%;
+}  
+#nome3{
+    left: 46.5%;
+} 
+#nome4{
+    left: 54.5%;
+}
+#nome5{
+    left: 63%;
+}
+
+
+
+#nuvens{
+    animation: nuvem_movimento1 40s infinite linear; 
+    width:20%;   
+    position: absolute;
+    bottom:80%;
+    left: 10%;
+  
+}
+
+
+#nuvens2{
+    animation: nuvem_movimento2 30s infinite linear; 
+    width:20%;   
+    position: absolute;
+    bottom: 45%;
+    left:80%;
 
 }
 
-.nomes{
-    color:white;
-    width:100%;
-    height: 40%;
+#nuvens3{
+    animation: nuvem_movimento3 30s infinite linear; 
+    width:20%;   
+    position: absolute;
+    bottom: 55%;
+    left:0%;
 }
+
+
+#arvore1, #arvore2{
+    position: absolute;
+    width: 30vw;
+}
+#arvore1{
+    left: -8%;
+    bottom: 0%;
+    transform: scaleX(-1);
+}
+#arvore2{
+    right: -8%;
+    bottom: 0%;
+}
+
+.mato{
+    position: absolute;
+}
+
+
+#primeiro::placeholder, #segundo::placeholder, #terceiro::placeholder, #quarto::placeholder, #quinto::placeholder {
+    color: #0685b8;
+    font-style: italic;
+    border-radius: 2vw;
+}
+

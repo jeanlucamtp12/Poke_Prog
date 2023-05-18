@@ -16,10 +16,13 @@
 
 <body>
 
+    <audio src="../sounds/cortador.mp3" loop autoplay ></audio>
+
     <div class="tela">
 
 
         <div class="objetivos">
+            <h5 id="vidasTexto">Vidas</h5>
             <div class="vidas">
                 <div class="vidas1">
                     <img src="../img/recursividade/cortar/vida.png"></img>
@@ -30,21 +33,53 @@
                 <div class="vidas3">
                     <img src="../img/recursividade/cortar/vida.png"></img>
                 </div>
+            </div>   <br> <br>
+            <h5>Frutas</h5>
+            <div class="bananas">
+                <div class="banana1">
+                    <img src="../img/recursividade/cortar/banana.png"></img>
+                </div>
+                <div class="banana2">
+                    <img src="../img/recursividade/cortar/banana.png"></img>
+                </div>
+                <div class="banana3">
+                    <img src="../img/recursividade/cortar/banana.png"></img>
+                </div>
+                <div class="banana4">
+                    <img src="../img/recursividade/cortar/banana.png"></img>
+                </div>
             </div>
-            <div class="berrys">
-                <div class="berrys1">
-                    <img src="../img/recursividade/cortar/berry.png"></img>
+            <h5>Verduras</h5>
+            <div class="alfaces">
+                <div class="alface1">
+                    <img src="../img/recursividade/cortar/alface.png"></img>
                 </div>
-                <div class="berrys2">
-                    <img src="../img/recursividade/cortar/berry.png"></img>
+                <div class="alface2">
+                    <img src="../img/recursividade/cortar/alface.png"></img>
                 </div>
-                <div class="berrys3">
-                    <img src="../img/recursividade/cortar/berry.png"></img>
+                <div class="alface3">
+                    <img src="../img/recursividade/cortar/alface.png"></img>
                 </div>
-                <div class="berrys4">
-                    <img src="../img/recursividade/cortar/berry.png"></img>
+                <div class="alface4">
+                    <img src="../img/recursividade/cortar/alface.png"></img>
                 </div>
             </div>
+            <h5>Legumes</h5>
+            <div class="tomates">
+                <div class="tomate1">
+                    <img src="../img/recursividade/cortar/tomate.png"></img>
+                </div>
+                <div class="tomate2">
+                    <img src="../img/recursividade/cortar/tomate.png"></img>
+                </div>
+                <div class="tomate3">
+                    <img src="../img/recursividade/cortar/tomate.png"></img>
+                </div>
+                <div class="tomate4">
+                    <img src="../img/recursividade/cortar/tomate.png"></img>
+                </div>
+            </div> 
+            <h5>Energias</h5>
             <div class="energia">
                 <div class="energia1">
                     <img src="../img/arrays/raio.gif"></img>
@@ -92,7 +127,6 @@
             </div>
 
             <div class="natureza">
-                <img class="comeia" src="../img/repeticao/comeia.png">
                 <img class="arvore" src="../img/repeticao/arvore.png">
             </div>
 
@@ -115,22 +149,17 @@
                 <img class="ventilador" id="ventilador" src="../img/funcoes/ventilador.png">
             </div>
 
-            <div class="jumpluff" id="jumpluff">
-                <img class="jumpluff" id="jumpluff" src="../img/recursividade/cortar/jumpluff.png">
-            </div>
 
-            <div class="frutas">
-                <img class="frutas" id="frutas" src="../img/recursividade/cortar/berry.png">
-            </div>
+
 
             <div class="frutasQ">
-                <img class="frutas2" id="frutas2" style="display: none;" src="../img/recursividade/cortar/berry.png">
+                <img class="fruta" id="fruta" style="display: block;" src="../img/recursividade/cortar/banana.png">
             </div>
             <div class="frutasQ">
-                <img class="frutas3" id="frutas3" style="display: none;" src="../img/recursividade/cortar/berry.png">
+                <img class="legume" id="legume" style="display: block;" src="../img/recursividade/cortar/tomate.png">
             </div>
             <div class="frutasQ">
-                <img class="frutas4" id="frutas4" style="display: none;" src="../img/recursividade/cortar/berry.png">
+                <img class="verdura" id="verdura" style="display: block;" src="../img/recursividade/cortar/alface.png">
             </div>
 
             <div class="vento">
@@ -167,45 +196,22 @@
 
 
 
-    var frutas = document.querySelectorAll("div.frutasQ #frutas2, div.frutasQ #frutas3, div.frutasQ #frutas4");
-
-    //const fru = document.querySelector('.frutas2');
-
-    var sorteaWormadam = Math.floor(Math.random() * 3);
-
-    function startAnimation() {
-
-        sorteaWormadam = Math.floor(Math.random() * 3);
-
-        frutas[sorteaWormadam].style.animationPlayState = "running";
-        frutas[sorteaWormadam].style.display = "block";
+    var frutas = document.querySelectorAll("div.frutasQ #fruta, div.frutasQ #legume, div.frutasQ #verdura");
 
 
-    }
-
-    function restartAnimation() {
-        frutas[sorteaWormadam].style.animation = "none";
-        frutas[sorteaWormadam].offsetHeight; // Forçar o repaint para reiniciar a animação 
-        frutas[sorteaWormadam].style.animation = "fruta_queda 10s linear";
-
-    }
 
 
-    frutas[sorteaWormadam].addEventListener("animationend", function () {
+    setInterval(function () {
+        frutas[0].style.animationPlayState = "running";
+    }, 1000);
 
+    setInterval(function () {
+        frutas[1].style.animationPlayState = "running";
+    }, 1000);
 
-        document.querySelector("#frutas2").style.display = "none";
-        document.querySelector("#frutas3").style.display = "none";
-        document.querySelector("#frutas4").style.display = "none";
-
-        console.log(frutas[sorteaWormadam].style.display);
-
-
-        setTimeout(restartAnimation, 10000); // Reiniciar a animação após 10 segundos 
-    });
-
-    setInterval(startAnimation, 10000);
-
+    setInterval(function () {
+        frutas[2].style.animationPlayState = "running";
+    }, 1000);
 
 
 
@@ -236,7 +242,6 @@
 
     const raio = document.querySelector('#raio');
     var combees = document.querySelectorAll("div.combee #combee2, div.combee #combee3, div.combee #combee4, div.combee #combee4, div.combee #combee5, div.combee #combee6");
-    var frutasQ = document.querySelectorAll("div.frutasQ #frutas2, div.frutasQ #frutas3, div.frutasQ #frutas4");
 
     let j = 0;
 
@@ -270,7 +275,10 @@
 
     var vidas = 3;
     var energias = 6;
-    var berrys = 4;
+    var bananas = 4;
+    var alfaces = 4;
+    var tomates = 4;
+
     const loop2 = setInterval(() => {
 
 
@@ -291,20 +299,32 @@
                 if (vidas == 3) {
                     document.querySelector(".vidas3").remove();
                     combees[i].style.animation = 'none';
-                    combees[i].style.display = 'none';
+                    //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 2) {
                     document.querySelector(".vidas2").remove();
                     combees[i].style.animation = 'none';
-                    combees[i].style.display = 'none';
+                    //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 1) {
                     document.querySelector(".vidas1").remove();
+                    document.querySelector("#vidasTexto").style.display = "none"  ;
                     combees[i].style.animation = 'none';
-                    combees[i].style.display = 'none';
+                    //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 }
 
+
+                const idCombee = combees[i].id;
+
+             
+                (function (id) {
+                    setTimeout(function () {
+                        document.getElementById(id).style.animation = '';
+                        
+                        
+                    }, 10);
+                })(idCombee);
 
 
 
@@ -322,22 +342,28 @@
 
 
             if (energias == 6) {
-                document.querySelector(".energia6").remove();
+                //document.querySelector(".energia6").remove();
+                document.querySelector(".energia1").style.backgroundColor = "green";
                 energias = energias - 1;
             } else if (energias == 5) {
-                document.querySelector(".energia5").remove();
+                document.querySelector(".energia2").style.backgroundColor = "green";
+                //document.querySelector(".energia5").remove();
                 energias = energias - 1;
             } else if (energias == 4) {
-                document.querySelector(".energia4").remove();
+                document.querySelector(".energia3").style.backgroundColor = "green";
+                //document.querySelector(".energia4").remove();
                 energias = energias - 1;
             } else if (energias == 3) {
-                document.querySelector(".energia3").remove();
+                document.querySelector(".energia4").style.backgroundColor = "green";
+                //document.querySelector(".energia3").remove();
                 energias = energias - 1;
             } else if (energias == 2) {
-                document.querySelector(".energia2").remove();
+                document.querySelector(".energia5").style.backgroundColor = "green";
+                //document.querySelector(".energia2").remove();
                 energias = energias - 1;
             } else if (energias == 1) {
-                document.querySelector(".energia1").remove();
+                document.querySelector(".energia6").style.backgroundColor = "green";
+                //document.querySelector(".energia1").remove();
                 energias = energias - 1;
             }
 
@@ -354,7 +380,7 @@
             const cortador = document.querySelector('#cortador');
             cortador.getBoundingClientRect();
 
-                           
+
 
             var matos = document.querySelectorAll('.mato');
 
@@ -366,17 +392,17 @@
                 mato.remove();
             });
 
-            var remove = matos[matos.length -1];
+            var remove = matos[matos.length - 1];
 
             cortador.style.animationPlayState = "running"; //running
 
             setTimeout(function () {
-                    cortador.style.animationPlayState = "paused"; //running
+                cortador.style.animationPlayState = "paused"; //running
             }, 4000);
 
-           
-            ultimo.remove();
-                            
+
+            //ultimo.remove();
+
 
 
 
@@ -404,8 +430,8 @@
 
 
 
-       
-    
+
+
 
 
     }, 10);
@@ -414,51 +440,111 @@
 
 
 
-    
+
 
 
 
 
     const loop3 = setInterval(() => {
+
+        chandelure.getBoundingClientRect();
+
+        for (var i = 0; i < frutas.length; i++) {
+
+            if ((chandelure.x + 30 < frutas[i].x + frutas[i].width && chandelure.x - 30 + chandelure.width > frutas[i].x) && (chandelure.y + 30 < frutas[i].y + frutas[i].height && chandelure.y - 30 + chandelure.height > frutas[i].y)) {
+
+                const elementoId = frutas[i].id;
+
+                //document.getElementById(frutas[i].id).style.animation = 'none';
+                
+                document.getElementById("verdura").style.animation = 'none';
+                document.getElementById("fruta").style.animation = 'none';
+                document.getElementById("legume").style.animation = 'none';
+
+
+                (function (id) {
+                    setTimeout(function () {
+                        //document.getElementById(id).style.animation = '';
+                        document.getElementById("verdura").style.animation = "";
+                        document.getElementById("fruta").style.animation = "";
+                        document.getElementById("legume").style.animation = "";
+                        var sorteado = [];
+
+
+
+                        const vetor = ["40%", "60%", "18%"];
+
+
+                        for (var i = vetor.length - 1; i > 0; i--) {
+                            var j = Math.floor(Math.random() * (i + 1));
+                            var temp = vetor[i];
+                            vetor[i] = vetor[j];
+                            vetor[j] = temp;
+                        }
+
+
+
+
+                        document.getElementById("verdura").style.left =  vetor[0];
+                        document.getElementById("legume").style.left = vetor[1];
+                        document.getElementById("fruta").style.left = vetor[2];
+
+
+
+                    }, 10);
+                })(elementoId);
+
+
+                //console.log(frutas[i].id);
+
+                var temp = "";
+
+                if(frutas[i].id == "fruta"){
+                    bananas = retiraAlimento(bananas, "banana");
+                }
+                else if(frutas[i].id == "verdura"){
+                    alfaces = retiraAlimento(alfaces, "alface");
+                }else{
+                    tomates = retiraAlimento(tomates, "tomate");
+                }
+
+
+
+
+            }
+        }
+
+
+
+    }, 50);
+
+   
+
+    const retiraAlimento = (alimento, nome) =>{
+
+        console.log(alimento, nome);
         
-    chandelure.getBoundingClientRect();
+        if (alimento == 4) {
+            document.querySelector("."+nome+1).style.backgroundColor = "green";
 
-    for (var i = 0; i < frutasQ.length; i++) {
-           
-        if ((chandelure.x + 30 < frutasQ[i].x + frutasQ[i].width && chandelure.x - 30 + chandelure.width > frutasQ[i].x) && (chandelure.y + 30 < frutasQ[i].y + frutasQ[i].height && chandelure.y - 30 + chandelure.height > frutasQ[i].y)) {
-            //window.alert("enconstou");
-
-            frutasQ[i].style.display = 'none';
-
-            //document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
-
-
-            if (berrys == 4) {
-                document.querySelector(".berrys4").remove();
-                berrys = berrys - 1;
-            } else if (berrys == 3) {
-                document.querySelector(".berrys3").remove();
-                berrys = berrys - 1;
-            } else if (berrys == 2) {
-                document.querySelector(".berrys2").remove();
-                berrys = berrys - 1;
-            } else if (berrys == 1) {
-                document.querySelector(".berrys1").remove();
-                berrys = berrys - 1;
-            } 
-
-
-
+            //document.querySelector("."+nome+4).remove();
+            alimento = alimento - 1;
+        } else if (alimento == 3) {
+            document.querySelector("."+nome+2).style.backgroundColor = "green";
+            //document.querySelector("."+nome+3).remove();
+            alimento = alimento - 1;
+        } else if (alimento == 2) {
+            document.querySelector("."+nome+3).style.backgroundColor = "green";
+            //document.querySelector("."+nome+2).remove();
+            alimento = alimento - 1;
+        } else if (alimento == 1) {
+            document.querySelector("."+nome+4).style.backgroundColor = "green";
+            //document.querySelector("."+nome+1).remove();
+            alimento = alimento - 1;
         }
-        }
-    
 
-
-    }, 10);
-
-
-
-
+        return alimento;
+    }
 
 
 

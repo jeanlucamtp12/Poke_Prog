@@ -195,48 +195,41 @@ body{
 
 @keyframes vespiqueen_movimento{
     0%{
-        left: 80%;
+        left: 90%;
         bottom: 70%;
     }
     20%{
-        left: 60%;
+        left: 80%;
         bottom: 60%;
     }
     40%{
-        left: 80%;
+        left: 90%;
         bottom: 50%;
     }
     60%{
-        left: 20%;
+        left: 80%;
         bottom: 60%;
     }
     80%{
-        left: 30%;        
+        left: 70%;        
         bottom: 40%;
     }
     100%{
-        left: 80%;
+        left: 90%;
         bottom: 70%;
     }
 }
 
-.natureza{
-    position: absolute;
-    width: 100%; 
-    left: 70%;
-    bottom: -2%;
-}
 
-.comeia{   
-    width: 13%;
-    margin-right: -12%;
-    margin-bottom: -3%;
-}
+
+
 
 .arvore{
+    position: absolute;
     width: 40%;
     left: 70%;
-    bottom: -2%;
+    bottom: -5%;
+    transform: scaleX(-1);
 }
 
 
@@ -319,144 +312,70 @@ body{
 }
 
 
-.jumpluff{
+
+
+
+
+#fruta{
     position: absolute;
-    width: 28%;
-    bottom: 15%;
-    right: 15%;
-    z-index: 1;
-    animation: jumpluff_movimento 8s infinite linear;  
-}
-
-@keyframes jumpluff_movimento {
-
-    0%{
-        right: 0%;
-        bottom: 15%;
-    }
-    30%{
-        right: 15%;
-        bottom: 25%;
-    }
-    70%{
-        right: 15%;
-        bottom: 85%;    
-    }
-    
-    100%{
-        bottom: 85%;
-        right: 100%;
-    }
-    
-}
-
-.frutas{
-    position: absolute;
-    width: 15%;
-    animation: fruta_movimento 8s infinite linear;  
-    animation-fill-mode: forwards;
-
-
-}
-
-
-
-
-#frutas2{
-    position: absolute;
-    width: 2%;
-    left: 20%;
-    animation: fruta_queda 8.5s  linear;  
+    width: 3%;
+    --my-start-left:18%;
+    left: 18%;
+    bottom: 89%;
+    animation: fruta_queda 10s  infinite linear;  
     animation-play-state: paused;
 }
 
-#frutas3{
+#legume{
     position: absolute;
-    width: 2%;
+    width: 3%;
+    --my-start-left: 40%;
     left: 40%;
-    animation: fruta_queda 8.5s  linear;  
+    bottom: 90%;
+    animation: fruta_queda 10s  infinite linear;  
     animation-play-state: paused;
 }
-#frutas4{
+#verdura{
     position: absolute;
-    width: 2%;
-    left: 60%;
-    animation: fruta_queda 8.5s  linear;  
+    width: 4%;
+    --my-start-left:60%;
+    left: 60%;   
+    bottom: 88%;
+    animation: fruta_queda 10s  infinite linear;  
     animation-play-state: paused;
 }
 
 
 
-@keyframes fruta_movimento {
-
-    0%{
-        right: 20%;
-        bottom: 28%;
-        width: 15%;
-    }
-    5%{
-        right: 20%;
-        bottom: 28%;
-        width: 16%;
-    }
-    10%{
-        right: 20%;
-        bottom: 28%;
-        width: 15%;
-    }
-    15%{
-        right: 20%;
-        bottom: 28%;
-        width: 16%;
-    }
-    20%{
-        right: 20%;
-        bottom: 28%;
-        width: 15%;
-    }
-    25%{
-        right: 20%;
-        bottom: 28%;
-        width: 16%;
-    }
-    30%{
-        right: 20%;
-        bottom: 28%;
-        opacity: 1;
-        width: 15%;
-    }
-    70%{
-        right: 20%;
-        bottom: 88%;
-        opacity: 0;
-    }
-    
-    100%{
-        bottom: 88%;
-        right: 120%;
-        opacity: 0;
-    }
-    
-}
 
 
 
 @keyframes fruta_queda {
 
     0%{
-        bottom: 90%;
+        opacity: 0;
+        bottom: 88%;
     }
-    
+    1%{
+        opacity: 1;
+        bottom: 88%;
+    }
+    48%{
+        left:  calc(var(--my-start-left) + 1%);
+    }
     50%{
         bottom: 60%;
     }
     80%{
         bottom: 30%;
+        left:  calc(var(--my-start-left) - 1%);
     }
     99%{
         bottom: 0%;
     }
     100%{
+        left: var(--my-start-left);
+        opacity: 1;
         bottom: 0%;
     }
     
@@ -499,27 +418,26 @@ body{
     left: 2%;
 }
 
-.berrys{
+.bananas, .alfaces, .tomates{
     height: 33.3%;
     display: flex;
     flex-direction: row;
 }
-.berrys img{
+.bananas img, .alfaces img, .tomates img{
     width: 70%;
 }
 
-.berrys1, .berrys2, .berrys3, .berrys4{
-    width: 18%;
+.banana1, .banana2, .banana3, .banana4, .alface1, .alface2, .alface3, .alface4, .tomate1, .tomate2, .tomate3, .tomate4{
+    width: 22%;
     border: solid 1px black;
 }
 .vidas{
-    height: 33.3%;
+    height: 30.3%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
 }
 .vidas1, .vidas2, .vidas3{
     width: 18%;
-    border: solid 1px black;
 }
 .vidas img{
     width: 100%;
@@ -534,6 +452,6 @@ body{
     width: 100%;
 }
 .energia1, .energia2, .energia3, .energia4, .energia5, .energia6{
-    width: 18%;
+    width: 20%;
     border: solid 1px black;
 }

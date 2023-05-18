@@ -26,19 +26,19 @@ body{
 
 
 #raio3{
-    animation: raio_movimento 3s infinite linear;
+    animation: raio_movimento 5s infinite linear;
      
     width:4.2%;   
     position: absolute;
     bottom:30%;
-    left:20.8%;
+    left: 18%;
  
    
 }
 
 
 #raio2{
-    animation:  raio_movimento 4s infinite linear;
+    animation:  raio_movimento 7s infinite linear;
       
     width:4.2%;   
     position: absolute;
@@ -48,26 +48,34 @@ body{
  
 
 #raio4{
-    animation:  raio_movimento 5s infinite linear;
+    animation:  raio_movimento 4.5s infinite linear;
      
     width:4.2%;   
     position: absolute;
     bottom:48%;
-    left:48%;
+    left:44%;
  
    
 }
 #raio5{
-    animation:  raio_movimento 7s infinite linear;
+    animation:  raio_movimento 6s infinite linear;
      
     width:4.2%;   
     position: absolute;
     bottom:48%;
-    left:64%;
- 
-   
+    left:56%;
+
 }
 
+#raio6{
+    animation:  raio_movimento 8s infinite linear;
+     
+    width:4.2%;   
+    position: absolute;
+    bottom:48%;
+    left:70%;
+
+}
 #nuvens{
     animation: nuvem_movimento1 40s infinite linear; 
     width:20%;   
@@ -295,8 +303,7 @@ body{
 .vida{
     position: absolute;
     width: 2%;
-    animation: vida_movimento 6s infinite linear;
-    animation-play-state: paused;
+    animation: vida_movimento 7s infinite linear;
     opacity: 0;
 }
 
@@ -304,7 +311,6 @@ body{
     position: absolute;
     width: 2%;
     animation: vida2_movimento 6s infinite linear;
-    animation-play-state: paused;
     opacity: 0;
 }
 

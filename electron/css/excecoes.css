@@ -83,9 +83,9 @@ body {
 
 .cacturne{
     position: absolute;
-    width: 10vw;
-    bottom: 0%;
-    right: 0%;
+    width: 14vw;
+    bottom: -4%;
+    right: -2%;
     z-index: 1;
 }
 
@@ -553,27 +553,28 @@ body {
 
 .caixaObjetivos {
     position: absolute;
-    width: 20vw;
-    height: 13vw;
-    top: 15%;
-    right: 8%;
+    top: 25%;
+    right: 5%;
     display: flex;
     flex-direction: row;
+    z-index: 0;
 }
-
-
 .caixas {
     border: solid 2px white;
-    width: 20vw;
-    height: 5vw;
+    width: 3vw;
+}
+.caixas img {
+    width: 3vw;
+    height: 6vh;
 }
 
 .caixaObjetivos h6{
-    position: absolute;
+   
     color: white;
-    right: 55%;
-    top: -20%;
-    font-size: 1.5vw;
+    position: absolute;
+    top: -60%;
+    text-align: center;
+    font-size: 1.2vw;
 }
 
 .imagem{
@@ -585,4 +586,154 @@ body {
     top: 0%;
     position: absolute;
     z-index:0;
+}
+
+
+
+
+.umbreom{
+    position: absolute;
+    width: 13vw;
+    z-index: 1;
+    cursor: pointer;
+    bottom: 0%;
+}
+
+.umbreom1{
+    --my-start-left: 20%;   
+    animation: umbreom_movimento 10s infinite linear;
+}
+.umbreom2{
+    --my-start-left: 40%;   
+    animation: umbreom_movimento 12s infinite linear;
+}
+.umbreom3{
+    --my-start-left: 60%;  
+    animation: umbreom_movimento 14s infinite linear;
+}
+.umbreom4{ 
+    --my-start-left: 80%;   
+    animation: umbreom_movimento 16s infinite linear;
+}
+
+
+@keyframes umbreom_movimento{
+    0%{
+        left: var(--my-start-left);
+        opacity: 1; 
+    }
+    24%{       
+        opacity: 1; 
+        left: var(--my-start-left);
+    } 
+    25%{      
+        opacity: 0; 
+        left: calc(var(--my-start-left) - 15%);
+    } 
+    75%{
+        left: var(--my-start-left);
+
+    }
+   
+    100%{
+        opacity: 1; 
+        left: var(--my-start-left);
+    } 
+}
+
+
+
+.froslass{
+    position: absolute;
+    width: 12vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.froslass1{
+    --my-start-left: 10%;   
+    --my-start-bottom: 40%;  
+    animation: froslass_movimento 8s infinite linear;
+}
+.froslass2{
+    --my-start-left: 30%;   
+    --my-start-bottom: 60%;  
+    animation: froslass_movimento 9s infinite linear;
+}
+.froslass3{
+    --my-start-left: 50%;  
+    --my-start-bottom: 40%;  
+    animation: froslass_movimento 7s infinite linear;
+}
+.froslass4{ 
+    --my-start-left: 70%;   
+    --my-start-bottom: 60%;  
+    animation: froslass_movimento 6s infinite linear;
+}
+
+
+@keyframes froslass_movimento{
+    0%{
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+        opacity: 1; 
+    }
+    50%{      
+        opacity: 0; 
+        bottom: calc(var(--my-start-bottom) - 25%);
+    } 
+    100%{
+        opacity: 1; 
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+    } 
+}
+
+
+
+.abra{
+    position: absolute;
+    width: 13vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.abra1{
+    --my-start-left: 10%;   
+    --my-start-bottom: 70%;  
+    animation: abra_movimento 5s infinite linear;
+}
+.abra2{
+    --my-start-left: 10%;   
+    --my-start-bottom: 0%;  
+    animation: abra_movimento 1s infinite linear;
+}
+.abra3{
+    --my-start-left: 80%;  
+    --my-start-bottom: 20%;  
+    animation: abra_movimento 2s infinite linear;
+}
+.abra4{ 
+    --my-start-left: 80%;   
+    --my-start-bottom: 75%;  
+    animation: abra_movimento 3s infinite linear;
+}
+
+
+@keyframes abra_movimento{
+    0%{
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+        opacity: 1; 
+    }
+    50%{      
+        opacity: 0; 
+        bottom: var(--my-start-bottom) ;
+    } 
+    100%{
+        opacity: 1; 
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+
+    } 
 }

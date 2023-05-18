@@ -176,7 +176,7 @@ body{
     width: 23%;
     bottom: 1%;
     left: 0%;
-    z-index: 0;
+    z-index: 1;
 }
 
 
@@ -524,9 +524,21 @@ body{
     bottom: 22%;
     left: 12%;
     z-index: 1;
+    animation: efeito_alimentos 0.8s infinite;
+
 }
 
-
+@keyframes efeito_alimentos {
+    0% {
+        width: 3%;
+    }
+    50% {
+        width: 4%;
+    }
+    100% {
+        width: 3%;
+    }
+}
 .sinalizador{
     position: absolute;
     width: 70%;
@@ -544,23 +556,23 @@ body{
 
 .geladeira{
     position: absolute;
-    width: 10%;
+    width: 9%;
     left: 63%;
-    bottom: 71.5%;
+    bottom: 46%;
 }
 
 .fogao{
     position: absolute;
     width: 8%;
-    left: 55%;
+    left: 68%;
     bottom: 71%;
 }
 
 .pia{
     position: absolute;
     width: 12%;
-    left: 30%;
-    bottom: 71%;
+    left: 18%;
+    bottom: 46%;
 }
 
 
@@ -601,7 +613,7 @@ body{
 .lampada3{
     position: absolute;
     width: 3%;
-    left: 65%;
+    left: 75%;
     bottom: 62.6%;
     transform: rotate(180deg);
 }
@@ -609,7 +621,7 @@ body{
 .lampada4{
     position: absolute;
     width: 3%;
-    left: 25%;
+    left: 15%;
     top: 1.8%;
     transform: rotate(180deg);
 }
@@ -698,28 +710,67 @@ h6 {
     }
 }
 
-.circulos{
+.receitaBolo{
     position: absolute;
     display: flex;
     justify-content: center;
     top: 5%;
-    left: 45%;
+    left: 50%;
+
+}
+.receitaBolo img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
 
 }
 
-.circulo{
-    width: 1vw;
-    height: 1vw;
-    border-radius: 50%;  
-    margin: 0.2vw;
-    background-color: rgb(255, 0, 0);
-}
 
 #textoIngredientes{
     position: absolute;
     font-size: 1vw; 
     top: 0%;
-    left: 40%;
+    left: 53%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(183, 205, 252);
+}
+
+#textoIngredientes2{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 36%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
+}
+
+.receitaPizza{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 35%;
+
+}
+.receitaPizza img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
+
+}
+
+.vidas{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    height: 2vw;
+    width: 150vw;
+    display: flex;
+    flex-direction: row;
+}
+.vidas1, .vidas2, .vidas3{
+    width: 2%;
+}
+.vidas img{
+    width: 100%;
 }

@@ -11,6 +11,8 @@
 
 <body>
 
+    <iframe id="stream" src="../sounds/home.mp3" loop autoplay="true" frameborder="0" style="display: none;"></iframe>
+
     <h1 class="titulo">Seleção de Fase</h1>
 
 
@@ -127,3 +129,11 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener('click', musicPlay);
+function musicPlay() {
+    document.getElementById('audioFase').play();
+    document.removeEventListener('click', musicPlay);
+}
+    </script>

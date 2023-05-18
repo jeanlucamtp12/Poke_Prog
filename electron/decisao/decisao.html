@@ -18,6 +18,9 @@
 
 <body>
 
+    <audio id="audio" src="../sounds/decisao.mp3" loop autoplay></audio>
+
+
     <div class="arena">
 
 
@@ -32,21 +35,80 @@
         <div>
             <img class="poke" src="../img/decisao/bulba.png">
             <img class="base" src="../img/decisao/base.png">
-            <div class="barraVida" id="barraVida">HP</div>
-            <div class="barraVidaReal"></div>
+
+            <div class="barraVida" id="barraVida">
+                <div id="barra1"></div>
+                <div id="barra2"></div>
+                <div id="barra3"></div>
+                <div id="barra4"></div>
+                <div id="barra5"></div>
+            </div>
         </div>
 
-        <div>
+        <div id="inimigo1" style="display: block;">
             <img class="pokeAdversario" src="../img/decisao/arbok.gif">
-            <div id="barraVidaAdversario" class="barraVidaAdversario">HP</div>
-            <div class="barraVidaAdversarioReal"></div>
+            <div id="barraVidaAdversario" class="barraVidaAdversario">
+                <div id="barraA1"></div>
+                <div id="barraA2"></div>
+                <div id="barraA3"></div>
+                <div id="barraA4"></div>
+            </div>
+            <img class="ataqueVeneno" id="ataqueVeneno" src="../img/decisao/ataqueVeneno.gif" style="display:none">
+            </img>
+            <img class="adversario" src="../img/decisao/adversario.png"> </img>
+        </div>
+
+
+        <div id="inimigo2" style="display: none;">
+            <img class="pokeAdversario2" src="../img/decisao/jigglypuff.png">
+            <img class="pokeAdversario3" src="../img/decisao/wigglytuff.png">
+            <img class="base2" src="../img/decisao/base.png">
+            <img class="base3" src="../img/decisao/base.png">
+            <img class="adversario2" src="../img/decisao/treinador2.png">
+            <img class="ataqueFada" id="ataqueFada" src="../img/decisao/ataqueJiggly.png" style="display:none"> </img>
+
+
+
+            <div id="barraVidaAdversario2" class="barraVidaAdversario2">
+                <div id="barraA2_1"></div>
+                <div id="barraA2_2"></div>
+                <div id="barraA2_3"></div>
+                <div id="barraA2_4"></div>
+            </div>
+
+            <div id="barraVidaAdversario3" class="barraVidaAdversario3">
+                <div id="barraA3_1"></div>
+                <div id="barraA3_2"></div>
+                <div id="barraA3_3"></div>
+                <div id="barraA3_4"></div>
+            </div>
 
         </div>
 
-        <img class="ataqueVeneno" id="ataqueVeneno" src="../img/decisao/ataqueVeneno.gif" style="display:none"> </img>
+
+        <div id="inimigo4" style="display: none;">
+            <img class="pokeAdversario4" src="../img/decisao/garchomp.png">
+            <img class="base4" src="../img/decisao/base.png">
+            <img class="adversario4" src="../img/decisao/cynthia.png">
+
+            <img class="ataqueDragao" id="ataqueDragao" src="../img/decisao/ataqueDragao.gif" style="display:none">
+            </img>
 
 
-        <img class="adversario" src="../img/decisao/adversario.png"> </img>
+
+            <div id="barraVidaAdversario4" class="barraVidaAdversario4">
+                <div id="barraA4_1"></div>
+                <div id="barraA4_2"></div>
+                <div id="barraA4_3"></div>
+                <div id="barraA4_4"></div>
+                <div id="barraA4_5"></div>
+            </div>
+
+
+
+        </div>
+
+
 
 
         <div>
@@ -55,7 +117,7 @@
             </img>
 
             <div class="abrirAjuda" style="display: none;">
-                <img id="imagemAjuda" src="../img/decisao/complemento.jpg" ></img>
+                <img id="imagemAjuda" src="../img/decisao/complemento.jpg"></img>
             </div>
         </div>
 
@@ -92,6 +154,16 @@
 
 <script>
 
+
+
+
+    var vidaJ = 5;
+    var vidaI1 = 4;
+    var vidaI2 = 4;
+    var vidaI4 = 5;
+
+
+
     var j = 0;
     for (var i = 1; j <= 100; i++) {
 
@@ -111,7 +183,6 @@
 
     }
 
-
     var i = 1;
     var jogador = 0;
     var adversario = 0;
@@ -124,14 +195,27 @@
             document.getElementById("ataqueGrama").style.display = "block";
             setTimeout(function () {
                 pararAnimacao(1)
-            }, 1000);
-
-
+            }, 600);
         } else {
-            document.getElementById("ataqueVeneno").style.display = "block";
-            setTimeout(function () {
-                pararAnimacao(2)
-            }, 1000);
+            if (vidaI1 == 0 && vidaI2 > 0) {
+                document.getElementById("ataqueFada").style.display = "block";
+                setTimeout(function () {
+                    pararAnimacao(2)
+                }, 1100);
+            }else if(vidaI1 == 0 && vidaI2 == 0){
+                document.getElementById("ataqueDragao").style.display = "block";
+                setTimeout(function () {
+                    pararAnimacao(3)
+                }, 1100);
+            } 
+            
+            else{
+                document.getElementById("ataqueVeneno").style.display = "block";
+                setTimeout(function () {
+                    pararAnimacao(4)
+                }, 1000);
+            }
+
         }
     }
 
@@ -155,7 +239,7 @@
 
             switch (i) {
                 case 1:
-                    if (resposta == "sim" || resposta == "verdade") {
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
                         realizaAtaque("veneno");
                         adversario = adversario + 1;
                     } else {
@@ -177,7 +261,7 @@
                     i = i + 1;
                     break;
                 case 3:
-                    if (resposta == "sim" || resposta == "verdade") {
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
                     } else {
@@ -188,14 +272,14 @@
                     i = i + 1;
                     break;
                 case 4:
-                    if (resposta == "sim" || resposta == "verdade") {
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
                         realizaAtaque("veneno");
                         adversario = adversario + 1;
                     } else {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
                     }
-                    document.getElementById('nome').innerHTML = 'Se Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Com quantas balas ele ficou?';
+                    document.getElementById('nome').innerHTML = 'Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. <br>Quantas balas ele tem?';
                     i = i + 1;
                     break;
 
@@ -229,7 +313,7 @@
                         realizaAtaque("veneno");
                         adversario = adversario + 1;
                     }
-                    document.getElementById('nome').innerHTML = 'Se DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?';
+                    document.getElementById('nome').innerHTML = 'Se DELTA= b^2-4.a.c, essa informação <br>é verdadeira ou falsa?';
                     i = i + 1;
                     break;
                 case 8:
@@ -240,17 +324,167 @@
                         realizaAtaque("veneno");
                         adversario = adversario + 1;
                     }
+                    document.getElementById('nome').innerHTML = 'Quantos planetas existem no sistema solar?';
                     i = i + 1;
                     break;
 
+                case 9:
+                    if (resposta == "8") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Quantos meses têm 28 dias?';
+                    i = i + 1;
+                    break;
+                case 10:
+                    if (resposta == "12") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'A Lua é maior que a Terra?';
+                    i = i + 1;
+                    break;
+
+
+
+
+
+                case 11:
+                    if (resposta == "nao" || resposta == "n" || resposta == "falso") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Os golfinhos são peixes?';
+                    i = i + 1;
+                    break;
+
+                case 12:
+                    if (resposta == "nao" || resposta == "n" || resposta == "falso") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = '12 dividido por 3 é igual a 4?';
+                    i = i + 1;
+                    break;
+                case 13:
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = '6 x 4 é igual a 24? ';
+                    i = i + 1;
+                    break;
+                case 14:
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'O Sol é uma estrela? ';
+                    i = i + 1;
+                    break;
+                case 15:
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'A pizza surgiu na França? ';
+                    i = i + 1;
+                    break;
+                case 16:
+                    if (resposta == "não" || resposta == "falso" || resposta == "n") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Os pandas são animais carnívoros? ';
+                    i = i + 1;
+                    break;
+                case 17:
+                    if (resposta == "nao" || resposta == "n" || resposta == "falso") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Quantos oceanos existem na Terra?';
+
+                    i = i + 1;
+                    break;
+                case 18:
+                    if (resposta == "5") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Quantos centavos existem em uma moeda de um real?';
+                    i = i + 1;
+                    break;
+                case 19:
+                    if (resposta == "100") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    document.getElementById('nome').innerHTML = 'Quantos zeros há em um milhão?';
+                    i = i + 1;
+                    break;
+                case 20:
+                    if (resposta == "6") {
+                        realizaAtaque("grama");
+                        jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
+                    }
+                    i = i + 1;
+                    break;
+
+
+
+
+
             }
 
-            if (jogador == 5) {
-                window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+
+            if (jogador == 13) {
+                setInterval(function () {
+                    window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
+                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                }, 2000);
+
             } else if (adversario == 5) {
-                window.alert("Você perdeu. Tente novamente!");
-                window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
+                setInterval(function () {
+                    window.alert("Você perdeu. Tente novamente!");
+                    window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
+                }, 2000);
             }
 
         });
@@ -264,26 +498,68 @@
             document.getElementById("ataqueGrama").style.display = "none";
             //$('#barraVidaAdversario').width("150px");
 
-            var vida = document.getElementById("barraVidaAdversario");
 
-            vida = vida.offsetWidth;
+            if (vidaI1 == 0 && vidaI2 > 0) {
+                document.getElementById("barraA2_" + vidaI2).remove();
+                document.getElementById("barraA3_" + vidaI2).remove();
+                vidaI2 = vidaI2 - 1;
 
-            console.log(vida);
+            } else if(vidaI1 == 0 && vidaI2 == 0){
+                document.getElementById("barraA4_" + vidaI4).remove();
+                vidaI4 = vidaI4 - 1;
+            }
+            else {
+                document.getElementById("barraA" + vidaI1).remove();
+                vidaI1 = vidaI1 - 1;
+            }
 
-            var vida = document.getElementById("barraVidaAdversario").style.width = vida - 40 + "px";
-        } else {
+            if (vidaI1 == 0 && vidaI2 > 0) {
+
+                setInterval(function () {
+                    if(vidaI2 == 4){
+                        document.querySelector("#inimigo1").style.display = "none";
+                        document.querySelector("#inimigo2").style.display = "block";
+                        document.body.style.background = 'linear-gradient(#9c26e0, #98c6ac) no-repeat';
+                    }
+                }, 1000);
+            }
+
+            if (vidaI2 == 0 && vidaI4 == 5) {
+                setInterval(function () {
+                    document.querySelector("#inimigo2").style.display = "none";
+                    document.querySelector("#inimigo4").style.display = "block";
+                    document.body.style.background = 'linear-gradient(#000000, #5d7c6b) no-repeat';
+                }, 1000);
+                document.querySelector("#audio").src = "../sounds/cynthia.mp3"
+            }
+
+
+
+
+        } else if (id == 4) {
             document.getElementById("ataqueVeneno").style.display = "none";
             //$('#barraVidaAdversario').width("150px");
 
-            var vida = document.getElementById("barraVida");
 
-            vida = vida.offsetWidth;
+            document.getElementById("barra" + vidaJ).remove();
+            vidaJ = vidaJ - 1;
 
-            console.log(vida);
+        } else if(id == 2){
+            document.getElementById("ataqueFada").style.display = "none";
+            //$('#barraVidaAdversario').width("150px");
 
-            var vida = document.getElementById("barraVida").style.width = vida - 40 + "px";
+            document.getElementById("barra" + vidaJ).remove();
+            vidaJ = vidaJ - 1;
+        }else{
+            document.getElementById("ataqueDragao").style.display = "none";
+            //$('#barraVidaAdversario').width("150px");
 
+            document.getElementById("barra" + vidaJ).remove();
+            vidaJ = vidaJ - 1;
         }
+         
+
+        
 
 
     }

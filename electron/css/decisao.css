@@ -6,8 +6,6 @@
 body {
     overflow: hidden;
     background: linear-gradient(#00ACC1, #98c6ac) no-repeat;
-
-  
 }
 
 .arena {
@@ -50,6 +48,12 @@ body {
     left: 80vw;
     width: 15vw;
 }
+.adversario2 {
+    position: absolute;
+    bottom: 29vw;
+    left: 80vw;
+    width: 17vw;
+}
 
 .poke {
     position: absolute;
@@ -61,7 +65,27 @@ body {
 .base {
     position: absolute;
     bottom: 5vw;
-    left: 20svw;
+    left: 20vw;
+    width: 20%;
+}
+
+
+
+.barraVida {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    border: solid 2px white;
+    width: 14.5vw;
+    height: 1.6vw;
+    bottom: 8vw;
+    left: 23vw;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+#barra1, #barra2, #barra3, #barra4, #barra5{
+    background-color: #40ba01;
     width: 20%;
 }
 
@@ -73,36 +97,15 @@ body {
     z-index: 1;
 }
 
-.barraVida {
-    position: absolute;
-    width: 14.5vw;
-    height: 1.6vw;
-    background-color: #40ba01;
-    bottom: 8vw;
-    left: 23vw;
-    font-size: 1vw;
-    font-weight: bold;
 
-}
-
-
-.barraVidaReal {
-    position: absolute;
-    border: solid 2px white;
-
-    width: 14.5vw;
-    height: 1.6vw;
-    
-    bottom: 8vw;
-    left: 23vw;
-
-}
 
 .barraVidaAdversario {
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    border: solid 2px white;
     width: 14.5vw;
     height: 1.6vw;
-    background-color: #40ba01;
 
     bottom: 36vw;
     left: 65vw;
@@ -110,40 +113,36 @@ body {
     font-weight: bold;
 }
 
-.barraVidaAdversarioReal {
-    position: absolute;
-    border: solid 2px white;
-    width: 14.5vw;
-    height: 1.6vw;
-    bottom: 36vw;
-    left: 65vw;
-
+#barraA1, #barraA2, #barraA3, #barraA4, #barraA5{
+    background-color: #40ba01;
+    width: 25%;
 }
 
 
 .nuvens {
     position: absolute;
-    width: 30vw;
-    bottom: 60%;
-    left: 0%;
+    width: 28vw;
+    bottom: 70%;
+    left: 2%;
 }
 
 
 .nuvens2 {
     position: absolute;
-    width: 30vw;
+    width: 25vw;
     bottom: 80%;
-    right: 8%;
+    right: 1%;
 }
 
 
 
 .ataqueGrama {
     position: absolute;
-    bottom: 10vw;
-    left: 38vw;
-    width: 25vw;
-    transform: rotate(25deg); 
+    bottom: 18vw;
+    left: 18vw;
+    width: 35vw;
+    height: 15vh;
+    transform: rotate(60deg); 
     animation: ataqueGrama_movimento 0.9s linear;
 
 }
@@ -153,20 +152,43 @@ body {
 @keyframes ataqueGrama_movimento {
 
     0% {
-        bottom: 10vw; 
-        left: 38vw; 
+        bottom: 18vw; 
+        left: 18vw; 
     }
     50% {
-        bottom: 18vw;
+        bottom: 28vw;
         left: 58vw;
     }
     100% {
-        bottom: 25vw;
-        left: 78vw;
+        bottom: 38vw;
+        left: 98vw;
     }
 }
 
+.ataqueFada {
+    position: absolute;
+    bottom: 9vw;
+    left: 16vw;
+    width: 28vw;
 
+    z-index: 1;
+    animation: piscarTela 0.3s steps(1, end) infinite;
+}
+
+@keyframes piscarTela {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
 
 
 .ataqueVeneno {
@@ -178,7 +200,6 @@ body {
 
     transform: rotate(70deg);
     z-index: 1;
-
 }
 
 
@@ -193,7 +214,7 @@ body {
 }
 .form #nome{
     margin-left: 1vw;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     font-weight: bold;
     color: white;
 }
@@ -253,3 +274,139 @@ button:hover{
 
 
 
+
+
+
+.pokeAdversario2, .pokeAdversario3{
+    position: absolute;
+    bottom: 21vw;
+    width: 15vw;
+    z-index: 1;
+}
+.pokeAdversario2{
+    left: 45vw;
+}
+.pokeAdversario3{
+    left: 60vw;
+}
+
+
+
+
+
+.barraVidaAdversario {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    border: solid 2px white;
+    width: 14.5vw;
+    height: 1.6vw;
+
+    bottom: 36vw;
+    left: 65vw;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+#barraA1, #barraA2, #barraA3, #barraA4, #barraA5{
+    background-color: #40ba01;
+    width: 25%;
+}
+
+
+
+.barraVidaAdversario2,.barraVidaAdversario3 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    border: solid 2px white;
+    width: 14.5vw;
+    height: 1.6vw;
+    bottom: 36.1vw;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.barraVidaAdversario2 {
+    left: 45vw;
+}
+.barraVidaAdversario3 {
+    left: 65vw;
+    bottom: 35vw;
+}
+
+#barraA2_1, #barraA2_2, #barraA2_3, #barraA2_4, #barraA3_1, #barraA3_2, #barraA3_3, #barraA3_4{
+    background-color: #40ba01;
+    width: 25%;
+}
+
+
+
+
+.base2, .base3{
+    position: absolute;
+    bottom: 19vw;
+    width: 15vw;
+    z-index: 0;
+}
+
+.base2{
+    bottom: 16vw;
+    left: 60vw;
+}
+.base3{
+    left: 45vw;
+}
+
+
+.pokeAdversario4{
+    position: absolute;
+    bottom: 22vw;
+    left: 60vw;
+    width: 17vw;
+    z-index: 1;
+}
+
+.adversario4{
+    position: absolute;
+    bottom: 30vw;
+    left: 80vw;
+    width: 14vw;
+}
+
+.base4 {
+    position: absolute;
+    bottom: 15vw;
+    left: 60vw;
+    width: 20vw;
+}
+
+
+.barraVidaAdversario4 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    border: solid 2px white;
+    width: 14.5vw;
+    height: 1.6vw;
+    bottom: 38vw;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.barraVidaAdversario4 {
+    left: 60vw;
+}
+
+
+#barraA4_1, #barraA4_2, #barraA4_3, #barraA4_4,  #barraA4_5{
+    background-color: #40ba01;
+    width: 20%;
+}
+
+.ataqueDragao {
+    position: absolute;
+    bottom: 9vw;
+    left: 20vw;
+    width: 20vw;
+
+    z-index: 1;
+}

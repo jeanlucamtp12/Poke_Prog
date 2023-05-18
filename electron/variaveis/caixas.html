@@ -44,6 +44,7 @@
     const verificaTipo = () => {
 
         var tipoCaixa = document.getElementById("alterar").innerText;
+        console.log(tipoCaixa)
 
         switch (palavra) {
 
@@ -71,7 +72,7 @@
                 if (tipoCaixa.includes("Nome")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
-                    document.getElementById('alterar').innerHTML = 'Numero = 2,22';
+                    document.getElementById('alterar').innerHTML = 'Valor = 2,22';
                     palavra = '';
                     limparUnowns(i);
                 } else {
@@ -86,7 +87,7 @@
                 if (tipoCaixa.includes("Dado")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
-                    document.getElementById('alterar').innerHTML = 'Numero = 222';
+                    document.getElementById('alterar').innerHTML = 'Letra = "A"';
                     palavra = '';
                     limparUnowns(i);
                 } else {
@@ -98,7 +99,7 @@
                 break;
 
             case 'letra':
-                if (tipoCaixa.includes("Dado")) {
+                if (tipoCaixa.includes("Letra")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Numero = 222';
@@ -113,7 +114,7 @@
                 break;
 
             case 'decimal':
-                if (tipoCaixa.includes("Numero")) {
+                if (tipoCaixa.includes("Valor")) {
                     conteudo = "Acertouuu";
                     window.alert("Resposta Certa. Vamos ao proximo!");
                     document.getElementById('alterar').innerHTML = 'Dado = Falso';
@@ -135,7 +136,11 @@
     }
 
     const exibeAjuda = () => {
-        document.querySelector("#ajuda").style.display = "block"; // ou "block"
+        if(document.querySelector("#ajuda").style.display == "block" ){
+            document.querySelector("#ajuda").style.display = "none"; // ou "block"
+        }else{
+            document.querySelector("#ajuda").style.display = "block"; // ou "block"
+        }
     }
 </script>
 
@@ -155,7 +160,7 @@
 </head>
 
 <body>
-
+    <audio src="../sounds/variaveis.mp3" loop autoplay></audio>
 
 
     <div style="padding: 1vw;" class="titulo">
@@ -164,7 +169,7 @@
 
     <div class="caixaConteudo">
         <img src="../img/fases unowms/caixa.png">
-        <h2 style="font-weight: bold;" id="alterar">Numero = 10</h2></img>
+        <h2 style="font-weight: bold; font-size: 1.1vw;" id="alterar">Numero = 10</h2></img>
     </div>
 
     <div class="tela">
@@ -282,15 +287,18 @@
                 <div id="slot11" class="filhoCaixaS"></div>
                 <div id="slot12" class="filhoCaixaS"></div>
             </div>
+            <button id="botaoResposta" onclick="limparUnowns(i)">Apagar</button>
             <button id="botaoResposta" onclick="verificaTipo()">Enviar</button>
+
+
 
         </div>
 
         <div class="inicial">
             <h6 style="font-weight: bold; margin-left: 1.5vw; font-size: 1.3vw">Ajuda</h6>
             <img src="../img/unowns/klink.png" id="inicial" onclick="exibeAjuda()" style="cursor:pointer">
-            <h2 id="ajuda" style="display:none">Int = Números Inteiros <br><br>Float = Números Com Virgula
-                <br><br>String = Palavras e Letras<br><br>Booleano = Verdadeiro Ou Falso </h2>
+            <h2 id="ajuda" style="display:none">Inteiro = Números Inteiros <br><br>Decimal = Números Com Virgula
+                <br><br>Palavra = Texto<br><br>Booleano = Verdadeiro Ou Falso <br><br>Letra = Letras </h2>
         </div>
 
 
@@ -299,7 +307,7 @@
     </div>
 
 
-    <div style="display: block;" class="alfabeto">
+    <div style="z-index: -1;" class="alfabeto">
 
         <img id="A" src="../img/unowns/a.gif"> </img>
         <img id="B" src="../img/unowns/b.gif"></img>
@@ -338,10 +346,10 @@
 <script>
     const alfabeto = document.querySelectorAll('#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib');
 
-    for(var i = 0; i < alfabeto.length; i++){
+    for(var l = 0; l < alfabeto.length; l++){
 
         const posicaoLeft = ["5","10","15", "20", "25", "30","40","42", "58","60", "64", "68", "70", "74","78", "80","84", "88", "90", "94"];
-        const posicaoBottom = ["5", "10", "15", "20", "25", "30","35","38", "65","70", "75","80", "85","90"];
+        const posicaoBottom = ["5", "10", "15","18", "20","23", "25", "28", "65","70", "75","80", "85","90"];
 
         const posicaoL = Math.floor(Math.random() * posicaoLeft.length);
         const posicaoB = Math.floor(Math.random() * posicaoBottom.length);
@@ -351,12 +359,12 @@
 
             const posB = Math.floor(Math.random() * novaPosB.length);
 
-            alfabeto[i].style.left = posicaoLeft[posicaoL] + "%";
-            alfabeto[i].style.bottom = novaPosB[posB] + "%";
+            alfabeto[l].style.left = posicaoLeft[posicaoL] + "%";
+            alfabeto[l].style.bottom = novaPosB[posB] + "%";
 
         }else{
-            alfabeto[i].style.left = posicaoLeft[posicaoL] + "%";
-            alfabeto[i].style.bottom = posicaoBottom[posicaoB] + "%";
+            alfabeto[l].style.left = posicaoLeft[posicaoL] + "%";
+            alfabeto[l].style.bottom = posicaoBottom[posicaoB] + "%";
         }
 
 

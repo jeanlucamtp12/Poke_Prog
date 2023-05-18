@@ -176,7 +176,7 @@ body{
     width: 23%;
     bottom: 1%;
     left: 0%;
-    z-index: 0;
+    z-index: 1;
 }
 
 
@@ -365,6 +365,20 @@ body{
     bottom: 22%;
     left: 12%;
     z-index: 1;
+    animation: efeito_roupas 0.8s infinite;
+
+}
+
+@keyframes efeito_roupas {
+    0% {
+        width: 4%;
+    }
+    50% {
+        width: 5%;
+    }
+    100% {
+        width: 4%;
+    }
 }
 
 
@@ -386,7 +400,7 @@ body{
 .geladeira{
     position: absolute;
     width: 7%;
-    left: 63%;
+    left: 65%;
     bottom: 71%;
 }
 
@@ -450,7 +464,7 @@ body{
 .lampada4{
     position: absolute;
     width: 3%;
-    left: 25%;
+    left: 15%;
     top: 1.8%;
     transform: rotate(180deg);
 }
@@ -659,4 +673,98 @@ h6 {
         right: 110%;
         bottom: 50%;
     }
+}
+
+
+
+.camisas{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 30%;
+
+}
+.camisas img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
+
+}
+
+
+#textoRoupa1{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 55%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
+}
+
+.sapatos{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 42%;
+
+}
+.sapatos img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
+
+}
+
+
+#textoRoupa2{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 44%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
+}
+
+.vestidos{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 53%;
+
+}
+.vestidos img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
+
+}
+
+
+#textoRoupa3{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 32%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
+}
+
+
+.vidas{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    height: 2vw;
+    width: 150vw;
+    display: flex;
+    flex-direction: row;
+}
+.vidas1, .vidas2, .vidas3{
+    width: 2%;
+}
+.vidas img{
+    width: 100%;
 }

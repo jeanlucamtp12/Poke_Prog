@@ -16,6 +16,8 @@
 
 <body>
 
+    <audio src="../sounds/arrays.mp3" loop autoplay ></audio>
+
     <div class="tela">
 
 
@@ -38,6 +40,9 @@
             <div class="raio">
                 <img id="raio5" src="../img/arrays/raio.gif">
             </div>
+            <div class="raio">
+                <img id="raio6" src="../img/arrays/raio.gif">
+            </div>
         </div>
 
 
@@ -52,8 +57,8 @@
             <img class='togepi' id="togepi" src="../img/arrays/babys/togepi.png">
             <img class='galho1' id="galho1" src="../img/arrays/galho.png">
             <img class='galho2' id="galho2" src="../img/arrays/galho.png">
-            <img class='vida' id="vida" src="../img/arrays/vida.png">
-            <img class='vida2' id="vida2" src="../img/arrays/vida.png">
+            <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
+            <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
         </div>
 
 
@@ -86,7 +91,8 @@
 
         <div class="vetor">
             <h5>Vetor de Falinks</h5><br>
-            <div class="filhoVetor" img src="" id="9" background-color:white;>10</div>
+            <div class="filhoVetor" img src="" id="10">10</div>
+            <div class="filhoVetor" img src="" id="9" >9</div>
             <div class="filhoVetor" img src="" id="8">8</div>
             <div class="filhoVetor" img src="" id="7">7</div>
             <div class="filhoVetor" img src="" id="6">6</div>
@@ -134,7 +140,7 @@
 
 
                     const falink = document.querySelector('#falink');
-                    const posicoesFalinks = ["12", "27", "37.5", "53"];
+                    const posicoesFalinks = ["22", "32", "42", "52", "62", "72", "82"];
                     const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
 
 
@@ -153,6 +159,7 @@
                     raio3.style.animation = "";
                     raio4.style.animation = "";
                     raio5.style.animation = "";
+                    raio6.style.animation = "";
                 }
 
                 const resetarVida = () => {
@@ -166,9 +173,14 @@
                 var vidas = 3;
                 const loop2 = setInterval(() => {
 
+                    if(vidas == 3){
+                        document.querySelector('.vida2').style.display = 'none';
+                        document.querySelector('.vida').style.display = 'none';
+                    }
+                 
 
                     falink.getBoundingClientRect();
-                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5");
+                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5, div.raio #raio6");
 
                     var vidinhas = document.querySelectorAll("#vida, #vida2");
 
@@ -186,11 +198,12 @@
                                 vidas = vidas - 1;
                             } else if (vidas == 2) {
                                 document.querySelector(".vidas2").remove();
+                                document.querySelector('.vida').style.display = 'block';
+                                document.querySelector('.vida2').style.display = 'block';
+                             
+
+                                document.querySelector('.vida2').style.display = 'block';
                                 vidas = vidas - 1;
-                                document.querySelector('.vida').style.animationPlayState = 'running';
-                                document.querySelector('.vida2').style.animationPlayState = 'running';
-
-
                             } else if (vidas == 1) {
                                 document.querySelector(".vidas1").remove();
                                 vidas = vidas - 1;
@@ -207,7 +220,7 @@
                         document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
 
                         j = j + 1;
-                        if (j == 10) {
+                        if (j == 11) {
                             window.alert("Você ganhou, vamos a proxima fase!");
                             window.location.href = "./falinksAtribuicao.html";
                         }
