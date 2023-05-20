@@ -6,25 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" id="diretorio" href="../css/recursividade.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
     <title>Document</title>
 </head>
 
 <body>    
-    <audio src="../sounds/lavar_cozinhar.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/lavar_cozinhar.mp3" loop autoplay ></audio>
 
 
     <div class="campo">
+
+
+        <div>
+            <img id="fornoR" class="fornoR" src="../img/funcoes/forno.png" >
+        </div>
 
         <div class="cherrim" style="display: block">
             <img class="cherrim" id="cherrim" src="../img/recursividade/cherrim-sunshine.gif">
         </div>
 
         <div class="Weezing">
-            <img class="Weezing" id="Weezing" style="display: none" src="../img/recursividade/Weezing.gif">
+            <img class="Weezing" id="Weezing" style="display: none;" src="../img/recursividade/Weezing.gif">
         </div>
 
         <div class="arbok">
-            <img class="arbok" id="arbok" style="display: none" src="../img/recursividade/arbok.gif">
+            <img class="arbok" id="arbok" style="display: none;" src="../img/recursividade/arbok.gif">
         </div>
 
         <div>
@@ -265,7 +272,7 @@
                 document.querySelector(".vidas1").remove();
                 vidas = vidas - 1;
             }else if (vidas == 0){
-                window.alert("Você perdeu todas as vidas!");
+                exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente!!", "http://localhost/jogo/electron/funcoes/cozinhar.html");
             }
         }
 
@@ -303,9 +310,7 @@
 
             
                 if(atualiza == 9 ){
-                    window.alert("Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!");
-                    window.location.href = "./funcoes.html";
-
+                    exibeNotificação("success", "Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!", "http://localhost/jogo/electron/funcoes/funcoes.html");
                 }
 
                 
@@ -319,8 +324,11 @@
 
                 if(contadorBolo == 3){
                     document.getElementById("Weezing").style.display = "block";
+                    document.querySelector(".Weezing").style.animationPlayState = "running";
+                    
                 }else if(contadorBolo == 4){
                     document.getElementById("arbok").style.display = "block";
+                    document.querySelector(".arbok").style.animationPlayState = "running";
                 }
                 
 

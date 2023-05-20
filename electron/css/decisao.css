@@ -122,7 +122,7 @@ body {
 .nuvens {
     position: absolute;
     width: 28vw;
-    bottom: 70%;
+    bottom: 45%;
     left: 2%;
 }
 
@@ -205,15 +205,14 @@ body {
 
 .form{
     position: absolute;
-    left: 35vw;
-    top: 1vw;
+    left: 5%;
+    bottom: 80%;
 }
 .form input{
     width: 25vw;
     height: 4vh;
 }
 .form #nome{
-    margin-left: 1vw;
     font-size: 1.1vw;
     font-weight: bold;
     color: white;
@@ -360,9 +359,9 @@ button:hover{
 
 .pokeAdversario4{
     position: absolute;
-    bottom: 22vw;
+    bottom: 18vw;
     left: 60vw;
-    width: 17vw;
+    width: 22vw;
     z-index: 1;
 }
 
@@ -375,7 +374,7 @@ button:hover{
 
 .base4 {
     position: absolute;
-    bottom: 15vw;
+    bottom: 11vw;
     left: 60vw;
     width: 20vw;
 }

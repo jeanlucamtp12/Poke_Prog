@@ -10,7 +10,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/excecoes.css">
 
 
@@ -19,7 +20,7 @@
 
 <body>
 
-    <audio src="../sounds/excecao.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/excecao.mp3" loop autoplay ></audio>
 
 
     <div class="cidade">
@@ -364,19 +365,17 @@
             for (var i = 0; i < pokemon.length; i++) {
 
                 if (shiny == 1) {
-                    window.alert("Parabens capturou o certo");
                     document.getElementById(cont).src = "../img/excecoes/pokeball.gif";
                     cont = cont + 1;
                     limpaTela(pokemon);
                     exibeTela(cont);
 
                     if (pokemon == froslass) {
-                        window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                        window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                        exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                     }
                     return;
                 } else {
-                    window.alert("Falhoou");
+                    exibeNotificação("error", "Você capturou o errado! Tente novamente", "");
                     return;
 
                 }

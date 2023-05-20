@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/funcoes1.css">
 
 
@@ -16,7 +17,7 @@
 
 <body>
 
-    <audio src="../sounds/cortador.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/cortador.mp3" loop autoplay></audio>
 
     <div class="tela">
 
@@ -33,7 +34,7 @@
                 <div class="vidas3">
                     <img src="../img/recursividade/cortar/vida.png"></img>
                 </div>
-            </div>   <br> <br>
+            </div> <br> <br>
             <h5>Frutas</h5>
             <div class="bananas">
                 <div class="banana1">
@@ -78,7 +79,7 @@
                 <div class="tomate4">
                     <img src="../img/recursividade/cortar/tomate.png"></img>
                 </div>
-            </div> 
+            </div>
             <h5>Energias</h5>
             <div class="energia">
                 <div class="energia1">
@@ -250,7 +251,6 @@
     const loop = setInterval(() => {
 
 
-
         const posicoesRaio = ["12", "27", "37.5", "53", "75", "83"];
         const posicaoVetor = Math.floor(Math.random() * posicoesRaio.length);
 
@@ -308,21 +308,23 @@
                     vidas = vidas - 1;
                 } else if (vidas == 1) {
                     document.querySelector(".vidas1").remove();
-                    document.querySelector("#vidasTexto").style.display = "none"  ;
+                    document.querySelector("#vidasTexto").style.display = "none";
                     combees[i].style.animation = 'none';
                     //combees[i].style.display = 'none';
                     vidas = vidas - 1;
+                } else if (vidas == 0) {
+                    exibeNotificação("error", "Você Perdeu Todas as Vidas! Clique para Tentar Novamente", "http://localhost/jogo/electron/funcoes/funcoesCortador.html");
                 }
 
 
                 const idCombee = combees[i].id;
 
-             
+
                 (function (id) {
                     setTimeout(function () {
                         document.getElementById(id).style.animation = '';
-                        
-                        
+
+
                     }, 10);
                 })(idCombee);
 
@@ -431,21 +433,31 @@
 
 
 
-
-
-
     }, 10);
 
 
 
 
+    var vitoriaLoop = "false";
 
+    const loopVitoria = setInterval(() => {
+
+        if (vidas >= 0 && energias == 0 && bananas == 0 && alfaces == 0 && tomates == 0) {
+            if (vitoriaLoop == "false"){
+                exibeNotificação("success", "Você concluiu todas as tarefas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+            }
+            vitoriaLoop = "true";
+        }
+
+    }, 1000);
 
 
 
 
 
     const loop3 = setInterval(() => {
+
+
 
         chandelure.getBoundingClientRect();
 
@@ -456,7 +468,7 @@
                 const elementoId = frutas[i].id;
 
                 //document.getElementById(frutas[i].id).style.animation = 'none';
-                
+
                 document.getElementById("verdura").style.animation = 'none';
                 document.getElementById("fruta").style.animation = 'none';
                 document.getElementById("legume").style.animation = 'none';
@@ -485,7 +497,7 @@
 
 
 
-                        document.getElementById("verdura").style.left =  vetor[0];
+                        document.getElementById("verdura").style.left = vetor[0];
                         document.getElementById("legume").style.left = vetor[1];
                         document.getElementById("fruta").style.left = vetor[2];
 
@@ -499,12 +511,12 @@
 
                 var temp = "";
 
-                if(frutas[i].id == "fruta"){
+                if (frutas[i].id == "fruta") {
                     bananas = retiraAlimento(bananas, "banana");
                 }
-                else if(frutas[i].id == "verdura"){
+                else if (frutas[i].id == "verdura") {
                     alfaces = retiraAlimento(alfaces, "alface");
-                }else{
+                } else {
                     tomates = retiraAlimento(tomates, "tomate");
                 }
 
@@ -516,29 +528,30 @@
 
 
 
+
     }, 50);
 
-   
 
-    const retiraAlimento = (alimento, nome) =>{
+
+    const retiraAlimento = (alimento, nome) => {
 
         console.log(alimento, nome);
-        
+
         if (alimento == 4) {
-            document.querySelector("."+nome+1).style.backgroundColor = "green";
+            document.querySelector("." + nome + 1).style.backgroundColor = "green";
 
             //document.querySelector("."+nome+4).remove();
             alimento = alimento - 1;
         } else if (alimento == 3) {
-            document.querySelector("."+nome+2).style.backgroundColor = "green";
+            document.querySelector("." + nome + 2).style.backgroundColor = "green";
             //document.querySelector("."+nome+3).remove();
             alimento = alimento - 1;
         } else if (alimento == 2) {
-            document.querySelector("."+nome+3).style.backgroundColor = "green";
+            document.querySelector("." + nome + 3).style.backgroundColor = "green";
             //document.querySelector("."+nome+2).remove();
             alimento = alimento - 1;
         } else if (alimento == 1) {
-            document.querySelector("."+nome+4).style.backgroundColor = "green";
+            document.querySelector("." + nome + 4).style.backgroundColor = "green";
             //document.querySelector("."+nome+1).remove();
             alimento = alimento - 1;
         }

@@ -9,7 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/funcoes5.css">
 
 
@@ -18,7 +19,7 @@
 
 </head>
 
-<audio src="../sounds/gelar.mp3" loop autoplay ></audio>
+<audio id="audio" src="../sounds/gelar.mp3" loop autoplay ></audio>
 
 <body>
     <div class="tela">
@@ -584,7 +585,7 @@ var termVermelho = 0;
                 if(document.querySelector(".controleMeio"+i).innerHTML == 30){
                     
                 }else{
-                    window.alert("Verifique os Termometros! 30");
+                    exibeNotificação("error", "Verifique os Termometros!", "");
                     termVerde = 0;
                     termVermelho = 0;
                     termAmarelo = 0;
@@ -599,13 +600,17 @@ var termVermelho = 0;
             for(var i = 1; i <=4; i++){
                 if(document.querySelector(".controleMeio"+i).innerHTML == 40){
                     break;
-                }else{
-                    window.alert("Verifique os Termometros! 40");
+                }
+                    
+                if(i == 4){
+                    exibeNotificação("error", "Verifique os Termometros!", "");
                     termVerde = 0;
                     termVermelho = 0;
                     termAmarelo = 0;
                     return;
                 }
+                 
+                
 
             }
 
@@ -617,16 +622,17 @@ var termVermelho = 0;
         control4 = document.querySelector(".controleMeio4").innerHTML;
 
         if(termAmarelo == 4 || termVerde == 4 || termVermelho == 4){
-        
-            if((control1 != control2 && control1 != control3 && control1 != control4) && (control2 != control3 && control2 != control4) && (control3 != control4)){
-            }else{
-                window.alert("Verifique os Termometros! 50")
-            }
 
+            if (!((control1 != control2 && control1 != control3 && control1 != control4) && (control2 != control3 && control2 != control4) && (control3 != control4))){
+                window.alert("Verifique os Termometros!");
+                exibeNotificação("error", "Verifique os Termometros!", "");
+            }
         }
 
+      
 
-        ermVerde = 0;
+
+        termVerde = 0;
         termVermelho = 0;
         termAmarelo = 0;
 
@@ -667,7 +673,7 @@ var termVermelho = 0;
             if (disjuntor1 == "" && disjuntor2 == "ligado") {
 
             } else {
-                window.alert("Os Dijuntores podem estar Incorretos!");
+                exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
@@ -682,7 +688,7 @@ var termVermelho = 0;
             if (disjuntor1 == "ligado" && disjuntor2 == "") {
 
             } else {
-                window.alert("Os Dijuntores podem estar Incorretos!");
+                exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
@@ -698,7 +704,7 @@ var termVermelho = 0;
             if (disjuntor1 == "ligado" && disjuntor2 == "ligado") {
 
             } else {
-                window.alert("Os Dijuntores podem estar Incorretos!");
+                exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
@@ -740,7 +746,7 @@ var termVermelho = 0;
         if(estadoLampada == "ligado"){
             if(luz == ""){
             }else{
-                window.alert("Ruim! Voce Nao Desligou a Luz!");
+                exibeNotificação("error", "Verifique a Luz!", "");
                 return;
             }
         }else{
@@ -748,9 +754,9 @@ var termVermelho = 0;
             if(luz == "blue"){
             }
             else if (luz == ""){
-                window.alert("Leia o Manual Novamente, na Seção Luz");
+                exibeNotificação("error", "Leia o Manual Novamente, na Seção Luz", "");
             }else{
-                window.alert("Você ligou a Luz, mas sera que corretamente?");
+                exibeNotificação("error", "Você ligou a Luz, mas sera que corretamente?", "");
                 return;
             }
 
@@ -776,15 +782,17 @@ var termVermelho = 0;
             var c2 = document.querySelector(".c42");
             var c3 = document.querySelector(".c43");
 
-            if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
-                
+            console.log(c1.querySelector("img") );
+
+            //if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
+
                 if(c1.querySelector("img") && c1.querySelector("img").id.includes("bebida") || c2.querySelector("img") && c2.querySelector("img").id.includes("bebida") || c3.querySelector("img") && c3.querySelector("img").id.includes("bebida")){
                    
                 }else{
-                    window.alert("Voce errou na quarta patrelheira, bebida");
+                    exibeNotificação("error", "verifique a quarta patrelheira", "");
                     return;
                 }
-            }
+           // }
 
         }else if (document.querySelector("#numero_serie").textContent == "#ABC"){
 
@@ -794,15 +802,15 @@ var termVermelho = 0;
             var c2 = document.querySelector(".c42");
             var c3 = document.querySelector(".c43");
 
-            if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
+           // if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
                 
                 if(c1.querySelector("img") && c1.querySelector("img").id.includes("fruta") || c2.querySelector("img") && c2.querySelector("img").id.includes("fruta") || c3.querySelector("img") && c3.querySelector("img").id.includes("fruta")){
                    
                 }else{
-                    window.alert("Voce errou na quarta patrelheira, fruta");
+                    exibeNotificação("error", "verifique a quarta patrelheira", "");
                     return;
                 }
-            }
+           // }
 
         }else{
             var semEtiqueta = document.querySelector(".compartimento4");
@@ -811,17 +819,22 @@ var termVermelho = 0;
             var c2 = document.querySelector(".c42");
             var c3 = document.querySelector(".c43");
 
-            if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
+         //   if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
                 
                 if(c1.querySelector("img") && c1.querySelector("img").id.includes("carne") || c2.querySelector("img") && c2.querySelector("img").id.includes("carne") || c3.querySelector("img") && c3.querySelector("img").id.includes("carne")){
                    
                 }else{
-                    window.alert("Voce errou na quarta patrelheira, carne");
+                    exibeNotificação("error", "verifique a quarta patrelheira", "");
                     return;
                 }
-            }
+         //   }
 
         }
+
+
+
+        exibeNotificação("success", "Você consertou a geladeira! Vamos a Proxima Tarefa!", "http://localhost/jogo/electron/funcoes/funcoes.html");
+
 
         
 

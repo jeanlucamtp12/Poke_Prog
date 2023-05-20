@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/hanoi.css">
+    <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <title>Torre de Hanoi</title>
 </head>
 
 <body>
-    <audio src="../sounds/recursividade.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/recursividade.mp3" loop autoplay ></audio>
 
 
     <div class="tela">
@@ -223,7 +225,6 @@
                 moveMoagnemite(pino, 'Umpino', imagem);
                 break;
             case 5:
-                window.alert("Esse pino está cheio");
                 break;
         }
 
@@ -246,31 +247,31 @@
         switch (estaca) {
             case 1:
                 if ((divImagem != "Cincopinos") && (divImagem != "Cincopinos2") && (divImagem != "Cincopinos3")) {
-                    window.alert("Peça bloqueada!");
+                    exibeNotificação("error", "Peça bloqueada", "");
                 }
 
                 break;
             case 2:
                 if ((divImagem != "Quatropinos") && (divImagem != "Quatropinos2") && (divImagem != "Quatropinos3")) {
-                    window.alert("Peça bloqueada!");
+                    exibeNotificação("error", "Peça bloqueada", "");
                 }
 
                 break;
             case 3:
                 if ((divImagem != "Trespinos") && (divImagem != "Trespinos2") && (divImagem != "Trespinos3")) {
-                    window.alert("Peça bloqueada!");
+                    exibeNotificação("error", "Peça bloqueada", "");
                 }
 
                 break;
             case 4:
                 if ((divImagem != "Doispinos") && (divImagem != "Doispinos2") && (divImagem != "Doispinos3")) {
-                    window.alert("Peça bloqueada!");
+                    exibeNotificação("error", "Peça bloqueada", "");
                 }
 
                 break;
             case 5:
                 if ((divImagem != "Umpino") && (divImagem != "Umpino2") && (divImagem != "Umpino3")) {
-                    window.alert("Peça bloqueada!");
+                    exibeNotificação("error", "Peça bloqueada", "");
                 }
                 break;
         }
@@ -351,7 +352,7 @@
                 removerMagnemite(classeImagem, "1", imagem);
 
             } else {
-                window.alert("Pino indisponivel");
+                exibeNotificação("error", "Pino indisponivel", "");
             }
 
             document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
@@ -368,14 +369,13 @@
                 removerMagnemite(classeImagem, "2", imagem);
 
             } else {
-                window.alert("Pino indisponivel");
+                exibeNotificação("error", "Pino indisponivel", "");
             }
 
             if(ultimoE2[0] == 1){
                 if(contador < 0){
-                    window.alert("Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!!");
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
                 }else{
-                    window.alert("Você ganhou!!");
                 }
             }
 
@@ -392,14 +392,12 @@
                     decrementarEstacas(classeImagem, estaca3);
                     removerMagnemite(classeImagem, "3", imagem);
                 } else {
-                    window.alert("Pino indisponivel");
+                    exibeNotificação("error", "Pino indisponivel", "");
                 }
             }
             if(ultimoE3[0] == 1){
                 if(contador < 0){
-                    window.alert("Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!!");
-                }else{
-                    window.alert("Você ganhou!!");
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
                 }
             }
             document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);

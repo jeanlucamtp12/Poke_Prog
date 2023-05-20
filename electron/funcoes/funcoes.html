@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" id="diretorio" href="../css/funcoesHome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../telaInicial/dialogos.js"></script>
     <title>Document</title>
 </head>
 
@@ -13,13 +14,29 @@
 
     <audio src="../sounds/homeFuncoes.mp3" loop autoplay ></audio>
 
+
+
+
+    <div id="telaTransparente"  style="display: none;"></div>
+
+    <div id="introducao" style="display: none;">
+        <img class="professor" src="../img/home/Erbie.png">
+        <div class="balao">
+            <h4 id="dialogo"></h4>
+            <button id="botao" onclick="exibirTexto()">Avançar</button>
+            <button id="botao2" onclick="iniciar()">Iniciar</button>
+
+        </div>
+    </div>
+
+
+
+
+
+
     <div class="campo">
 
-     
-
-
-
-
+    
 
         <div class="parede1">
             <img class="parede1" src="../img/recursividade/chao.jpg">
@@ -126,25 +143,25 @@
           </div>
 
           <div>
-              <a href="../funcoes/funcoesCortador.html"><img id="cortadorR" class="cortadorR" src="../img/funcoes/cortador.png"></a>
+              <a href="#" onclick="iniciarFase(4)"><img id="cortadorR" class="cortadorR" src="../img/funcoes/cortador.png"></a>
           </div>
 
           <div>
-              <a href="../funcoes/cozinhar.html"><img id="fornoR" class="fornoR" src="../img/funcoes/forno.png" ></a>
+              <a href="#"  onclick="iniciarFase(1)" ><img id="fornoR" class="fornoR" src="../img/funcoes/forno.png" ></a>
               
           </div>
 
           <div>
-              <a href="../funcoes/funcoesLavadeira.html"><img id="lavadeiraR" class="lavadeiraR" src="../img/funcoes/lavadeira.png" ></a>
+              <a href="#"  onclick="iniciarFase(2)" ><img id="lavadeiraR" class="lavadeiraR" src="../img/funcoes/lavadeira.png" ></a>
           </div>
 
           <div>
-              <a href="../funcoes/funcoesCortador.html"><img id="ventiladorR" class="ventiladorR" src="../img/funcoes/ventilador.png"></a>
+              <a href="#" onclick="iniciarFase(3)" ><img id="ventiladorR" class="ventiladorR" src="../img/funcoes/ventilador.png"></a>
           </div>
 
           
           <div>
-              <a href="../funcoes/funcoesGelo.html"><img id="geladeiraR" class="geladeiraR" src="../img/funcoes/geladeira.png"></a>
+              <a href="#"  onclick="iniciarFase(0)" ><img id="geladeiraR" class="geladeiraR" src="../img/funcoes/geladeira.png"></a>
           </div>
 
 
@@ -244,5 +261,103 @@
         body.appendChild(img);
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    var dialogo = "";
+    var aux = 0;
+    var verificaClick = "false";
+    var fase = 0;
+
+
+    function escreveDialogo() {
+
+        if (verificaClick == "false") {
+            if (aux < dialogo.length) {
+                document.getElementById("dialogo").textContent += dialogo.charAt(aux); 
+                aux++;
+                setTimeout(escreveDialogo, 100);
+               
+            }
+        }
+    }
+
+
+
+
+    function exibirTexto() {
+        verificaClick = "true";
+        //document.getElementById("dialogo").textContent = "";
+        document.getElementById("dialogo").innerHTML = textosFuncoes[fase];
+    }
+
+
+    function iniciar() {
+        document.getElementById("introducao").style.display = "none";
+        document.querySelector(".mapa").style.opacity = "1";
+        document.getElementById("telaTransparente").style.display = "none";
+    }
+
+
+
+
+    function iniciarFase(val) {
+
+
+        //window.location.href = "../funcoes/funcoesCortador.html";
+
+
+        fase = val;      
+        aux = 0;
+        verificaClick = "false";
+
+        dialogo = textosFuncoes[val];
+        console.log(textosFuncoes[val])
+
+        document.getElementById("dialogo").textContent = "";
+
+       document.getElementById("introducao").style.display = "block";
+       document.getElementById("telaTransparente").style.display = "block";
+       document.querySelector(".campo").style.opacity = "0.2";
+        escreveDialogo();
+
+
+        document.getElementById("botao2").addEventListener("click", function () {
+            if(val == 0){
+                window.location.href = "../funcoes/funcoesGelo.html";
+            }else if(val == 1){
+                window.location.href = "../funcoes/cozinhar.html";
+            }
+            else if(val == 2){
+                window.location.href = "../funcoes/funcoesLavadeira.html";
+            }
+            else if(val == 3){
+                window.location.href = "../funcoes/funcoesCortador.html";
+            }
+            else if(val == 4){
+                window.location.href = "../funcoes/funcoesCortador.html";
+            }
+          
+          
+        });
+
+    }
+
+
+    
+
+
+
+
+
 
 </script>

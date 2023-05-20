@@ -366,18 +366,17 @@ body{
     left: 12%;
     z-index: 1;
     animation: efeito_roupas 0.8s infinite;
-
 }
 
 @keyframes efeito_roupas {
     0% {
-        width: 4%;
-    }
-    50% {
         width: 5%;
     }
+    50% {
+        width: 5.5%;
+    }
     100% {
-        width: 4%;
+        width: 5%;
     }
 }
 
@@ -408,14 +407,14 @@ body{
     position: absolute;
     width: 5%;
     left: 55%;
-    bottom: 71%;
+    bottom: 46%;
 }
 
 .pia{
     position: absolute;
     width: 5%;
     left: 50%;
-    bottom: 71%;
+    bottom: 46%;
 }
 
 
@@ -767,4 +766,13 @@ h6 {
 }
 .vidas img{
     width: 100%;
+}
+
+
+.lavadeiraR{
+    position: absolute;
+    width: 10%;
+    left: 43%;
+    bottom: 70%;
+    z-index: 1;
 }

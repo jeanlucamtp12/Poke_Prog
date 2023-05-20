@@ -9,8 +9,96 @@
     <link rel="stylesheet" href="./electron/css/home.css">
 </head>
 <body>
-    <h2>Poké Prog</h2>
-    <div  id="meio"><a  id="meio"  href="./electron/telaInicial/new.html">Novo Jogo</a> </div>
-    <div  id="meio"><a  id="meio"  href="./electron/telaInicial/continue.html">Continuar</a> </div>
+
+    <audio id="audioFase" src="./electron/sounds/inicio.mp3" loop autoplay ></audio>
+
+    <div>
+        <p  class="choque"><span aria-hidden="true"></span>Poké Prog<span aria-hidden="true"></span></p>
+    </div> 
+
+
+    <div class="cenario">
+
+
+        <div>
+            <img id="uA" src="/electron/img/unowns/a.gif"></img>
+            <img id="uB" src="/electron/img/unowns/b.gif"></img>
+            <img id="uC" src="/electron/img/unowns/c.gif"></img>
+
+
+            <img id="arbok" src="/electron/img/decisao/arbok.gif"></img>
+            <img id="nuvens" src="/electron/img/decisao/clouds.png"></img>
+            <img id="nuvens2" src="/electron/img/decisao/clouds.png"></img>
+            <img id="nuvens3" src="/electron/img/decisao/clouds.png"></img>
+
+
+            <img id="drifloon" src="/electron/img/repeticao/drifloon.png"></img>
+
+
+            <img id="falink1" src="/electron/img/arrays/falink.gif"></img>
+            <img id="falink2" src="/electron/img/arrays/falink.gif"></img>
+            <img id="arvore1" src="/electron/img/arrays/arvore1.png"></img>
+            <img id="arvore2" src="/electron/img/arrays/arvore1.png"></img>
+
+
+            <img id="rotom" src="/electron/img/funcoes/rotom.png"></img>
+
+            <img id="zubat1" src="/electron/img/excecoes/zubat.png"></img>
+            <img id="zubat2" src="/electron/img/excecoes/zubat.png"></img>
+            <img id="zubat3" src="/electron/img/excecoes/zubat.png"></img>
+
+           
+
+
+        </div>
+
+        <div  id="meio" onclick="window.location.href='./electron/telaInicial/cityIntro.html'">
+            <h4>Iniciar</h4>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
 </body>
 </html>
+
+
+<script>
+
+
+    document.addEventListener('click', musicPlay);
+        function musicPlay() {
+        document.getElementById('audioFase').play();
+        document.removeEventListener('click', musicPlay);
+    }
+
+
+
+
+
+    var k = 0;
+                for (var i = 1; k <= 100; i++) {
+
+
+                    var img = document.createElement('img');
+                    img.src = 'electron/img/decisao/mato.png';
+                    img.classList.add('mato');
+                    img.id = 'mato' + i;
+                    img.style.bottom = "-2%";
+                    img.style.width = "4%";
+                    img.style.left = k + "%";
+
+                    var body = document.querySelector("body");
+                    k = k + 3.8;
+
+                    body.appendChild(img);
+
+                }
+</script>

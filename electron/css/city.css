@@ -450,3 +450,106 @@ body, html{
 	bottom: 40%;
 	font-size: 2.5vw;
 }
+
+.professor{
+	width: 16vw;
+	position: absolute;
+	z-index: 1;
+	left: 5%;
+	bottom: 0%;
+}
+
+.balao{
+	position: absolute;
+	background-color: white;
+	width: 50vw;
+	min-height: 20vw;
+	border-radius: 10%;
+	left: 25%;
+	bottom: 5%;
+	z-index: 1;
+}
+.mapa {
+	opacity: 0.2;
+	user-select: none;
+}
+
+#dialogo{
+	font-size: 1.2vw;
+	line-height: 1.5; 
+	margin-left: 1vw;
+	animation: escrever 0.5s steps(40) forwards;
+
+}
+
+#dialogoReserva{
+	margin-left: 2vw;
+	line-height: 1.5; 
+	font-size: 1.2vw;
+}
+
+@keyframes escrever {
+	from {
+	  width: 0;
+	}
+	to {
+	  width: 100%;
+	}
+  }
+
+#botao, #botao2{
+    position: absolute;
+    height: 2vw;
+    width: 10vw;
+    font-size: 1vw;
+    border-radius: 1vw;
+    color: #ffffff;
+    background-color: #86b5c7;
+	cursor: pointer;
+	animation: hover 1s infinite;
+}
+#botao{
+	bottom: 6%;
+    left: 50%;
+}
+#botao2{
+    bottom: 6%;
+    left: 75%;
+}
+
+@keyframes hover {
+0% {
+	transform: scale(1);
+}
+
+50% {
+	transform: scale(1.1);
+}
+
+100% {
+	transform: scale(1);
+}
+}
+
+
+#telaTransparente {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 120%;
+	height: 120%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+#introducao{
+	z-index: 3;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6, #img7{
+	position: absolute;
+	width: 25vw;
+	bottom: 55%;
+	left: 37%;
+	border-radius: 10%;
+	z-index: 2;
+}

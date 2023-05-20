@@ -329,6 +329,7 @@ body{
     z-index: 1;
     right: 0%;
     animation: Weezing_movimento 22s infinite linear;
+    animation-play-state: paused;
 }
 
 
@@ -338,8 +339,8 @@ body{
     bottom: 20%;
     z-index: 1;
     right: 0%;
-    animation: arbok_movimento 35s infinite linear;
-
+    animation: arbok_movimento 5s infinite linear;
+    animation-play-state: paused;
 }
 
 @keyframes cherrim_movimento {
@@ -520,7 +521,7 @@ body{
 
 .ingrediente{
     position: absolute;
-    width: 3%;
+    width: 4%;
     bottom: 22%;
     left: 12%;
     z-index: 1;
@@ -530,13 +531,13 @@ body{
 
 @keyframes efeito_alimentos {
     0% {
-        width: 3%;
-    }
-    50% {
         width: 4%;
     }
+    50% {
+        width: 5%;
+    }
     100% {
-        width: 3%;
+        width: 4%;
     }
 }
 .sinalizador{
@@ -715,7 +716,7 @@ h6 {
     display: flex;
     justify-content: center;
     top: 5%;
-    left: 50%;
+    left: 55%;
 
 }
 .receitaBolo img{
@@ -730,7 +731,7 @@ h6 {
     position: absolute;
     font-size: 1vw; 
     top: 0%;
-    left: 53%;
+    left: 55%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(183, 205, 252);
 }
@@ -739,7 +740,7 @@ h6 {
     position: absolute;
     font-size: 1vw; 
     top: 0%;
-    left: 36%;
+    left: 30%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(183, 205, 252);
 }
@@ -749,7 +750,7 @@ h6 {
     display: flex;
     justify-content: center;
     top: 5%;
-    left: 35%;
+    left: 30%;
 
 }
 .receitaPizza img{
@@ -773,4 +774,12 @@ h6 {
 }
 .vidas img{
     width: 100%;
+}
+
+.fornoR{
+    position: absolute;
+    width: 10%;
+    left: 43%;
+    bottom: 85%;
+    z-index: 1;
 }

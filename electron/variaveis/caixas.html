@@ -4,6 +4,7 @@
     var lista = [];
 
 
+
     const itemSelecionado = (event) => {
         event.dataTransfer.setData("img", event.target.id);
 
@@ -51,18 +52,20 @@
             case 'inteiro':
                 if (tipoCaixa.includes("Numero")) {
 
-                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    if (tipoCaixa.includes("Numero = 10")) {
+                        exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
+                    }
 
                     limparUnowns(i);
                     document.getElementById('alterar').innerHTML = 'Nome = "Ana"';
                     palavra = '';
 
                     if (tipoCaixa.includes("Numero = 222")) {
-                        window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                        window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                        exibeNotificação("sucess", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+
                     }
                 } else {
-                    window.alert("Resposta Errada");
+                    exibeNotificação("error", "Tente Novamente!", "");
                     palavra = '';
                     limparUnowns(i);
                 }
@@ -70,13 +73,12 @@
 
             case 'palavra':
                 if (tipoCaixa.includes("Nome")) {
-                    conteudo = "Acertouuu";
-                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
                     document.getElementById('alterar').innerHTML = 'Valor = 2,22';
                     palavra = '';
                     limparUnowns(i);
                 } else {
-                    window.alert("Resposta Errada");
+                    exibeNotificação("error", "Tente Novamente!", "");
                     palavra = '';
                     limparUnowns(i);
 
@@ -85,13 +87,12 @@
 
             case 'booleano':
                 if (tipoCaixa.includes("Dado")) {
-                    conteudo = "Acertouuu";
-                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
                     document.getElementById('alterar').innerHTML = 'Letra = "A"';
                     palavra = '';
                     limparUnowns(i);
                 } else {
-                    window.alert("Resposta Errada");
+                    exibeNotificação("error", "Tente Novamente!", "");
                     palavra = '';
                     limparUnowns(i);
 
@@ -100,13 +101,12 @@
 
             case 'letra':
                 if (tipoCaixa.includes("Letra")) {
-                    conteudo = "Acertouuu";
-                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
                     document.getElementById('alterar').innerHTML = 'Numero = 222';
                     palavra = '';
                     limparUnowns(i);
                 } else {
-                    window.alert("Resposta Errada");
+                    exibeNotificação("error", "Tente Novamente!", "");
                     palavra = '';
                     limparUnowns(i);
 
@@ -115,13 +115,12 @@
 
             case 'decimal':
                 if (tipoCaixa.includes("Valor")) {
-                    conteudo = "Acertouuu";
-                    window.alert("Resposta Certa. Vamos ao proximo!");
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
                     document.getElementById('alterar').innerHTML = 'Dado = Falso';
                     palavra = '';
                     limparUnowns(i);
                 } else {
-                    window.alert("Resposta Errada");
+                    exibeNotificação("error", "Tente Novamente!", "");
                     palavra = '';
                     limparUnowns(i);
 
@@ -129,7 +128,7 @@
                 break;
 
             default:
-                window.alert("Resposta Errada");
+            exibeNotificação("error", "Tente Novamente!", "");
                 palavra = '';
                 limparUnowns(i);
         }
@@ -154,17 +153,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
     <title>Caixas</title>
     <link rel="stylesheet" href="../css/unowmsFase.css">
 
 </head>
 
 <body>
-    <audio src="../sounds/variaveis.mp3" loop autoplay></audio>
+    <audio id="audio" src="../sounds/variaveis.mp3" loop autoplay></audio>
 
 
     <div style="padding: 1vw;" class="titulo">
-        <h3>Informe o tipo de variavel dentro da caixa</h3>
+        <h3>Informe o tipo de variavel dentro da caixa arrastando os Unowm</h3>
     </div>
 
     <div class="caixaConteudo">

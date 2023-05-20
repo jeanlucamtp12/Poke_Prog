@@ -9,7 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/falinksAtribuicao.css">
 
 
@@ -18,7 +19,7 @@
 
 <body>
 
-    <audio src="../sounds/arrays.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/arrays.mp3" loop autoplay ></audio>
 
     <div class="campo">
 
@@ -140,7 +141,7 @@
 
 
                     }).done(function (result) {
-                       window.alert("Nomes Atribuidos!");
+                        
 
                        var form = document.querySelectorAll("#primeiro, #segundo, #terceiro, #quarto, #quinto");
 
@@ -166,9 +167,8 @@
 
 
                         setTimeout(function () {
-                            window.alert("Perfeito! Vamos retornar a cidade!");
-                            window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
-                        }, 2000);
+                            exibeNotificação("success", "Nomes Atribuidos! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                        }, 3000);
 
                     });
                 });

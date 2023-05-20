@@ -6,8 +6,8 @@ body{
 }
 
 .geladeira {
-    width: 30%;
-    height: 95%;
+    width: 30vw;
+    height: 95vh;
     background-color: #ffffff;
     border: 1.5vw solid ;
     border-radius: 10px;
@@ -601,3 +601,8 @@ body{
    font-size: 1vw;
    color: white;
 }
+
+.swal2-container .swal2-popup {
+   background-color: #490000; /* Defina a cor de fundo desejada */
+   background-color: #490000;
+ }

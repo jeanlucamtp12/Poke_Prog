@@ -9,6 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
 
     <link rel="stylesheet" href="../css/decisao.css">
 
@@ -157,6 +159,8 @@
 
 
 
+
+
     var vidaJ = 5;
     var vidaI1 = 4;
     var vidaI2 = 4;
@@ -239,12 +243,12 @@
 
             switch (i) {
                 case 1:
-                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
-                        realizaAtaque("veneno");
-                        adversario = adversario + 1;
-                    } else {
+                    if (resposta == "nao" || resposta == "falso" || resposta == "n") {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
                     }
                     document.getElementById('nome').innerHTML = 'Se 26, 24, 20, 18, 14,... Qual é o próximo?';
                     i = i + 1;
@@ -272,12 +276,12 @@
                     i = i + 1;
                     break;
                 case 4:
-                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
-                        realizaAtaque("veneno");
-                        adversario = adversario + 1;
-                    } else {
+                    if (resposta == "nao" || resposta == "falso" || resposta == "n") {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
+                    } else {
+                        realizaAtaque("veneno");
+                        adversario = adversario + 1;
                     }
                     document.getElementById('nome').innerHTML = 'Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. <br>Quantas balas ele tem?';
                     i = i + 1;
@@ -379,7 +383,7 @@
                     i = i + 1;
                     break;
                 case 13:
-                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
                     } else {
@@ -390,7 +394,7 @@
                     i = i + 1;
                     break;
                 case 14:
-                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
                     } else {
@@ -401,7 +405,7 @@
                     i = i + 1;
                     break;
                 case 15:
-                    if (resposta == "sim" || resposta == "verdade" || resposta == "v") {
+                    if (resposta == "sim" || resposta == "verdade" || resposta == "s") {
                         realizaAtaque("grama");
                         jogador = jogador + 1;
                     } else {
@@ -473,17 +477,16 @@
 
             }
 
+            console.log(jogador);
 
             if (jogador == 13) {
                 setInterval(function () {
-                    window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                    exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                 }, 2000);
 
             } else if (adversario == 5) {
                 setInterval(function () {
-                    window.alert("Você perdeu. Tente novamente!");
-                    window.location.href = "http://localhost/jogo/electron/decisao/decisao.html";
+                    exibeNotificação("error", "Você perdeu! Clique para tentar novamente!", "http://localhost/jogo/electron/decisao/decisao.html");
                 }, 2000);
             }
 
