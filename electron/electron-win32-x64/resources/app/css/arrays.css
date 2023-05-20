@@ -1,10 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-
+body{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
-.jogobonus {
+.tela {
     overflow: hidden;
     position:relative;
     height: 100vh;
@@ -12,43 +12,32 @@
     /*border: 1px solid #111;
      margin-left: auto;
     margin-right:  auto; */
-    background: linear-gradient( #141515, #a3c6d4) no-repeat;
+    background: linear-gradient( #1c375a, #86b5c7) no-repeat;
 
 }
 
 
 #falink{
     animation: raio_movimento 5s infinite linear;
-    width:4.5%;   
+    width:4.5vw;   
     position: absolute;
     top:48%;
-    /* 220, 500, 700, 1000 */
  
 }
 
-#piso{
-    position: absolute;
-    width: 10%;   
-    top: 6.5%;
-    color: white;
- 
-   
-}
+
 
 #raio3{
-    animation: raio_movimento 3s infinite linear;
-     
+    animation: raio_movimento 5s infinite linear;
     width:4.2%;   
     position: absolute;
     bottom:30%;
-    left:20.8%;
- 
-   
+    left: 18%;
 }
 
 
 #raio2{
-    animation:  raio_movimento 4s infinite linear;
+    animation:  raio_movimento 7s infinite linear;
       
     width:4.2%;   
     position: absolute;
@@ -58,48 +47,70 @@
  
 
 #raio4{
-    animation:  raio_movimento 5s infinite linear;
+    animation:  raio_movimento 4.5s infinite linear;
      
     width:4.2%;   
     position: absolute;
     bottom:48%;
-    left:48%;
+    left:44%;
  
    
 }
 #raio5{
-    animation:  raio_movimento 7s infinite linear;
+    animation:  raio_movimento 6s infinite linear;
      
     width:4.2%;   
     position: absolute;
     bottom:48%;
-    left:64%;
- 
-   
+    left:56%;
+
 }
 
-#nuvens{
-    /*animation: pedra_movimento 9s infinite linear; */
+#raio6{
+    animation:  raio_movimento 8s infinite linear;
      
+    width:4.2%;   
+    position: absolute;
+    bottom:48%;
+    left:70%;
+
+}
+#nuvens{
+    animation: nuvem_movimento1 40s infinite linear; 
     width:20%;   
     position: absolute;
-    top:0%;
-    left:40%;
- 
-   
+    bottom: 30vw;
+    left:50%;
+  
 }
 
 
+#nuvens2{
+    animation: nuvem_movimento2 30s infinite linear; 
+    width:20%;   
+    position: absolute;
+    bottom:35vw;
+    left:25%;
+
+}
+
+#nuvens3{
+    animation: nuvem_movimento3 30s infinite linear; 
+    width:20%;   
+    position: absolute;
+    bottom: 38vw;
+    left:0%;
+}
 
 
 
 .poke{
 
     position: absolute;
-    bottom: -3%;
-    left: 10%;
- 
-    width:6%;
+    bottom: 0%;
+    left: 40vw;
+    z-index: 1;
+    width:6vw;
   
 }
 
@@ -109,20 +120,54 @@
     
 }
 
-#grama{
-   
 
-    
-    position: absolute;
-    bottom: -420px;
-    width:100%;
+
+
+
+
+@keyframes nuvem_movimento1{
+    0%{
+        left: 50%;
+
+    }
+    50%{
+        left: 60%;
+    }
+    100%{
+        left: 50%;
+
+    }
 }
 
 
+@keyframes nuvem_movimento2{
+    0%{
+        left: 20%;
+
+    }
+    50%{
+        left: 30%;
+    }
+    100%{
+        left: 20%;
+
+    }
+}
 
 
+@keyframes nuvem_movimento3{
+    0%{
+        left: 0%;
 
+    }
+    50%{
+        left: 10%;
+    }
+    100%{
+        left: 0%;
 
+    }
+}
 
 @keyframes raio_movimento{
     0%{
@@ -150,11 +195,26 @@
     }
 }
 
-#pikachu{
-    width: 10.3%;
+
+
+#galho1{
+    position: absolute;
+    width: 22vw;   
+    height: 15vw;
+    bottom: 25vw;
+    transform: scaleX(-1);
+    left: -3%;
 }
 
 
+
+#galho2{
+    position: absolute;
+    width: 22vw;   
+    height: 15vw;
+    bottom: 25vw;
+    right: -3%;
+}
 
 
 
@@ -164,12 +224,12 @@
    
         padding: 1%;
         display: flex;
-        position:relative;
-        top:0%;
+        position: absolute;
+        bottom: 38vw;
         flex-direction: row-reverse;
-
         left: 70%;
         width: 30%;
+        height: 5vw;
     
 
 
@@ -177,23 +237,165 @@
 .vetor h5{
    
     position: absolute;
-    top: -40%;
+    bottom: 4vw;
     color:white;
-    
-
-
+    font-size: 1.5vw;
 }
 
 .filhoVetor{
     color:white;
-    width:8%;
-    border: 2px solid #ccc;
-
+    width: 8vw;
+    border: 0.1vw solid #ccc;
+    font-size: 1vw;
 }
 
 .filhoVetor img{
     color:white;
-    width:100%;
+    width: 3vw;
 
+}
+
+.togepi, .cleffa, .pichu, .igglybuff{
+    position: absolute;
+    width: 12vw;
+}
+
+.togepi{
+    bottom: 27vw;
+    left: 90%;
+}
+.cleffa{
+    left: -3%;
+    transform: scaleX(-1);
+    bottom: 27vw;
+}
+.pichu{
+    bottom: 27vw;
+    transform: scaleX(-1);
+    left: 5%;
+}
+.igglybuff{
+    left: 83%;
+    bottom: 27vw;
+}
+
+.vida{
+    position: absolute;
+    width: 2%;
+    animation: vida_movimento 7s infinite linear;
+    opacity: 0;
+    --vida-bottom: 30vw;
+    bottom: var(--vida-bottom);
+}
+
+.vida2{
+    position: absolute;
+    width: 2%;
+    animation: vida2_movimento 6s infinite linear;
+    opacity: 0;
+    --vida2-bottom: 30vw;
+    bottom: var(--vida2-bottom);
+}
+
+@keyframes vida2_movimento{
+    0%{
+        bottom: var(--vida2-bottom);
+        right: 8%;
+    }
+    0.5%{
+        bottom: var(--vida2-bottom);
+        right: 8%;
+        opacity: 1;
+    }
+    20%{
+        bottom: calc(var(--vida2-bottom) + 30%);
+        right: 30%;
+    }
+    30%{
+        bottom: calc(var(--vida2-bottom) + 10%);
+        right: 35%;
+    }
+    50%{
+        bottom: calc(var(--vida2-bottom) - 10%);
+        right: 30%;
+    }80%{
+        bottom: calc(var(--vida2-bottom) - 40%);
+        right: 35%;
+    }
+    100%{
+        bottom: calc(var(--vida2-bottom) - 70%);
+        right: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes vida_movimento{
+    0%{
+        bottom: var(--vida-bottom);
+        left: 10%;
+    }
+    0.5%{
+        opacity: 1;
+        bottom: var(--vida-bottom);
+        left: 10%;
+    }
+    20%{
+        bottom: calc(var(--vida-bottom) + 30%);
+        left: 30%;
+    }
+    30%{
+        bottom: calc(var(--vida-bottom) + 10%);
+        left: 35%;
+    }
+    50%{
+        bottom: calc(var(--vida-bottom) - 10%);
+        left: 30%;
+    }80%{
+        bottom: calc(var(--vida-bottom) - 40%);
+        left: 35%;
+    }
+    100%{
+        bottom: calc(var(--vida-bottom) - 70%);
+        left: 30%;
+        opacity: 1;
+    }
+}
+
+
+
+
+.mato{
+    position: absolute;
+}
+
+#arvore1, #arvore2{
+    position: absolute;
+    width: 30vw;
+}
+#arvore1{
+    left: -8%;
+    bottom: 0%;
+    transform: scaleX(-1);
+}
+#arvore2{
+    right: -8%;
+    bottom: 0%;
+}
+
+
+.life{
+    position: absolute;
+    bottom: 37vw;
+    left: 92%;
+    height: 2vw;
+    width: 150vw;
+    display: flex;
+    flex-direction: row;
+}
+.vidas1, .vidas2, .vidas3{
+    width: 1.5%;
+}
+.life img{
+    width: 100%;
 }
 

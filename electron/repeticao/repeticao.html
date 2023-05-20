@@ -176,6 +176,7 @@
         var locEntrada = localizacaoEntradaP.left + window.pageXOffset;
 
 
+        var popUp ="false";
         var viga = "desativada";
         var i = 0;
         let tronco = 0;
@@ -197,7 +198,10 @@
                 vidas = vidas - 1;
             } else if (vidas == 0) {
                 document.querySelector(".timburr").remove();
-                exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", "http://localhost/jogo/electron/repeticao/repeticao.html");
+                if(popUp == "false"){
+                    exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", "http://localhost/jogo/electron/repeticao/repeticao.html");
+                    popUp = "true";
+                }
             }
         }
 
@@ -230,7 +234,9 @@
             if (tronco == 17 && vidas >= 0) {
                 
                 setInterval(function () {
-                    exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                    window.alert("Você concluiu a fase! Clique para voltar ao Mapa da Cidade")
+                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                    //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                 }, 100);
             }
 

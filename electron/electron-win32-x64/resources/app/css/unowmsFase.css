@@ -1,200 +1,138 @@
 body {
-    margin: 0%;
-    padding: 0%;
     background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
-
     overflow: hidden;  
-
 }
 
+.teclado{
+    border: solid 2px white; 
+    width: 100%;
+    height: 37vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -5vw;
+}
 
-h1 {
+.letras:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.letras{
+    margin: auto;
+}
+
+.letras h6{
+    font-size: 1vw;
     text-align: center;
+    margin-bottom: 0;
+}
 
-    font-size: 2vw;
+h3 {
+    text-align: center;
+    font-size: 1.5vw;
 }
 
 
 
-
-
-#e {
-
-    width: 5%;
-    position: absolute;
-    right: 0;
-    bottom: 20%;
-
+.caixaConteudo {
+    text-align: center;
 }
 
-
-
-#h {
-
-    width: 5%;
-    position: absolute;
-    bottom: 70%;
-    right: 0;
-
-
+.caixaConteudo img{
+    width: 10vw;
 }
 
-
-
-#j {
-
-    width: 5%;
-    position: absolute;
-    bottom: 0%;
+.caixaConteudo h2 {
+    font-size: 1.2vw;
+    margin-top: -6vw;
 }
 
+.tela {
+    padding: 1vw;
+    display: flex;
+    flex-direction: row; 
+}
 
-
-
-
-
-
-
-
-
-
-
+.caixaResposta {
+    border: 2px solid white;
+    width: 45vw;
+    height: 8vw;
+    margin-top: 5vw;
+    margin-left: 1vw;
+}
 
 
 
 
 #botaoResposta {
-    position: absolute;
+    height: 2vw;
+    width: 5vw;
+    font-size: 1vw;
+    margin-left: 50%;
+    margin-top: 1vw;
+    border-radius: 1vw;
 
-    bottom: -50%;
-    left: 45%;
-
-    z-index: 1;
-
-    height: 40%;
-    width: 10%;
-    font-size: 1vw;;
-
+    color: #000000;
+    background-color: #61cddd;
 }
 
+#botaoResposta:hover {
+    transform: scale(1);
+}
+#botaoDeletar {
+    height: 2vw;
+    width: 5vw;
+    font-size: 1vw;
+    margin-left: 50%;
+    margin-top: 1vw;
+    border-radius: 1vw;
 
-
-
-
-.caixaTeclado {
-    position: relative;
-    width: 13%;
-    height: 122%;
-    top: 20%;
-    left: 3%;
-    display: inline-grid;
-
-
-
+    color: #000000;
+    background-color: #61cddd;
 }
 
-
-.caixaTeclado h6 {
-
-    text-align: center;
-    font-size: 1.2vw;
-}
-
-
-/*---------*/
-.circles {
-    cursor: pointer;
-}
-
-.tamanhoTela {
-    padding: 2%;
-}
-
-.teclado {
-
-    top: 20%;
-    width: 40%;
-    position: absolute;
-
-    border: 2px solid #ccc;
-
-
-}
-
-.caixaConteudo {
-
-    position: absolute;
-    width: 10%;
-    height: 20%;
-    left: 45%;
-    top: 10%;
-
-}
-
-.caixaConteudo img{
-
-    position: absolute;
-    width: 100%;
-    bottom: 0%;
-
-}
-
-.caixaConteudo h2 {
-
-    position: absolute;
-    bottom: 40%;
-    right: 20%;
-    font-size: 1.2vw;
-    z-index: +1;
-}
-
-
-.caixaResposta {
-
-    border: 2px solid white;
-    width: 40%;
-    height: 10%;
-    position: absolute;
-    left: 44%;
-    top: 30%;
-
+#botaoDeletar:hover {
+    transform: scale(1);
 }
 
 .filhoCaixaS{
-
-    width: 70px;
+    width: 2.8vw;
     display: inline-block;
-    height: 70%;
+    height: 5vw;
     flex-wrap: wrap;
 }
 
+.filhoCaixaS img{
+    width: 4.5vw;
+}
 
+
+
+.inicial {
+    margin-left: 2vw;
+    width: 30vw;
+}
 .inicial h2{
-    position: absolute;
-    left: 85%;
-    top: 10%;
-    width: 10%;
-    font-size: 1vw;
+    font-size: 1vw;   
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 2;
+    color: rgb(0, 0, 0);
+    border: solid 2px white;
+    border-radius: 5%;
+    background-color: white;
 }
 .inicial img {
+    width: 5vw;
+}
+
+
+
+#slot1 img, #slot2 img, #slot3 img, #slot4 img, #slot5 img, #slot6 img, #slot7 img, #slot8 img, #slot9 img, #slot10 img, #slot11 img, #slot12 img{
+    width: 500%;
+}
+
+#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib{
     position: absolute;
-    width: 5%;
-    right: 15%;
-    top: 15%;
-}
-#texto {
-    position: absolute;
-    font-size: 1vw;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    right: 16%;
-    top: 12%;
-}
-h2{
-    font-size: 1vw;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    right: 16%;
-}
-.caixas {
-    margin-left: 0%;
+    width: 3vw;
 }

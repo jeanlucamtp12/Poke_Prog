@@ -11,6 +11,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="../sweetalert/sweetalert.js"></script>
         <script src="../telaInicial/dialogos.js"></script>
+        
 
     <link rel="stylesheet" href="../css/decisao.css">
 
@@ -165,6 +166,7 @@
     var vidaI1 = 4;
     var vidaI2 = 4;
     var vidaI4 = 5;
+    var popUp = "false";
 
 
 
@@ -176,7 +178,7 @@
         img.src = '../img/decisao/mato.png';
         img.classList.add('mato');
         img.id = 'mato' + i;
-        img.style.bottom = "-1%";
+        img.style.bottom = "0%";
         img.style.width = "4%";
         img.style.left = j + "%";
 
@@ -477,16 +479,22 @@
 
             }
 
-            console.log(jogador);
+            
 
             if (jogador == 13) {
                 setInterval(function () {
-                    exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                    if(popUp == "false"){
+                        exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                        popUp = "true";
+                    }
                 }, 2000);
 
             } else if (adversario == 5) {
                 setInterval(function () {
-                    exibeNotificação("error", "Você perdeu! Clique para tentar novamente!", "http://localhost/jogo/electron/decisao/decisao.html");
+                    if(popUp == "false"){
+                        exibeNotificação("error", "Você perdeu! Clique para tentar novamente!", "http://localhost/jogo/electron/decisao/decisao.html");
+                        popUp = "true";
+                    }
                 }, 2000);
             }
 

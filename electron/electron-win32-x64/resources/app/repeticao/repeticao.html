@@ -1,7 +1,3 @@
-<?php
-$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +5,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/repeticao.css">
 
 
@@ -18,18 +16,12 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 </head>
 
 <body>
+    <audio id="audio" src="../sounds/repeticao.mp3" loop autoplay ></audio>
+
+    
+
 
     <div class="repeticao">
-
-
-
-
-
-
-
-
-
-       
 
 
 
@@ -37,54 +29,82 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         <img class="estrela2" src="../img/repeticao/estrela.png">
 
 
-        <img class="nuvens" src="../img/decisao/clouds.png" style.right="-220px" style.display="none">
-        <img class="nuvens" src="../img/decisao/clouds.png" style.right="-20px" style.display="none">
+        <img class="nuvens" src="../img/decisao/clouds.png">
+        <img class="nuvens2" src="../img/decisao/clouds.png">
+        <img class="nuvens3" src="../img/decisao/clouds.png">
 
-
-        <img class="chuva" src="../img/repeticao/chuva.gif">
-
-
-        
 
         <img class="arvore" src="../img/repeticao/arvore.png" style.right="-220px">
 
- 
-        <script>/*
-        <img class="combee" src="../img/repeticao/combee.png">
-        <img class="combee2" src="../img/repeticao/combee.png">
-        <img class="combee3" src="../img/repeticao/combee.png">
-        <img class="combee4" src="../img/repeticao/combee.png">
-        <img class="combeeShiny" src="../img/repeticao/combee-shiny.png"> 
-        <img class="vespiquen" src="../img/repeticao/vespiquen.png"> 
-        <img class="comeia" src="../img/repeticao/comeia.png">*/ </script>
 
+        <div>
+            <img class="timburr" id="timburr" src="../img/repeticao/timburr_verso.png">
+            <img style="display: none;" class="viga" id="viga" src="../img/repeticao/viga.png">
 
-        
-        <img class="timburr" id="timburr"  src="../img/repeticao/timburr_verso.png">
-
-        <div class="caixa">
-            <img class="madeira" id="madeira" src="../img/repeticao/tronco.png" style="display:none">
+            <div class="infoViga" id="infoViga" style="display: none;">
+                <h5 class="textoViga"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; não conseguem perfurar seu bastão,
+                    use-o com para se proteger.</h5>>
+                <img class="mantykeTexto" id="mantykeTexto" src="../img/repeticao/mantyke.png">
+                <img class="exclamacaoAzul" id="exclamacaoAzul" src="../img/repeticao/exclamacaoAzul.png">
+                <img class="espaco" id="espaco" src="../img/repeticao/space.png">
+            </div>
         </div>
 
-        <img class="troncos" src="../img/repeticao/troncos.png">
+
+        <div class="peixes">
+            <img class="goldeen" id="goldeen" src="../img/repeticao/goldeen.png">
+            <img class="seaking" id="seaking" src="../img/repeticao/seaking.png">
+            <img class="qwilfish" id="qwilfish" src="../img/repeticao/qwilfish.png">
+            <img class="basculin" id="basculin" src="../img/repeticao/basculin.png">
+        </div>
+
+
+
+        <div class="textoVidaExtra" style="display: none;">
+            <h5>Uma forte ventania arrastou um &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; até aqui, pegue-o para ganhar
+                um</h5>
+            <img class="drifloonTexto" src="../img/repeticao/drifloon.png">
+            <img class="vidaTexto" src="../img/repeticao/vida.png"></img>
+            <img class="exclamacao" src="../img/repeticao/exclamacao.png"></img>
+        </div>
+        <div class="vidaExtra" style="display: none;">
+            <img id="vidaExtra" src="../img/repeticao/vida.png"></img>
+            <img class="drifloon" id="drifloon" src="../img/repeticao/drifloon.png">
+        </div>
+
+        <div class="mantineMantyke" style="display: none;">
+            <img class="mantine" id="mantine" src="../img/repeticao/mantine.png">
+            <img class="mantyke1" id="mantyke1" src="../img/repeticao/mantyke.png">
+            <img class="mantyke2" id="mantyke2" src="../img/repeticao/mantyke.png">
+        </div>
+
+        <div class="tentaLlery" style="display: none;">
+            <img class="tentacruel" id="tentacruel" src="../img/repeticao/tentacruel.png">
+            <img class="octillery" id="octillery" src="../img/repeticao/octillery.png">
+        </div>
+        <img style="display: none;" class="sinalizacao" id="sinalizacao" src="../img/repeticao/exclamacao.png">
+
 
 
 
         <div class="obstaculo">
             <div class="rio"></div>
             <img class="entrada" id="entrada" src="../img/repeticao/obstaculo.png">
-            
+            <img class="saida" id="saida" src="../img/repeticao/obstaculo.png">
+
         </div>
-     
 
 
-        <img class="staryu" src="../img/repeticao/staryu.png">
-        <img class="goldeen" src="../img/repeticao/seadra.png">
 
-        <img class="bolhas" src="../img/repeticao/agua.png">
+        <div>
+            <img style="display: none;" class="starmie" src="../img/repeticao/starmie.png">
 
-        <img class="tijolo" src="../img/repeticao/tijolo.png">
+        </div>
 
+        <img style="display: none;" class="bolhas" src="../img/repeticao/agua.png">
+
+
+        <img class="tronco_queda" id="tronco_queda" src="../img/repeticao/tronco_queda.png">
 
 
 
@@ -93,63 +113,50 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
         <div class="ponte">
-            <div class="filhoPonte" img src="" id="9" ></div>
-            <div class="filhoPonte" img src="" id="8"></div>
-            <div class="filhoPonte" img src="" id="7"></div>
-            <div class="filhoPonte" img src="" id="6"></div>
-            <div class="filhoPonte" img src="" id="5"></div>
-            <div class="filhoPonte" img src="" id="4"></div>
-            <div class="filhoPonte" img src="" id="3"></div>
-            <div class="filhoPonte" img src="" id="2"></div>
-            <div class="filhoPonte" img src="" id="1"></div>
-            <div class="filhoPonte" img src="" id="0" width="20px"></div>
+            <div class="filhoPonte" id="id16"></div>
+
+            <div class="filhoPonte" id="id15"></div>
+            <div class="filhoPonte" id="id14"></div>
+            <div class="filhoPonte" id="id13"></div>
+            <div class="filhoPonte" id="id12"></div>
+            <div class="filhoPonte" id="id11"></div>
+            <div class="filhoPonte" id="id10"></div>
+
+            <div class="filhoPonte" id="id9"></div>
+            <div class="filhoPonte" id="id8"></div>
+            <div class="filhoPonte" id="id7"></div>
+            <div class="filhoPonte" id="id6"></div>
+            <div class="filhoPonte" id="id5"></div>
+            <div class="filhoPonte" id="id4"></div>
+            <div class="filhoPonte" id="id3"></div>
+            <div class="filhoPonte" id="id2"></div>
+            <div class="filhoPonte" id="id1"></div>
+            <div class="filhoPonte" id="id0"></div>
 
         </div>
 
 
 
-    <script>
-        /*
-
-        <div class="for">
-
-            <div class="caixas">
-               <h6 >Iniciou com:</h6>
-
-                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center" style="width: 30px;"> </img>
-                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center" style="width: 30px;"> </img>
-
-                <h6 id="inicializacao">0</h6>
+        <div class="vidas">
+            <div class="vidas1">
+                <img src="../img/repeticao/vida.png"></img>
             </div>
-            <div class="caixas">
-                <h6 >Chuva para quando obtiver:</h6>
-                <img  src="../img/repeticao/favoCompleto.png" width="50px" align-items="center" align-items="center"> </img>
-                <h6 id="favoCompleto">0 de 5 Favos</h6>
-
-
+            <div class="vidas2">
+                <img src="../img/repeticao/vida.png"></img>
             </div>
-            <div class="caixas">
-                <h6 >Coletados</h6>
-                <img src="../img/repeticao/favo.png" width="50px" align-items="center" align-items="center"> </img>
-                <h6 id="incremento">0</h6>
-
-
+            <div class="vidas3">
+                <img src="../img/repeticao/vida.png"></img>
             </div>
-
-
-
         </div>
-     */
-    </script>
+
+
+        <div class="indicador">
+            <img id="imgIndicador" src="../img/repeticao/tronco_queda.png" style="display:none"></img>
+            <img id="xIndicador" src="../img/repeticao/x.png" style="display:block"></img>
+        </div>
 
 
     </div>
-    
-
-
-
-
-
 
 
 
@@ -157,39 +164,134 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
     <script>
-        let i = 0;
+
+
+        var elementoPonte = document.getElementById("id" + 4);
+        var loc = elementoPonte.getBoundingClientRect();
+
+        var localizacao = loc.left + window.pageXOffset;
+
+        var entradaP = document.getElementById("entrada");                //pega localizacao madeira entrada da ponte 
+        var localizacaoEntradaP = entradaP.getBoundingClientRect();
+        var locEntrada = localizacaoEntradaP.left + window.pageXOffset;
+
+
+        var popUp ="false";
+        var viga = "desativada";
+        var i = 0;
         let tronco = 0;
+        vidas = 3
+        var vidinhas = document.querySelectorAll("#vida1, #vida2, #vida3");
+        var textoVida = 0;
 
 
-       // var combeeShiny = document.querySelector('.combeeShiny');
+        const alteraVida = () => {
+
+            if (vidas == 3) {
+                document.querySelector(".vidas3").remove();
+                vidas = vidas - 1;
+            } else if (vidas == 2) {
+                document.querySelector(".vidas2").remove();
+                vidas = vidas - 1;
+            } else if (vidas == 1) {
+                document.querySelector(".vidas1").remove();
+                vidas = vidas - 1;
+            } else if (vidas == 0) {
+                document.querySelector(".timburr").remove();
+                if(popUp == "false"){
+                    exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", "http://localhost/jogo/electron/repeticao/repeticao.html");
+                    popUp = "true";
+                }
+            }
+        }
+
+
+
+        for (var j = 0; j < 5; j++) {
+            document.getElementById("id" + tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
+
+            tronco = tronco + 1;
+        }
+
+
+        // var combeeShiny = document.querySelector('.combeeShiny');
         var troncos = document.querySelector('.troncos');
         var timburr = document.querySelector('.timburr');
-        var staryu = document.querySelector('.staryu');
+        var starmie = document.querySelector('.starmie');
         var bolhas = document.querySelector('.bolhas');
         var entrada = document.querySelector('.entrada');
-        var tijolo = document.querySelector('.tijolo');
         entrada.getBoundingClientRect();
-        tijolo.getBoundingClientRect();
 
 
 
 
-      
+
 
 
         const loop = setInterval(() => {
+
+
+            if (tronco == 17 && vidas >= 0) {
+                
+                setInterval(function () {
+                    window.alert("Você concluiu a fase! Clique para voltar ao Mapa da Cidade")
+                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                    //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                }, 100);
+            }
+
+            //defini qual inimigo aparecera em determinado momento da fase
+
+            if (tronco == 6) {
+                document.querySelector(".starmie").style.display = "block";
+                document.querySelector(".basculin").style.animationPlayState = "running";
+            } if (tronco == 7) {
+                document.querySelector(".goldeen").style.animationPlayState = "running";
+            }
+            if (tronco == 9) {
+                document.querySelector(".qwilfish").style.animationPlayState = "running";
+                document.querySelector(".seaking").style.animationPlayState = "running";
+            }
+            if (tronco == 10) {
+                document.querySelector(".mantineMantyke").style.display = "block";
+                document.querySelector(".infoViga").style.display = "block";
+                document.querySelector(".starmie").style.display = "none";
+            }
+            if (tronco == 11) {
+                document.querySelector(".infoViga").style.display = "none";
+            }
+            if (tronco == 14) {
+                document.querySelector(".goldeen").style.display = "none";
+                document.querySelector(".qwilfish").style.display = "none";
+                document.querySelector(".basculin").style.display = "none";
+                document.querySelector(".seaking").style.display = "none";
+                document.querySelector(".mantineMantyke").style.display = "none";
+                document.querySelector(".tentaLlery").style.display = "block";
+                document.querySelector(".sinalizacao").style.display = "block";
+            }
+            if (tronco == 15) {
+                document.querySelector(".sinalizacao").style.display = "none";
+            }
+
+
+            if (vidas <= 2) {
+                if (textoVida == 0) {
+                    document.querySelector(".textoVidaExtra").style.display = "block";
+                    textoVida = textoVida + 1;
+                }
+                document.querySelector(".vidaExtra").style.display = "block";
+            }
 
             //posicaoCombeeShiny = window.getComputedStyle(combeeShiny).bottom;
             posicaoTimburrPulo = window.getComputedStyle(timburr).bottom;
             const removerPxTimburr = posicaoTimburrPulo.replace('px', '');
             valorConvertidoTimburr = parseInt(removerPxTimburr);
 
-            posicaoTijolo = window.getComputedStyle(tijolo).bottom;
 
 
             posicaoTimburr = timburr.offsetLeft;
 
-            posicaoStaryu = staryu.offsetLeft;
+            posicaostarmie = starmie.offsetLeft;
             posicaoBolhas = bolhas.offsetLeft;
 
 
@@ -205,89 +307,156 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-            
+
             bolhas.getBoundingClientRect();
             timburr.getBoundingClientRect();
-            staryu.getBoundingClientRect();
+            starmie.getBoundingClientRect();
+
+
+            mantykes = document.querySelectorAll("div.mantineMantyke #mantyke1, div.mantineMantyke #mantyke2");
+            tentaLlery = document.querySelectorAll("div.tentaLlery #octillery, div.tentaLlery #tentacruel");
 
 
 
+            drifloon = document.getElementById("drifloon");
+            troncos_queda = document.getElementById("tronco_queda");
 
 
-        
-            if ((timburr.x + 40 < bolhas.x + bolhas.width && timburr.x - 40 + timburr.width > bolhas.x) && (timburr.y + 40 < bolhas.y + bolhas.height && timburr.y -40 + timburr.height > bolhas.y)) {
-                window.alert("bateuuu na agua");
-                personagem.style.bottom = "-1%";
-                personagem.style.left = "0%";                        
+            for (var i = 0; i < tentaLlery.length; i++) {
+
+                if ((timburr.x + 30 < tentaLlery[i].x + tentaLlery[i].width && timburr.x - 30 + timburr.width > tentaLlery[i].x) && (timburr.y + 30 < tentaLlery[i].y + tentaLlery[i].height && timburr.y - 30 + timburr.height > tentaLlery[i].y)) {
+
+                    document.querySelector("#octillery").style.animation = 'none';
+                    document.querySelector("#tentacruel").style.animation = 'none';
+                    setInterval(function () {
+                        document.querySelector("#octillery").style.animation = "";
+                        document.querySelector("#tentacruel").style.animation = "";
+                    }, 10);
+
+                    alteraVida();
+
+
+                }
+
             }
-            
 
-            if ((timburr.x + 40 < staryu.x + staryu.width && timburr.x - 40 + timburr.width > staryu.x) && (timburr.y + 40 < staryu.y + staryu.height && timburr.y -40 + timburr.height > staryu.y)) {
-                window.alert("bateuuu na estrela");
-                personagem.style.bottom = "-1%";
-                personagem.style.left = "0%";                        
+
+
+
+            if ((timburr.x + 30 < troncos_queda.x + troncos_queda.width && timburr.x - 30 + timburr.width > troncos_queda.x) && (timburr.y + 30 < troncos_queda.y + troncos_queda.height && timburr.y - 30 + timburr.height > troncos_queda.y)) {
+
+                troncos_queda.style.animation = 'none';
+
+                setInterval(function () {
+                    troncos_queda.style.animation = "";
+                }, 10);
+
+                document.getElementById("imgIndicador").style.display = "block";
+                document.getElementById("xIndicador").style.display = "none";
+
+
+
+
             }
-            
 
 
 
+            if ((timburr.x + 30 < drifloon.x + drifloon.width && timburr.x - 30 + timburr.width > drifloon.x) && (timburr.y + 30 < drifloon.y + drifloon.height && timburr.y - 30 + timburr.height > drifloon.y)) {
+
+
+                document.querySelector(".vidaExtra").style.display = "none";
+                document.querySelector(".textoVidaExtra").style.display = "none";
+
+
+                if (vidas < 3) {
+                    var img = document.createElement('img');
+                    img.src = '../img/repeticao/vida.png';
+                    img.classList.add('vidas' + (vidas + 1));
+
+                    img.style.width = "1.5%";
+
+                    var pai = document.querySelector(".vidas");
+                    pai.appendChild(img);
+
+                    vidas = vidas + 1;
+                }
 
 
 
-            if ((timburr.x + 40 < tijolo.x + tijolo.width && timburr.x - 40 + timburr.width > tijolo.x) && (timburr.y + 40 < tijolo.y + tijolo.height && timburr.y -40 + timburr.height > tijolo.y)) {
-                
-                personagem.style.bottom = "30%";                        
-                document.documentElement.style.setProperty('--my-start-bottom', '30%');
-                document.documentElement.style.setProperty('--my-end-bottom', '30%');  
-                            
             }
-            else if (!(timburr.x + 40 < tijolo.x + tijolo.width && timburr.x - 40 + timburr.width > tijolo.x)) {
-                    personagem.style.bottom = "-1%";                        
-                    document.documentElement.style.setProperty('--my-start-bottom', '-1%');
-                    document.documentElement.style.setProperty('--my-end-bottom', '-1%');   
-            }  
 
 
 
+            for (var i = 0; i < mantykes.length; i++) {
+
+                if ((timburr.x + 30 < mantykes[i].x + mantykes[i].width && timburr.x - 30 + timburr.width > mantykes[i].x) && (timburr.y + 30 < mantykes[i].y + mantykes[i].height && timburr.y - 30 + timburr.height > mantykes[i].y) && (viga != "ativada")) {
+
+                    document.querySelector(".mantyke1").style.animation = 'none';
+                    document.querySelector(".mantyke2").style.animation = 'none';
+                    setInterval(function () {
+                        document.querySelector("#mantyke1").style.animation = "";
+                        document.querySelector("#mantyke2").style.animation = "";
+                    }, 10);
+                    alteraVida();
+
+
+                } else if ((timburr.x + 30 < mantykes[i].x + mantykes[i].width && timburr.x - 30 + timburr.width > mantykes[i].x) && (timburr.y + 30 < mantykes[i].y + mantykes[i].height && timburr.y - 30 + timburr.height > mantykes[i].y) && (viga == "ativada")) {
+                    document.querySelector(".mantyke1").style.animation = 'none';
+                    document.querySelector(".mantyke2").style.animation = 'none';
+                    setInterval(function () {
+                        document.querySelector("#mantyke1").style.animation = "";
+                        document.querySelector("#mantyke2").style.animation = "";
+                    }, 10);
+                }
+
+            }
 
 
 
+            peixes = document.querySelectorAll("div.peixes #goldeen, div.peixes #seaking, div.peixes #basculin, div.peixes #qwilfish");
+
+            for (var i = 0; i < peixes.length; i++) {
+
+                if ((timburr.x + 30 < peixes[i].x + peixes[i].width && timburr.x - 30 + timburr.width > peixes[i].x) && (timburr.y + 30 < peixes[i].y + peixes[i].height && timburr.y - 30 + timburr.height > peixes[i].y)) {
+
+                    document.getElementById("xIndicador").style.display = "block";
+                    document.getElementById("imgIndicador").style.display = "none";
+                    personagem.style.left = "0%";
+
+                    //alteraVida();
 
 
-        
-       
-
-         
-
-        
-
-            posicaoTroncos = troncos.offsetLeft;
-
-
-            var estadoMadeira = document.getElementById("madeira").style.display;
-
-
-            
-
-            if((timburr.x + 40 < entrada.x + entrada.width && timburr.x - 40 + timburr.width > entrada.x)&& estadoMadeira == "block"){
-                document.getElementById(tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
-                document.getElementById("madeira").style.display = "none";
-
-                tronco = tronco + 1;
-
-                if(tronco == 10){
-                    window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                    window.location.href = "../telaInicial/city.html";
                 }
             }
 
-            troncos.getBoundingClientRect();
 
-
-            if ((timburr.x + 40 < troncos.x + troncos.width && timburr.x - 40 + timburr.width > troncos.x) && (timburr.y + 40 < troncos.y + troncos.height && timburr.y -40 + timburr.height > troncos.y)) {
-                document.getElementById("madeira").style.display = "block";                       
+            if ((timburr.x + 40 < starmie.x + starmie.width && timburr.x - 40 + timburr.width > starmie.x) && (timburr.y + 40 < starmie.y + starmie.height && timburr.y - 40 + timburr.height > starmie.y)) {
+                personagem.style.left = "0%";
+                document.querySelector(".starmie").style.animation = 'none';
+                setInterval(function () {
+                    document.querySelector(".starmie").style.animation = "";
+                }, 50);
+                alteraVida();
             }
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -311,55 +480,69 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-        
 
 
 
-                const moverDireita = () => {
+
+        const moverDireita = () => {
+
+            if (((timburr.offsetLeft + 30) < localizacao)) {
+
+                document.getElementById("timburr").src = "../img/repeticao/timburr_verso.png";
+
+                const el = document.querySelector('.timburr');
+                const value = getComputedStyle(el).getPropertyValue('left');
 
 
-                    if (!(timburr.x + 40 < entrada.x + entrada.width && timburr.x - 40 + timburr.width > entrada.x)) {
-           
+                var remove_string = value.replace('px', '');
+                var valorNum = parseInt(remove_string);
+
+                var numPx = valorNum + 10;
+                var soma = parseInt(value) + 10;
+
+                personagem.style.left = soma + "px";
+
+            } else if (document.getElementById("imgIndicador").style.display == "block") {
+                document.getElementById("id" + tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
+
+                elementoPonte = document.getElementById("id" + tronco);
+                loc = elementoPonte.getBoundingClientRect();
+                localizacao = loc.left + window.pageXOffset;
+                tronco = tronco + 1;
+                document.getElementById("imgIndicador").style.display = "none";
+                document.getElementById("xIndicador").style.display = "block";
+            }
 
 
 
-                    document.getElementById("timburr").src = "../img/repeticao/timburr_verso.png";
 
-                    const el = document.querySelector('.timburr');
-                    const value = getComputedStyle(el).getPropertyValue('left');
+        }
 
-
-                    var remove_string = value.replace('px', '');
-                    var valorNum = parseInt(remove_string);
-
-                    var numPx = valorNum + 10;
-                    var soma = parseInt(value) + 10;
-
-                    personagem.style.left = soma + "px";
-
-                }  
-
-                }
-
-                const moverEsquerda = () => {
-
-                    document.getElementById("timburr").src = "../img/repeticao/timburr.png";
-                    
-                    const el = document.querySelector('.timburr');
-                    const value = getComputedStyle(el).getPropertyValue('left');
+        const moverEsquerda = () => {
 
 
-                    var remove_string = value.replace('px', '');
-                    var valorNum = parseInt(remove_string);
+            if (((timburr.offsetLeft + 30) > locEntrada)) {
 
-                    var numPx = valorNum + 10;
-                    var soma = parseInt(value) - 10;
 
-                    personagem.style.left = soma + "px";
+                document.getElementById("timburr").src = "../img/repeticao/timburr.png";
 
-                }
+                const el = document.querySelector('.timburr');
+                const value = getComputedStyle(el).getPropertyValue('left');
 
-                   
+
+                var remove_string = value.replace('px', '');
+                var valorNum = parseInt(remove_string);
+
+                var numPx = valorNum + 10;
+                var soma = parseInt(value) - 10;
+
+                personagem.style.left = soma + "px";
+
+            }
+
+        }
+
+
 
 
         const personagem = document.querySelector('.timburr');
@@ -369,23 +552,48 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             var tecla = event.keyCode;
 
 
-              if (tecla == 39) {
-                  moverDireita();
+            if (tecla == 39) {
+                moverDireita();
 
-              } else if (tecla == 37) {
-                  moverEsquerda();
-              } else {
+            } else if (tecla == 37 ) {
+                moverEsquerda();
+            } else if (tecla == 32) {
+                document.getElementById("viga").style.display = "block";
+                document.getElementById("viga").style.left = (timburr.offsetLeft + 200) + "px";
+                viga = "ativada";
 
-            personagem.classList.add('movimento');
-            setTimeout(function() {
-                personagem.classList.remove('movimento');
-            }, 1000);
+            } else {
+
+                personagem.classList.add('movimento');
+                setTimeout(function () {
+                    personagem.classList.remove('movimento');
+                }, 1000);
+            }
+
+
+
         }
-
-
-
-          }
         document.addEventListener('keydown', mover);
+
+
+
+
+        document.addEventListener("keyup", function (event) {
+            if (event.key == " ") {
+                document.getElementById("viga").style.display = "none";
+                viga = "desativada";
+            }
+
+        });
+
+
+
+
+
+
+
+
+
     </script>
 
 

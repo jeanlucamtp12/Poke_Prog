@@ -122,7 +122,7 @@ body {
 .nuvens {
     position: absolute;
     width: 28vw;
-    bottom: 45%;
+    bottom: 23vw;
     left: 2%;
 }
 
@@ -130,7 +130,7 @@ body {
 .nuvens2 {
     position: absolute;
     width: 25vw;
-    bottom: 80%;
+    bottom: 35vw;
     right: 1%;
 }
 
@@ -206,7 +206,7 @@ body {
 .form{
     position: absolute;
     left: 5%;
-    bottom: 80%;
+    bottom: 35vw;
 }
 .form input{
     width: 25vw;
@@ -242,14 +242,14 @@ button:hover{
 .lampent{
     position: absolute;
     right: 5%;
-    bottom: 2%;
+    bottom: 1vw;
     width: 10vw;
 }
 
 #ajuda{
     position: absolute;
     right: 10%;
-    bottom: 20%;
+    bottom: 10vw;
     font-size: 1vw;
     font-weight: bold;
 }
@@ -258,7 +258,7 @@ button:hover{
     position: absolute;
     width: 50vw;
     right: 10%;
-    bottom: 20%;
+    bottom: 10vw;
     z-index: 1;
     border-radius: 5%;
 }

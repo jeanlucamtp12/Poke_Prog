@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/funcoes2.css">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="tela">
+
+        <div class="chao1">
+            <img class="bloco1" src="../img/recursividade/chao.png">
+        </div>
+
+        <div class="frutasColetadas">
+            <h3 id="qtdFrutas">0</h3>
+            <img src="../img/funcoes/fase2/berry2.png">
+        </div>
+
+
+        <div class="segundos">
+            <h1 id="segundos">10</h1>
+        </div>
+
+        <div class="parede1">
+            <img class="parede1" id="parede1" src="../img/funcoes/fase2/parede.png">
+        </div>
+
+        <div class="parede2">
+            <img class="parede2" id="parede2" src="../img/funcoes/fase2/parede.png">
+        </div>
+
+        <div class="parede3">
+            <img class="parede3" id="parede3" src="../img/funcoes/fase2/parede.png">
+        </div>
+
+
+        <div>
+
+            <div class="barraVida" id="barraVida">HP</div>
+            <div>
+
+                <div class="barraVidaReal"></div>
+            </div>
+
+
+            <div class="ventilador">
+                <img class="ventilador" id="ventilador" src="../img/funcoes/ventilador.png">
+            </div>
+
+            <div class="vento">
+                <img class="vento" id="vento" style="display: none" src="../img/funcoes/fase2/vento.gif">
+            </div>
+
+            <div class="vento2">
+                <img class="vento2" id="vento2" style="display: none" src="../img/funcoes/fase2/vento.gif">
+            </div>
+
+            <div class="nuvem">
+                <img class="nuvem" id="nuvem" src="../img/funcoes/fase2/nuvens.png">
+            </div>
+
+
+
+            <div class="nuvem2">
+                <img class="nuvem2" id="nuvem2" src="../img/funcoes/fase2/nuvens.png">
+            </div>
+
+
+            <div class="raio_solar">
+                <img class="raio_solar" id="raio_solar" style="display: none" src="../img/funcoes/fase2/raio_solar.gif">
+            </div>
+
+            <div class="skiploom_estatico">
+                <img class="skiploom_estatico" id="skiploom_estatico" style="display: none"
+                    src="../img/funcoes/fase2/skiploom_estatico.png">
+            </div>
+            <div class="skiploom_estatico2">
+                <img class="skiploom_estatico2" id="skiploom_estatico2" style="display: none"
+                    src="../img/funcoes/fase2/skiploom_estatico.png">
+            </div>
+            <div class="skiploom_estatico3">
+                <img class="skiploom_estatico3" id="skiploom_estatico3" style="display: none"
+                    src="../img/funcoes/fase2/skiploom_estatico.png">
+            </div>
+
+            <div class="skiploom_ataque">
+                <img class="skiploom_ataque" id="skiploom_ataque" style="display: none" src="../img/funcoes/fase2/skiploom_raio.gif">
+            </div>
+
+            <div class="skiploom">
+                <img class="skiploom" id="skiploom" src="../img/funcoes/fase2/skiploom.png">
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+                var vetorAliens = [];
+                var controle = 1;
+                var aliensMortos = [];
+                var direcaoAnterior = "";
+                var frutasPegas = 1;
+                var vetorFrutas = [];
+                var colisao = 0;
+
+
+                const resetaFrutas = () => {
+                    for (var i = 0; i < vetorFrutas.length; i++) {
+                        vetorFrutas[i].remove();
+                    }
+                }
+
+                const criarFrutas = () => {
+
+
+                    for (var i = 0; i < 5; i++) {
+
+
+                        const posicoesFrutas = ["10", , "20", "40", "60", "70", "75", "85"];
+                        const posicaoVetor = Math.floor(Math.random() * posicoesFrutas.length);
+                        const posicaoVetor2 = Math.floor(Math.random() * posicoesFrutas.length);
+
+                        var img = document.createElement('img');
+                        img.src = '../img/funcoes/fase2/berry.png';
+                        img.classList.add('fruta');
+                        img.id = 'fruta' + i;
+                        img.style.bottom = posicoesFrutas[posicaoVetor] + "%";
+                        img.style.width = "2%";
+                        img.style.left = posicoesFrutas[posicaoVetor2] + "%";
+
+                        var body = document.querySelector("body");
+                        body.appendChild(img)
+                        vetorFrutas.push(img);
+
+                    }
+                }
+
+                const loop = setInterval(() => {
+
+                    var skiploom = document.getElementById("skiploom");
+                    skiploom.getBoundingClientRect();
+
+                    var fruta = document.querySelectorAll(".fruta");
+
+                    for (var i = 0; i < fruta.length; i++) {
+
+                        if ((skiploom.x + 30 < fruta[i].x + fruta[i].width && skiploom.x - 30 + skiploom.width > fruta[i].x) && (skiploom.y + 30 < fruta[i].y + fruta[i].height && skiploom.y - 30 + skiploom.height > fruta[i].y)) {
+
+                            document.getElementById(fruta[i].id).style.display = 'none';
+                            document.getElementById("qtdFrutas").innerHTML = frutasPegas;
+                            frutasPegas = frutasPegas + 1;
+                            console.log(fruta[i].id);
+                        }
+                    }
+
+
+                    if (frutasPegas == 10) {
+                        document.getElementById("skiploom_ataque").style.display = "block";
+                        setTimeout(function () {
+                            document.getElementById("skiploom_ataque").style.display = "none";
+                            document.getElementById("raio_solar").style.display = "block";
+                        }, 2000);
+
+                        var vida = document.getElementById("barraVida");
+                        vida = vida.offsetWidth;
+                        document.getElementById("barraVida").style.width = vida - 1 + "px"
+
+
+
+                        document.getElementById("raio_solar").style.display = "none";
+                        frutasPegas = 0;
+
+                    }
+
+                    if (document.getElementById("segundos").childNodes[0].nodeValue == 0 && colisao != 0) {
+                        window.alert("Perdeu as frutas gay");
+
+                    }
+
+
+
+                }, 1000);
+
+
+
+                const controlarVento = () => {
+
+                    document.getElementById("nuvem").style.animationPlayState = "running";
+                    document.getElementById("nuvem2").style.animationPlayState = "running";
+
+                    document.getElementById("vento").style.display = "block";
+                    document.getElementById("vento2").style.display = "block";
+
+                    document.getElementById("vento").style.animationPlayState = "running";
+                    document.getElementById("vento2").style.animationPlayState = "running";
+
+                    setTimeout(function () {
+                        document.getElementById("nuvem").style.animationPlayState = "paused";
+                        document.getElementById("nuvem2").style.animationPlayState = "paused";
+
+                        document.getElementById("vento").style.display = "none";
+                        document.getElementById("vento2").style.display = "none";
+
+                        document.getElementById("vento").style.animationPlayState = "paused";
+                        document.getElementById("vento2").style.animationPlayState = "paused";
+
+                        document.getElementById("segundos").childNodes[0].nodeValue = 10;
+
+                        document.getElementById("segundos").style.color = "white";
+                        resetaFrutas();
+                        criarFrutas();
+                        cronometro();
+
+                    }, 5000);
+
+                }
+
+                const cronometro = () => {
+
+
+                    var cont = setInterval(function () {
+                        document.getElementById("segundos").innerHTML = document.getElementById("segundos").childNodes[0].nodeValue - 1;
+
+                        if (document.getElementById("segundos").childNodes[0].nodeValue == 0) {
+                            clearInterval(cont);
+                            controlarVento();
+                            document.getElementById("skiploom_estatico").style.display = "none";
+                            document.getElementById("skiploom_estatico2").style.display = "none";
+                            document.getElementById("skiploom_estatico3").style.display = "none";
+                        }
+
+                        if (document.getElementById("segundos").childNodes[0].nodeValue == 5) {
+                            document.getElementById("segundos").style.color = "red";
+                            document.getElementById("skiploom_estatico").style.display = "block";
+                            document.getElementById("skiploom_estatico2").style.display = "block";
+                            document.getElementById("skiploom_estatico3").style.display = "block";
+
+                        }
+
+                    }, 1000);
+
+
+                }
+
+                cronometro();
+
+
+                const verificaColisao = (direcao) => {
+
+
+                    var skiploom = document.getElementById("skiploom");
+                    skiploom.getBoundingClientRect();
+
+                    var paredes = document.querySelectorAll("div.parede1 #parede1, div.parede2 #parede2, div.parede3 #parede3");
+
+                    for (var i = 0; i < paredes.length; i++) {
+                        if (direcao == "dir") {
+                            if ((skiploom.x + 30 < paredes[i].x + paredes[i].width && skiploom.x - 30 + skiploom.width > paredes[i].x) && (skiploom.y + 30 < paredes[i].y + paredes[i].height && skiploom.y - 30 + skiploom.height > paredes[i].y)) {
+                                direcaoAnterior = "dir";
+                                colisao = 0;
+                                return 0;
+                            }
+                        } else if (direcao == "esq") {
+                            if ((skiploom.x + 30 < paredes[i].x + paredes[i].width && skiploom.x - 30 + skiploom.width > paredes[i].x) && (skiploom.y + 30 < paredes[i].y + paredes[i].height && skiploom.y - 30 + skiploom.height > paredes[i].y) && (direcaoAnterior != "esq")) {
+                                direcaoAnterior = "esq";
+                                return 0;
+                            }
+
+                        } else if (direcao == "cima") {
+                            if ((skiploom.x + 30 < paredes[i].x + paredes[i].width && skiploom.x - 30 + skiploom.width > paredes[i].x) && (skiploom.y + 30 < paredes[i].y + paredes[i].height && skiploom.y - 30 + skiploom.height > paredes[i].y) && (direcaoAnterior != "cima")) {
+                                direcaoAnterior = "cima";
+                                colisao = 0;
+                                return 0;
+                            }
+
+                        } else if (direcao == "baixo") {
+                            if ((skiploom.x + 30 < paredes[i].x + paredes[i].width && skiploom.x - 30 + skiploom.width > paredes[i].x) && (skiploom.y + 30 < paredes[i].y + paredes[i].height && skiploom.y - 30 + skiploom.height > paredes[i].y) && (direcaoAnterior != "baixo")) {
+                                direcaoAnterior = "baixo";
+                                colisao = 0;
+                                return 0;
+                            }
+
+                        } else {
+                            colisao = 1;
+                            return 1;
+                        }
+
+                    }
+               
+
+                };
+
+                const moverDireita = () => {
+
+
+
+                    document.getElementById("skiploom").src = "../img/funcoes/fase2/skiploom.png";
+
+                    const el = document.querySelector('.skiploom');
+                    const value = getComputedStyle(el).getPropertyValue('left');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) + 10;
+
+                    el.style.left = soma + "px";
+
+
+
+                }
+
+
+
+                const moverEsquerda = () => {
+
+                    document.getElementById("skiploom").src = "../img/funcoes/fase2/skiploom_costa.png";
+
+                    const el = document.querySelector('.skiploom');
+                    const value = getComputedStyle(el).getPropertyValue('left');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) - 10;
+
+                    el.style.left = soma + "px";
+
+                }
+
+
+
+
+                const moverCima = () => {
+
+
+                    const el = document.querySelector('#skiploom');
+                    const value = getComputedStyle(el).getPropertyValue('bottom');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) + 10;
+
+                    skiploom.style.bottom = soma + "px";
+
+                }
+
+                const moverBaixo = () => {
+
+                    const el = document.querySelector('#skiploom');
+
+                    const value = getComputedStyle(el).getPropertyValue('bottom');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) - 10;
+
+                    skiploom.style.bottom = soma + "px";
+
+                }
+
+
+
+                const mover = () => {
+
+                    var tecla = event.keyCode;
+
+
+                    if (tecla == 39 && verificaColisao("dir") != 0) {
+                        moverDireita();
+                    } else if (tecla == 37 && verificaColisao("esq") != 0) {
+                        moverEsquerda();
+                    } else if (tecla == 38 && verificaColisao("cima") != 0) {
+                        moverCima();
+                    } else if (tecla == 40 && verificaColisao("baixo") != 0) {
+                        moverBaixo();
+                    }
+
+
+                }
+
+
+                document.addEventListener('keydown', mover);
+                criarFrutas();
+
+
+            </script>
+</body>
+
+</html>

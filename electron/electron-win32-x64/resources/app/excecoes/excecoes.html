@@ -1,7 +1,3 @@
-<?php
-$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +10,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/excecoes.css">
 
 
@@ -23,10 +20,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 <body>
 
+    <audio id="audio" src="../sounds/excecao.mp3" loop autoplay ></audio>
+
+
     <div class="cidade">
-
-
-
 
 
         <div>
@@ -141,10 +138,6 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
 
 
-        <div>
-            <img class="pokebola" src="../img/excecoes/pokeball.gif"></img>
-
-        </div>
 
         <div>
             <img id="gasly1" class="gasly gasly1" src="../img/excecoes/fantasmas/gasly.png"
@@ -157,14 +150,6 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 style=" display: block; opacity:1;" onclick="resposta('0')"></img>
 
         </div>
-
-
-
-
-
-
-
-
         <div>
             <img id="banette1" class="banette banette1" src="../img/excecoes/fantasmas/banette.png"
                 style="display: none; " onclick="resposta('0')"></img>
@@ -212,13 +197,56 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 style="display: none; " onclick="resposta('0')"></img>
             <img id="shedinja4" class="shedinja shedinja4" src="../img/excecoes/fantasmas/shedinja.png"
                 style=" display: none; " onclick="resposta('0')"></img>
+        </div>
+
+
+
+
+
+
+        <div>
+            <img id="umbreom1" class="umbreom umbreom1" src="../img/excecoes/fantasmas/umbreom.png"
+                style="display: none;" onclick="resposta('0')"></img>
+            <img id="umbreom2" class="umbreom umbreom2" src="../img/excecoes/fantasmas/umbreon_shiny.png"
+                style="display: none; " onclick="resposta('1')"></img>
+            <img id="umbreom3" class="umbreom umbreom3" src="../img/excecoes/fantasmas/umbreom.png"
+                style="display: none; " onclick="resposta('0')"></img>
+            <img id="umbreom4" class="umbreom umbreom4" src="../img/excecoes/fantasmas/umbreom.png"
+                style=" display: none; " onclick="resposta('0')"></img>
+
+        </div>
+
+        <div>
+            <img id="abra1" class="abra abra1" src="../img/excecoes/fantasmas/abra.png"
+                style="display: none;" onclick="resposta('0')"></img>
+            <img id="abra2" class="abra abra2" src="../img/excecoes/fantasmas/abra_shiny.png"
+                style="display: none; " onclick="resposta('1')"></img>
+            <img id="abra3" class="abra abra3" src="../img/excecoes/fantasmas/abra.png"
+                style="display: none; " onclick="resposta('0')"></img>
+            <img id="abra4" class="abra abra4" src="../img/excecoes/fantasmas/abra.png"
+                style=" display: none; " onclick="resposta('0')"></img>
+
+        </div>
+
+
+        <div>
+            <img id="froslass1" class="froslass froslass1" src="../img/excecoes/fantasmas/froslass.png"
+                style="display: none;" onclick="resposta('0')"></img>
+            <img id="froslass2" class="froslass froslass2" src="../img/excecoes/fantasmas/froslass_shiny.png"
+                style="display: none; " onclick="resposta('1')"></img>
+            <img id="froslass3" class="froslass froslass3" src="../img/excecoes/fantasmas/froslass.png"
+                style="display: none; " onclick="resposta('0')"></img>
+            <img id="froslass4" class="froslass froslass4" src="../img/excecoes/fantasmas/froslass.png"
+                style=" display: none; " onclick="resposta('0')"></img>
 
         </div>
 
 
         <div class="caixaObjetivos">
 
-            <h6>Capturados:</h6>
+            <div class="texto">
+                <h6>Capturados:</h6>
+            </div>
             <div class="caixas">
                 <img id="1" class="imagem" src="../img/excecoes/fantasmas/gasly_shiny.png"></img>
             </div>
@@ -233,6 +261,15 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             </div>
             <div class="caixas">
                 <img id="5" class="imagem" src="../img/excecoes/fantasmas/shedinja_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img id="6" class="imagem" src="../img/excecoes/fantasmas/umbreon_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img id="7" class="imagem" style="width: 3.5vw;" src="../img/excecoes/fantasmas/abra_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img id="8" class="imagem" style="width: 2vw;" src="../img/excecoes/fantasmas/froslass_shiny.png"></img>
             </div>
 
 
@@ -278,6 +315,10 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         const frillish = document.querySelectorAll(".frillish");
         const shedinja = document.querySelectorAll(".shedinja");
         const litwick = document.querySelectorAll(".litwick");
+        const froslass = document.querySelectorAll(".froslass");
+        const umbreom = document.querySelectorAll(".umbreom");
+        const abra = document.querySelectorAll(".abra");
+
 
         const resposta = (shiny) => {
 
@@ -302,6 +343,15 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 case 5:
                     contabilizaSelecao(shiny, 5, shedinja);
                     break;
+                case 6:
+                    contabilizaSelecao(shiny, 6, umbreom);
+                    break;
+                case 7:
+                    contabilizaSelecao(shiny, 7, abra);
+                    break;
+                case 8:
+                    contabilizaSelecao(shiny, 8, froslass);
+                    break;
 
                 default:
                     break;
@@ -315,19 +365,17 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             for (var i = 0; i < pokemon.length; i++) {
 
                 if (shiny == 1) {
-                    window.alert("Parabens capturou o certo");
                     document.getElementById(cont).src = "../img/excecoes/pokeball.gif";
                     cont = cont + 1;
                     limpaTela(pokemon);
                     exibeTela(cont);
 
-                    if (pokemon == shedinja) {
-                        window.alert("Você concluiu a fase! Voltando ao Mapa da Cidade");
-                        window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                    if (pokemon == froslass) {
+                        exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                     }
                     return;
                 } else {
-                    window.alert("Falhoou");
+                    exibeNotificação("error", "Você capturou o errado! Tente novamente", "");
                     return;
 
                 }
@@ -362,6 +410,15 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 if (cont == 5) {
                     shedinja[i].style.display = "block";
                 }
+                if (cont == 6) {
+                    umbreom[i].style.display = "block";
+                }
+                if (cont == 7) {
+                    abra[i].style.display = "block";
+                }
+                if (cont == 8) {
+                    froslass[i].style.display = "block";
+                }
 
 
             }
@@ -381,23 +438,17 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 const gasly3 = document.getElementById("gasly3");
                 const gasly4 = document.getElementById("gasly4");
 
-
                 if (gasly1.style.opacity == "1") {
                     gasly1.style.opacity = "0.2";
                     gasly2.style.opacity = "1";
                     gasly3.style.opacity = "0.2";
                     gasly4.style.opacity = "1";
 
-
-
                 } else {
                     gasly1.style.opacity = "1";
                     gasly2.style.opacity = "0.2";
                     gasly3.style.opacity = "1";
                     gasly4.style.opacity = "0.2";
-
-
-
 
 
                 }

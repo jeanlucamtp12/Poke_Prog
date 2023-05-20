@@ -84,7 +84,7 @@ body {
 .cacturne{
     position: absolute;
     width: 14vw;
-    bottom: -4%;
+    bottom: 0%;
     right: -2%;
     z-index: 1;
 }
@@ -565,7 +565,6 @@ body {
 }
 .caixas img {
     width: 3vw;
-    height: 6vh;
 }
 
 .caixaObjetivos h6{

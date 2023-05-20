@@ -9,7 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/falinksAtribuicao.css">
 
 
@@ -18,32 +19,55 @@
 
 <body>
 
+    <audio id="audio" src="../sounds/arrays.mp3" loop autoplay ></audio>
+
     <div class="campo">
 
-
-
-
-
-
-
-
-        <h1>Parabens! Você coletou as partes do Falinks. Agora atribua um nome a cada um deles.</h1>
-
-
-
+        <h1>Você coletou as partes do Falinks. Agora atribua um nome a cada um deles.</h1>
 
         <div class="vetor">
             <h5>Vetor de Falinks</h5><br>
             <div></div>
-            <div class="filhoVetor"> <img src="../img/arrays/falink.gif" id="1">5</div>
-            <div class="filhoVetor"> <img src="../img/arrays/falink.gif" id="2">4</div>
-            <div class="filhoVetor"><img src="../img/arrays/falink.gif" id="3">3</div>
-            <div class="filhoVetor"><img src="../img/arrays/falink.gif" id="4">2</div>
-            <div class="filhoVetor"> <img src="../img/arrays/falink.gif" id="5">1</div>
-
+            <div class="filhoVetor"> <img src="../img/arrays/falink.gif" id="1">4</div>
+            <div class="filhoVetor"> <img src="../img/arrays/falink.gif" id="2">3</div>
+            <div class="filhoVetor"><img src="../img/arrays/falink.gif" id="3">2</div>
+            <div class="filhoVetor"><img src="../img/arrays/falink.gif" id="4">1</div>
+            <div class="filhoVetor"> <img src="../img/arrays/falink.gif" id="5">0</div>
         </div>
 
-        <div class="nome" id="nome" style="">
+
+        <div>
+            <form id="form" method="GET">
+            <form>
+                <label for="fname"></label><br>
+                <input type="text" id="primeiro" placeholder="Falinks 0"><br>
+            </form>
+            <form>
+                <label for="fname"></label><br>
+                <input type="text" id="segundo" placeholder="Falinks 1"><br>
+            </form>
+
+            <form>
+                <label for="fname"></label><br>
+                <input type="text" id="terceiro" placeholder="Falinks 2"><br>
+            </form>
+
+            <form>
+                <label for="fname"></label><br>
+                <input type="text" placeholder="Falinks 3" id="quarto"><br>
+            </form>
+
+            <form>
+                <label for="fname"></label><br>
+                <input type="text" id="quinto" placeholder="Falinks 4"><br>
+            </form>
+
+            <button type="submit" id="botao" form="form">Atribuir</button>
+
+        </form>
+        </div>
+ 
+        <div class="nome" id="nome" style="display: none;" >
             <div class="nomes" id="nome1"></div>
             <div class="nomes" id="nome2"></div>
             <div class="nomes" id="nome3"></div>
@@ -53,38 +77,39 @@
         </div>
 
 
-        <form id="form" method="GET">
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="primeiro" placeholder="Falinks 1"><br>
-            </form>
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="segundo" placeholder="Falinks 2"><br>
-            </form>
 
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="terceiro" placeholder="Falinks 3"><br>
-            </form>
+        <img id="nuvens" src="../img/bonus/clouds.png">
+        <img id="nuvens2" src="../img/bonus/clouds.png">
+        <img id="nuvens3" src="../img/bonus/clouds.png">
 
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" placeholder="Falinks 4" id="quarto"><br>
-            </form>
-
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="quinto" placeholder="Falinks 5"><br>
-            </form>
-            <button type="submit" id="botao" form="form">Atribuir</button>
-
-        </form>
+        <img id="arvore1" src="../img/arrays/arvore1.png">
+        <img id="arvore2" src="../img/arrays/arvore1.png">
 
         <div>
 
 
             <script>
+
+
+
+                var k = 0;
+                for (var i = 1; k <= 100; i++) {
+
+
+                    var img = document.createElement('img');
+                    img.src = '../img/decisao/mato.png';
+                    img.classList.add('mato');
+                    img.id = 'mato' + i;
+                    img.style.bottom = "-4%";
+                    img.style.width = "4%";
+                    img.style.left = k + "%";
+
+                    var body = document.querySelector("body");
+                    k = k + 3.8;
+
+                    body.appendChild(img);
+
+                }
 
 
                 $('#form').submit(function (evento) { //utilização de ajax para realizar o envio do form sem atualizar a pagina 
@@ -116,7 +141,21 @@
 
 
                     }).done(function (result) {
-                        window.alert("Nomes Atribuidos!");
+                        
+
+                       var form = document.querySelectorAll("#primeiro, #segundo, #terceiro, #quarto, #quinto");
+
+                
+                       for (var i = 0; i < form.length ; i++){
+                        document.getElementById(form[i].id).style.display = "none";
+                       }
+
+
+
+
+
+
+                       
                         document.getElementById("nome").style.display = "block";
 
                         document.getElementById("nome1").innerHTML = "1:  " + primeiro;
@@ -125,24 +164,20 @@
                         document.getElementById("nome4").innerHTML = "4:  " + quarto;
                         document.getElementById("nome5").innerHTML = "5:  " + quinto;
 
+
+
                         setTimeout(function () {
-                            window.alert("Perfeito! Vamos retornar a cidade!");
-                            window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
-                        }, 2000);
-
-
-
-
-
-
+                            exibeNotificação("success", "Nomes Atribuidos! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                        }, 3000);
 
                     });
                 });
 
 
+
+
+
             </script>
-
-
 
 </body>
 

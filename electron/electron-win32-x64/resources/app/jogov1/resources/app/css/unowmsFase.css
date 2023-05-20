@@ -1,0 +1,200 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
+
+    overflow: hidden;  
+
+}
+
+
+h1 {
+    text-align: center;
+
+    font-size: 2vw;
+}
+
+
+
+
+
+#e {
+
+    width: 5%;
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+
+}
+
+
+
+#h {
+
+    width: 5%;
+    position: absolute;
+    bottom: 70%;
+    right: 0;
+
+
+}
+
+
+
+#j {
+
+    width: 5%;
+    position: absolute;
+    bottom: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#botaoResposta {
+    position: absolute;
+
+    bottom: -50%;
+    left: 45%;
+
+    z-index: 1;
+
+    height: 40%;
+    width: 10%;
+    font-size: 1vw;;
+
+}
+
+
+
+
+
+.caixaTeclado {
+    position: relative;
+    width: 13%;
+    height: 122%;
+    top: 20%;
+    left: 3%;
+    display: inline-grid;
+
+
+
+}
+
+
+.caixaTeclado h6 {
+
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+
+/*---------*/
+.circles {
+    cursor: pointer;
+}
+
+.tamanhoTela {
+    padding: 2%;
+}
+
+.teclado {
+
+    top: 20%;
+    width: 40%;
+    position: absolute;
+
+    border: 2px solid #ccc;
+
+
+}
+
+.caixaConteudo {
+
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    left: 45%;
+    top: 10%;
+
+}
+
+.caixaConteudo img{
+
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+
+}
+
+.caixaConteudo h2 {
+
+    position: absolute;
+    bottom: 40%;
+    right: 20%;
+    font-size: 1.2vw;
+    z-index: +1;
+}
+
+
+.caixaResposta {
+
+    border: 2px solid white;
+    width: 40%;
+    height: 10%;
+    position: absolute;
+    left: 44%;
+    top: 30%;
+
+}
+
+.filhoCaixaS{
+
+    width: 70px;
+    display: inline-block;
+    height: 70%;
+    flex-wrap: wrap;
+}
+
+
+.inicial h2{
+    position: absolute;
+    left: 85%;
+    top: 10%;
+    width: 10%;
+    font-size: 1vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.inicial img {
+    position: absolute;
+    width: 5%;
+    right: 15%;
+    top: 15%;
+}
+#texto {
+    position: absolute;
+    font-size: 1vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    right: 16%;
+    top: 12%;
+}
+h2{
+    font-size: 1vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    right: 16%;
+}
+.caixas {
+    margin-left: 0%;
+}

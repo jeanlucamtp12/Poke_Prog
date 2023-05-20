@@ -1,0 +1,297 @@
+body{
+    height: 100vh;
+    overflow: hidden;    
+    background: linear-gradient( #012e8f, #693e86) no-repeat;
+}
+
+
+.campo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.bloco1{
+    position: absolute;
+
+    width: 100%;
+    height: 5%;
+    bottom: 0%;
+    left: 0%;
+}
+
+
+.jumpluff{
+    position: absolute;
+
+    width: 28%;
+    bottom: 6%;
+    left: 0%;
+}
+
+
+.forno{
+    position: absolute;
+
+    width: 50%;
+    bottom: 39%;
+    right: -2%;
+    animation: forno_movimento 15s infinite linear;
+}
+
+
+.fogo{
+    position: absolute;
+
+    width: 18%;
+    bottom: 19%;
+
+    right: 0%;
+    animation: alimentos_movimento 5s infinite linear;
+}
+
+.panela{
+    position: absolute;
+
+    width: 18%;
+    bottom: 49%;
+    right: 0%;
+    animation: alimentos_movimento 4s infinite linear;
+}
+
+.carvao{
+    position: absolute;
+
+    width: 18%;
+    bottom: 79%;
+    right: 0%;
+    animation: alimentos_movimento 3s infinite linear;
+}
+
+@keyframes alimentos_movimento {
+
+    0%{
+        right: 0%;
+        transform: rotate(-5deg);
+    }
+    40%{
+        right: 40%;
+        transform: rotate(-10deg);
+
+    }
+    60%{
+        right: 60%;
+        transform: rotate(-50deg);
+
+    }
+    100%{
+        right: 100%;
+        transform: rotate(-0deg);
+    }
+    
+}
+
+@keyframes forno_movimento {
+
+    0%{
+        bottom: 0%;
+
+    }
+    25%{
+        bottom: 50%;
+
+    }
+    50%{
+        bottom: 60%;
+
+    }
+    75%{
+        bottom: 50%;
+
+    }
+    100%{
+        bottom: 0%;
+
+    }
+    
+}
+
+
+
+.barraVida {
+    position: absolute;
+    width: 80%;
+    height: 2.5%;
+
+    background-color: #40ba01;
+    top: 2%;
+    right: 10%;
+}
+
+.barraVidaReal {
+    position: absolute;
+    border: solid 2px white;
+
+    width: 80%;
+    height: 2.5%;
+    
+    top: 2%;
+    right: 10%;
+
+}
+
+
+
+
+
+.barraEspecialReal {
+    position: absolute;
+    border: solid 2px rgb(65, 0, 65);
+    background-color: rgb(205, 40, 255);
+    width: 15%;
+    height: 2.5%;
+    
+    top: 6%;
+    left: 10%;
+
+}
+
+.barraEspecial {
+    position: absolute;
+    width: 15%;
+    height: 2.5%;
+
+    background-color:rgb(255, 255, 255);
+    top: 6%;
+    left: 10%;
+    z-index: 1;
+}
+
+.barraEspecial_h3{
+    position: absolute;
+    font-size: 1.2vw;
+    top: 5.7%;
+    left: 16.5%;
+    color: rgb(0, 0, 0);
+    animation: A_movimento 0.4s infinite linear;
+    z-index: 1;
+}
+
+
+@keyframes A_movimento {
+
+    0% {
+        transform: scale(1.5);
+
+    }
+    50% {
+        transform: scale(0.8);
+
+    }
+    100% {
+        transform: scale(1.5);
+
+    }
+
+}
+
+
+.ataque{
+    position: absolute;
+    width: 15%;
+    bottom: 12%;
+    animation: jumpluff_ataque 1s infinite linear;
+    z-index: 1;
+}
+
+
+@keyframes jumpluff_ataque {
+
+    0% {
+        left: 6%;
+
+    }
+    50% {
+        left:  50%;
+
+    }
+    100% {
+        left:  100%;
+
+    }
+
+}
+
+.nuvem{
+    position: absolute;
+
+    width: 35%;
+    z-index: -1;
+    top: 5%;
+    right: 15%;
+  
+}
+
+
+.nuvem2{
+    position: absolute;
+
+    width: 40%;
+    top: 5%;
+    left: 15%;
+    z-index: -1;
+  
+}
+
+
+.raio_solar {
+    position: absolute;
+    height: 26%;
+    left: 6%;
+    z-index: -1;
+    animation: raio_solar 3s linear;
+    animation-play-state: paused;
+
+}
+
+
+
+@keyframes raio_solar {
+
+    0%{
+        width: 0%;
+    }
+    5%{
+        width: 50%;
+    }
+    11%{
+        width: 100%;
+    }
+    100%{
+        width: 100%;
+    }
+    
+}
+
+.vidas{
+    position: absolute;
+    color: white;
+    top: 5%;
+    left: 2%;
+    font-size: 1.2vw;
+   
+}
+.qtdVidas{
+    position: absolute;
+    color: white;
+    top: 11%;
+    left: 2%;
+    font-size: 1.2vw;
+}
+.vidaJogador{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+
+}

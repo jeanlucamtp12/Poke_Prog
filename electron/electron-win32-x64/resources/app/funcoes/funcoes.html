@@ -1,319 +1,363 @@
-<?php
-$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" id="diretorio" href="../css/funcoesHome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="../css/funcoes.css">
-
-
+    <script src="../telaInicial/dialogos.js"></script>
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="tela">
+    <audio src="../sounds/homeFuncoes.mp3" loop autoplay ></audio>
 
 
 
-        <div class="rotomNormal">
-            <h6>Escolha o Rotom que deseja criar</h6>
-            <img id="rotom" class="rotomNormal" src="../img/funcoes/rotom.png"></img>
+
+    <div id="telaTransparente"  style="display: none;"></div>
+
+    <div id="introducao" style="display: none;">
+        <img class="professor" src="../img/home/Erbie.png">
+        <div class="balao">
+            <h4 id="dialogo"></h4>
+            <button id="botao" onclick="exibirTexto()">Avançar</button>
+            <button id="botao2" onclick="iniciar()">Iniciar</button>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="campo">
+
+    
+
+        <div class="parede1">
+            <img class="parede1" src="../img/recursividade/chao.jpg">
         </div>
 
-        <div class="caixaRotom">
-
-            <img id="cortador" class="rotom" src="../img/funcoes/cortador.png" onclick="iniciarCriacao('cortador')"></img>
-            <img id="forno" class="rotom" src="../img/funcoes/forno.png" onclick="iniciarCriacao('forno')"></img>
-            <img id="lavadeira" class="rotom" src="../img/funcoes/lavadeira.png" onclick="iniciarCriacao('lavadeira')"></img>
-            <img id="ventilador" class="rotom" src="../img/funcoes/ventilador.png" onclick="iniciarCriacao('ventilador')"></img>
-            <img id="geladeira" class="rotom" src="../img/funcoes/geladeira.png" onclick="iniciarCriacao('geladeira')"></img>
-
-        </div><br></br>
-
-
-
-        <div class="caixaItens" id="caixaItens" draggable="true" style="display: none; ">
-            <h6>Itens de Entrada</h6>
-
-            <img id="servico-eletrico" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/servico-eletrico.png"></img>
-
-            <img id="agua1" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/agua1.png"></img>
-            <img id="frio2" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/frio2.png"></img>
-            <img id="forno1" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/forno1.png"></img>
+        <div class="chao1">
+            <img class="bloco1" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao2">
+            <img class="bloco2" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao3">
+            <img class="bloco3" src="../img/recursividade/chao.jpg">
+        </div>
 
 
-
-            <img id="lixo1" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo1.png"></img>
-            <img id="lixo2" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo2.png"></img>
-            <img id="lixo3" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo3.png"></img>
-
-
-            <img id="grama3" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/grama3.png"></img>
-            <img id="forno2" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/forno2.png"></img>
-            <img id="frio3" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/frio3.png"></img>
-
-
-            <img id="lixo4" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo4.png"></img>
-            <img id="lixo5" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo5.png"></img>
-            <img id="lixo6" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo6.png"></img>
-
-
-            <img id="vento1" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/vento1.png"></img>
-            <img id="agua2" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/agua2.png"></img>
-            <img id="frio1" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/frio1.png"></img>
-
-            <img id="lixo7" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo7.png"></img>
-
-           <br></br>
-  
-
-           
-           <img id="lixo8" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo8.png"></img>
-
-
-           <img id="grama1" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/grama1.png"></img>
-           <img id="vento3" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/vento3.png"></img>
-           <img id="forno3" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/forno3.png"></img>
+ 
+        <div>
+            <img class="geladeira" id="geladeira" src="../img/recursividade/geladeira.png">
+        </div>
         
-          
+        <div>
+            <img class="fogao" id="fogao" src="../img/recursividade/fogao.png">
+        </div>
 
-            <img id="lixo9" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo9.png"></img>
+        <div>
+            <img class="pia" id="pia" src="../img/recursividade/pia.png">
+        </div>
 
-            <img id="lixo10" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo10.png"></img>
-            <img id="lixo11" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo11.png"></img>
+        <div>
+            <img class="cadeiras" id="cadeiras" src="../img/recursividade/mesa2.png">
+        </div>
 
-            <img id="vento2" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/vento2.png"></img>
-            <img id="grama2" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/grama2.png"></img>
-            <img id="agua3" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/agua3.png"></img>
 
-            <img id="lixo12" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo12.png"></img>
-            <img id="lixo13" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo13.png"></img>
+        <div>
+            <img class="maquina" id="maquina" src="../img/recursividade/maquina.png">
+        </div>
+        <div>
+            <img class="tanque" id="tanque" src="../img/recursividade/tanque.png">
+        </div>
+        <div>
+            <img class="produtos" id="produtos" src="../img/recursividade/limpeza.png">
+        </div>
+        <div>
+            <img class="cesto" id="cesto" src="../img/recursividade/cesto.png">
+        </div>
 
-            <img id="lixo14" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo14.png"></img>
-            <img id="lixo15" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo15.png"></img>
-            <img id="lixo16" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo16.png"></img>
 
-            <img id="lixo17" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo17.png"></img>
+        <div>
+            <img class="arvore" id="arvore" src="../img/recursividade/arvore.png">
+        </div>
+        <div>
+            <img class="plantas" id="plantas" src="../img/recursividade/plantas.png">
+        </div>
 
-            <img id="lixo18" class="item" draggable="true" ondragstart="itemSelecionado(event)" src="../img/funcoes/itens/lixo18.png"></img>
 
-         
-           
-           
-           
-           
 
-        </div><br></br>
+
+        <div class="porta0">
+            <img class="porta0" src="../img/recursividade/porta.png">
+        </div>
+
   
-        <div class="caixaSelecionados" id="caixaSelecionados" style="display: none; ">
-            <div id="slot1" class="filhoCaixaS"></div>
-            <div id="slot2" class="filhoCaixaS"></div>
-            <div id="slot3" class="filhoCaixaS"></div>
-            <div id="slot4" class="filhoCaixaS"></div>
-        </div> <br></br>
+        <div>
+            <img class="lampada1" id="lampada1" src="../img/recursividade/lampada.png">
+        </div>
 
-        <div class="botao">
+   
+        <div>
+            <img class="lampada3" id="lampada3" src="../img/recursividade/lampada.png">
+        </div>
+
+        <div>
+            <img class="lampada4" id="lampada3" src="../img/recursividade/lampada.png">
+        </div>
+
+        <div>
+            <div class="quadro">
+              <img src="../img/recursividade/cerulean.webp" >
+            </div>
+          </div>
+
+
+
+
+          <div class="wall" style="opacity: 0.1;"></div>
+
+
+
+
+
+
+
+
+
+
+
           
-        </div>
+          
+          
 
-        <div class="caixaResposta" id="caixaResposta" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)" style="display: none; ">
-            <img src="../img/funcoes/espiral.gif"></img>
-        </div>
+          <div>
+            <img id="rotom" class="rotom" src="../img/funcoes/rotom.png"></img>
+          </div>
 
+          <div>
+              <a href="#" onclick="iniciarFase(4)"><img id="cortadorR" class="cortadorR" src="../img/funcoes/cortador.png"></a>
+          </div>
+
+          <div>
+              <a href="#"  onclick="iniciarFase(1)" ><img id="fornoR" class="fornoR" src="../img/funcoes/forno.png" ></a>
+              
+          </div>
+
+          <div>
+              <a href="#"  onclick="iniciarFase(2)" ><img id="lavadeiraR" class="lavadeiraR" src="../img/funcoes/lavadeira.png" ></a>
+          </div>
+
+          <div>
+              <a href="#" onclick="iniciarFase(3)" ><img id="ventiladorR" class="ventiladorR" src="../img/funcoes/ventilador.png"></a>
+          </div>
+
+          
+          <div>
+              <a href="#"  onclick="iniciarFase(0)" ><img id="geladeiraR" class="geladeiraR" src="../img/funcoes/geladeira.png"></a>
+          </div>
+
+
+          <div class="textos">
+            <div class="texto1">
+                <h3>Arrumar a Cozinha</h3>
+              </div>
+    
+              <div class="texto2">
+                <h3>Arrumar a Lavanderia</h3>
+              </div>
+    
+              <div class="texto3">
+                <h3>Arrumar o Quintal</h3>
+              </div>
+    
+    
+              <div class="textoCortar">
+                <h3>Cortar a Grama / Colher as Frutas</h3>
+              </div>
+    
+              <div class="textoLavar">
+                <h3>Lavar as Roupas</h3>
+              </div>  
+    
+              <div class="textoCozinhar">
+                <h3>Cozinhar</h3>
+              </div>
+    
+              <div class="textoGelar">
+                <h3>Congelar os Alimentos</h3>
+              </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+          
+         
+          
 
     </div>
 
 
+
     <script>
-        var i = 1;
-        var tipoR = "";
-        var lista = [];
 
-        const itemSelecionado = (event) => {
-            event.dataTransfer.setData("img", event.target.id);
+
+
+
+
+
+        var wall = document.querySelector(".wall");
+
+		for (var i = 0; i < 100; i++) {
+			var tile = document.createElement("div");
+			tile.className = "tile";
+			wall.appendChild(tile);
         }
 
-        const areaSoltar = (event) => {
-            event.preventDefault();
-
-
-        }
-
-        const soltarElemento = (event) => {
-            event.preventDefault();
-
-            var imagem = event.dataTransfer.getData("img");
-            var slot = "slot" + i;
-            document.getElementById(slot).innerHTML = "<img src='../img/funcoes/itens/" + imagem + ".png'>";
-            i = i + 1;
-
-            lista.push(imagem);
-
-            if (i == 5) {
-                verificaDados();
-            }
-
-        }
-
-
-        const iniciarCriacao = (tipoRotom) => {
-            var rotoms = document.querySelectorAll(".rotom");
-            tipoR = tipoRotom;
-
-            for (var i = 0; i < rotoms.length; i++) {
-                if (rotoms[i].id != tipoRotom) {
-                    console.log(rotoms[i].id);
-                    rotoms[i].style.display = "none";
-
-                }
-            }
-
-
-            document.getElementById("caixaItens").style.display = "block";
-            document.getElementById("caixaSelecionados").style.display = "block";
-            document.getElementById("caixaResposta").style.display = "block";
-        }
-
-
-        const resetarTela = (tipoR) => {
-            var continuar = document.createElement('button');
-          
-            continuar.style.width = '10%';
-            continuar.style.left = "46.5%";
-            continuar.style.color = '#f00';
-            continuar.style.background = 'white';
-            continuar.style.position = "absolute"
-
-            if (tipoR == "x") {            
-                var texto = document.createTextNode("Tentar Novamente!");
-                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/x.png'>";
-            } else {
-                var texto = document.createTextNode("Continuar!");
-                document.getElementById("caixaResposta").innerHTML = "<img src='../img/funcoes/" + tipoR + ".png'>";
-
-            }
-
-         
-
-            
-            continuar.appendChild(texto);
-            continuar.onclick = function() {
-                window.location.reload(true);
-            }
-            document.body.appendChild(continuar);
+        </script>
 
 
 
-        }
 
-        const verificaLista = (tiporR) => {
-            var grama = 0;
-            var forno = 0;
-            var frio = 0;
-            var vento = 0;
-            var agua = 0;
-
-            switch (tipoR) {
-
-                case 'cortador':
-
-                    for (var i = 0; i < lista.length; i++) {
-                        if (lista[i] == "grama1" || lista[i] == "grama2" || lista[i] == "grama3" || lista[i] == "servico-eletrico") {
-                            grama = grama + 1;
-                        }
-                    }
-                    if (grama == 4) {
-                        resetarTela(tipoR);
-                    } else {
-                        resetarTela("x");
-
-                    }
-                    break;
-
-                case 'forno':
-                    for (var i = 0; i < lista.length; i++) {
-                        if (lista[i] == "forno1" || lista[i] == "forno2" || lista[i] == "forno3" || lista[i] == "servico-eletrico") {
-                            forno = forno + 1;
-                        }
-                    }
-                    if (forno == 4) {
-                        resetarTela(tipoR);
-
-                    } else {
-                        resetarTela("x");
-
-                    }
-                    break;
-                case 'ventilador':
-                    for (var i = 0; i < lista.length; i++) {
-                        if (lista[i] == "vento1" || lista[i] == "vento2" || lista[i] == "vento3" || lista[i] == "servico-eletrico") {
-                            vento = vento + 1;
-                        }
-                    }
-                    if (vento == 4) {
-                        resetarTela(tipoR);
-
-                    } else {
-                        resetarTela("x");
-
-                    }
-                    break;
-                case 'geladeira':
-                    for (var i = 0; i < lista.length; i++) {
-                        if (lista[i] == "frio1" || lista[i] == "frio2" || lista[i] == "frio3" || lista[i] == "servico-eletrico") {
-                            frio = frio + 1;
-                        }
-                    }
-                    if (frio == 4) {
-                        resetarTela(tipoR);
-
-                    } else {
-                        resetarTela("x");
-
-                    }
-                    break;
-                case 'lavadeira':
-                    for (var i = 0; i < lista.length; i++) {
-                        if (lista[i] == "agua1" || lista[i] == "agua2" || lista[i] == "agua3" || lista[i] == "servico-eletrico") {
-                            agua = agua + 1;
-                        }
-                    }
-                    if (agua == 4) {
-                        resetarTela(tipoR);
-
-                    } else {
-                        resetarTela("x");
-
-                    }
-                    break;
-
-            }
-
-        }
-
-        const verificaDados = () => {
-
-
-            var rotoms = document.querySelectorAll(".rotom");
-
-            for (var i = 0; i < rotoms.length; i++) {
-
-                if (rotoms[i].id == tipoR) {
-                    verificaLista(tipoR);
-                }
-            }
-        }
-    </script>
 </body>
 
 </html>
+
+
+
+
+<script>
+
+    var j = 50;
+    for (var i = 1; j <= 100; i++) {
+
+
+        var img = document.createElement('img');
+        img.src = '../img/recursividade/cortar/mato.png';
+        img.classList.add('mato');
+        img.id = 'mato' + i;
+        img.style.bottom = "-1%";
+        img.style.width = "4%";
+        img.style.left = j + "%";
+
+        var body = document.querySelector("body");
+        j = j + 3.8;
+
+        body.appendChild(img);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    var dialogo = "";
+    var aux = 0;
+    var verificaClick = "false";
+    var fase = 0;
+
+
+    function escreveDialogo() {
+
+        if (verificaClick == "false") {
+            if (aux < dialogo.length) {
+                document.getElementById("dialogo").textContent += dialogo.charAt(aux); 
+                aux++;
+                setTimeout(escreveDialogo, 100);
+               
+            }
+        }
+    }
+
+
+
+
+    function exibirTexto() {
+        verificaClick = "true";
+        //document.getElementById("dialogo").textContent = "";
+        document.getElementById("dialogo").innerHTML = textosFuncoes[fase];
+    }
+
+
+    function iniciar() {
+        document.getElementById("introducao").style.display = "none";
+        document.querySelector(".mapa").style.opacity = "1";
+        document.getElementById("telaTransparente").style.display = "none";
+    }
+
+
+
+
+    function iniciarFase(val) {
+
+
+        //window.location.href = "../funcoes/funcoesCortador.html";
+
+
+        fase = val;      
+        aux = 0;
+        verificaClick = "false";
+
+        dialogo = textosFuncoes[val];
+        console.log(textosFuncoes[val])
+
+        document.getElementById("dialogo").textContent = "";
+
+       document.getElementById("introducao").style.display = "block";
+       document.getElementById("telaTransparente").style.display = "block";
+       document.querySelector(".campo").style.opacity = "0.2";
+        escreveDialogo();
+
+
+        document.getElementById("botao2").addEventListener("click", function () {
+            if(val == 0){
+                window.location.href = "../funcoes/funcoesGelo.html";
+            }else if(val == 1){
+                window.location.href = "../funcoes/cozinhar.html";
+            }
+            else if(val == 2){
+                window.location.href = "../funcoes/funcoesLavadeira.html";
+            }
+            else if(val == 3){
+                window.location.href = "../funcoes/funcoesCortador.html";
+            }
+            else if(val == 4){
+                window.location.href = "../funcoes/funcoesCortador.html";
+            }
+          
+          
+        });
+
+    }
+
+
+    
+
+
+
+
+
+
+</script>

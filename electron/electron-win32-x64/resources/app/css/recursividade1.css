@@ -4,16 +4,6 @@ body{
     background: linear-gradient( #2017a3, #160d5e) no-repeat;
 }
 
-.andar{
-    position: absolute;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    font-size:1.2vw;
-    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-    left: 0%;
-    top: 2%;
-}    
 
 
 
@@ -402,10 +392,9 @@ body{
 
 
 .chuva {
-
+    position: absolute;
     width: 100%;
     z-index: -1;
-
 }
 
 .rio{
@@ -460,4 +449,35 @@ body{
         left: -10%;
         bottom:  20%;
     }
+}
+
+
+
+
+.andar{ /* tirar de todos*/
+    position: absolute;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size:1.2vw;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    left: 3%;
+    z-index: +1;
+}
+
+
+.klefki{
+    position: absolute;
+    width: 6%;
+    bottom: 22%;
+    left: 12%;
+    z-index: 1;
+}
+
+
+.sinalizador{
+    position: absolute;
+    width: 70%;
+    left: -80%;
+    bottom: 25%;
 }

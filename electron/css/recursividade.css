@@ -338,8 +338,8 @@ body{
     width: 32%;
     bottom: 20%;
     z-index: 1;
-    right: 0%;
-    animation: arbok_movimento 5s infinite linear;
+    left: 0%;
+    animation: arbok_movimento 20s infinite linear;
     animation-play-state: paused;
 }
 
@@ -455,21 +455,20 @@ body{
 }
 
 
-
 @keyframes arbok_movimento {
 
     0% {
-        right: 2%;
+        left: 90%;
         bottom: 20%;
 
     }
     50% {
-        right: 50%;
+        left: 30%;
         bottom: 20%;
 
     }
     100% {
-        right: 100%;
+        left: -40%;
         bottom:  20%;
     }
 }

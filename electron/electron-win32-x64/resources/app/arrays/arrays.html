@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/arrays.css">
 
 
@@ -17,14 +17,15 @@
 
 <body>
 
-    <div class="jogobonus">
+    <audio id="audio" src="../sounds/arrays.mp3" loop autoplay ></audio>
+
+    <div class="tela">
 
 
 
 
-        <img id="piso" src="../img/arrays/piso.png">
 
-        <img id="falink" src="../img/arrays/falink.gif">
+        <img id="falink" src="../img/arrays/falinkQueda.gif">
 
         <div>
             <div class="raio">
@@ -38,23 +39,60 @@
             </div>
             <div class="raio">
                 <img id="raio5" src="../img/arrays/raio.gif">
-            </div>        
+            </div>
+            <div class="raio">
+                <img id="raio6" src="../img/arrays/raio.gif">
+            </div>
         </div>
-       
+
 
 
 
         <img class='poke' id="poke" src="../img/arrays/falink.gif">
 
+        <div >
+            <img class='pichu' id="pichu" src="../img/arrays/babys/pichu.png">
+            <img class='cleffa' id="cleffa" src="../img/arrays/babys/cleffa.png">
+            <img class='igglybuff' id="igglybuff" src="../img/arrays/babys/Igglybuff.png">
+            <img class='togepi' id="togepi" src="../img/arrays/babys/togepi.png">
+            <img class='galho1' id="galho1" src="../img/arrays/galho.png">
+            <img class='galho2' id="galho2" src="../img/arrays/galho.png">
+            <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
+            <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
+        </div>
+
+
+
+        <div>
+            <div id="piso"></div>
+            <div id="piso2"></div>
+        </div>
+
         <img id="nuvens" src="../img/bonus/clouds.png">
+        <img id="nuvens2" src="../img/bonus/clouds.png">
+        <img id="nuvens3" src="../img/bonus/clouds.png">
 
-        <img id="pikachu" src="../img/arrays/pikachu.gif">
+        <img id="arvore1" src="../img/arrays/arvore1.png">
+        <img id="arvore2" src="../img/arrays/arvore1.png">
 
 
+
+        <div class="life">
+            <div class="vidas1">
+                <img src="../img/recursividade/cortar/vida.png"></img>
+            </div>
+            <div class="vidas2">
+                <img src="../img/recursividade/cortar/vida.png"></img>
+            </div>
+            <div class="vidas3">
+                <img src="../img/recursividade/cortar/vida.png"></img>
+            </div>
+        </div>
 
         <div class="vetor">
             <h5>Vetor de Falinks</h5><br>
-            <div class="filhoVetor" img src="" id="9" background-color:white;>10</div>
+            <div class="filhoVetor" img src="" id="10">10</div>
+            <div class="filhoVetor" img src="" id="9" >9</div>
             <div class="filhoVetor" img src="" id="8">8</div>
             <div class="filhoVetor" img src="" id="7">7</div>
             <div class="filhoVetor" img src="" id="6">6</div>
@@ -71,6 +109,28 @@
         <div>
 
             <script>
+
+
+                var k = 0;
+                for (var i = 1; k <= 100; i++) {
+
+
+                    var img = document.createElement('img');
+                    img.src = '../img/decisao/mato.png';
+                    img.classList.add('mato');
+                    img.id = 'mato' + i;
+                    img.style.bottom = "0%";
+                    img.style.width = "4%";
+                    img.style.left = k + "%";
+
+                    var body = document.querySelector("body");
+                    k = k + 3.8;
+
+                    body.appendChild(img);
+
+                }
+
+
                 let j = 0;
 
                 const falinkQueda = document.querySelector('#falink');
@@ -80,13 +140,13 @@
 
 
                     const falink = document.querySelector('#falink');
-                    const posicoesFalinks = ["12", "27", "37.5", "53"];
+                    const posicoesFalinks = ["22", "32", "42", "52", "62", "72", "82"];
                     const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
 
 
                     falink.style.left = posicoesFalinks[posicaoVetor] + "%";
                     falinkQueda.style.display = 'block';
-
+         
 
 
 
@@ -94,72 +154,112 @@
                 }, 5000);
 
                 const resetar = () => {
-                    //raio2.style.bottom = 'none';
 
                     raio2.style.animation = "";
                     raio3.style.animation = "";
                     raio4.style.animation = "";
                     raio5.style.animation = "";
-                    falinkQueda.style.animation = "";
+                    raio6.style.animation = "";
+                }
 
+                const resetarVida = () => {
+                    document.getElementById("vida").style.animationPlayState = "running";
+                    document.getElementById("vida2").style.animationPlayState = "running";
+                    document.getElementById("vida2").style.display = "block";
+                    document.getElementById("vida").style.display = "block";
 
                 }
 
+                var vidas = 3;
                 const loop2 = setInterval(() => {
 
+                    if(vidas == 3){
+                        document.querySelector('.vida2').style.display = 'none';
+                        document.querySelector('.vida').style.display = 'none';
+                    }
+                 
 
                     falink.getBoundingClientRect();
-                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5");
+                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5, div.raio #raio6");
+
+                    var vidinhas = document.querySelectorAll("#vida, #vida2");
 
 
 
+                    for (var i = 0; i < raios.length; i++) {
+                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y - 30 + falink.height > raios[i].y)) {
 
-                    for(var i = 0; i < raios.length; i++){
-                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y -30 + falink.height > raios[i].y)) {
-                            window.alert("enconstou");
                             raios[i].style.animation = 'none';
-                            falinkQueda.style.animation = 'none';
-                            resetar();
-                            //falink.style.left = '650px';
-                        }  
+
+                            setInterval(resetar, 10);
+
+                            if (vidas == 3) {
+                                document.querySelector(".vidas3").remove();
+                                vidas = vidas - 1;
+                            } else if (vidas == 2) {
+                                document.querySelector(".vidas2").remove();
+                                document.querySelector('.vida').style.display = 'block';
+                                document.querySelector('.vida2').style.display = 'block';
+                             
+
+                                document.querySelector('.vida2').style.display = 'block';
+                                vidas = vidas - 1;
+                            } else if (vidas == 1) {
+                                document.querySelector(".vidas1").remove();
+                                vidas = vidas - 1;
+                            }else if (vidas == 0){
+                                exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", "http://localhost/jogo/electron/arrays/arrays.html");
+                            }
+                        }
                     }
 
-                 
 
-                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y -30 + falink.height > falinkQueda.y)) {
-                            //falink.style.left = '150px';
-                            falinkQueda.style.display = 'none';
-                            document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
 
-                            j = j + 1;
-                            if(j == 10){
-                            window.alert("Você ganhou, vamos a proxima fase!");
-                            window.location.href = "./falinksAtribuicao.html";
-                          }
+                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y - 30 + falink.height > falinkQueda.y)) {
+                        falinkQueda.style.display = 'none';
+                        document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
 
-                    }  
-                    
+                        j = j + 1;
+                        if (j == 11) {
+                            exibeNotificação("success", "Você ganhou, vamos a proxima fase!", "http://localhost/jogo/electron/arrays/falinksAtribuicao.html");
+                        }
 
+                    }
 
 
 
+                    for (var i = 0; i < vidinhas.length; i++) {
+                        if ((falink.x + 30 < vidinhas[i].x + vidinhas[i].width && falink.x - 30 + falink.width > vidinhas[i].x) && (falink.y + 30 < vidinhas[i].y + vidinhas[i].height && falink.y - 30 + falink.height > vidinhas[i].y)) {
 
+                            vidinhas[i].style.animationPlayState = 'paused';
+                            vidinhas[i].style.display = 'none';
 
+                            setInterval(resetarVida, 50);
 
+                            if (vidas < 3) {
 
 
+                                var img = document.createElement('img');
+                                img.src = '../img/recursividade/cortar/vida.png';
+                                img.classList.add('vidas'+ (vidas + 1));
 
+                                img.style.width = "1.5%";
 
+                                var pai = document.querySelector(".life");
+                                pai.appendChild(img);
 
+                                vidas = vidas + 1;
 
+                            }
 
+                        }
+                    }
 
 
 
 
 
 
-                 
 
 
 
@@ -196,11 +296,8 @@
 
 
 
-                
 
-                
 
-                  
 
 
 
@@ -226,7 +323,6 @@
 
 
 
-                    
 
 
 
@@ -239,7 +335,18 @@
 
 
 
-                   
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -330,7 +437,6 @@
 
                     var tecla = event.keyCode;
 
-                    console.log(tecla);
 
                     if (tecla == 39) {
                         moverDireita();
@@ -343,7 +449,26 @@
                 }
 
                 document.addEventListener('keydown', mover);
-            </script>
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+
+
+
+
+
+
+
+
 
 
 

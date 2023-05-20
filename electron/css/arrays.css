@@ -1,5 +1,7 @@
 body{
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .tela {
@@ -17,7 +19,7 @@ body{
 
 #falink{
     animation: raio_movimento 5s infinite linear;
-    width:4.5%;   
+    width:4.5vw;   
     position: absolute;
     top:48%;
  
@@ -27,13 +29,10 @@ body{
 
 #raio3{
     animation: raio_movimento 5s infinite linear;
-     
     width:4.2%;   
     position: absolute;
     bottom:30%;
     left: 18%;
- 
-   
 }
 
 
@@ -80,7 +79,7 @@ body{
     animation: nuvem_movimento1 40s infinite linear; 
     width:20%;   
     position: absolute;
-    top:10%;
+    bottom: 30vw;
     left:50%;
   
 }
@@ -90,8 +89,8 @@ body{
     animation: nuvem_movimento2 30s infinite linear; 
     width:20%;   
     position: absolute;
-    top:-5%;
-    left:20%;
+    bottom:35vw;
+    left:25%;
 
 }
 
@@ -99,7 +98,7 @@ body{
     animation: nuvem_movimento3 30s infinite linear; 
     width:20%;   
     position: absolute;
-    top:5%;
+    bottom: 38vw;
     left:0%;
 }
 
@@ -108,7 +107,7 @@ body{
 .poke{
 
     position: absolute;
-    bottom: -3%;
+    bottom: 0%;
     left: 40vw;
     z-index: 1;
     width:6vw;
@@ -121,14 +120,6 @@ body{
     
 }
 
-#grama{
-   
-
-    
-    position: absolute;
-    bottom: -420px;
-    width:100%;
-}
 
 
 
@@ -204,21 +195,13 @@ body{
     }
 }
 
-#pikachu{
-    width: 12vw;
-    z-index: 2;
-    position: absolute;
-    bottom: 42%;
-    left: 15%;
-}
-
 
 
 #galho1{
     position: absolute;
     width: 22vw;   
     height: 15vw;
-    bottom: 50%;
+    bottom: 25vw;
     transform: scaleX(-1);
     left: -3%;
 }
@@ -229,7 +212,7 @@ body{
     position: absolute;
     width: 22vw;   
     height: 15vw;
-    bottom: 50%;
+    bottom: 25vw;
     right: -3%;
 }
 
@@ -241,8 +224,8 @@ body{
    
         padding: 1%;
         display: flex;
-        position:relative;
-        top: 5%;
+        position: absolute;
+        bottom: 38vw;
         flex-direction: row-reverse;
         left: 70%;
         width: 30%;
@@ -254,12 +237,9 @@ body{
 .vetor h5{
    
     position: absolute;
-    top: -40%;
+    bottom: 4vw;
     color:white;
     font-size: 1.5vw;
-    
-
-
 }
 
 .filhoVetor{
@@ -267,7 +247,6 @@ body{
     width: 8vw;
     border: 0.1vw solid #ccc;
     font-size: 1vw;
-
 }
 
 .filhoVetor img{
@@ -282,22 +261,22 @@ body{
 }
 
 .togepi{
-    bottom: 54%;
+    bottom: 27vw;
     left: 90%;
 }
 .cleffa{
     left: -3%;
     transform: scaleX(-1);
-    bottom: 53%;
+    bottom: 27vw;
 }
 .pichu{
-    bottom: 54%;
+    bottom: 27vw;
     transform: scaleX(-1);
     left: 5%;
 }
 .igglybuff{
     left: 83%;
-    bottom: 56%;
+    bottom: 27vw;
 }
 
 .vida{
@@ -305,6 +284,8 @@ body{
     width: 2%;
     animation: vida_movimento 7s infinite linear;
     opacity: 0;
+    --vida-bottom: 30vw;
+    bottom: var(--vida-bottom);
 }
 
 .vida2{
@@ -312,72 +293,76 @@ body{
     width: 2%;
     animation: vida2_movimento 6s infinite linear;
     opacity: 0;
+    --vida2-bottom: 30vw;
+    bottom: var(--vida2-bottom);
+}
+
+@keyframes vida2_movimento{
+    0%{
+        bottom: var(--vida2-bottom);
+        right: 8%;
+    }
+    0.5%{
+        bottom: var(--vida2-bottom);
+        right: 8%;
+        opacity: 1;
+    }
+    20%{
+        bottom: calc(var(--vida2-bottom) + 30%);
+        right: 30%;
+    }
+    30%{
+        bottom: calc(var(--vida2-bottom) + 10%);
+        right: 35%;
+    }
+    50%{
+        bottom: calc(var(--vida2-bottom) - 10%);
+        right: 30%;
+    }80%{
+        bottom: calc(var(--vida2-bottom) - 40%);
+        right: 35%;
+    }
+    100%{
+        bottom: calc(var(--vida2-bottom) - 70%);
+        right: 30%;
+        opacity: 1;
+    }
 }
 
 @keyframes vida_movimento{
     0%{
-        bottom: 65%;
+        bottom: var(--vida-bottom);
         left: 10%;
     }
     0.5%{
         opacity: 1;
-        bottom: 65%;
+        bottom: var(--vida-bottom);
         left: 10%;
     }
     20%{
-        bottom: 80%;
+        bottom: calc(var(--vida-bottom) + 30%);
         left: 30%;
     }
     30%{
-        bottom: 70%;
+        bottom: calc(var(--vida-bottom) + 10%);
         left: 35%;
     }
     50%{
-        bottom: 50%;
+        bottom: calc(var(--vida-bottom) - 10%);
         left: 30%;
     }80%{
-        bottom: 25%;
+        bottom: calc(var(--vida-bottom) - 40%);
         left: 35%;
     }
     100%{
-        bottom: 0%;
+        bottom: calc(var(--vida-bottom) - 70%);
         left: 30%;
         opacity: 1;
     }
 }
 
 
-@keyframes vida2_movimento{
-    0%{
-        bottom: 65%;
-        right: 8%;
-    }
-    0.5%{
-        bottom: 65%;
-        right: 8%;
-        opacity: 1;
-    }
-    20%{
-        bottom: 80%;
-        right: 30%;
-    }
-    30%{
-        bottom: 70%;
-        right: 35%;
-    }
-    50%{
-        bottom: 50%;
-        right: 30%;
-    }80%{
-        bottom: 25%;
-        right: 35%;
-    }
-    100%{
-        bottom: 0%;
-        right: 30%;
-        opacity: 1;
-    }
-}
+
 
 .mato{
     position: absolute;
@@ -400,7 +385,7 @@ body{
 
 .life{
     position: absolute;
-    top: 14%;
+    bottom: 37vw;
     left: 92%;
     height: 2vw;
     width: 150vw;
@@ -413,3 +398,4 @@ body{
 .life img{
     width: 100%;
 }
+

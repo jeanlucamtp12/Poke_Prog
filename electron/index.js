@@ -2,14 +2,21 @@ const {app, BrowserWindow} = require ('electron')
 
 app.whenReady().then(() => {
 
+
     //criando uma nova janela
     const janela = new BrowserWindow({
         width: 1280,
         height: 720,
+        fullscreen: true, 
+        //nodeIntegration: false,
+        frame: false,
         webPreferences: {
-            nodeIntegration: true,
+            nodeIntegration: false,
         }
     });
+
+
+
 
 
     //carregando a pagina html

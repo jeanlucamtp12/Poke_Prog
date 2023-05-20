@@ -452,10 +452,10 @@ body, html{
 }
 
 .professor{
-	width: 16vw;
+	width: 25vw;
 	position: absolute;
 	z-index: 1;
-	left: 5%;
+	left: 1%;
 	bottom: 0%;
 }
 

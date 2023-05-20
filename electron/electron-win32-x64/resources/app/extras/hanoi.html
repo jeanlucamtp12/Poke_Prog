@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/hanoi.css">
+    <script src="../sweetalert/sweetalert.js"></script>
+        <script src="../telaInicial/dialogos.js"></script>
+    <title>Torre de Hanoi</title>
+</head>
+
+<body>
+    <audio id="audio" src="../sounds/recursividade.mp3" loop autoplay ></audio>
+
+
+    <div class="tela">
+
+
+        <div class="pokemon">
+            <img id="magnemite" src="../img/extras/magnemite.png"></img>
+            <img id="magnemite2" src="../img/extras/magnemite2.png"></img>
+            <img id="magneton" src="../img/extras/magneton.png"></img>
+            <img id="magneton2" src="../img/extras/magneton2.gif"></img>
+            <img id="magnezone" src="../img/extras/magnezone.png"></img>
+        </div>
+        <img class="raio" src="../img/extras/raio.gif"></img>
+       
+        
+
+
+        <div style="left: 35%; top: 1%; position: absolute;">
+            <p  class="choque"><span aria-hidden="true">Torre de Hanoi</span>Torre de Hanoi<span aria-hidden="true">Torre de Hanoi</span></p>
+            <h1 id="contador" style="font-size: 1vw; margin-top: -5%; color: #d6cc3c;">Movimentos Minimos: 31 | Utilizados: 31</h1>
+        </div> 
+
+
+        <div class="estaca1">
+
+            <div class="pino1" id="1" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
+
+            <div class="Cincopinos" id="5">
+                <img src="../img/extras/5.gif" ondragstart="itemSelecionado(event)" id="5"></img>
+            </div>
+
+            <div class="Quatropinos" id="4">
+                <img src="../img/extras/4.gif" ondragstart="itemSelecionado(event)" id="4"></img>
+            </div>
+
+            <div class="Trespinos" id="3">
+                <img src="../img/extras/3.gif" ondragstart="itemSelecionado(event)" id="3"></img>
+            </div>
+
+            <div class="Doispinos" id="2">
+                <img src="../img/extras/2.gif" ondragstart="itemSelecionado(event)" id="2"></img>
+            </div>
+
+            <div class="Umpino" id="1">
+                <img src="../img/extras/1.gif" ondragstart="itemSelecionado(event)" id="1"></img>
+            </div>
+
+        </div>
+
+
+        <div class="estaca2">
+            <div class="pino2" id="2" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
+
+            <div class="Cincopinos2"></div>
+            <div class="Quatropinos2"></div>
+            <div class="Trespinos2"></div>
+            <div class="Doispinos2"></div>
+            <div class="Umpino2"></div>
+
+
+        </div>
+        <div class="estaca3">
+            <div class="pino3" id="3" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
+
+            <div class="Cincopinos3"></div>
+            <div class="Quatropinos3"></div>
+            <div class="Trespinos3"></div>
+            <div class="Doispinos3"></div>
+            <div class="Umpino3"></div>
+
+        </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    var estaca1 = 5;
+    var estaca2 = 0;
+    var estaca3 = 0;
+    var classeImagem = "";
+
+    var ultimoE1 = [1, 2, 3, 4, 5];
+    var ultimoE2 = [0, 0, 0, 0, 0];
+    var ultimoE3 = [0, 0, 0, 0, 0];
+
+    var contador = 31;
+
+
+    const removerMagnemite = (e, pino, id) => {
+
+        if (e.includes('2')) {
+            for (var i = 4; i >= 0; i--) {
+                if (ultimoE2[i] == id) {
+                    ultimoE2.splice(i, 1, 0);
+                }
+            }
+
+        } else if (e.includes('3')) {
+            for (var i = 4; i >= 0; i--) {
+                if (ultimoE3[i] == id) {
+                    ultimoE3.splice(i, 1, 0);
+                }
+            }
+        } else {
+            for (var i = 4; i >= 0; i--) {
+                if (ultimoE1[i] == id) {
+                    ultimoE1.splice(i, 1, 0);
+                }
+            }
+        }
+
+
+
+        var elemento = document.querySelector("." + e + " img");
+
+
+
+        if (elemento.parentNode) {
+            elemento.parentNode.removeChild(elemento);
+        }
+    }
+
+
+    const decrementarEstacas = (classeImagem) => {
+
+
+        if (classeImagem.includes('2')) {
+            estaca2 = estaca2 - 1;
+
+
+
+        } else if (classeImagem.includes('3')) {
+            estaca3 = estaca3 - 1;
+
+
+        } else {
+            estaca1 = estaca1 - 1;
+
+        }
+    }
+
+    const moveMoagnemite = (pino, slot, imagem) => {
+
+
+        var img = document.createElement('img');
+        img.src = "../img/extras/" + imagem + ".gif";
+
+        if (pino == "estaca2") {
+            var div = document.querySelector("." + slot + "2");
+            img.classList.add(slot + "2");
+            img.id = imagem;
+            div.id = imagem;
+        } else if (pino == "estaca3") {
+            var div = document.querySelector("." + slot + "3");
+            img.classList.add(slot + "3");
+            img.id = imagem;
+        } else {
+            var div = document.querySelector("." + slot);
+            img.classList.add(slot);
+            img.id = imagem;
+        }
+
+
+        if (imagem == "1") {
+            img.style.width = "35%";
+            img.style.marginLeft = "33%";
+
+        } else if (imagem == "2") {
+            img.style.width = " 60%";
+            img.style.marginLeft = "20%";
+        } else if (imagem == "3") {
+            img.style.width = "90%";
+            img.style.marginLeft = "5%";
+        } else if (imagem == "4") {
+            img.style.width = "110%";
+            img.style.marginLeft = "0%";
+        } else {
+            img.style.width = "150%";
+            img.style.marginLeft = "-24%";
+        }
+
+
+        img.setAttribute('ondragstart', 'itemSelecionado(event)');
+
+
+        div.appendChild(img);
+
+
+    }
+    const verificaEstaca = (estaca, imagem, pino) => {
+
+
+        switch (estaca) {
+            case 0:
+                moveMoagnemite(pino, 'Cincopinos', imagem);
+                break;
+            case 1:
+                moveMoagnemite(pino, 'Quatropinos', imagem);
+                break;
+            case 2:
+                moveMoagnemite(pino, 'Trespinos', imagem);
+                break;
+            case 3:
+                moveMoagnemite(pino, 'Doispinos', imagem);
+                break;
+            case 4:
+                moveMoagnemite(pino, 'Umpino', imagem);
+                break;
+            case 5:
+                break;
+        }
+
+    }
+
+
+    const verificaMovimentacao = (divImagem, idImagem) => {
+
+        if (classeImagem.includes('2')) {
+            bloqueiaMovimentacao(estaca2, divImagem);
+        } else if (classeImagem.includes('3')) {
+            bloqueiaMovimentacao(estaca3, divImagem);
+        } else {
+            bloqueiaMovimentacao(estaca1, divImagem);
+        }
+
+    }
+
+    const bloqueiaMovimentacao = (estaca, divImagem) => {
+        switch (estaca) {
+            case 1:
+                if ((divImagem != "Cincopinos") && (divImagem != "Cincopinos2") && (divImagem != "Cincopinos3")) {
+                    exibeNotificação("error", "Peça bloqueada", "");
+                }
+
+                break;
+            case 2:
+                if ((divImagem != "Quatropinos") && (divImagem != "Quatropinos2") && (divImagem != "Quatropinos3")) {
+                    exibeNotificação("error", "Peça bloqueada", "");
+                }
+
+                break;
+            case 3:
+                if ((divImagem != "Trespinos") && (divImagem != "Trespinos2") && (divImagem != "Trespinos3")) {
+                    exibeNotificação("error", "Peça bloqueada", "");
+                }
+
+                break;
+            case 4:
+                if ((divImagem != "Doispinos") && (divImagem != "Doispinos2") && (divImagem != "Doispinos3")) {
+                    exibeNotificação("error", "Peça bloqueada", "");
+                }
+
+                break;
+            case 5:
+                if ((divImagem != "Umpino") && (divImagem != "Umpino2") && (divImagem != "Umpino3")) {
+                    exibeNotificação("error", "Peça bloqueada", "");
+                }
+                break;
+        }
+    }
+
+    const alteraVetores = (pino, imagem) => {
+
+
+        for (var i = 4; i >= 0; i--) {
+                if (pino[i] == 0) {
+
+                    if (i == 4) {
+                        pino.splice(i, 1, imagem);
+                        return true;
+                    } else {
+                        if (imagem < pino[i + 1]) {
+                            pino.splice(i, 1, imagem);
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                }
+            }
+    }
+
+
+    const itemSelecionado = (event) => {
+        event.dataTransfer.setData("img", event.target.id);
+
+        //classe = event.dataTransfer.setData("img", event.target.parentNode.id);
+        classeImagem = (("img", event.target.parentNode.className));
+
+        verificaMovimentacao(classeImagem, event.dataTransfer.getData("img"));
+
+
+    }
+
+    const areaSoltar = (event) => {
+        event.preventDefault();
+
+
+    }
+
+    const soltarElemento = (event) => {
+        event.preventDefault();
+
+
+
+
+        var imagem = event.dataTransfer.getData("img");
+
+
+        var pino = event.target.id;
+        pino = "estaca" + pino;
+
+
+
+
+
+
+
+
+
+
+        var blocos = document.querySelectorAll("div." + pino + " #slot1, div." + pino + " #slot2, div." + pino + " #slot3, div." + pino + " #slot4, div." + pino + " #slot5");
+ 
+
+
+        if ((pino == "estaca1") && (alteraVetores(ultimoE1, imagem) == true)) {
+   
+
+            if ((estaca1 => 0) && (estaca1 < 5)) {
+                verificaEstaca(estaca1, imagem, pino);
+                estaca1 = estaca1 + 1;
+                decrementarEstacas(classeImagem, estaca1);
+                removerMagnemite(classeImagem, "1", imagem);
+
+            } else {
+                exibeNotificação("error", "Pino indisponivel", "");
+            }
+
+            document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
+            contador = contador - 1;
+
+        }
+
+        if ((pino == "estaca2") && (alteraVetores(ultimoE2, imagem) == true)) {
+
+            if ((estaca2 => 0) && (estaca2 < 5)) {
+                verificaEstaca(estaca2, imagem, pino);
+                estaca2 = estaca2 + 1;
+                decrementarEstacas(classeImagem, estaca2);
+                removerMagnemite(classeImagem, "2", imagem);
+
+            } else {
+                exibeNotificação("error", "Pino indisponivel", "");
+            }
+
+            if(ultimoE2[0] == 1){
+                if(contador < 0){
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                }else{
+                }
+            }
+
+            document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
+            contador = contador - 1;
+
+        }
+        if ((pino == "estaca3") && (alteraVetores(ultimoE3, imagem) == true)) {
+
+            if ((estaca3 => 0) && (estaca3 < 5)) {
+                if ((estaca3 => 0) && (estaca3 < 5)) {
+                    verificaEstaca(estaca3, imagem, pino);
+                    estaca3 = estaca3 + 1;
+                    decrementarEstacas(classeImagem, estaca3);
+                    removerMagnemite(classeImagem, "3", imagem);
+                } else {
+                    exibeNotificação("error", "Pino indisponivel", "");
+                }
+            }
+            if(ultimoE3[0] == 1){
+                if(contador < 0){
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                }
+            }
+            document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
+            contador = contador - 1;
+
+        }
+
+        console.log("Depois: ", ultimoE1, ultimoE2, ultimoE3);
+
+    }
+
+</script>

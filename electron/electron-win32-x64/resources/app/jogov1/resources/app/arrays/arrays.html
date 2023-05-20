@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/arrays.css">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="jogobonus">
+
+
+
+
+        <img id="piso" src="../img/arrays/piso.png">
+
+        <img id="falink" src="../img/arrays/falink.gif">
+
+        <div>
+            <div class="raio">
+                <img id="raio2" src="../img/arrays/raio.gif">
+            </div>
+            <div class="raio">
+                <img id="raio3" src="../img/arrays/raio.gif">
+            </div>
+            <div class="raio">
+                <img id="raio4" src="../img/arrays/raio.gif">
+            </div>
+            <div class="raio">
+                <img id="raio5" src="../img/arrays/raio.gif">
+            </div>        
+        </div>
+       
+
+
+
+        <img class='poke' id="poke" src="../img/arrays/falink.gif">
+
+        <img id="nuvens" src="../img/bonus/clouds.png">
+
+        <img id="pikachu" src="../img/arrays/pikachu.gif">
+
+
+
+        <div class="vetor">
+            <h5>Vetor de Falinks</h5><br>
+            <div class="filhoVetor" img src="" id="9" background-color:white;>10</div>
+            <div class="filhoVetor" img src="" id="8">8</div>
+            <div class="filhoVetor" img src="" id="7">7</div>
+            <div class="filhoVetor" img src="" id="6">6</div>
+            <div class="filhoVetor" img src="" id="5">5</div>
+            <div class="filhoVetor" img src="" id="4">4</div>
+            <div class="filhoVetor" img src="" id="3">3</div>
+            <div class="filhoVetor" img src="" id="2">2</div>
+            <div class="filhoVetor" img src="" id="1">1</div>
+            <div class="filhoVetor" img src="" id="0" width="20px">0</div>
+        </div>
+
+
+
+        <div>
+
+            <script>
+                let j = 0;
+
+                const falinkQueda = document.querySelector('#falink');
+                const falink = document.querySelector('#poke');
+
+                const loop = setInterval(() => {
+
+
+                    const falink = document.querySelector('#falink');
+                    const posicoesFalinks = ["12", "27", "37.5", "53"];
+                    const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
+
+
+                    falink.style.left = posicoesFalinks[posicaoVetor] + "%";
+                    falinkQueda.style.display = 'block';
+
+
+
+
+
+                }, 5000);
+
+                const resetar = () => {
+                    //raio2.style.bottom = 'none';
+
+                    raio2.style.animation = "";
+                    raio3.style.animation = "";
+                    raio4.style.animation = "";
+                    raio5.style.animation = "";
+                    falinkQueda.style.animation = "";
+
+
+                }
+
+                const loop2 = setInterval(() => {
+
+
+                    falink.getBoundingClientRect();
+                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5");
+
+
+
+
+                    for(var i = 0; i < raios.length; i++){
+                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y -30 + falink.height > raios[i].y)) {
+                            window.alert("enconstou");
+                            raios[i].style.animation = 'none';
+                            falinkQueda.style.animation = 'none';
+                            resetar();
+                            //falink.style.left = '650px';
+                        }  
+                    }
+
+                 
+
+                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y -30 + falink.height > falinkQueda.y)) {
+                            //falink.style.left = '150px';
+                            falinkQueda.style.display = 'none';
+                            document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
+
+                            j = j + 1;
+                            if(j == 10){
+                            window.alert("Você ganhou, vamos a proxima fase!");
+                            window.location.href = "./falinksAtribuicao.html";
+                          }
+
+                    }  
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+                
+
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                }, 10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                const personagem = document.querySelector('.poke');
+
+                const moverDireita = () => {
+
+                    document.getElementById("poke").src = "../img/arrays/falink_direita.gif";
+
+                    const el = document.querySelector('.poke');
+                    const value = getComputedStyle(el).getPropertyValue('left');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) + 10;
+
+                    personagem.style.left = soma + "px";
+
+
+
+                }
+
+                const moverEsquerda = () => {
+                    document.getElementById("poke").src = "../img/arrays/falink.gif";
+
+
+                    const el = document.querySelector('.poke');
+                    const value = getComputedStyle(el).getPropertyValue('left');
+
+
+                    var remove_string = value.replace('px', '');
+                    var valorNum = parseInt(remove_string);
+
+                    var numPx = valorNum + 10;
+                    var soma = parseInt(value) - 10;
+
+                    personagem.style.left = soma + "px";
+
+                }
+
+                const mover = () => {
+
+                    var tecla = event.keyCode;
+
+                    console.log(tecla);
+
+                    if (tecla == 39) {
+                        moverDireita();
+                    }
+
+                    if (tecla == 37) {
+                        moverEsquerda();
+                    }
+
+                }
+
+                document.addEventListener('keydown', mover);
+            </script>
+
+
+
+</body>
+
+</html>

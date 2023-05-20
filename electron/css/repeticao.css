@@ -29,7 +29,7 @@ body{
     position: absolute;
     width: 20%;
     right: 80%;
-    bottom: 75%;
+    bottom: 34vw;
 }
 
 
@@ -39,7 +39,7 @@ body{
     position: absolute;
     width: 20%;
     right: 58%;
-    bottom: 80%;
+    bottom: 36vw;
 }
 
 
@@ -47,7 +47,7 @@ body{
     position: absolute;
     width: 20%;
     right: 25%;
-    bottom: 70%;
+    bottom: 30vw;
 }
 
 
@@ -80,7 +80,7 @@ body{
     position: absolute;
 
     width: 2%;
-    bottom: 90%;
+    bottom: 40vw;
     right: 40%;
     z-index: 1;
 
@@ -90,20 +90,25 @@ body{
     position: absolute;
 
     width: 2%;
-    bottom: 80%;
+    bottom: 35vw;
     right: 50%;
     z-index: 1;
 }
 
 .timburr {
     position: absolute;
-
     width: 11%;
     bottom: 22%;
     left: 0%;
     z-index: 1;
-
 }
+
+@media screen and (max-width: 1200px) {
+    .timburr {
+        bottom: 8%;
+    }
+}
+
 .viga{
     position: absolute;
     width: 2%;
@@ -128,14 +133,6 @@ body{
         width: 2%;
         height: 30%;    
     }
-}
-
-
-.chuva {
-
-    width: 100%;
-
-
 }
 
 
@@ -170,83 +167,10 @@ body{
 
 
 
-.bolhas {
-
-    position: absolute;
-
-    bottom: 2%;
-    left: 70%;
-    width: 5%;
-
-    animation: bolhas_movimento 6s infinite linear;
-    z-index: 2;
-
-
-    
-
-
-}
-
-@keyframes bolhas_movimento {
-
-    0% {
-        left: 75%;
-        bottom: 4%;
-
-    }
-
-    25% {
-        bottom:  0%;
-
-    }
-
-    50% {
-        left: 40%;
-        bottom: 4%;
-
-    }
-
-    75% {
-        bottom: 0%;
-    }
-
-    100% {
-        left: 0%;
-        bottom:  4%;
-    }
-}
-       
- 
 
 
 
 
-
-
-
-/*
-.madeira {
-    position: absolute;
-    width: 80%;
-    top: -30%;
-    left: 10%;
-    animation: piscarTela 0.2s steps(1, end) infinite;
-}
-
-@keyframes piscarTela {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-
-}*/
 
 .pokemon{
     position: absolute;
@@ -257,17 +181,21 @@ body{
 }
 
 .rio{
-    width: 95%;
-    height: 35%;
+    width: 95vw;
+    height: 35vh;
     background: linear-gradient(#00ffd5, #1200b4, #00b2f8) no-repeat;
     position: absolute;
     left: 2%;
-    bottom: -2%;
+    bottom: 0%;
     animation: rio 1.2s ease-in-out infinite;
     z-index: 1;
 
 }
-
+@media screen and (max-width: 1200px) {
+    .rio {
+        height: 10vh;
+    }
+}
 
 @keyframes rio {
     0%, 100% {
@@ -284,26 +212,20 @@ body{
 
 
 .starmie{
-    width: 8%;
+    width: 7%;
     position: absolute;
     left: 93%;
     animation: starmie_movimento 5s infinite linear;
     z-index: 1;
 }
 
-.seadra{
-    width: 10%;
-    position: absolute;
-    left: 78%;
-    bottom: -5%;
-    z-index: 1;
-}
+
 
 .entrada{
     position: absolute;
     width: 8%;
     left: -1%;
-    bottom: -1%;
+    bottom: 0%;
     z-index: 1;
     
 }
@@ -312,7 +234,7 @@ body{
     position: absolute;
     width: 8%;
     left: 94%;
-    bottom: -1%;
+    bottom: 0%;
     z-index: 1;
     
 }
@@ -329,15 +251,19 @@ body{
     
 }
 
+@media screen and (max-width: 1200px) {
+    .ponte {
+        bottom: -3%;
+    }
+}
+
 .filhoPonte{ 
     color:white; 
-    width: 10%;  
+    width: 10%; 
 }
 
 .filhoPonte img{ 
     width: 100%;       
-
-
 }
  
  
@@ -345,23 +271,23 @@ body{
 
 @keyframes starmie_movimento {
     0% {
-        bottom: 14%;
+        bottom: 6vw;
         left: 100%;
 
     }
     5% {
-        bottom: 14%;
+        bottom: 6vw;
         left: 93%;
         left: 100%;
     }
     10%{
-        bottom: 12%;
+        bottom: 4vw;
         left: 93%;
     }
 
     20% {
         transform: rotate(-15deg);      
-        bottom: 14%;
+        bottom: 10vw;
     }
 
     30% {
@@ -385,12 +311,12 @@ body{
     }
     90%{
         left:  20%;
-        bottom: 14%;
+        bottom: 10vw;
     }
     100% {
         transform: rotate(9505deg);
         left:  -10%;
-        bottom: 14%;
+        bottom: 10vw;
 
     }
   
@@ -432,7 +358,7 @@ body{
 .vidas{
     position: absolute;
     left: 2%;
-    bottom: 65%;
+    bottom: 30vw;
     height: 2vw;
     width: 150vw;
     display: flex;
@@ -459,7 +385,6 @@ body{
 }
 .goldeen{
     --my-start-left: 10%;
-    bottom: 5%;
     animation: animacao_peixe 9s infinite linear;
     transform: scaleX(-1);
     animation-play-state: paused;
@@ -470,7 +395,6 @@ body{
     animation-play-state: paused;
 } 
 .qwilfish{
-    bottom: -1%;
     width: 6.5%;
     --my-start-left: 60%;
     animation: animacao_peixe 11s infinite linear;
@@ -485,7 +409,7 @@ body{
 .vidaExtra{
     position: absolute;
     width: 6.5vw;
-    bottom: 16%;
+    bottom: 8vw;
     left: 90%;
     animation: animacao_drifloon 100s infinite linear;
     z-index: 1;
@@ -505,7 +429,7 @@ body{
 }
 .textoVidaExtra h5{
     left: 30%;
-    bottom: 60%;
+    bottom: 29vw;
     width: 40vw;
     font-size: 1.5vw;
     font-weight: bold;
@@ -514,19 +438,19 @@ body{
 
 .textoVidaExtra .drifloonTexto{
     left: 53%;
-    bottom: 60%;
+    bottom: 29vw;
     width: 4vw;
 }
 
 .textoVidaExtra .vidaTexto{
     left: 42%;
-    bottom: 61%;
+    bottom: 29vw;
     width: 2vw;
 }
 
 .textoVidaExtra .exclamacao{
     left: 27%;
-    bottom: 60%;
+    bottom: 29vw;
     width: 4vw;
 }
 
@@ -538,7 +462,7 @@ body{
 }
 .textoViga{
     left: 30%;
-    bottom: 45%;
+    bottom: 22vw;
     width: 40vw;
     font-size: 1.5vw;
     font-weight: bold;
@@ -547,19 +471,19 @@ body{
 
 .mantykeTexto{
     left: 29%;
-    bottom: 49%;
+    bottom: 24vw;
     width: 3.5vw;
 }
 
 .espaco{
     left: 67%;
-    bottom: 50%;
+    bottom: 24.3vw;
     width: 3.5vw;
 }
 
 .exclamacaoAzul{
     left: 28%;
-    bottom: 45%;
+    bottom: 22vw;
     width: 1.5vw;
 }
 
@@ -582,7 +506,7 @@ body{
 .mantine{
     position: absolute;
     width: 28vw;
-    top: -5%;
+    bottom: 25vw;
     left: 75%;
 } 
 
@@ -655,75 +579,74 @@ body{
 .mantyke1{
     position: absolute;
     width: 5vw;
-    --my-start-top: 15%;
+    --my-start-bottom: 33vw;
     left: 75%;
     animation: animacao_mantyke 10s infinite linear;
-    z-index: 1;
+    z-index: 2;
 
 } 
 
 .mantyke2{
     position: absolute;
     width: 5vw;
-    --my-start-top: 25%;
+    --my-start-bottom: 25vw;
     left: 80%;
     animation: animacao_mantyke 10s infinite linear;
-    z-index: 1;
+    z-index: 2;
 } 
 
 @keyframes animacao_mantyke {
     0% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         opacity: 0;
     }
     2% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         opacity: 1;
     }
     4% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         opacity: 0;
     }
     6% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         opacity: 1;
     }
     8% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         opacity: 0;
     }
     15% {
         opacity: 1;
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
     }
     30% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         left: 65%;    
     }
     40% {
-        top: var(--my-start-top);
+        bottom: var(--my-start-bottom);
         left: 65%;
     }
     60% {
-        top: calc(var(--my-start-top) + 50%);
+        bottom: calc(var(--my-start-bottom) - 18vw);
         left: 65%;
     }
     80% {
-        top: calc(var(--my-start-top) + 50%);
+        bottom: calc(var(--my-start-bottom) - 18vw);
         left: -35%;
     }
     100% {
-        top: calc(var(--my-start-top) + 50%);
+        bottom: calc(var(--my-start-bottom) - 18vw);
         left: -35%;
     }
 }
 
 .indicador{
     position: absolute;
-    top: 5%;
+    bottom: 40vw;
     left: 45%;
     width: 4.5vw;
-    height: 9vh;
     border: solid 0.3vw black;
 }
 
@@ -777,7 +700,7 @@ body{
     width: 16vw;
     left: 25%;
     z-index: 2;
-    --my-bottom: -13%;
+    --my-bottom: -6vw;
     bottom: var(--my-bottom); 
     animation: animacao_pulo 14s infinite linear;
 
@@ -786,7 +709,7 @@ body{
 .tentacruel{
     position: absolute;
     width: 16vw;
-    --my-bottom: -19%;
+    --my-bottom: -9vw;
     bottom: var(--my-bottom); 
     left: 65%;
     z-index: 2;
@@ -828,16 +751,16 @@ body{
     }
     59% {
         opacity: 1;
-        bottom: calc(var(--my-bottom) - 0.1%);
+        bottom: calc(var(--my-bottom) - 0.1vw);
     }
     60% {
-        bottom: calc(var(--my-bottom) + 33%);
+        bottom: calc(var(--my-bottom) + 16vw);
     }
     80% {
-        bottom: calc(var(--my-bottom) + 33%);
+        bottom: calc(var(--my-bottom) + 16vw);
     }
     90% {
-        bottom: calc(var(--my-bottom) + 33%);
+        bottom: calc(var(--my-bottom) + 16vw);
     }
     98% {
         bottom: --my-bottom;
