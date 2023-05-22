@@ -446,7 +446,7 @@ body{
     position: absolute;
     width: 3%;
     left: 40%;
-    bottom: 37.2%;
+    top: 55%;
     transform: rotate(180deg);
 }
 
@@ -456,7 +456,7 @@ body{
     position: absolute;
     width: 3%;
     left: 65%;
-    bottom: 62.6%;
+    top: 30%;
     transform: rotate(180deg);
 }
 
@@ -776,4 +776,9 @@ h6 {
     left: 43%;
     bottom: 70%;
     z-index: 1;
+}
+
+
+.swal2-popup{
+    font-size: 1vw;
 }

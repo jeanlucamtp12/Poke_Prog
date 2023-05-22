@@ -295,3 +295,8 @@ body{
     height: 50%;
 
 }
+
+
+.swal2-popup{
+    font-size: 1vw;
+}

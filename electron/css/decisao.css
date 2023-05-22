@@ -205,8 +205,8 @@ body {
 
 .form{
     position: absolute;
-    left: 5%;
-    bottom: 35vw;
+    left: 36%;
+    bottom: 38vw;
 }
 .form input{
     width: 25vw;
@@ -321,7 +321,7 @@ button:hover{
     border: solid 2px white;
     width: 14.5vw;
     height: 1.6vw;
-    bottom: 36.1vw;
+    bottom: 35.1vw;
     font-size: 1vw;
     font-weight: bold;
 }
@@ -330,7 +330,7 @@ button:hover{
 }
 .barraVidaAdversario3 {
     left: 65vw;
-    bottom: 35vw;
+    bottom: 33vw;
 }
 
 #barraA2_1, #barraA2_2, #barraA2_3, #barraA2_4, #barraA3_1, #barraA3_2, #barraA3_3, #barraA3_4{
@@ -390,9 +390,7 @@ button:hover{
     bottom: 38vw;
     font-size: 1vw;
     font-weight: bold;
-}
-.barraVidaAdversario4 {
-    left: 60vw;
+    left: 65vw;
 }
 
 
@@ -408,4 +406,9 @@ button:hover{
     width: 20vw;
 
     z-index: 1;
+}
+
+
+.swal2-popup{
+    font-size: 1vw;
 }

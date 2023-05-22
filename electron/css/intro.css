@@ -82,3 +82,7 @@ position:relative;
     background-size: cover;
     -o-background-size: cover;
 }
+
+.swal2-popup{
+    font-size: 1vw;
+}

@@ -338,3 +338,8 @@ p{left: 35%; top: 1%; position: absolute;
         transition-delay: 0s !important; 
     }
 }
+
+
+.swal2-popup{
+    font-size: 1vw;
+}

@@ -29,6 +29,7 @@
         <img style="display: none;" id="img5" src="../img/home/funcoes.png"></img>
         <img style="display: none;" id="img6" src="../img/home/excecoes.png"></img>
         <img style="display: none;" id="img7" src="../img/home/usina.png"></img>
+        <img style="display: none;" id="img8" src="../img/home/victiniVitoria.png"></img>
     </div>
 
     <div id="introducao">
@@ -138,8 +139,8 @@
         </div>
 
 
-        <div style="cursor: pointer;" onclick="window.location.href='#'">
-            <h1 id="extras">Extras</h1>
+        <div style="cursor: pointer;"  onclick="iniciarFase(8)">
+            <h1 id="fase8">Fase 8 <br>Desafio da Vitória</h1>
             <img id="trofeu" src="../img/home/trofeu.png"></a>
             <img id="victini1" src="../img/home/victini.png">
             <img id="victini2" src="../img/home/victini.png">
@@ -224,8 +225,10 @@
                 window.location.href='../funcoes/funcoes.html';            
             }else if(val == 6){
                 window.location.href='../excecoes/excecoes.html';            
-            }else{
+            }else if(val == 7){
                 window.location.href='../extras/hanoi.html';
+            }else{
+                window.location.href='../Quizes/quiz.html';
             }
 
         });

@@ -6,8 +6,9 @@ var textos = ["> Olá, eu sou o professor Erbie! Seja bem vindo a Progdea. Algum
     "> Chegamos ao lago repetição, neste lago os Timburr costumam construir pontes para ajudar os cidadãos da cidade a atravessarem para o bosque. Sua missão aqui é ajudar o Timburr a construir a ponte. É muito simples, basta pegar os troncos que estão caindo e colocá-los um a um no final da ponte. Tome muito cuidado, existem muitos Pokémon de água perigosos nesse lago. Vamos nessa!!!",
     "> Agora que construímos a ponte, podemos finalmente entrar no bosque. Me disseram que um Falinks que vivia aqui acabou se despedaçando e perdendo as partes do seu corpo. Gostaria que você ajudasse a cabeça do Falinks a coletar suas outras 10 partes. Vamos coletá-las e colocá-las dentro do que chamamos de vetor. Um vetor é uma caixa enorme com várias outras caixas dentro. Na nossa missão vamos colocar os Fanlinks dentro de um vetor com 10 caixas. Acredito ser o tamanho ideal, visto que temos 10 pedaços de Falinks espalhados pelo bosque. Não vamos perder mais tempo, clique em iniciar para começarmos a coleta!!",
     "> Vamos agora verificar como andam as coisas na casa das funções. Me informaram que está uma bagunça, por isso vou precisar da sua ajuda para organizar a casa. O Rotom é um fantasminha que consegue possuir objetos de casa, ele pode se transformar em vários objetos, como um forno, um ventilador, e até mesmo um telefone, acredita ? Ele se dispôs a te ajudar nessa missão. Ele vai possuir alguns objetos e te ajudar a organizar os cômodos da casa. Você pode começar pelo cômodo que quiser, a escolha é sua. Vamos lá, mãos à obra! ",
-    "> Que medo!!! Vamos ter que passar no cemitério da cidade. Vários Pokémon fantasma vivem por lá, acontece que aparecerão alguns intrusos, que nós chamamos por aqui de Pokémon exceções, eles são diferentes em coloração aos Pokémon da sua espécie. O problema é que eles confundem os Pokémon daqui da cidade e fazem a maior confusão. Preciso que você capture esses Pokémon exceções para fazer com que os Pokémon do cemitério se acalmem. Conto com você!!!",
-    "> Por fim, temos que passar na usina recursiva, aqui você enfrentará um desafio que vai exigir bastante do seu raciocínio. Existem cincos barras de Magnemite empilhadas, onde cada uma delas possui um tamanho diferente, elas estão empilhadas da menor para a maior. Seu desafio aqui é mover a pilha de um ponto a outro. Mas cuidado, você só consegue colocar pilhas de Magnemite em cima de outro, se este for maior. Chega de enrolação, é sempre melhor aprender na prática, certo? Háaaa, tente  pensar bem antes de realizar os movimentos, uma caixa de texto vai te dizer o número mínimo de movimentações que você deve atingir para ser considerado um gênio!!! "];
+    "> > Que medo!!! Vamos ter que passar no cemitério da cidade. Vários Pokémon fantasma vivem por lá, acontece que aparecerão alguns intrusos, que nós chamamos por aqui de Pokémon exceções, eles são diferentes em coloração aos Pokémon da sua espécie. O problema é que eles confundem os Pokémon daqui da cidade e causam a maior confusão. Preciso que você capture esses Pokémon exceções para fazer com que os Pokémon do cemitério se acalmem. Ao descobrir o Pokémon exceção, basta clicar nele para capturá-lo. Conto com você!!!",
+    "> Por fim, temos que passar na usina recursiva, aqui você enfrentará um desafio que vai exigir bastante do seu raciocínio. Existem cincos barras de Magnemite empilhadas, onde cada uma delas possui um tamanho diferente, elas estão empilhadas da menor para a maior. Seu desafio aqui é mover a pilha de um ponto a outro. Mas cuidado, você só consegue colocar pilhas de Magnemite em cima de outro, se este for maior. Chega de enrolação, é sempre melhor aprender na prática, certo? Háaaa, tente  pensar bem antes de realizar os movimentos, uma caixa de texto vai te dizer o número mínimo de movimentações que você deve atingir para ser considerado um gênio!!! ",
+    "> Por fim! Você concluiu todos os desafios que te propus.  Para terminar gostaria de te apresentar Victini, ele tem um enorme “V” na cabeça e é conhecido como o Pokémon que traz a vitória. Ele gostaria de te propor algumas perguntas para verificar o quanto você aprendeu aqui com a gente, ao lado dele tenho certeza que você vai acertar todas. Vamos nessa!!"];
 
 
 var textosFuncoes = ["> A geladeira não está funcionando, precisamos arrumá-la. O Rotom vai possuir a geladeira para te ajudar. Para completar a fase você precisa seguir o manual de instruções que o Rotom encontrou e organizar todos os itens corretamente, só assim a geladeira irá funcionar. Vamos nessa!!!!",
@@ -18,21 +19,25 @@ var textosFuncoes = ["> A geladeira não está funcionando, precisamos arrumá-l
 
 
 
-var sweetalerts = ["Parabéns, você concluiu a fase! Vamos continuar!"];
-
-
 
 function exibeNotificação(tipo, texto, link) {
     Swal.fire({
         icon: tipo,
         title: texto,
         allowOutsideClick: false,
+        width: 'auto',
+        heightAuto: false,
         customClass: {
             container: "custom-swal",
           },
         // showConfirmButton: true,
         //timer: 1500
     }).then((result) => {
+
+
+       // document.querySelector(".custom-swal").style.fontSize = "1vw";
+      
+
 
         if (result.isConfirmed && link != "") {
 

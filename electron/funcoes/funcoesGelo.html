@@ -585,7 +585,8 @@ var termVermelho = 0;
                 if(document.querySelector(".controleMeio"+i).innerHTML == 30){
                     
                 }else{
-                    exibeNotificação("error", "Verifique os Termometros!", "");
+                    window.alert("Verifique os Termometros!");
+                    //exibeNotificação("error", "Verifique os Termometros!", "");
                     termVerde = 0;
                     termVermelho = 0;
                     termAmarelo = 0;
@@ -603,7 +604,8 @@ var termVermelho = 0;
                 }
                     
                 if(i == 4){
-                    exibeNotificação("error", "Verifique os Termometros!", "");
+                    window.alert("Verifique os Termometros!");
+                    //exibeNotificação("error", "Verifique os Termometros!", "");
                     termVerde = 0;
                     termVermelho = 0;
                     termAmarelo = 0;
@@ -625,7 +627,7 @@ var termVermelho = 0;
 
             if (!((control1 != control2 && control1 != control3 && control1 != control4) && (control2 != control3 && control2 != control4) && (control3 != control4))){
                 window.alert("Verifique os Termometros!");
-                exibeNotificação("error", "Verifique os Termometros!", "");
+                //exibeNotificação("error", "Verifique os Termometros!", "");
             }
         }
 
@@ -673,7 +675,8 @@ var termVermelho = 0;
             if (disjuntor1 == "" && disjuntor2 == "ligado") {
 
             } else {
-                exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
+                window.alert("Os dijuntores podem estar Incorretos!");
+                //exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
@@ -688,7 +691,8 @@ var termVermelho = 0;
             if (disjuntor1 == "ligado" && disjuntor2 == "") {
 
             } else {
-                exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
+                window.alert("Os dijuntores podem estar Incorretos!");
+                //exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
@@ -704,7 +708,8 @@ var termVermelho = 0;
             if (disjuntor1 == "ligado" && disjuntor2 == "ligado") {
 
             } else {
-                exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
+                window.alert("Os dijuntores podem estar Incorretos!");
+                //exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
@@ -746,7 +751,8 @@ var termVermelho = 0;
         if(estadoLampada == "ligado"){
             if(luz == ""){
             }else{
-                exibeNotificação("error", "Verifique a Luz!", "");
+                window.alert("Verifique a Luz!");
+                //exibeNotificação("error", "Verifique a Luz!", "");
                 return;
             }
         }else{
@@ -754,9 +760,12 @@ var termVermelho = 0;
             if(luz == "blue"){
             }
             else if (luz == ""){
-                exibeNotificação("error", "Leia o Manual Novamente, na Seção Luz", "");
+                window.alert("Leia o Manual Novamente, na Seção Luz!");
+                //exibeNotificação("error", "Leia o Manual Novamente, na Seção Luz", "");
+                return;
             }else{
-                exibeNotificação("error", "Você ligou a Luz, mas sera que corretamente?", "");
+                window.alert("Você ligou a Luz, mas sera que corretamente?");
+                //exibeNotificação("error", "Você ligou a Luz, mas sera que corretamente?", "");
                 return;
             }
 
@@ -789,7 +798,8 @@ var termVermelho = 0;
                 if(c1.querySelector("img") && c1.querySelector("img").id.includes("bebida") || c2.querySelector("img") && c2.querySelector("img").id.includes("bebida") || c3.querySelector("img") && c3.querySelector("img").id.includes("bebida")){
                    
                 }else{
-                    exibeNotificação("error", "verifique a quarta patrelheira", "");
+                    window.alert("Verifique o número de série!");
+                    //exibeNotificação("error", "Verifique a quarta patrelheira", "");
                     return;
                 }
            // }
@@ -807,7 +817,8 @@ var termVermelho = 0;
                 if(c1.querySelector("img") && c1.querySelector("img").id.includes("fruta") || c2.querySelector("img") && c2.querySelector("img").id.includes("fruta") || c3.querySelector("img") && c3.querySelector("img").id.includes("fruta")){
                    
                 }else{
-                    exibeNotificação("error", "verifique a quarta patrelheira", "");
+                    window.alert("Verifique o número de série!");
+                    //exibeNotificação("error", "Verifique a quarta patrelheira", "");
                     return;
                 }
            // }
@@ -824,7 +835,8 @@ var termVermelho = 0;
                 if(c1.querySelector("img") && c1.querySelector("img").id.includes("carne") || c2.querySelector("img") && c2.querySelector("img").id.includes("carne") || c3.querySelector("img") && c3.querySelector("img").id.includes("carne")){
                    
                 }else{
-                    exibeNotificação("error", "verifique a quarta patrelheira", "");
+                    window.alert("Verifique o número de série!");
+                    //exibeNotificação("error", "Verifique a quarta patrelheira", "");
                     return;
                 }
          //   }
@@ -832,8 +844,9 @@ var termVermelho = 0;
         }
 
 
-
-        exibeNotificação("success", "Você consertou a geladeira! Vamos a Proxima Tarefa!", "http://localhost/jogo/electron/funcoes/funcoes.html");
+        window.alert("Você consertou a geladeira! Vamos a Proxima Tarefa!");
+        window.location.href = "http://localhost/jogo/electron/funcoes/funcoes.html";
+        //exibeNotificação("success", "Você consertou a geladeira! Vamos a Proxima Tarefa!", "http://localhost/jogo/electron/funcoes/funcoes.html");
 
 
         

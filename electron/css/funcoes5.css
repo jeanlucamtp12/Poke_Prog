@@ -606,3 +606,7 @@ body{
    background-color: #490000; /* Defina a cor de fundo desejada */
    background-color: #490000;
  }
+
+ .swal2-popup{
+   font-size: 1vw;
+}

@@ -313,6 +313,7 @@
                     //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 0) {
+                    document.querySelector(".poke").style.display = "none";
                     exibeNotificação("error", "Você Perdeu Todas as Vidas! Clique para Tentar Novamente", "http://localhost/jogo/electron/funcoes/funcoesCortador.html");
                 }
 
@@ -444,6 +445,7 @@
 
         if (vidas >= 0 && energias == 0 && bananas == 0 && alfaces == 0 && tomates == 0) {
             if (vitoriaLoop == "false"){
+                document.querySelector(".poke").style.display = "none";
                 exibeNotificação("success", "Você concluiu todas as tarefas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
             }
             vitoriaLoop = "true";
@@ -496,8 +498,6 @@
 
 
 
-
-                        console.log(vetor)
                         document.getElementById("verdura").style.left = vetor[0];
                         document.getElementById("legume").style.left = vetor[1];
                         document.getElementById("fruta").style.left = vetor[2];

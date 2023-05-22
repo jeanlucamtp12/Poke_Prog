@@ -183,6 +183,7 @@
         vidas = 3
         var vidinhas = document.querySelectorAll("#vida1, #vida2, #vida3");
         var textoVida = 0;
+        var verificaPopUp = "false";
 
 
         const alteraVida = () => {
@@ -233,11 +234,16 @@
 
             if (tronco == 17 && vidas >= 0) {
                 
-                setInterval(function () {
-                    window.alert("Você concluiu a fase! Clique para voltar ao Mapa da Cidade")
-                    window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
-                    //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
-                }, 100);
+                if(verificaPopUp == "false"){
+                   // setInterval(function () {
+                   // window.alert("Você concluiu a fase! Clique para voltar ao Mapa da Cidade");
+               //     window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                    exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                    verificaPopUp = "true";
+                 //  }, 100);
+                   
+                }
+                
             }
 
             //defini qual inimigo aparecera em determinado momento da fase
@@ -328,6 +334,7 @@
 
                     document.querySelector("#octillery").style.animation = 'none';
                     document.querySelector("#tentacruel").style.animation = 'none';
+                    personagem.style.left = "0%";
                     setInterval(function () {
                         document.querySelector("#octillery").style.animation = "";
                         document.querySelector("#tentacruel").style.animation = "";

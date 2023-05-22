@@ -459,3 +459,8 @@ body{
     left: -80%;
     bottom: 25%;
 }
+
+
+.swal2-popup{
+    font-size: 1vw;
+}

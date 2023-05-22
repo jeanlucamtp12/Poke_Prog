@@ -22,10 +22,12 @@ body{
     width:4.5vw;   
     position: absolute;
     top:48%;
- 
+    z-index: 2;
 }
 
-
+#raio2, #raio3, #raio4, #raio5, #raio6{
+    z-index: 2;
+}
 
 #raio3{
     animation: raio_movimento 5s infinite linear;
@@ -261,13 +263,13 @@ body{
 }
 
 .togepi{
-    bottom: 27vw;
+    bottom: 26.8vw;
     left: 90%;
 }
 .cleffa{
     left: -3%;
     transform: scaleX(-1);
-    bottom: 27vw;
+    bottom: 26.5vw;
 }
 .pichu{
     bottom: 27vw;
@@ -276,7 +278,7 @@ body{
 }
 .igglybuff{
     left: 83%;
-    bottom: 27vw;
+    bottom: 27.5vw;
 }
 
 .vida{
@@ -399,3 +401,6 @@ body{
     width: 100%;
 }
 
+.swal2-popup{
+    font-size: 1vw;
+}

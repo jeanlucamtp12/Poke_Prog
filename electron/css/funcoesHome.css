@@ -145,7 +145,7 @@ body{
     position: absolute;
     width: 2%;
     left: 70%;
-    bottom: 40.1%;
+    top: 55.1%;
     transform: rotate(180deg);
 }
 
@@ -448,4 +448,9 @@ h6 {
 }
 #introducao{
 	z-index: 3;
+}
+
+
+.swal2-popup{
+    font-size: 1vw;
 }
