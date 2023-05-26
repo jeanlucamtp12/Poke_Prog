@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../css/home.css">
 </head>
+
 <body>
 
-    <audio id="audioFase" src="../sounds/inicio.mp3" loop autoplay ></audio>
+    <audio id="audioFase" src="../sounds/inicio.mp3" loop autoplay></audio>
 
     <div>
-        <p  class="choque"><span aria-hidden="true"></span>Poké Prog<span aria-hidden="true"></span></p>
-    </div> 
+        <p class="choque"><span aria-hidden="true"></span>Poké Prog<span aria-hidden="true"></span></p>
+    </div>
 
 
     <div class="cenario">
@@ -48,12 +50,11 @@
             <img id="zubat2" src="../img/excecoes/zubat.png"></img>
             <img id="zubat3" src="../img/excecoes/zubat.png"></img>
 
-           
 
 
         </div>
 
-        <div  id="meio" onclick="window.location.href='../telaInicial/cityIntro.html'">
+        <div id="meio" onclick="window.location.href='../telaInicial/cityIntro.html'">
             <h4>Iniciar</h4>
         </div>
 
@@ -67,15 +68,20 @@
 
 
 
+
 </body>
+
 </html>
 
 
 <script>
 
 
+
+
+
     document.addEventListener('click', musicPlay);
-        function musicPlay() {
+    function musicPlay() {
         document.getElementById('audioFase').play();
         document.removeEventListener('click', musicPlay);
     }
@@ -85,21 +91,21 @@
 
 
     var k = 0;
-                for (var i = 1; k <= 100; i++) {
+    for (var i = 1; k <= 100; i++) {
 
 
-                    var img = document.createElement('img');
-                    img.src = '../img/decisao/mato.png';
-                    img.classList.add('mato');
-                    img.id = 'mato' + i;
-                    img.style.bottom = "0%";
-                    img.style.width = "4%";
-                    img.style.left = k + "%";
+        var img = document.createElement('img');
+        img.src = '../img/decisao/mato.png';
+        img.classList.add('mato');
+        img.id = 'mato' + i;
+        img.style.bottom = "0%";
+        img.style.width = "4%";
+        img.style.left = k + "%";
 
-                    var body = document.querySelector("body");
-                    k = k + 3.8;
+        var body = document.querySelector("body");
+        k = k + 3.8;
 
-                    body.appendChild(img);
+        body.appendChild(img);
 
-                }
+    }
 </script>

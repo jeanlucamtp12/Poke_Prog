@@ -13,7 +13,10 @@ app.whenReady().then(() => {
         //nodeIntegration: false,
         frame: false,
         kiosk: true,
-        
+        icon: './img/home/icone.png',
+        title: 'PokeProg',
+        name: 'PokeProg',
+
         webPreferences: {
             nodeIntegration: false,
         }

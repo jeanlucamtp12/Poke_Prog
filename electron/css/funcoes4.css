@@ -583,7 +583,7 @@ h6 {
     position: absolute;
     width: 30%;
     bottom: 20%;
-    z-index: 0;
+    z-index: 1;
     right: 0%;
     animation: dewgong_movimento 10s infinite linear;
 

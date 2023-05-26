@@ -9,19 +9,17 @@ body {
 
 #meio{
     display: inline-block;
-    line-height: 1vw;
     background-color:  #00abb8;
     color: rgb(255, 255, 255);
     border-radius: 90px;
     text-decoration: none;
     animation: pulsa 1.5s linear infinite;
     cursor: pointer;
-    width: 12vw;
-    height: 6vw;
+    width: 10vw;
 }
 
 #meio h4{
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 @keyframes pulsa {
@@ -343,3 +341,7 @@ p{left: 35%; top: 1%; position: absolute;
 .swal2-popup{
     font-size: 1vw;
 }
+
+
+
+

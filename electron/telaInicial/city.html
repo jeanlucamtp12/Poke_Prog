@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/city.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../telaInicial/dialogos.js"></script>   
+    <script src="../telaInicial/dialogos.js"></script>
 
     <title>Document</title>
 </head>
 
 <body>
 
-    <audio id="audio" src="../sounds/home.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/home.mp3" loop autoplay></audio>
 
 
-    
+
     <div style="display: none;" id="telaTransparente"></div>
 
     <div id="imagensFases">
@@ -32,7 +32,7 @@
 
 
     <div id="introducao" style="display: none;">
-        <img class="professor" src="../img/home/Erbie.png">
+        <img class="professor" src="../img/home/Fran.png">
         <div class="balao">
             <h4 id="dialogo"></h4>
             <button id="botao" onclick="exibirTexto()">Avançar</button>
@@ -40,9 +40,9 @@
 
         </div>
     </div>
-        <h1 class="titulo">Seleção de Fase</h1>
+    <h1 class="titulo">Seleção de Fase</h1>
 
-    <div class="mapa" style="opacity: 1;" >
+    <div class="mapa" style="opacity: 1;">
 
         <div>
             <img class="parede1" src="../img/home/asfauto.png">
@@ -72,7 +72,7 @@
         </div>
 
 
-        <div style="cursor: pointer;"  onclick="iniciarFase(2)">
+        <div style="cursor: pointer;" onclick="iniciarFase(2)">
             <h1 id="fase2">Fase 2 <br>Escola das decisões</h1>
             <img id="escola" src="../img/home/escola.png"></a>
             <img id="bulbassaur" src="../img/home/bulbassaur.png">
@@ -82,7 +82,7 @@
 
 
 
-        <div style="cursor: pointer;"  onclick="iniciarFase(3)">
+        <div style="cursor: pointer;" onclick="iniciarFase(3)">
             <h1 id="fase3">Fase 3 <br>Lago repetição</h1>
             <img id="nuvem3" src="../img/home/nuvem1.png"></a>
             <img id="rio" src="../img/home/rio.png"></a>
@@ -139,7 +139,7 @@
         </div>
 
 
-        <div style="cursor: pointer;"  onclick="iniciarFase(8)">
+        <div style="cursor: pointer;" onclick="iniciarFase(8)">
             <h1 id="fase8">Fase 8 <br>Desafio da Vitória</h1>
             <img id="trofeu" src="../img/home/trofeu.png"></a>
             <img id="victini1" src="../img/home/victini.png">
@@ -156,7 +156,7 @@
 </html>
 
 <script>
-    
+
 
 
     var dialogo = textos[0];
@@ -168,10 +168,10 @@
     function escreveDialogo() {
         if (verificaClick == "false") {
             if (aux < dialogo.length) {
-                document.getElementById("dialogo").textContent += dialogo.charAt(aux); 
+                document.getElementById("dialogo").textContent += dialogo.charAt(aux);
                 aux++;
                 setTimeout(escreveDialogo, 100);
-               
+
             }
         }
     }
@@ -197,9 +197,9 @@
 
     function iniciarFase(val) {
 
-      
 
-        fase = val;      
+
+        fase = val;
         exibeImagem(val);
         aux = 0;
         verificaClick = "false";
@@ -210,30 +210,32 @@
         document.getElementById("introducao").style.display = "block";
         document.getElementById("telaTransparente").style.display = "block";
         document.querySelector(".mapa").style.opacity = "0.2";
+
+        criarSom(val);
         escreveDialogo(val);
 
 
         document.getElementById("botao2").addEventListener("click", function () {
-            if(val == 1){
-                window.location.href='../variaveis/caixas.html';
-            }else if(val == 2){
-                window.location.href='../decisao/decisao.html';
-            }else if(val == 3){
-                window.location.href='../repeticao/repeticao.html';
-            }else if(val == 4){
-                window.location.href='../arrays/arrays.html';     
-            }else if(val == 5){
-                window.location.href='../funcoes/funcoes.html';            
-            }else if(val == 6){
-                window.location.href='../excecoes/excecoes.html';            
-            }else if(val == 7){
-                window.location.href='../extras/hanoi.html';
-            }else{
-                window.location.href='../Quizes/quiz.html';
+            if (val == 1) {
+                window.location.href = '../variaveis/caixas.html';
+            } else if (val == 2) {
+                window.location.href = '../decisao/decisao.html';
+            } else if (val == 3) {
+                window.location.href = '../repeticao/repeticao.html';
+            } else if (val == 4) {
+                window.location.href = '../arrays/arrays.html';
+            } else if (val == 5) {
+                window.location.href = '../funcoes/funcoes.html';
+            } else if (val == 6) {
+                window.location.href = '../excecoes/excecoes.html';
+            } else if (val == 7) {
+                window.location.href = '../extras/hanoi.html';
+            } else {
+                window.location.href = '../Quizes/quiz.html';
             }
-            
-          
-            document.getElementById("img"+val).style.display = "block";
+
+
+            document.getElementById("img" + val).style.display = "block";
         });
 
     }
@@ -241,16 +243,24 @@
 
 
 
-    
+
     function exibeImagem(val) {
-        document.getElementById("img"+val).style.display = "block";
-      
+        document.getElementById("img" + val).style.display = "block";
+
     }
 
 
 
 
+    const criarSom = (valor) => {
 
+        var som = new Audio();
+        som.src = '../sounds/vozes/fase' + valor + '.mp3';
+        document.body.appendChild(som);
+
+        document.getElementById('audio').volume = 0.2;
+        som.play();
+    }
 
 
 </script>
