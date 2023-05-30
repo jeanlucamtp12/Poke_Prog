@@ -65,18 +65,18 @@
     if(faseAtual == 1){
         currentIndex = 0;
     }else if (faseAtual == 2){
-        currentIndex = 2;
+        currentIndex = 3;
     }else if (faseAtual == 3){
-        currentIndex = 4;
-    }else if (faseAtual == 4){
         currentIndex = 6;
+    }else if (faseAtual == 4){
+        currentIndex = 9;
     }else if (faseAtual == 5){
-        currentIndex = 8;
+        currentIndex = 12;
     }else if (faseAtual == 6){
-        currentIndex = 10;
+        currentIndex = 15;
     }
     else if (faseAtual == 7){
-        currentIndex = 12;
+        currentIndex = 18;
     }
 
 
@@ -92,6 +92,7 @@
 
     function nextQuestion(e) {
 
+        console.log(perguntas.length)
         if (e.target.getAttribute("data-correct") === "true") {
             questionsCorrect++;
         }
@@ -114,7 +115,7 @@
         if(faseAtual == 1 || faseAtual == 2 || faseAtual == 3 || faseAtual == 4 || faseAtual == 5 || faseAtual == 6 || faseAtual == 7){
 
           
-            if(cont == 2 ){
+            if(cont == 3){
                 exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                 return;
             }

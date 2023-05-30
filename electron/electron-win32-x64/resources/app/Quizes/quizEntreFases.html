@@ -8,29 +8,28 @@
     <title>Document</title>
     <script src="../telaInicial/dialogos.js"></script>
     <script src="../sweetalert/sweetalert.js"></script>
+    <script src="./question2.js"></script>
     <script src="../telaInicial/dialogos.js"></script>
-    <script src="./questions.js"></script>
-    <link rel="stylesheet" href="quiz1.css">
+    <link rel="stylesheet" href="quiz2.css">
 </head>
 
 <body>
     <audio id="audio" src="../sounds/quiz.mp3" loop autoplay></audio>
 
     <div>
-        <img id="uA" src="../img/unowns/a.gif"></img>
-        <img id="uB" src="../img/unowns/b.gif"></img>
-        <img id="uC" src="../img/unowns/c.gif"></img>
-        <img id="starmie" src="../img/repeticao/starmie.png"></img>
-        <img id="seaking" src="../img/repeticao/seaking.png"></img>
-        <img id="rotom" src="../img/funcoes/rotom.png"></img>
-        <img id="abra" src="../img/excecoes/fantasmas/abra_shiny.png"></img>
-        <img id="magnemite" src="../img/extras/magnemite2.png"></img>
+        <img id="uD" src="../img/unowns/d.gif"></img>
+        <img id="uE" src="../img/unowns/e.gif"></img>
+        <img id="uF" src="../img/unowns/f.gif"></img>
+        <img id="mantine" src="../img/repeticao/mantine.png"></img>
+        <img id="qwilfish" src="../img/repeticao/qwilfish.png"></img>
+        <img id="rotom" src="../img/funcoes/cortador.png"></img>
+        <img id="magneton" src="../img/extras/magneton.png"></img>
     </div>
 
-    <h2>Desafio da Vitória</h2>
+    <h2>Hora da Pergunta!</h2>
     <main>
         <div class="content">
-            <span class="spnQtd"></span>
+           
             <span class="question"></span>
             <div class="answers"></div>
         </div>
@@ -47,7 +46,6 @@
 <script>
     const question = document.querySelector(".question");
     const answers = document.querySelector(".answers");
-    const spnQtd = document.querySelector(".spnQtd");
     const textFinish = document.querySelector(".finish span");
     const content = document.querySelector(".content");
     const contentFinish = document.querySelector(".finish");
@@ -57,10 +55,31 @@
     var faseAtual = url.get('fase');
     var faseAtual = parseInt(faseAtual);
       
-
-
     let currentIndex = 0;
     let questionsCorrect = 0;
+    
+    var cont = 0;
+
+
+    
+    if(faseAtual == 1){
+        currentIndex = 0;
+    }else if (faseAtual == 2){
+        currentIndex = 2;
+    }else if (faseAtual == 3){
+        currentIndex = 4;
+    }else if (faseAtual == 4){
+        currentIndex = 6;
+    }else if (faseAtual == 5){
+        currentIndex = 8;
+    }else if (faseAtual == 6){
+        currentIndex = 10;
+    }
+    else if (faseAtual == 7){
+        currentIndex = 12;
+    }
+
+
 
     btnRestart.onclick = () => {
         content.style.display = "flex";
@@ -83,29 +102,29 @@
         } else {
             finish();
         }
-
-     //   if (faseAtual == (currentIndex-1)){
-    //        faseAtual = faseAtual + 1;
-    //        exibeNotificação("success", "Você respondeu as perguntas da fase. Vamos voltar a cidade", "http://localhost/jogo/electron/telaInicial/city.html");
-    //    }
         
     }
 
     function finish() {
-        textFinish.innerHTML = `você acertou ${questionsCorrect} de ${perguntas.length}`;
-        content.style.display = "none";
-        contentFinish.style.display = "flex";
-
-        document.querySelector("#finalizar").addEventListener('click', function () {
-            window.location.href = "http://localhost/jogo/electron/telaInicial/index.html";
-
-        });
+        exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
     }
 
     function loadQuestion() {
-        spnQtd.innerHTML = `${currentIndex + 1}/${perguntas.length}`;
+
+        if(faseAtual == 1 || faseAtual == 2 || faseAtual == 3 || faseAtual == 4 || faseAtual == 5 || faseAtual == 6 || faseAtual == 7){
+
+          
+            if(cont == 2 ){
+                exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                return;
+            }
+            cont = cont + 1;
+
+        }
+
+
         const item = perguntas[currentIndex];
-        console.log(currentIndex)
+       
         answers.innerHTML = "";
         question.innerHTML = item.question;
 

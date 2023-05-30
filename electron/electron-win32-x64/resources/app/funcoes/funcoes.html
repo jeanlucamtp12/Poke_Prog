@@ -12,15 +12,15 @@
 
 <body>
 
-    <audio src="../sounds/homeFuncoes.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/homeFuncoes.mp3" loop autoplay></audio>
 
 
 
 
-    <div id="telaTransparente"  style="display: none;"></div>
+    <div id="telaTransparente" style="display: none;"></div>
 
     <div id="introducao" style="display: none;">
-        <img class="professor" src="../img/home/Erbie.png">
+        <img class="professor" src="../img/home/Fran.png">
         <div class="balao">
             <h4 id="dialogo"></h4>
             <button id="botao" onclick="exibirTexto()">Avançar</button>
@@ -32,11 +32,9 @@
 
 
 
-
-
     <div class="campo">
 
-    
+
 
         <div class="parede1">
             <img class="parede1" src="../img/recursividade/chao.jpg">
@@ -53,11 +51,11 @@
         </div>
 
 
- 
+
         <div>
             <img class="geladeira" id="geladeira" src="../img/recursividade/geladeira.png">
         </div>
-        
+
         <div>
             <img class="fogao" id="fogao" src="../img/recursividade/fogao.png">
         </div>
@@ -99,12 +97,12 @@
             <img class="porta0" src="../img/recursividade/porta.png">
         </div>
 
-  
+
         <div>
             <img class="lampada1" id="lampada1" src="../img/recursividade/lampada.png">
         </div>
 
-   
+
         <div>
             <img class="lampada3" id="lampada3" src="../img/recursividade/lampada.png">
         </div>
@@ -115,89 +113,91 @@
 
         <div>
             <div class="quadro">
-              <img src="../img/recursividade/cerulean.webp" >
+                <img src="../img/recursividade/cerulean.webp">
             </div>
-          </div>
+        </div>
 
 
 
 
-          <div class="wall" style="opacity: 0.1;"></div>
-
-
-
-
-
+        <div class="wall" style="opacity: 0.1;"></div>
 
 
 
 
 
 
-          
-          
-          
 
-          <div>
+
+
+
+
+
+
+
+
+        <div>
             <img id="rotom" class="rotom" src="../img/funcoes/rotom.png"></img>
-          </div>
+        </div>
 
-          <div>
-              <a href="#" onclick="iniciarFase(4)"><img id="cortadorR" class="cortadorR" src="../img/funcoes/cortador.png"></a>
-          </div>
+        <div>
+            <a href="#" onclick="iniciarFase(3)"><img id="cortadorR" class="cortadorR"
+                    src="../img/funcoes/cortador.png"></a>
+        </div>
 
-          <div>
-              <a href="#"  onclick="iniciarFase(1)" ><img id="fornoR" class="fornoR" src="../img/funcoes/forno.png" ></a>
-              
-          </div>
+        <div>
+            <a href="#" onclick="iniciarFase(1)"><img id="fornoR" class="fornoR" src="../img/funcoes/forno.png"></a>
 
-          <div>
-              <a href="#"  onclick="iniciarFase(2)" ><img id="lavadeiraR" class="lavadeiraR" src="../img/funcoes/lavadeira.png" ></a>
-          </div>
+        </div>
 
-          <div>
-              <a href="#" onclick="iniciarFase(3)" ><img id="ventiladorR" class="ventiladorR" src="../img/funcoes/ventilador.png"></a>
-          </div>
+        <div>
+            <a href="#" onclick="iniciarFase(2)"><img id="lavadeiraR" class="lavadeiraR"
+                    src="../img/funcoes/lavadeira.png"></a>
+        </div>
 
-          
-          <div>
-              <a href="#"  onclick="iniciarFase(0)" ><img id="geladeiraR" class="geladeiraR" src="../img/funcoes/geladeira.png"></a>
-          </div>
+        <div>
+            <a href="#" onclick="iniciarFase(3)"><img id="ventiladorR" class="ventiladorR"
+                    src="../img/funcoes/ventilador.png"></a>
+        </div>
 
 
-          <div class="textos">
+        <div>
+            <a href="#" onclick="iniciarFase(0)"><img id="geladeiraR" class="geladeiraR"
+                    src="../img/funcoes/geladeira.png"></a>
+        </div>
+
+
+        <div class="textos">
             <div class="texto1">
                 <h3>Arrumar a Cozinha</h3>
-              </div>
-    
-              <div class="texto2">
+            </div>
+
+            <div class="texto2">
                 <h3>Arrumar a Lavanderia</h3>
-              </div>
-    
-              <div class="texto3">
+            </div>
+
+            <div class="texto3">
                 <h3>Arrumar o Quintal</h3>
-              </div>
-    
-    
-              <div class="textoCortar">
+            </div>
+
+
+            <div class="textoCortar">
                 <h3>Cortar a Grama / Colher as Frutas</h3>
-              </div>
-    
-              <div class="textoLavar">
+            </div>
+
+            <div class="textoLavar">
                 <h3>Lavar as Roupas</h3>
-              </div>  
-    
-              <div class="textoCozinhar">
+            </div>
+
+            <div class="textoCozinhar">
                 <h3>Cozinhar</h3>
-              </div>
-    
-              <div class="textoGelar">
+            </div>
+
+            <div class="textoGelar">
                 <h3>Congelar os Alimentos</h3>
-              </div>
+            </div>
 
-          </div>
-
-
+        </div>
 
 
 
@@ -206,9 +206,11 @@
 
 
 
-          
-         
-          
+
+
+
+
+
 
     </div>
 
@@ -223,13 +225,13 @@
 
         var wall = document.querySelector(".wall");
 
-		for (var i = 0; i < 100; i++) {
-			var tile = document.createElement("div");
-			tile.className = "tile";
-			wall.appendChild(tile);
+        for (var i = 0; i < 100; i++) {
+            var tile = document.createElement("div");
+            tile.className = "tile";
+            wall.appendChild(tile);
         }
 
-        </script>
+    </script>
 
 
 
@@ -283,10 +285,10 @@
 
         if (verificaClick == "false") {
             if (aux < dialogo.length) {
-                document.getElementById("dialogo").textContent += dialogo.charAt(aux); 
+                document.getElementById("dialogo").textContent += dialogo.charAt(aux);
                 aux++;
                 setTimeout(escreveDialogo, 100);
-               
+
             }
         }
     }
@@ -316,7 +318,7 @@
         //window.location.href = "../funcoes/funcoesCortador.html";
 
 
-        fase = val;      
+        fase = val;
         aux = 0;
         verificaClick = "false";
 
@@ -325,35 +327,44 @@
 
         document.getElementById("dialogo").textContent = "";
 
-       document.getElementById("introducao").style.display = "block";
-       document.getElementById("telaTransparente").style.display = "block";
-       document.querySelector(".campo").style.opacity = "0.2";
+        document.getElementById("introducao").style.display = "block";
+        document.getElementById("telaTransparente").style.display = "block";
+        document.querySelector(".campo").style.opacity = "0.2";
+
+        criarSom(val);
         escreveDialogo();
 
 
         document.getElementById("botao2").addEventListener("click", function () {
-            if(val == 0){
+            if (val == 0) {
                 window.location.href = "../funcoes/funcoesGelo.html";
-            }else if(val == 1){
+            } else if (val == 1) {
                 window.location.href = "../funcoes/cozinhar.html";
             }
-            else if(val == 2){
+            else if (val == 2) {
                 window.location.href = "../funcoes/funcoesLavadeira.html";
             }
-            else if(val == 3){
+            else if (val == 3) {
                 window.location.href = "../funcoes/funcoesCortador.html";
             }
-            else if(val == 4){
-                window.location.href = "../funcoes/funcoesCortador.html";
-            }
-          
-          
+
+
         });
 
     }
 
 
-    
+
+
+    const criarSom = (valor) => {
+
+        var som = new Audio();
+        som.src = '../sounds/vozes/funcoes' + valor + '.mp3';
+        document.body.appendChild(som);
+
+        document.getElementById('audio').volume = 0.2;
+        som.play();
+    }
 
 
 

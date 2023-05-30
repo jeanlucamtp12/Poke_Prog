@@ -242,6 +242,32 @@
         </div>
 
 
+        <div>
+            <img id="gengar1" class="gengar gengar1" src="../img/excecoes/fantasmas/gengar.png"
+                style="display: none;" onclick="resposta('0')"></img>
+            <img id="gengar2" class="gengar gengar2" src="../img/excecoes/fantasmas/gengar_shiny.png"
+                style="display: none; " onclick="resposta('1')"></img>
+            <img id="gengar3" class="gengar gengar3" src="../img/excecoes/fantasmas/gengar.png"
+                style="display: none; " onclick="resposta('0')"></img>
+            <img id="gengar4" class="gengar gengar4" src="../img/excecoes/fantasmas/gengar.png"
+                style=" display: none; " onclick="resposta('0')"></img>
+
+        </div>
+
+
+        <div>
+            <img id="lampent1" class="lampent lampent1" src="../img/excecoes/fantasmas/lampent.png"
+                style="right: 200px; display: none; opacity:1;" onclick="resposta('0')"></img>
+            <img id="lampent2" class=" lampent lampent2" src="../img/excecoes/fantasmas/lampent_shiny.png"
+                style="right: 100px;  bottom: 50px; display: none; opacity:1;" onclick="resposta('1')"></img>
+            <img id="lampent3" class="lampent lampent3" src="../img/excecoes/fantasmas/lampent.png"
+                style="right: 950px;  bottom: 50px; display: none; opacity:1;" onclick="resposta('0')"></img>
+            <img id="lampent4" class="lampent lampent4" src="../img/excecoes/fantasmas/lampent.png"
+                style=" display: none; opacity:1;" onclick="resposta('0')"></img>
+
+        </div>
+
+
         <div class="caixaObjetivos">
 
             <div class="texto">
@@ -266,10 +292,16 @@
                 <img id="6" class="imagem" src="../img/excecoes/fantasmas/umbreon_shiny.png"></img>
             </div>
             <div class="caixas">
-                <img id="7" class="imagem" style="width: 3.5vw;" src="../img/excecoes/fantasmas/abra_shiny.png"></img>
+                <img id="7" class="imagem"  src="../img/excecoes/fantasmas/abra_shiny.png"></img>
             </div>
             <div class="caixas">
-                <img id="8" class="imagem" style="width: 2vw;" src="../img/excecoes/fantasmas/froslass_shiny.png"></img>
+                <img id="8" class="imagem" src="../img/excecoes/fantasmas/froslass_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img id="9" class="imagem"  src="../img/excecoes/fantasmas/gengar_shiny.png"></img>
+            </div>
+            <div class="caixas">
+                <img id="10" class="imagem"  src="../img/excecoes/fantasmas/lampent_shiny.png"></img>
             </div>
 
 
@@ -318,6 +350,8 @@
         const froslass = document.querySelectorAll(".froslass");
         const umbreom = document.querySelectorAll(".umbreom");
         const abra = document.querySelectorAll(".abra");
+        const gengar = document.querySelectorAll(".gengar");
+        const lampent = document.querySelectorAll(".lampent");
 
 
         const resposta = (shiny) => {
@@ -352,6 +386,12 @@
                 case 8:
                     contabilizaSelecao(shiny, 8, froslass);
                     break;
+                case 9:
+                    contabilizaSelecao(shiny, 9, gengar);
+                    break;
+                case 10:
+                    contabilizaSelecao(shiny, 9, lampent);
+                    break;
 
                 default:
                     break;
@@ -370,7 +410,7 @@
                     limpaTela(pokemon);
                     exibeTela(cont);
 
-                    if (pokemon == froslass) {
+                    if (pokemon == lampent) {
                         exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=6");
                         //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                     }
@@ -420,8 +460,12 @@
                 if (cont == 8) {
                     froslass[i].style.display = "block";
                 }
-
-
+                if (cont == 9) {
+                    gengar[i].style.display = "block";
+                }
+                if (cont == 10) {
+                    lampent[i].style.display = "block";
+                }
             }
         }
 

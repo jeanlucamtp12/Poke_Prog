@@ -91,6 +91,10 @@
             <script>
 
 
+                exibeNotificação("success", "Você completou a primeira parte, chegamos a segunda parte da fase!", "");
+
+
+
 
                 var k = 0;
                 for (var i = 1; k <= 100; i++) {
@@ -167,7 +171,9 @@
 
 
                         setTimeout(function () {
-                            exibeNotificação("success", "Nomes Atribuidos! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                           // exibeNotificação("success", "Nomes Atribuidos! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                           exibeNotificação("success", "Nomes Atribuidos! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=4");
+
                         }, 3000);
 
                     });

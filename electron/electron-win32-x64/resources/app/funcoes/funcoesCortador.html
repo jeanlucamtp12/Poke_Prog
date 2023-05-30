@@ -446,7 +446,8 @@
         if (vidas >= 0 && energias == 0 && bananas == 0 && alfaces == 0 && tomates == 0) {
             if (vitoriaLoop == "false"){
                 document.querySelector(".poke").style.display = "none";
-                exibeNotificação("success", "Você concluiu todas as tarefas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=5");
+                //exibeNotificação("success", "Você concluiu todas as tarefas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
             }
             vitoriaLoop = "true";
         }

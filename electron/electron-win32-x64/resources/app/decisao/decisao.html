@@ -484,7 +484,9 @@
             if (jogador == 13) {
                 setInterval(function () {
                     if(popUp == "false"){
-                        exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=2");
+
+                        //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
                         popUp = "true";
                     }
                 }, 2000);

@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="../css/city.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./dialogos.js"></script>
-    
+
     <title>Document</title>
 </head>
 
 <body>
 
     <audio id="audio" src="../sounds/home.mp3" loop autoplay></audio>
+    <audio id="intro" src="../sounds/vozes/intro.mp3" autoplay></audio>
 
 
     <h1 class="titulo">Seleção de Fase</h1>
@@ -33,7 +34,7 @@
     </div>
 
     <div id="introducao">
-        <img class="professor" src="../img/home/Erbie.png">
+        <img class="professor" src="../img/home/Fran.png">
         <div class="balao">
             <h4 id="dialogo"></h4>
             <button id="botao" onclick="exibirTexto()">Avançar</button>
@@ -139,7 +140,7 @@
         </div>
 
 
-        <div style="cursor: pointer;"  onclick="iniciarFase(8)">
+        <div style="cursor: pointer;" onclick="iniciarFase(8)">
             <h1 id="fase8">Fase 8 <br>Desafio da Vitória</h1>
             <img id="trofeu" src="../img/home/trofeu.png"></a>
             <img id="victini1" src="../img/home/victini.png">
@@ -162,6 +163,10 @@
     var aux = 0;
     var verificaClick = "false";
     var fase = 0;
+
+    document.getElementById('audio').volume = 0.2;
+    document.getElementById('intro').play();
+
     escreveDialogo();
 
 
@@ -188,6 +193,9 @@
 
 
     function iniciar() {
+        document.getElementById('audio').volume = 1;
+        document.getElementById('intro').volume = 0;
+
         document.getElementById("introducao").style.display = "none";
         document.querySelector(".mapa").style.opacity = "1";
         document.getElementById("telaTransparente").style.display = "none";
@@ -209,26 +217,31 @@
         document.getElementById("introducao").style.display = "block";
         document.getElementById("telaTransparente").style.display = "block";
         document.querySelector(".mapa").style.opacity = "0.2";
+
+
+
+
+        criarSom(val);
         escreveDialogo();
 
 
         document.getElementById("botao2").addEventListener("click", function () {
-            if(val == 1){
-                window.location.href='../variaveis/caixas.html';
-            }else if(val == 2){
-                window.location.href='../decisao/decisao.html';
-            }else if(val == 3){
-                window.location.href='../repeticao/repeticao.html';
-            }else if(val == 4){
-                window.location.href='../arrays/arrays.html';     
-            }else if(val == 5){
-                window.location.href='../funcoes/funcoes.html';            
-            }else if(val == 6){
-                window.location.href='../excecoes/excecoes.html';            
-            }else if(val == 7){
-                window.location.href='../extras/hanoi.html';
-            }else{
-                window.location.href='../Quizes/quiz.html';
+            if (val == 1) {
+                window.location.href = '../variaveis/caixas.html';
+            } else if (val == 2) {
+                window.location.href = '../decisao/decisao.html';
+            } else if (val == 3) {
+                window.location.href = '../repeticao/repeticao.html';
+            } else if (val == 4) {
+                window.location.href = '../arrays/arrays.html';
+            } else if (val == 5) {
+                window.location.href = '../funcoes/funcoes.html';
+            } else if (val == 6) {
+                window.location.href = '../excecoes/excecoes.html';
+            } else if (val == 7) {
+                window.location.href = '../extras/hanoi.html';
+            } else {
+                window.location.href = '../Quizes/quiz.html';
             }
 
         });
@@ -245,6 +258,16 @@
     }
 
 
+
+    const criarSom = (valor) => {
+
+        var som = new Audio();        
+        som.src = '../sounds/vozes/fase'+ valor +'.mp3';
+        document.body.appendChild(som);
+
+        document.getElementById('audio').volume = 0.2;
+        som.play();
+    }
 
 
 
