@@ -29,7 +29,7 @@ body{
     position: absolute;
     width: 20%;
     right: 80%;
-    bottom: 34vw;
+    bottom: 38vw;
 }
 
 
@@ -38,8 +38,8 @@ body{
 
     position: absolute;
     width: 20%;
-    right: 58%;
-    bottom: 36vw;
+    right: 55%;
+    bottom: 35vw;
 }
 
 
@@ -47,7 +47,7 @@ body{
     position: absolute;
     width: 20%;
     right: 25%;
-    bottom: 30vw;
+    bottom: 40vw;
 }
 
 
@@ -80,7 +80,7 @@ body{
     position: absolute;
 
     width: 2%;
-    bottom: 40vw;
+    bottom: 38vw;
     right: 40%;
     z-index: 1;
 
@@ -103,37 +103,38 @@ body{
     z-index: 1;
 }
 
-@media screen and (max-width: 1200px) {
-    .timburr {
-        bottom: 8%;
-    }
-}
-
 .viga{
     position: absolute;
     width: 2%;
-    height: 30%;
     bottom: 15%;
     z-index: 1;
     animation: viga_efeito 0.8s infinite linear;
-
 }
 
 @keyframes viga_efeito {
     0% {
         width: 2%;
-        height: 30%;    
     }
 
     50% {
-        width: 2.5%;
-        height: 35.5%;    
+        width: 2.5%; 
     }
     100% {
         width: 2%;
-        height: 30%;    
     }
 }
+
+
+@media screen and (max-width: 1200px) {
+    .timburr {
+        bottom: 8%;
+    }
+
+    .viga {
+        bottom: 5%;
+    }
+}
+
 
 
 
@@ -466,7 +467,7 @@ body{
     width: 40vw;
     font-size: 1.5vw;
     font-weight: bold;
-    color: rgb(233, 233, 233);
+    color: rgb(255, 255, 255);
 }
 
 .mantykeTexto{

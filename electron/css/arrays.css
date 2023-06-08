@@ -288,6 +288,7 @@ body{
     opacity: 0;
     --vida-bottom: 30vw;
     bottom: var(--vida-bottom);
+    z-index: 1;
 }
 
 .vida2{
@@ -297,6 +298,7 @@ body{
     opacity: 0;
     --vida2-bottom: 30vw;
     bottom: var(--vida2-bottom);
+    z-index: 1;
 }
 
 @keyframes vida2_movimento{

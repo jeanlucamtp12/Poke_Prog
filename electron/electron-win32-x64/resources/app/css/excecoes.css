@@ -342,18 +342,18 @@ body {
 }
 
 .banette1{
-    animation: banette_movimento 10s infinite linear;
+    animation: banette_movimento 5s infinite linear;
 }
 .banette2{
-    animation: banette_movimento 15s infinite linear;
+    animation: banette_movimento 6s infinite linear;
 
 }
 .banette3{
-    animation: banette_movimento 20s infinite linear;
+    animation: banette_movimento 8s infinite linear;
 
 }
 .banette4{ 
-    animation: banette_movimento 25s infinite linear;
+    animation: banette_movimento 10s infinite linear;
 }
 
 
@@ -379,16 +379,16 @@ body {
 }
 
 .frillish1{
-    animation: frillish_movimento 10s infinite linear;
+    animation: frillish_movimento 5s infinite linear;
 }
 .frillish2{
     animation: frillish_movimento 15s infinite linear;
 }
 .frillish3{
-    animation: frillish_movimento 20s infinite linear;
+    animation: frillish_movimento 8s infinite linear;
 }
 .frillish4{ 
-    animation: frillish_movimento 25s infinite linear;
+    animation: frillish_movimento 6s infinite linear;
 }
 
 
@@ -506,16 +506,16 @@ body {
 }
 
 .shedinja1{
-    animation: shedinja_movimento 10s infinite linear;
+    animation: shedinja_movimento 5s infinite linear;
 }
 .shedinja2{
-    animation: shedinja_movimento 12s infinite linear;
+    animation: shedinja_movimento 10s infinite linear;
 }
 .shedinja3{
     animation: shedinja_movimento 14s infinite linear;
 }
 .shedinja4{ 
-    animation: shedinja_movimento 16s infinite linear;
+    animation: shedinja_movimento 8s infinite linear;
 }
 
 
@@ -562,9 +562,11 @@ body {
 .caixas {
     border: solid 2px white;
     width: 3vw;
+    height: 4.5vw;
 }
 .caixas img {
     width: 3vw;
+    height: 75%;
 }
 
 .caixaObjetivos h6{
@@ -592,7 +594,7 @@ body {
 
 .umbreom{
     position: absolute;
-    width: 13vw;
+    width: 14vw;
     z-index: 1;
     cursor: pointer;
     bottom: 0%;
@@ -619,7 +621,7 @@ body {
 @keyframes umbreom_movimento{
     0%{
         left: var(--my-start-left);
-        opacity: 1; 
+        opacity: 0; 
     }
     24%{       
         opacity: 1; 
@@ -692,7 +694,7 @@ body {
 
 .abra{
     position: absolute;
-    width: 13vw;
+    width: 14vw;
     z-index: 1;
     cursor: pointer;
 }
@@ -737,6 +739,78 @@ body {
     } 
 }
 
+
+
+.gengar{
+    position: absolute;
+    width: 20vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.gengar1{
+    left: 5%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.gengar2{
+    left: 25%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.gengar3{
+    left: 50%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.gengar4{
+    left: 75%;
+    animation: litwick_movimento 5s infinite linear;
+}
+
+
+
+.lampent{
+    position: absolute;
+    width: 15vw;
+    z-index: 1;
+    cursor: pointer;
+    bottom: 0%;
+}
+
+.lampent1{
+    left: 10%;   
+    animation: lampent_movimento 10s infinite linear;
+}
+.lampent2{
+    left: 30%;   
+    animation: lampent_movimento 12s infinite linear;
+}
+.lampent3{
+    left: 50%;  
+    animation: lampent_movimento 14s infinite linear;
+}
+.lampent4{ 
+    left: 70%;   
+    animation: lampent_movimento 16s infinite linear;
+}
+
+
+@keyframes lampent_movimento{
+    0%{
+        opacity: 0; 
+    }
+    24%{       
+        opacity: 1; 
+    } 
+    25%{      
+        opacity: 0; 
+    } 
+    100%{
+        opacity: 1; 
+    } 
+}
+
+
+
 .swal2-popup{
     font-size: 1vw;
 }
+

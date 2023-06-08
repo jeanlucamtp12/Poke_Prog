@@ -4,6 +4,7 @@ body, html{
 	height: 100%;
 }
 
+
 .mapa h1{
 	background: linear-gradient(to bottom, rgb(255, 255, 255),  rgba(216, 168, 255, 0.801));
 	background-clip: text;

@@ -32,7 +32,7 @@
 
         <div style="left: 35%; top: 1%; position: absolute;">
             <p  class="choque"><span aria-hidden="true">Torre de Hanoi</span>Torre de Hanoi<span aria-hidden="true">Torre de Hanoi</span></p>
-            <h1 id="contador" style="font-size: 1vw; margin-top: -5%; color: #d6cc3c;">Movimentos Minimos: 31 | Utilizados: 31</h1>
+            <h1 id="contador" style="font-size: 1vw; margin-top: -5%; color: #d6cc3c;">Movimentos<br> Minimos: 31 | Utilizados: 0</h1>
         </div> 
 
 
@@ -101,7 +101,7 @@
     var ultimoE2 = [0, 0, 0, 0, 0];
     var ultimoE3 = [0, 0, 0, 0, 0];
 
-    var contador = 31;
+    var contador = 0;
 
 
     const removerMagnemite = (e, pino, id) => {
@@ -355,8 +355,8 @@
                 exibeNotificação("error", "Pino indisponivel", "");
             }
 
-            document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
-            contador = contador - 1;
+            document.getElementById("contador").innerHTML = "Movimentos<br> Minimos: 31 | Utilizados: "+(contador+1);
+            contador = contador + 1;
 
         }
 
@@ -373,14 +373,15 @@
             }
 
             if(ultimoE2[0] == 1){
-                if(contador < 0){
-                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                if(contador > 31){
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
                 }else{
+                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
                 }
             }
 
-            document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
-            contador = contador - 1;
+            document.getElementById("contador").innerHTML = "Movimentos<br> Minimos: 31 | Utilizados: "+(contador+1);
+            contador = contador + 1;
 
         }
         if ((pino == "estaca3") && (alteraVetores(ultimoE3, imagem) == true)) {
@@ -396,17 +397,31 @@
                 }
             }
             if(ultimoE3[0] == 1){
-                if(contador < 0){
-                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs(contador)+" movimentos além do necessario!! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                if(contador > 31){
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                }else{
+                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
                 }
             }
-            document.getElementById("contador").innerHTML = "Movimentos Minimos: 31 | Utilizados: "+(contador-1);
-            contador = contador - 1;
+            document.getElementById("contador").innerHTML = "Movimentos<br> Minimos: 31 | Utilizados: "+(contador+1);
+            contador = contador + 1;
 
         }
 
         console.log("Depois: ", ultimoE1, ultimoE2, ultimoE3);
 
+
+
+
+
     }
+
+        const voltar_menu = () => {
+            var tecla = event.keyCode;
+            if (tecla == 27) {
+                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+            }
+        }
+        document.addEventListener('keydown', voltar_menu);
 
 </script>

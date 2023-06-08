@@ -149,4 +149,13 @@
     loadQuestion();
 
 
+
+    const voltar_menu = () => {
+            var tecla = event.keyCode;
+            if (tecla == 27) {
+                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+            }
+        }
+    document.addEventListener('keydown', voltar_menu);
+
 </script>

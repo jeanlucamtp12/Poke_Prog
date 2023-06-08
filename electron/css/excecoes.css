@@ -594,7 +594,7 @@ body {
 
 .umbreom{
     position: absolute;
-    width: 13vw;
+    width: 14vw;
     z-index: 1;
     cursor: pointer;
     bottom: 0%;
@@ -694,7 +694,7 @@ body {
 
 .abra{
     position: absolute;
-    width: 13vw;
+    width: 14vw;
     z-index: 1;
     cursor: pointer;
 }
@@ -769,7 +769,7 @@ body {
 
 .lampent{
     position: absolute;
-    width: 14vw;
+    width: 15vw;
     z-index: 1;
     cursor: pointer;
     bottom: 0%;

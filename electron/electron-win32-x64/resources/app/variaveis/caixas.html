@@ -46,7 +46,7 @@
     const verificaTipo = () => {
 
         var tipoCaixa = document.getElementById("alterar").innerText;
-     
+
 
         switch (palavra) {
 
@@ -57,16 +57,15 @@
                         exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
                     }
 
+                    if (tipoCaixa.includes("Numero = 222")) {
+                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=1");
+                        return;
+                    }
+
                     limparUnowns(i);
                     document.getElementById('alterar').innerHTML = 'Nome = "Ana"';
                     palavra = '';
 
-                    if (tipoCaixa.includes("Numero = 222")) {
-                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=1");
-
-                        //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
-
-                    }
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
                     palavra = '';
@@ -131,16 +130,16 @@
                 break;
 
             default:
-            exibeNotificação("error", "Tente Novamente!", "");
+                exibeNotificação("error", "Tente Novamente!", "");
                 palavra = '';
                 limparUnowns(i);
         }
     }
 
     const exibeAjuda = () => {
-        if(document.querySelector("#ajuda").style.display == "block" ){
+        if (document.querySelector("#ajuda").style.display == "block") {
             document.querySelector("#ajuda").style.display = "none"; // ou "block"
-        }else{
+        } else {
             document.querySelector("#ajuda").style.display = "block"; // ou "block"
         }
     }
@@ -302,7 +301,8 @@
             <h6 style="font-weight: bold; margin-left: 1.5vw; font-size: 1.3vw">Ajuda</h6>
             <img src="../img/unowns/klink.png" id="inicial" onclick="exibeAjuda()" style="cursor:pointer">
             <h2 id="ajuda" style="display:none">Inteiro = Números Inteiros <br><br>Decimal = Números Com Virgula
-                <br><br>Palavra = Texto<br><br>Booleano = Verdadeiro Ou Falso <br><br>Letra = Letras </h2>
+                <br><br>Palavra = Texto<br><br>Booleano = Verdadeiro Ou Falso <br><br>Letra = Letras
+            </h2>
         </div>
 
 
@@ -350,32 +350,43 @@
 <script>
     const alfabeto = document.querySelectorAll('#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib');
 
-    for(var l = 0; l < alfabeto.length; l++){
+    for (var l = 0; l < alfabeto.length; l++) {
 
-        const posicaoLeft = ["5","10","15", "20", "25", "30","40","42", "58","60", "64", "68", "70", "74","78", "80","84", "88", "90", "94"];
-        const posicaoBottom = ["5", "10", "15","18", "20","23", "25", "28", "65","70", "75","80", "85","90"];
+        const posicaoLeft = ["5", "10", "15", "20", "25", "30", "40", "42", "58", "60", "64", "68", "70", "74", "78", "80", "84", "88", "90", "94"];
+        const posicaoBottom = ["5", "10", "15", "18", "20", "23", "25", "28", "65", "70", "75", "80", "85", "90"];
 
         const posicaoL = Math.floor(Math.random() * posicaoLeft.length);
         const posicaoB = Math.floor(Math.random() * posicaoBottom.length);
 
-        if(+posicaoLeft[posicaoL] < 30){ //gera novamente caso o bottom posicione os Unows dentro do teclado de Unows
-            const novaPosB = ["0","93"];
+        if (+posicaoLeft[posicaoL] < 30) { //gera novamente caso o bottom posicione os Unows dentro do teclado de Unows
+            const novaPosB = ["0", "93"];
 
             const posB = Math.floor(Math.random() * novaPosB.length);
 
             alfabeto[l].style.left = posicaoLeft[posicaoL] + "%";
             alfabeto[l].style.bottom = novaPosB[posB] + "%";
 
-        }else{
+        } else {
             alfabeto[l].style.left = posicaoLeft[posicaoL] + "%";
             alfabeto[l].style.bottom = posicaoBottom[posicaoB] + "%";
         }
 
 
-        
+
 
     }
 
 
-    
+
+
+    const voltar_menu = () => {
+        var tecla = event.keyCode;
+        if (tecla == 27) {
+            window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+        }
+    }
+    document.addEventListener('keydown', voltar_menu);
+
+
+
 </script>

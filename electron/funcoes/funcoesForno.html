@@ -111,13 +111,13 @@
                         for (var i = 0; i < comidas.length; i++) {
                             if ((jumpluff.x + 30 < comidas[i].x + comidas[i].width && jumpluff.x - 30 + jumpluff.width > comidas[i].x) && (jumpluff.y + 30 < comidas[i].y + comidas[i].height && jumpluff.y - 30 + jumpluff.height > comidas[i].y)) {
                                 document.getElementById("qtdVidas").innerHTML = document.getElementById("qtdVidas").childNodes[0].nodeValue - 1;
-                                
+
                             }
 
                         }
 
 
-                        if( document.getElementById("qtdVidas").childNodes[0].nodeValue == 0){
+                        if (document.getElementById("qtdVidas").childNodes[0].nodeValue == 0) {
                             window.alert("voce perdeu ");
                         }
 
@@ -211,8 +211,8 @@
 
                         per.getBoundingClientRect();
                         ataque.getBoundingClientRect();
-                        
-                            
+
+
 
                         if (tecla == 65 && (especial <= 10)) {
 
@@ -222,7 +222,7 @@
                             var remove_string = posicaoJumpluff.replace('px', '');
                             var valorNum = parseInt(remove_string);
 
-                            raio_solar.style.bottom = (valorNum ) + "px";
+                            raio_solar.style.bottom = (valorNum) + "px";
 
                             document.getElementById("raio_solar").style.display = 'block';
                             raio_solar.style.animationPlayState = "running";
@@ -275,6 +275,15 @@
 
 
                     document.addEventListener('keydown', mover);
+
+
+                    const voltar_menu = () => {
+                        var tecla = event.keyCode;
+                        if (tecla == 27) {
+                            window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                        }
+                    }
+                    document.addEventListener('keydown', voltar_menu);
 
                 </script>
 </body>

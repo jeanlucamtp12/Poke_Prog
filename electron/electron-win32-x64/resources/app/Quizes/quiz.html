@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <audio id="audio" src="../sounds/quiz.mp3" loop autoplay></audio>
+    <audio id="audio" src="../sounds/quizFinal.mp3" loop autoplay></audio>
 
     <div>
         <img id="uA" src="../img/unowns/a.gif"></img>
@@ -62,14 +62,14 @@
     let currentIndex = 0;
     let questionsCorrect = 0;
 
-    btnRestart.onclick = () => {
+   /* btnRestart.onclick = () => {
         content.style.display = "flex";
         contentFinish.style.display = "none";
 
         currentIndex = 0;
         questionsCorrect = 0;
         loadQuestion();
-    };
+    };*/
 
     function nextQuestion(e) {
 
@@ -83,11 +83,6 @@
         } else {
             finish();
         }
-
-     //   if (faseAtual == (currentIndex-1)){
-    //        faseAtual = faseAtual + 1;
-    //        exibeNotificação("success", "Você respondeu as perguntas da fase. Vamos voltar a cidade", "http://localhost/jogo/electron/telaInicial/city.html");
-    //    }
         
     }
 
@@ -97,15 +92,14 @@
         contentFinish.style.display = "flex";
 
         document.querySelector("#finalizar").addEventListener('click', function () {
-            window.location.href = "http://localhost/jogo/electron/telaInicial/index.html";
-
+            window.location.href = "http://localhost/jogo/electron/telaInicial/city.html?id=1";
         });
     }
 
     function loadQuestion() {
+        
         spnQtd.innerHTML = `${currentIndex + 1}/${perguntas.length}`;
         const item = perguntas[currentIndex];
-        console.log(currentIndex)
         answers.innerHTML = "";
         question.innerHTML = item.question;
 
@@ -127,6 +121,14 @@
     }
 
     loadQuestion();
+
+    const voltar_menu = () => {
+            var tecla = event.keyCode;
+            if (tecla == 27) {
+                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+            }
+        }
+    document.addEventListener('keydown', voltar_menu);
 
 
 </script>

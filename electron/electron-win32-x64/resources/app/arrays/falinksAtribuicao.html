@@ -9,8 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="../sweetalert/sweetalert.js"></script>
-        <script src="../telaInicial/dialogos.js"></script>
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/falinksAtribuicao.css">
 
 
@@ -19,7 +19,7 @@
 
 <body>
 
-    <audio id="audio" src="../sounds/arrays.mp3" loop autoplay ></audio>
+    <audio id="audio" src="../sounds/arrays.mp3" loop autoplay></audio>
 
     <div class="campo">
 
@@ -38,36 +38,36 @@
 
         <div>
             <form id="form" method="GET">
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="primeiro" placeholder="Falinks 0"><br>
-            </form>
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="segundo" placeholder="Falinks 1"><br>
-            </form>
+                <form>
+                    <label for="fname"></label><br>
+                    <input type="text" id="primeiro" placeholder="Falinks 0"><br>
+                </form>
+                <form>
+                    <label for="fname"></label><br>
+                    <input type="text" id="segundo" placeholder="Falinks 1"><br>
+                </form>
 
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="terceiro" placeholder="Falinks 2"><br>
+                <form>
+                    <label for="fname"></label><br>
+                    <input type="text" id="terceiro" placeholder="Falinks 2"><br>
+                </form>
+
+                <form>
+                    <label for="fname"></label><br>
+                    <input type="text" placeholder="Falinks 3" id="quarto"><br>
+                </form>
+
+                <form>
+                    <label for="fname"></label><br>
+                    <input type="text" id="quinto" placeholder="Falinks 4"><br>
+                </form>
+
+                <button type="submit" id="botao" form="form">Atribuir</button>
+
             </form>
-
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" placeholder="Falinks 3" id="quarto"><br>
-            </form>
-
-            <form>
-                <label for="fname"></label><br>
-                <input type="text" id="quinto" placeholder="Falinks 4"><br>
-            </form>
-
-            <button type="submit" id="botao" form="form">Atribuir</button>
-
-        </form>
         </div>
- 
-        <div class="nome" id="nome" style="display: none;" >
+
+        <div class="nome" id="nome" style="display: none;">
             <div class="nomes" id="nome1"></div>
             <div class="nomes" id="nome2"></div>
             <div class="nomes" id="nome3"></div>
@@ -145,21 +145,21 @@
 
 
                     }).done(function (result) {
-                        
-
-                       var form = document.querySelectorAll("#primeiro, #segundo, #terceiro, #quarto, #quinto");
-
-                
-                       for (var i = 0; i < form.length ; i++){
-                        document.getElementById(form[i].id).style.display = "none";
-                       }
 
 
+                        var form = document.querySelectorAll("#primeiro, #segundo, #terceiro, #quarto, #quinto");
+
+
+                        for (var i = 0; i < form.length; i++) {
+                            document.getElementById(form[i].id).style.display = "none";
+                        }
 
 
 
 
-                       
+
+
+
                         document.getElementById("nome").style.display = "block";
 
                         document.getElementById("nome1").innerHTML = "1:  " + primeiro;
@@ -171,8 +171,8 @@
 
 
                         setTimeout(function () {
-                           // exibeNotificação("success", "Nomes Atribuidos! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
-                           exibeNotificação("success", "Nomes Atribuidos! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=4");
+                            // exibeNotificação("success", "Nomes Atribuidos! Clique para voltar a cidade!", "http://localhost/jogo/electron/telaInicial/city.html");
+                            exibeNotificação("success", "Nomes Atribuidos! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=4");
 
                         }, 3000);
 
@@ -181,7 +181,13 @@
 
 
 
-
+                const voltar_menu = () => {
+                    var tecla = event.keyCode;
+                    if (tecla == 27) {
+                        window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                    }
+                }
+                document.addEventListener('keydown', voltar_menu);
 
             </script>
 

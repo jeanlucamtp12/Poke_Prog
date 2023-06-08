@@ -64,7 +64,7 @@ body{
     border-radius: 0.7vw;
     outline: none;
     height: 32vw;
-    width: 1.5vw;
+    width: 2vw;
     animation: mudaCor 5s infinite ease-in-out;
 
 }
@@ -120,7 +120,7 @@ body{
     outline: none;
     box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 1.5vw;
+    width: 2vw;
     animation: mudaCor 5s infinite ease-in-out;
 }
 
@@ -145,7 +145,7 @@ body{
     outline: none;
     box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 1.5vw;
+    width: 2vw;
     animation: mudaCor 5s infinite ease-in-out;
 
 }
