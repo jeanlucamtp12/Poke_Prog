@@ -139,6 +139,11 @@
 
 
 
+                 <div class="pokeInfo" id="pokeInfo"  style="display: none;">
+                   <h5>Chandelure está ardente, quando chandelure começar a mudar de cor,<br> você pode apertar espaço para ficar invencivel por um tempo!</h5>
+                    <img class="exclamacao" src="../img/repeticao/exclamacao.png"></img>
+               </div>
+           
 
             <img class='poke' id="poke" src="../img/recursividade/cortar/chandelure.png">
 
@@ -198,8 +203,7 @@
 
 
     var frutas = document.querySelectorAll("div.frutasQ #fruta, div.frutasQ #legume, div.frutasQ #verdura");
-
-
+    var versaoPoke = false
 
 
     setInterval(function () {
@@ -239,8 +243,10 @@
 
     }
 
+    botaoP = false;
+    spacebar = false;
 
-
+    var animacaoOriginal = document.getElementById("poke").style.animation;
     const raio = document.querySelector('#raio');
     var combees = document.querySelectorAll("div.combee #combee2, div.combee #combee3, div.combee #combee4, div.combee #combee4, div.combee #combee5, div.combee #combee6");
 
@@ -251,7 +257,7 @@
     const loop = setInterval(() => {
 
 
-        const posicoesRaio = ["12", "27", "37.5", "53", "75", "83"];
+        const posicoesRaio = ["18", "27", "37.5", "53", "75", "83"];
         const posicaoVetor = Math.floor(Math.random() * posicoesRaio.length);
 
         raio.style.left = posicoesRaio[posicaoVetor] + "%";
@@ -279,13 +285,31 @@
     var alfaces = 4;
     var tomates = 4;
 
-    const loop2 = setInterval(() => {
 
+
+
+    const loop2 = setInterval(() => {
 
         chandelure.getBoundingClientRect();
 
 
 
+        if(energias == 5 || energias == 2){
+
+            document.getElementById("poke").style.animation = "chandelure_ardente 0.5s infinite linear";
+
+            if( botaoP == false){
+                document.getElementById("pokeInfo").style.display = "block";
+                botaoP = true;
+            }
+            versaoPoke = true;            
+        }else if(energias == 3 || energias == 0){
+            spacebar = false;
+            document.getElementById("pokeInfo").style.display = "none";
+            document.getElementById("poke").style.animation = "none";
+            document.getElementById("poke").style.width = "12vw";
+            versaoPoke = false;
+        }
 
         for (var i = 0; i < combees.length; i++) {
             if ((chandelure.x + 30 < combees[i].x + combees[i].width && chandelure.x - 30 + chandelure.width > combees[i].x) && (chandelure.y + 30 < combees[i].y + combees[i].height && chandelure.y - 30 + chandelure.height > combees[i].y)) {
@@ -296,7 +320,11 @@
 
                 resetar();
 
-                if (vidas == 3) {
+                combees[i].style.animation = 'none';
+
+                if((versaoPoke == true && spacebar == false) || (versaoPoke == false)){
+
+                    if (vidas == 3) {
                     document.querySelector(".vidas3").remove();
                     combees[i].style.animation = 'none';
                     //combees[i].style.display = 'none';
@@ -316,7 +344,9 @@
                     document.querySelector(".poke").style.display = "none";
                     exibeNotificação("error", "Você Perdeu Todas as Vidas! Clique para Tentar Novamente", "http://localhost/jogo/electron/funcoes/funcoesCortador.html");
                 }
+                }
 
+        
 
                 const idCombee = combees[i].id;
 
@@ -642,6 +672,15 @@
             moverEsquerda();
         }
 
+        if (tecla == 32 && versaoPoke == true) {
+            spacebar = true;
+            document.getElementById("pokeInfo").style.display = "none";
+
+            document.getElementById("poke").style.width = "20vw";
+            document.getElementById("poke").style.animation = animacaoOriginal;
+            document.getElementById("poke").style.animationPlayState = "running";
+
+        }
     }
 
     document.addEventListener('keydown', mover);

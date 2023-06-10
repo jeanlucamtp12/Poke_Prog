@@ -1,6 +1,9 @@
 body {
     background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
-    overflow: hidden;  
+    overflow: hidden; 
+    width: 100vw;
+    height: 100vh;
+    
 }
 
 .teclado{
@@ -42,13 +45,18 @@ h3 {
 }
 
 .caixaConteudo img{
-    width: 10vw;
+    width: 10.5vw;
 }
 
-.caixaConteudo h2 {
+.textoCaixa{
     font-size: 1.2vw;
     margin-top: -6vw;
+    margin-left: 46vw;
+    margin-right: 46vw;
 }
+
+
+
 
 .tela {
     padding: 1vw;
@@ -129,8 +137,9 @@ h3 {
 
 
 
-#slot1 img, #slot2 img, #slot3 img, #slot4 img, #slot5 img, #slot6 img, #slot7 img, #slot8 img, #slot9 img, #slot10 img, #slot11 img, #slot12 img{
+#slot1 img{
     width: 500%;
+    margin-top: 2vw;
 }
 
 #A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib{

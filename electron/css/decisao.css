@@ -204,33 +204,48 @@ body {
 }
 
 
+
+
+
+
 .form{
     position: absolute;
     left: 36%;
     bottom: 38vw;
+    width: 25vw;
+    height: 15vh;    
+    text-align: center;
+    border-radius: 1vw;
 }
+
 .form input{
     width: 25vw;
     height: 4vh;
 }
+
 .form #nome{
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .form button{
-    width: 5vw;
+    width: 5.5vw;
     font-size: 1vw;
-    background-color: #00ACC1;
+    background-color: #468aca;
     color: #ffffff;
     border-radius: 1vw;
-    margin-left: 10vw;
+    margin-left: 0.5vw;
 }
 
 button:hover{
     transform: scale(1.1);
 }
+
+
+
+
+
 
 .mato{
     position: absolute;

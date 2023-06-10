@@ -1,154 +1,3 @@
-<script>
-    var palavra = '';
-    var i = 1;
-    var lista = [];
-
-
-
-    const itemSelecionado = (event) => {
-        event.dataTransfer.setData("img", event.target.id);
-
-    }
-
-    const areaSoltar = (event) => {
-        event.preventDefault();
-    }
-
-    const soltarElemento = (event) => {
-        event.preventDefault();
-
-        var imagem = event.dataTransfer.getData("img");
-        var slot = "slot" + i;
-
-        document.getElementById(slot).innerHTML = "<img src='../img/unowns/" + imagem + ".gif'>";
-
-        i = i + 1;
-
-        palavra = palavra + imagem;
-
-
-        lista.push(imagem);
-    }
-
-    const limparUnowns = (k) => {
-        
-        if (k == 1){
-            exibeNotificação("error", "Nada para apagar!", "");
-        }
-
-        for (var j = 1; j < k; j++) {
-            var elemento = document.querySelector("#slot" + j + " img");
-            palavra = '';
-            if (elemento.parentNode) {
-                elemento.parentNode.removeChild(elemento);
-            }
-        }
-
-        i = 1;
-    }
-
-    const verificaTipo = () => {
-
-        var tipoCaixa = document.getElementById("alterar").innerText;
-
-
-        switch (palavra) {
-
-            case 'inteiro':
-                if (tipoCaixa.includes("Numero")) {
-
-                    if (tipoCaixa.includes("Numero = 10")) {
-                        exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    }
-
-                    if (tipoCaixa.includes("Numero = 222")) {
-                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=1");
-                        return;
-                    }
-
-                    limparUnowns(i);
-                    document.getElementById('alterar').innerHTML = 'Nome = "Ana"';
-                    palavra = '';
-
-                } else {
-                    exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-                }
-                break;
-
-            case 'palavra':
-                if (tipoCaixa.includes("Nome")) {
-                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    document.getElementById('alterar').innerHTML = 'Valor = 2,22';
-                    palavra = '';
-                    limparUnowns(i);
-                } else {
-                    exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
-                }
-                break;
-
-            case 'booleano':
-                if (tipoCaixa.includes("Dado")) {
-                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    document.getElementById('alterar').innerHTML = 'Letra = "A"';
-                    palavra = '';
-                    limparUnowns(i);
-                } else {
-                    exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
-                }
-                break;
-
-            case 'letra':
-                if (tipoCaixa.includes("Letra")) {
-                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    document.getElementById('alterar').innerHTML = 'Numero = 222';
-                    palavra = '';
-                    limparUnowns(i);
-                } else {
-                    exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
-                }
-                break;
-
-            case 'decimal':
-                if (tipoCaixa.includes("Valor")) {
-                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    document.getElementById('alterar').innerHTML = 'Dado = Falso';
-                    palavra = '';
-                    limparUnowns(i);
-                } else {
-                    exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
-                }
-                break;
-
-            default:
-                exibeNotificação("error", "Tente Novamente!", "");
-                palavra = '';
-                limparUnowns(i);
-        }
-    }
-
-    const exibeAjuda = () => {
-        if (document.querySelector("#ajuda").style.display == "block") {
-            document.querySelector("#ajuda").style.display = "none"; // ou "block"
-        } else {
-            document.querySelector("#ajuda").style.display = "block"; // ou "block"
-        }
-    }
-</script>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,6 +10,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="../sweetalert/sweetalert.js"></script>
     <script src="../telaInicial/dialogos.js"></script>
+    <script src="./perguntas.js"></script>
+
     <title>Caixas</title>
     <link rel="stylesheet" href="../css/unowmsFase.css">
 
@@ -179,7 +30,9 @@
 
     <div class="caixaConteudo">
         <img src="../img/fases unowms/caixa.png">
-        <h2 style="font-weight: bold; font-size: 1.1vw;" id="alterar">Numero = 10</h2></img>
+        <div class="textoCaixa">
+            <h2 style="font-weight: bold; font-size: 1.1vw;" id="alterar"></h2></img>
+        </div>
     </div>
 
     <div class="tela">
@@ -285,20 +138,10 @@
         <div>
             <div class="caixaResposta" id="caixaResposta" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)">
                 <div id="slot1" class="filhoCaixaS"></div>
-                <div id="slot2" class="filhoCaixaS"></div>
-                <div id="slot3" class="filhoCaixaS"></div>
-                <div id="slot4" class="filhoCaixaS"></div>
-                <div id="slot5" class="filhoCaixaS"></div>
-                <div id="slot6" class="filhoCaixaS"></div>
-                <div id="slot7" class="filhoCaixaS"></div>
-                <div id="slot8" class="filhoCaixaS"></div>
-                <div id="slot9" class="filhoCaixaS"></div>
-                <div id="slot10" class="filhoCaixaS"></div>
-                <div id="slot11" class="filhoCaixaS"></div>
-                <div id="slot12" class="filhoCaixaS"></div>
+                
             </div>
             <button id="botaoResposta" onclick="limparUnowns(i)">Apagar</button>
-            <button id="botaoResposta" onclick="verificaTipo()">Enviar</button>
+            <button id="botaoResposta" onclick="verificaTipo(document.getElementById('slot1').innerHTML)">Enviar</button>
 
 
 
@@ -353,6 +196,187 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+<script>
+
+
+    // Criar um vetor com números de 1 a 21
+    var vetorPerguntas = Array.from({ length: 7 }, (_, index) => index + 0);
+    // Embaralhar o vetor
+    vetorPerguntas.sort(() => Math.random() - 0.5);
+
+    var idPergunta = 0;
+
+
+    carregarPergunta();
+    function carregarPergunta(){
+        document.getElementById("alterar").innerText = perguntas[vetorPerguntas[idPergunta]].question;
+    }
+
+
+    var palavra = '';
+    var i = 1;
+    var lista = [];
+
+
+
+    const itemSelecionado = (event) => {
+        event.dataTransfer.setData("img", event.target.id);
+
+    }
+
+    const areaSoltar = (event) => {
+        event.preventDefault();
+    }
+
+    const soltarElemento = (event) => {
+        event.preventDefault();
+
+        var imagem = event.dataTransfer.getData("img");
+        var slot = "slot" + i;
+
+        document.getElementById(slot).innerHTML = "<img src='../img/unowns/" + imagem + ".gif'>";
+
+        i = i + 1;
+
+        palavra = palavra + imagem;
+
+
+        lista.push(imagem);
+    }
+
+    const limparUnowns = (k) => {
+        
+        if (k == 1){
+            exibeNotificação("error", "Nada para apagar!", "");
+        }
+
+        for (var j = 1; j < k; j++) {
+            var elemento = document.querySelector("#slot" + j + " img");
+            palavra = '';
+            if (elemento.parentNode) {
+                elemento.parentNode.removeChild(elemento);
+            }
+        }
+
+        i = 1;
+    }
+
+    const verificaTipo = (valor) => {
+
+        if(idPergunta == 6){
+            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=1");
+            return;
+        }
+
+        var tipoCaixa = perguntas[vetorPerguntas[idPergunta]].answers[0].option;
+
+        switch (tipoCaixa) {
+
+            case 'inteiro':
+                if (valor.includes("inteiro")) {
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
+                    limparUnowns(i);
+                    palavra = '';
+                    idPergunta = idPergunta + 1;
+                    carregarPergunta();
+
+                } else {
+                    exibeNotificação("error", "Tente Novamente!", "");
+                    palavra = '';
+                    limparUnowns(i);
+                }
+                break;
+
+            case 'palavra':
+                if (valor.includes("palavra")) {
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
+                    palavra = '';
+                    limparUnowns(i);
+                    idPergunta = idPergunta + 1;
+                    carregarPergunta();
+                } else {
+                    exibeNotificação("error", "Tente Novamente!", "");
+                    palavra = '';
+                    limparUnowns(i);
+
+                }
+                break;
+
+            case 'booleano':
+                if (valor.includes("booleano")) {
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
+                    palavra = '';
+                    limparUnowns(i);
+                    idPergunta = idPergunta + 1;
+                    carregarPergunta();
+                } else {
+                    exibeNotificação("error", "Tente Novamente!", "");
+                    palavra = '';
+                    limparUnowns(i);
+
+                }
+                break;
+
+            case 'letra':
+                if (valor.includes("letra")) {
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
+                    palavra = '';
+                    limparUnowns(i);
+                    idPergunta = idPergunta + 1;
+                    carregarPergunta();
+                } else {
+                    exibeNotificação("error", "Tente Novamente!", "");
+                    palavra = '';
+                    limparUnowns(i);
+
+                }
+                break;
+
+            case 'decimal':
+                console.log(valor)
+                if (valor.includes("decimal")) {
+                    exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
+                    palavra = '';
+                    limparUnowns(i);
+                    idPergunta = idPergunta + 1;
+                    carregarPergunta();
+                } else {
+                    exibeNotificação("error", "Tente Novamente!", "");
+                    palavra = '';
+                    limparUnowns(i);
+
+                }
+                break;
+
+            default:
+                exibeNotificação("error", "Tente Novamente!", "");
+                palavra = '';
+                limparUnowns(i);
+        }
+
+
+    }
+
+
+
+
+    const exibeAjuda = () => {
+        if (document.querySelector("#ajuda").style.display == "block") {
+            document.querySelector("#ajuda").style.display = "none"; // ou "block"
+        } else {
+            document.querySelector("#ajuda").style.display = "block"; // ou "block"
+        }
+    }
+</script>
+
 
 <script>
     const alfabeto = document.querySelectorAll('#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib');

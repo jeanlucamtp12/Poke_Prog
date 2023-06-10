@@ -29,24 +29,26 @@ body{
     width:4.5%;   
     position: absolute;
     top:48%;
+    z-index: 1;
     /* 220, 500, 700, 1000 */
  
 }
 
+#combee2, #combee3, #combee4, #combee5{
+    z-index: 1;
+}
 
-
-#combee3{
+#combee2{
     animation: raio_movimento 3s infinite linear;
      
     width:7%;   
     position: absolute;
     bottom:30%;
     left:5%;
- 
    
 }
 
-#combee2{
+#combee3{
     animation:  raio_movimento 4s infinite linear;
       
     width:7%;   
@@ -105,13 +107,92 @@ body{
 }
 
 
+.exclamacao{
+    position: absolute;
+    bottom: 58%;
+    left: 13vw;
+    width: 4%;
+    animation: piscarTelaTexto 0.4s steps(1, end) infinite;
+}
+
+
+.pokeInfo h5{
+    position: absolute;
+    bottom: 58%;
+    left: 16vw;
+    font-size: 1vw;
+    color: rgb(255, 0, 0);
+    z-index: 2;
+    font-weight: bold;
+    animation: piscarTelaTexto 0.4s steps(1, end) infinite;
+}
+
+@keyframes piscarTelaTexto {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
 
 .poke{
     position: absolute;
     bottom: 2%;
     left: 40vw;
-    width: 10vw;
+    width: 12vw;
     z-index: 2;
+    animation: chandelure_ardente 0.5s infinite linear;
+    animation-play-state: paused;
+}
+
+
+@keyframes chandelure_ardente {
+
+    0% {
+        filter: hue-rotate(0deg);
+      }
+      10% {
+        filter: hue-rotate(60deg);
+      }
+      20% {
+        filter: hue-rotate(120deg);
+      }
+      30% {
+        filter: hue-rotate(180deg);
+      }
+      40% {
+        filter: hue-rotate(240deg);
+      }
+      50% {
+        filter: hue-rotate(300deg);
+      }
+      60% {
+        filter: hue-rotate(360deg);
+      }
+      70% {
+        filter: hue-rotate(60deg);
+      }
+      80% {
+        filter: hue-rotate(120deg);
+      }
+      90% {
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        filter: hue-rotate(240deg);
+    }
+      
+}
+
+.sem-filtro {
+    filter: none;
 }
 
 .movimento{
@@ -463,3 +544,5 @@ body{
 .swal2-popup{
     font-size: 1vw;
 }
+
+
