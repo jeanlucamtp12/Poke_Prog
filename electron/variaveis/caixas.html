@@ -31,6 +31,10 @@
     }
 
     const limparUnowns = (k) => {
+        
+        if (k == 1){
+            exibeNotificação("error", "Nada para apagar!", "");
+        }
 
         for (var j = 1; j < k; j++) {
             var elemento = document.querySelector("#slot" + j + " img");
@@ -163,12 +167,15 @@
 </head>
 
 <body>
+
     <audio id="audio" src="../sounds/variaveis.mp3" loop autoplay></audio>
 
 
     <div style="padding: 1vw;" class="titulo">
         <h3>Informe o tipo de variavel dentro da caixa arrastando os Unowm</h3>
     </div>
+
+    
 
     <div class="caixaConteudo">
         <img src="../img/fases unowms/caixa.png">

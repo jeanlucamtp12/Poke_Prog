@@ -19,6 +19,10 @@
 
     <h1 class="titulo">Seleção de Fase</h1>
 
+    <div class="home" onclick="window.location.href='../telaInicial/index.html'">
+        <img src="../img/home/home.png"><img>
+    </div>
+
     <div id="telaTransparente"></div>
 
 
@@ -36,7 +40,9 @@
     <div id="introducao">
         <img class="professor" src="../img/home/Fran.png">
         <div class="balao">
-            <h4 id="dialogo"></h4>
+            <div id="caixaDialogo">
+                <h4 id="dialogo"></h4>
+            </div>
             <button id="botao" onclick="exibirTexto()">Avançar</button>
             <button id="botao2" onclick="iniciar()">Iniciar</button>
 
@@ -166,6 +172,7 @@
 
     document.getElementById('audio').volume = 0.2;
     document.getElementById('intro').play();
+    document.querySelector(".titulo").style.display = "none";
 
     escreveDialogo();
 
@@ -196,6 +203,7 @@
         document.getElementById('audio').volume = 1;
         document.getElementById('intro').volume = 0;
 
+        document.querySelector(".titulo").style.display = "block";
         document.getElementById("introducao").style.display = "none";
         document.querySelector(".mapa").style.opacity = "1";
         document.getElementById("telaTransparente").style.display = "none";
@@ -213,7 +221,8 @@
         dialogo = textos[val];
 
         document.getElementById("dialogo").textContent = "";
-
+        
+        document.querySelector(".titulo").style.display = "none";
         document.getElementById("introducao").style.display = "block";
         document.getElementById("telaTransparente").style.display = "block";
         document.querySelector(".mapa").style.opacity = "0.2";

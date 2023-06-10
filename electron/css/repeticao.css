@@ -105,7 +105,7 @@ body{
 
 .viga{
     position: absolute;
-    width: 2%;
+    width: 15%;
     bottom: 15%;
     z-index: 1;
     animation: viga_efeito 0.8s infinite linear;
@@ -113,14 +113,13 @@ body{
 
 @keyframes viga_efeito {
     0% {
-        width: 2%;
+        width: 15%;
     }
-
     50% {
-        width: 2.5%; 
+       width: 16%;
     }
     100% {
-        width: 2%;
+      width: 15%;
     }
 }
 
@@ -477,8 +476,8 @@ body{
 }
 
 .espaco{
-    left: 67%;
-    bottom: 24.3vw;
+    left: 35%;
+    bottom: 22.7vw;
     width: 3.5vw;
 }
 

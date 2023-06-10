@@ -384,6 +384,11 @@ h6 {
 	user-select: none;
 }
 
+#caixaDialogo{
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+
 #dialogo{
 	font-size: 1.2vw;
 	line-height: 1.5; 

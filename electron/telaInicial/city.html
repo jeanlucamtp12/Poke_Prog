@@ -34,12 +34,20 @@
     <div id="introducao" style="display: none;">
         <img class="professor" src="../img/home/Fran.png">
         <div class="balao">
-            <h4 id="dialogo"></h4>
+            <div id="caixaDialogo">
+                <h4 id="dialogo"></h4>
+            </div>
             <button id="botao" onclick="exibirTexto()">Avançar</button>
             <button id="botao2" onclick="iniciar()">Iniciar</button>
 
         </div>
     </div>
+
+
+    <div class="home" onclick="window.location.href='../telaInicial/index.html'">
+        <img src="../img/home/home.png"><img>
+    </div>
+
     <h1 class="titulo">Seleção de Fase</h1>
 
     <div class="mapa" style="opacity: 1;">
@@ -216,6 +224,7 @@
 
         document.getElementById("dialogo").textContent = "";
 
+        document.querySelector(".titulo").style.display = "none";
         document.getElementById("introducao").style.display = "block";
         document.getElementById("telaTransparente").style.display = "block";
         document.querySelector(".mapa").style.opacity = "0.2";

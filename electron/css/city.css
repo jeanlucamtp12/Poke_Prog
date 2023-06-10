@@ -21,11 +21,22 @@ body, html{
 	color: white;
 	z-index: 2;
 	left: 45%;
-	top: -2%;
+	top: 0%;
 	border: solid 0.5vw #333537;
 	background-color: #333537;
 	border-radius: 50%;
 	font-size: 1.5vw;
+}
+
+.home img{
+	position: absolute;
+	z-index: 2;
+	left: 0.5%;
+	top: 3%;
+	background-color: #ffffff;
+	border-radius: 50%;
+	width: 3vw;
+	cursor: pointer;
 }
 
 
@@ -469,17 +480,22 @@ body, html{
 	bottom: 5%;
 	z-index: 1;
 }
-.mapa {
-	opacity: 0.2;
-	user-select: none;
+
+#caixaDialogo{
+	margin-left: 1vw;
+	margin-right: 1vw;
 }
 
 #dialogo{
 	font-size: 1.2vw;
 	line-height: 1.5; 
-	margin-left: 1vw;
 	animation: escrever 0.5s steps(40) forwards;
 
+}
+
+.mapa {
+	opacity: 0.2;
+	user-select: none;
 }
 
 #dialogoReserva{

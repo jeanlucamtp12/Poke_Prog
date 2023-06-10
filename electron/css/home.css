@@ -6,36 +6,38 @@ body {
     text-align: center;
 }
 
-
 #meio{
     display: inline-block;
-    background-color:  #00abb8;
+    background-color:  #3f72b4;
     color: rgb(255, 255, 255);
     border-radius: 90px;
     text-decoration: none;
     animation: pulsa 1.5s linear infinite;
     cursor: pointer;
-    width: 10vw;
+    width: 17vw;
+    height: 4vw;
 }
 
 #meio h4{
-    font-size: 1vw;
+    margin: auto;
+    margin-top: 1vw;
+    font-size: 2vw;
 }
 
 @keyframes pulsa {
-    0% { transform: scale(1.1);
+    0% { transform: scale(1.0);
         
     }
-    20% { transform: scale(1.2);
+    20% { transform: scale(1.1);
        
     }
     30% {
-        transform: scale(1.1);
+        transform: scale(1.0);
     }
     40% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
-    100% { transform: scale(1.1);
+    100% { transform: scale(1.0);
       
     }
 }
@@ -166,8 +168,8 @@ body {
     left: 25%;
 }
 #uB{
-    bottom: 35%;
-    left: 45%;
+    bottom: 45%;
+    left: 35%;
 }
 #uC{
     left: 72%;
@@ -187,16 +189,16 @@ body {
 }
 
 #zubat1{
-    top: 10%;
-    animation: zubats_movimento 24s infinite linear;
+    top: 1%;
+    animation: zubats_movimento 21s infinite linear;
 }
 #zubat2{
     top: 5%;
     animation: zubats_movimento 26s infinite linear;
 }
 #zubat3{
-    top: 6%;
-    animation: zubats_movimento 30s infinite linear;
+    top: 3%;
+    animation: zubats_movimento 33s infinite linear;
 }
 
 @keyframes zubats_movimento{
@@ -217,11 +219,11 @@ body {
 #drifloon{
     position: absolute;
     width: 6.5vw;
-    bottom: 66%;
+    bottom: 60%;
     right: 90%;
     animation: animacao_drifloon 100s infinite linear;
     transform: scaleX(-1);
-    z-index: 1;
+    z-index: 0;
 }
 
 @keyframes animacao_drifloon {
@@ -241,20 +243,21 @@ body {
 
 
 p{left: 35%; top: 1%; position: absolute;
-    color: rgb(105, 192, 141); 
-    font-size: 5vw; 
+    color: rgb(98, 10, 156); 
+    font-size: 8vw; 
     left: 50%;
     margin: 0;
     margin-top: 10%;
     transform: translate(-50%, -50%); /*centraliza do jeito que left 50% nao deixa */
+    z-index: 1;
 }
 .choque{
     position: relative;
 
     text-shadow: 
-        0.05em 0 0 rgb(23, 160, 149),
-        -0.025em -0.05em 0 rgb(3, 6, 199),
-        0.025em 0.05em 0 rgb(139, 141, 132);
+        0.05em 0 0 rgb(36, 114, 202),
+        -0.025em -0.05em 0 rgb(107, 25, 139),
+        0.025em 0.05em 0 rgb(24, 199, 62);
 
     animation: choque 1s infinite linear;
 }
@@ -283,45 +286,45 @@ p{left: 35%; top: 1%; position: absolute;
     0%{
 
         text-shadow: 
-        0.05em 0 0  rgb(25, 23, 160),
-        -0.05em -0.025em 0  rgb(23, 160, 149),
-        -0.025em 0.05em 0  rgb(90, 148, 158);
+        0.05em 0 0  rgb(71, 148, 221),
+        -0.05em -0.025em 0  rgb(36, 114, 202),
+        -0.025em 0.05em 0  rgb(24, 199, 62);
     }
     14%{
         text-shadow: 
-        0.05em 0 0  rgb(25, 23, 160),
-        -0.05em -0.025em 0  rgb(23, 160, 149),
-        -0.025em 0.05em 0  rgb(3, 6, 199);
+        0.05em 0 0  rgb(71, 148, 221),
+        -0.05em -0.025em 0  rgb(36, 114, 202),
+        -0.025em 0.05em 0  rgb(143, 3, 199);
     }
     15%{
         text-shadow: 
-        -0.05em 0 0  rgb(25, 23, 160),
-        0.05em -0.025em 0  rgb(23, 160, 149),
-        -0.025em 0.05em 0  rgb(3, 6, 199);
+        -0.05em 0 0  rgb(71, 148, 221),
+        0.05em -0.025em 0  rgb(36, 114, 202),
+        -0.025em 0.05em 0  rgb(143, 3, 199);
     }
     49%{
         text-shadow: 
-        -0.05em 0 0  rgb(25, 23, 160),
-        0.05em -0.025em 0  rgb(23, 160, 149),
-        -0.025em 0.05em 0  rgb(3, 6, 199);
+        -0.05em 0 0  rgb(71, 148, 221),
+        0.05em -0.025em 0  rgb(36, 114, 202),
+        -0.025em 0.05em 0  rgb(143, 3, 199);
     }
     50%{
         text-shadow: 
-        0.05em 0 0  rgb(25, 23, 160),
-        0.05em -0.025em 0  rgb(23, 160, 149),
-        0.025em 0.05em 0  rgb(3, 6, 199);
+        0.05em 0 0  rgb(71, 148, 221),
+        0.05em -0.025em 0  rgb(36, 114, 202),
+        0.025em 0.05em 0  rgb(143, 3, 199);
     }
     99%{
         text-shadow: 
-        0.05em 0 0  rgb(25, 23, 160),
-        0.05em -0.025em 0  rgb(23, 160, 149),
-        0.025em 0.05em 0  rgb(3, 6, 199);
+        0.05em 0 0  rgb(71, 148, 221),
+        0.05em -0.025em 0  rgb(36, 114, 202),
+        0.025em 0.05em 0  rgb(143, 3, 199);
     }
     100%{
         text-shadow: 
-        -0.05em 0 0  rgb(25, 23, 160),
-        -0.05em -0.025em 0  rgb(23, 160, 149),
-        -0.025em 0.05em 0  rgb(3, 6, 199);
+        -0.05em 0 0  rgb(71, 148, 221),
+        -0.05em -0.025em 0  rgb(36, 114, 202),
+        -0.025em 0.05em 0  rgb(143, 3, 199);
     }
 }
 
