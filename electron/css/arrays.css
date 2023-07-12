@@ -405,7 +405,7 @@ body{
 
 @keyframes inicial_movimentoDireita{
     0%, 100% {
-        left: calc(var(--left-start-timburr) + 0.8%);
+        left: calc(var(--left-start-timburr) + 0.1%);
     }
 }
 
@@ -417,6 +417,6 @@ body{
 
 @keyframes inicial_movimentoEsquerda{
     0%, 100% {
-        left: calc(var(--left-start-timburr) - 0.8%);
+        left: calc(var(--left-start-timburr) - 0.1%);
     }
 }
