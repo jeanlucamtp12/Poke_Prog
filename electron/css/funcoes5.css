@@ -1,8 +1,10 @@
 *{
-    background-color: #525299;
+   background-color: #525299;
+   user-select: none;
+  
 }
 body{
-    overflow: hidden;
+   overflow: hidden;
 }
 
 .geladeira {

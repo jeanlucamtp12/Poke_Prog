@@ -1,6 +1,5 @@
 * {
-    margin: 0;
-    padding: 0;
+    user-select: none;
 }
 
 body {
@@ -9,14 +8,11 @@ body {
 }
 
 .arena {
-    position: relative;
     height: 100vh;
     width: 100%;
 }
 
 /* de fato */
-
-
 
 
 .jogador {
@@ -130,7 +126,7 @@ body {
 .nuvens2 {
     position: absolute;
     width: 25vw;
-    bottom: 35vw;
+    bottom: 39vw;
     right: 1%;
 }
 
@@ -236,6 +232,7 @@ body {
     color: #ffffff;
     border-radius: 1vw;
     margin-left: 0.5vw;
+    font-weight: bold;
 }
 
 button:hover{

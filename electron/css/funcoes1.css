@@ -5,6 +5,7 @@
 *{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 body{
     overflow: hidden;
@@ -145,7 +146,7 @@ body{
 .poke{
     position: absolute;
     bottom: 2%;
-    left: 40vw;
+    left:  40vw;
     width: 12vw;
     z-index: 2;
     animation: chandelure_ardente 0.5s infinite linear;
@@ -546,3 +547,27 @@ body{
 }
 
 
+
+.movimentoD {
+    animation:  inicial_movimentoDireita 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoDireita{
+    0%, 100% {
+        left: calc(var(--left-start-timburr) + 0.8%);
+    }
+}
+
+.movimentoE {
+    animation:  inicial_movimentoEsquerda 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoEsquerda{
+    0%, 100% {
+        left: calc(var(--left-start-timburr) - 0.8%);
+    }
+}

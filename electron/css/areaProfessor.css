@@ -1,0 +1,90 @@
+body, html {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#00ACC1, #98c6ac) no-repeat;
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #999999;
+}
+
+#alterar, #alterar2 {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#alterar:hover , #alterar2:hover {
+    background-color: #45a049;
+}
+
+
+button{
+    width: 5.5vw;
+    font-size: 1vw;
+    background-color: #45a049;
+    color: #ffffff;
+    border-radius: 1vw;
+    margin-left: 0.5vw;
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+.selecaoFases{
+    text-align: center;
+}
+
+.selecaoFases p{
+    font-size: 2vw;
+    color: rgb(235, 235, 235);
+}
+
+
+
+#slowbro{
+    width: 30vw;
+}
+
+.fase1 h3, .fase1 h4, .fase1 h5, .fase2 h3, .fase2 h4, .fase2 h5{
+    color: rgb(233, 233, 233);
+}
+
+.fase1, .fase2{
+    text-align: center;
+}
+
+
+
+#v1-1, #v2-2, #v3-1, #v4-2, #v5-1, #v6-2, #v7-2, #v8-1, #v9-2, #v10-1, #v11-1, #v12-2, #v13-1, #v14-2, #v15-2, #v16-2, #v17-1, #v18-1, #v19-2, #v20-1{
+    background-color: rgb(201, 69, 69);
+}
+#v1-2, #v2-1, #v3-2, #v4-1, #v5-2, #v6-1, #v7-1, #v8-2, #v9-1, #v10-2, #v11-2, #v12-1, #v13-2, #v14-1, #v15-1, #v16-1, #v17-2, #v18-2, #v19-1, #v20-2{
+    background-color: rgb(69, 201, 69);
+}
+

@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-
+    user-select: none;
 }
 
 body{
@@ -18,10 +18,6 @@ body{
     height: 100vh;
     width: 100%;
     background: linear-gradient(#3800c1, #bf98c6) no-repeat;
-
-  
-
-
 }
 
 
@@ -88,44 +84,70 @@ body{
 
 .estrela2 {
     position: absolute;
-
     width: 2%;
     bottom: 35vw;
     right: 50%;
     z-index: 1;
 }
 
-.timburr {
+.pikachu {
     position: absolute;
-    width: 11%;
+    width: 9%;
     bottom: 22%;
-    left: 0%;
+    --left-start-pikachu: 0%;
+    left:  var(--left-start-pikachu);
     z-index: 1;
 }
 
+
+.ajudante {
+    position: absolute;
+    width: 12%;
+    bottom: 18%;
+    left:  91%;
+    z-index: 1;
+    animation:  ajudante_movimento 30s  linear;
+    animation-play-state: paused;
+    z-index: 2;
+
+}
+
+
+@keyframes ajudante_movimento {
+    0% {
+       left: 90.5%;
+    }
+    50% {
+        left: 60%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+
+
 .viga{
     position: absolute;
-    width: 15%;
-    bottom: 15%;
-    z-index: 1;
-    animation: viga_efeito 0.8s infinite linear;
+    width: 13%;
+    bottom: 13%;
+    z-index: 0;
 }
 
 @keyframes viga_efeito {
     0% {
-        width: 15%;
+        width: 25%;
     }
     50% {
-       width: 16%;
+       width: 25%;
     }
     100% {
-      width: 15%;
+      width: 25%;
     }
 }
 
 
 @media screen and (max-width: 1200px) {
-    .timburr {
+    .pikachu {
         bottom: 8%;
     }
 
@@ -135,7 +157,29 @@ body{
 }
 
 
+.movimentoD {
+    animation:  inicial_movimentoDireita 1s infinite linear;
 
+}
+
+
+@keyframes inicial_movimentoDireita{
+    0%, 100% {
+        left: calc(var(--left-start-pikachu) + 1%);
+    }
+}
+
+.movimentoE {
+    animation:  inicial_movimentoEsquerda 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoEsquerda{
+    0%, 100% {
+        left: calc(var(--left-start-pikachu) - 1%);
+    }
+}
 
 
 @keyframes inicial_movimento {
@@ -145,17 +189,17 @@ body{
     }
 
     25% {
-        bottom: 30%;
+        bottom: 35%;
 
     }
 
     50% {
-        bottom: 45%;
+        bottom: 50%;
 
     }
 
     75% {
-        bottom: 30%;
+        bottom: 35%;
     }
 
 
@@ -214,7 +258,7 @@ body{
 .starmie{
     width: 7%;
     position: absolute;
-    left: 93%;
+    left: 85%;
     animation: starmie_movimento 5s infinite linear;
     z-index: 1;
 }
@@ -236,6 +280,7 @@ body{
     left: 94%;
     bottom: 0%;
     z-index: 1;
+    height: 20%;
     
 }
 
@@ -271,18 +316,17 @@ body{
 
 @keyframes starmie_movimento {
     0% {
-        bottom: 6vw;
-        left: 100%;
+        bottom: 1vw;
+        left: 85%;
 
     }
     5% {
         bottom: 6vw;
-        left: 93%;
-        left: 100%;
+        left: 85%;
     }
     10%{
-        bottom: 4vw;
-        left: 93%;
+        bottom: 6vw;
+        left: 85%;
     }
 
     20% {
@@ -302,7 +346,7 @@ body{
     } 
     60% {
         transform: rotate(3505deg);
-        left: 93%;
+        left: 85%;
     } 
     80% {
         transform: rotate(6505deg);
@@ -352,7 +396,6 @@ body{
         top: 100%;
     }
   
-
 }
 
 .vidas{
@@ -436,18 +479,6 @@ body{
     color: rgb(255, 0, 0);
 }
 
-.textoVidaExtra .drifloonTexto{
-    left: 53%;
-    bottom: 29vw;
-    width: 4vw;
-}
-
-.textoVidaExtra .vidaTexto{
-    left: 42%;
-    bottom: 29vw;
-    width: 2vw;
-}
-
 .textoVidaExtra .exclamacao{
     left: 27%;
     bottom: 29vw;
@@ -456,7 +487,7 @@ body{
 
 
 
-.textoViga , .mantykeTexto, .exclamacaoAzul, .espaco{
+.textoViga , .exclamacaoAzul{
     position: absolute;
     animation: piscarTelaTexto 0.9s steps(1, end) infinite;
 }
@@ -469,17 +500,6 @@ body{
     color: rgb(255, 255, 255);
 }
 
-.mantykeTexto{
-    left: 29%;
-    bottom: 24vw;
-    width: 3.5vw;
-}
-
-.espaco{
-    left: 35%;
-    bottom: 22.7vw;
-    width: 3.5vw;
-}
 
 .exclamacaoAzul{
     left: 28%;
@@ -578,7 +598,7 @@ body{
 
 .mantyke1{
     position: absolute;
-    width: 5vw;
+    width: 6vw;
     --my-start-bottom: 33vw;
     left: 75%;
     animation: animacao_mantyke 10s infinite linear;
@@ -588,7 +608,7 @@ body{
 
 .mantyke2{
     position: absolute;
-    width: 5vw;
+    width: 6vw;
     --my-start-bottom: 25vw;
     left: 80%;
     animation: animacao_mantyke 10s infinite linear;

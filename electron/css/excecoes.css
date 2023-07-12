@@ -1,3 +1,8 @@
+* {
+    user-select: none;
+}
+
+
 body {
     margin: 0;
     overflow: hidden;
@@ -506,17 +511,28 @@ body {
 }
 
 .shedinja1{
-    animation: shedinja_movimento 5s infinite linear;
+    --my-start-left: 10%;   
+    --my-start-bottom: 70%;  
+    animation: abra_movimento 5s infinite linear;
 }
 .shedinja2{
-    animation: shedinja_movimento 10s infinite linear;
+    --my-start-left: 10%;   
+    --my-start-bottom: 0%;  
+    animation: abra_movimento 1s infinite linear;
 }
 .shedinja3{
-    animation: shedinja_movimento 14s infinite linear;
+    --my-start-left: 80%;  
+    --my-start-bottom: 20%;  
+    animation: abra_movimento 2s infinite linear;
 }
 .shedinja4{ 
-    animation: shedinja_movimento 8s infinite linear;
+    --my-start-left: 80%;   
+    --my-start-bottom: 75%;  
+    animation: abra_movimento 3s infinite linear;
 }
+
+
+
 
 
 @keyframes shedinja_movimento{
@@ -562,7 +578,7 @@ body {
 .caixas {
     border: solid 2px white;
     width: 3vw;
-    height: 4.5vw;
+    height: 4vw;
 }
 .caixas img {
     width: 3vw;
@@ -570,10 +586,7 @@ body {
 }
 
 .caixaObjetivos h6{
-   
     color: white;
-    position: absolute;
-    top: -60%;
     text-align: center;
     font-size: 1.2vw;
 }

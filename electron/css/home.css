@@ -1,28 +1,40 @@
+* {
+    user-select: none;
+}
+
 body {
     width: 100vw;
-    height: 100vh;
+    height: 100vw;
     overflow: hidden;
     background: linear-gradient( #0099b4, #1c92af) no-repeat;
     text-align: center;
 }
 
-#meio{
-    display: inline-block;
-    background-color:  #3f72b4;
-    color: rgb(255, 255, 255);
-    border-radius: 90px;
-    text-decoration: none;
-    animation: pulsa 1.5s linear infinite;
-    cursor: pointer;
-    width: 17vw;
-    height: 4vw;
+.swal2-popup{
+    font-size: 1vw;
 }
 
-#meio h4{
-    margin: auto;
-    margin-top: 1vw;
-    font-size: 2vw;
+#iniciar,#professor , #encerrar {
+    height: 3vw;  
 }
+
+#iniciar:hover, #professor:hover, #encerrar:hover{
+    transform: scale(1.1);
+}
+
+
+#iniciar h4, #professor h4, #encerrar h4{
+    font-size: 2.3vw;  
+    border: solid 0.5vw rgb(38, 0, 255);
+    background-color: #fffb2a85;
+    border-radius: 1.5vw;   
+    margin: 0%;
+    cursor: pointer;
+}
+
+
+
+
 
 @keyframes pulsa {
     0% { transform: scale(1.0);
@@ -152,7 +164,7 @@ body {
     position: absolute;
     width: 15vw;
     bottom: 0%;
-    left: 35%;
+    left: 26%;
     transform: scaleX(-1);
     z-index: 1;
 }
@@ -172,14 +184,15 @@ body {
     left: 35%;
 }
 #uC{
-    left: 72%;
+    left: 75%;
+    z-index: 1;
 }
 
 #rotom{
     position: absolute;
     width: 10vw;
     bottom: 15%;
-    left: 55%;
+    left: 65%;
 }
 
 
@@ -242,109 +255,33 @@ body {
 
 
 
-p{left: 35%; top: 1%; position: absolute;
-    color: rgb(98, 10, 156); 
-    font-size: 8vw; 
-    left: 50%;
-    margin: 0;
-    margin-top: 10%;
-    transform: translate(-50%, -50%); /*centraliza do jeito que left 50% nao deixa */
-    z-index: 1;
-}
-.choque{
-    position: relative;
-
-    text-shadow: 
-        0.05em 0 0 rgb(36, 114, 202),
-        -0.025em -0.05em 0 rgb(107, 25, 139),
-        0.025em 0.05em 0 rgb(24, 199, 62);
-
-    animation: choque 1s infinite linear;
-}
-
-.choque span{
+.container-menu{
     position: absolute;
-    left: 0;
-    top: 0;
-    
+    left: 40%;
+    top: 35%;
+    width: 25%;
+    height: 49%;
+    border-radius: 5%;
+    display: grid;
 }
 
-.choque span:first-child{
-    animation: choque 1s infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    transform: translate(-.05em, -0.0125em);
-    opacity: 0.6;
-}
-.choque span:last-child{
-    animation: choque 1s infinite linear;
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-    transform: translate(0.0125em, 0.025em);
-    opacity: 0.8;
+.logo{
+    position: absolute;
+    left: 30%;
+    width: 45vw;
+    z-index: 2;
 }
 
-@keyframes choque{
-    0%{
-
-        text-shadow: 
-        0.05em 0 0  rgb(71, 148, 221),
-        -0.05em -0.025em 0  rgb(36, 114, 202),
-        -0.025em 0.05em 0  rgb(24, 199, 62);
-    }
-    14%{
-        text-shadow: 
-        0.05em 0 0  rgb(71, 148, 221),
-        -0.05em -0.025em 0  rgb(36, 114, 202),
-        -0.025em 0.05em 0  rgb(143, 3, 199);
-    }
-    15%{
-        text-shadow: 
-        -0.05em 0 0  rgb(71, 148, 221),
-        0.05em -0.025em 0  rgb(36, 114, 202),
-        -0.025em 0.05em 0  rgb(143, 3, 199);
-    }
-    49%{
-        text-shadow: 
-        -0.05em 0 0  rgb(71, 148, 221),
-        0.05em -0.025em 0  rgb(36, 114, 202),
-        -0.025em 0.05em 0  rgb(143, 3, 199);
-    }
-    50%{
-        text-shadow: 
-        0.05em 0 0  rgb(71, 148, 221),
-        0.05em -0.025em 0  rgb(36, 114, 202),
-        0.025em 0.05em 0  rgb(143, 3, 199);
-    }
-    99%{
-        text-shadow: 
-        0.05em 0 0  rgb(71, 148, 221),
-        0.05em -0.025em 0  rgb(36, 114, 202),
-        0.025em 0.05em 0  rgb(143, 3, 199);
-    }
-    100%{
-        text-shadow: 
-        -0.05em 0 0  rgb(71, 148, 221),
-        -0.05em -0.025em 0  rgb(36, 114, 202),
-        -0.025em 0.05em 0  rgb(143, 3, 199);
-    }
+@font-face{
+    font-family: 'Pokemon';
+    src: url('../fonte/Pokemon\ Solid.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,::before, ::after{
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important; 
-    }
+h4{
+    font-family: 'Pokemon';
+    -webkit-text-stroke-width: 0.13vw; /* largura da borda */
+    -webkit-text-stroke-color: blue; /* cor da borda */
+    -webkit-text-fill-color: rgb(255, 255, 255);
 }
-
-
-.swal2-popup{
-    font-size: 1vw;
-}
-
-
-
-

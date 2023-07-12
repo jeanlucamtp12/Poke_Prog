@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 body, html{
 	overflow: hidden;
 	background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
@@ -240,7 +244,7 @@ body, html{
 
 /* Arbok e Bulba*/
 
-#arbok, #bulbassaur{
+#bulbassaur, #arbok{
 	position: absolute;
 	z-index: 1;
 }
@@ -250,9 +254,9 @@ body, html{
 	bottom: 48%;
 }
 #bulbassaur{
-	left: 41%;
-	width: 12vw;
-	bottom: 43%;
+	left: 44%;
+	width: 5vw;
+	bottom: 49%;
 }
 
 /* Timburr*/

@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 body{
     background: linear-gradient( #10181a, #a3c6d4) no-repeat;
     overflow: hidden;
@@ -36,11 +40,6 @@ body{
     margin-left: -24%;
 }
 
-
-
-
-
-
 .estaca1{
     position: absolute;
     left: 10%;
@@ -52,23 +51,25 @@ body{
     height: 50%;
 }
 
-
-
-
-
 .pino1{    
     position: absolute;
-    left: 46%;
+    left: 12%;
     bottom: -15%;
-    border: solid 0.3vw black;
+    height: 32vw;
+    width: 15vw;
+}
+.corPino1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 0.7vw;
     outline: none;
+    box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 2vw;
+    width: 0.5vw;
     animation: mudaCor 5s infinite ease-in-out;
-
 }
-
 
 @keyframes mudaCor {
     0% {
@@ -96,37 +97,43 @@ body{
 
 
 .estaca2{    
-
     position: absolute;
-    left: 40%;
+    left: 38%;
     bottom: 0%;
     float: left;
     display: flex;
     flex-direction: column-reverse; 
     width: 20%;
     height: 50%;    
-
 }
 
 
 
 
-.pino2{
+.pino2{ 
     position: absolute;
-    left: 46%;
+    left: 12%;
     bottom: -15%;
-    border: solid 0.3vw black;
+    height: 32vw;
+    width: 15vw;
+}
+
+.corPino2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 0.7vw;
     outline: none;
     box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 2vw;
+    width: 0.5vw;
     animation: mudaCor 5s infinite ease-in-out;
 }
 
 .estaca3{
     position: absolute;
-    left: 70%;
+    left: 65%;
     bottom: 0%;
     float: left;
     display: flex; 
@@ -137,17 +144,22 @@ body{
 
 .pino3{
     position: absolute;
-    left: 46%;
+    left: 12%;
     bottom: -15%;
-    border: solid 0.3vw black;
-    
+    height: 32vw;
+    width: 15vw;  
+}
+.corPino3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 0.7vw;
     outline: none;
     box-shadow: 0 0 5px #9ecaed;
     height: 32vw;
-    width: 2vw;
+    width: 0.5vw;
     animation: mudaCor 5s infinite ease-in-out;
-
 }
 
 

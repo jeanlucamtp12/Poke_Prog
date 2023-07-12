@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 body{
     overflow: hidden;
     width: 100%;
@@ -9,11 +12,7 @@ body{
     position:relative;
     height: 100vh;
     width: 100%;
-    /*border: 1px solid #111;
-     margin-left: auto;
-    margin-right:  auto; */
     background: linear-gradient( #47339e, #42a3c9) no-repeat;
-
 }
 
 
@@ -110,7 +109,8 @@ body{
 
     position: absolute;
     bottom: 0%;
-    left: 40vw;
+    --left-start-timburr: 40vw;
+    left:  var(--left-start-timburr);
     z-index: 1;
     width:6vw;
   
@@ -219,25 +219,16 @@ body{
 }
 
 
-
-
-
 .vetor {
-   
-        padding: 1%;
-        display: flex;
-        position: absolute;
-        bottom: 38vw;
-        flex-direction: row-reverse;
-        left: 70%;
-        width: 30%;
-        height: 5vw;
-    
-
-
+    display: flex;
+    position: absolute;
+    bottom: 40vw;
+    flex-direction: row-reverse;
+    left: 68%;
+    width: 30%;
+    height: 3vw;
 }
 .vetor h5{
-   
     position: absolute;
     bottom: 4vw;
     color:white;
@@ -248,13 +239,11 @@ body{
     color:white;
     width: 8vw;
     border: 0.1vw solid #ccc;
-    font-size: 1vw;
 }
 
 .filhoVetor img{
     color:white;
-    width: 3vw;
-
+    width: 2.5vw;
 }
 
 .togepi, .cleffa, .pichu, .igglybuff{
@@ -405,4 +394,29 @@ body{
 
 .swal2-popup{
     font-size: 1vw;
+}
+
+
+.movimentoD {
+    animation:  inicial_movimentoDireita 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoDireita{
+    0%, 100% {
+        left: calc(var(--left-start-timburr) + 0.8%);
+    }
+}
+
+.movimentoE {
+    animation:  inicial_movimentoEsquerda 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoEsquerda{
+    0%, 100% {
+        left: calc(var(--left-start-timburr) - 0.8%);
+    }
 }

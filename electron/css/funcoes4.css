@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 body{
     height: 100vh;
     overflow: hidden;    
@@ -173,7 +176,7 @@ body{
 
 .personagem{
     position: absolute;
-    width: 23%;
+    width: 20%;
     bottom: 1%;
     left: 0%;
     z-index: 1;
@@ -359,7 +362,7 @@ body{
 }
 
 
-.ingrediente{
+.roupa{
     position: absolute;
     width: 5%;
     bottom: 22%;
@@ -388,7 +391,7 @@ body{
     bottom: 25%;
 }
 
-.mesa{
+.tanque{
     position: absolute;
     width: 10%;
     left: 80%;
@@ -396,21 +399,21 @@ body{
 }
 
 
-.geladeira{
+.maquina{
     position: absolute;
     width: 7%;
     left: 65%;
     bottom: 71%;
 }
 
-.fogao{
+.cesto{
     position: absolute;
     width: 5%;
     left: 55%;
     bottom: 46%;
 }
 
-.pia{
+.limpeza{
     position: absolute;
     width: 5%;
     left: 50%;
@@ -419,14 +422,14 @@ body{
 
 
 
-.mesaFlor{
+.cesto3{
     position: absolute;
     width: 8%;
     left: 15%;
     bottom: 46%;
 }
 
-.mesaJantar{
+.limpeza2{
     position: absolute;
     width: 5%;
     left: 67%;
@@ -583,26 +586,98 @@ h6 {
     position: absolute;
     width: 30%;
     bottom: 20%;
-    z-index: 1;
-    right: 0%;
+    z-index: 2;
+    left: -10%;   
     animation: dewgong_movimento 10s infinite linear;
-
 }
+
+.jumpluff, .hoppip, .skiploom{
+    position: absolute;
+    width: 27%;
+    z-index: 2;
+}
+
+.jumpluff{
+    animation: hoppipL_movimento 15s infinite linear;
+    --my-start-right: -10%;  
+    animation-play-state: paused;
+}
+
+.hoppip{
+    animation: hoppipL_movimento 15s infinite linear;
+    --my-start-right: -15%;  
+    animation-play-state: paused;
+}
+
+.skiploom{
+    animation: hoppipL_movimento 15s infinite linear;
+    --my-start-right: -20%;  
+    animation-play-state: paused;
+}
+
+@keyframes hoppipL_movimento {
+
+    0% {
+        right: calc(var(--my-start-right) - 15%);
+        bottom: 48%;
+    }
+    10% {
+        right: calc(var(--my-start-right) + 15%);
+        bottom: 55%;
+    }
+    20% {
+        right: calc(var(--my-start-right) + 25%);
+        bottom: 48%;
+    }
+    30% {
+        right: calc(var(--my-start-right) + 35%);
+        bottom: 55%;
+    }
+    40% {
+        right: calc(var(--my-start-right) + 40%);
+        bottom: 48%;
+    }
+    50% {
+        right: calc(var(--my-start-right) + 60%);
+        bottom: 55%;
+    }
+    60% {
+        right: calc(var(--my-start-right) + 75%);
+        bottom:  48%;
+    }
+    70% {
+        right: calc(var(--my-start-right) + 85%);
+        bottom: 55%;
+    }
+    80% {
+        right: calc(var(--my-start-right) + 95%);
+        bottom:  48%;
+    }
+    90% {
+        right: calc(var(--my-start-right) + 115%);
+        bottom: 55%;
+    }
+    100% {
+        right: calc(var(--my-start-right) + 125%);
+        bottom:  48%;
+    }
+}
+
 
 @keyframes dewgong_movimento {
 
     0% {
-        left: 75%;
+        left: -10%;
     }
 
     50% {
-        left: 10%;
+        left: 50%;
         bottom: 25%;
 
     }
 
     100% {
-        left: -10%;
+        left: 110%;
         bottom:  20%;
     }
 }
@@ -612,9 +687,9 @@ h6 {
     position: absolute;
     width: 35%;
     bottom: 20%;
-    z-index: 1;
+    z-index: 2;
     right: 0%;
-    animation: pidgeot_movimento 10s infinite linear;
+    animation: pidgeot_movimento 15s infinite linear;
     animation-play-state: paused;
 
 }
@@ -623,7 +698,7 @@ h6 {
 
     0% {
         right: 0%;
-        bottom: 0%;
+        bottom: -10%;
 
     }
 
