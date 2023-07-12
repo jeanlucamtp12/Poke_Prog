@@ -21,10 +21,6 @@
 
     <div class="tela">
 
-
-
-
-
         <img id="falink" src="../img/arrays/falinkQueda.gif">
 
         <div>
@@ -91,7 +87,6 @@
 
         <div class="vetor">
             <h5>Vetor de Falinks</h5><br>
-            <div class="filhoVetor" img src="" id="10">10</div>
             <div class="filhoVetor" img src="" id="9">9</div>
             <div class="filhoVetor" img src="" id="8">8</div>
             <div class="filhoVetor" img src="" id="7">7</div>
@@ -108,378 +103,201 @@
 
         <div>
 
-            <script>
-
-
-                var k = 0;
-                for (var i = 1; k <= 100; i++) {
-
-
-                    var img = document.createElement('img');
-                    img.src = '../img/decisao/mato.png';
-                    img.classList.add('mato');
-                    img.id = 'mato' + i;
-                    img.style.bottom = "0%";
-                    img.style.width = "4%";
-                    img.style.left = k + "%";
-
-                    var body = document.querySelector("body");
-                    k = k + 3.8;
-
-                    body.appendChild(img);
-
-                }
-
-
-                let j = 0;
-
-                const falinkQueda = document.querySelector('#falink');
-                const falink = document.querySelector('#poke');
-
-                const loop = setInterval(() => {
-
-
-                    const falink = document.querySelector('#falink');
-                    const posicoesFalinks = ["22", "32", "42", "52", "62", "72", "82"];
-                    const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
-
-
-                    falink.style.left = posicoesFalinks[posicaoVetor] + "%";
-                    falinkQueda.style.display = 'block';
-
-
-
-
-
-                }, 5000);
-
-                const resetar = () => {
-
-                    raio2.style.animation = "";
-                    raio3.style.animation = "";
-                    raio4.style.animation = "";
-                    raio5.style.animation = "";
-                    raio6.style.animation = "";
-                }
-
-                const resetarVida = () => {
-                    document.getElementById("vida").style.animationPlayState = "running";
-                    document.getElementById("vida2").style.animationPlayState = "running";
-                    document.getElementById("vida2").style.display = "block";
-                    document.getElementById("vida").style.display = "block";
-
-                }
-
-                var vidas = 3;
-                const loop2 = setInterval(() => {
-
-                    if (vidas == 3) {
-                        document.querySelector('.vida2').style.display = 'none';
-                        document.querySelector('.vida').style.display = 'none';
-                    }
-
-
-                    falink.getBoundingClientRect();
-                    var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5, div.raio #raio6");
-
-                    var vidinhas = document.querySelectorAll("#vida, #vida2");
-
-
-
-                    for (var i = 0; i < raios.length; i++) {
-                        if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y - 30 + falink.height > raios[i].y)) {
-
-                            raios[i].style.animation = 'none';
-
-                            setInterval(resetar, 10);
-
-                            if (vidas == 3) {
-                                document.querySelector(".vidas3").remove();
-                                vidas = vidas - 1;
-                            } else if (vidas == 2) {
-                                document.querySelector(".vidas2").remove();
-                                document.querySelector('.vida').style.display = 'block';
-                                document.querySelector('.vida2').style.display = 'block';
-
-
-                                document.querySelector('.vida2').style.display = 'block';
-                                vidas = vidas - 1;
-                            } else if (vidas == 1) {
-                                document.querySelector(".vidas1").remove();
-                                vidas = vidas - 1;
-                            } else if (vidas == 0) {
-                                document.querySelector(".poke").style.display = "none";
-                                exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", "http://localhost/jogo/electron/arrays/arrays.html");
-                            }
-                        }
-                    }
-
-
-
-                    if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y - 30 + falink.height > falinkQueda.y)) {
-                        falinkQueda.style.display = 'none';
-                        document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
-
-                        j = j + 1;
-                        if (j == 11) {
-                            document.querySelector(".poke").style.display = "none";
-                            window.location.href = "http://localhost/jogo/electron/arrays/FalinksAtribuicao.html";
-                        }
-
-                    }
-
-
-
-                    for (var i = 0; i < vidinhas.length; i++) {
-                        if ((falink.x + 30 < vidinhas[i].x + vidinhas[i].width && falink.x - 30 + falink.width > vidinhas[i].x) && (falink.y + 30 < vidinhas[i].y + vidinhas[i].height && falink.y - 30 + falink.height > vidinhas[i].y)) {
-
-                            vidinhas[i].style.animationPlayState = 'paused';
-                            vidinhas[i].style.display = 'none';
-
-                            setInterval(resetarVida, 50);
-
-                            if (vidas < 3) {
-
-
-                                var img = document.createElement('img');
-                                img.src = '../img/recursividade/cortar/vida.png';
-                                img.classList.add('vidas' + (vidas + 1));
-
-                                img.style.width = "1.5%";
-
-                                var pai = document.querySelector(".life");
-                                pai.appendChild(img);
-
-                                vidas = vidas + 1;
-
-                            }
-
-                        }
-                    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                }, 10);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                const personagem = document.querySelector('.poke');
-
-                const moverDireita = () => {
-
-                    document.getElementById("poke").src = "../img/arrays/falink_direita.gif";
-
-                    const el = document.querySelector('.poke');
-                    const value = getComputedStyle(el).getPropertyValue('left');
-
-
-                    var remove_string = value.replace('px', '');
-                    var valorNum = parseInt(remove_string);
-
-                    var numPx = valorNum + 10;
-                    var soma = parseInt(value) + 10;
-
-                    personagem.style.left = soma + "px";
-
-
-
-                }
-
-                const moverEsquerda = () => {
-                    document.getElementById("poke").src = "../img/arrays/falink.gif";
-
-
-                    const el = document.querySelector('.poke');
-                    const value = getComputedStyle(el).getPropertyValue('left');
-
-
-                    var remove_string = value.replace('px', '');
-                    var valorNum = parseInt(remove_string);
-
-                    var numPx = valorNum + 10;
-                    var soma = parseInt(value) - 10;
-
-                    personagem.style.left = soma + "px";
-
-                }
-
-                const mover = () => {
-
-                    var tecla = event.keyCode;
-
-
-                    if (tecla == 39) {
-                        moverDireita();
-                    }
-
-                    if (tecla == 37) {
-                        moverEsquerda();
-                    }
-
-                }
-
-                document.addEventListener('keydown', mover);
-
-
-
-
-
-
-                const voltar_menu = () => {
-                    var tecla = event.keyCode;
-                    if (tecla == 27) {
-                        window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
-                    }
-                }
-                document.addEventListener('keydown', voltar_menu);
-
-
-
-
-            </script>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
+
+<script>
+    const path = require('path');
+
+    //laco para gerar os matos para compor o cenario da fase
+    for (var i = 1, k = 0; k <= 100; i++) {
+        var img = document.createElement('img');
+        img.src = '../img/decisao/mato.png';
+        img.classList.add('mato');
+        img.id = 'mato' + i;
+        img.style.bottom = "0%";
+        img.style.width = "4%";
+        img.style.left = k + "%";
+        var body = document.querySelector("body");
+        k = k + 3.8;
+        body.appendChild(img);
+
+    }
+
+    //definicao de falinks que cairao do ceu e falink controlado pelo jogador
+    let j = 0;
+    const falinkQueda = document.querySelector('#falink');
+    const falink = document.querySelector('#poke');
+
+    const loop = setInterval(() => { //loop para gerar de forma aleatoria em qual ponto caira o falinks
+        const falink = document.querySelector('#falink');
+        const posicoesFalinks = ["22", "32", "42", "52", "62", "72", "82"];
+        const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
+        falink.style.left = posicoesFalinks[posicaoVetor] + "%";
+        falinkQueda.style.display = 'block';
+    }, 5000);
+
+    const resetar = () => { //funcao para resetar a animacao dos raios
+        raio2.style.animation = "";
+        raio3.style.animation = "";
+        raio4.style.animation = "";
+        raio5.style.animation = "";
+        raio6.style.animation = "";
+    }
+
+    const resetarVida = () => {  //funcao para projetar a animacao das vidas que sao lancadas
+        document.getElementById("vida").style.animationPlayState = "running";
+        document.getElementById("vida2").style.animationPlayState = "running";
+        document.getElementById("vida2").style.display = "block";
+        document.getElementById("vida").style.display = "block";
+    }
+
+    var vidas = 3;
+    const loop2 = setInterval(() => { //loop para verificar colisoes...
+
+        if (vidas == 3) {
+            document.querySelector('.vida2').style.display = 'none';
+            document.querySelector('.vida').style.display = 'none';
+        }
+
+        falink.getBoundingClientRect();
+        var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5, div.raio #raio6");
+        var vidinhas = document.querySelectorAll("#vida, #vida2");
+
+        for (var i = 0; i < raios.length; i++) {  //verifica colisao com raios e realiza operacoes com base nas colisoes
+            if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y - 30 + falink.height > raios[i].y)) {
+
+                raios[i].style.animation = 'none';
+                setInterval(resetar, 10);
+                if (vidas == 3) {
+                    document.querySelector(".vidas3").remove();
+                    vidas = vidas - 1;
+                } else if (vidas == 2) {
+                    document.querySelector(".vidas2").remove();
+                    document.querySelector('.vida').style.display = 'block';
+                    document.querySelector('.vida2').style.display = 'block';
+                    document.querySelector('.vida2').style.display = 'block';
+                    vidas = vidas - 1;
+                } else if (vidas == 1) {
+                    document.querySelector(".vidas1").remove();
+                    vidas = vidas - 1;
+                } else if (vidas == 0) {
+                    document.querySelector(".poke").style.display = "none";
+
+                    const caminhoDerrota= path.resolve('./resources/app/arrays/arrays.html');
+                    
+                    exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", caminhoDerrota);
+                }
+            }
+        }
+
+        //verificao de colisao entre falinks do jogador e os que caem do ceu
+        if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y - 30 + falink.height > falinkQueda.y)) {
+            falinkQueda.style.display = 'none';
+            document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
+            j = j + 1;
+            console.log(j)
+            if (j == 10) {
+                document.querySelector(".poke").style.display = "none";
+                const caminhoSucesso = path.resolve("./resources/app/arrays/FalinksAtribuicao.html");
+
+                window.location.href = caminhoSucesso;
+            }
+        }
+
+        //verificao com colisao entre personagem do jogador e vidas que sao lancadas do ceu
+        for (var i = 0; i < vidinhas.length; i++) {
+            if ((falink.x + 30 < vidinhas[i].x + vidinhas[i].width && falink.x - 30 + falink.width > vidinhas[i].x) && (falink.y + 30 < vidinhas[i].y + vidinhas[i].height && falink.y - 30 + falink.height > vidinhas[i].y)) {
+                vidinhas[i].style.animationPlayState = 'paused';
+                vidinhas[i].style.display = 'none';
+                setInterval(resetarVida, 50);
+
+                if (vidas < 3) {
+                    var img = document.createElement('img');
+                    img.src = '../img/recursividade/cortar/vida.png';
+                    img.classList.add('vidas' + (vidas + 1));
+                    img.style.width = "1.5%";
+                    var pai = document.querySelector(".life");
+                    pai.appendChild(img);
+                    vidas = vidas + 1;
+                }
+            }
+        }
+    }, 10);
+
+
+
+    function removerMovimentoD() {
+        personagem.classList.remove(movimentoD);
+    }
+
+    function removerMovimentoE() {
+        personagem.classList.remove(movimentoE);
+    }
+
+
+    //funcoes para capturar a movimentacao do personagem
+
+    const personagem = document.querySelector('.poke');
+
+    
+    const larguraTela = window.innerWidth;
+    const limiteDireito = larguraTela - personagem.offsetWidth;
+
+    const moverDireita = () => {
+
+        if (document.querySelector('.poke').offsetLeft <= limiteDireito) {
+
+
+        document.getElementById("poke").style.transform = "scaleX(-1)";
+
+        personagem.classList.remove('movimentoE'); // Remover a classe movimentoD
+
+        personagem.style.setProperty('--left-start-timburr', getComputedStyle(personagem).left);
+        personagem.classList.add('movimentoD');
+        personagem.addEventListener('transitionend', removerMovimentoD);
+        }
+
+    }
+
+    const moverEsquerda = () => {
+
+        if (document.querySelector('.poke').offsetLeft >= 0) {
+            document.getElementById("poke").style.transform = "scaleX(1)";
+
+            personagem.classList.remove('movimentoD'); // Remover a classe movimentoD
+
+            personagem.style.setProperty('--left-start-timburr', getComputedStyle(personagem).left);
+            personagem.classList.add('movimentoE');
+            personagem.addEventListener('transitionend', removerMovimentoE);
+        }
+
+
+
+    }
+
+    const mover = () => {
+        var tecla = event.keyCode;
+        if (tecla == 39) {
+            moverDireita();
+        }
+        if (tecla == 37) {
+            moverEsquerda();
+        }
+    }
+
+    document.addEventListener('keydown', mover);
+
+    const voltar_menu = () => {  //atalho para retornar ao menu de fases
+        var tecla = event.keyCode;
+
+        const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
+        if (tecla == 27) {
+            window.location.href = caminhoArquivo;
+        }
+    }
+    document.addEventListener('keydown', voltar_menu);
+
+</script>
