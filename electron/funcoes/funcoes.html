@@ -203,27 +203,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
 
     <script>
 
 
 
-
-
+        const path = require('path');
 
         var wall = document.querySelector(".wall");
 
@@ -371,8 +357,11 @@
 
     const voltar_menu = () => {
             var tecla = event.keyCode;
+
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
             if (tecla == 27) {
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                window.location.href = caminhoArquivo;
             }
         }
         document.addEventListener('keydown', voltar_menu);

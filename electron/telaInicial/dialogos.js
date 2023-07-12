@@ -1,7 +1,7 @@
 var textos = ["> Seja bem vindo a Prógdeia! Todos aqui me conhecem como Fran! Eu sou responsável por manter a ordem na cidade, porém algumas coisas estranhas vem acontecendo por aqui, e gostaria da sua ajuda para tentar resolvê-las. Você precisa passar por 8 pontos da cidade, em cada um deles você terá uma tarefa para realizar. No caminho você vai aprender um pouco sobre programação e conhecer alguns pokémon também. Conto com você! Clique em iniciar e vamos começar pela fase 1!!",
     "> Aqui é a indústria onde produzimos as caixas conhecidas como “caixas variáveis”. Cada caixa possui um rótulo que indica o tipo de conteúdo que ela possui por dentro. Uma caixa variável pode conter números, letras e até mesmo palavras. Acontece que uma espécie de pokémon chamada de Unown invadiu nossa fábrica. Aparentemente esses Pokémon possuem a forma do alfabeto, pelo que vejo eles estão formando palavras, mas infelizmente eu não consigo entendê-las muito bem… Acho que eles querem ajudar na organização da fábrica. Você poderia nos ajudar arrastando os Unown corretamente de acordo com as caixas correspondentes? Se tiver dúvidas sobre os tipos de caixas que fabricamos, pode clicar na guia de ajuda! ",
     "> Vamos para nosso segundo ponto! Essa é a escola decisão, ela tem esse nome, pois os alunos que estudam nela são treinados a tomarem decisões. Tudo isso ocorre através de uma batalha de Pokémon. Espere você não tem um Pokémon, certo? Vou te emprestar um dos meus para que você possa batalhar com os outros alunos dessa escola. É muito simples, você deve responder as perguntas, se errar, você levará um ataque do inimigo, mas se acertar você consegue atacar seu adversário. Clique em iniciar para começar, mas tenha cautela, uma grande campeã chamada Cynthia está na escola hoje!! ",
-    "> Chegamos ao lago repetição, neste lago os Timburr costumam construir pontes para ajudar os cidadãos da cidade a atravessarem para o bosque. Sua missão aqui é ajudar o Timburr a construir a ponte. É muito simples, basta pegar os troncos que estão caindo e colocá-los um a um no final da ponte. Tome muito cuidado, existem muitos Pokémon de água perigosos nesse lago. Vamos nessa!!!",
+    "> Chegamos ao lago repetição! Neste lago os Timburr costumam construir pontes para ajudar os cidadãos da cidade a atravessarem para o bosque, porém um Timburr que estava construindo a ponte ficou preso do outro lado e não consegue voltar a cidade. Vou te emprestar meu Pikachu para que ele possa te ajudar a construir a ponte, assim podemos ajudar o Timburr a retornar a cidade. É muito simples, basta pegar os troncos que estão caindo e colocá-los um a um no final da ponte. Tome muito cuidado, existem muitos Pokémon de água perigosos nesse lago. Os peixes do lago vão tentar roubar seus troncos, e os demais vão te tirar pontos de vida. Vamos nessa!!!",
     "> Agora que construímos a ponte, podemos finalmente entrar no bosque. Me disseram que um Falinks que vivia aqui acabou se despedaçando e perdendo as partes do seu corpo. Gostaria que você ajudasse a cabeça do Falinks a coletar suas outras 10 partes. Vamos coletá-las e colocá-las dentro do que chamamos de vetor. Um vetor é uma caixa enorme com várias outras caixas dentro. Na nossa missão vamos colocar os Falinks dentro de um vetor com 10 caixas. Acredito ser o tamanho ideal, visto que temos 10 pedaços de Falinks espalhados pelo bosque. Não vamos perder mais tempo, clique em iniciar para começarmos a coleta!!",
     "> Vamos agora verificar como andam as coisas na casa das funções. Me informaram que está uma bagunça, por isso vou precisar da sua ajuda para organizar a casa. O Rotom é um fantasminha que consegue possuir objetos de casa, ele pode se transformar em vários objetos, como um forno, um ventilador, e até mesmo um telefone, consegue acreditar ? Ele se dispôs a te ajudar nessa missão. Ele vai possuir alguns objetos e te ajudar a organizar os cômodos da casa. Você pode começar pelo cômodo que quiser, a escolha é sua. Vamos lá, mãos à obra! ",
     "> Que medo!!! Vamos ter que passar no cemitério da cidade. Vários Pokémon fantasma vivem por lá, acontece que aparecerão alguns intrusos que nós chamamos por aqui de Pokémon exceções, eles são diferentes em coloração aos Pokémon da sua espécie. O problema é que eles confundem os Pokémon daqui da cidade e causam a maior confusão. Preciso que você pegue esses Pokémon exceções para fazer com que os Pokémon do cemitério se acalmem. Ao descobrir o Pokémon exceção, basta clicar nele para capturá-lo. Conto com você!!!",
@@ -26,15 +26,10 @@ function exibeNotificação(tipo, texto, link) {
         heightAuto: false,
         customClass: {
             container: "custom-swal",
-          },
+        },
         // showConfirmButton: true,
         //timer: 1500
     }).then((result) => {
-
-
-       // document.querySelector(".custom-swal").style.fontSize = "1vw";
-      
-
 
         if (result.isConfirmed && link != "") {
 

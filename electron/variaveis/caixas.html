@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,10 +22,10 @@
 
 
     <div style="padding: 1vw;" class="titulo">
-        <h3>Informe o tipo de variavel dentro da caixa arrastando os Unowm</h3>
+        <h3>Informe o tipo de variavel dentro da caixa, arrastando os Unowm</h3>
     </div>
 
-    
+
 
     <div class="caixaConteudo">
         <img src="../img/fases unowms/caixa.png">
@@ -138,10 +137,11 @@
         <div>
             <div class="caixaResposta" id="caixaResposta" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)">
                 <div id="slot1" class="filhoCaixaS"></div>
-                
+
             </div>
-            <button id="botaoResposta" onclick="limparUnowns(i)">Apagar</button>
-            <button id="botaoResposta" onclick="verificaTipo(document.getElementById('slot1').innerHTML)">Enviar</button>
+            <button id="botaoResposta" onclick="limparUnowns('slot1')">Apagar</button>
+            <button id="botaoResposta"
+                onclick="verificaTipo(document.getElementById('slot1').innerHTML)">Enviar</button>
 
 
 
@@ -199,11 +199,6 @@
 
 
 
-
-
-
-
-
 <script>
 
 
@@ -212,131 +207,96 @@
     // Embaralhar o vetor
     vetorPerguntas.sort(() => Math.random() - 0.5);
 
-    var idPergunta = 0;
-
+    var idPergunta = 0;  //inicia id como 0 para pegar a primeira pergunta no vetor de perguntas
 
     carregarPergunta();
-    function carregarPergunta(){
+
+    function carregarPergunta() {
+        // pega a primeira pergunta do vetor embaralhada pela variavel vetorPerguntas e a exibe ao jogador
         document.getElementById("alterar").innerText = perguntas[vetorPerguntas[idPergunta]].question;
     }
 
-
-    var palavra = '';
-    var i = 1;
-    var lista = [];
-
-
-
-    const itemSelecionado = (event) => {
+    const itemSelecionado = (event) => {  //realiza a captura do item selecionado pelo usuario
         event.dataTransfer.setData("img", event.target.id);
-
     }
 
-    const areaSoltar = (event) => {
+    const areaSoltar = (event) => { //verifica se o item foi solto em um local permitido
         event.preventDefault();
     }
 
-    const soltarElemento = (event) => {
+    const soltarElemento = (event) => {  //solta o elemento no local designado
         event.preventDefault();
-
         var imagem = event.dataTransfer.getData("img");
-        var slot = "slot" + i;
-
-        document.getElementById(slot).innerHTML = "<img src='../img/unowns/" + imagem + ".gif'>";
-
-        i = i + 1;
-
-        palavra = palavra + imagem;
-
-
-        lista.push(imagem);
+        document.getElementById("slot1").innerHTML = "<img src='../img/unowns/" + imagem + ".gif'>";
     }
 
-    const limparUnowns = (k) => {
-        
-        if (k == 1){
+    const limparUnowns = (k) => { //funcao para limpar a resposta apos ser enviada
+        if (k == 1) {
             exibeNotificação("error", "Nada para apagar!", "");
         }
 
-        for (var j = 1; j < k; j++) {
-            var elemento = document.querySelector("#slot" + j + " img");
-            palavra = '';
-            if (elemento.parentNode) {
-                elemento.parentNode.removeChild(elemento);
-            }
-        }
-
-        i = 1;
+        var elemento = document.querySelector("#slot1" + " img");
+        if (elemento.parentNode) {
+            elemento.parentNode.removeChild(elemento);
+        }  
     }
 
-    const verificaTipo = (valor) => {
+    const verificaTipo = (valor) => {  //verifica se as respostas informadas estão certas
+        if (idPergunta == 6) {   //verifica se o usuario chegou ao final da fase
+            const caminhoSucesso = pathVar.resolve('./resources/app/Quizes/quizEntreFases.html?fase=1');
 
-        if(idPergunta == 6){
-            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=1");
+            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", caminhoSucesso);
             return;
         }
 
-        var tipoCaixa = perguntas[vetorPerguntas[idPergunta]].answers[0].option;
+        var tipoCaixa = perguntas[vetorPerguntas[idPergunta]].answers[0].option.trim();
 
         switch (tipoCaixa) {
-
             case 'inteiro':
-                if (valor.includes("inteiro")) {
+                if (valor.includes("inteiro")) { //caso a resposta esteja certa, exibe que a respota esta certa e limpa o campo de resposta 
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    limparUnowns(i);
-                    palavra = '';
+                    limparUnowns("slot1");
                     idPergunta = idPergunta + 1;
-                    carregarPergunta();
-
-                } else {
+                    carregarPergunta(); //carrega a proxima pergunta
+                } else { //caso a resposta esteja errada, informa ao usuario e limpa o campo de resposta
                     exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
+                    limparUnowns("slot1");
                 }
                 break;
 
             case 'palavra':
                 if (valor.includes("palavra")) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    palavra = '';
-                    limparUnowns(i);
+                    limparUnowns("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
+                    limparUnowns("slot1");
                 }
                 break;
 
             case 'booleano':
                 if (valor.includes("booleano")) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    palavra = '';
-                    limparUnowns(i);
+                    limparUnowns("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
+                    limparUnowns("slot1");
                 }
                 break;
 
             case 'letra':
                 if (valor.includes("letra")) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    palavra = '';
-                    limparUnowns(i);
+                    limparUnowns("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
+                    limparUnowns("slot1");
                 }
                 break;
 
@@ -344,41 +304,30 @@
                 console.log(valor)
                 if (valor.includes("decimal")) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    palavra = '';
-                    limparUnowns(i);
+                    limparUnowns("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    palavra = '';
-                    limparUnowns(i);
-
+                    limparUnowns("slot1");
                 }
                 break;
 
             default:
-                exibeNotificação("error", "Tente Novamente!", "");
-                palavra = '';
-                limparUnowns(i);
+                exibeNotificação("error", "Os dados podem ter sido inseridos incorretamente na area do professor!", "");
+                limparUnowns("slot1");
         }
-
-
     }
 
-
-
-
-    const exibeAjuda = () => {
+    const exibeAjuda = () => { //abre a guia de ajuda para auxiliar o usuario
         if (document.querySelector("#ajuda").style.display == "block") {
-            document.querySelector("#ajuda").style.display = "none"; // ou "block"
+            document.querySelector("#ajuda").style.display = "none"; 
         } else {
-            document.querySelector("#ajuda").style.display = "block"; // ou "block"
+            document.querySelector("#ajuda").style.display = "block"; 
         }
     }
-</script>
 
-
-<script>
+    //captura os unowns que ficaram espalhados pela fase e os coloca em posições aleatorias da tela
     const alfabeto = document.querySelectorAll('#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z, #ia, #ib');
 
     for (var l = 0; l < alfabeto.length; l++) {
@@ -401,23 +350,17 @@
             alfabeto[l].style.left = posicaoLeft[posicaoL] + "%";
             alfabeto[l].style.bottom = posicaoBottom[posicaoB] + "%";
         }
-
-
-
-
     }
 
-
-
-
+    //funcao para verificar se o usuario clicou na tecla 'Esc' para retornar ao menu de fases
     const voltar_menu = () => {
         var tecla = event.keyCode;
+
+        const caminhoArquivo = pathVar.resolve('./resources/app/telaInicial/city.html');
+
         if (tecla == 27) {
-            window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+            window.location.href = caminhoArquivo;
         }
     }
     document.addEventListener('keydown', voltar_menu);
-
-
-
 </script>

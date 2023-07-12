@@ -38,7 +38,9 @@
 
         <div class="estaca1">
 
-            <div class="pino1" id="1" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
+            <div class="pino1" id="1" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)">
+                <div class="corPino1"></div>
+            </div>
 
             <div class="Cincopinos" id="5">
                 <img src="../img/extras/5.gif" ondragstart="itemSelecionado(event)" id="5"></img>
@@ -64,7 +66,9 @@
 
 
         <div class="estaca2">
-            <div class="pino2" id="2" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
+            <div class="pino2" id="2" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)">
+                <div class="corPino2" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
+            </div>
 
             <div class="Cincopinos2"></div>
             <div class="Quatropinos2"></div>
@@ -75,8 +79,9 @@
 
         </div>
         <div class="estaca3">
-            <div class="pino3" id="3" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)"></div>
-
+            <div class="pino3" id="3" ondragover="areaSoltar(event)" ondrop="soltarElemento(event)">
+                <div class="corPino3"></div>
+            </div>
             <div class="Cincopinos3"></div>
             <div class="Quatropinos3"></div>
             <div class="Trespinos3"></div>
@@ -92,6 +97,8 @@
 </html>
 
 <script>
+    const path = require('path');
+
     var estaca1 = 5;
     var estaca2 = 0;
     var estaca3 = 0;
@@ -104,7 +111,7 @@
     var contador = 0;
 
 
-    const removerMagnemite = (e, pino, id) => {
+    const removerMagnemite = (e, pino, id) => { //funcao para realizar alteracao nos vetores de posicao de pecas
 
         if (e.includes('2')) {
             for (var i = 4; i >= 0; i--) {
@@ -127,38 +134,25 @@
             }
         }
 
-
-
         var elemento = document.querySelector("." + e + " img");
-
-
 
         if (elemento.parentNode) {
             elemento.parentNode.removeChild(elemento);
         }
     }
 
-
-    const decrementarEstacas = (classeImagem) => {
-
+    const decrementarEstacas = (classeImagem) => { //funcao para realizar a decrementacao de estaca quando uma peca e movida
 
         if (classeImagem.includes('2')) {
             estaca2 = estaca2 - 1;
-
-
-
         } else if (classeImagem.includes('3')) {
             estaca3 = estaca3 - 1;
-
-
         } else {
             estaca1 = estaca1 - 1;
-
         }
     }
 
-    const moveMoagnemite = (pino, slot, imagem) => {
-
+    const moveMoagnemite = (pino, slot, imagem) => { //funcao para definir a posicao das pecas 
 
         var img = document.createElement('img');
         img.src = "../img/extras/" + imagem + ".gif";
@@ -199,14 +193,11 @@
 
 
         img.setAttribute('ondragstart', 'itemSelecionado(event)');
-
-
         div.appendChild(img);
 
 
     }
-    const verificaEstaca = (estaca, imagem, pino) => {
-
+    const verificaEstaca = (estaca, imagem, pino) => { //funcao que verificar quais pecas devem ser movimentadas 
 
         switch (estaca) {
             case 0:
@@ -231,7 +222,7 @@
     }
 
 
-    const verificaMovimentacao = (divImagem, idImagem) => {
+    const verificaMovimentacao = (divImagem, idImagem) => { //funcao para verificar movimentacao de pecas
 
         if (classeImagem.includes('2')) {
             bloqueiaMovimentacao(estaca2, divImagem);
@@ -243,7 +234,7 @@
 
     }
 
-    const bloqueiaMovimentacao = (estaca, divImagem) => {
+    const bloqueiaMovimentacao = (estaca, divImagem) => {  //funcao para enviar mensagem de bloqueio, caso peca esteja indisponivel
         switch (estaca) {
             case 1:
                 if ((divImagem != "Cincopinos") && (divImagem != "Cincopinos2") && (divImagem != "Cincopinos3")) {
@@ -277,8 +268,7 @@
         }
     }
 
-    const alteraVetores = (pino, imagem) => {
-
+    const alteraVetores = (pino, imagem) => {  //funcao para alterar os valores no vetor de pinos
 
         for (var i = 4; i >= 0; i--) {
                 if (pino[i] == 0) {
@@ -300,61 +290,34 @@
     }
 
 
-    const itemSelecionado = (event) => {
+    const itemSelecionado = (event) => {   //funcao que verifica se um dos cincos pinos disponivel foi selecionado
         event.dataTransfer.setData("img", event.target.id);
-
-        //classe = event.dataTransfer.setData("img", event.target.parentNode.id);
         classeImagem = (("img", event.target.parentNode.className));
-
         verificaMovimentacao(classeImagem, event.dataTransfer.getData("img"));
-
-
     }
 
-    const areaSoltar = (event) => {
+    const areaSoltar = (event) => { //funcao que verifica se o jogador esta tentando soltar o elemento em um local valido, no caso as hastes
         event.preventDefault();
-
-
     }
 
-    const soltarElemento = (event) => {
+    const soltarElemento = (event) => {  //funcao para soltar o elemento no local designado e realizar operacoes
+
         event.preventDefault();
-
-
-
-
         var imagem = event.dataTransfer.getData("img");
-
-
         var pino = event.target.id;
         pino = "estaca" + pino;
-
-
-
-
-
-
-
-
-
-
         var blocos = document.querySelectorAll("div." + pino + " #slot1, div." + pino + " #slot2, div." + pino + " #slot3, div." + pino + " #slot4, div." + pino + " #slot5");
- 
 
-
+        //realiza verificacoes referente a cada uma das tres hates
         if ((pino == "estaca1") && (alteraVetores(ultimoE1, imagem) == true)) {
-   
-
             if ((estaca1 => 0) && (estaca1 < 5)) {
                 verificaEstaca(estaca1, imagem, pino);
                 estaca1 = estaca1 + 1;
                 decrementarEstacas(classeImagem, estaca1);
                 removerMagnemite(classeImagem, "1", imagem);
-
             } else {
                 exibeNotificação("error", "Pino indisponivel", "");
             }
-
             document.getElementById("contador").innerHTML = "Movimentos<br> Minimos: 31 | Utilizados: "+(contador+1);
             contador = contador + 1;
 
@@ -367,16 +330,18 @@
                 estaca2 = estaca2 + 1;
                 decrementarEstacas(classeImagem, estaca2);
                 removerMagnemite(classeImagem, "2", imagem);
-
             } else {
                 exibeNotificação("error", "Pino indisponivel", "");
             }
-
             if(ultimoE2[0] == 1){
                 if(contador > 31){
-                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
+
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", caminhoSucesso);
                 }else{
-                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
+
+                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", caminhoSucesso);
                 }
             }
 
@@ -398,28 +363,28 @@
             }
             if(ultimoE3[0] == 1){
                 if(contador > 31){
-                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
+
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", caminhoSucesso);
                 }else{
-                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=7");
+                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
+
+                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", caminhoSucesso);
                 }
             }
             document.getElementById("contador").innerHTML = "Movimentos<br> Minimos: 31 | Utilizados: "+(contador+1);
             contador = contador + 1;
 
         }
-
-        console.log("Depois: ", ultimoE1, ultimoE2, ultimoE3);
-
-
-
-
-
     }
 
-        const voltar_menu = () => {
+        const voltar_menu = () => { //tecla de atalho para voltar ao menu de fases
             var tecla = event.keyCode;
+
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
             if (tecla == 27) {
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                window.location.href = caminhoArquivo;
             }
         }
         document.addEventListener('keydown', voltar_menu);

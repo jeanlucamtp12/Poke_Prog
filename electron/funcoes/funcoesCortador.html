@@ -145,7 +145,7 @@
                </div>
            
 
-            <img class='poke' id="poke" src="../img/recursividade/cortar/chandelure.png">
+            <img class='poke' id="poke" src="../img/recursividade/cortar/chandelure.gif">
 
             <div class="cortador">
                 <img class="cortador" id="cortador" src="../img/funcoes/cortador.png">
@@ -199,13 +199,13 @@
 
 </html>
 <script>
+    const path = require('path');
 
-
-
+    //defini as frutas que cairam do ceu
     var frutas = document.querySelectorAll("div.frutasQ #fruta, div.frutasQ #legume, div.frutasQ #verdura");
     var versaoPoke = false
 
-
+    //seta um inmtervalo para que as frutas comecem a cair
     setInterval(function () {
         frutas[0].style.animationPlayState = "running";
     }, 1000);
@@ -219,15 +219,7 @@
     }, 1000);
 
 
-
-
-
-
-
-    var k = 0;
-    for (var i = 1; k <= 91; i++) {
-
-
+    for (var i = 1, k = 0; k <= 91; i++) { //projeta a grama do cenario
         var img = document.createElement('img');
         img.src = '../img/recursividade/cortar/mato.png';
         img.classList.add('mato');
@@ -235,69 +227,48 @@
         img.style.bottom = "0%";
         img.style.width = "3%";
         img.style.left = k + "%";
-
         var body = document.querySelector("body");
         k = k + 3.8;
-
         body.appendChild(img);
-
     }
 
     botaoP = false;
     spacebar = false;
 
+    //captura via variaveis os personagens que iram compor a fase
     var animacaoOriginal = document.getElementById("poke").style.animation;
     const raio = document.querySelector('#raio');
     var combees = document.querySelectorAll("div.combee #combee2, div.combee #combee3, div.combee #combee4, div.combee #combee4, div.combee #combee5, div.combee #combee6");
-
     let j = 0;
-
     const chandelure = document.querySelector('#poke');
 
-    const loop = setInterval(() => {
-
-
+    const loop = setInterval(() => { //loop para gerar de forma aleatoria a posicao dos raios de energia
         const posicoesRaio = ["18", "27", "37.5", "53", "75", "83"];
         const posicaoVetor = Math.floor(Math.random() * posicoesRaio.length);
-
         raio.style.left = posicoesRaio[posicaoVetor] + "%";
         raio.style.display = 'block';
-
     }, 5000);
 
-    const resetar = () => {
-        //raio2.style.bottom = 'none';
-
+    const resetar = () => { //reseta a posicao das abelhas
         for (var i = 0; i < combees.length; i++) {
             combees[i].style.animation = "";
             combees[i].style.display = "block";
         }
-        raio.style.animation = "";
-
-
-
-
+        raio.style.animation = ""; //reseta a animacao do raio de energia
     }
 
-    var vidas = 3;
+    var vidas = 3; //variaveis para controle de vidas e alimentos 
     var energias = 6;
     var bananas = 4;
     var alfaces = 4;
     var tomates = 4;
 
-
-
-
-    const loop2 = setInterval(() => {
+    const loop2 = setInterval(() => { //loop para verificar colisoes e realizar operacoes
 
         chandelure.getBoundingClientRect();
 
-
-
         if(energias == 5 || energias == 2){
-
             document.getElementById("poke").style.animation = "chandelure_ardente 0.5s infinite linear";
-
             if( botaoP == false){
                 document.getElementById("pokeInfo").style.display = "block";
                 botaoP = true;
@@ -311,214 +282,127 @@
             versaoPoke = false;
         }
 
-        for (var i = 0; i < combees.length; i++) {
+        for (var i = 0; i < combees.length; i++) { //verifica colisao com abelhas
             if ((chandelure.x + 30 < combees[i].x + combees[i].width && chandelure.x - 30 + chandelure.width > combees[i].x) && (chandelure.y + 30 < combees[i].y + combees[i].height && chandelure.y - 30 + chandelure.height > combees[i].y)) {
-                // window.alert("enconstou");
 
                 raio.style.animation = 'none';
-
-
                 resetar();
-
                 combees[i].style.animation = 'none';
-
                 if((versaoPoke == true && spacebar == false) || (versaoPoke == false)){
-
                     if (vidas == 3) {
                     document.querySelector(".vidas3").remove();
                     combees[i].style.animation = 'none';
-                    //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 2) {
                     document.querySelector(".vidas2").remove();
                     combees[i].style.animation = 'none';
-                    //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 1) {
                     document.querySelector(".vidas1").remove();
                     document.querySelector("#vidasTexto").style.display = "none";
                     combees[i].style.animation = 'none';
-                    //combees[i].style.display = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 0) {
                     document.querySelector(".poke").style.display = "none";
-                    exibeNotificação("error", "Você Perdeu Todas as Vidas! Clique para Tentar Novamente", "http://localhost/jogo/electron/funcoes/funcoesCortador.html");
-                }
-                }
+                    const caminhoDerrota= path.resolve('./resources/app/funcoes/funcoesCortador.html');
 
-        
+                    exibeNotificação("error", "Você Perdeu Todas as Vidas! Clique para Tentar Novamente", caminhoDerrota);
+                }
+                }
 
                 const idCombee = combees[i].id;
-
 
                 (function (id) {
                     setTimeout(function () {
                         document.getElementById(id).style.animation = '';
-
-
                     }, 10);
                 })(idCombee);
-
-
-
             }
         }
 
 
-
+        //verifica colisao com  raios de energia e realiza operacoes, bem como mover o cortador e cortar a grama
         if ((chandelure.x + 30 < raio.x + raio.width && chandelure.x - 30 + chandelure.width > raio.x) && (chandelure.y + 30 < raio.y + raio.height && chandelure.y - 30 + chandelure.height > raio.y)) {
-            //falink.style.left = '150px';
 
             raio.style.display = 'none';
-
-            //document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
-
-
             if (energias == 6) {
-                //document.querySelector(".energia6").remove();
                 document.querySelector(".energia1").style.backgroundColor = "green";
                 energias = energias - 1;
             } else if (energias == 5) {
                 document.querySelector(".energia2").style.backgroundColor = "green";
-                //document.querySelector(".energia5").remove();
                 energias = energias - 1;
             } else if (energias == 4) {
                 document.querySelector(".energia3").style.backgroundColor = "green";
-                //document.querySelector(".energia4").remove();
                 energias = energias - 1;
             } else if (energias == 3) {
                 document.querySelector(".energia4").style.backgroundColor = "green";
-                //document.querySelector(".energia3").remove();
                 energias = energias - 1;
             } else if (energias == 2) {
                 document.querySelector(".energia5").style.backgroundColor = "green";
-                //document.querySelector(".energia2").remove();
                 energias = energias - 1;
             } else if (energias == 1) {
                 document.querySelector(".energia6").style.backgroundColor = "green";
-                //document.querySelector(".energia1").remove();
                 energias = energias - 1;
             }
-
-
-
-
-
-
-
-
-
-
 
             const cortador = document.querySelector('#cortador');
             cortador.getBoundingClientRect();
 
-
-
             var matos = document.querySelectorAll('.mato');
-
             var numerosRemover = 4;
-
             var removerr = Array.prototype.slice.call(matos, -numerosRemover);
-
             removerr.forEach(function (mato) {
                 mato.remove();
             });
 
             var remove = matos[matos.length - 1];
-
             cortador.style.animationPlayState = "running"; //running
-
             setTimeout(function () {
                 cortador.style.animationPlayState = "paused"; //running
             }, 4000);
-
-
-            //ultimo.remove();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            j = j + 1;
-            if (j == 10) {
-                window.alert("Você ganhou, vamos a proxima fase!");
-                window.location.href = "./falinksAtribuicao.html";
-            }
-
         }
-
-
-
-
-
-
     }, 10);
 
 
 
 
     var vitoriaLoop = "false";
-
-    const loopVitoria = setInterval(() => {
-
+    const loopVitoria = setInterval(() => { //loop de vitoria para verificar a coleta de alimentos, vidas restantes e raios de energia coletados
         if (vidas >= 0 && energias == 0 && bananas == 0 && alfaces == 0 && tomates == 0) {
             if (vitoriaLoop == "false"){
                 document.querySelector(".poke").style.display = "none";
+
+                const volta = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=5");
+
                 exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=5");
-                //exibeNotificação("success", "Você concluiu todas as tarefas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
             }
             vitoriaLoop = "true";
         }
-
     }, 1000);
 
 
 
 
 
-    const loop3 = setInterval(() => {
-
-
+    const loop3 = setInterval(() => { //loop para verificar colisao com os alimentos 
 
         chandelure.getBoundingClientRect();
 
         for (var i = 0; i < frutas.length; i++) {
-
             if ((chandelure.x + 30 < frutas[i].x + frutas[i].width && chandelure.x - 30 + chandelure.width > frutas[i].x) && (chandelure.y + 30 < frutas[i].y + frutas[i].height && chandelure.y - 30 + chandelure.height > frutas[i].y)) {
-
                 const elementoId = frutas[i].id;
-
-                //document.getElementById(frutas[i].id).style.animation = 'none';
 
                 document.getElementById("verdura").style.animation = 'none';
                 document.getElementById("fruta").style.animation = 'none';
                 document.getElementById("legume").style.animation = 'none';
 
-
                 (function (id) {
                     setTimeout(function () {
-                        //document.getElementById(id).style.animation = '';
                         document.getElementById("verdura").style.animation = "";
                         document.getElementById("fruta").style.animation = "";
                         document.getElementById("legume").style.animation = "";
                         var sorteado = [];
-
-
-
                         const vetor = ["40%", "60%", "18%"];
-
 
                         for (var i = vetor.length - 1; i > 0; i--) {
                             var j = Math.floor(Math.random() * (i + 1));
@@ -526,8 +410,6 @@
                             vetor[i] = vetor[j];
                             vetor[j] = temp;
                         }
-
-
 
                         document.getElementById("verdura").style.left = vetor[0];
                         document.getElementById("legume").style.left = vetor[1];
@@ -538,11 +420,7 @@
                     }, 10);
                 })(elementoId);
 
-
-                //console.log(frutas[i].id);
-
                 var temp = "";
-
                 if (frutas[i].id == "fruta") {
                     bananas = retiraAlimento(bananas, "banana");
                 }
@@ -551,146 +429,95 @@
                 } else {
                     tomates = retiraAlimento(tomates, "tomate");
                 }
-
-
-
-
             }
         }
-
-
-
-
     }, 50);
 
 
 
-    const retiraAlimento = (alimento, nome) => {
-
-        console.log(alimento, nome);
+    const retiraAlimento = (alimento, nome) => {  //funcao para decrementar alimento quando ele for pego e marcar em verde quando for pego
 
         if (alimento == 4) {
             document.querySelector("." + nome + 1).style.backgroundColor = "green";
-
-            //document.querySelector("."+nome+4).remove();
             alimento = alimento - 1;
         } else if (alimento == 3) {
             document.querySelector("." + nome + 2).style.backgroundColor = "green";
-            //document.querySelector("."+nome+3).remove();
             alimento = alimento - 1;
         } else if (alimento == 2) {
             document.querySelector("." + nome + 3).style.backgroundColor = "green";
-            //document.querySelector("."+nome+2).remove();
             alimento = alimento - 1;
         } else if (alimento == 1) {
             document.querySelector("." + nome + 4).style.backgroundColor = "green";
-            //document.querySelector("."+nome+1).remove();
             alimento = alimento - 1;
         }
-
         return alimento;
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //funcoes para mover personagem
     const personagem = document.querySelector('.poke');
+
+        
+    const larguraTela = window.innerWidth;
+    const limiteDireito = larguraTela - personagem.offsetWidth;
 
     const moverDireita = () => {
 
-        document.getElementById("poke").src = "../img/recursividade/cortar/chandelure2.png";
+        if (document.querySelector('.poke').offsetLeft <= limiteDireito) {
 
+
+        document.getElementById("poke").style.transform = "scaleX(-1)";
         const el = document.querySelector('.poke');
         const value = getComputedStyle(el).getPropertyValue('left');
-
-
         var remove_string = value.replace('px', '');
         var valorNum = parseInt(remove_string);
-
         var numPx = valorNum + 10;
         var soma = parseInt(value) + 10;
-
         personagem.style.left = soma + "px";
-
-
-
+        }
     }
 
     const moverEsquerda = () => {
-        document.getElementById("poke").src = "../img/recursividade/cortar/chandelure.png";
 
+        if ((personagem.offsetLeft >= 0)) {
 
+        document.getElementById("poke").style.transform = "scaleX(1)";
         const el = document.querySelector('.poke');
         const value = getComputedStyle(el).getPropertyValue('left');
-
-
         var remove_string = value.replace('px', '');
         var valorNum = parseInt(remove_string);
-
         var numPx = valorNum + 10;
         var soma = parseInt(value) - 10;
-
         personagem.style.left = soma + "px";
-
+        }
     }
 
     const mover = () => {
-
         var tecla = event.keyCode;
-
-        console.log(tecla);
-
         if (tecla == 39) {
             moverDireita();
         }
-
         if (tecla == 37) {
             moverEsquerda();
         }
-
         if (tecla == 32 && versaoPoke == true) {
             spacebar = true;
             document.getElementById("pokeInfo").style.display = "none";
-
             document.getElementById("poke").style.width = "20vw";
             document.getElementById("poke").style.animation = animacaoOriginal;
             document.getElementById("poke").style.animationPlayState = "running";
-
         }
     }
 
     document.addEventListener('keydown', mover);
 
-
-
-    const voltar_menu = () => {
+    const voltar_menu = () => { //tecla de atalho para retornar ao menu de fases
             var tecla = event.keyCode;
+
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
             if (tecla == 27) {
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                window.location.href = caminhoArquivo;
             }
         }
         document.addEventListener('keydown', voltar_menu);

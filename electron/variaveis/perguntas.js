@@ -1,17 +1,40 @@
+const fs = require('fs');
+var dados = "";
+var vetorBD = [];
+const pathVar = require('path');
+
+const caminhoArquivoV = pathVar.resolve('./');
+
+const filePathVar = pathVar.join(caminhoArquivoV, 'bd.txt');
+
+var texto = fs.readFileSync(filePathVar,'utf8')
+
+    const temp = texto.split('\n');
+
+    temp.forEach((i) => {
+        const resultado = i.split('-')[1];
+        
+        vetorBD.push(resultado);
+});
+
+
+
+
+
 var perguntas = [
 
     {
-      question: "idade = 18",
+      question: vetorBD[0],
       answers: [
-        { option: "inteiro"},
+        { option: vetorBD[1]},
       ],
     },
 
 
     {
-        question: "Numero = 222",
+        question: vetorBD[2],
         answers: [
-          { option: "inteiro"},
+          { option: vetorBD[3]},
         ],
       
     },
@@ -19,42 +42,42 @@ var perguntas = [
 
 
     {
-        question: "Nome = 'Ana'",
+        question: vetorBD[4],
         answers: [
-          { option: "palavra"},
+          { option: vetorBD[5]},
         ],
     },
 
 
 
     {
-        question: "Valor = 2,22",
+        question: vetorBD[6],
         answers: [
-          { option: "decimal"},
+          { option: vetorBD[7]},
         ],
     },
 
 
     {
-        question: "Letra = 'A'",
+        question: vetorBD[8],
         answers: [
-          { option: "letra"},
+          { option: vetorBD[9]},
         ],
     },
 
 
     {
-        question: "Dado = Falso",
+        question: vetorBD[10],
         answers: [
-          { option: "booleano"},
+          { option: vetorBD[11]},
         ],
     },
 
 
     {
-        question: "Frase = 'Olá Mundo'",
+        question: vetorBD[12],
         answers: [
-          { option: "palavra"},
+          { option: vetorBD[13]},
         ],
     },
 

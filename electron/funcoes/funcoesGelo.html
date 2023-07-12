@@ -9,8 +9,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="../sweetalert/sweetalert.js"></script>
-        <script src="../telaInicial/dialogos.js"></script>
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/funcoes5.css">
 
 
@@ -19,7 +19,7 @@
 
 </head>
 
-<audio id="audio" src="../sounds/gelar.mp3" loop autoplay ></audio>
+<audio id="audio" src="../sounds/gelar.mp3" loop autoplay></audio>
 
 <body>
     <div class="tela">
@@ -219,165 +219,115 @@
         </div>
 
 
-
-
-
-
-
-
-        <script>
-            var estadoLampada = "";
-            var disjuntor1 = "";
-            var disjuntor2 = "";
-
-            function toggleDisjuntor(disjuntor) {
-                disjuntor.classList.toggle('ligado');
-
-                if (disjuntor1 == "" && disjuntor.id == "disjuntor1") {
-                    disjuntor1 = "ligado";
-                } else if (disjuntor1 == "ligado" && disjuntor.id == "disjuntor1") {
-                    disjuntor1 = "";
-                }
-
-
-                if (disjuntor2 == "" && disjuntor.id == "disjuntor2") {
-                    disjuntor2 = "ligado";
-                } else if (disjuntor2 == "ligado" && disjuntor.id == "disjuntor2") {
-                    disjuntor2 = "";
-                }
-
-
-
-            }
-
-
-            function toggleLight() {
-
-                const cor = ["blue", "green", "yellow"];
-                const corEscolhida = Math.floor(Math.random() * cor.length);
-
-                var lampada = document.querySelector(".lampada");
-
-                if (lampada.style.backgroundColor == "red" || lampada.style.backgroundColor == "green" || lampada.style.backgroundColor == "yellow") {
-                    lampada.style.backgroundColor = "";
-                } else {
-                    lampada.style.backgroundColor = cor[corEscolhida];
-                }
-            }
-
-        </script>
-
     </div>
 
 </body>
 
 </html>
 
+
+
+
+
+
 <script>
 
+    const path = require('path');
 
-var termVerde = 0;
-var termAmarelo = 0;
-var termVermelho = 0;
+   //realiza operacoes sobre o estado da lampada e dos dijuntores
+    var estadoLampada = "";
+    var disjuntor1 = "";
+    var disjuntor2 = "";
 
+    function toggleDisjuntor(disjuntor) {
+        disjuntor.classList.toggle('ligado');
 
+        if (disjuntor1 == "" && disjuntor.id == "disjuntor1") {
+            disjuntor1 = "ligado";
+        } else if (disjuntor1 == "ligado" && disjuntor.id == "disjuntor1") {
+            disjuntor1 = "";
+        }
 
+        if (disjuntor2 == "" && disjuntor.id == "disjuntor2") {
+            disjuntor2 = "ligado";
+        } else if (disjuntor2 == "ligado" && disjuntor.id == "disjuntor2") {
+            disjuntor2 = "";
+        }
+    }
+
+    //definir a cor da lampada de forma aleatoria
+    function toggleLight() {
+
+        const cor = ["blue", "green", "yellow"];
+        const corEscolhida = Math.floor(Math.random() * cor.length);
+
+        var lampada = document.querySelector(".lampada");
+
+        if (lampada.style.backgroundColor == "red" || lampada.style.backgroundColor == "green" || lampada.style.backgroundColor == "yellow") {
+            lampada.style.backgroundColor = "";
+        } else {
+            lampada.style.backgroundColor = cor[corEscolhida];
+        }
+    }
+
+    //atribui 0 ao valor dos termometros
+    var termVerde = 0;
+    var termAmarelo = 0;
+    var termVermelho = 0;
 
     var k = 1;
 
-    var matriz = [
+    var matriz = [ //matriz para definir os compartimentos da geladeira
         [1, 1, 1],
         [1, 1, 1],
         [1, 1, 1],
         [1, 1, 1]
     ];
 
-    const itemSelecionado = (event) => {
+    const itemSelecionado = (event) => {  //verifica se um item arrastavel foi selecionado
         event.dataTransfer.setData("img", event.target.id);
-
         classeImagem = event.target;
-
     }
 
-    const areaSoltar = (event) => {
+    const areaSoltar = (event) => { //verifica se o item vai ser solto em um local valido
         event.preventDefault();
-
     }
 
-    const soltarElemento = (event, valor) => {
+    const soltarElemento = (event, valor) => { //solta o elemento no local autorizado e realiza operacoes
         event.preventDefault();
-
-
 
         var imagem = event.dataTransfer.getData("img");
         var slot = "c" + valor + k;
-
-
-        // document.querySelector("."+slot).innerHTML = "<img src='../img/recursividade/gelar/" + imagem + ".png'>";
-
 
         if (matriz[valor - 1][k - 1] == 1) {
             moverAlimento(imagem, slot, valor, k, classeImagem);
             matriz[valor - 1][k - 1] = 0;
         }
 
-
-
-        // console.log(matriz[(valor)-1][k-1]);        
-
-
-        // moverAlimento(imagem, slot, valor, k);
-
-
         if (k < 3) {
             k = k + 1;
         } else {
             k = 1;
         }
-
-
-
-
     }
 
-
-
-
-
-
-
-    const moverAlimento = (imagem, slot, valor, k, classeImagem) => {
-
+    const moverAlimento = (imagem, slot, valor, k, classeImagem) => {  //funcao para mover os alimentos até a prateleira designada
 
         var img = document.createElement('img');
         img.src = "../img/recursividade/gelar/" + imagem + ".png";
-
         var div = document.querySelector("." + slot);
         img.classList.add("c" + valor + k);
         img.id = imagem;
-
-
         img.style.width = "6vw";
         img.style.height = "6vw";
-
-
-
         img.setAttribute('ondragstart', 'itemSelecionado(event)');
-
         div.appendChild(img);
-
         img.draggable = "false";
         img.removeEventListener('dragstart', moverAlimento);
-
-
         removerPosAnterior(imagem, classeImagem);
-
-
     }
 
-
-
-    const removerPosAnterior = (imagem, classeImagem) => {
+    const removerPosAnterior = (imagem, classeImagem) => { //funcao para remover alimentos de caixa de itens ao arrasta-lo
 
         var divImagens = "";
 
@@ -387,7 +337,6 @@ var termVermelho = 0;
             divImagens = document.getElementById("caixaItens2");
         }
 
-
         for (var i = 0; i < divImagens.children.length; i++) {
             var imagem = divImagens.children[i];
             if (imagem == classeImagem) {
@@ -396,28 +345,7 @@ var termVermelho = 0;
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const abrirManual = () => {
+    const abrirManual = () => {  //funcao para abrir e fechar o manual de intrucoes
 
         if (document.querySelector(".moldeManual").style.display == "block") {
             document.querySelector(".moldeManual").style.display = "none";
@@ -426,37 +354,9 @@ var termVermelho = 0;
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     var lampada = document.querySelector(".lampada");
 
-    if (Math.floor(Math.random() * 2) == 0) {
+    if (Math.floor(Math.random() * 2) == 0) { // estrutura para definir o estado da lampada
         lampada.style.backgroundColor = "yellow"
         estadoLampada = "ligado"
     } else {
@@ -464,60 +364,31 @@ var termVermelho = 0;
         estadoLampada = "desligado"
     }
 
-
-
-
+    //variaveis e estrutura para definir a cor e temperatura dos termometros, numero de serie e cor da geladeira
     const cor = ["green", "orangered", "gold"];
     const corEscolhida = Math.floor(Math.random() * cor.length);
-
-
     document.querySelector('.geladeira').style.borderColor = cor[corEscolhida];
-
-
     const numero_serie = ["#123", "#ABC", "#---"];
     const numero_serieEscolhido = Math.floor(Math.random() * numero_serie.length);
     document.querySelector('#numero_serie').innerHTML = numero_serie[numero_serieEscolhido];
 
-
-
-
-
     var vetorCor = [];
-
-
-
 
     for (var i = 1; i <= 4; i++) {
         const corTermometro = ["green", "orangered", "gold"];
         const corEscolhidoTerm = Math.floor(Math.random() * corTermometro.length);
-
         vetorCor[i] = corEscolhidoTerm;
-
         document.querySelector('.termometro' + i).style.borderColor = corTermometro[corEscolhidoTerm];
     }
 
-
-
-
-
-
-
-
-
     function setTemperature(temp, num) {
-
         const liquido = document.querySelector('.liquido' + num);
-
         liquido.style.height = ((temp / 40) * 100) + '%';
     }
-    //setTemperature(5);
-
-
 
     const controlaTemp = (valor) => {
 
         var numero;
-
         if (valor.includes("1")) {
             numero = 1;
         } else if (valor.includes("2")) {
@@ -539,83 +410,53 @@ var termVermelho = 0;
         }
     }
 
+    const verificaRespostas = () => { //funcao para verificar as respostas enviadas pelo jogador 
 
+        // verificacao de Termometros 
 
+        for (var i = 1; i <= 4; i++) {
 
-
-
-
-
-
-
-
-
-
-    const verificaRespostas = () => {
-
-
-        //Termometros 
-
-        
-
-
-        for (var i = 1; i <=4 ; i++){
-
-            if(document.querySelector(".termometro"+i).style.borderColor == "green"){
+            if (document.querySelector(".termometro" + i).style.borderColor == "green") {
                 termVerde = termVerde + 1;
-
             }
-
-            if(document.querySelector(".termometro"+i).style.borderColor == "gold"){
+            if (document.querySelector(".termometro" + i).style.borderColor == "gold") {
                 termAmarelo = termAmarelo + 1;
             }
-
-            if(document.querySelector(".termometro"+i).style.borderColor == "orangered"){
+            if (document.querySelector(".termometro" + i).style.borderColor == "orangered") {
                 termVermelho = termVermelho + 1;
 
             }
         }
 
-        console.log(termAmarelo, termVerde, termVermelho)
+        if (termAmarelo == 2 || termVerde == 2 || termVermelho == 2) {
 
-        if(termAmarelo == 2 || termVerde == 2 || termVermelho == 2){
+            for (var i = 1; i <= 4; i++) {
+                if (document.querySelector(".controleMeio" + i).innerHTML == 30) {
 
-
-            for(var i = 1; i <=4; i++){
-                if(document.querySelector(".controleMeio"+i).innerHTML == 30){
-                    
-                }else{
+                } else {
                     window.alert("Verifique os Termometros!");
-                    //exibeNotificação("error", "Verifique os Termometros!", "");
                     termVerde = 0;
                     termVermelho = 0;
                     termAmarelo = 0;
                     return;
                 }
-
             }
-
         }
 
-        if(termAmarelo == 3 || termVerde == 3 || termVermelho == 3){
-            for(var i = 1; i <=4; i++){
-                if(document.querySelector(".controleMeio"+i).innerHTML == 40){
+        if (termAmarelo == 3 || termVerde == 3 || termVermelho == 3) {
+            for (var i = 1; i <= 4; i++) {
+                if (document.querySelector(".controleMeio" + i).innerHTML == 40) {
                     break;
                 }
-                    
-                if(i == 4){
+
+                if (i == 4) {
                     window.alert("Verifique os Termometros!");
-                    //exibeNotificação("error", "Verifique os Termometros!", "");
                     termVerde = 0;
                     termVermelho = 0;
                     termAmarelo = 0;
                     return;
                 }
-                 
-                
-
             }
-
         }
 
         control1 = document.querySelector(".controleMeio1").innerHTML;
@@ -623,52 +464,18 @@ var termVermelho = 0;
         control3 = document.querySelector(".controleMeio3").innerHTML;
         control4 = document.querySelector(".controleMeio4").innerHTML;
 
-        if(termAmarelo == 4 || termVerde == 4 || termVermelho == 4){
+        if (termAmarelo == 4 || termVerde == 4 || termVermelho == 4) {
 
-            if (!((control1 != control2 && control1 != control3 && control1 != control4) && (control2 != control3 && control2 != control4) && (control3 != control4))){
+            if (!((control1 != control2 && control1 != control3 && control1 != control4) && (control2 != control3 && control2 != control4) && (control3 != control4))) {
                 window.alert("Verifique os Termometros!");
-                //exibeNotificação("error", "Verifique os Termometros!", "");
             }
         }
-
-      
-
 
         termVerde = 0;
         termVermelho = 0;
         termAmarelo = 0;
 
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Cor da Geladeira
-
-        
-
-        console.log(document.querySelector('.geladeira').style.borderColor);
+        // verificacao da cor da geladeira
 
         if (document.querySelector('.geladeira').style.borderColor == "green") {
 
@@ -676,15 +483,10 @@ var termVermelho = 0;
 
             } else {
                 window.alert("Os dijuntores podem estar Incorretos!");
-                //exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
         }
-
-
-
-
 
         if (document.querySelector('.geladeira').style.borderColor == "orangered") {
 
@@ -692,16 +494,10 @@ var termVermelho = 0;
 
             } else {
                 window.alert("Os dijuntores podem estar Incorretos!");
-                //exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
         }
-
-
-
-
-
 
         if (document.querySelector('.geladeira').style.borderColor == "gold") {
 
@@ -709,172 +505,100 @@ var termVermelho = 0;
 
             } else {
                 window.alert("Os dijuntores podem estar Incorretos!");
-                //exibeNotificação("error", "Os Dijuntores podem estar Incorretos!", "");
                 return;
             }
 
         }
 
-        
+        // verificacao da luz
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Luz 
-
-
-        
         luz = document.querySelector(".lampada").style.backgroundColor;
 
-
-
-        if(estadoLampada == "ligado"){
-            if(luz == ""){
-            }else{
+        if (estadoLampada == "ligado") {
+            if (luz == "") {
+            } else {
                 window.alert("Verifique a Luz!");
-                //exibeNotificação("error", "Verifique a Luz!", "");
                 return;
             }
-        }else{
-
-            if(luz == "blue"){
+        } else {
+            if (luz == "blue") {
             }
-            else if (luz == ""){
+            else if (luz == "") {
                 window.alert("Leia o Manual Novamente, na Seção Luz!");
-                //exibeNotificação("error", "Leia o Manual Novamente, na Seção Luz", "");
                 return;
-            }else{
+            } else {
                 window.alert("Você ligou a Luz, mas sera que corretamente?");
-                //exibeNotificação("error", "Você ligou a Luz, mas sera que corretamente?", "");
+                return;
+            }
+        }
+
+
+        // verificacao do numero de serie 
+
+        if (document.querySelector("#numero_serie").textContent == "#123") {
+
+            var semEtiqueta = document.querySelector(".compartimento4");
+
+            var c1 = semEtiqueta.querySelector(".c41");
+            var c2 = document.querySelector(".c42");
+            var c3 = document.querySelector(".c43");
+
+            console.log(c1.querySelector("img"));
+
+            if (c1.querySelector("img") && c1.querySelector("img").id.includes("bebida") || c2.querySelector("img") && c2.querySelector("img").id.includes("bebida") || c3.querySelector("img") && c3.querySelector("img").id.includes("bebida")) {
+
+            } else {
+                window.alert("Verifique o número de série!");
                 return;
             }
 
+        } else if (document.querySelector("#numero_serie").textContent == "#ABC") {
+
+            var semEtiqueta = document.querySelector(".compartimento4");
+
+            var c1 = semEtiqueta.querySelector(".c41");
+            var c2 = document.querySelector(".c42");
+            var c3 = document.querySelector(".c43");
+
+            if (c1.querySelector("img") && c1.querySelector("img").id.includes("fruta") || c2.querySelector("img") && c2.querySelector("img").id.includes("fruta") || c3.querySelector("img") && c3.querySelector("img").id.includes("fruta")) {
+
+            } else {
+                window.alert("Verifique o número de série!");
+                return;
+            }
+
+        } else {
+            var semEtiqueta = document.querySelector(".compartimento4");
+
+            var c1 = semEtiqueta.querySelector(".c41");
+            var c2 = document.querySelector(".c42");
+            var c3 = document.querySelector(".c43");
+
+            if (c1.querySelector("img") && c1.querySelector("img").id.includes("carne") || c2.querySelector("img") && c2.querySelector("img").id.includes("carne") || c3.querySelector("img") && c3.querySelector("img").id.includes("carne")) {
+
+            } else {
+                window.alert("Verifique o número de série!");
+                return;
+            }
         }
-
-        
-
-
-
-
-
-
-
-
-        // Numero de serie 
-        
-
-        if(document.querySelector("#numero_serie").textContent == "#123"){
-
-            var semEtiqueta = document.querySelector(".compartimento4");
-
-            var c1 = semEtiqueta.querySelector(".c41");
-            var c2 = document.querySelector(".c42");
-            var c3 = document.querySelector(".c43");
-
-            console.log(c1.querySelector("img") );
-
-            //if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
-
-                if(c1.querySelector("img") && c1.querySelector("img").id.includes("bebida") || c2.querySelector("img") && c2.querySelector("img").id.includes("bebida") || c3.querySelector("img") && c3.querySelector("img").id.includes("bebida")){
-                   
-                }else{
-                    window.alert("Verifique o número de série!");
-                    //exibeNotificação("error", "Verifique a quarta patrelheira", "");
-                    return;
-                }
-           // }
-
-        }else if (document.querySelector("#numero_serie").textContent == "#ABC"){
-
-            var semEtiqueta = document.querySelector(".compartimento4");
-
-            var c1 = semEtiqueta.querySelector(".c41");
-            var c2 = document.querySelector(".c42");
-            var c3 = document.querySelector(".c43");
-
-           // if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
-                
-                if(c1.querySelector("img") && c1.querySelector("img").id.includes("fruta") || c2.querySelector("img") && c2.querySelector("img").id.includes("fruta") || c3.querySelector("img") && c3.querySelector("img").id.includes("fruta")){
-                   
-                }else{
-                    window.alert("Verifique o número de série!");
-                    //exibeNotificação("error", "Verifique a quarta patrelheira", "");
-                    return;
-                }
-           // }
-
-        }else{
-            var semEtiqueta = document.querySelector(".compartimento4");
-
-            var c1 = semEtiqueta.querySelector(".c41");
-            var c2 = document.querySelector(".c42");
-            var c3 = document.querySelector(".c43");
-
-         //   if((c1.querySelector("img") && !c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && c2.querySelector("img") && !c3.querySelector("img")) || (!c1.querySelector("img") && !c2.querySelector("img") && c3.querySelector("img"))){
-                
-                if(c1.querySelector("img") && c1.querySelector("img").id.includes("carne") || c2.querySelector("img") && c2.querySelector("img").id.includes("carne") || c3.querySelector("img") && c3.querySelector("img").id.includes("carne")){
-                   
-                }else{
-                    window.alert("Verifique o número de série!");
-                    //exibeNotificação("error", "Verifique a quarta patrelheira", "");
-                    return;
-                }
-         //   }
-
-        }
-
 
         window.alert("Você consertou a geladeira! Vamos a Proxima Tarefa!");
-        window.location.href = "http://localhost/jogo/electron/funcoes/funcoes.html";
-        //exibeNotificação("success", "Você consertou a geladeira! Vamos a Proxima Tarefa!", "http://localhost/jogo/electron/funcoes/funcoes.html");
+        const caminhoDerrota= path.resolve('./resources/app/funcoes/funcoes.html');
 
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        window.location.href = caminhoDerrota;
     }
 
 
-    
-    const voltar_menu = () => {
-            var tecla = event.keyCode;
-            if (tecla == 27) {
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
-            }
+
+    const voltar_menu = () => {  //tecla atalho para voltar ao menu de fases
+        var tecla = event.keyCode;
+
+        const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
+        if (tecla == 27) {
+            window.location.href = caminhoArquivo;
         }
+    }
     document.addEventListener('keydown', voltar_menu);
 
 </script>

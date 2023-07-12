@@ -2,102 +2,80 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../css/home.css">
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
 </head>
-
 <body>
 
+    <!--declaracao de tag de audio, responsavel por tocar a musica do menu inicial-->
     <audio id="audioFase" src="../sounds/inicio.mp3" loop autoplay></audio>
 
-    <div>
-        <p class="choque"><span aria-hidden="true"></span>Poké Prog<span aria-hidden="true"></span></p>
+    <div>     <!-- tag p responsavel por apresentar a estilização do nome do jogo
+        <p class="choque"><span aria-hidden="true"></span>Poké Prog<span aria-hidden="true"></span></p>-->
+        <img class="logo" src="../img/home/PokeProg.png"></img>
     </div>
+    <div> 
 
-
+    <!-- declaracao da tag cenario, contendo a imagem de todos os Pokemon e elementos que estarao dispostos sobre a tela-->
     <div class="cenario">
-
-
         <div>
             <img id="uA" src="../img/unowns/a.gif"></img>
             <img id="uB" src="../img/unowns/b.gif"></img>
             <img id="uC" src="../img/unowns/c.gif"></img>
-
-
             <img id="arbok" src="../img/decisao/arbokHome.png"></img>
             <img id="nuvens" src="../img/decisao/clouds.png"></img>
             <img id="nuvens2" src="../img/decisao/clouds.png"></img>
             <img id="nuvens3" src="../img/decisao/clouds.png"></img>
-
-
             <img id="drifloon" src="../img/repeticao/drifloon.png"></img>
-
-
             <img id="falink1" src="../img/arrays/falink.gif"></img>
             <img id="falink2" src="../img/arrays/falink.gif"></img>
             <img id="arvore1" src="../img/arrays/arvore1.png"></img>
             <img id="arvore2" src="../img/arrays/arvore1.png"></img>
-
-
             <img id="rotom" src="../img/funcoes/rotom.png"></img>
-
             <img id="zubat1" src="../img/excecoes/zubat.png"></img>
             <img id="zubat2" src="../img/excecoes/zubat.png"></img>
             <img id="zubat3" src="../img/excecoes/zubat.png"></img>
-
-
-
         </div>
+        <div>    
 
-        <div id="meio" onclick="window.location.href='../telaInicial/cityIntro.html'">
-            <h4>Iniciar</h4>
-        </div><br><br><br>
-        <div id="meio" onclick="window.location.href='../telaInicial/cityIntro.html'">
-            <h4>Area do Professor</h4>
-        </div><br><br><br>
-        <div id="meio" onclick="window.close()">
-            <h4>Encerrar</h4>
+        <!-- declaracao de div com mensagem 'iniciar' que ao ser pressionado apresentar uma mensagem ao jogador-->
+        <div class="container-menu">
+            <div id="iniciar" onclick="exibeMensagem()">
+                <h4>Iniciar</h4>
+            </div>
+            <!-- declaracao de div para direcionar a area do professor ao ser pressionada-->
+            <div id="professor" onclick="window.location.href='../areaProfessor/areaProfessor.html'">
+                <h4>Área do Professor</h4>
+            </div>
+            <!-- declaracao de div para encerrar o jogo ao ser pressionada-->
+            <div id="encerrar" onclick="window.close()">
+                <h4>Encerrar</h4>
+            </div>
         </div>
-
-
+        
     </div>
-
-
-
-
-
-
-
-
-
 </body>
-
 </html>
-
 
 <script>
 
+    function exibeMensagem() {   //funcao para exibir mensagem de ajuda ao jogador
+        exibeNotificação("warning", "Use a tecla Esc sempre que quiser sair de uma fase", "../telaInicial/cityIntro.html");
+    }
 
-
-    document.addEventListener('click', musicPlay);
+    document.addEventListener('click', musicPlay);  //funcao para forcar o autoplay da musica quando o jogador tocar em qualquer local da tela
     function musicPlay() {
         document.getElementById('audioFase').play();
         document.removeEventListener('click', musicPlay);
     }
 
-
-
-
-
-    var k = 0;
+    var k = 0; //funcao que projeta os matinhos que fazer parte do cenario 
     for (var i = 1; k <= 100; i++) {
-
-
         var img = document.createElement('img');
         img.src = '../img/decisao/mato.png';
         img.classList.add('mato');
@@ -105,11 +83,8 @@
         img.style.bottom = "0%";
         img.style.width = "4%";
         img.style.left = k + "%";
-
         var body = document.querySelector("body");
         k = k + 3.8;
-
         body.appendChild(img);
-
     }
 </script>

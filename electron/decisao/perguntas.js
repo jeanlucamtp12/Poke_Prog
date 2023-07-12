@@ -1,10 +1,40 @@
+const fs2 = require('fs');
+var dados = "";
+var vetorBDDecisao = [];
+const path = require('path');
+
+const caminhoArquivo = path.resolve('./');
+
+const filePath = path.join(caminhoArquivo, 'bd2.txt');
+
+var texto = fs2.readFileSync(filePath,'utf8')
+
+    const aux = texto.split('\n');
+
+    aux.forEach((i) => {
+        const resultado = i.split('★')[1];
+        
+        if(i.includes("\\n")){
+         // vetorBDDecisao.push(resultado.replace(/\\n/g, "<br>")); split("\\n")
+         var textoFormatado = resultado.replace(/\\n/g, "\n");
+
+         console.log(textoFormatado)
+          vetorBDDecisao.push(textoFormatado);
+
+        }else{
+          vetorBDDecisao.push(resultado);
+        }
+});
+
+
+
 var perguntas = [
 
     {
-      question: "1 > 2?",
+      question: vetorBDDecisao[0],      
       answers: [
-        { option: "não", correct: true },
-        { option: "sim", correct: false },
+        { option: vetorBDDecisao[1], correct: false },
+        { option: vetorBDDecisao[2], correct: true },
       
       ],
     },
@@ -12,10 +42,10 @@ var perguntas = [
 
 
     {
-        question: "Se 26, 24, 20, 18, 14,... Qual é o próximo?",
+      question: vetorBDDecisao[3],      
         answers: [
-          { option: "12", correct: true },
-          { option: "10", correct: false },
+          { option: vetorBDDecisao[4], correct: true },
+          { option: vetorBDDecisao[5], correct: false },
         
         ],
     },
@@ -23,10 +53,20 @@ var perguntas = [
 
 
     {
-        question: "O valor de pi é aproximadamente 3,131415...",
+      question: vetorBDDecisao[6],      
         answers: [
-          { option: "sim", correct: true },
-          { option: "não", correct: false },
+          { option: vetorBDDecisao[7], correct: false },
+          { option: vetorBDDecisao[8], correct: true },
+        
+        ],
+    },
+
+
+    {
+      question: vetorBDDecisao[9],      
+        answers: [
+          { option: vetorBDDecisao[10], correct: true },
+          { option: vetorBDDecisao[11], correct: false },
         
         ],
     },
@@ -35,22 +75,10 @@ var perguntas = [
 
 
     {
-        question: "Se 20 == 25?",
+      question: vetorBDDecisao[12],      
         answers: [
-          { option: "não", correct: true },
-          { option: "sim", correct: false },
-        
-        ],
-    },
-
-
-
-
-    {
-        question: "Leandro tem 40 balas chupou 12 e deu 10 para sua irmã. Quantas balas ele tem?",
-        answers: [
-          { option: "20", correct: false },
-          { option: "18", correct: true },
+          { option: vetorBDDecisao[13], correct: false },
+          { option: vetorBDDecisao[14], correct: true },
         
         ],
     },
@@ -58,10 +86,10 @@ var perguntas = [
 
 
     {
-        question: "Quantos números '1's eu tenho de 1 até 191?",
+      question: vetorBDDecisao[15],      
         answers: [
-          { option: "132", correct: true },
-          { option: "134", correct: false },
+          { option: vetorBDDecisao[16], correct: true },
+          { option: vetorBDDecisao[17], correct: false },
         
         ],
     },
@@ -69,10 +97,10 @@ var perguntas = [
 
 
     {
-        question: "Quanto é o dobro 1500?",
+      question: vetorBDDecisao[18],      
         answers: [
-          { option: "3000", correct: true },
-          { option: "3500", correct: false },
+          { option: vetorBDDecisao[19], correct: true },
+          { option: vetorBDDecisao[20], correct: false },
         
         ],
     },
@@ -80,10 +108,10 @@ var perguntas = [
 
 
     {
-        question: "Se DELTA= b^2-4.a.c, essa informação é verdadeira ou falsa?",
+      question: vetorBDDecisao[21],      
         answers: [
-          { option: "falsa", correct: false },
-          { option: "verdadeira", correct: true },
+          { option: vetorBDDecisao[22], correct: false },
+          { option: vetorBDDecisao[23], correct: true },
         
         ],
     },
@@ -91,10 +119,10 @@ var perguntas = [
 
 
     {
-        question: "Quantos planetas existem no sistema solar?",
+      question: vetorBDDecisao[24],      
         answers: [
-          { option: "8", correct: true },
-          { option: "7", correct: false },
+          { option: vetorBDDecisao[25], correct: true },
+          { option: vetorBDDecisao[26], correct: false },
         
         ],
     },
@@ -102,10 +130,10 @@ var perguntas = [
 
 
     {
-        question: "Quantos meses têm 28 dias?",
+      question: vetorBDDecisao[27],      
         answers: [
-          { option: "12", correct: true },
-          { option: "1", correct: false },
+          { option: vetorBDDecisao[28], correct: false },
+          { option: vetorBDDecisao[29], correct: true },
         
         ],
     },
@@ -113,10 +141,10 @@ var perguntas = [
 
 
     {
-        question: "A Lua é maior que a Terra?",
+      question: vetorBDDecisao[30],      
         answers: [
-          { option: "sim", correct: false },
-          { option: "não", correct: true },
+          { option: vetorBDDecisao[31], correct: false },
+          { option: vetorBDDecisao[32], correct: true },
         
         ],
     },
@@ -124,10 +152,10 @@ var perguntas = [
 
 
     {
-        question: "Os golfinhos são peixes?",
+      question: vetorBDDecisao[33],      
         answers: [
-          { option: "sim", correct: false },
-          { option: "não", correct: true },
+          { option: vetorBDDecisao[34], correct: true },
+          { option: vetorBDDecisao[35], correct: false },
         
         ],
     },
@@ -135,65 +163,40 @@ var perguntas = [
 
 
     {
-        question: "12 dividido por 3 é igual a 4?",
+      question: vetorBDDecisao[36],      
         answers: [
-          { option: "sim", correct: true },
-          { option: "não", correct: false },
+          { option: vetorBDDecisao[37], correct: false },
+          { option: vetorBDDecisao[38], correct: true },
         
         ],
     },
 
 
     {
-        question: "6 x 4 é igual a 24?",
+      question: vetorBDDecisao[39],      
         answers: [
-          { option: "não", correct: false },
-          { option: "sim", correct: true },
+          { option: vetorBDDecisao[40], correct: true },
+          { option: vetorBDDecisao[41], correct: false },
         
         ],
     },
 
 
     {
-        question: "O Sol é uma estrela?",
+      question: vetorBDDecisao[42],      
         answers: [
-          { option: "sim", correct: true },
-          { option: "não", correct: false },
+          { option: vetorBDDecisao[43], correct: true },
+          { option: vetorBDDecisao[44], correct: false },
         
         ],
     },
 
 
     {
-        question: "A pizza surgiu na França?",
+      question: vetorBDDecisao[45],      
         answers: [
-          { option: "não", correct: true },
-          { option: "sim", correct: false },
-        
-        ],
-    },
-
-
-
-    {
-        question: "Os pandas são animais carnívoros?",
-        answers: [
-          { option: "não", correct: true },
-          { option: "sim", correct: false },
-        
-        ],
-    },
-
-
-
-
-
-
-    {
-        question: "Quantos oceanos existem na Terra?",
-        answers: [
-          { option: "5", correct: false },
-          { option: "6", correct: true },
+          { option: vetorBDDecisao[46], correct: true },
+          { option: vetorBDDecisao[47], correct: false },
         
         ],
     },
@@ -201,10 +204,23 @@ var perguntas = [
 
 
     {
-        question: "Quantos centavos existem em uma moeda de um real?",
+      question: vetorBDDecisao[48],      
         answers: [
-          { option: "10", correct: false },
-          { option: "100", correct: true },
+          { option: vetorBDDecisao[49], correct: false },
+          { option: vetorBDDecisao[50], correct: true },
+        
+        ],
+    },
+
+
+
+
+
+    {
+      question: vetorBDDecisao[51],      
+        answers: [
+          { option: vetorBDDecisao[52], correct: false },
+          { option: vetorBDDecisao[53], correct: true },
         
         ],
     },
@@ -212,15 +228,26 @@ var perguntas = [
 
 
     {
-        question: "Quantos zeros há em um milhão?",
+      question: vetorBDDecisao[54],      
         answers: [
-          { option: "6", correct: true },
-          { option: "5", correct: false },
+          { option: vetorBDDecisao[55], correct: true },
+          { option: vetorBDDecisao[56], correct: false },
         
         ],
     },
 
-   
+
+
+    {
+      question: vetorBDDecisao[57],      
+        answers: [
+          { option: vetorBDDecisao[58], correct: false },
+          { option: vetorBDDecisao[59], correct: true },
+        
+        ],
+    },
+
+
 
 ];
 

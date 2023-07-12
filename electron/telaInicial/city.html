@@ -165,19 +165,16 @@
 
 <script>
 
-    var url = new URLSearchParams(window.location.search);  //pega o id para exibir o dialogo de encerramento
+    var url = new URLSearchParams(window.location.search);  //pega o id para exibir o dialogo de encerramento, caso seja passado pela url 
     var idEncerramento = url.get('id');
     var idEncerramento = parseInt(idEncerramento);
 
-    var dialogo = textos[0];
+    var dialogo = textos[0];     //declaracao de variaveis que serao utilizadas no menu de selecao
     var aux = 0;
     var verificaClick = "false";
     var fase = 0;
 
-
-
-
-    function escreveDialogo() {
+    function escreveDialogo() {   //funcao para escrever os dialogos da personagem Fran na tela do jogador
         if (verificaClick == "false") {
             if (aux < dialogo.length) {
                 document.getElementById("dialogo").textContent += dialogo.charAt(aux);
@@ -188,17 +185,12 @@
         }
     }
 
-
-
-
-    function exibirTexto() {
+    function exibirTexto() {    //funcao para exibir os textos apresentados pela personagem Fran 
         verificaClick = "true";
-        //document.getElementById("dialogo").textContent = "";
         document.getElementById("dialogo").innerHTML = textos[fase];
     }
 
-
-    function iniciar() {
+    function iniciar() { //funcao para iniciar a fase correspondente ao dialogo apresentado
 
         if(document.getElementById("botao2").innerHTML == "Finalizar"){
             window.location.href = "http://localhost/jogo/electron/telaInicial/index.html";
@@ -209,12 +201,7 @@
         document.getElementById("telaTransparente").style.display = "none";
     }
 
-
-
-
-    function iniciarFase(val) {
-
-
+    function iniciarFase(val) {   //funcao chamada quando o usuario clica em uma fase, dialogo e imagens correpondetes sao apresentadas
 
         fase = val;
 
@@ -235,12 +222,9 @@
             return;
         }
 
-
         criarSom(val);
         escreveDialogo(val);
         exibeImagem(val);
-
-
 
         document.getElementById("botao2").addEventListener("click", function () {
             if (val == 1) {
@@ -260,26 +244,17 @@
             } else {
                 window.location.href = '../Quizes/quiz.html';
             }
-
-
             document.getElementById("img" + val).style.display = "block";
         });
 
     }
 
-
-
-
-
-    function exibeImagem(val) {
+    function exibeImagem(val) {  //exibe a imagem caracteristica da fase
         document.getElementById("img" + val).style.display = "block";
 
     }
 
-
-
-
-    const criarSom = (valor) => {
+    const criarSom = (valor) => { //funcao para projetar a fala da personagem Fran correspondente a fase selecionada
 
         var som = new Audio();
         som.src = '../sounds/vozes/fase' + valor + '.mp3';
@@ -289,7 +264,7 @@
         som.play();
     }
 
-    if (idEncerramento == 1) {
+    if (idEncerramento == 1) { //exibe o dialogo final do jogo, sagrando o jogador como campeao
         document.getElementById("botao2").innerHTML = "Finalizar";
         iniciarFase(9);
     }

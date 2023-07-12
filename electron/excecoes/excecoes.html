@@ -270,9 +270,6 @@
 
         <div class="caixaObjetivos">
 
-            <div class="texto">
-                <h6>Capturados:</h6>
-            </div>
             <div class="caixas">
                 <img id="1" class="imagem" src="../img/excecoes/fantasmas/gasly_shiny.png"></img>
             </div>
@@ -303,26 +300,14 @@
             <div class="caixas">
                 <img id="10" class="imagem"  src="../img/excecoes/fantasmas/lampent_shiny.png"></img>
             </div>
-
-
-
-
         </div>
-
-
-
-
     </div>
-
-
 
     <script>
 
+        const path = require('path');
 
-        var j = 0;
-        for (var i = 1; j <= 100; i++) {
-
-
+        for (var i = 1, j = 0; j <= 100; i++) {    //projeta os matos que compoem o cenario
             var img = document.createElement('img');
             img.src = '../img/excecoes/grama.png';
             img.classList.add('mato');
@@ -330,17 +315,12 @@
             img.style.bottom = "-1%";
             img.style.width = "4%";
             img.style.left = j + "%";
-
             var body = document.querySelector("body");
             j = j + 3.8;
-
             body.appendChild(img);
-
         }
 
-
-
-
+        //captura o id dos Pokemon que serao exibidos durante a fase
         var cont = 1;
         const gasly = document.querySelectorAll(".gasly");
         const banette = document.querySelectorAll(".banette");
@@ -354,26 +334,21 @@
         const lampent = document.querySelectorAll(".lampent");
 
 
+        //switch para verificar as respostas informadas pelo jogador e projetar na tela o proximo Pokemon para ser capturado
         const resposta = (shiny) => {
-
             switch (cont) {
-
                 case 1:
                     contabilizaSelecao(shiny, 1, gasly);
                     break;
-
                 case 2:
                     contabilizaSelecao(shiny, 2, banette);
                     break;
-
                 case 3:
                     contabilizaSelecao(shiny, 3, litwick);
                     break;
-
                 case 4:
                     contabilizaSelecao(shiny, 4, frillish);
                     break;
-
                 case 5:
                     contabilizaSelecao(shiny, 5, shedinja);
                     break;
@@ -392,18 +367,15 @@
                 case 10:
                     contabilizaSelecao(shiny, 9, lampent);
                     break;
-
                 default:
                     break;
             }
-
-
         }
 
+        //funcao para limpar tela e contabilizar a captura correta do Pokemon
         const contabilizaSelecao = (shiny, nivel, pokemon) => {
 
             for (var i = 0; i < pokemon.length; i++) {
-
                 if (shiny == 1) {
                     document.getElementById(cont).src = "../img/excecoes/pokeball.gif";
                     cont = cont + 1;
@@ -411,8 +383,9 @@
                     exibeTela(cont);
 
                     if (pokemon == lampent) {
-                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", "http://localhost/jogo/electron/Quizes/quizEntreFases.html?fase=6");
-                        //exibeNotificação("success", "Você concluiu a fase! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                        const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=6");
+
+                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", caminhoSucesso);
                     }
                     return;
                 } else {
@@ -420,25 +393,20 @@
                     return;
 
                 }
-
-
-
             }
         }
 
+        //limpa a tela
         const limpaTela = (pokemon) => {
-
             for (var i = 0; i < pokemon.length; i++) {
-
                 pokemon[i].style.display = "none";
-
             }
         }
 
+        //funcao responsavel por exibir o proximo Pokemon a ser capturado
         const exibeTela = (contador) => {
 
             for (var i = 0; i < 4; i++) {
-
                 if (cont == 2) {
                     banette[i].style.display = "block";
                 }
@@ -469,47 +437,37 @@
             }
         }
 
-
-
-
-
+        //loop para definir a animacao de opacidade de um dos fantasmas
         const loop = setInterval(() => {
 
-
             setTimeout(function () {
-
                 const gasly1 = document.getElementById("gasly1");
                 const gasly2 = document.getElementById("gasly2");
                 const gasly3 = document.getElementById("gasly3");
                 const gasly4 = document.getElementById("gasly4");
-
                 if (gasly1.style.opacity == "1") {
                     gasly1.style.opacity = "0.2";
                     gasly2.style.opacity = "1";
                     gasly3.style.opacity = "0.2";
                     gasly4.style.opacity = "1";
-
                 } else {
                     gasly1.style.opacity = "1";
                     gasly2.style.opacity = "0.2";
                     gasly3.style.opacity = "1";
                     gasly4.style.opacity = "0.2";
-
-
                 }
-
-
             }, 50);
-
-
 
         }, 5000);
 
 
-        const voltar_menu = () => {
+        const voltar_menu = () => { //verifica pressionar de tecla de atalho para voltar ao menu de fases
             var tecla = event.keyCode;
+
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
             if (tecla == 27) {
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                window.location.href = caminhoArquivo;
             }
         }
         document.addEventListener('keydown', voltar_menu);
