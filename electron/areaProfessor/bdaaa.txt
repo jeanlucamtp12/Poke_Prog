@@ -1,0 +1,14 @@
+Pergunta1-Numero = 25
+Resp1-inteiro
+Pergunta2-Number = "Dois"
+Resp2-palavra
+Pergunta3-Primeiro = "A"
+Resp3-letra
+Pergunta4-Valor = 2,22
+Resp4-decimal
+Pergunta5-Letra = 'A'
+Resp5-letra
+Pergunta6-Dado = Falso
+Resp6-booleano
+Pergunta7-Frase = 'Olá Mundo'
+Resp7-palavra

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
+    <link rel="stylesheet" href="../css/areaProfessor.css">
+
+
+</head>
+
+<body>
+
+    <div class="selecaoFases">
+        <p>Area do Professor</p>
+
+        <p>Selecione a fase que deseja editar:</p>
+        <button type="button" id="resposta" onclick="verificaFase('1')">Fase 1: Variaveis</button>
+        <button type="button" id="resposta2" onclick="verificaFase('2')">Fase 2: Decisão</button> <br>
+
+        <img id="slowbro" src="../img//areaProfessor/professor.png"></img>
+    </div>
+
+    <div class="fase1" style="display: none;">
+        <h3>Fase 1</h3>
+        <h4>Pressione Esc para voltar ao menu anterior</h4>
+        <h5>Altere as perguntas desejadas seguindo:. <br><br> 1 - Informe as respostas em minusculo: inteiro, decimal,
+            palavra, booleano
+            ou letra<br> 2 - Caso não deseje alterar a pergunta, basta deixá-la em branco</h5>
+
+
+
+        <div id="form">
+            <label class="p" for="p1">Pergunta 1:</label>
+            <input type="text" id="p1" name="p1">
+
+            <label class="p" for="r1">Resposta 1 :</label>
+            <input type="text" id="r1" name="r1"> <br><br><br><br>
+
+
+            <label class="p" for="p2">Pergunta 2:</label>
+            <input type="text" id="p2" name="p2">
+
+            <label for="r2">Resposta 2 :</label>
+            <input type="text" id="r2" name="r2"> <br><br><br><br>
+
+
+            <label class="p" for="p3">Pergunta 3:</label>
+            <input type="text" id="p3" name="p3">
+
+            <label for="r3">Resposta 3 :</label>
+            <input type="text" id="r3" name="r3"> <br><br><br><br>
+
+
+            <label class="p" for="p4">Pergunta 4:</label>
+            <input type="text" id="p4" name="p4">
+
+            <label for="r4">Resposta 4 :</label>
+            <input type="text" id="r4" name="r4"> <br><br><br><br>
+
+
+            <label class="p" for="p5">Pergunta 5:</label>
+            <input type="text" id="p5" name="p5">
+
+            <label class="p" for="r5">Resposta 5 :</label>
+            <input type="text" id="r5" name="r5"> <br><br><br><br>
+
+
+            <label class="p" for="p6">Pergunta 6:</label>
+            <input type="text" id="p6" name="p6">
+
+            <label class="p" for="r6">Resposta 6 :</label>
+            <input type="text" id="r6" name="r6"> <br><br><br><br>
+
+
+
+            <label class="p" for="p7">Pergunta 7:</label>
+            <input type="text" id="p7" name="p7">
+
+            <label class="p" for="r7">Resposta 7 :</label>
+            <input type="text" id="r7" name="r7"> <br><br><br><br>
+
+
+            <input type="submit" value="Alterar" id="alterar">
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="fase2" style="display: none;">
+        <h3>Fase 2</h3>
+        <h4>Pressione Esc para voltar ao menu anterior</h4>
+        <h5>Altere as perguntas desejadas seguindo: <br><br> 1 - Informe as perguntas e repostas<br>2 - Coloque as
+            respotas erradas nos campos em vermelho, e as certas nos campos em verde<br> 3 - Caso não deseje alterar a
+            pergunta, basta deixá-la em branco</h5>
+
+
+
+        <div id="form2">
+            <label class="q" for="q1">Pergunta 1:</label>
+            <input type="text" id="q1"  maxlength="150" >
+
+            <label class="q" for="r1" >Resposta 1-1 :</label>
+            <input type="text" id="v1-1" maxlength="30">
+            <label for="v1">Resposta 1-2 :</label>
+            <input type="text" id="v1-2" maxlength="30"> <br><br><br><br>
+
+
+            <label class="q" for="q2">Pergunta 2:</label>
+            <input type="text" id="q2">
+
+            <label class="q" for="r2">Resposta 2-1 :</label>
+            <input type="text" id="v2-1">
+            <label for="v2">Resposta 2-2 :</label>
+            <input type="text" id="v2-2"> <br><br><br><br>
+
+
+            <label class="q" for="q3">Pergunta 3:</label>
+            <input type="text" id="q3">
+
+            <label class="q" for="r3">Resposta 3-1 :</label>
+            <input type="text" id="v3-1">
+            <label for="v3">Resposta 1-2 :</label>
+            <input type="text" id="v3-2"> <br><br><br><br>
+
+
+
+            <label class="q" for="q4">Pergunta 4:</label>
+            <input type="text" id="q4">
+
+            <label class="q" for="r4">Resposta 4-1 :</label>
+            <input type="text" id="v4-1">
+            <label for="v4">Resposta 4-2 :</label>
+            <input type="text" id="v4-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q5">Pergunta 5:</label>
+            <input type="text" id="q5">
+
+            <label class="q" for="r5">Resposta 5-1 :</label>
+            <input type="text" id="v5-1">
+            <label for="v5">Resposta 5-2 :</label>
+            <input type="text" id="v5-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q6">Pergunta 6:</label>
+            <input type="text" id="q6">
+
+            <label class="q" for="r6">Resposta 6-1 :</label>
+            <input type="text" id="v6-1">
+            <label for="v6">Resposta 6-2 :</label>
+            <input type="text" id="v6-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q7">Pergunta 7:</label>
+            <input type="text" id="q7">
+
+            <label class="q" for="r7">Resposta 7-1 :</label>
+            <input type="text" id="v7-1">
+            <label for="v7">Resposta 7-2 :</label>
+            <input type="text" id="v7-2"> <br><br><br><br>
+
+
+
+            <label class="q" for="q8">Pergunta 8:</label>
+            <input type="text" id="q8">
+
+            <label class="q" for="r8">Resposta 8-1 :</label>
+            <input type="text" id="v8-1">
+            <label for="v8">Resposta 8-2 :</label>
+            <input type="text" id="v8-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q9">Pergunta 9:</label>
+            <input type="text" id="q9">
+
+            <label class="q" for="r9">Resposta 9-1 :</label>
+            <input type="text" id="v9-1">
+            <label for="v9">Resposta 9-2 :</label>
+            <input type="text" id="v9-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q10">Pergunta 10:</label>
+            <input type="text" id="q10">
+
+            <label class="q" for="r10">Resposta 10-1 :</label>
+            <input type="text" id="v10-1">
+            <label for="v10">Resposta 10-2 :</label>
+            <input type="text" id="v10-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q11">Pergunta 11:</label>
+            <input type="text" id="q11">
+
+            <label class="q" for="r11">Resposta 11-1 :</label>
+            <input type="text" id="v11-1">
+            <label for="v11">Resposta 11-2 :</label>
+            <input type="text" id="v11-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q12">Pergunta 12:</label>
+            <input type="text" id="q12">
+
+            <label class="q" for="r12">Resposta 12-1 :</label>
+            <input type="text" id="v12-1">
+            <label for="v12">Resposta 12-2 :</label>
+            <input type="text" id="v12-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q13">Pergunta 13:</label>
+            <input type="text" id="q13">
+
+            <label class="q" for="r13">Resposta 13-1 :</label>
+            <input type="text" id="v13-1">
+            <label for="v13">Resposta 13-2 :</label>
+            <input type="text" id="v13-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q14">Pergunta 14:</label>
+            <input type="text" id="q14">
+
+            <label class="q" for="r14">Resposta 14-1 :</label>
+            <input type="text" id="v14-1">
+            <label for="v14">Resposta 14-2 :</label>
+            <input type="text" id="v14-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q15">Pergunta 15:</label>
+            <input type="text" id="q15">
+
+            <label class="q" for="r15">Resposta 15-1 :</label>
+            <input type="text" id="v15-1">
+            <label for="v15">Resposta 1-2 :</label>
+            <input type="text" id="v15-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q16">Pergunta 16:</label>
+            <input type="text" id="q16">
+
+            <label class="q" for="r16">Resposta 16-1 :</label>
+            <input type="text" id="v16-1">
+            <label for="v16">Resposta 16-2 :</label>
+            <input type="text" id="v16-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q17">Pergunta 17:</label>
+            <input type="text" id="q17">
+
+            <label class="q" for="r17">Resposta 17-1 :</label>
+            <input type="text" id="v17-1">
+            <label for="v17">Resposta 17-2 :</label>
+            <input type="text" id="v17-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q18">Pergunta 18:</label>
+            <input type="text" id="q18">
+
+            <label class="q" for="r18">Resposta 18-1 :</label>
+            <input type="text" id="v18-1">
+            <label for="v18">Resposta 18-2 :</label>
+            <input type="text" id="v18-2"> <br><br><br><br>
+
+
+
+            <label class="q" for="q19">Pergunta 19:</label>
+            <input type="text" id="q19">
+
+            <label class="q" for="r19">Resposta 19-1 :</label>
+            <input type="text" id="v19-1">
+            <label for="v19">Resposta 19-2 :</label>
+            <input type="text" id="v19-2"> <br><br><br><br>
+
+
+
+
+            <label class="q" for="q20">Pergunta 20:</label>
+            <input type="text" id="q20">
+
+            <label class="q" for="r20">Resposta 20-1 :</label>
+            <input type="text" id="v20-1">
+            <label for="v20">Resposta 20-2 :</label>
+            <input type="text" id="v20-2"> <br><br><br><br>
+
+            <input type="submit" value="Alterar" id="alterar2"><br><br><br><br>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="../decisao/perguntas.js"></script>
+    <script src="../variaveis/perguntas.js"></script>
+
+
+</body>
+
+</html>
+
+
+<script>
+
+    valor = 2;
+
+    const verificaFase = (valor) => {
+        if (valor == "1") {
+            document.querySelector(".fase1").style.display = "block";
+            document.querySelector(".selecaoFases").style.display = "none";
+
+
+
+            document.getElementById("p1").placeholder = vetorBD[0];
+            document.getElementById("r1").placeholder = vetorBD[1];
+
+            document.getElementById("p2").placeholder = vetorBD[2];
+            document.getElementById("r2").placeholder = vetorBD[3];
+
+            document.getElementById("p3").placeholder = vetorBD[4];
+            document.getElementById("r3").placeholder = vetorBD[5];
+
+
+            document.getElementById("p4").placeholder = vetorBD[6];
+            document.getElementById("r4").placeholder = vetorBD[7];
+
+
+            document.getElementById("p5").placeholder = vetorBD[8];
+            document.getElementById("r5").placeholder = vetorBD[9];
+
+
+            document.getElementById("p6").placeholder = vetorBD[10];
+            document.getElementById("r6").placeholder = vetorBD[11];
+
+
+            document.getElementById("p7").placeholder = vetorBD[12];
+            document.getElementById("r7").placeholder = vetorBD[13];
+
+
+            var conteudo = [];
+            document.getElementById("alterar").addEventListener("click", function () {
+
+                var perguntas = document.querySelectorAll("#p1, #r1, #p2, #r2,#p3, #r3,#p4, #r4, #p5, #r5, #p6, #r6, #p7, #r7");
+
+                for (var i = 0; i < perguntas.length; i++) {
+
+                    if (perguntas[i].value != "") {
+                        //console.log(perguntas[i].value);
+                        conteudo.push(perguntas[i].value);
+                    } else {
+                        // console.log(perguntas[i].placeholder);
+                        conteudo.push(perguntas[i].placeholder);
+                    }
+                }
+
+                var texto = "Pergunta1-" + conteudo[0] + "\nResp1-" + conteudo[1] + "\nPergunta2-" + conteudo[2] + "\nResp2-" + conteudo[3] + "\nPergunta3-" + conteudo[4] + "\nResp3-" + conteudo[5] + "\nPergunta4-" + conteudo[6] + "\nResp4-" + conteudo[7] + "\nPergunta5-" + conteudo[8] + "\nResp5-" + conteudo[9] + "\nPergunta6-" + conteudo[10] + "\nResp6-" + conteudo[11] + "\nPergunta7-" + conteudo[12] + "\nResp7-" + conteudo[13];
+
+                fs.writeFile('./bd.txt', texto, (err) => {
+                    if (err) {
+                        const errorSalvar = pathVar.resolve('./resources/app/telaInicial/index.html');
+
+                        exibeNotificação("error", err, errorSalvar);
+                        return;
+                    }
+                    const dadosSalvos = pathVar.resolve('./resources/app/telaInicial/index.html');
+
+                    exibeNotificação("success", "Dados salvos com sucesso!!", dadosSalvos);
+                });
+
+            });
+
+        }
+
+
+        else if (valor == "2") {
+            document.querySelector(".fase2").style.display = "block";
+            document.querySelector(".selecaoFases").style.display = "none";
+
+
+
+            for (var i = 1, j = 0; j <= 57; j += 3, i++) {
+                document.getElementById("q" + i).placeholder = vetorBDDecisao[j];
+            }
+
+
+            for (var i = 1, j = 1; i <= 59; i += 3, j++) {
+                document.getElementById("v" + j + "-1").placeholder = vetorBDDecisao[i];
+            }
+
+            for (var i = 2, j = 1; i <= 59; i += 3, j++) {
+                document.getElementById("v" + j + "-2").placeholder = vetorBDDecisao[i];
+            }
+
+            var conteudo2 = [];
+            document.getElementById("alterar2").addEventListener("click", function () {
+
+                var perguntas = document.querySelectorAll("#q1, #v1-1, #v1-2 ,#q2, #v2-1, #v2-2 , #q3, #v3-1, #v3-2 ,#q4, #v4-1, #v4-2 ,#q5, #v5-1, #v5-2 ,#q6, #v6-1, #v6-2 ,#q7, #v7-1, #v7-2 ,#q8, #v8-1, #v8-2 ,#q9, #v9-1, #v9-2 ,#q10, #v10-1, #v10-2 ,#q11, #v11-1, #v11-2 ,#q12, #v12-1, #v12-2 ,#q13, #v13-1, #v13-2 ,#q14, #v14-1, #v14-2 ,#q15, #v15-1, #v15-2 ,#q16, #v16-1, #v16-2 ,#q17, #v17-1, #v17-2 ,#q18, #v18-1, #v18-2 ,#q19, #v19-1, #v19-2 ,#q20, #v20-1, #v20-2 ");
+
+                for (var i = 0; i < perguntas.length; i++) {
+
+                    if (perguntas[i].value != "") {
+                        //console.log(perguntas[i].value);
+                        conteudo2.push(perguntas[i].value);
+                    } else {
+                        //console.log(perguntas[i].placeholder);
+                        conteudo2.push(perguntas[i].placeholder);
+                    }
+                }
+
+                var texto = "";
+
+                for (var i = 0; i <= 57; i+=3){
+                    texto += "Pergunta★" + conteudo2[i] + "\nResp0★" + conteudo2[i+1] + "\nResp1★"+ conteudo2[i+2] +"\n";
+
+                }
+
+
+             //   var texto = "Pergunta1-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[2] +  "Pergunta2-" + conteudo2[3] + "\nResp0-" + conteudo2[4] + "\nResp1-" +conteudo2[1] +  "Pergunta3-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta4-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta5-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta6-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta7-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta8-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta9-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta10-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta11-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta12-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta13-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta14-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta15-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta16-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta17-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta18-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta19-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] + "Pergunta20-" + conteudo2[0] + "\nResp0-" + conteudo2[1] + "\nResp1-" +conteudo2[1] ;
+                fs.writeFile('./bd2.txt', texto, (err) => {
+                    if (err) {
+                        exibeNotificação("error", err, "http://localhost/jogo/electron/telaInicial/index.html");
+                        return;
+                    }
+                    exibeNotificação("success", "Dados salvos com sucesso!!", "http://localhost/jogo/electron/telaInicial/index.html");
+                });
+
+            });
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+    const voltar_menu = () => {
+        var tecla = event.keyCode;
+        if (tecla == 27) {
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/index.html');
+
+            window.location.href = caminhoArquivo;
+        }
+    }
+    document.addEventListener('keydown', voltar_menu);
+</script>
