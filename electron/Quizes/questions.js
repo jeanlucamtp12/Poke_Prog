@@ -150,7 +150,7 @@ var perguntas = [
       answers: [
         { option: "31 movimentos", correct: true },
         { option: "21 movimentos", correct: false },
-        { option: "1 movimentos", correct: false },
+        { option: "1 movimento", correct: false },
         { option: "11 movimentos", correct: false },
 
       ],

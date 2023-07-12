@@ -1,7 +1,5 @@
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
 }
@@ -14,6 +12,7 @@ body {
   flex-direction: column;
   gap: 5px;
   background: linear-gradient(90deg, rgb(30, 101, 159) 0%, rgb(57, 27, 139) 100%);
+  overflow: hidden;
 }
 
 body h2 {
@@ -31,14 +30,14 @@ main {
   justify-content: center;
 }
 
-.content {
+.container {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 10px;
 }
 
-.spnQtd {
+.contador {
   text-align: end;
 }
 
@@ -59,18 +58,18 @@ button {
   color: white;
 }
 
-.finish {
+.final {
   display: none;
   flex-direction: column;
   gap: 10px;
 }
 
-.finish button {
+.final button {
   text-align: center;
 }
 
 
-.question, .answers{
+.pergunta, .answers{
   font-size: 1.5vw;
 }
 
@@ -128,7 +127,7 @@ span{
 
 
 #abra{
-  left: 1%;
+  left: 15%;
   bottom: 60%;
   width: 12vw;
   transform: scaleX(-1);

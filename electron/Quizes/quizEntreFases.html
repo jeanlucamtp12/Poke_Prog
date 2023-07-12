@@ -44,6 +44,7 @@
 </html>
 
 <script>
+    const path = require('path');
     const question = document.querySelector(".question");
     const answers = document.querySelector(".answers");
     const textFinish = document.querySelector(".finish span");
@@ -107,7 +108,9 @@
     }
 
     function finish() {
-        exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+        const volta = path.resolve("./resources/app/telaInicial/city.html");
+
+        exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", volta);
     }
 
     function loadQuestion() {
@@ -116,7 +119,9 @@
 
           
             if(cont == 3){
-                exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", "http://localhost/jogo/electron/telaInicial/city.html");
+                const volta = path.resolve("./resources/app/telaInicial/city.html");
+
+                exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", volta);
                 return;
             }
             cont = cont + 1;
@@ -152,8 +157,11 @@
 
     const voltar_menu = () => {
             var tecla = event.keyCode;
+
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
             if (tecla == 27) {
-                window.location.href = "http://localhost/jogo/electron/telaInicial/city.html";
+                window.location.href = caminhoArquivo;
             }
         }
     document.addEventListener('keydown', voltar_menu);

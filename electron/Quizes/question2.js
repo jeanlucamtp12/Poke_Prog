@@ -209,7 +209,7 @@ var perguntas = [
         answers: [
           { option: "Um tipo de jogo", correct: false },
           { option: "Um meio de ensino que pode auxiliar professores", correct: false },
-          { option: " Um conceito que permite dividir um problema em subproblemas semelhantes", correct: true },
+          { option: " Um conceito que permite dividir um problema em subproblemas menores", correct: true },
         ],
       
       },
