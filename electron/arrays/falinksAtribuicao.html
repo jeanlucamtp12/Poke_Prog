@@ -141,9 +141,8 @@
 
 
                     setTimeout(function () {
-                        const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=4");
 
-                        exibeNotificação("success", "Nomes Atribuidos! Vamos as perguntas da fase!", caminhoSucesso);
+                        exibeNotificação("success", "Nomes Atribuidos! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=4');
 
                     }, 3000);
                 });
@@ -153,10 +152,9 @@
                 const voltar_menu = () => {
                     var tecla = event.keyCode;
 
-                    const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
                     if (tecla == 27) {
-                        window.location.href = caminhoArquivo;
+                        window.location.href = '../telaInicial/city.html';
                     }
                 }
                 document.addEventListener('keydown', voltar_menu);

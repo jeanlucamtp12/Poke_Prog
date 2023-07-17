@@ -184,9 +184,8 @@
                 } else if (vidas == 0) {
                     document.querySelector(".poke").style.display = "none";
 
-                    const caminhoDerrota= path.resolve('./resources/app/arrays/arrays.html');
                     
-                    exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", caminhoDerrota);
+                    exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", './arrays.html');
                 }
             }
         }
@@ -199,9 +198,8 @@
             console.log(j)
             if (j == 10) {
                 document.querySelector(".poke").style.display = "none";
-                const caminhoSucesso = path.resolve("./resources/app/arrays/FalinksAtribuicao.html");
 
-                window.location.href = caminhoSucesso;
+                window.location.href = './FalinksAtribuicao.html';
             }
         }
 
@@ -291,10 +289,9 @@
     const voltar_menu = () => {  //atalho para retornar ao menu de fases
         var tecla = event.keyCode;
 
-        const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
         if (tecla == 27) {
-            window.location.href = caminhoArquivo;
+            window.location.href = '../telaInicial/city.html';
         }
     }
     document.addEventListener('keydown', voltar_menu);
