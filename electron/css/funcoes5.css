@@ -1,0 +1,614 @@
+*{
+   background-color: #525299;
+   user-select: none;
+  
+}
+body{
+   overflow: hidden;
+}
+
+.geladeira {
+    width: 30vw;
+    height: 95vh;
+    background-color: #ffffff;
+    border: 1.5vw solid ;
+    border-radius: 10px;
+    position: absolute;
+    margin: 50px auto; 
+    bottom: -12%;
+    left: 35%;
+}
+
+
+.maçaneta {
+    width: 2vw;
+    height: 2vw;
+    background-color: #777;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    right: 2%;
+}
+
+
+
+.prateleira {
+    width: 20vw;
+    height: 1vw;
+    background-color: #ddd;
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.prateleira h5{
+    background-color: #ddd;
+    font-size: 1vw; 
+    text-align: center;
+}
+
+
+
+
+.numero_serie{
+    width: 6vw;
+    height: 1.5vw;
+    position: absolute;
+    background-color: #ddd;
+    top: 12%;
+    left: 47%;
+    border-radius: 100%;
+}
+
+.numero_serie h5{
+    font-size: 1.2vw; 
+    text-align: center;
+    background-color: #ddd;
+    border-radius: 100%;
+
+}
+
+
+.termometro1 {
+    width: 2vw;
+    height: 12vw;
+    border: 0.5vw solid rgb(0, 255, 21);
+    border-radius: 1vw;
+    position: absolute;
+    margin: 50px auto;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    top: 10%;
+    left: 20%;
+
+}
+
+.controlador1{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border: 0.2vw solid black;
+    top: 45%;
+    left: 18.5%;
+    box-sizing: border-box;
+
+ }
+ .controlador2{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border: 0.2vw solid black;
+    top: 45%;
+    left: 28.5%;
+    box-sizing: border-box;
+
+ }
+ .controlador3{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border: 0.2vw solid black;
+    top: 45%;
+    left: 67.5%;
+    box-sizing: border-box;
+
+ }
+ .controlador4{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border: 0.2vw solid black;
+    top: 45%;
+    left: 77%;
+    box-sizing: border-box;
+
+ }
+ .controleEsq1{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+    
+
+ }
+ .controleMeio1{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+ .controleDir1{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+
+ .controleEsq2{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+    
+
+ }
+ .controleMeio2{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+ .controleDir2{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+
+ .controleEsq3{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+    
+
+ }
+ .controleMeio3{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+ .controleDir3{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+ .controleEsq4{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+    
+
+ }
+ .controleMeio4{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+ .controleDir4{
+    width: 33.3%;
+    height: 100%;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: white;
+
+ }
+
+.termometro2 {
+    width: 2vw;
+    height: 12vw;
+    border: 0.5vw solid rgb(0, 255, 21);
+    border-radius: 1vw;
+    position: absolute;
+    margin: 50px auto;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    top: 5%;
+    left: 30%;
+}
+
+.termometro3 {
+    width: 2vw;
+    height: 12vw;
+    border: 0.5vw solid rgb(0, 255, 21);
+    border-radius: 1vw;
+    position: absolute;
+    margin: 50px auto;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    top: 10%;
+    left: 69%;
+}
+
+.termometro4 {
+    width: 2vw;
+    height: 12vw;
+    border: 0.5vw solid rgb(0, 255, 21);
+    border-radius: 1vw;
+    position: absolute;
+    margin: 50px auto;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    top: 5%;
+    left: 78%;
+}
+
+.liquido1, .liquido2, .liquido3, .liquido4{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transition: height 0.5s;
+    height: 12%;
+}
+
+
+
+ .compartimento1{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: 18%;
+    left: 40%;
+    box-sizing: border-box;
+    background-color: rgba(255, 0, 0, 0);
+
+
+ }
+
+ .c11{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+
+ .c11 img, .c21 img, .c31 img, .c41 img,  .c12 img, .c22 img, .c32 img, .c42 img,  .c13 img, .c23 img, .c33 img, .c43 img{
+    width: 6vw;
+    height: 6vw;
+    background-color: rgba(255, 255, 255, 0);
+ }
+
+ .c12{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+
+ .c13{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+ }
+
+
+
+ .compartimento2{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: 36%;
+    left: 40%;
+    box-sizing: border-box;
+    background-color: rgba(255, 0, 0, 0);
+
+    
+ }
+
+ .c21{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+ .c22{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+ .c23{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+ }
+ .compartimento3{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: 53%;
+    left: 40%;
+    box-sizing: border-box;
+    background-color: rgba(255, 0, 0, 0);
+
+    
+ }
+ .c31{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+ .c32{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+ .c33{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+ }
+ .compartimento4{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: 71%;
+    left: 40%;
+    box-sizing: border-box;
+    background-color: rgba(255, 0, 0, 0);
+
+    
+ }
+
+ .c41{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+ .c42{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+
+ }
+ .c43{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+ }
+
+
+
+
+
+
+
+
+
+
+ .disjuntorPadrao{
+    position: absolute;
+    width: 8%;
+    height: 25%;
+    border: 1vw solid rgb(104, 98, 98);
+    top: 13%;
+    left: 4%;
+    background-color: #797979;
+ }
+
+ .disjuntor1 {
+    width: 4.5vw;
+    height: 3.5vh;
+    background-color: #ddd;
+    border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+    top: 30%;
+    left: 15%;
+}
+
+.alavanca1 {
+    width: 1vw;
+    height: 1.5vw;
+    background-color: #000000;
+    position: absolute;
+    top: 0.1vw;
+    left: 0vw;
+    transition: left 0.2s ease-in-out;
+}
+
+.ligado .alavanca1 {
+    left: 3.5vw;
+}
+
+.disjuntor2 {
+    width: 4.5vw;
+    height: 3.5vh;
+    background-color: #ddd;
+    border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+    top: 55%;
+    left: 15%;
+}
+
+.alavanca2 {
+    width: 1vw;
+    height: 1.5vw;
+    background-color: #000000;
+    position: absolute;
+    top: 0.1vw;
+    left: 0vw;
+    transition: left 0.2s ease-in-out;
+}
+
+.ligado .alavanca2 {
+    left: 3.5vw;
+}
+
+
+
+
+.lampadaImagem img{
+    width: 4%;
+    position: absolute;
+    bottom: 82%;
+    left: 36vw;
+    z-index: 1;
+    background-color: #00000000;
+    transform: rotate(270deg);
+
+}
+
+.lampada {
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 84.2%;
+    left: 37.8%;
+    z-index: 1;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.caixaItens{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.caixaItens h6, .caixaItens2 h6{
+    color: white;
+}
+
+.item{
+    width: 4.5vw;
+    height: 4.5vw;
+    border: 2px solid #fff7f7;
+}
+
+.caixaItens2{
+    position: absolute;
+    bottom: 5%;
+    left: 70%;
+}
+
+.item{
+    width: 4.3vw;
+    height: 4.5vw;
+    border: 2px solid #fff7f7;
+}
+
+
+.manual img{
+    position: absolute;
+    width: 5%;
+    top: 10%;
+    left: 90%;
+}
+
+.manual h5{
+    position: absolute;
+    top: 8%;
+    right: 6%;
+    font-size: 1vw;
+    color: white;
+}
+.moldeManual{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    border: 1.4vw solid black;
+    left: 41%;
+    top: 16%;
+    z-index: 1;
+    background-color: white;
+    transition: top 0.5s ease-in-out;
+
+    border-radius: 4vw 0 0 4vw / 0 0 4vw 4vw;
+   }
+
+.moldeManual h3, .moldeManual h4, .moldeManual h6{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    text-align: center;
+}
+.moldeManual h6{
+    text-align: left;
+    font-size: 1vw;
+
+}
+
+.moldeManual h3{
+   font-size: 2vw;
+}
+
+.moldeManual h4{
+   font-size: 1.5vw;
+}
+
+
+
+.titulo h5{
+   position: absolute;
+   top: 2%;
+   left: 32%;
+   font-size: 1vw;
+   color: white;
+}
+
+.swal2-container .swal2-popup {
+   background-color: #490000; /* Defina a cor de fundo desejada */
+   background-color: #490000;
+ }
+
+ .swal2-popup{
+   font-size: 1vw;
+}

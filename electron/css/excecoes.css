@@ -1,0 +1,829 @@
+* {
+    user-select: none;
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+        
+.nuvens{
+    position: absolute;
+    width: 15vw;
+    left: 20%;
+    top: 2%;
+}
+.cidade {
+    overflow: hidden;
+    position:relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient( #000000, #0e0b47) no-repeat;
+}
+
+.estrela{
+    position: absolute;
+    width: 2vw;
+    top: 20%;
+    left: 20%;
+    z-index: 0;
+}
+
+
+
+.mato{
+    position: absolute;
+    left: 30%;
+    bottom: 0%;
+}
+
+.um{
+    width: 10vw;
+    bottom: -2%;
+    left: 60%;
+
+}
+
+.dois{
+    width: 10vw;
+    bottom: -5%;
+    right: 40%;
+    z-index: 1;
+
+}
+.arvore2{
+    position: absolute;
+    width: 20vw;
+    bottom: -2%;
+    right: -30px;
+    z-index: 0;
+}
+
+.arvore{
+    position: absolute;
+    width: 18vw;
+    bottom: -2%;
+    left: 0px;
+    z-index: 1;
+
+}
+
+.teia{
+    position: absolute;
+    top: -2.3%;
+    width: 12vw;
+    right: -1.2%;
+    
+}
+
+.spinarak{
+    position: absolute;
+    width: 6vw;
+    top: 2%;
+    right: 0%;
+    z-index: 1;
+
+}
+
+.cacturne{
+    position: absolute;
+    width: 14vw;
+    bottom: 0%;
+    right: -2%;
+    z-index: 1;
+}
+
+
+
+.primeiro{
+    position: absolute;
+    width: 4vw;
+    top: 10%;
+    animation: zubats_movimento 24s infinite linear;
+}
+.segundo{
+    width: 4vw;
+    position: absolute;
+    top: 5%;
+    animation: zubats_movimento 26s infinite linear;
+}
+.terceiro{
+    width: 4vw;
+    position: absolute;
+    top: 6%;
+    animation: zubats_movimento 30s infinite linear;
+}
+.quarto{
+    width: 4vw;
+    position: absolute;
+    top: 2%;
+    animation: zubats_movimento 32s infinite linear;
+
+}
+
+
+
+
+@keyframes zubats_movimento{
+    0%{
+        right: 0%;
+
+    }
+    50%{
+        right: 100%;
+    }
+    100%{
+        right: 200%;
+
+    }
+}
+
+.tumulo{
+    position: absolute;
+    bottom: -1%;
+    right: 10%;
+    width: 25vw;
+    z-index: 1;
+}
+
+.rastelo{
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    width:10vw;
+    transform: rotate(150deg);
+
+}
+
+.arvoreMorta{
+    position: absolute;
+    width: 40vw;
+    bottom: 0%;;
+    left: 5%;
+}
+
+
+
+.arvoreMorta2{
+    position: absolute;
+    width: 40vw;
+    bottom: 0%;;
+    left: 55%;
+}
+
+
+.cruz{
+    position: absolute;
+    width: 8vw;
+    left: 0%;
+    bottom: 0%;
+    transform: rotate(-20deg);
+
+}
+
+
+@keyframes aranha_movimento{
+    0%{
+        top: -55%;
+    }
+    25%{
+        top: -10%;
+    }
+    50%{
+        top: -70%;
+
+    }
+    75%{
+        top: -10%;
+
+    }
+    85%{
+        top: -20%;
+
+    }
+    100%{
+        top: -40%;
+
+    }
+   
+}
+
+
+.gasly{
+    position: absolute;
+    width: 12vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.gasly1{
+
+    animation: gasly1_movimento 15s infinite linear;
+
+}
+.gasly2{
+
+    animation: gasly2_movimento 16s infinite linear;
+
+}
+.gasly3{
+
+    animation: gasly3_movimento 17s infinite linear;
+
+}
+.gasly4{
+
+    animation: gasly4_movimento 18s infinite linear;
+
+}
+
+
+
+@keyframes gasly1_movimento{
+    0%{
+        top: 0%;
+    }
+    25%{
+        top: 90%;
+        right: 10%;
+    }
+    50%{
+        top: 20%;
+        right: 80%;
+    }
+    75%{
+        top: 70%;
+    }
+    85%{
+        right: 15%;
+    }
+    100%{
+        top: 0%;
+    }
+   
+}
+
+
+@keyframes gasly2_movimento{
+    0%{
+        top: 0%;
+    }
+    25%{
+        top: 10%;
+        right: 90%;
+    }
+    50%{
+        top: 90%;
+        right: 30%;
+    }
+    75%{
+        top: 20%;
+    }
+    85%{
+        right: 75%;
+    }
+    100%{
+        top: 0%;
+    }
+   
+}
+@keyframes gasly3_movimento{
+    0%{
+        top: 0%;
+    }
+    25%{
+        top: 50%;
+        right: 50%;
+    }
+    50%{
+        top: 20%;
+        right: 70%;
+    }
+    75%{
+        top: 60%;
+    }
+    85%{
+        right: 15%;
+    }
+    100%{
+        top: 0%;
+    }
+   
+}
+
+@keyframes gasly4_movimento{
+    0%{
+        top: 0%;
+    }
+    25%{
+        top: 30%;
+        right: 20%;
+    }
+    50%{
+        top: 80%;
+        right: 60%;
+    }
+    75%{
+        top: 40%;
+    }
+    85%{
+        right: 25%;
+    }
+    100%{
+        top: 0%;
+    }
+   
+}
+
+
+
+.banette{
+    position: absolute;
+    width: 12vw;
+    z-index: 1;
+    bottom: 0%;
+    cursor: pointer;
+}
+
+.banette1{
+    animation: banette_movimento 5s infinite linear;
+}
+.banette2{
+    animation: banette_movimento 6s infinite linear;
+
+}
+.banette3{
+    animation: banette_movimento 8s infinite linear;
+
+}
+.banette4{ 
+    animation: banette_movimento 10s infinite linear;
+}
+
+
+@keyframes banette_movimento{
+    0%{
+        right: 0%;
+
+    }
+    50%{
+        right: 50%;
+    }
+    100%{
+        right: 100%;
+
+    }
+}
+
+.frillish{
+    position: absolute;
+    width: 13vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.frillish1{
+    animation: frillish_movimento 5s infinite linear;
+}
+.frillish2{
+    animation: frillish_movimento 15s infinite linear;
+}
+.frillish3{
+    animation: frillish_movimento 8s infinite linear;
+}
+.frillish4{ 
+    animation: frillish_movimento 6s infinite linear;
+}
+
+
+@keyframes frillish_movimento{
+    0%{
+        right: 0%;
+
+    }
+    25%{
+        bottom: 20%;
+        right: 25%;
+    }
+
+    50%{
+        bottom: 40%;
+        right: 40%;
+    }
+    60%{
+        bottom: 30%;
+        right: 60%;
+    }
+    70%{
+        bottom: 100%;
+        right: 80%;
+    }
+    80%{
+        bottom: 50%;
+        right: 90%;
+    }
+    100%{
+        right: 100%;
+        bottom: 20%;
+
+
+    }
+}
+
+.litwick{
+    position: absolute;
+    width: 10vw;
+    z-index: 1;
+    cursor: pointer;
+
+
+}
+
+.litwick1{
+    left: 10%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.litwick2{
+    left: 25%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.litwick3{
+    left: 50%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.litwick4{ 
+    left: 80%;
+    animation: litwick_movimento 5s infinite linear;
+}
+
+
+@keyframes litwick_movimento{
+    0%{
+        bottom: -10%;
+        transform: rotate(0deg);
+    }
+    15%{
+        bottom: 1%;
+        transform: rotate(0deg);
+    }
+    20%{
+        bottom: 2%;
+        transform: rotate(0deg);
+    } 
+    30%{
+        bottom: -2%;
+        transform: rotate(0deg);
+    } 
+    40%{
+        bottom: -5%;
+        transform: rotate(0deg);
+    } 
+    50%{
+        transform: rotate(190deg);
+        top: -50%;
+    }
+    55%{
+        top: 0%;
+    } 
+
+    85%{
+        top: 2%;
+        transform: rotate(190deg);
+    }
+    90%{
+        top: 1%;
+        transform: rotate(190deg);
+    }
+    100%{
+        top: -10%;
+        transform: rotate(190deg);
+    }
+}
+
+
+.shedinja{
+    position: absolute;
+    width: 11vw;
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+.shedinja1{
+    --my-start-left: 10%;   
+    --my-start-bottom: 70%;  
+    animation: abra_movimento 5s infinite linear;
+}
+.shedinja2{
+    --my-start-left: 10%;   
+    --my-start-bottom: 0%;  
+    animation: abra_movimento 1s infinite linear;
+}
+.shedinja3{
+    --my-start-left: 80%;  
+    --my-start-bottom: 20%;  
+    animation: abra_movimento 2s infinite linear;
+}
+.shedinja4{ 
+    --my-start-left: 80%;   
+    --my-start-bottom: 75%;  
+    animation: abra_movimento 3s infinite linear;
+}
+
+
+
+
+
+@keyframes shedinja_movimento{
+    0%{
+        bottom: 0%;
+        right: 0%;
+    }
+    15%{
+        bottom: 30%;
+        right: 40%;
+    }
+   
+    25%{
+        bottom: 50%;
+        right: 60%;
+    } 
+    35%{
+        right: 100%;
+    } 
+    50%{
+        bottom: 30%;
+    }
+    75%{
+        top: 30%;
+        right: 0%;
+    }
+   
+    100%{
+        top: 80%;
+        right: 100%;
+    } 
+}
+
+
+.caixaObjetivos {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    z-index: 0;
+}
+.caixas {
+    border: solid 2px white;
+    width: 3vw;
+    height: 4vw;
+}
+.caixas img {
+    width: 3vw;
+    height: 75%;
+}
+
+.caixaObjetivos h6{
+    color: white;
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+.imagem{
+    width: 4vw;
+}
+
+.lua{
+    width: 10vw;
+    top: 0%;
+    position: absolute;
+    z-index:0;
+}
+
+
+
+
+.umbreom{
+    position: absolute;
+    width: 14vw;
+    z-index: 1;
+    cursor: pointer;
+    bottom: 0%;
+}
+
+.umbreom1{
+    --my-start-left: 20%;   
+    animation: umbreom_movimento 10s infinite linear;
+}
+.umbreom2{
+    --my-start-left: 40%;   
+    animation: umbreom_movimento 12s infinite linear;
+}
+.umbreom3{
+    --my-start-left: 60%;  
+    animation: umbreom_movimento 14s infinite linear;
+}
+.umbreom4{ 
+    --my-start-left: 80%;   
+    animation: umbreom_movimento 16s infinite linear;
+}
+
+
+@keyframes umbreom_movimento{
+    0%{
+        left: var(--my-start-left);
+        opacity: 0; 
+    }
+    24%{       
+        opacity: 1; 
+        left: var(--my-start-left);
+    } 
+    25%{      
+        opacity: 0; 
+        left: calc(var(--my-start-left) - 15%);
+    } 
+    75%{
+        left: var(--my-start-left);
+
+    }
+   
+    100%{
+        opacity: 1; 
+        left: var(--my-start-left);
+    } 
+}
+
+
+
+.froslass{
+    position: absolute;
+    width: 12vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.froslass1{
+    --my-start-left: 10%;   
+    --my-start-bottom: 40%;  
+    animation: froslass_movimento 8s infinite linear;
+}
+.froslass2{
+    --my-start-left: 30%;   
+    --my-start-bottom: 60%;  
+    animation: froslass_movimento 9s infinite linear;
+}
+.froslass3{
+    --my-start-left: 50%;  
+    --my-start-bottom: 40%;  
+    animation: froslass_movimento 7s infinite linear;
+}
+.froslass4{ 
+    --my-start-left: 70%;   
+    --my-start-bottom: 60%;  
+    animation: froslass_movimento 6s infinite linear;
+}
+
+
+@keyframes froslass_movimento{
+    0%{
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+        opacity: 1; 
+    }
+    50%{      
+        opacity: 0; 
+        bottom: calc(var(--my-start-bottom) - 25%);
+    } 
+    100%{
+        opacity: 1; 
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+    } 
+}
+
+
+
+.abra{
+    position: absolute;
+    width: 14vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.abra1{
+    --my-start-left: 10%;   
+    --my-start-bottom: 70%;  
+    animation: abra_movimento 5s infinite linear;
+}
+.abra2{
+    --my-start-left: 10%;   
+    --my-start-bottom: 0%;  
+    animation: abra_movimento 1s infinite linear;
+}
+.abra3{
+    --my-start-left: 80%;  
+    --my-start-bottom: 20%;  
+    animation: abra_movimento 2s infinite linear;
+}
+.abra4{ 
+    --my-start-left: 80%;   
+    --my-start-bottom: 75%;  
+    animation: abra_movimento 3s infinite linear;
+}
+
+
+@keyframes abra_movimento{
+    0%{
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+        opacity: 1; 
+    }
+    50%{      
+        opacity: 0; 
+        bottom: var(--my-start-bottom) ;
+    } 
+    100%{
+        opacity: 1; 
+        left: var(--my-start-left);
+        bottom: var(--my-start-bottom);
+
+    } 
+}
+
+
+
+.gengar{
+    position: absolute;
+    width: 20vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.gengar1{
+    left: 5%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.gengar2{
+    left: 25%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.gengar3{
+    left: 50%;
+    animation: litwick_movimento 5s infinite linear;
+}
+.gengar4{
+    left: 75%;
+    animation: litwick_movimento 5s infinite linear;
+}
+
+
+
+.lampent{
+    position: absolute;
+    width: 15vw;
+    z-index: 1;
+    cursor: pointer;
+    bottom: 0%;
+}
+
+.lampent1{
+    left: 10%;   
+    animation: lampent_movimento 10s infinite linear;
+}
+.lampent2{
+    left: 30%;   
+    animation: lampent_movimento 12s infinite linear;
+}
+.lampent3{
+    left: 50%;  
+    animation: lampent_movimento 14s infinite linear;
+}
+.lampent4{ 
+    left: 70%;   
+    animation: lampent_movimento 16s infinite linear;
+}
+
+
+@keyframes lampent_movimento{
+    0%{
+        opacity: 0; 
+    }
+    24%{       
+        opacity: 1; 
+    } 
+    25%{      
+        opacity: 0; 
+    } 
+    100%{
+        opacity: 1; 
+    } 
+}
+
+
+
+.swal2-popup{
+    font-size: 1vw;
+}
+

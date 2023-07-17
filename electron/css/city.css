@@ -1,0 +1,579 @@
+* {
+    user-select: none;
+}
+
+body, html{
+	overflow: hidden;
+	background: linear-gradient( #5e54ff, #a3c6d4) no-repeat;
+	height: 100%;
+}
+
+
+.mapa h1{
+	background: linear-gradient(to bottom, rgb(255, 255, 255),  rgba(216, 168, 255, 0.801));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 1.5vw;
+	margin: 0;
+    text-align: center;
+}
+
+
+.titulo{
+	position: absolute;
+	color: white;
+	z-index: 2;
+	left: 45%;
+	top: 0%;
+	border: solid 0.5vw #333537;
+	background-color: #333537;
+	border-radius: 50%;
+	font-size: 1.5vw;
+}
+
+.home img{
+	position: absolute;
+	z-index: 2;
+	left: 0.5%;
+	top: 3%;
+	background-color: #ffffff;
+	border-radius: 50%;
+	width: 3vw;
+	cursor: pointer;
+}
+
+
+#escola{
+	position: absolute;
+	bottom: 49%;
+	left: 32%;
+	width: 18vw;
+	z-index: 1;
+
+}
+
+#fabrica{
+	position: absolute;
+	bottom: 49%;
+	left: 12%;
+	width: 13vw;
+	z-index: 1;
+
+}
+
+#rio{
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	width: 25vw;
+	z-index: 0;
+
+}
+
+
+
+#predio1{
+	position: absolute;
+    bottom: 1%;
+    left: 62%;
+    width: 15vw;
+	z-index: 1;
+}
+
+#predio2{
+	position: absolute;
+	bottom: 1%;
+	left: 49%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#trofeu{
+	position: absolute;
+	bottom: 0%;
+	left: 80%;
+	width: 15vw;
+	z-index: 1;
+}
+
+#bosque{
+	position: absolute;
+	bottom: 51%;
+	left: 75.5%;
+	width: 25vw;
+	z-index: 0;
+}
+
+#casa{
+	position: absolute;
+	bottom: 1%;
+	left: 0%;
+	width: 15vw;
+	z-index: 1;
+}
+
+#cemiterio1{
+	position: absolute;
+	bottom: 0%;
+	left: 40%;
+	width: 11vw;
+	z-index: 1;
+}
+
+#cemiterio2{
+	position: absolute;
+	bottom: 1%;
+	left: 26%;
+	width: 12vw;
+	z-index: 1;
+}
+
+
+#nuvem1{
+	position: absolute;
+	bottom: 73%;
+	left: 77%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#nuvem2{
+	position: absolute;
+	bottom: 80%;
+	left: 88%;
+	width: 10vw;
+	z-index: 1;
+}
+
+#nuvem3{
+	position: absolute;
+	bottom: 80%;
+	left: 54%;
+	width: 10vw;
+	z-index: 1;
+}
+
+
+.parede1, .parede2, .parede3{
+    position: absolute;
+    width:  0.4vw;
+    height: 100%;
+    transform: rotate(180deg);
+	z-index: 0;
+}
+
+.parede1{
+	bottom: 0%;
+    left: 25%;
+}
+
+.parede2{
+	bottom: 0%;
+    left: 50%;
+}
+.parede3{
+	bottom: 0%;
+    left: 75%;
+}
+
+
+.bloco1{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: 48%;
+    left: 0%;
+}
+
+
+.bloco2{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: -0.3%;
+    left: 0%;
+}
+
+.bloco3{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    top: -0.2%;
+    left: 0%;
+}
+
+
+/* Incio dos personagens*/
+
+/* Unows*/
+
+#a, #b, #c, #d, #e, #f, #g{
+	position: absolute;
+	width: 4vw;
+}
+#a{
+	left: 0%;
+	bottom: 75%;
+}
+#b{
+	left: 7%;
+	bottom: 78%;
+}
+#c{
+	left: 14%;
+	bottom: 73%;
+}
+#d{
+	left: 19%;
+	bottom: 79%;
+}
+#e{
+	left: 1%;
+	bottom: 65%;
+}
+#f{
+	left: 8%;
+	bottom: 65%;
+}
+#g{
+	left: 3%;
+	width: 3vw;
+	bottom: 50%;
+}
+
+/* Arbok e Bulba*/
+
+#bulbassaur, #arbok{
+	position: absolute;
+	z-index: 1;
+}
+#arbok{
+	left: 25%;
+	width: 9vw;
+	bottom: 48%;
+}
+#bulbassaur{
+	left: 44%;
+	width: 5vw;
+	bottom: 49%;
+}
+
+/* Timburr*/
+
+#timburr{
+	position: absolute;
+	left: 65%;
+	width: 10vw;
+	bottom: 49%;
+}
+
+
+/* Falinks*/
+
+#falinks1, #falinks2 , #falinks3, #falinks4, #falinks5, #falinks6{
+	position: absolute;
+	width: 4vw;
+	bottom: 49%;
+}
+
+#falinks1{
+	left: 95%;
+}
+#falinks2{
+	left: 92%;
+}
+#falinks3{
+	left: 89%;
+}
+
+#falinks4{
+	left: 82%;
+}
+#falinks5{
+	left: 79%;
+}
+#falinks6{
+	left: 76%;
+}
+
+
+
+/* Rotoms*/
+
+#rotom, #cortador , #geladeira, #lavadeira, #ventilador, #forno{
+	position: absolute;
+	width: 8vw;
+	z-index: 1;
+}
+
+#rotom{
+	left: 10%;
+	bottom: 22%;
+}
+#cortador{
+	left: 18%;
+	bottom: -1%;
+}
+#geladeira{
+	left: 0%;
+	bottom: 1%;
+	transform: scaleX(-1);
+}
+
+#lavadeira{
+	left: 12%;
+	bottom: 8%;
+}
+#ventilador{
+	left: 17%;
+	bottom: 28%;
+}
+#forno{
+	left: -1%;
+	bottom: 32%;
+	transform: scaleX(-1);
+}
+
+
+/* Gaslys*/
+
+#gasly1, #gasly2 , #gasly3, #gasly4{
+	position: absolute;
+	width: 6vw;
+	z-index: 1;
+}
+
+#gasly1{
+	left: 43%;
+	bottom: 28%;
+}
+#gasly2{
+	left: 43%;
+	bottom: 10%;
+}
+#gasly3{
+	left: 32%;
+	bottom: 15%;
+	transform: scaleX(-1);
+}
+
+#gasly4{
+	left: 26%;
+	bottom: 25%;
+	transform: scaleX(-1);
+}
+
+
+
+
+
+/* Magnemite e Masgneton*/
+
+#magnemite1, #magnemite2 , #magneton1, #magneton2{
+	position: absolute;
+	width: 5vw;
+	z-index: 1;
+}
+
+#magnemite1{
+	left: 69%;
+	bottom: 28%;
+}
+#magnemite2{
+	left: 57%;
+	bottom: 0%;
+	width: 8vw;
+}
+#magneton1{
+	left: 50%;
+	bottom: 28%;
+	transform: scaleX(-1);
+	width: 8vw;
+}
+
+#magneton2{
+	left: 60%;
+	bottom: 18%;
+	transform: scaleX(-1);
+}
+
+
+
+/* Victinis*/
+
+#victini1, #victini2{
+	position: absolute;
+	width: 14vw;
+	z-index: 1;
+	bottom: 0%;
+}
+
+#victini1{
+	left: 73%;
+}
+
+#victini2{
+	left: 89%;
+	transform: scaleX(-1);
+}
+
+
+
+/* Titulos fase*/
+#fase1, #fase2, #fase3, #fase4, #fase5, #fase6, #fase7, #fase8{
+	position: absolute;
+	z-index: 1;
+}
+
+#fase1{
+	left: 5%;
+	bottom: 90%;
+}
+
+#fase2{
+	left: 32%;
+	bottom: 90%;
+}
+
+#fase3{
+	left: 58%;
+	bottom: 90%;
+}
+
+#fase4{
+	left: 82%;
+	bottom: 90%;
+}
+
+#fase5{
+	left: 7%;
+	bottom: 40%;
+}
+
+#fase6{
+	left: 30%;
+	bottom: 40%;
+}
+
+#fase7{
+	left: 58%;
+	bottom: 40%;
+}
+
+#fase8{
+	left: 82.5%;
+	bottom: 40%;
+}
+
+.professor{
+	width: 22vw;
+	position: absolute;
+	z-index: 1;
+	left: 5%;
+	bottom: 0%;
+}
+
+.balao{
+	position: absolute;
+	background-color: white;
+	width: 50vw;
+	min-height: 20vw;
+	border-radius: 10%;
+	left: 25%;
+	bottom: 5%;
+	z-index: 1;
+}
+
+#caixaDialogo{
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+
+#dialogo{
+	font-size: 1.2vw;
+	line-height: 1.5; 
+	animation: escrever 0.5s steps(40) forwards;
+
+}
+
+.mapa {
+	opacity: 0.2;
+	user-select: none;
+}
+
+#dialogoReserva{
+	margin-left: 2vw;
+	line-height: 1.5; 
+	font-size: 1.2vw;
+}
+
+@keyframes escrever {
+	from {
+	  width: 0;
+	}
+	to {
+	  width: 100%;
+	}
+  }
+
+#botao, #botao2{
+    position: absolute;
+    height: 2vw;
+    width: 10vw;
+    font-size: 1vw;
+    border-radius: 1vw;
+    color: #ffffff;
+    background-color: #86b5c7;
+	cursor: pointer;
+	animation: hover 1s infinite;
+}
+#botao{
+	bottom: 6%;
+    left: 50%;
+}
+#botao2{
+    bottom: 6%;
+    left: 75%;
+}
+
+@keyframes hover {
+0% {
+	transform: scale(1);
+}
+
+50% {
+	transform: scale(1.1);
+}
+
+100% {
+	transform: scale(1);
+}
+}
+
+
+#telaTransparente {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 120%;
+	height: 120%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+#introducao{
+	z-index: 3;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8{
+	position: absolute;
+	width: 25vw;
+	bottom: 25vw;
+	left: 37%;
+	border-radius: 10%;
+	z-index: 2;
+}
+
+.swal2-popup{
+    font-size: 1vw;
+}

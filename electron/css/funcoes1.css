@@ -1,0 +1,573 @@
+:root {
+    --esquerda: 35%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+body{
+    overflow: hidden;
+
+}
+
+.tela {
+    overflow: hidden;
+    position:relative;
+    height: 100vh;
+    width: 100%;
+    /*border: 1px solid #111;
+     margin-left: auto;
+    margin-right:  auto; */
+    background: linear-gradient( #50d3d3, #a3c6d4) no-repeat;
+
+}
+
+
+#raio{
+    animation: raio_movimento 5s infinite linear;
+    width:4.5%;   
+    position: absolute;
+    top:48%;
+    z-index: 1;
+    /* 220, 500, 700, 1000 */
+ 
+}
+
+#combee2, #combee3, #combee4, #combee5{
+    z-index: 1;
+}
+
+#combee2{
+    animation: raio_movimento 3s infinite linear;
+     
+    width:7%;   
+    position: absolute;
+    bottom:30%;
+    left:5%;
+   
+}
+
+#combee3{
+    animation:  raio_movimento 4s infinite linear;
+      
+    width:7%;   
+    position: absolute;
+    bottom:48%;
+    left:50%;
+ }
+ 
+
+#combee4{
+    animation:  raio_movimento 5s infinite linear;
+     
+    width:7%;   
+    position: absolute;
+    bottom:48%;
+    left:25%;
+ 
+   
+}
+#combee5{
+    animation:  raio_movimento 7s infinite linear;
+     
+    width:7%;   
+    position: absolute;
+    bottom:48%;
+    left:58%;
+ 
+   
+}
+
+
+
+#nuvens{
+    width:20%;   
+    position: absolute;
+    top:0%;
+    left: 5%;
+  
+}
+
+
+#nuvens2{
+    width:20%;   
+    position: absolute;
+    top: 10%;
+    left:40%;
+
+}
+
+.mato{
+    position: absolute;
+    width: 4%;
+    bottom: 0%;
+    z-index: 1;
+
+}
+
+
+.exclamacao{
+    position: absolute;
+    bottom: 58%;
+    left: 13vw;
+    width: 4%;
+    animation: piscarTelaTexto 0.4s steps(1, end) infinite;
+}
+
+
+.pokeInfo h5{
+    position: absolute;
+    bottom: 58%;
+    left: 16vw;
+    font-size: 1vw;
+    color: rgb(255, 0, 0);
+    z-index: 2;
+    font-weight: bold;
+    animation: piscarTelaTexto 0.4s steps(1, end) infinite;
+}
+
+@keyframes piscarTelaTexto {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.poke{
+    position: absolute;
+    bottom: 2%;
+    left:  40vw;
+    width: 12vw;
+    z-index: 2;
+    animation: chandelure_ardente 0.5s infinite linear;
+    animation-play-state: paused;
+}
+
+
+@keyframes chandelure_ardente {
+
+    0% {
+        filter: hue-rotate(0deg);
+      }
+      10% {
+        filter: hue-rotate(60deg);
+      }
+      20% {
+        filter: hue-rotate(120deg);
+      }
+      30% {
+        filter: hue-rotate(180deg);
+      }
+      40% {
+        filter: hue-rotate(240deg);
+      }
+      50% {
+        filter: hue-rotate(300deg);
+      }
+      60% {
+        filter: hue-rotate(360deg);
+      }
+      70% {
+        filter: hue-rotate(60deg);
+      }
+      80% {
+        filter: hue-rotate(120deg);
+      }
+      90% {
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        filter: hue-rotate(240deg);
+    }
+      
+}
+
+.sem-filtro {
+    filter: none;
+}
+
+.movimento{
+    animation: inicial_movimento 1s infinite linear;
+}
+
+#grama{
+    position: absolute;
+    bottom: -420px;
+    width:100%;
+}
+
+
+
+@keyframes nuvem_movimento{
+    0%{
+        left: 0%;
+
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: 100%;
+
+    }
+}
+
+
+@keyframes raio_movimento{
+    0%{
+        top: 0%;
+
+    }
+    50%{
+        top: 50%;
+    }
+    100%{
+        top: 100%;
+
+    }
+}
+
+@keyframes inicial_movimento{
+    0%{
+        left: 50%;
+
+    }
+    100%{
+        left: 60%;
+
+        
+    }
+}
+
+
+
+#piso{
+    border: solid 0.5vw black;
+    width: 10vw;   
+    margin-top: -2.6vw;
+    background-color: rgb(0, 0, 0);
+}
+
+#piso2{
+    border: solid 0.3vw black;
+    width: 11vw;   
+    margin-top: 1vw;
+    margin-left: -1.5vw;
+    background-color: rgb(0, 0, 0);
+    transform: rotate(160deg);
+}
+
+
+.vespiqueen{
+    position: absolute;
+    width: 15vw;
+    animation: vespiqueen_movimento 8s infinite linear;
+    z-index: 1;
+
+}
+
+@keyframes vespiqueen_movimento{
+    0%{
+        left: 90%;
+        bottom: 20vw;
+    }
+    20%{
+        left: 80%;
+        bottom: 10vw;
+    }
+    40%{
+        left: 90%;
+        bottom: 30vw;
+    }
+    60%{
+        left: 80%;
+        bottom: 20vw;
+    }
+    80%{
+        left: 70%;        
+        bottom: 30vw;
+    }
+    100%{
+        left: 90%;
+        bottom: 20vw;
+    }
+}
+
+
+
+
+
+.arvore{
+    position: absolute;
+    width: 40%;
+    left: 70%;
+    bottom: -5%;
+    transform: scaleX(-1);
+}
+
+
+.cortador {
+    position: absolute;
+
+    width: 32%;
+    bottom: -2%;
+    right: 0%;
+    z-index: 1;
+    animation: cortador_animation  80s infinite linear;
+    animation-play-state: paused;
+
+}
+
+
+@keyframes cortador_animation {
+
+    0% {
+        right: 0%;
+
+    }
+    50% {
+        right: 500%;
+
+    }
+    100% {
+        right: 1000%;
+
+    }
+
+}
+
+.ventilador{
+    position: absolute;
+    width: 33%;
+    top: 0%;
+    left: 65%;
+    z-index: 1;
+}
+
+.vento{
+    position: absolute;
+    width: 30%;
+    top: 0%;
+    right: 0%;
+    animation: vento_movimento 9s infinite linear;
+}
+
+.vento2{
+    position: absolute;
+    width: 30%;
+    top: 5%;
+    right: 0%;
+    animation: vento_movimento 7s infinite linear;  
+}
+
+
+.vento3{
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    right: 0%;
+    animation: vento_movimento 8s infinite linear;  
+}
+
+@keyframes vento_movimento {
+
+    0%{
+        right: 8%;
+    }
+    50%{
+        right: 50%;
+    }
+    
+    100%{
+        right: 100%;
+    }
+    
+}
+
+
+
+
+
+
+#fruta{
+    position: absolute;
+    width: 3%;
+    --my-start-left:18%;
+    left: 18%;
+    bottom: 89%;
+    animation: fruta_queda 12s  infinite linear;  
+    animation-play-state: paused;
+}
+
+#legume{
+    position: absolute;
+    width: 3%;
+    --my-start-left: 40%;
+    left: 40%;
+    bottom: 90%;
+    animation: fruta_queda 10s  infinite linear;  
+    animation-play-state: paused;
+}
+#verdura{
+    position: absolute;
+    width: 4%;
+    --my-start-left:60%;
+    left: 60%;   
+    bottom: 88%;
+    animation: fruta_queda 8s  infinite linear;  
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+@keyframes fruta_queda {
+
+    0%{
+        opacity: 0;
+        bottom: 88%;
+    }
+    1%{
+        transform: translateX(0px);
+        opacity: 1;
+        bottom: 88%;
+    }
+    48%{
+        transform: translateX(150px);
+    }
+    50%{
+        bottom: 60%;
+    }
+    80%{
+        bottom: 30%;
+        transform: translateX(-50px);
+    }
+    99%{
+        bottom: 0%;
+    }
+    100%{
+        transform: translateX(0px);
+
+      
+        opacity: 1;
+        bottom: 0%;
+    }
+    
+}
+
+
+.wormadam1{
+    position: absolute;
+    width: 37%;
+    top: 0%;
+    left: 10%;
+}
+.wormadam2{
+    position: absolute;
+    width: 37%;
+    top: 0%;
+    left: 25%;
+}
+.wormadam3{
+    position: absolute;
+    width: 37%;
+    top: 0%;
+    left: 40%;
+}
+
+
+
+
+
+
+
+
+.objetivos{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 10vw;
+    bottom: 20vw;
+    left: 2%;
+}
+
+.bananas, .alfaces, .tomates{
+    height: 33.3%;
+    display: flex;
+    flex-direction: row;
+}
+.bananas img, .alfaces img, .tomates img{
+    width: 70%;
+}
+
+.banana1, .banana2, .banana3, .banana4, .alface1, .alface2, .alface3, .alface4, .tomate1, .tomate2, .tomate3, .tomate4{
+    width: 22%;
+    border: solid 1px black;
+}
+.vidas{
+    height: 30.3%;
+    display: flex;
+    flex-direction: row;    
+}
+.vidas1, .vidas2, .vidas3{
+    width: 18%;
+}
+.vidas img{
+    width: 100%;
+}
+.energia{
+    height: 33.3%;
+    display: flex;
+    flex-direction: row;
+}
+
+.energia img{
+    width: 100%;
+}
+.energia1, .energia2, .energia3, .energia4, .energia5, .energia6{
+    width: 20%;
+    border: solid 1px black;
+}
+
+
+.swal2-popup{
+    font-size: 1vw;
+}
+
+
+
+.movimentoD {
+    animation:  inicial_movimentoDireita 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoDireita{
+    0%, 100% {
+        left: calc(var(--left-start-timburr) + 0.8%);
+    }
+}
+
+.movimentoE {
+    animation:  inicial_movimentoEsquerda 1s infinite linear;
+
+}
+
+
+@keyframes inicial_movimentoEsquerda{
+    0%, 100% {
+        left: calc(var(--left-start-timburr) - 0.8%);
+    }
+}

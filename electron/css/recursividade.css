@@ -1,0 +1,811 @@
+* {
+    user-select: none;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;    
+    background: linear-gradient( #7e74c7, #14142c) no-repeat;
+}
+
+
+.campo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.bloco1{
+    position: absolute;
+    width: 100%;
+    height: 3%;
+    bottom: 70%;
+    left: 0%;
+}
+
+.bloco2{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: 45%;
+    left: 0%;
+}
+
+.bloco3{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: 18%;
+    left: 0%;
+}
+
+.bloco4{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    bottom: 0%;
+    left: 0%;
+}
+
+.bloco5{
+    position: absolute;
+    width:  100%;
+    height: 3%;
+    top: -1%;
+    left: 0%;
+}
+
+.escada1{
+    position: absolute;
+    width: 20%;
+    height: 45%;
+    bottom: 0%;
+    left: 35%;
+}
+
+.escada2{
+    position: absolute;
+    width: 20%;
+    height: 45%;
+    bottom: 0%;
+    left: 65%;
+}
+
+
+.escada3{
+    position: absolute;
+    width: 20%;
+    height: 52%;
+    bottom: 13%;
+    left: 25%;
+}
+
+
+.escada4{
+    position: absolute;
+    width: 20%;
+    height: 52%;
+    bottom: 13%;
+    left: 48%;
+    
+}
+
+.escada5{
+    position: absolute;
+    width: 20%;
+    height: 52%;
+    bottom: 30%;
+    left: 35%;
+    
+    
+}
+
+.porta0{
+    position: absolute;
+    width: 20%;
+    bottom: 2%;
+    left: 0%;
+
+    z-index: 0;
+}
+
+
+.porta1{
+    position: absolute;
+    width: 30%;
+    bottom: 62%;
+    left: 5%;
+    z-index: -1;
+}
+
+
+.porta2{
+    position: absolute;
+    width: 30%;
+    bottom: 62%;
+    left: 15%;
+    z-index: -1;
+
+}
+
+.porta3{
+    position: absolute;
+    width: 30%;
+    bottom: 62%;
+    left: 55%;
+    z-index: -1;
+
+}
+.porta4{
+    position: absolute;
+    width: 30%;
+    bottom: 62%;
+    left: 70%;
+    z-index: -1;
+
+}
+
+
+.portaAberta1{
+    position: absolute;
+    width: 33%;
+    bottom: 47%;
+    left: 67%;
+    z-index: 1;
+
+}
+
+.portaAberta2{
+    position: absolute;
+    width: 33%;
+    bottom: 21%;
+    left: 0%;
+    z-index: 1;
+
+}
+
+.portaAberta3{
+    position: absolute;
+    width: 33%;
+    bottom: 72%;
+    left: 0%;
+    z-index: 1;
+
+}
+
+.personagem{
+    position: absolute;
+    width: 20%;
+    bottom: 1%;
+    left: 0%;
+    z-index: 1;
+}
+
+
+
+
+#pedra1{
+    animation: pedra_movimento 3s infinite linear;
+    width: 5%;   
+    position: absolute;
+    bottom: 30%;
+    left: 15%;
+ 
+   
+}
+
+#pedra2{
+    animation: pedra_movimento 7s infinite linear;
+
+    width: 5%;    
+    position: absolute;
+    bottom: 50%;
+    left: 48%;
+ 
+
+}
+
+#pedra3{
+    animation: pedra_movimento 4s infinite linear;
+
+    width: 5%;   
+    position: absolute;
+    bottom:20%;
+    left:70%;
+ 
+   
+}
+#pedra4{
+    animation: pedra_movimento 9s infinite linear;
+
+    width: 5%;     
+    position: absolute;
+    bottom: 45%;
+    left:90%;
+   
+}
+
+@keyframes pedra_movimento{
+    0%{
+        top: 0%;
+
+    }
+    50%{
+        top: 50%;
+    }
+    100%{
+        top: 100%;
+
+    }
+}
+
+
+.pergunta{
+    position: absolute;
+    left: 30%;
+    width: 30%;
+    height: 20%;
+}
+
+.pergunta{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size:2vw;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+.porta1 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 0%;
+    left: 16%;
+    color: white;
+}
+
+.porta2 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 0%;
+    left: 26%;
+    color: white;
+}
+
+
+.porta3 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 62%;
+    left: 64%;
+    color: white;
+}
+
+.porta4 h2{
+    position: absolute;
+    font-size:3vw;
+    bottom: 62%;
+    left: 78%;
+    color: white;
+}
+
+.espaco{
+    position: absolute;
+    width: 30%;
+    top: 2%;
+    left: 5%;
+    color: white;
+
+    animation: piscarTela 0.4s steps(1, end) infinite;
+}
+
+@keyframes piscarTela {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.cherrim{
+    position: absolute;
+    width: 25%;
+    bottom: 20%;
+    z-index: 2;
+    right: 0%;
+    animation: cherrim_movimento 10s infinite linear;
+
+}
+
+.Weezing{
+    position: absolute;
+    width: 35%;
+    bottom: 2%;
+    z-index: 2;
+    right: 0%;
+    animation: Weezing_movimento 22s infinite linear;
+    animation-play-state: paused;
+}
+
+
+.arbok{
+    position: absolute;
+    width: 32%;
+    bottom: 20%;
+    z-index: 2;
+    left: 0%;
+    animation: arbok_movimento 20s infinite linear;
+    animation-play-state: paused;
+}
+
+.grimer{
+    position: absolute;
+    width: 35%;
+    bottom: 45%;
+    z-index: 2;
+    left: 0%;
+    animation: grimer_movimento 50s infinite linear;    
+    animation-play-state: paused;
+}
+
+@keyframes grimer_movimento {
+    0% {
+        left: -5%;
+    }
+    50% {
+        left: 50%;
+
+    }
+    100% {
+        left: 105%;
+    }
+}
+
+@keyframes cherrim_movimento {
+
+    0% {
+        left: 75%;
+        bottom: 20%;
+
+    }
+
+    25% {
+        bottom:  20%;
+
+    }
+    30% {
+        left: 50%;
+        bottom: 55%;
+
+    }
+    35% {
+        left: 40%;
+        bottom: 25%;
+
+    }
+    45% {
+        left: 30%;
+        bottom: 20%;
+
+    }
+   
+
+    50% {
+        left: 20%;
+        bottom: 55%;
+
+    }
+    55% {
+        left: 10%;
+        bottom: 25%;
+
+    }
+    60% {
+        bottom: 20%;
+
+    }
+
+
+    75% {
+        bottom: 20%;
+    }
+
+    100% {
+        left: -10%;
+        bottom:  20%;
+    }
+}
+
+@keyframes Weezing_movimento {
+
+    0% {
+        right: 2%;
+        bottom: 2%;
+
+    }
+    10% {
+        right: 20%;
+        bottom: 5%;
+
+    }
+    20% {
+        right: 30%;
+        bottom: 25%;
+
+    }
+    30% {
+        right: 10%;
+        bottom: 35%;
+    }
+
+    40% {
+        right: 2%;
+        bottom: 22%;
+    }
+    50% {
+        right: 15%;
+        bottom: 12%;
+
+    }
+    60% {
+        right: 25%;
+        bottom: 2%;
+    }
+
+    70% {
+        right: 50%;
+        bottom: 2%;
+    }
+    80% {
+        right: 25%;
+        bottom: 2%;
+
+    }
+    90% {
+        right: 12%;
+        bottom: 2%;
+    }
+
+    100% {
+        right: 2%;
+        bottom:  2%;
+    }
+}
+
+
+@keyframes arbok_movimento {
+
+    0% {
+        left: 90%;
+    }
+    50% {
+        left: 30%;
+
+    }
+    100% {
+        left: -40%;
+    }
+}
+
+
+#teleport1{
+    position: absolute;
+    width: 5%;
+    bottom: 20%;
+    left: 10%;
+    z-index: 1;
+
+}
+#teleport2{
+    position: absolute;
+    width: 5%;
+    bottom: 0%;
+    left: 0%;
+    z-index: +1;
+}
+#teleport3{
+    position: absolute;
+    width: 5%;
+    bottom: 45%;
+    left: 85%;
+    z-index: 1;
+}
+
+#teleport4{
+    position: absolute;
+    width: 5%;
+    bottom: 5%;
+    left: 0%;
+    z-index: 1;
+}
+
+
+.andar{ /* tirar de todos*/
+    position: absolute;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size:1.2vw;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    left: 3%;
+    z-index: 1;
+}
+
+
+.ingrediente{
+    position: absolute;
+    width: 4%;
+    bottom: 22%;
+    left: 12%;
+    z-index: 1;
+    animation: efeito_alimentos 0.8s infinite;
+
+}
+
+@keyframes efeito_alimentos {
+    0% {
+        width: 4%;
+    }
+    50% {
+        width: 5%;
+    }
+    100% {
+        width: 4%;
+    }
+}
+.sinalizador{
+    position: absolute;
+    width: 70%;
+    left: -80%;
+    bottom: 25%;
+}
+
+.mesa{
+    position: absolute;
+    width: 13%;
+    left: 80%;
+    bottom: 69%;
+}
+
+
+.geladeira{
+    position: absolute;
+    width: 9%;
+    left: 63%;
+    bottom: 46%;
+}
+
+.fogao{
+    position: absolute;
+    width: 8%;
+    left: 68%;
+    bottom: 71%;
+}
+
+.pia{
+    position: absolute;
+    width: 12%;
+    left: 18%;
+    bottom: 46%;
+}
+
+
+
+.mesaFlor{
+    position: absolute;
+    width: 11%;
+    left: 15%;
+    bottom: 70%;
+}
+
+.mesaJantar{
+    position: absolute;
+    width: 10%;
+    left: 15%;
+    bottom: 20%;
+}
+
+.escorredor{
+    position: absolute;
+    width: 10%;
+    left: 75%;
+    bottom:  19%;
+}
+
+
+
+.lampada1{
+    position: absolute;
+    width: 3%;
+    left: 40%;
+    top: 55%;
+    transform: rotate(180deg);
+}
+
+
+
+.lampada3{
+    position: absolute;
+    width: 3%;
+    left: 75%;
+    top: 30%;
+    transform: rotate(180deg);
+}
+
+.lampada4{
+    position: absolute;
+    width: 3%;
+    left: 15%;
+    top: 1.8%;
+    transform: rotate(180deg);
+}
+
+
+.quadro {
+    background-color: #fff; /* cor do quadro */
+    width: 5vw;
+    height: 6vh;
+    position: absolute;
+    top: 2vw;
+    left: 75%;
+    border: 0.3vw solid #000; /* borda do quadro */
+  }
+  
+  .quadro img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+
+
+  .wall {
+    width: 110%;
+    background-color: #1b0303;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tile {
+    width: 7.5vw;
+    height: 8vw;
+    background-color: #1b104b;
+    border: 1px solid #ffffff83;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+.MenuFuncoes{
+    margin-top: 4vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.square {
+    width: 6vw;
+    height: 5vw;
+    margin: 0.8vw;
+    background-color: #4c76c5;
+    animation: hover 1.5s infinite;
+    border-radius: 1vw;
+
+}
+
+.square img {
+    margin-top: -1.5vw;
+}
+
+h6 {
+    text-align: center;
+}
+
+@keyframes hover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.receitaBolo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 55%;
+
+}
+.receitaBolo img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
+
+}
+
+
+#textoIngredientes{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 55%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
+}
+
+#textoIngredientes2{
+    position: absolute;
+    font-size: 1vw; 
+    top: 0%;
+    left: 30%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(183, 205, 252);
+}
+
+.receitaPizza{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 30%;
+
+}
+.receitaPizza img{
+    width: 2.5vw;
+    border: solid 2px beige;
+    height: 2.5vw;
+
+}
+
+.vidas{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    height: 2vw;
+    width: 150vw;
+    display: flex;
+    flex-direction: row;
+}
+.vidas1, .vidas2, .vidas3{
+    width: 2%;
+}
+.vidas img{
+    width: 100%;
+}
+
+.fornoR{
+    position: absolute;
+    width: 10%;
+    left: 43%;
+    bottom: 85%;
+    z-index: 1;
+}
+
+
+.swal2-popup{
+    font-size: 1vw;
+}
