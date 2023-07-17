@@ -259,9 +259,8 @@
                 document.querySelector(".vidas1").remove();
                 vidas = vidas - 1;
             } else if (vidas == 0) {
-                const caminhoDerrota= path.resolve('./resources/app/funcoes/cozinhar.html');
 
-                exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente!!", caminhoDerrota);
+                exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente!!", './cozinhar.html');
             }
         }
 
@@ -303,9 +302,8 @@
 
                 if (atualiza == 9) {
                     scorbunny.style.display = "none";
-                    const volta = path.resolve("./resources/app/funcoes/funcoes.html");
 
-                    exibeNotificação("success", "Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!", volta);
+                    exibeNotificação("success", "Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!", './funcoes.html');
                 }
                 if ((ingrediente.src).includes("2.png") || (ingrediente.src).includes("4.png") || (ingrediente.src).includes("6.png") || (ingrediente.src).includes("8.png")) {
                     document.getElementById("p" + (contadorPizza)).style.backgroundColor = "green";
@@ -474,10 +472,9 @@
 
         const voltar_menu = () => { //tecla de atalho para voltar ao menu de fases
             var tecla = event.keyCode;
-            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
             if (tecla == 27) {
-                window.location.href = caminhoArquivo;
+                window.location.href = '../telaInicial/city.html';
             }
         }
         document.addEventListener('keydown', voltar_menu);

@@ -568,9 +568,8 @@
         }
 
         window.alert("Você consertou a geladeira! Vamos a Proxima Tarefa!");
-        const caminhoDerrota= path.resolve('./resources/app/funcoes/funcoes.html');
 
-        window.location.href = caminhoDerrota;
+        window.location.href = './funcoes.html';
     }
 
 
@@ -578,10 +577,9 @@
     const voltar_menu = () => {  //tecla atalho para voltar ao menu de fases
         var tecla = event.keyCode;
 
-        const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
         if (tecla == 27) {
-            window.location.href = caminhoArquivo;
+            window.location.href = '../telaInicial/city.html';
         }
     }
     document.addEventListener('keydown', voltar_menu);
