@@ -1,0 +1,126 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    background: linear-gradient(90deg, rgb(50, 14, 65) 0%, rgb(71, 47, 139) 100%);
+  }
+  
+  body h2 {
+    color: white;
+  }
+  
+  main {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+
+  
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  button {
+    width: 100%;
+    text-align: start;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #9c00cc;
+    color: white;
+  }
+  
+  .finish {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .finish button {
+    text-align: center;
+  }
+  
+  
+  .question, .answers{
+    font-size: 1.5vw;
+  }
+  
+  .answers button{
+    font-size: 1.5vw;
+  }
+  
+
+  #uD, #uE, #uF, #qwilfish, #magneton, #mantine, #rotom{
+    position: absolute;
+    width: 7vw;
+  }
+  
+  #uD{
+    left: 1%;
+    bottom: 75%;
+  }
+  
+  #uE{
+    left: 70%;
+    bottom: 80%;
+  }
+  
+  #uF{
+    left: 82%;
+    bottom: 55%;
+  }
+  
+  #qwilfish{
+    left: 75%;
+    bottom: 5%;
+    width: 10vw;
+  }
+  
+  #magneton{
+    left: 5%;
+    bottom: 0%;
+    width: 18vw;
+  }
+  
+  #mantine{
+    left: 40%;
+    bottom: 2%;
+    width: 10vw;
+  }
+  
+  #rotom{
+    left: 35%;
+    bottom: 75%;
+    width: 12vw;
+  }
+  
+  .swal2-popup{
+    font-size: 1vw;
+}
