@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" id="diretorio" href="../css/funcoesHome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../telaInicial/dialogos.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <audio id="audio" src="../sounds/homeFuncoes.mp3" loop autoplay></audio>
+
+
+
+
+    <div id="telaTransparente" style="display: none;"></div>
+
+    <div id="introducao" style="display: none;">
+        <img class="professor" src="../img/home/Fran.png">
+        <div class="balao">
+            <div id="caixaDialogo">
+                <h4 id="dialogo"></h4>
+            </div>
+            <button id="botao" onclick="exibirTexto()">Avançar</button>
+            <button id="botao2" onclick="iniciar()">Iniciar</button>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="campo">
+
+
+
+        <div class="parede1">
+            <img class="parede1" src="../img/recursividade/chao.jpg">
+        </div>
+
+        <div class="chao1">
+            <img class="bloco1" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao2">
+            <img class="bloco2" src="../img/recursividade/chao.jpg">
+        </div>
+        <div class="chao3">
+            <img class="bloco3" src="../img/recursividade/chao.jpg">
+        </div>
+
+
+
+        <div>
+            <img class="geladeira" id="geladeira" src="../img/recursividade/geladeira.png">
+        </div>
+
+        <div>
+            <img class="fogao" id="fogao" src="../img/recursividade/fogao.png">
+        </div>
+
+        <div>
+            <img class="pia" id="pia" src="../img/recursividade/pia.png">
+        </div>
+
+        <div>
+            <img class="cadeiras" id="cadeiras" src="../img/recursividade/mesa2.png">
+        </div>
+
+
+        <div>
+            <img class="maquina" id="maquina" src="../img/recursividade/maquina.png">
+        </div>
+        <div>
+            <img class="tanque" id="tanque" src="../img/recursividade/tanque.png">
+        </div>
+        <div>
+            <img class="produtos" id="produtos" src="../img/recursividade/limpeza.png">
+        </div>
+        <div>
+            <img class="cesto" id="cesto" src="../img/recursividade/cesto.png">
+        </div>
+
+
+        <div>
+            <img class="arvore" id="arvore" src="../img/recursividade/arvore.png">
+        </div>
+        <div>
+            <img class="plantas" id="plantas" src="../img/recursividade/plantas.png">
+        </div>
+
+
+
+
+        <div class="porta0">
+            <img class="porta0" src="../img/recursividade/porta.png">
+        </div>
+
+
+        <div>
+            <img class="lampada1" id="lampada1" src="../img/recursividade/lampada.png">
+        </div>
+
+
+        <div>
+            <img class="lampada3" id="lampada3" src="../img/recursividade/lampada.png">
+        </div>
+
+        <div>
+            <img class="lampada4" id="lampada3" src="../img/recursividade/lampada.png">
+        </div>
+
+        <div>
+            <div class="quadro">
+                <img src="../img/recursividade/cerulean.webp">
+            </div>
+        </div>
+
+        <div class="wall" style="opacity: 0.1;"></div>
+
+        <div>
+            <img id="rotom" class="rotom" src="../img/funcoes/rotom.png"></img>
+        </div>
+
+        <div>
+            <a href="#" onclick="iniciarFase(3)"><img id="cortadorR" class="cortadorR"
+                    src="../img/funcoes/cortador.png"></a>
+        </div>
+
+        <div>
+            <a href="#" onclick="iniciarFase(1)"><img id="fornoR" class="fornoR" src="../img/funcoes/forno.png"></a>
+
+        </div>
+
+        <div>
+            <a href="#" onclick="iniciarFase(2)"><img id="lavadeiraR" class="lavadeiraR"
+                    src="../img/funcoes/lavadeira.png"></a>
+        </div>
+
+        <div>
+            <a href="#" onclick="iniciarFase(3)"><img id="ventiladorR" class="ventiladorR"
+                    src="../img/funcoes/ventilador.png"></a>
+        </div>
+
+
+        <div>
+            <a href="#" onclick="iniciarFase(0)"><img id="geladeiraR" class="geladeiraR"
+                    src="../img/funcoes/geladeira.png"></a>
+        </div>
+
+
+        <div class="textos">
+            <div class="texto1">
+                <h3>Arrumar a Cozinha</h3>
+            </div>
+
+            <div class="texto2">
+                <h3>Arrumar a Lavanderia</h3>
+            </div>
+
+            <div class="texto3">
+                <h3>Arrumar o Quintal</h3>
+            </div>
+
+
+            <div class="textoCortar">
+                <h3>Cortar a Grama / Colher as Frutas</h3>
+            </div>
+
+            <div class="textoLavar">
+                <h3>Lavar as Roupas</h3>
+            </div>
+
+            <div class="textoCozinhar">
+                <h3>Cozinhar</h3>
+            </div>
+
+            <div class="textoGelar">
+                <h3>Congelar os Alimentos</h3>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+        var wall = document.querySelector(".wall");
+
+        for (var i = 0; i < 100; i++) {
+            var tile = document.createElement("div");
+            tile.className = "tile";
+            wall.appendChild(tile);
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+<script>
+
+    var j = 50;
+    for (var i = 1; j <= 100; i++) {
+
+
+        var img = document.createElement('img');
+        img.src = '../img/recursividade/cortar/mato.png';
+        img.classList.add('mato');
+        img.id = 'mato' + i;
+        img.style.bottom = "-1%";
+        img.style.width = "4%";
+        img.style.left = j + "%";
+
+        var body = document.querySelector("body");
+        j = j + 3.8;
+
+        body.appendChild(img);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    var dialogo = "";
+    var aux = 0;
+    var verificaClick = "false";
+    var fase = 0;
+
+
+    function escreveDialogo() {
+
+        if (verificaClick == "false") {
+            if (aux < dialogo.length) {
+                document.getElementById("dialogo").textContent += dialogo.charAt(aux);
+                aux++;
+                setTimeout(escreveDialogo, 100);
+
+            }
+        }
+    }
+
+
+
+
+    function exibirTexto() {
+        verificaClick = "true";
+        //document.getElementById("dialogo").textContent = "";
+        document.getElementById("dialogo").innerHTML = textosFuncoes[fase];
+    }
+
+
+    function iniciar() {
+        document.getElementById("introducao").style.display = "none";
+        document.querySelector(".mapa").style.opacity = "1";
+        document.getElementById("telaTransparente").style.display = "none";
+    }
+
+
+
+
+    function iniciarFase(val) {
+
+
+        //window.location.href = "../funcoes/funcoesCortador.html";
+
+
+        fase = val;
+        aux = 0;
+        verificaClick = "false";
+
+        dialogo = textosFuncoes[val];
+        console.log(textosFuncoes[val])
+
+        document.getElementById("dialogo").textContent = "";
+
+        document.getElementById("introducao").style.display = "block";
+        document.getElementById("telaTransparente").style.display = "block";
+        document.querySelector(".campo").style.opacity = "0.2";
+
+        criarSom(val);
+        escreveDialogo();
+
+
+        document.getElementById("botao2").addEventListener("click", function () {
+            if (val == 0) {
+                window.location.href = "../funcoes/funcoesGelo.html";
+            } else if (val == 1) {
+                window.location.href = "../funcoes/cozinhar.html";
+            }
+            else if (val == 2) {
+                window.location.href = "../funcoes/funcoesLavadeira.html";
+            }
+            else if (val == 3) {
+                window.location.href = "../funcoes/funcoesCortador.html";
+            }
+
+
+        });
+
+    }
+
+
+
+
+    const criarSom = (valor) => {
+
+        var som = new Audio();
+        som.src = '../sounds/vozes/funcoes' + valor + '.mp3';
+        document.body.appendChild(som);
+
+        document.getElementById('audio').volume = 0.2;
+        som.play();
+    }
+
+
+    const voltar_menu = () => {
+            var tecla = event.keyCode;
+
+            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
+            if (tecla == 27) {
+                window.location.href = caminhoArquivo;
+            }
+        }
+        document.addEventListener('keydown', voltar_menu);
+
+
+
+</script>

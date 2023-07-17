@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../sweetalert/sweetalert.js"></script>
+    <script src="../telaInicial/dialogos.js"></script>
+    <link rel="stylesheet" href="../css/funcoes5.css">
+
+
+    <title>Document</title>
+
+
+</head>
+
+<audio id="audio" src="../sounds/gelar.mp3" loop autoplay></audio>
+
+<body>
+    <div class="tela">
+
+        <div class="titulo">
+            <h5>Ao Terminar a Configuração da Geladeira, Clique na Maçaneta Para Tentar Liga-la!</h5>
+        </div>
+
+
+
+        <div class="geladeira">
+            <div class="porta">
+                <div class="maçaneta" onclick="verificaRespostas()" style="cursor: pointer;"></div>
+                <div class="prateleira" style="top: 20%;">
+                    <h5>BEBIDAS</h5>
+                </div>
+                <div class="prateleira" style="top: 40%;">
+                    <h5>CARNES</h5>
+                </div>
+                <div class="prateleira" style="top: 60%;">
+                    <h5>FRUTAS</h5>
+                </div>
+                <div class="prateleira" id="semEtiqueta" style="top: 80%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="numero_serie">
+            <h5 id="numero_serie"></h5>
+        </div>
+
+
+        <div class="termometro1">
+            <div class="liquido1"></div>
+        </div>
+        <div class="controlador1">
+            <div class="controleEsq1" onclick="controlaTemp('esq1')" style="cursor:pointer">&lt;</div>
+            <div class="controleMeio1">10</div>
+            <div class="controleDir1" onclick="controlaTemp('dir1')" style="cursor:pointer">&gt;</div>
+        </div>
+
+        <div class="termometro2">
+            <div class="liquido2"></div>
+        </div>
+
+        <div class="controlador2">
+            <div class="controleEsq2" onclick="controlaTemp('esq2')" style="cursor:pointer">&lt;</div>
+            <div class="controleMeio2">10</div>
+            <div class="controleDir2" onclick="controlaTemp('dir2')" style="cursor:pointer">&gt;</div>
+        </div>
+
+        <div class="termometro3">
+            <div class="liquido3"></div>
+        </div>
+
+        <div class="controlador3">
+            <div class="controleEsq3" onclick="controlaTemp('esq3')" style="cursor:pointer">&lt;</div>
+            <div class="controleMeio3">10</div>
+            <div class="controleDir3" onclick="controlaTemp('dir3')" style="cursor:pointer">&gt;</div>
+        </div>
+
+        <div class="termometro4">
+            <div class="liquido4"></div>
+        </div>
+
+        <div class="controlador4">
+            <div class="controleEsq4" onclick="controlaTemp('esq4')" style="cursor:pointer">&lt;</div>
+            <div class="controleMeio4">10</div>
+            <div class="controleDir4" onclick="controlaTemp('dir4')" style="cursor:pointer">&gt;</div>
+        </div>
+
+
+
+
+
+        <div class="compartimento1" ondragover="areaSoltar(event)" ondrop="soltarElemento(event, '1')">
+            <div class="c11"></div>
+            <div class="c12"></div>
+            <div class="c13"></div>
+
+        </div>
+        <div class="compartimento2" ondragover="areaSoltar(event)" ondrop="soltarElemento(event, '2')">
+            <div class="c21"></div>
+            <div class="c22"></div>
+            <div class="c23"></div>
+        </div>
+        <div class="compartimento3" ondragover="areaSoltar(event)" ondrop="soltarElemento(event, '3')">
+            <div class="c31"></div>
+            <div class="c32"></div>
+            <div class="c33"></div>
+        </div>
+        <div class="compartimento4" ondragover="areaSoltar(event)" ondrop="soltarElemento(event, '4')">
+            <div class="c41"></div>
+            <div class="c42"></div>
+            <div class="c43"></div>
+        </div>
+
+
+
+
+
+
+        <div class="disjuntorPadrao">
+            <div class="disjuntor1" id="disjuntor1" onclick="toggleDisjuntor(this)">
+                <div class="alavanca1"></div>
+            </div>
+
+            <div class="disjuntor2" id="disjuntor2" onclick="toggleDisjuntor(this)">
+                <div class="alavanca2"></div>
+            </div>
+        </div>
+
+
+        <div class="lampadaImagem">
+            <img src="../img/recursividade/gelar/lampada.png" onclick="toggleLight()" style="cursor: pointer;">
+            <div class="lampada"></div></img>
+
+        </div>
+
+
+        <div class="manual">
+            <h5>Manual</h5>
+            <img src="../img/recursividade/gelar/manual.png" onclick="abrirManual()" style="cursor: pointer;">
+        </div>
+
+        <div class="moldeManual" style="display: none;">
+            <h3>Manual de Instruções</h3>
+            <h4>Número de Série:</h4>
+            <h6> - Se o número de série possuir números, coloque uma bebida na prateleira sem etiqueta. <br>
+                - Se o número de série possuir letras, coloque uma fruta na prateleira sem etiqueta.<br>
+                - Se o número de série, possuir --- , coloque uma carne na prateleira sem etiqueta.
+            </h6>
+            <h4>Cor da Geladeira::</h4>
+            <h6> - Se a cor da geladeira for verde, deixe o primeiro disjuntor voltado para a esquerda e o segundo para
+                direita. <br>
+                - Se a cor da geladeira for vermelha, deixe o primeiro disjuntor voltado para a direita e o segundo para
+                a esquerda. <br>
+                - Se a cor da geladeira for amarela, deixe os dois disjuntores voltados para a direita.
+
+            </h6>
+            <h4>Termômetros:</h4>
+            <h6> - Se obtiver dois termômetros de uma mesma cor, deixe todos os termômetros em 30. <br>
+                - Se obtiver três termômetros de uma mesma cor, deixe pelo menos um termômetro em 40. <br>
+                - Se obtiver quatro termômetros da mesma cor, todos os termômetros devem ficar em posições diferentes.
+
+            </h6>
+            <h4>Luz da Geladeira:</h4>
+            <h6> - Se a luz estiver desligada: Ligue-a até que acenda na cor azul.<br>
+                - Se a luz estiver ligada, desligue-a.
+
+
+            </h6>
+        </div>
+
+
+        <div class="caixaItens" id="caixaItens" draggable="true">
+            <h6>Itens para Guardar</h6>
+
+            <img id="bebida1" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/bebida1.png"></img>
+            <img id="carne1" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/carne1.png"></img>
+            <img id="fruta1" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/fruta1.png"></img>
+            <img id="bebida2" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/bebida2.png"></img>
+            <img id="carne2" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/carne2.png"></img>
+
+        </div>
+
+        <div class="caixaItens2" id="caixaItens2" draggable="true">
+            <h6>Itens para Guardar</h6>
+
+            <img id="fruta2" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/fruta2.png"></img>
+            <img id="bebida3" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/bebida3.png"></img>
+            <img id="carne3" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/carne3.png"></img>
+            <img id="fruta3" class="item" draggable="true" ondragstart="itemSelecionado(event)" style="cursor: pointer"
+                src="../img/recursividade/gelar/fruta3.png"></img>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<script>
+
+   //realiza operacoes sobre o estado da lampada e dos dijuntores
+    var estadoLampada = "";
+    var disjuntor1 = "";
+    var disjuntor2 = "";
+
+    function toggleDisjuntor(disjuntor) {
+        disjuntor.classList.toggle('ligado');
+
+        if (disjuntor1 == "" && disjuntor.id == "disjuntor1") {
+            disjuntor1 = "ligado";
+        } else if (disjuntor1 == "ligado" && disjuntor.id == "disjuntor1") {
+            disjuntor1 = "";
+        }
+
+        if (disjuntor2 == "" && disjuntor.id == "disjuntor2") {
+            disjuntor2 = "ligado";
+        } else if (disjuntor2 == "ligado" && disjuntor.id == "disjuntor2") {
+            disjuntor2 = "";
+        }
+    }
+
+    //definir a cor da lampada de forma aleatoria
+    function toggleLight() {
+
+        const cor = ["blue", "green", "yellow"];
+        const corEscolhida = Math.floor(Math.random() * cor.length);
+
+        var lampada = document.querySelector(".lampada");
+
+        if (lampada.style.backgroundColor == "red" || lampada.style.backgroundColor == "green" || lampada.style.backgroundColor == "yellow") {
+            lampada.style.backgroundColor = "";
+        } else {
+            lampada.style.backgroundColor = cor[corEscolhida];
+        }
+    }
+
+    //atribui 0 ao valor dos termometros
+    var termVerde = 0;
+    var termAmarelo = 0;
+    var termVermelho = 0;
+
+    var k = 1;
+
+    var matriz = [ //matriz para definir os compartimentos da geladeira
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+    ];
+
+    const itemSelecionado = (event) => {  //verifica se um item arrastavel foi selecionado
+        event.dataTransfer.setData("img", event.target.id);
+        classeImagem = event.target;
+    }
+
+    const areaSoltar = (event) => { //verifica se o item vai ser solto em um local valido
+        event.preventDefault();
+    }
+
+    const soltarElemento = (event, valor) => { //solta o elemento no local autorizado e realiza operacoes
+        event.preventDefault();
+
+        var imagem = event.dataTransfer.getData("img");
+        var slot = "c" + valor + k;
+
+        if (matriz[valor - 1][k - 1] == 1) {
+            moverAlimento(imagem, slot, valor, k, classeImagem);
+            matriz[valor - 1][k - 1] = 0;
+        }
+
+        if (k < 3) {
+            k = k + 1;
+        } else {
+            k = 1;
+        }
+    }
+
+    const moverAlimento = (imagem, slot, valor, k, classeImagem) => {  //funcao para mover os alimentos até a prateleira designada
+
+        var img = document.createElement('img');
+        img.src = "../img/recursividade/gelar/" + imagem + ".png";
+        var div = document.querySelector("." + slot);
+        img.classList.add("c" + valor + k);
+        img.id = imagem;
+        img.style.width = "6vw";
+        img.style.height = "6vw";
+        img.setAttribute('ondragstart', 'itemSelecionado(event)');
+        div.appendChild(img);
+        img.draggable = "false";
+        img.removeEventListener('dragstart', moverAlimento);
+        removerPosAnterior(imagem, classeImagem);
+    }
+
+    const removerPosAnterior = (imagem, classeImagem) => { //funcao para remover alimentos de caixa de itens ao arrasta-lo
+
+        var divImagens = "";
+
+        if (imagem != "fruta2" && imagem != "carne3" && imagem != "bebida3" && imagem != "fruta3") {
+            divImagens = document.getElementById("caixaItens");
+        } else {
+            divImagens = document.getElementById("caixaItens2");
+        }
+
+        for (var i = 0; i < divImagens.children.length; i++) {
+            var imagem = divImagens.children[i];
+            if (imagem == classeImagem) {
+                imagem.remove();
+            }
+        }
+    }
+
+    const abrirManual = () => {  //funcao para abrir e fechar o manual de intrucoes
+
+        if (document.querySelector(".moldeManual").style.display == "block") {
+            document.querySelector(".moldeManual").style.display = "none";
+        } else {
+            document.querySelector(".moldeManual").style.display = "block"
+        }
+    }
+
+    var lampada = document.querySelector(".lampada");
+
+    if (Math.floor(Math.random() * 2) == 0) { // estrutura para definir o estado da lampada
+        lampada.style.backgroundColor = "yellow"
+        estadoLampada = "ligado"
+    } else {
+        lampada.style.backgroundColor = ""
+        estadoLampada = "desligado"
+    }
+
+    //variaveis e estrutura para definir a cor e temperatura dos termometros, numero de serie e cor da geladeira
+    const cor = ["green", "orangered", "gold"];
+    const corEscolhida = Math.floor(Math.random() * cor.length);
+    document.querySelector('.geladeira').style.borderColor = cor[corEscolhida];
+    const numero_serie = ["#123", "#ABC", "#---"];
+    const numero_serieEscolhido = Math.floor(Math.random() * numero_serie.length);
+    document.querySelector('#numero_serie').innerHTML = numero_serie[numero_serieEscolhido];
+
+    var vetorCor = [];
+
+    for (var i = 1; i <= 4; i++) {
+        const corTermometro = ["green", "orangered", "gold"];
+        const corEscolhidoTerm = Math.floor(Math.random() * corTermometro.length);
+        vetorCor[i] = corEscolhidoTerm;
+        document.querySelector('.termometro' + i).style.borderColor = corTermometro[corEscolhidoTerm];
+    }
+
+    function setTemperature(temp, num) {
+        const liquido = document.querySelector('.liquido' + num);
+        liquido.style.height = ((temp / 40) * 100) + '%';
+    }
+
+    const controlaTemp = (valor) => {
+
+        var numero;
+        if (valor.includes("1")) {
+            numero = 1;
+        } else if (valor.includes("2")) {
+            numero = 2;
+        } else if (valor.includes("3")) {
+            numero = 3;
+        } else {
+            numero = 4;
+        }
+
+        var meio = document.querySelector(".controleMeio" + numero).innerHTML;
+
+        if (valor.includes("esq") && meio != 0) {
+            document.querySelector(".controleMeio" + numero).innerHTML = parseInt(meio) - 10;
+            setTemperature(parseInt(meio / 2) - 5, numero);
+        } else if (valor.includes("dir") && meio < 50) {
+            document.querySelector(".controleMeio" + numero).innerHTML = parseInt(meio) + 10;
+            setTemperature(parseInt(meio / 2) + 10, numero);
+        }
+    }
+
+    const verificaRespostas = () => { //funcao para verificar as respostas enviadas pelo jogador 
+
+        // verificacao de Termometros 
+
+        for (var i = 1; i <= 4; i++) {
+
+            if (document.querySelector(".termometro" + i).style.borderColor == "green") {
+                termVerde = termVerde + 1;
+            }
+            if (document.querySelector(".termometro" + i).style.borderColor == "gold") {
+                termAmarelo = termAmarelo + 1;
+            }
+            if (document.querySelector(".termometro" + i).style.borderColor == "orangered") {
+                termVermelho = termVermelho + 1;
+
+            }
+        }
+
+        if (termAmarelo == 2 || termVerde == 2 || termVermelho == 2) {
+
+            for (var i = 1; i <= 4; i++) {
+                if (document.querySelector(".controleMeio" + i).innerHTML == 30) {
+
+                } else {
+                    window.alert("Verifique os Termometros!");
+                    termVerde = 0;
+                    termVermelho = 0;
+                    termAmarelo = 0;
+                    return;
+                }
+            }
+        }
+
+        if (termAmarelo == 3 || termVerde == 3 || termVermelho == 3) {
+            for (var i = 1; i <= 4; i++) {
+                if (document.querySelector(".controleMeio" + i).innerHTML == 40) {
+                    break;
+                }
+
+                if (i == 4) {
+                    window.alert("Verifique os Termometros!");
+                    termVerde = 0;
+                    termVermelho = 0;
+                    termAmarelo = 0;
+                    return;
+                }
+            }
+        }
+
+        control1 = document.querySelector(".controleMeio1").innerHTML;
+        control2 = document.querySelector(".controleMeio2").innerHTML;
+        control3 = document.querySelector(".controleMeio3").innerHTML;
+        control4 = document.querySelector(".controleMeio4").innerHTML;
+
+        if (termAmarelo == 4 || termVerde == 4 || termVermelho == 4) {
+
+            if (!((control1 != control2 && control1 != control3 && control1 != control4) && (control2 != control3 && control2 != control4) && (control3 != control4))) {
+                window.alert("Verifique os Termometros!");
+            }
+        }
+
+        termVerde = 0;
+        termVermelho = 0;
+        termAmarelo = 0;
+
+        // verificacao da cor da geladeira
+
+        if (document.querySelector('.geladeira').style.borderColor == "green") {
+
+            if (disjuntor1 == "" && disjuntor2 == "ligado") {
+
+            } else {
+                window.alert("Os dijuntores podem estar Incorretos!");
+                return;
+            }
+
+        }
+
+        if (document.querySelector('.geladeira').style.borderColor == "orangered") {
+
+            if (disjuntor1 == "ligado" && disjuntor2 == "") {
+
+            } else {
+                window.alert("Os dijuntores podem estar Incorretos!");
+                return;
+            }
+
+        }
+
+        if (document.querySelector('.geladeira').style.borderColor == "gold") {
+
+            if (disjuntor1 == "ligado" && disjuntor2 == "ligado") {
+
+            } else {
+                window.alert("Os dijuntores podem estar Incorretos!");
+                return;
+            }
+
+        }
+
+        // verificacao da luz
+
+        luz = document.querySelector(".lampada").style.backgroundColor;
+
+        if (estadoLampada == "ligado") {
+            if (luz == "") {
+            } else {
+                window.alert("Verifique a Luz!");
+                return;
+            }
+        } else {
+            if (luz == "blue") {
+            }
+            else if (luz == "") {
+                window.alert("Leia o Manual Novamente, na Seção Luz!");
+                return;
+            } else {
+                window.alert("Você ligou a Luz, mas sera que corretamente?");
+                return;
+            }
+        }
+
+
+        // verificacao do numero de serie 
+
+        if (document.querySelector("#numero_serie").textContent == "#123") {
+
+            var semEtiqueta = document.querySelector(".compartimento4");
+
+            var c1 = semEtiqueta.querySelector(".c41");
+            var c2 = document.querySelector(".c42");
+            var c3 = document.querySelector(".c43");
+
+            console.log(c1.querySelector("img"));
+
+            if (c1.querySelector("img") && c1.querySelector("img").id.includes("bebida") || c2.querySelector("img") && c2.querySelector("img").id.includes("bebida") || c3.querySelector("img") && c3.querySelector("img").id.includes("bebida")) {
+
+            } else {
+                window.alert("Verifique o número de série!");
+                return;
+            }
+
+        } else if (document.querySelector("#numero_serie").textContent == "#ABC") {
+
+            var semEtiqueta = document.querySelector(".compartimento4");
+
+            var c1 = semEtiqueta.querySelector(".c41");
+            var c2 = document.querySelector(".c42");
+            var c3 = document.querySelector(".c43");
+
+            if (c1.querySelector("img") && c1.querySelector("img").id.includes("fruta") || c2.querySelector("img") && c2.querySelector("img").id.includes("fruta") || c3.querySelector("img") && c3.querySelector("img").id.includes("fruta")) {
+
+            } else {
+                window.alert("Verifique o número de série!");
+                return;
+            }
+
+        } else {
+            var semEtiqueta = document.querySelector(".compartimento4");
+
+            var c1 = semEtiqueta.querySelector(".c41");
+            var c2 = document.querySelector(".c42");
+            var c3 = document.querySelector(".c43");
+
+            if (c1.querySelector("img") && c1.querySelector("img").id.includes("carne") || c2.querySelector("img") && c2.querySelector("img").id.includes("carne") || c3.querySelector("img") && c3.querySelector("img").id.includes("carne")) {
+
+            } else {
+                window.alert("Verifique o número de série!");
+                return;
+            }
+        }
+
+        window.alert("Você consertou a geladeira! Vamos a Proxima Tarefa!");
+        const caminhoDerrota= path.resolve('./resources/app/funcoes/funcoes.html');
+
+        window.location.href = caminhoDerrota;
+    }
+
+
+
+    const voltar_menu = () => {  //tecla atalho para voltar ao menu de fases
+        var tecla = event.keyCode;
+
+        const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
+
+        if (tecla == 27) {
+            window.location.href = caminhoArquivo;
+        }
+    }
+    document.addEventListener('keydown', voltar_menu);
+
+</script>
