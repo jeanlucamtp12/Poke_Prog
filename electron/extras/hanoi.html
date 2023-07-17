@@ -334,13 +334,10 @@
             }
             if(ultimoE2[0] == 1){
                 if(contador > 31){
-                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
 
-                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", caminhoSucesso);
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=7');
                 }else{
-                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
-
-                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", caminhoSucesso);
+                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", '../Quizes/quizEntreFases.html?fase=7');
                 }
             }
 
@@ -362,13 +359,11 @@
             }
             if(ultimoE3[0] == 1){
                 if(contador > 31){
-                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
 
-                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", caminhoSucesso);
+                    exibeNotificação("success", "Conseguiu! Mas precisou de "+Math.abs((contador - 31))+" movimentos além do necessario!! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=7');
                 }else{
-                    const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=7");
 
-                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", caminhoSucesso);
+                    exibeNotificação("success", "Conseguiu! Você completou a fase! Agora vamos responder algumas perguntas!", '../Quizes/quizEntreFases.html?fase=7');
                 }
             }
             document.getElementById("contador").innerHTML = "Movimentos<br> Minimos: 31 | Utilizados: "+(contador+1);
@@ -380,10 +375,9 @@
         const voltar_menu = () => { //tecla de atalho para voltar ao menu de fases
             var tecla = event.keyCode;
 
-            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
             if (tecla == 27) {
-                window.location.href = caminhoArquivo;
+                window.location.href = '../telaInicial/city.html';
             }
         }
         document.addEventListener('keydown', voltar_menu);

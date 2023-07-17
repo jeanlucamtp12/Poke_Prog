@@ -351,9 +351,8 @@
                     exibeTela(cont);
 
                     if (pokemon == lampent) {
-                        const caminhoSucesso = path.resolve("./resources/app/Quizes/quizEntreFases.html?fase=6");
 
-                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", caminhoSucesso);
+                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=6');
                     }
                     return;
                 } else {
@@ -432,10 +431,9 @@
         const voltar_menu = () => { //verifica pressionar de tecla de atalho para voltar ao menu de fases
             var tecla = event.keyCode;
 
-            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
             if (tecla == 27) {
-                window.location.href = caminhoArquivo;
+                window.location.href = '../telaInicial/city.html';
             }
         }
         document.addEventListener('keydown', voltar_menu);

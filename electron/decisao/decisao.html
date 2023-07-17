@@ -241,9 +241,8 @@
                 setInterval(function () {
                     if(popUp == "false"){
                         document.querySelector(".pokeAdversario4").style.display = "none";
-                        const caminhoSucesso = path.resolve('./resources/app/Quizes/quizEntreFases.html?fase=2');
 
-                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", caminhoSucesso);
+                        exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=2');
                         popUp = "true";
                     }
                 }, 2000);
@@ -251,9 +250,8 @@
             } else if (adversario == 5) { // se o adversario conseguir desferir 5 ataques ao jogador, indica que o jogador perdeu
                 setInterval(function () {
                     if(popUp == "false"){
-                        const caminhoDerrota= path.resolve('./resources/app/decisao/decisao.html');
 
-                        exibeNotificação("error", "Você perdeu! Clique para tentar novamente!", caminhoDerrota);
+                        exibeNotificação("error", "Você perdeu! Clique para tentar novamente!", './decisao.html');
                         popUp = "true";
                     }
                 }, 2000);
@@ -333,10 +331,9 @@
     const voltar_menu = () => { //funcao para verificar se o usuario clicou na tecla 'Esc' para retornar ao menu de fases
         var tecla = event.keyCode;
 
-        const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
         if (tecla == 27) {
-            window.location.href = caminhoArquivo;
+            window.location.href = '../telaInicial/city.html';
         }
     }
     document.addEventListener('keydown', voltar_menu);
