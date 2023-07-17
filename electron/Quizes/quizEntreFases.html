@@ -107,9 +107,8 @@
     }
 
     function finish() {
-        const volta = path.resolve("./resources/app/telaInicial/city.html");
 
-        exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", volta);
+        exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", '../telaInicial/city.html');
     }
 
     function loadQuestion() {
@@ -118,9 +117,8 @@
 
           
             if(cont == 3){
-                const volta = path.resolve("./resources/app/telaInicial/city.html");
 
-                exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", volta);
+                exibeNotificação("success", "Você respondeu as perguntas! Clique para voltar ao Mapa da Cidade", '../telaInicial/city.html');
                 return;
             }
             cont = cont + 1;
@@ -157,10 +155,10 @@
     const voltar_menu = () => {
             var tecla = event.keyCode;
 
-            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
+            
             if (tecla == 27) {
-                window.location.href = caminhoArquivo;
+                window.location.href = '../telaInicial/city.html';
             }
         }
     document.addEventListener('keydown', voltar_menu);

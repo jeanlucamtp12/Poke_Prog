@@ -80,9 +80,8 @@
             conteudoF.style.display = "flex";
 
             document.querySelector("#finalizar").addEventListener('click', function () {
-                const volta = path.resolve("./resources/app/telaInicial/city.html?id=1");
 
-                window.location.href =  volta;
+                window.location.href =  '../telaInicial/city.html?id=1';
             });
         }
         
@@ -112,10 +111,9 @@
     const voltar_menu = () => {  //tecla de atalho para retornar ao menu de fases
             var tecla = event.keyCode;
 
-            const caminhoArquivo = path.resolve('./resources/app/telaInicial/city.html');
 
             if (tecla == 27) {
-                window.location.href = caminhoArquivo;
+                window.location.href = '../telaInicial/city.html';
             }
         }
     document.addEventListener('keydown', voltar_menu);

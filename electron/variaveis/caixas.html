@@ -243,9 +243,8 @@
 
     const verificaTipo = (valor) => {  //verifica se as respostas informadas estão certas
         if (idPergunta == 6) {   //verifica se o usuario chegou ao final da fase
-            const caminhoSucesso = pathVar.resolve('./resources/app/Quizes/quizEntreFases.html?fase=1');
 
-            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", caminhoSucesso);
+            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=1');
             return;
         }
 
@@ -356,10 +355,9 @@
     const voltar_menu = () => {
         var tecla = event.keyCode;
 
-        const caminhoArquivo = pathVar.resolve('./resources/app/telaInicial/city.html');
 
         if (tecla == 27) {
-            window.location.href = caminhoArquivo;
+            window.location.href = '../telaInicial/city.html';
         }
     }
     document.addEventListener('keydown', voltar_menu);
