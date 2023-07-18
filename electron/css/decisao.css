@@ -47,8 +47,8 @@ body {
 .adversario2 {
     position: absolute;
     bottom: 29vw;
-    left: 80vw;
-    width: 17vw;
+    left: 85vw;
+    width: 14vw;
 }
 
 .poke {
@@ -277,18 +277,6 @@ button:hover{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .pokeAdversario2, .pokeAdversario3{
     position: absolute;
     bottom: 21vw;
@@ -296,10 +284,10 @@ button:hover{
     z-index: 1;
 }
 .pokeAdversario2{
-    left: 45vw;
+    left: 55vw;
 }
 .pokeAdversario3{
-    left: 60vw;
+    left: 70vw;
 }
 
 
@@ -339,10 +327,11 @@ button:hover{
     font-weight: bold;
 }
 .barraVidaAdversario2 {
-    left: 45vw;
+    left: 58vw;
+    bottom: 35vw;
 }
 .barraVidaAdversario3 {
-    left: 65vw;
+    left: 73vw;
     bottom: 33vw;
 }
 
@@ -363,10 +352,10 @@ button:hover{
 
 .base2{
     bottom: 16vw;
-    left: 60vw;
+    left: 70vw;
 }
 .base3{
-    left: 45vw;
+    left: 56vw;
 }
 
 
