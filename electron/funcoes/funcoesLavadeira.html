@@ -17,32 +17,17 @@
 
     <div class="campo">
 
-        <div>
-            <img id="lavadeiraR" class="lavadeiraR" src="../img/funcoes/lavadeira.png">
-        </div>
-
-
-
         <div class="dewgong">
-            <img class="dewgong" id="dewgong" style="display: block" src="../img/recursividade/dewgong.gif">
+            <img class="dewgong" id="dewgong" style="display: block" src="../img/recursividade/m7.gif">
         </div>
 
         <div class="pidgeot">
-            <img class="pidgeot" id="pidgeot" style="display: none" src="../img/recursividade/pidgeot.gif">
+            <img class="pidgeot" id="pidgeot" style="display: none" src="../img/recursividade/m8.gif">
         </div>
 
 
         <div class="hoppip">
-            <img class="hoppip" id="hoppip" style="display: none;" src="../img/recursividade/hoppip.png">
-        </div>
-
-        <div class="jumpluff">
-            <img class="jumpluff" id="jumpluff" style="display: none;" src="../img/recursividade/jumpluff.png">
-        </div>
-
-
-        <div class="skiploom">
-            <img class="skiploom" id="skiploom" style="display: none;" src="../img/recursividade/skiploom.png">
+            <img class="hoppip" id="hoppip" style="display: none;" src="../img/recursividade/m6.gif">
         </div>
 
 
@@ -66,15 +51,15 @@
 
 
         <div class="portaAberta1">
-            <img class="portaAberta1" id="portaAberta1" src="../img/recursividade/orbeetle-gigantamax_esquerda.gif">
+            <img class="portaAberta1" id="portaAberta1" src="../img/recursividade/alien.gif">
         </div>
 
         <div class="portaAberta2">
-            <img class="portaAberta2" id="portaAberta2" src="../img/recursividade/orbeetle-gigantamax_direita.gif">
+            <img class="portaAberta2" id="portaAberta2" src="../img/recursividade/alien2.gif">
         </div>
 
         <div class="portaAberta3">
-            <img class="portaAberta3" id="portaAberta3" src="../img/recursividade/orbeetle-gigantamax_direita.gif">
+            <img class="portaAberta3" id="portaAberta3" src="../img/recursividade/alien2.gif">
         </div>
 
         <div class="chao1">
@@ -118,7 +103,7 @@
 
         <div class="personagem">
             <img class="personagem" id="personagem" ondragstart="personagemIniciado(event)"
-                src="../img/recursividade/scorbunny.gif">
+                src="../img/recursividade/cortar/tartaruga.gif">
         </div>
 
 
@@ -297,7 +282,7 @@
 
             var scorbunny = document.getElementById("personagem");
             scorbunny.getBoundingClientRect();
-            var hoppipL = document.querySelectorAll("#skiploom, #hoppip, #jumpluff");
+            var hoppipL = document.querySelectorAll("#hoppip");
 
             //lacos for para detectar colisao com inimigos e roupas 
             for (var i = 0; i < hoppipL.length; i++) {
@@ -351,12 +336,8 @@
                 }
 
                 if (atualiza == 6) {
-                    document.getElementById("skiploom").style.display = "block";
-                    document.querySelector(".skiploom").style.animationPlayState = "running";
                     document.getElementById("hoppip").style.display = "block";
                     document.querySelector(".hoppip").style.animationPlayState = "running";
-                    document.getElementById("jumpluff").style.display = "block";
-                    document.querySelector(".jumpluff").style.animationPlayState = "running";
                 }
             }
         }, 5);
@@ -409,7 +390,7 @@
             var remove_string = value.replace('px', '');
             var valorNum = parseInt(remove_string);
             var numPx = valorNum + 10;
-            var soma = parseInt(value) + 10;
+            var soma = parseInt(value) + 20;
             personagem.style.left = soma + "px";
 
         }
@@ -423,7 +404,7 @@
                 var remove_string = value.replace('px', '');
                 var valorNum = parseInt(remove_string);
                 var numPx = valorNum + 10;
-                var soma = parseInt(value) - 10;
+                var soma = parseInt(value) - 20;
                 personagem.style.left = soma + "px";
             }
         }
@@ -434,7 +415,7 @@
             var remove_string = value.replace('px', '');
             var valorNum = parseInt(remove_string);
             var numPx = valorNum + 10;
-            var soma = parseInt(value) + 10;
+            var soma = parseInt(value) + 20;
             personagem.style.bottom = soma + "px";
         }
 
