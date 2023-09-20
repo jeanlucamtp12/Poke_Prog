@@ -34,16 +34,15 @@
 
         <img class="arvore" src="../img/repeticao/arvore.png" style.right="-220px">
 
-        <img class="ajudante" id="ajudante" src="../img/repeticao/timburr.png">
 
         <div>
 
-            <img class="pikachu" id="pikachu" src="../img/repeticao/pikachu.gif">
-            <img style="display: none;" class="viga" id="viga" src="../img/repeticao/raio.gif">
+            <img class="pikachu" id="pikachu" src="../img/repeticao/Katsumi.gif">
+            <img style="display: none;" class="viga" id="viga" src="../img/repeticao/power.gif">
 
             <div class="infoViga" id="infoViga" style="display: none;">
-                <h5 class="textoViga"> Os peixes voadores não conseguem perfurar suas
-                    faiscas,
+                <h5 class="textoViga"> As flechas não conseguem perfurar suas
+                    fagulhas protetoras,
                     use-as com espaço para se proteger.</h5>>
                 <img class="exclamacaoAzul" id="exclamacaoAzul" src="../img/repeticao/exclamacaoAzul.png">
             </div>
@@ -51,33 +50,33 @@
 
 
         <div class="peixes">
-            <img class="goldeen" id="goldeen" src="../img/repeticao/goldeen.png">
-            <img class="seaking" id="seaking" src="../img/repeticao/seaking.png">
-            <img class="qwilfish" id="qwilfish" src="../img/repeticao/qwilfish.png">
-            <img class="basculin" id="basculin" src="../img/repeticao/basculin.png">
+            <img class="goldeen" id="goldeen" src="../img/repeticao/peixe1.gif">
+            <img class="seaking" id="seaking" src="../img/repeticao/peixe3.gif">
+            <img class="qwilfish" id="qwilfish" src="../img/repeticao/peixe4.gif">
+            <img class="basculin" id="basculin" src="../img/repeticao/peixe2.gif">
         </div>
 
 
 
         <div class="textoVidaExtra" style="display: none;">
-            <h5>Uma forte ventania arrastou um Drifloon até aqui, pegue-o para ganhar
+            <h5>O genio apareceu por aqui, pegue-o para ganhar
                 uma vida</h5>
             <img class="exclamacao" src="../img/repeticao/exclamacao.png"></img>
         </div>
         <div class="vidaExtra" style="display: none;">
             <img id="vidaExtra" src="../img/repeticao/vida.png"></img>
-            <img class="drifloon" id="drifloon" src="../img/repeticao/drifloon.png">
+            <img class="drifloon" id="drifloon" src="../img/repeticao/genio.gif">
         </div>
 
         <div class="mantineMantyke" style="display: none;">
-            <img class="mantine" id="mantine" src="../img/repeticao/mantine.png">
-            <img class="mantyke1" id="mantyke1" src="../img/repeticao/mantyke.png">
-            <img class="mantyke2" id="mantyke2" src="../img/repeticao/mantyke.png">
+            <img class="mantine" id="mantine" src="../img/repeticao/arqueiro.gif">
+            <img class="mantyke1" id="mantyke1" src="../img/repeticao/flecha.png">
+            <img class="mantyke2" id="mantyke2" src="../img/repeticao/flecha.png">
         </div>
 
         <div class="tentaLlery" style="display: none;">
-            <img class="tentacruel" id="tentacruel" src="../img/repeticao/tentacruel.png">
-            <img class="octillery" id="octillery" src="../img/repeticao/octillery.png">
+            <img class="tentacruel" id="tentacruel" src="../img/repeticao/peixao2.gif">
+            <img class="octillery" id="octillery" src="../img/repeticao/peixao1.gif">
         </div>
         <img style="display: none;" class="sinalizacao" id="sinalizacao" src="../img/repeticao/exclamacao.png">
 
@@ -94,7 +93,7 @@
 
 
         <div>
-            <img style="display: none;" class="starmie" src="../img/repeticao/starmie.png">
+            <img style="display: none;" class="starmie" src="../img/repeticao/Bombardeiro.gif">
 
         </div>
 
@@ -216,8 +215,6 @@
         const loop = setInterval(() => {    //loop necessario para fazer verificacoes relevantes, como colisoes ...
             if (tronco == 17 && vidas >= 0) {
                 if (verificaPopUp == "false") {
-                    document.querySelector(".ajudante").style.animationPlayState = "running";
-
                     exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=3');
                     verificaPopUp = "true";
                 }
@@ -248,12 +245,14 @@
             if (tronco == 11) {
                 document.querySelector(".infoViga").style.display = "none";
             }
+            if (tronco == 13) {
+                document.querySelector(".mantineMantyke").style.display = "none";
+            }
             if (tronco == 14) {
                 document.querySelector(".goldeen").style.display = "none";
                 document.querySelector(".qwilfish").style.display = "none";
                 document.querySelector(".basculin").style.display = "none";
                 document.querySelector(".seaking").style.display = "none";
-                document.querySelector(".mantineMantyke").style.display = "none";
                 document.querySelector(".tentaLlery").style.display = "block";
                 document.querySelector(".sinalizacao").style.display = "block";
             }
@@ -430,7 +429,10 @@
                 moverEsquerda();
             } else if (tecla == 32) {
                 document.getElementById("viga").style.display = "block";
-                document.getElementById("viga").style.left = (pikachu.offsetLeft) + "px";
+
+                var temp = document.getElementById("pikachu").offsetLeft;
+
+                document.getElementById("viga").style.left = (pikachu.offsetLeft - 180) + "px";
                 viga = "ativada";
             } else if(tecla == 38 && viga == "desativada"){
                 personagem.classList.remove('movimentoD'); // Remover a classe movimentoD

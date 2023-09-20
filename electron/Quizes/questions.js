@@ -75,7 +75,7 @@ var perguntas = [
 
 
     { 
-      question: "Caso encontremos um Falinks com 30 partes perdidas, qual tamanho de caixa de vetor seria necessário para guardá-los? ",
+      question: "Caso encontremos um DigiTor com 30 lanças perdidas, qual tamanho de caixa de vetor seria necessário para guardá-las? ",
       answers: [
         { option: "6", correct: false },
         { option: "20", correct: false },
@@ -86,7 +86,7 @@ var perguntas = [
 
 
     {
-      question: "Você acha que seria possível obter um vetor de Falinks maior que 30, caso fosse necessário?",
+      question: "Você acha que seria possível obter um vetor de lanças maior que 30, caso fosse necessário?",
       answers: [
         { option: "sim", correct: true },
         { option: "não", correct: false },
@@ -119,20 +119,20 @@ var perguntas = [
 
 
     {
-      question: "Caso os Pokémon shinies não fossem capturados, o que iria acontecer durante a fase no cemitério?",
+      question: "Caso os Digi Bots do cemitério não fossem capturados, o que iria acontecer durante a fase?",
       answers: [
-        { option: "Desordem, os Pokémon shiny continuariam afetando a convivência dos demais ", correct: true },
+        { option: "Desordem, os Digi Bots excepcionais continuariam afetando a convivência dos demais ", correct: true },
         { option: "Nada ocorreria, são amigos", correct: false },
-        { option: "Festa, seria uma grande festança, visto que os Pokémon shiny não estavam assustando os demais", correct: false },
+        { option: "Festa, seria uma grande festança, visto que os  Digi Bots excepcionais não estavam assustando os demais", correct: false },
       ],
     },
 
     {
       question: "O que aconteceu quando você tratou/capturou todas as exceções?",
       answers: [
-        { option: "Os Pokémon começaram a brigar entre si", correct: false },
-        { option: "Uma grande confusão, os Pokémon começaram a sentir faltas dos diferentes", correct: false },
-        { option: "Tudo voltou a funcionar como era antes, os Pokémon já não estavam mais confusos", correct: true },
+        { option: "Os  Digi Bots começaram a brigar entre si", correct: false },
+        { option: "Uma grande confusão, os  Digi Bots começaram a sentir falta dos diferentes", correct: false },
+        { option: "Tudo voltou a funcionar como era antes, os  Digi Bots já não estavam mais confusos", correct: true },
       ],
     },
 

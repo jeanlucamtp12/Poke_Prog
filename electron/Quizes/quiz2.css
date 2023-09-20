@@ -79,46 +79,64 @@
 
   #uD, #uE, #uF, #qwilfish, #magneton, #mantine, #rotom{
     position: absolute;
-    width: 7vw;
   }
+#uD{
+  animation: movimentoLetras 3s infinite linear;
+}
+
+  @keyframes movimentoLetras {
+    0% {
+        transform: translate(-100%, -45%) scale(1);
+    }
+    50% {
+        transform: translate(-90%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-100%, -45%) scale(1);
+    }
+}
   
   #uD{
-    left: 1%;
-    bottom: 75%;
+    left: 11%;
+    bottom: 45%;
+    width: 7vw;
   }
   
   #uE{
     left: 70%;
-    bottom: 80%;
+    bottom: 75%;
+    width: 17vw;
   }
   
   #uF{
     left: 82%;
-    bottom: 55%;
+    bottom: 45%;
+    width: 15vw;
   }
   
   #qwilfish{
     left: 75%;
-    bottom: 5%;
-    width: 10vw;
+    bottom: 0%;
+    width: 15vw;
   }
   
   #magneton{
     left: 5%;
-    bottom: 0%;
+    bottom: 15%;
     width: 18vw;
+    transform: scaleX(-1);
   }
   
   #mantine{
     left: 40%;
-    bottom: 2%;
-    width: 10vw;
+    bottom: 0%;
+    width: 15vw;
   }
   
   #rotom{
-    left: 35%;
-    bottom: 75%;
-    width: 12vw;
+    left: 33%;
+    bottom: 70%;
+    width: 11vw;
   }
   
   .swal2-popup{

@@ -91,7 +91,7 @@ var perguntas = [
 
 
     { 
-      question: "Qual era o tamanho do vetor de Falinks que você teve que montar?",
+      question: "Qual era o tamanho do vetor de lanças que você teve que montar?",
       answers: [
         { option: "16", correct: false },
         { option: "10", correct: true },
@@ -102,28 +102,28 @@ var perguntas = [
 
 
     { 
-      question: "O que aconteceria se utilizassem um vetor de 9 posições para armazenar as 10 partes do Falinks?",
+      question: "O que aconteceria se utilizassem um vetor de 9 posições para armazenar as 10 lanças?",
       answers: [
-        { option: "Nada, a ultima cabeça seria colocada no vetor da mesma forma", correct: false },
-        { option: "Erro, uma parte do Falinks não caberia no vetor", correct: true },
-        { option: "O vetor iria quebrar e explusar todas as partes do Falinks armazenadas", correct: false },
+        { option: "Nada, a ultima lança seria colocada no vetor da mesma forma", correct: false },
+        { option: "Erro, uma lança não caberia no vetor", correct: true },
+        { option: "O vetor iria quebrar e explusar todas as lanças armazenadas", correct: false },
       ],
     },
 
 
     {
-      question: "O que descreve melhor o que lhe foi pedido durante a segunda fase dos Falinks?",
+      question: "O que descreve melhor o que lhe foi pedido durante a segunda fase de coleta das lanças?",
       answers: [
-        { option: "Atribuição de ids para cada Falinks do vetor", correct: false },
-        { option: "Atribuição de nomes para alguns Falinks do vetor", correct: true },
-        { option: "Atribuição de número para cada Falinks do vetor", correct: false },
+        { option: "Atribuição de ids para cada lança do vetor", correct: false },
+        { option: "Atribuição de nomes para algumas lança do vetor", correct: true },
+        { option: "Atribuição de número para cada lança do vetor", correct: false },
       ],
     },
 
 
 
     {
-      question: "Caso não utilizasse as funções dos dispositivos Rotom, como ficaria a casa?",
+      question: "Caso não utilizasse a ajuda dos DigiAliens, como ficaria a casa?",
       answers: [
         { option: "Normal, não alteraria nada", correct: false },
         { option: "Bagunçada, a casa continuaria desarrumada", correct: true },
@@ -157,8 +157,8 @@ var perguntas = [
     {
       question: "O que causa uma exceção/diferenciação na fase?",
       answers: [
-        { option: "Pokemon diferente dos convencionais", correct: true },
-        { option: "Pokemon iguais as convencionais", correct: false },
+        { option: "Digi Bots diferente dos convencionais", correct: true },
+        { option: "Digi Bots iguais as convencionais", correct: false },
         { option: "Fantasmas no cemitério", correct: false },
       ],
     },
@@ -209,7 +209,7 @@ var perguntas = [
         answers: [
           { option: "Um tipo de jogo", correct: false },
           { option: "Um meio de ensino que pode auxiliar professores", correct: false },
-          { option: " Um conceito que permite dividir um problema em subproblemas menores", correct: true },
+          { option: "Um conceito que permite dividir um problema em subproblemas menores", correct: true },
         ],
       
       },

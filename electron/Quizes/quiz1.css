@@ -87,30 +87,34 @@ span{
 }
 
 #uA{
-  left: 1%;
-  bottom: 80%;
+  left: 12%;
+  bottom: 75%;
+  animation: movimentoLetras 32s infinite linear;
 }
 
 #uB{
   left: 70%;
-  bottom: 80%;
+  bottom: 70%;
+  animation: movimentoLetras 13s infinite linear;
 }
 
 #uC{
-  left: 79%;
-  bottom: 53%;
+  left:90%;
+  bottom: 45%;
+  animation: movimentoLetras 24s infinite linear;
 }
 
 #seaking{
   left: 75%;
   bottom: 5%;
-  width: 10vw;
+  width: 10vw;  
+  transform: scaleX(-1);
 }
 
 #magnemite{
   left: 5%;
-  bottom: 0%;
-  width: 20vw;
+  bottom: 5%;
+  width: 12vw;
 }
 
 #starmie{
@@ -121,8 +125,9 @@ span{
 
 #rotom{
   left: 35%;
-  bottom: 80%;
+  bottom: 75%;
   width: 12vw;
+  transform: scaleX(-1);
 }
 
 
@@ -134,3 +139,20 @@ span{
 }
 
 
+@keyframes movimentoLetras {
+  0% {
+      transform: translate(-100%, -30%) scale(1);
+  }
+  25% {
+      transform: translate(-10%, -50%) scale(1.02);
+  }
+  50% {
+      transform: translate(-60%, -50%) scale(1);
+  }
+  75% {
+      transform: translate(-30%, -90%) translateY(-10%) scale(1.02);
+  }
+  100% {
+      transform: translate(-100%, -30%) scale(1);
+  }
+}
