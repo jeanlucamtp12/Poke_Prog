@@ -18,7 +18,7 @@ body{
 
 #falink{
     animation: raio_movimento 5s infinite linear;
-    width:4.5vw;   
+    width: 5vw;   
     position: absolute;
     top:48%;
     z-index: 2;
@@ -106,13 +106,12 @@ body{
 
 
 .poke{
-
     position: absolute;
     bottom: 0%;
     --left-start-timburr: 40vw;
     left:  var(--left-start-timburr);
     z-index: 1;
-    width:6vw;
+    width:12vw;
   
 }
 
@@ -246,28 +245,18 @@ body{
     width: 2.5vw;
 }
 
-.togepi, .cleffa, .pichu, .igglybuff{
+.togepi, .pichu{
     position: absolute;
-    width: 12vw;
+    width: 6vw;
 }
 
 .togepi{
-    bottom: 26.8vw;
-    left: 90%;
-}
-.cleffa{
-    left: -3%;
-    transform: scaleX(-1);
-    bottom: 26.5vw;
+    bottom: 30vw;
+    left: 88%;
 }
 .pichu{
-    bottom: 27vw;
-    transform: scaleX(-1);
-    left: 5%;
-}
-.igglybuff{
-    left: 83%;
-    bottom: 27.5vw;
+    bottom: 30vw;
+    left: 7%;
 }
 
 .vida{

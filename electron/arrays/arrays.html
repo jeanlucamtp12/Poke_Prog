@@ -21,7 +21,7 @@
 
     <div class="tela">
 
-        <img id="falink" src="../img/arrays/falinkQueda.gif">
+        <img id="falink" src="../img/arrays/lanca.png">
 
         <div>
             <div class="raio">
@@ -44,20 +44,23 @@
 
 
 
-        <img class='poke' id="poke" src="../img/arrays/falink.gif">
+        <img class='poke' id="poke" src="../img/arrays/largato.gif">
 
         <div>
-            <img class='pichu' id="pichu" src="../img/arrays/babys/pichu.png">
-            <img class='cleffa' id="cleffa" src="../img/arrays/babys/cleffa.png">
-            <img class='igglybuff' id="igglybuff" src="../img/arrays/babys/Igglybuff.png">
-            <img class='togepi' id="togepi" src="../img/arrays/babys/togepi.png">
+            <img class='pichu' id="pichu" src="../img/arrays/babys/bebe.gif">
+            <img class='togepi' id="togepi" src="../img/arrays/babys/bebe2.gif">
             <img class='galho1' id="galho1" src="../img/arrays/galho.png">
             <img class='galho2' id="galho2" src="../img/arrays/galho.png">
             <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
             <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
         </div>
 
-
+<div>
+    <img class='galho1' id="galho1" src="../img/arrays/galho.png">
+    <img class='galho2' id="galho2" src="../img/arrays/galho.png">
+    <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
+    <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
+</div>
 
         <div>
             <div id="piso"></div>
@@ -193,7 +196,7 @@
         //verificao de colisao entre falinks do jogador e os que caem do ceu
         if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y - 30 + falink.height > falinkQueda.y)) {
             falinkQueda.style.display = 'none';
-            document.getElementById(j).innerHTML = "<img src='../img/arrays/falink.gif'>";
+            document.getElementById(j).innerHTML = "<img src='../img/arrays/lanca.png'>";
             j = j + 1;
             console.log(j)
             if (j == 10) {
@@ -247,7 +250,7 @@
         if (document.querySelector('.poke').offsetLeft <= limiteDireito) {
 
 
-        document.getElementById("poke").style.transform = "scaleX(-1)";
+        document.getElementById("poke").style.transform = "scaleX(1)";
 
         personagem.classList.remove('movimentoE'); // Remover a classe movimentoD
 
@@ -261,7 +264,7 @@
     const moverEsquerda = () => {
 
         if (document.querySelector('.poke').offsetLeft >= 0) {
-            document.getElementById("poke").style.transform = "scaleX(1)";
+            document.getElementById("poke").style.transform = "scaleX(-1)";
 
             personagem.classList.remove('movimentoD'); // Remover a classe movimentoD
 

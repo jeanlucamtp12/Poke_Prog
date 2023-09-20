@@ -60,7 +60,7 @@ body{
     position: absolute;
     width: 20%;
     height: 45%;
-    bottom: 0%;
+    bottom: -1%;
     left: 35%;
 }
 
@@ -68,7 +68,7 @@ body{
     position: absolute;
     width: 20%;
     height: 45%;
-    bottom: 0%;
+    bottom: -1%;
     left: 65%;
 }
 
@@ -77,7 +77,7 @@ body{
     position: absolute;
     width: 20%;
     height: 52%;
-    bottom: 13%;
+    bottom: 12%;
     left: 25%;
 }
 
@@ -86,7 +86,7 @@ body{
     position: absolute;
     width: 20%;
     height: 52%;
-    bottom: 13%;
+    bottom: 12%;
     left: 48%;
     
 }
@@ -95,7 +95,7 @@ body{
     position: absolute;
     width: 20%;
     height: 52%;
-    bottom: 30%;
+    bottom: 29%;
     left: 35%;
     
     
@@ -150,16 +150,16 @@ body{
 .portaAberta1{
     position: absolute;
     width: 33%;
-    bottom: 47%;
-    left: 67%;
+    bottom: 45%;
+    left: 68%;
     z-index: 1;
 
 }
 
 .portaAberta2{
     position: absolute;
-    width: 33%;
-    bottom: 21%;
+    width: 30%;
+    bottom: 20%;
     left: 0%;
     z-index: 1;
 
@@ -167,8 +167,8 @@ body{
 
 .portaAberta3{
     position: absolute;
-    width: 33%;
-    bottom: 72%;
+    width: 30%;
+    bottom: 70%;
     left: 0%;
     z-index: 1;
 
@@ -176,7 +176,7 @@ body{
 
 .personagem{
     position: absolute;
-    width: 20%;
+    width: 25%;
     bottom: 1%;
     left: 0%;
     z-index: 1;
@@ -317,7 +317,7 @@ body{
 
 .cherrim{
     position: absolute;
-    width: 25%;
+    width: 23%;
     bottom: 20%;
     z-index: 2;
     right: 0%;
@@ -336,20 +336,10 @@ body{
 }
 
 
-.arbok{
-    position: absolute;
-    width: 32%;
-    bottom: 20%;
-    z-index: 2;
-    left: 0%;
-    animation: arbok_movimento 20s infinite linear;
-    animation-play-state: paused;
-}
-
 .grimer{
     position: absolute;
-    width: 35%;
-    bottom: 45%;
+    width: 28%;
+    bottom: 46%;
     z-index: 2;
     left: 0%;
     animation: grimer_movimento 50s infinite linear;    
@@ -477,21 +467,6 @@ body{
     100% {
         right: 2%;
         bottom:  2%;
-    }
-}
-
-
-@keyframes arbok_movimento {
-
-    0% {
-        left: 90%;
-    }
-    50% {
-        left: 30%;
-
-    }
-    100% {
-        left: -40%;
     }
 }
 

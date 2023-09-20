@@ -274,29 +274,23 @@ h6 {
 
 .cortadorR{
     position: absolute;
-    width: 12%;
-    left: 60%;
+    width: 14%;
+    left: 63%;
     bottom: 5%;
-}
-
-.ventiladorR{
-    position: absolute;
-    width: 12%;
-    left: 75%;
-    bottom: 10%;
 }
 
 .fornoR{
     position: absolute;
-    width: 12%;
+    width: 10%;
     left: 25%;
-    bottom: 65%;
+    bottom: 60%;
+    transform: scaleX(-1);
 }
 
 .lavadeiraR{
     position: absolute;
-    width: 12%;
-    left: 70%;
+    width: 16%;
+    left: 67%;
     bottom: 45%;
 
 }
@@ -308,14 +302,10 @@ h6 {
     left: 4%;
     bottom: 63%;
     transform: rotateY(180deg);
+    transform: scaleX(1);
 }
 
-.rotom{
-    position: absolute;
-    width: 12%;
-    left: 18%;
-    bottom: 15%;
-}
+
 
 .textos{
     color: rgb(171, 187, 252);

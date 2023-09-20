@@ -212,34 +212,79 @@ body, html{
 	position: absolute;
 	width: 4vw;
 }
+
+@keyframes movimentoLetras{
+    0% {
+        left: calc(var(--left-start-letra) + 0.8%);
+		bottom: calc(var(--bottom-start-letra) + 0.1%);
+    }
+	50% {
+		transform: scale(1.02);
+        left: calc(var(--left-start-letra) + 0.18%);
+		bottom: calc(var(--bottom-start-letra) + 6%);
+    }
+	100% {
+        left: calc(var(--left-start-letra) + 0.8%);
+		bottom: calc(var(--bottom-start-letra) + 0.1%);
+    }
+}
+
+
 #a{
-	left: 0%;
-	bottom: 75%;
+	--bottom-start-letra: 75%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 0%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 4s infinite linear;
 }
 #b{
-	left: 7%;
-	bottom: 78%;
+	--bottom-start-letra: 78%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 7%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 3.1s infinite linear;
 }
 #c{
-	left: 14%;
-	bottom: 73%;
+	--bottom-start-letra: 73%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 14%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 1.2s infinite linear;
 }
 #d{
-	left: 19%;
-	bottom: 79%;
+	--bottom-start-letra: 79%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 19%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 4s infinite linear;
 }
 #e{
-	left: 1%;
-	bottom: 65%;
+	--bottom-start-letra: 65%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 1%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 6.5s infinite linear;
 }
 #f{
-	left: 8%;
-	bottom: 65%;
+	--bottom-start-letra: 65%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 8%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 5.4s infinite linear;
 }
 #g{
-	left: 3%;
-	width: 3vw;
-	bottom: 50%;
+	--bottom-start-letra: 50%;
+	bottom: var(---bottom-start-letra);
+
+	--left-start-letra: 3%;
+    left:  var(--left-start-letra);
+	animation: movimentoLetras 2.3s infinite linear;
 }
 
 /* Arbok e Bulba*/
@@ -254,8 +299,8 @@ body, html{
 	bottom: 48%;
 }
 #bulbassaur{
-	left: 44%;
-	width: 5vw;
+	left: 42%;
+	width: 7vw;
 	bottom: 49%;
 }
 
@@ -263,75 +308,48 @@ body, html{
 
 #timburr{
 	position: absolute;
-	left: 65%;
-	width: 10vw;
+	left: 67%;
+	width: 8vw;
 	bottom: 49%;
+	transform: scaleX(-1);
 }
 
 
 /* Falinks*/
 
-#falinks1, #falinks2 , #falinks3, #falinks4, #falinks5, #falinks6{
-	position: absolute;
-	width: 4vw;
-	bottom: 49%;
-}
-
 #falinks1{
-	left: 95%;
-}
-#falinks2{
-	left: 92%;
-}
-#falinks3{
-	left: 89%;
+	position: absolute;
+	width: 10vw;
+	bottom: 49%;
+	left: 90%;
+	transform: scaleX(-1);
 }
 
-#falinks4{
-	left: 82%;
-}
-#falinks5{
-	left: 79%;
-}
-#falinks6{
-	left: 76%;
-}
 
 
 
 /* Rotoms*/
 
-#rotom, #cortador , #geladeira, #lavadeira, #ventilador, #forno{
+#cortador, #ventilador, #forno{
 	position: absolute;
 	width: 8vw;
 	z-index: 1;
 }
 
-#rotom{
-	left: 10%;
-	bottom: 22%;
-}
 #cortador{
-	left: 18%;
-	bottom: -1%;
-}
-#geladeira{
-	left: 0%;
-	bottom: 1%;
-	transform: scaleX(-1);
+	left: 14%;
+	bottom: 0%;
+	width: 11vw;
 }
 
-#lavadeira{
-	left: 12%;
-	bottom: 8%;
-}
 #ventilador{
 	left: 17%;
-	bottom: 28%;
+	bottom: 23%;
+	transform: scaleX(-1);
 }
 #forno{
-	left: -1%;
-	bottom: 32%;
+	left: 0%;
+	bottom: 30%;
 	transform: scaleX(-1);
 }
 
@@ -372,22 +390,22 @@ body, html{
 
 #magnemite1, #magnemite2 , #magneton1, #magneton2{
 	position: absolute;
-	width: 5vw;
+	width: 8vw;
 	z-index: 1;
 }
 
 #magnemite1{
-	left: 69%;
+	left: 65%;
 	bottom: 28%;
 }
 #magnemite2{
 	left: 57%;
-	bottom: 0%;
+	bottom: 10%;
 	width: 8vw;
 }
 #magneton1{
 	left: 50%;
-	bottom: 28%;
+	bottom: 30%;
 	transform: scaleX(-1);
 	width: 8vw;
 }
@@ -404,18 +422,17 @@ body, html{
 
 #victini1, #victini2{
 	position: absolute;
-	width: 14vw;
+	width: 6vw;
 	z-index: 1;
 	bottom: 0%;
 }
 
 #victini1{
-	left: 73%;
+	left: 77%;
 }
 
 #victini2{
-	left: 89%;
-	transform: scaleX(-1);
+	left: 92%;
 }
 
 
@@ -467,11 +484,12 @@ body, html{
 }
 
 .professor{
-	width: 22vw;
+	width: 25vw;
 	position: absolute;
 	z-index: 1;
-	left: 5%;
-	bottom: 0%;
+	left: 1%;
+	bottom: -10%;
+	transform: scaleX(-1);
 }
 
 .balao{
@@ -573,7 +591,12 @@ body, html{
 	border-radius: 10%;
 	z-index: 2;
 }
-
+#img5{
+	width: 30vw;
+}
+#img8{
+	width: 30vw;
+}
 .swal2-popup{
     font-size: 1vw;
 }

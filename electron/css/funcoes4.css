@@ -176,7 +176,7 @@ body{
 
 .personagem{
     position: absolute;
-    width: 20%;
+    width: 25%;
     bottom: 1%;
     left: 0%;
     z-index: 1;
@@ -584,7 +584,7 @@ h6 {
 
 .dewgong{
     position: absolute;
-    width: 30%;
+    width: 25%;
     bottom: 20%;
     z-index: 2;
     left: -10%;   
@@ -685,7 +685,7 @@ h6 {
 
 .pidgeot{
     position: absolute;
-    width: 35%;
+    width: 32%;
     bottom: 20%;
     z-index: 2;
     right: 0%;

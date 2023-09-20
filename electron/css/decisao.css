@@ -19,7 +19,7 @@ body {
     position: absolute;
     bottom: 0%;
     left: 0%;
-    width: 15vw;
+    width: 14vw;
 }
 
 
@@ -31,18 +31,25 @@ body {
     width: 20vw;
 }
 
+.base11{
+    position: absolute;
+    bottom: 15vw;
+    left: 60vw;
+    width: 18vw;
+}
+
 .base2 {
     position: absolute;
     bottom: 35vw;
     left: 60vw;
-    width: 20vw;
+    width: 18vw;
 }
 
 .adversario {
     position: absolute;
-    bottom: 30vw;
-    left: 80vw;
-    width: 15vw;
+    bottom: 25vw;
+    left: 74vw;
+    width: 30vw;
 }
 .adversario2 {
     position: absolute;
@@ -53,16 +60,16 @@ body {
 
 .poke {
     position: absolute;
-    bottom: 6vw;
-    left: 18vw;
-    width: 23vw;
+    bottom: 11vw;
+    left: 22vw;
+    width: 16vw;
     z-index: 1;
 }
 .base {
     position: absolute;
     bottom: 5vw;
     left: 20vw;
-    width: 20%;
+    width: 18%;
 }
 
 
@@ -74,8 +81,8 @@ body {
     border: solid 2px white;
     width: 14.5vw;
     height: 1.6vw;
-    bottom: 8vw;
-    left: 23vw;
+    bottom: 25vw;
+    left: 20vw;
     font-size: 1vw;
     font-weight: bold;
 }
@@ -88,8 +95,8 @@ body {
 .pokeAdversario {
     position: absolute;
     bottom: 22vw;
-    left: 65vw;
-    width: 15vw;
+    left: 63vw;
+    width: 12vw;
     z-index: 1;
 }
 
@@ -190,8 +197,8 @@ body {
 
 .ataqueVeneno {
     position: absolute;
-    bottom: 2vw;
-    left: 48vw;
+    bottom: 1vw;
+    left: 42vw;
     width: 8vw;
     height: 40vw;
 
@@ -254,9 +261,9 @@ button:hover{
 
 .lampent{
     position: absolute;
-    right: 5%;
-    bottom: 1vw;
-    width: 10vw;
+    right: 4%;
+    bottom: 2vw;
+    width: 12vw;
 }
 
 #ajuda{
@@ -279,15 +286,16 @@ button:hover{
 
 .pokeAdversario2, .pokeAdversario3{
     position: absolute;
-    bottom: 21vw;
-    width: 15vw;
+    width: 11vw;
     z-index: 1;
 }
 .pokeAdversario2{
-    left: 55vw;
+    left: 57vw;
+    bottom: 24vw;
 }
 .pokeAdversario3{
-    left: 70vw;
+    left: 75vw;
+    bottom: 23vw;
 }
 
 
@@ -361,9 +369,9 @@ button:hover{
 
 .pokeAdversario4{
     position: absolute;
-    bottom: 18vw;
-    left: 60vw;
-    width: 22vw;
+    bottom: 14vw;
+    left: 50vw;
+    width: 38vw;
     z-index: 1;
 }
 
@@ -371,14 +379,14 @@ button:hover{
     position: absolute;
     bottom: 25vw;
     left: 80vw;
-    width: 17vw;
+    width: 18vw;
 }
 
 .base4 {
     position: absolute;
     bottom: 11vw;
     left: 60vw;
-    width: 20vw;
+    width: 18vw;
 }
 
 

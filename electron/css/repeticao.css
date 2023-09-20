@@ -92,13 +92,25 @@ body{
 
 .pikachu {
     position: absolute;
-    width: 9%;
+    width: 9.5%;
     bottom: 22%;
     --left-start-pikachu: 0%;
     left:  var(--left-start-pikachu);
     z-index: 1;
 }
 
+
+@keyframes ataqueEsp {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 .ajudante {
     position: absolute;
@@ -128,8 +140,8 @@ body{
 
 .viga{
     position: absolute;
-    width: 13%;
-    bottom: 13%;
+    width: 30%;
+    bottom: 18%;
     z-index: 0;
 }
 
@@ -330,26 +342,26 @@ body{
     }
 
     20% {
-        transform: rotate(-15deg);      
+        /*transform: rotate(-15deg);      */
         bottom: 10vw;
     }
 
     30% {
-        transform: rotate(-15deg);      
+       /* transform: rotate(-15deg);      */
     }
     50% {
-        transform: rotate(-15deg);
+       /* transform: rotate(-15deg);*/
     } 
 
     50% {
-        transform: rotate(-15deg);
+       /* transform: rotate(-15deg);*/
     } 
     60% {
-        transform: rotate(3505deg);
+       /* transform: rotate(3505deg);*/
         left: 85%;
     } 
     80% {
-        transform: rotate(6505deg);
+       /* transform: rotate(6505deg);*/
         left:  50%;
 
     }
@@ -358,7 +370,7 @@ body{
         bottom: 10vw;
     }
     100% {
-        transform: rotate(9505deg);
+       /* transform: rotate(9505deg);*/
         left:  -10%;
         bottom: 10vw;
 
@@ -424,7 +436,7 @@ body{
     position: absolute;
     bottom: 0%;
     z-index: 2;
-    width: 7%;
+    width: 6%;
 }
 .goldeen{
     --my-start-left: 10%;
@@ -438,7 +450,7 @@ body{
     animation-play-state: paused;
 } 
 .qwilfish{
-    width: 6.5%;
+    width: 3.5%;
     --my-start-left: 60%;
     animation: animacao_peixe 11s infinite linear;
     animation-play-state: paused;
@@ -463,7 +475,8 @@ body{
 }
 
 .drifloon{
-    width: 7.5vw;
+    width: 10.5vw;
+    transform: scaleX(-1);
 } 
 
 .textoVidaExtra h5, .textoVidaExtra .drifloonTexto, .textoVidaExtra .vidaTexto, .textoVidaExtra .exclamacao{
@@ -525,9 +538,10 @@ body{
 
 .mantine{
     position: absolute;
-    width: 28vw;
-    bottom: 25vw;
-    left: 75%;
+    width: 15vw;
+    bottom: 28vw;
+    left: 88%;
+    z-index: 2;
 } 
 
 @keyframes animacao_peixe {
@@ -599,66 +613,35 @@ body{
 .mantyke1{
     position: absolute;
     width: 6vw;
-    --my-start-bottom: 33vw;
-    left: 75%;
-    animation: animacao_mantyke 10s infinite linear;
+    --my-start-bottom: 40vw;
+    left: 90%;
+    animation: animacao_mantyke 3s infinite linear;
     z-index: 2;
-
+    transform: rotate(-40deg);
 } 
 
 .mantyke2{
     position: absolute;
     width: 6vw;
-    --my-start-bottom: 25vw;
-    left: 80%;
-    animation: animacao_mantyke 10s infinite linear;
+    --my-start-bottom: 35vw;
+    left: 90%;
+    animation: animacao_mantyke 3s infinite linear;
     z-index: 2;
+    transform: rotate(-40deg);
 } 
 
 @keyframes animacao_mantyke {
     0% {
         bottom: var(--my-start-bottom);
-        opacity: 0;
+        left: 90%;
     }
-    2% {
-        bottom: var(--my-start-bottom);
-        opacity: 1;
-    }
-    4% {
-        bottom: var(--my-start-bottom);
-        opacity: 0;
-    }
-    6% {
-        bottom: var(--my-start-bottom);
-        opacity: 1;
-    }
-    8% {
-        bottom: var(--my-start-bottom);
-        opacity: 0;
-    }
-    15% {
-        opacity: 1;
-        bottom: var(--my-start-bottom);
-    }
-    30% {
-        bottom: var(--my-start-bottom);
-        left: 65%;    
-    }
-    40% {
-        bottom: var(--my-start-bottom);
-        left: 65%;
-    }
-    60% {
-        bottom: calc(var(--my-start-bottom) - 18vw);
-        left: 65%;
-    }
-    80% {
-        bottom: calc(var(--my-start-bottom) - 18vw);
-        left: -35%;
+    50% {
+        bottom: calc(var(--my-start-bottom) - 50%);
+        left: 60%;
     }
     100% {
-        bottom: calc(var(--my-start-bottom) - 18vw);
-        left: -35%;
+        bottom: calc(var(--my-start-bottom) - 110%);
+        left: 30%;
     }
 }
 
@@ -717,7 +700,7 @@ body{
 
 .octillery{
     position: absolute;
-    width: 16vw;
+    width: 18vw;
     left: 25%;
     z-index: 2;
     --my-bottom: -6vw;
@@ -728,13 +711,13 @@ body{
 
 .tentacruel{
     position: absolute;
-    width: 16vw;
-    --my-bottom: -9vw;
+    width: 21vw;
+    --my-bottom: -7vw;
     bottom: var(--my-bottom); 
     left: 65%;
     z-index: 2;
     animation: animacao_pulo 10s infinite linear;
-
+    transform: scaleX(-1);
 } 
 
 @keyframes animacao_pulo {

@@ -25,8 +25,8 @@ body {
 
 #iniciar h4, #professor h4, #encerrar h4{
     font-size: 2.3vw;  
-    border: solid 0.5vw rgb(38, 0, 255);
-    background-color: #fffb2a85;
+    border: solid 0.5vw rgb(205, 148, 231);
+    background-color: #00ffdd85;
     border-radius: 1.5vw;   
     margin: 0%;
     cursor: pointer;
@@ -61,16 +61,16 @@ body {
 
 #falink1, #falink2{
     position: absolute;
-    width: 5vw;
+    width: 13vw;
     bottom: 0%;
     z-index: 1;
 }
 #falink1{
-    left: 20%;
-    transform: scaleX(-1);
+    left: 15%;
 }
 #falink2{
     left: 75%;
+    transform: scaleX(-1);
 }
 
 #arvore1, #arvore2{
@@ -162,10 +162,10 @@ body {
 
 #arbok{
     position: absolute;
-    width: 15vw;
+    width: 8vw;
     bottom: 0%;
-    left: 26%;
-    transform: scaleX(-1);
+    left: 38%;
+    transform: scaleX(1);
     z-index: 1;
 }
 
@@ -178,21 +178,43 @@ body {
 
 #uA{
     left: 25%;
+    animation: movimentoLetras 2s infinite linear;
 }
 #uB{
     bottom: 45%;
     left: 35%;
+    animation: movimentoLetras 4s infinite linear;
 }
 #uC{
     left: 75%;
     z-index: 1;
+    animation: movimentoLetras 3s infinite linear;
+}
+
+
+@keyframes movimentoLetras {
+    0% {
+        transform: translate(-100%, -30%) scale(1);
+    }
+    25% {
+        transform: translate(-10%, -50%) scale(1.02);
+    }
+    50% {
+        transform: translate(-60%, -50%) scale(1);
+    }
+    75% {
+        transform: translate(-30%, -90%) translateY(-10%) scale(1.02);
+    }
+    100% {
+        transform: translate(-100%, -30%) scale(1);
+    }
 }
 
 #rotom{
     position: absolute;
     width: 10vw;
     bottom: 15%;
-    left: 65%;
+    left: 10%;
 }
 
 
@@ -232,9 +254,9 @@ body {
 #drifloon{
     position: absolute;
     width: 6.5vw;
-    bottom: 60%;
+    bottom: 20%;
     right: 90%;
-    animation: animacao_drifloon 100s infinite linear;
+    animation: animacao_drifloon 20s infinite linear;
     transform: scaleX(-1);
     z-index: 0;
 }
@@ -269,6 +291,7 @@ body {
     position: absolute;
     left: 30%;
     width: 45vw;
+    top: 20%;
     z-index: 2;
 }
 
@@ -282,6 +305,6 @@ body {
 h4{
     font-family: 'Pokemon';
     -webkit-text-stroke-width: 0.13vw; /* largura da borda */
-    -webkit-text-stroke-color: blue; /* cor da borda */
+    -webkit-text-stroke-color: rgb(209, 123, 209); /* cor da borda */
     -webkit-text-fill-color: rgb(255, 255, 255);
 }
