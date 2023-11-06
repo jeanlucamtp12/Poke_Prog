@@ -1,6 +1,6 @@
 # Poké Prog
 
-Poké Prog é um jogo (em desenvolvimento) com a proposta de ensinar os conceitos básicos de programação
+Poké Prog é um jogo com a proposta de ensinar os conceitos básicos de programação
 para iniciantes.
 
 O jogo possui uma região fictícia divida em 7 cidades, onde cada uma delas apresenta um conceito distinto de
