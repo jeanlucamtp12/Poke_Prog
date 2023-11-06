@@ -10,8 +10,6 @@
     <script src="../sweetalert/sweetalert.js"></script>
     <script src="../telaInicial/dialogos.js"></script>
     <link rel="stylesheet" href="../css/arrays.css">
-
-
     <title>Document</title>
 </head>
 
@@ -21,7 +19,7 @@
 
     <div class="tela">
 
-        <img id="falink" src="../img/arrays/lanca.png">
+        <img id="lanca" src="../img/arrays/lanca.png">
 
         <div>
             <div class="raio">
@@ -41,26 +39,23 @@
             </div>
         </div>
 
-
-
-
-        <img class='poke' id="poke" src="../img/arrays/largato.gif">
+        <img class='digiTor' id="digiTor" src="../img/arrays/largato.gif">
 
         <div>
-            <img class='pichu' id="pichu" src="../img/arrays/babys/bebe.gif">
-            <img class='togepi' id="togepi" src="../img/arrays/babys/bebe2.gif">
+            <img class='bebe1' id="bebe1" src="../img/arrays/babys/bebe.gif">
+            <img class='bebe2' id="bebe2" src="../img/arrays/babys/bebe2.gif">
             <img class='galho1' id="galho1" src="../img/arrays/galho.png">
             <img class='galho2' id="galho2" src="../img/arrays/galho.png">
             <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
             <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
         </div>
 
-<div>
-    <img class='galho1' id="galho1" src="../img/arrays/galho.png">
-    <img class='galho2' id="galho2" src="../img/arrays/galho.png">
-    <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
-    <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
-</div>
+        <div>
+            <img class='galho1' id="galho1" src="../img/arrays/galho.png">
+            <img class='galho2' id="galho2" src="../img/arrays/galho.png">
+            <img style="display: none;" class='vida' id="vida" src="../img/arrays/vida.png">
+            <img style="display: none;" class='vida2' id="vida2" src="../img/arrays/vida.png">
+        </div>
 
         <div>
             <div id="piso"></div>
@@ -70,6 +65,7 @@
         <img id="nuvens" src="../img/bonus/clouds.png">
         <img id="nuvens2" src="../img/bonus/clouds.png">
         <img id="nuvens3" src="../img/bonus/clouds.png">
+        <img id="nuvens4" src="../img/bonus/clouds.png">
 
         <img id="arvore1" src="../img/arrays/arvore1.png">
         <img id="arvore2" src="../img/arrays/arvore1.png">
@@ -89,7 +85,7 @@
         </div>
 
         <div class="vetor">
-            
+
             <div class="filhoVetor" img src="" id="9">9</div>
             <div class="filhoVetor" img src="" id="8">8</div>
             <div class="filhoVetor" img src="" id="7">7</div>
@@ -102,15 +98,30 @@
             <div class="filhoVetor" img src="" id="0" width="20px">0</div>
         </div>
 
-
-
-        <div>
-
 </body>
 
 </html>
 
 <script>
+
+    var dx;
+    var px;
+    var vel;
+    var temp;
+    var personagem;
+
+    function inicia() {
+        dx = 0;
+        px = 50;
+        vel = 0.5;
+        personagem = document.querySelector(".digiTor");
+        document.addEventListener('keydown', mover);
+        document.addEventListener('keyup', soltar);
+        personagem.style.left = px + "%";
+        temp = setInterval(atualizaFrame, 18);
+    }
+
+    var teclaPressionada = false;
 
     //laco para gerar os matos para compor o cenario da fase
     for (var i = 1, k = 0; k <= 100; i++) {
@@ -127,17 +138,18 @@
 
     }
 
-    //definicao de falinks que cairao do ceu e falink controlado pelo jogador
+    //definicao de lancas que cairao do ceu e digiTor controlado pelo jogador
     let j = 0;
-    const falinkQueda = document.querySelector('#falink');
-    const falink = document.querySelector('#poke');
+    const lancaQueda = document.querySelector('#lanca');
+    //const personagem = document.querySelector('#digiTor');
 
-    const loop = setInterval(() => { //loop para gerar de forma aleatoria em qual ponto caira o falinks
-        const falink = document.querySelector('#falink');
-        const posicoesFalinks = ["22", "32", "42", "52", "62", "72", "82"];
-        const posicaoVetor = Math.floor(Math.random() * posicoesFalinks.length);
-        falink.style.left = posicoesFalinks[posicaoVetor] + "%";
-        falinkQueda.style.display = 'block';
+
+    const loop = setInterval(() => { //loop para gerar de forma aleatoria em qual ponto caira a lanca
+        const lanca = document.querySelector('#lanca');
+        const posicoesLanca = ["22", "32", "42", "52", "62", "72", "82"];
+        const posicaoVetor = Math.floor(Math.random() * posicoesLanca.length);
+        lanca.style.left = posicoesLanca[posicaoVetor] + "%";
+        lancaQueda.style.display = 'block';
     }, 5000);
 
     const resetar = () => { //funcao para resetar a animacao dos raios
@@ -163,12 +175,12 @@
             document.querySelector('.vida').style.display = 'none';
         }
 
-        falink.getBoundingClientRect();
+        personagem.getBoundingClientRect();
         var raios = document.querySelectorAll("div.raio #raio1, div.raio #raio2, div.raio #raio3, div.raio #raio4, div.raio #raio5, div.raio #raio6");
         var vidinhas = document.querySelectorAll("#vida, #vida2");
 
         for (var i = 0; i < raios.length; i++) {  //verifica colisao com raios e realiza operacoes com base nas colisoes
-            if ((falink.x + 30 < raios[i].x + raios[i].width && falink.x - 30 + falink.width > raios[i].x) && (falink.y + 30 < raios[i].y + raios[i].height && falink.y - 30 + falink.height > raios[i].y)) {
+            if ((personagem.x + 30 < raios[i].x + raios[i].width && personagem.x - 30 + personagem.width > raios[i].x) && (personagem.y + 30 < raios[i].y + raios[i].height && personagem.y - 30 + personagem.height > raios[i].y)) {
 
                 raios[i].style.animation = 'none';
                 setInterval(resetar, 10);
@@ -185,30 +197,27 @@
                     document.querySelector(".vidas1").remove();
                     vidas = vidas - 1;
                 } else if (vidas == 0) {
-                    document.querySelector(".poke").style.display = "none";
-
-                    
+                    document.querySelector(".digiTor").style.display = "none";
                     exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", './arrays.html');
                 }
             }
         }
 
-        //verificao de colisao entre falinks do jogador e os que caem do ceu
-        if ((falink.x + 30 < falinkQueda.x + falinkQueda.width && falink.x - 30 + falink.width > falinkQueda.x) && (falink.y + 30 < falinkQueda.y + falinkQueda.height && falink.y - 30 + falink.height > falinkQueda.y)) {
-            falinkQueda.style.display = 'none';
+        //verificao de colisao entre digiTor do jogador e as lancas que caem do ceu
+        if ((personagem.x + 30 < lancaQueda.x + lancaQueda.width && personagem.x - 30 + personagem.width > lancaQueda.x) && (personagem.y + 30 < lancaQueda.y + lancaQueda.height && personagem.y - 30 + personagem.height > lancaQueda.y)) {
+            lancaQueda.style.display = 'none';
             document.getElementById(j).innerHTML = "<img src='../img/arrays/lanca.png'>";
             j = j + 1;
-            console.log(j)
-            if (j == 10) {
-                document.querySelector(".poke").style.display = "none";
 
-                window.location.href = './falinksAtribuicao.html';
+            if (j == 10) {
+                document.querySelector(".digiTor").style.display = "none";
+                window.location.href = './arraysAtribuicao.html';
             }
         }
 
         //verificao com colisao entre personagem do jogador e vidas que sao lancadas do ceu
         for (var i = 0; i < vidinhas.length; i++) {
-            if ((falink.x + 30 < vidinhas[i].x + vidinhas[i].width && falink.x - 30 + falink.width > vidinhas[i].x) && (falink.y + 30 < vidinhas[i].y + vidinhas[i].height && falink.y - 30 + falink.height > vidinhas[i].y)) {
+            if ((personagem.x + 30 < vidinhas[i].x + vidinhas[i].width && personagem.x - 30 + personagem.width > vidinhas[i].x) && (personagem.y + 30 < vidinhas[i].y + vidinhas[i].height && personagem.y - 30 + personagem.height > vidinhas[i].y)) {
                 vidinhas[i].style.animationPlayState = 'paused';
                 vidinhas[i].style.display = 'none';
                 setInterval(resetarVida, 50);
@@ -226,68 +235,55 @@
         }
     }, 10);
 
-
-
-    function removerMovimentoD() {
-        personagem.classList.remove(movimentoD);
-    }
-
-    function removerMovimentoE() {
-        personagem.classList.remove(movimentoE);
-    }
-
-
-    //funcoes para capturar a movimentacao do personagem
-
-    const personagem = document.querySelector('.poke');
-
-    
-    const larguraTela = window.innerWidth;
-    const limiteDireito = larguraTela - personagem.offsetWidth;
-
     const moverDireita = () => {
-
-        if (document.querySelector('.poke').offsetLeft <= limiteDireito) {
-
-
-        document.getElementById("poke").style.transform = "scaleX(1)";
-
-        personagem.classList.remove('movimentoE'); // Remover a classe movimentoD
-
-        personagem.style.setProperty('--left-start-timburr', getComputedStyle(personagem).left);
-        personagem.classList.add('movimentoD');
-        personagem.addEventListener('transitionend', removerMovimentoD);
-        }
-
+        dx = 1;
+        personagem.style.transform = "scaleX(1)";
     }
 
     const moverEsquerda = () => {
-
-        if (document.querySelector('.poke').offsetLeft >= 0) {
-            document.getElementById("poke").style.transform = "scaleX(-1)";
-
-            personagem.classList.remove('movimentoD'); // Remover a classe movimentoD
-
-            personagem.style.setProperty('--left-start-timburr', getComputedStyle(personagem).left);
-            personagem.classList.add('movimentoE');
-            personagem.addEventListener('transitionend', removerMovimentoE);
-        }
-
-
-
+        dx = -1;
+        personagem.style.transform = "scaleX(-1)";
     }
 
     const mover = () => {
         var tecla = event.keyCode;
+
         if (tecla == 39) {
+            teclaPressionada = true;
             moverDireita();
         }
         if (tecla == 37) {
+            teclaPressionada = true;
             moverEsquerda();
         }
     }
 
-    document.addEventListener('keydown', mover);
+    const soltar = () => {
+        var tecla = event.keyCode;
+        if (tecla == 39) {
+            dx = 0;
+        }
+        if (tecla == 37) {
+            dx = 0;
+        }
+    }
+
+    const atualizaFrame = () => {
+
+        // Verifica se a nova posição está dentro dos limites
+        if (px < 0) {
+            px = 1;
+        } else if (px > 90) {
+            px = 89;
+        } else {
+            px += dx * vel;
+            personagem.style.left = px + "%";
+            personagem.style.right = px + "%";
+        }
+    }
+
+    inicia();
+
 
     const voltar_menu = () => {  //atalho para retornar ao menu de fases
         var tecla = event.keyCode;
