@@ -37,23 +37,22 @@
 
         <div>
 
-            <img class="pikachu" id="pikachu" src="../img/repeticao/Katsumi.gif">
+            <img class="digiGenheiro" id="digiGenheiro" src="../img/repeticao/Katsumi.gif">
             <img style="display: none;" class="viga" id="viga" src="../img/repeticao/power.gif">
 
             <div class="infoViga" id="infoViga" style="display: none;">
-                <h5 class="textoViga"> As flechas não conseguem perfurar suas
-                    fagulhas protetoras,
-                    use-as com espaço para se proteger.</h5>>
+                <h5 class="textoViga"> As flechas não conseguem acertar a invisibilidade do DigiGenheiro,
+                    use-a com espaço para se proteger.</h5>>
                 <img class="exclamacaoAzul" id="exclamacaoAzul" src="../img/repeticao/exclamacaoAzul.png">
             </div>
         </div>
 
 
         <div class="peixes">
-            <img class="goldeen" id="goldeen" src="../img/repeticao/peixe1.gif">
-            <img class="seaking" id="seaking" src="../img/repeticao/peixe3.gif">
-            <img class="qwilfish" id="qwilfish" src="../img/repeticao/peixe4.gif">
-            <img class="basculin" id="basculin" src="../img/repeticao/peixe2.gif">
+            <img class="peixe1" id="peixe1" src="../img/repeticao/peixe1.gif">
+            <img class="peixe2" id="peixe2" src="../img/repeticao/peixe3.gif">
+            <img class="peixe3" id="peixe3" src="../img/repeticao/peixe4.gif">
+            <img class="peixe4" id="peixe4" src="../img/repeticao/peixe2.gif">
         </div>
 
 
@@ -65,18 +64,18 @@
         </div>
         <div class="vidaExtra" style="display: none;">
             <img id="vidaExtra" src="../img/repeticao/vida.png"></img>
-            <img class="drifloon" id="drifloon" src="../img/repeticao/genio.gif">
+            <img class="genio" id="genio" src="../img/repeticao/genio.gif">
         </div>
 
-        <div class="mantineMantyke" style="display: none;">
-            <img class="mantine" id="mantine" src="../img/repeticao/arqueiro.gif">
-            <img class="mantyke1" id="mantyke1" src="../img/repeticao/flecha.png">
-            <img class="mantyke2" id="mantyke2" src="../img/repeticao/flecha.png">
+        <div class="arqueiroCompleto" style="display: none;">
+            <img class="arqueiro" id="arqueiro" src="../img/repeticao/arqueiro.gif">
+            <img class="flecha1" id="flecha1" src="../img/repeticao/flecha.png">
+            <img class="flecha2" id="flecha2" src="../img/repeticao/flecha.png">
         </div>
 
-        <div class="tentaLlery" style="display: none;">
-            <img class="tentacruel" id="tentacruel" src="../img/repeticao/peixao2.gif">
-            <img class="octillery" id="octillery" src="../img/repeticao/peixao1.gif">
+        <div class="chefes" style="display: none;">
+            <img class="peixao1" id="peixao1" src="../img/repeticao/peixao2.gif">
+            <img class="peixao2" id="peixao2" src="../img/repeticao/peixao1.gif">
         </div>
         <img style="display: none;" class="sinalizacao" id="sinalizacao" src="../img/repeticao/exclamacao.png">
 
@@ -93,8 +92,7 @@
 
 
         <div>
-            <img style="display: none;" class="starmie" src="../img/repeticao/Bombardeiro.gif">
-
+            <img style="display: none;" class="bombardeiro" src="../img/repeticao/Bombardeiro.gif">
         </div>
 
         <img style="display: none;" class="bolhas" src="../img/repeticao/agua.png">
@@ -110,14 +108,12 @@
 
         <div class="ponte">
             <div class="filhoPonte" id="id16"></div>
-
             <div class="filhoPonte" id="id15"></div>
             <div class="filhoPonte" id="id14"></div>
             <div class="filhoPonte" id="id13"></div>
             <div class="filhoPonte" id="id12"></div>
             <div class="filhoPonte" id="id11"></div>
             <div class="filhoPonte" id="id10"></div>
-
             <div class="filhoPonte" id="id9"></div>
             <div class="filhoPonte" id="id8"></div>
             <div class="filhoPonte" id="id7"></div>
@@ -128,7 +124,6 @@
             <div class="filhoPonte" id="id2"></div>
             <div class="filhoPonte" id="id1"></div>
             <div class="filhoPonte" id="id0"></div>
-
         </div>
 
 
@@ -161,6 +156,30 @@
 
     <script>
 
+        var dx;
+        var px;
+        var vel;
+        var dy;
+        var temp;
+        var personagem;
+
+        function inicia() {
+            dx = 0;
+            px = 0;
+            dy = 0;
+            vel = 0.5;
+            personagem = document.querySelector(".digiGenheiro");
+            document.addEventListener('keydown', mover);
+            document.addEventListener('keyup', soltar);
+            personagem.style.left = px + "%";
+            temp = setInterval(atualizaFrame, 18);
+        }
+
+        var teclaPressionada = false;
+
+
+
+
         var elementoPonte = document.getElementById("id" + 4);
         var loc = elementoPonte.getBoundingClientRect();
         var localizacao = loc.left + window.pageXOffset;
@@ -176,13 +195,15 @@
         var textoVida = 0;
         var verificaPopUp = "false";
 
+        var podeAndar = true;
+
         var troncos = document.querySelector('.troncos');
-        var pikachu = document.querySelector('.pikachu');
-        var starmie = document.querySelector('.starmie');
+        var digiGenheiro = document.querySelector('.digiGenheiro');
+        var bombardeiro = document.querySelector('.bombardeiro');
         var bolhas = document.querySelector('.bolhas');
         var entrada = document.querySelector('.entrada');
 
-        starmieRemove = true;
+        bombardeiroRemove = true;
         entrada.getBoundingClientRect();
 
         const alteraVida = () => {      //realiza a alteracao na vida do jogador, caso ele sofra um ataque
@@ -197,7 +218,7 @@
                 document.querySelector(".vidas1").remove();
                 vidas = vidas - 1;
             } else if (vidas == 0) {
-                document.querySelector(".pikachu").remove();
+                document.querySelector(".digiGenheiro").remove();
                 if (popUp == "false") {
                     exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente", './repeticao.html');
                     popUp = "true";
@@ -223,37 +244,37 @@
             //defini qual inimigo aparecera em determinado momento da fase
 
             if (tronco == 6) {
-                document.querySelector(".starmie").style.display = "block";
-                document.querySelector(".basculin").style.animationPlayState = "running";
+                document.querySelector(".bombardeiro").style.display = "block";
+                document.querySelector(".peixe3").style.animationPlayState = "running";
             } if (tronco == 7) {
-                document.querySelector(".goldeen").style.animationPlayState = "running";
+                document.querySelector(".peixe1").style.animationPlayState = "running";
             }
             if (tronco == 9) {
-                document.querySelector(".qwilfish").style.animationPlayState = "running";
-                document.querySelector(".seaking").style.animationPlayState = "running";
+                document.querySelector(".peixe4").style.animationPlayState = "running";
+                document.querySelector(".peixe2").style.animationPlayState = "running";
             }
             if (tronco == 10) {
-                document.querySelector(".mantineMantyke").style.display = "block";
+                document.querySelector(".arqueiroCompleto").style.display = "block";
                 document.querySelector(".infoViga").style.display = "block";
 
-                if(starmieRemove == true){
-                    document.querySelector(".starmie").remove();
-                    starmieRemove = false;
+                if (bombardeiroRemove == true) {
+                    document.querySelector(".bombardeiro").remove();
+                    bombardeiroRemove = false;
                 }
-                //document.querySelector(".starmie").style.display = "none";
+                //document.querySelector(".bombardeiro").style.display = "none";
             }
             if (tronco == 11) {
                 document.querySelector(".infoViga").style.display = "none";
             }
             if (tronco == 13) {
-                document.querySelector(".mantineMantyke").style.display = "none";
+                document.querySelector(".arqueiroCompleto").style.display = "none";
             }
             if (tronco == 14) {
-                document.querySelector(".goldeen").style.display = "none";
-                document.querySelector(".qwilfish").style.display = "none";
-                document.querySelector(".basculin").style.display = "none";
-                document.querySelector(".seaking").style.display = "none";
-                document.querySelector(".tentaLlery").style.display = "block";
+                document.querySelector(".peixe1").style.display = "none";
+                document.querySelector(".peixe4").style.display = "none";
+                document.querySelector(".peixe3").style.display = "none";
+                document.querySelector(".peixe2").style.display = "none";
+                document.querySelector(".chefes").style.display = "block";
                 document.querySelector(".sinalizacao").style.display = "block";
             }
             if (tronco == 15) {
@@ -268,31 +289,31 @@
                 document.querySelector(".vidaExtra").style.display = "block";
             }
 
-            pikachu.getBoundingClientRect();
-            starmie.getBoundingClientRect();
-            mantykes = document.querySelectorAll("div.mantineMantyke #mantyke1, div.mantineMantyke #mantyke2");
-            tentaLlery = document.querySelectorAll("div.tentaLlery #octillery, div.tentaLlery #tentacruel");
-            drifloon = document.getElementById("drifloon");
+            digiGenheiro.getBoundingClientRect();
+            bombardeiro.getBoundingClientRect();
+            flechas = document.querySelectorAll("div.arqueiroCompleto #flecha1, div.arqueiroCompleto #flecha2");
+            chefes = document.querySelectorAll("div.chefes #peixao1, div.chefes #peixao2");
+            genio = document.getElementById("genio");
             troncos_queda = document.getElementById("tronco_queda");
 
             //funcoes e lacos de repeticao para capturar colisoes entre personagem e inimigo
 
-            for (var i = 0; i < tentaLlery.length; i++) {
+            for (var i = 0; i < chefes.length; i++) {
 
-                if ((pikachu.x + 30 < tentaLlery[i].x + tentaLlery[i].width && pikachu.x - 30 + pikachu.width > tentaLlery[i].x) && (pikachu.y + 30 < tentaLlery[i].y + tentaLlery[i].height && pikachu.y - 30 + pikachu.height > tentaLlery[i].y)) {
-                    document.querySelector("#octillery").style.animation = 'none';
-                    document.querySelector("#tentacruel").style.animation = 'none';
-                    personagem.style.setProperty('--left-start-pikachu', '0%');
-                    //personagem.style.left = "0%";
+                if ((digiGenheiro.x + 30 < chefes[i].x + chefes[i].width && digiGenheiro.x - 30 + digiGenheiro.width > chefes[i].x) && (digiGenheiro.y + 30 < chefes[i].y + chefes[i].height && digiGenheiro.y - 30 + digiGenheiro.height > chefes[i].y)) {
+                    document.querySelector("#peixao1").style.animation = 'none';
+                    document.querySelector("#peixao2").style.animation = 'none';
+                    px = 0;
+                    personagem.style.left = "0%";
                     setInterval(function () {
-                        document.querySelector("#octillery").style.animation = "";
-                        document.querySelector("#tentacruel").style.animation = "";
+                        document.querySelector("#peixao1").style.animation = "";
+                        document.querySelector("#peixao2").style.animation = "";
                     }, 10);
                     alteraVida();
                 }
             }
 
-            if ((pikachu.x + 30 < troncos_queda.x + troncos_queda.width && pikachu.x - 30 + pikachu.width > troncos_queda.x) && (pikachu.y + 30 < troncos_queda.y + troncos_queda.height && pikachu.y - 30 + pikachu.height > troncos_queda.y)) {
+            if ((digiGenheiro.x + 30 < troncos_queda.x + troncos_queda.width && digiGenheiro.x - 30 + digiGenheiro.width > troncos_queda.x) && (digiGenheiro.y + 30 < troncos_queda.y + troncos_queda.height && digiGenheiro.y - 30 + digiGenheiro.height > troncos_queda.y)) {
                 troncos_queda.style.animation = 'none';
 
                 setInterval(function () {
@@ -302,7 +323,7 @@
                 document.getElementById("xIndicador").style.display = "none";
             }
 
-            if ((pikachu.x + 30 < drifloon.x + drifloon.width && pikachu.x - 30 + pikachu.width > drifloon.x) && (pikachu.y + 30 < drifloon.y + drifloon.height && pikachu.y - 30 + pikachu.height > drifloon.y)) {
+            if ((digiGenheiro.x + 30 < genio.x + genio.width && digiGenheiro.x - 30 + digiGenheiro.width > genio.x) && (digiGenheiro.y + 30 < genio.y + genio.height && digiGenheiro.y - 30 + digiGenheiro.height > genio.y)) {
 
                 document.querySelector(".vidaExtra").style.display = "none";
                 document.querySelector(".textoVidaExtra").style.display = "none";
@@ -318,140 +339,49 @@
                 }
             }
 
-            for (var i = 0; i < mantykes.length; i++) {
+            for (var i = 0; i < flechas.length; i++) {
 
-                if ((pikachu.x + 30 < mantykes[i].x + mantykes[i].width && pikachu.x - 30 + pikachu.width > mantykes[i].x) && (pikachu.y + 30 < mantykes[i].y + mantykes[i].height && pikachu.y - 30 + pikachu.height > mantykes[i].y) && (viga != "ativada")) {
+                if ((digiGenheiro.x + 30 < flechas[i].x + flechas[i].width && digiGenheiro.x - 30 + digiGenheiro.width > flechas[i].x) && (digiGenheiro.y + 30 < flechas[i].y + flechas[i].height && digiGenheiro.y - 30 + digiGenheiro.height > flechas[i].y) && (viga != "ativada")) {
 
-                    document.querySelector(".mantyke1").style.animation = 'none';
-                    document.querySelector(".mantyke2").style.animation = 'none';
+                    document.querySelector(".flecha1").style.animation = 'none';
+                    document.querySelector(".flecha2").style.animation = 'none';
                     setInterval(function () {
-                        document.querySelector("#mantyke1").style.animation = "";
-                        document.querySelector("#mantyke2").style.animation = "";
+                        document.querySelector("#flecha1").style.animation = "";
+                        document.querySelector("#flecha2").style.animation = "";
                     }, 10);
                     alteraVida();
+                    px = 0;
 
-                } else if ((pikachu.x + 30 < mantykes[i].x + mantykes[i].width && pikachu.x - 30 + pikachu.width > mantykes[i].x) && (pikachu.y + 30 < mantykes[i].y + mantykes[i].height && pikachu.y - 30 + pikachu.height > mantykes[i].y) && (viga == "ativada")) {
-                    document.querySelector(".mantyke1").style.animation = 'none';
-                    document.querySelector(".mantyke2").style.animation = 'none';
-                    setInterval(function () {
-                        document.querySelector("#mantyke1").style.animation = "";
-                        document.querySelector("#mantyke2").style.animation = "";
-                    }, 10);
-                }
+                } 
             }
 
-            peixes = document.querySelectorAll("div.peixes #goldeen, div.peixes #seaking, div.peixes #basculin, div.peixes #qwilfish");
+            peixes = document.querySelectorAll("div.peixes #peixe1, div.peixes #peixe2, div.peixes #peixe3, div.peixes #peixe4");
 
             for (var i = 0; i < peixes.length; i++) {
 
-                if ((pikachu.x + 30 < peixes[i].x + peixes[i].width && pikachu.x - 30 + pikachu.width > peixes[i].x) && (pikachu.y + 30 < peixes[i].y + peixes[i].height && pikachu.y - 30 + pikachu.height > peixes[i].y)) {
+                if ((digiGenheiro.x + 30 < peixes[i].x + peixes[i].width && digiGenheiro.x - 30 + digiGenheiro.width > peixes[i].x) && (digiGenheiro.y + 30 < peixes[i].y + peixes[i].height && digiGenheiro.y - 30 + digiGenheiro.height > peixes[i].y)) {
                     document.getElementById("xIndicador").style.display = "block";
                     document.getElementById("imgIndicador").style.display = "none";
-                    personagem.style.setProperty('--left-start-pikachu', '0%');
-                    //personagem.style.left = "0%";
+                    px = 0;
                 }
             }
 
-            if ((pikachu.x + 40 < starmie.x + starmie.width && pikachu.x - 40 + pikachu.width > starmie.x) && (pikachu.y + 40 < starmie.y + starmie.height && pikachu.y - 40 + pikachu.height > starmie.y)) {
-                personagem.style.setProperty('--left-start-pikachu', '0%');
+            if ((digiGenheiro.x + 40 < bombardeiro.x + bombardeiro.width && digiGenheiro.x - 40 + digiGenheiro.width > bombardeiro.x) && (digiGenheiro.y + 40 < bombardeiro.y + bombardeiro.height && digiGenheiro.y - 40 + digiGenheiro.height > bombardeiro.y)) {
+                personagem.style.setProperty('--left-start-digiGenheiro', '0%');
                 //personagem.style.left = "0%";
-                document.querySelector(".starmie").style.display = 'none';
-                document.querySelector(".starmie").style.animation = 'none';
+                document.querySelector(".bombardeiro").style.display = 'none';
+                document.querySelector(".bombardeiro").style.animation = 'none';
 
                 setInterval(function () {
-                    document.querySelector(".starmie").style.display = 'block';
-                    document.querySelector(".starmie").style.animation = "";
+                    document.querySelector(".bombardeiro").style.display = 'block';
+                    document.querySelector(".bombardeiro").style.animation = "";
                 }, 80);
                 alteraVida();
+                px = 0;
             }
         }, 5);
 
-        function removerMovimentoD() {
-            personagem.classList.remove(movimentoD);
-        }
-        function removerMovimentoE() {
-            personagem.classList.remove(movimentoE);
-        }
 
-        const animacaoPuloON = () => {
-            const computedStyle = window.getComputedStyle(personagem);
-            const animationName = computedStyle.animationName;
-            const jumpAnimationName = 'inicial_movimento'; // Nome da animação de pulo específica
-            return animationName === jumpAnimationName && computedStyle.animationPlayState === 'running';
-        };
-
-
-        //funcoes para mover o personagem na posicao desejada
-        const moverDireita = () => {
-
-            if (! animacaoPuloON()) {
-                if (((pikachu.offsetLeft + 30) < localizacao)) {
-                    document.getElementById("pikachu").style.transform = "scaleX(1)";
-                    personagem.classList.remove('movimentoE'); // Remover a classe movimentoD
-                    personagem.style.setProperty('--left-start-pikachu', getComputedStyle(personagem).left);
-                    personagem.classList.add('movimentoD');
-                    personagem.addEventListener('transitionend', removerMovimentoD);
-
-                } else if (document.getElementById("imgIndicador").style.display == "block") {
-                    document.getElementById("id" + tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
-
-                    elementoPonte = document.getElementById("id" + tronco);
-                    loc = elementoPonte.getBoundingClientRect();
-                    localizacao = loc.left + window.pageXOffset;
-                    tronco = tronco + 1;
-                    document.getElementById("imgIndicador").style.display = "none";
-                    document.getElementById("xIndicador").style.display = "block";
-                }
-            }
-        }
-
-        const moverEsquerda = () => {
-
-        if (! animacaoPuloON()) {
-            if (((pikachu.offsetLeft + 30) > locEntrada)) {
-                document.getElementById("pikachu").style.transform = "scaleX(-1)";
-                personagem.classList.remove('movimentoD'); // Remover a classe movimentoD
-                personagem.style.setProperty('--left-start-pikachu', getComputedStyle(personagem).left);
-                personagem.classList.add('movimentoE');
-                personagem.addEventListener('transitionend', removerMovimentoE);
-
-            }
-        }
-        }
-
-        const personagem = document.querySelector('.pikachu');
-
-        const mover = () => {
-            var tecla = event.keyCode;
-            if (tecla == 39 && viga == "desativada") {
-                moverDireita();
-            } else if (tecla == 37 && viga == "desativada") {
-                moverEsquerda();
-            } else if (tecla == 32) {
-                document.getElementById("viga").style.display = "block";
-
-                var temp = document.getElementById("pikachu").offsetLeft;
-
-                document.getElementById("viga").style.left = (pikachu.offsetLeft - 180) + "px";
-                viga = "ativada";
-            } else if(tecla == 38 && viga == "desativada"){
-                personagem.classList.remove('movimentoD'); // Remover a classe movimentoD
-                personagem.classList.remove('movimentoE'); // Remover a classe movimentoE
-
-                personagem.classList.add('movimento');
-                setTimeout(function () {
-                    personagem.classList.remove('movimento');
-                }, 1000);
-            }
-        }
-        document.addEventListener('keydown', mover); //funcao para detectar pressionar de teclas, movimentacao
-
-        document.addEventListener("keyup", function (event) {
-            if (event.key == " ") {
-                document.getElementById("viga").style.display = "none";
-                viga = "desativada";
-            }
-        });
 
         const voltar_menu = () => {  //tecla de atalho para retornar ao menu
             var tecla = event.keyCode;
@@ -461,6 +391,93 @@
             }
         }
         document.addEventListener('keydown', voltar_menu);
+
+        const moverDireita = () => {
+
+            if (((personagem.offsetLeft + 30) < localizacao) && podeAndar == true) {
+                dx = 1;
+                personagem.style.transform = "scaleX(1)";
+
+            } else if (document.getElementById("imgIndicador").style.display == "block" && podeAndar == true) {
+                document.getElementById("id" + tronco).innerHTML = "<img src='../img/repeticao/tronco_ponte.png'>";
+
+                elementoPonte = document.getElementById("id" + tronco);
+                loc = elementoPonte.getBoundingClientRect();
+                localizacao = loc.left + window.pageXOffset;
+                tronco = tronco + 1;
+                document.getElementById("imgIndicador").style.display = "none";
+                document.getElementById("xIndicador").style.display = "block";
+            } else {
+                dx = 0;
+            }
+        }
+
+        const moverEsquerda = () => {
+
+            if (((personagem.offsetLeft + 30) > 10) && podeAndar == true) {
+                dx = -1;
+                personagem.style.transform = "scaleX(-1)";
+            } else {
+                dx = 0;
+            }
+
+
+        }
+
+        const mover = () => {
+            var tecla = event.keyCode;
+
+            if (tecla == 32) {
+                personagem.style.opacity  = 0.4;
+                viga = "ativada";
+            }
+
+            if (tecla == 39) {
+                teclaPressionada = true;
+                moverDireita();
+            }
+            if (tecla == 37) {
+                teclaPressionada = true;
+                moverEsquerda();
+            }
+            if (tecla == 38) {
+                dx = 0;
+                personagem.classList.add('movimento');
+                podeAndar = false;
+                setTimeout(function () {
+                    personagem.classList.remove('movimento');
+                    podeAndar = true;
+                }, 1000);
+            }
+        }
+
+        const soltar = () => {
+            var tecla = event.keyCode;
+            if (tecla == 39) {
+                dx = 0;
+            }
+            if (tecla == 37) {
+                dx = 0;
+            }
+            if (tecla == 32) {
+                personagem.style.opacity  = 1;
+                viga = "desativada";
+            }
+        }
+
+        const atualizaFrame = () => {
+
+
+
+            if (teclaPressionada == true) {
+                px += dx * vel;
+                personagem.style.left = px + "%";
+                personagem.style.right = px + "%";
+            }
+        }
+
+
+        inicia();
 
     </script>
 

@@ -12,7 +12,7 @@
     <script src="./perguntas.js"></script>
 
     <title>Caixas</title>
-    <link rel="stylesheet" href="../css/unowmsFase.css">
+    <link rel="stylesheet" href="../css/variaveis.css">
 
 </head>
 
@@ -22,13 +22,13 @@
 
 
     <div style="padding: 1vw;" class="titulo">
-        <h3>Informe o tipo de variavel dentro da caixa, arrastando as DigiLetras</h3>
+        <h3>Informe o tipo de variavel dentro da caixa, arrastando ou clicando nas DigiLetras</h3>
     </div>
 
 
 
     <div class="caixaConteudo">
-        <img src="../img/unowns/caixa.png">
+        <img src="../img/variaveis/caixa.png">
         <div class="textoCaixa">
             <h2 style="font-weight: bold; font-size: 1.1vw;" id="alterar"></h2></img>
         </div>
@@ -39,21 +39,21 @@
         <div class="teclado">
 
 
-            <div class="letras1">
+            <div class="letras1" onclick="soltarElemento('inteiro')">
                 <h6>I N T E I R O</h6>
-                <img class="I" style="width:10%;" id="inteiro" style="width: 4vw;" src="../img/unowns/I.png"
+                <img class="i" style="width:10%;" id="inteiro" style="width: 4vw;" src="../img/variaveis/i.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="N" style="width:10%;" id="inteiro" style="width: 4.5vw;" src="../img/unowns/N.png"
+                <img class="n" style="width:10%;" id="inteiro" style="width: 4.5vw;" src="../img/variaveis/n.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="T" style="width:10%;" id="inteiro" style="width: 2.5vw;" src="../img/unowns/T.png"
+                <img class="t" style="width:10%;" id="inteiro" style="width: 2.5vw;" src="../img/variaveis/t.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="E" style="width:10%;" id="inteiro" style="width: 4vw;" src="../img/unowns/E.png"
+                <img class="e" style="width:10%;" id="inteiro" style="width: 4vw;" src="../img/variaveis/e.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="I" style="width:10%;" id="inteiro" style="width: 4vw;" src="../img/unowns/I.png"
+                <img class="i" style="width:10%;" id="inteiro" style="width: 4vw;" src="../img/variaveis/i.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="R" style="width:10%;" id="inteiro" style="width: 3.5vw;" src="../img/unowns/R.png"
+                <img class="r" style="width:10%;" id="inteiro" style="width: 3.5vw;" src="../img/variaveis/r.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="O" style="width:10%;" id="inteiro" style="width: 3.6vw;" src="../img/unowns/O.png"
+                <img class="o" style="width:10%;" id="inteiro" style="width: 3.6vw;" src="../img/variaveis/o.png"
                     ondragstart="itemSelecionado(event)"></img>
             </div>
 
@@ -61,77 +61,77 @@
 
 
 
-            <div class="letras2">
+            <div class="letras2" onclick="soltarElemento('decimal')">
                 <h6>D E C I M A L</h6>
-                <img class="D" style="width:10%;" id="decimal" style="width: 3.5vw;" src="../img/unowns/D.png"
+                <img class="d" style="width:10%;" id="decimal" style="width: 3.5vw;" src="../img/variaveis/d.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="E" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/unowns/E.png"
+                <img class="e" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/variaveis/e.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="C" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/unowns/C.png"
+                <img class="c" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/variaveis/c.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="I" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/unowns/I.png"
+                <img class="i" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/variaveis/i.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="M" style="width:10%;" id="decimal" style="width: 3.3vw;" src="../img/unowns/M.png"
+                <img class="m" style="width:10%;" id="decimal" style="width: 3.3vw;" src="../img/variaveis/m.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="A" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/unowns/A.png"
+                <img class="a" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/variaveis/a.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="L" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/unowns/L.png"
+                <img class="l" style="width:10%;" id="decimal" style="width: 4vw;" src="../img/variaveis/l.png"
                     ondragstart="itemSelecionado(event)"></img>
             </div>
 
 
-            <div class="letras3">
+            <div class="letras3" onclick="soltarElemento('booleano')">
                 <h6>B O O L E A N O</h6>
-                <img class="B" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/B.png"
+                <img class="b" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/b.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="O" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/O.png"
+                <img class="o" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/o.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="O" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/O.png"
+                <img class="o" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/o.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="L" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/L.png"
+                <img class="l" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/l.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="E" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/E.png"
+                <img class="e" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/e.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="A" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/A.png"
+                <img class="a" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/a.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="N" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/N.png"
+                <img class="n" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/n.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="O" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/unowns/O.png"
+                <img class="o" style="width:10%;" id="booleano" style="width: 4vw;" src="../img/variaveis/o.png"
                     ondragstart="itemSelecionado(event)"></img>
 
             </div>
 
 
-            <div class="letras4">
+            <div class="letras4" onclick="soltarElemento('palavra')">
                 <h6>P A L A V R A</h6>
-                <img class="P" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/unowns/P.png"
+                <img class="p" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/variaveis/p.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="A" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/unowns/A.png"
+                <img class="a" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/variaveis/a.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="L" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/unowns/L.png"
+                <img class="l" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/variaveis/l.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="A" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/unowns/A.png"
+                <img class="a" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/variaveis/a.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="V" style="width:10%;" id="palavra" style="width: 3vw;" src="../img/unowns/V.png"
+                <img class="v" style="width:10%;" id="palavra" style="width: 3vw;" src="../img/variaveis/v.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="R" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/unowns/R.png"
+                <img class="r" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/variaveis/r.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="A" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/unowns/A.png"
+                <img class="a" style="width:10%;" id="palavra" style="width: 4vw;" src="../img/variaveis/a.png"
                     ondragstart="itemSelecionado(event)"></img>
             </div>
 
 
-            <div class="letras5">
+            <div class="letras5" onclick="soltarElemento('letra')">
                 <h6>L E T R A</h6>
-                <img class="L" style="width:13%;" id="letra" style="width: 4vw;" src="../img/unowns/L.png"
+                <img class="l" style="width:13%;" id="letra" style="width: 4vw;" src="../img/variaveis/l.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="E" style="width:13%;" id="letra" style="width: 4vw;" src="../img/unowns/E.png"
+                <img class="e" style="width:13%;" id="letra" style="width: 4vw;" src="../img/variaveis/e.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="T" style="width:13%;" id="letra" style="width: 2.5vw;" src="../img/unowns/T.png"
+                <img class="t" style="width:13%;" id="letra" style="width: 2.5vw;" src="../img/variaveis/t.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="R" style="width:13%;" id="letra" style="width: 4vw;" src="../img/unowns/R.png"
+                <img class="r" style="width:13%;" id="letra" style="width: 4vw;" src="../img/variaveis/r.png"
                     ondragstart="itemSelecionado(event)"></img>
-                <img class="A" style="width:13%;" id="letra" style="width: 4vw;" src="../img/unowns/A.png"
+                <img class="a" style="width:13%;" id="letra" style="width: 4vw;" src="../img/variaveis/a.png"
                     ondragstart="itemSelecionado(event)"></img>
             </div>
 
@@ -143,7 +143,7 @@
                 <div id="slot1" class="filhoCaixaS"></div>
 
             </div>
-            <button id="botaoResposta" onclick="limparUnowns('slot1')">Apagar</button>
+            <button id="botaoResposta" onclick="limparVariaveis('slot1')">Apagar</button>
             <button id="botaoResposta"
                 onclick="verificaTipo(document.getElementById('slot1').innerHTML)">Enviar</button>
 
@@ -151,7 +151,7 @@
 
         <div class="inicial">
             <h6>Ajuda</h6>
-            <img src="../img/unowns/help.png" id="inicial" onclick="exibeAjuda()" style="cursor:pointer">
+            <img src="../img/variaveis/help.png" id="inicial" onclick="exibeAjuda()" style="cursor:pointer">
             <h2 id="ajuda" style="display:none">Inteiro = Números Inteiros <br><br>Decimal = Números Com Virgula
                 <br><br>Palavra = Texto<br><br>Booleano = Verdadeiro Ou Falso <br><br>Letra = Letras
             </h2>
@@ -165,32 +165,32 @@
 
     <div style="z-index: -1;" class="alfabeto">
 
-        <img class="A" id="A" src="../img/unowns/A.png"> </img>
-        <img class="B" id="B" src="../img/unowns/B.png"></img>
-        <img class="C" id="C" src="../img/unowns/C.png"></img>
-        <img class="D" id="D" src="../img/unowns/D.png"></img>
-        <img class="E" id="E" src="../img/unowns/E.png"></img>
-        <img class="F" id="F" src="../img/unowns/F.png"></img>
-        <img class="G" id="G" src="../img/unowns/G.png"></img>
-        <img class="H" id="H" src="../img/unowns/H.png"></img>
-        <img class="I" id="I" src="../img/unowns/I.png"></img>
-        <img class="J" id="J" src="../img/unowns/J.png"></img>
-        <img class="K" id="K" src="../img/unowns/K.png"></img>
-        <img class="L" id="L" src="../img/unowns/L.png"></img>
-        <img class="M" id="M" src="../img/unowns/M.png"></img>
-        <img class="N" id="N" src="../img/unowns/N.png"></img>
-        <img class="O" id="O" src="../img/unowns/O.png"></img>
-        <img class="P" id="P" src="../img/unowns/P.png"></img>
-        <img class="Q" id="Q" src="../img/unowns/Q.png"></img>
-        <img class="R" id="R" src="../img/unowns/R.png"></img>
-        <img class="S" id="S" src="../img/unowns/S.png"></img>
-        <img class="T" id="T" src="../img/unowns/T.png"></img>
-        <img class="U" id="U" src="../img/unowns/U.png"></img>
-        <img class="V" id="V" src="../img/unowns/V.png"></img>
-        <img class="W" id="W" src="../img/unowns/W.png"></img>
-        <img class="X" id="X" src="../img/unowns/X.png"></img>
-        <img class="Y" id="Y" src="../img/unowns/Y.png"></img>
-        <img class="Z" id="Z" src="../img/unowns/Z.png"></img>
+        <img class="a" id="A" src="../img/variaveis/a.png"> </img>
+        <img class="b" id="B" src="../img/variaveis/b.png"></img>
+        <img class="c" id="C" src="../img/variaveis/c.png"></img>
+        <img class="d" id="D" src="../img/variaveis/d.png"></img>
+        <img class="e" id="E" src="../img/variaveis/e.png"></img>
+        <img class="f" id="F" src="../img/variaveis/f.png"></img>
+        <img class="g" id="G" src="../img/variaveis/g.png"></img>
+        <img class="h" id="H" src="../img/variaveis/h.png"></img>
+        <img class="i" id="I" src="../img/variaveis/i.png"></img>
+        <img class="j" id="J" src="../img/variaveis/j.png"></img>
+        <img class="k" id="K" src="../img/variaveis/k.png"></img>
+        <img class="l" id="L" src="../img/variaveis/l.png"></img>
+        <img class="m" id="M" src="../img/variaveis/m.png"></img>
+        <img class="n" id="N" src="../img/variaveis/n.png"></img>
+        <img class="o" id="O" src="../img/variaveis/o.png"></img>
+        <img class="p" id="P" src="../img/variaveis/p.png"></img>
+        <img class="q" id="Q" src="../img/variaveis/q.png"></img>
+        <img class="r" id="R" src="../img/variaveis/r.png"></img>
+        <img class="s" id="S" src="../img/variaveis/s.png"></img>
+        <img class="y" id="T" src="../img/variaveis/t.png"></img>
+        <img class="u" id="U" src="../img/variaveis/u.png"></img>
+        <img class="v" id="V" src="../img/variaveis/v.png"></img>
+        <img class="w" id="W" src="../img/variaveis/w.png"></img>
+        <img class="x" id="X" src="../img/variaveis/x.png"></img>
+        <img class="y" id="Y" src="../img/variaveis/y.png"></img>
+        <img class="z" id="Z" src="../img/variaveis/z.png"></img>
     </div>
 
 </body>
@@ -225,41 +225,55 @@
     }
 
     const soltarElemento = (event) => {  //solta o elemento no local designado
-        event.preventDefault();
 
-        var imagem = event.dataTransfer.getData("img");
-        var imagensLetras = "";
+        var cheio = document.querySelectorAll("#slot1" + " img");
 
-        if (imagem == "inteiro") {
-            imagensLetras = document.querySelectorAll('.letras1 img');
-        } else if (imagem == "decimal") {
-            imagensLetras = document.querySelectorAll('.letras2 img');
-        } else if (imagem == "booleano") {
-            imagensLetras = document.querySelectorAll('.letras3 img');
-        } else if (imagem == "palavra") {
-            imagensLetras = document.querySelectorAll('.letras4 img');
-        } else {
-            imagensLetras = document.querySelectorAll('.letras5 img');
+       
+        if (cheio.length == 0) {
+
+            var imagem = "";
+            var imagensLetras = "";
+
+            if (event != "inteiro" && event != "decimal" && event != "booleano" && event != "palavra" && event != "letra") {
+                event.preventDefault();
+                imagem = event.dataTransfer.getData("img");
+                imagensLetras = "";
+            } else {
+                imagem = event;
+            }
+
+            if (imagem == "inteiro") {
+                imagensLetras = document.querySelectorAll('.letras1 img');
+            } else if (imagem == "decimal") {
+                imagensLetras = document.querySelectorAll('.letras2 img');
+            } else if (imagem == "booleano") {
+                imagensLetras = document.querySelectorAll('.letras3 img');
+            } else if (imagem == "palavra") {
+                imagensLetras = document.querySelectorAll('.letras4 img');
+            } else {
+                imagensLetras = document.querySelectorAll('.letras5 img');
+            }
+            const slot1 = document.getElementById("slot1");
+
+            const contenedorImagens = document.createElement("div");
+
+            contenedorImagens.style.display = "flex";
+
+            // Adiciona cada imagem ao contêiner flexível
+            imagensLetras.forEach((imagem, index) => {
+                const novaImagem = document.createElement("img");
+                novaImagem.src = '../img/variaveis/' + imagem.classList[0] + '.png';
+                novaImagem.className = imagem.classList[0];
+                contenedorImagens.appendChild(novaImagem);
+            });
+
+            slot1.appendChild(contenedorImagens);
+
         }
-        const slot1 = document.getElementById("slot1");
-
-        const contenedorImagens = document.createElement("div");
-
-        contenedorImagens.style.display = "flex";
-
-        // Adiciona cada imagem ao contêiner flexível
-        imagensLetras.forEach((imagem, index) => {
-            const novaImagem = document.createElement("img");
-            novaImagem.src = '../img/unowns/' + imagem.classList[0] + '.png';
-            novaImagem.className = imagem.classList[0];
-            contenedorImagens.appendChild(novaImagem);
-        });
-
-        slot1.appendChild(contenedorImagens);
 
     }
 
-    const limparUnowns = (k) => { //funcao para limpar a resposta apos ser enviada
+    const limparVariaveis = (k) => { //funcao para limpar a resposta apos ser enviada
 
         var elemento = document.querySelectorAll("#slot1" + " img");
 
@@ -269,86 +283,86 @@
             }
         });
 
-        if(elemento.length === 0){
-                exibeNotificação("error", "Nada para apagar!", "");
+        if (elemento.length === 0) {
+            exibeNotificação("error", "Nada para apagar!", "");
         }
 
     }
 
     const verificaTipo = (valor) => {  //verifica se as respostas informadas estão certas
-        console.log(valor)
-        if (idPergunta == 6) {   //verifica se o usuario chegou ao final da fase
-            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=1');
-            return;
-        }
 
         var tipoCaixa = perguntas[vetorPerguntas[idPergunta]].answers[0].option.trim();
 
         switch (tipoCaixa) {
             case 'inteiro':
-                if (valor.includes('class="I"') && valor.includes('class="N"') && valor.includes('class="T"')) { //caso a resposta esteja certa, exibe que a respota esta certa e limpa o campo de resposta 
+                if (valor.includes('class="i"') && valor.includes('class="n"') && valor.includes('class="t"')) { //caso a resposta esteja certa, exibe que a respota esta certa e limpa o campo de resposta 
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta(); //carrega a proxima pergunta
                 } else { //caso a resposta esteja errada, informa ao usuario e limpa o campo de resposta
                     exibeNotificação("error", "Tente Novamente!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                 }
                 break;
 
             case 'palavra':
-                if (valor.includes('class="P"')) {
+                if (valor.includes('class="p"')) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                 }
                 break;
 
             case 'booleano':
-                if (valor.includes('class="B"')) {
+                if (valor.includes('class="b"')) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                 }
                 break;
 
             case 'letra':
-                if (valor.includes('class="L"') && valor.includes('class="E"') && valor.includes('class="T"')) {
+                if (valor.includes('class="l"') && valor.includes('class="e"') && valor.includes('class="t"')) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                 }
                 break;
 
             case 'decimal':
                 console.log(valor)
-                if (valor.includes('class="D"')) {
+                if (valor.includes('class="d"')) {
                     exibeNotificação("success", "Resposta Certa. Vamos ao proximo!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                     idPergunta = idPergunta + 1;
                     carregarPergunta();
                 } else {
                     exibeNotificação("error", "Tente Novamente!", "");
-                    limparUnowns("slot1");
+                    limparVariaveis("slot1");
                 }
                 break;
 
             default:
                 exibeNotificação("error", "Os dados podem ter sido inseridos incorretamente na area do professor!", "");
-                limparUnowns("slot1");
+                limparVariaveis("slot1");
+        }
+
+        if (idPergunta == 6) {   //verifica se o usuario chegou ao final da fase
+            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=1');
+            return;
         }
     }
 
@@ -360,8 +374,8 @@
         }
     }
 
-    //captura os unowns que ficaram espalhados pela fase e os coloca em posições aleatorias da tela
-    const alfabeto = document.querySelectorAll('.A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z');
+    //captura as letras que ficaram espalhados pela fase e os coloca em posições aleatorias da tela
+    const alfabeto = document.querySelectorAll('.a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k, .l, .m, .n, .o, .p, .q, .r, .s, .t, .u, .v, .w, .x, .y, .z');
 
     for (var l = 0; l < alfabeto.length; l++) {
 
@@ -371,7 +385,7 @@
         const posicaoL = Math.floor(Math.random() * posicaoLeft.length);
         const posicaoB = Math.floor(Math.random() * posicaoBottom.length);
 
-        if (+posicaoLeft[posicaoL] < 30) { //gera novamente caso o bottom posicione os Unows dentro do teclado de Unows
+        if (+posicaoLeft[posicaoL] < 30) { //gera novamente caso o bottom posicione as letras dentro do teclado de letras
             const novaPosB = ["0", "93"];
 
             const posB = Math.floor(Math.random() * novaPosB.length);

@@ -25,9 +25,9 @@
         <!-- declaracao da tag cenario, contendo a imagem de todos os Pokemon e elementos que estarao dispostos sobre a tela-->
         <div class="cenario">
             <div>
-                <img id="uA" src="../img/unowns/A.png"></img>
-                <img id="uB" src="../img/unowns/B.png"></img>
-                <img id="uC" src="../img/unowns/C.png"></img>
+                <img id="uA" src="../img/variaveis/a.png"></img>
+                <img id="uB" src="../img/variaveis/b.png"></img>
+                <img id="uC" src="../img/variaveis/c.png"></img>
                 <img id="arbok" src="../img/decisao/1.gif"></img>
                 <img id="nuvens" src="../img/decisao/clouds.png"></img>
                 <img id="nuvens2" src="../img/decisao/clouds.png"></img>
@@ -45,10 +45,8 @@
             <div>
 
                 <!-- declaracao de div com mensagem 'iniciar' que ao ser pressionado apresentar uma mensagem ao jogador-->
-                <div class="container-menu">
-                    <br>
-                    <!-- declaracao de div para encerrar o jogo ao ser pressionada-->
-                    <div id="encerrar" onclick="exibeMensagem()">
+                <div class="container-menu"> <br><br><br><br>
+                    <div id="iniciar" onclick="exibeMensagem()">
                         <h4>Iniciar</h4>
                     </div>
                 </div>
@@ -61,7 +59,7 @@
 <script>
 
     function exibeMensagem() {   //funcao para exibir mensagem de ajuda ao jogador
-        exibeNotificação("warning", "Use a tecla Esc sempre que quiser sair de uma fase.<br>Para uma melhor experiência, jogue em modo tela cheia.", "../telaInicial/cityIntro.html");
+        exibeNotificação("warning", "Use a tecla Esc sempre que quiser sair de uma fase. <br>Para uma melhor experiência, jogue em tela cheia!", "../telaInicial/cityIntro.html");
     }
 
     document.addEventListener('click', musicPlay);  //funcao para forcar o autoplay da musica quando o jogador tocar em qualquer local da tela
@@ -84,4 +82,5 @@
         body.appendChild(img);
     }
 
+    
 </script>
