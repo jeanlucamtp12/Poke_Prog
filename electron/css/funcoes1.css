@@ -35,11 +35,11 @@ body{
  
 }
 
-#combee2, #combee3, #combee4, #combee5{
+#bat, #bat, #bat, #bat{
     z-index: 1;
 }
 
-#combee2{
+#bat2{
     animation: raio_movimento 3s infinite linear;
     width:9%;   
     position: absolute;
@@ -48,7 +48,7 @@ body{
    
 }
 
-#combee3{
+#bat3{
     animation:  raio_movimento 4s infinite linear;
       
     width:9%;   
@@ -58,7 +58,7 @@ body{
  }
  
 
-#combee4{
+#bat4{
     animation:  raio_movimento 5s infinite linear;
      
     width:9%;   
@@ -68,7 +68,7 @@ body{
  
    
 }
-#combee5{
+#bat5{
     animation:  raio_movimento 7s infinite linear;
      
     width:9%;   
@@ -116,7 +116,7 @@ body{
 }
 
 
-.pokeInfo h5{
+.info h5{
     position: absolute;
     bottom: 58%;
     left: 16vw;
@@ -142,18 +142,18 @@ body{
 
 }
 
-.poke{
+.digiBot{
     position: absolute;
     bottom: 0%;
     left:  40vw;
     width: 7vw;
     z-index: 2;
-    animation: chandelure_ardente 0.5s infinite linear;
+    animation: tartaruga_ardente 0.5s infinite linear;
     animation-play-state: paused;
 }
 
 
-@keyframes chandelure_ardente {
+@keyframes tartaruga_ardente {
 
     0% {
         filter: hue-rotate(0deg);
@@ -267,15 +267,15 @@ body{
 }
 
 
-.vespiqueen{
+.rainha{
     position: absolute;
     width: 15vw;
-    animation: vespiqueen_movimento 8s infinite linear;
+    animation: rainha_movimento 8s infinite linear;
     z-index: 1;
 
 }
 
-@keyframes vespiqueen_movimento{
+@keyframes rainha_movimento{
     0%{
         left: 90%;
         bottom: 20vw;
@@ -467,19 +467,19 @@ body{
 }
 
 
-.wormadam1{
+.worm1{
     position: absolute;
     width: 25%;
     top: 0%;
     left: 13%;
 }
-.wormadam2{
+.worm2{
     position: absolute;
     width: 25%;
     top: 0%;
     left: 31%;
 }
-.wormadam3{
+.worm3{
     position: absolute;
     width: 25%;
     top: 0%;

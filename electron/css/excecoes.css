@@ -113,32 +113,32 @@ body {
     position: absolute;
     width: 4vw;
     top: 10%;
-    animation: zubats_movimento 24s infinite linear;
+    animation: morcego_movimento 24s infinite linear;
 }
 .segundo{
     width: 4vw;
     position: absolute;
     top: 5%;
-    animation: zubats_movimento 26s infinite linear;
+    animation: morcego_movimento 26s infinite linear;
 }
 .terceiro{
     width: 4vw;
     position: absolute;
     top: 6%;
-    animation: zubats_movimento 30s infinite linear;
+    animation: morcego_movimento 30s infinite linear;
 }
 .quarto{
     width: 4vw;
     position: absolute;
     top: 2%;
-    animation: zubats_movimento 32s infinite linear;
+    animation: morcego_movimento 32s infinite linear;
 
 }
 
 
 
 
-@keyframes zubats_movimento{
+@keyframes morcego_movimento{
     0%{
         right: 0%;
 
@@ -223,37 +223,37 @@ body {
 }
 
 
-.gasly{
+.monstro1{
     position: absolute;
     width: 12vw;
     z-index: 1;
     cursor: pointer;
 }
 
-.gasly1{
+.m1{
 
-    animation: gasly1_movimento 15s infinite linear;
-
-}
-.gasly2{
-
-    animation: gasly2_movimento 16s infinite linear;
+    animation: m1_movimento 15s infinite linear;
 
 }
-.gasly3{
+.m2{
 
-    animation: gasly3_movimento 17s infinite linear;
-
-}
-.gasly4{
-
-    animation: gasly4_movimento 18s infinite linear;
+    animation: m2_movimento 16s infinite linear;
 
 }
+.m3{
+
+    animation: m3_movimento 17s infinite linear;
+
+}
+.m4{
+
+    animation: m4_movimento 18s infinite linear;
+
+}
 
 
 
-@keyframes gasly1_movimento{
+@keyframes m1_movimento{
     0%{
         top: 0%;
     }
@@ -278,7 +278,7 @@ body {
 }
 
 
-@keyframes gasly2_movimento{
+@keyframes m2_movimento{
     0%{
         top: 0%;
     }
@@ -301,7 +301,7 @@ body {
     }
    
 }
-@keyframes gasly3_movimento{
+@keyframes m3_movimento{
     0%{
         top: 0%;
     }
@@ -325,7 +325,7 @@ body {
    
 }
 
-@keyframes gasly4_movimento{
+@keyframes m4_movimento{
     0%{
         top: 0%;
     }
@@ -351,7 +351,7 @@ body {
 
 
 
-.banette{
+.monstro2{
     position: absolute;
     width: 12vw;
     z-index: 1;
@@ -359,23 +359,23 @@ body {
     cursor: pointer;
 }
 
-.banette1{
-    animation: banette_movimento 5s infinite linear;
+.o1{
+    animation: o_movimento 5s infinite linear;
 }
-.banette2{
-    animation: banette_movimento 6s infinite linear;
+.o2{
+    animation: o_movimento 6s infinite linear;
 
 }
-.banette3{
-    animation: banette_movimento 8s infinite linear;
+.o3{
+    animation: o_movimento 8s infinite linear;
 
 }
-.banette4{ 
-    animation: banette_movimento 10s infinite linear;
+.o4{ 
+    animation: o_movimento 10s infinite linear;
 }
 
 
-@keyframes banette_movimento{
+@keyframes o_movimento{
     0%{
         right: 0%;
 
@@ -389,28 +389,28 @@ body {
     }
 }
 
-.frillish{
+.monstro4{
     position: absolute;
     width: 13vw;
     z-index: 1;
     cursor: pointer;
 }
 
-.frillish1{
-    animation: frillish_movimento 5s infinite linear;
+.f1{
+    animation: f_movimento 5s infinite linear;
 }
-.frillish2{
-    animation: frillish_movimento 15s infinite linear;
+.f2{
+    animation: f_movimento 15s infinite linear;
 }
-.frillish3{
-    animation: frillish_movimento 8s infinite linear;
+.f3{
+    animation: f_movimento 8s infinite linear;
 }
-.frillish4{ 
-    animation: frillish_movimento 6s infinite linear;
+.f4{ 
+    animation: f_movimento 6s infinite linear;
 }
 
 
-@keyframes frillish_movimento{
+@keyframes f_movimento{
     0%{
         right: 0%;
 
@@ -444,7 +444,7 @@ body {
     }
 }
 
-.litwick{
+.monstro3{
     position: absolute;
     width: 10vw;
     z-index: 1;
@@ -453,25 +453,25 @@ body {
 
 }
 
-.litwick1{
+.l1{
     left: 10%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
-.litwick2{
+.l2{
     left: 25%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
-.litwick3{
+.l3{
     left: 50%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
-.litwick4{ 
+.l4{ 
     left: 80%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
 
 
-@keyframes litwick_movimento{
+@keyframes l_movimento{
     0%{
         bottom: -10%;
         transform: rotate(0deg);
@@ -515,7 +515,7 @@ body {
 }
 
 
-.shedinja{
+.monstro5{
     position: absolute;
     width: 11vw;
     z-index: 1;
@@ -523,32 +523,32 @@ body {
 
 }
 
-.shedinja1{
+.s1{
     --my-start-left: 10%;   
     --my-start-bottom: 70%;  
-    animation: abra_movimento 5s infinite linear;
+    animation: a_movimento 15s infinite linear;
 }
-.shedinja2{
+.s2{
     --my-start-left: 10%;   
     --my-start-bottom: 0%;  
-    animation: abra_movimento 1s infinite linear;
+    animation: a_movimento 11s infinite linear;
 }
-.shedinja3{
+.s3{
     --my-start-left: 80%;  
     --my-start-bottom: 20%;  
-    animation: abra_movimento 2s infinite linear;
+    animation: a_movimento 12s infinite linear;
 }
-.shedinja4{ 
+.s4{ 
     --my-start-left: 80%;   
     --my-start-bottom: 75%;  
-    animation: abra_movimento 3s infinite linear;
+    animation: a_movimento 13s infinite linear;
 }
 
 
 
 
 
-@keyframes shedinja_movimento{
+@keyframes s_movimento{
     0%{
         bottom: 0%;
         right: 0%;
@@ -618,7 +618,7 @@ body {
 
 
 
-.umbreom{
+.monstro6{
     position: absolute;
     width: 14vw;
     z-index: 1;
@@ -626,25 +626,25 @@ body {
     bottom: 0%;
 }
 
-.umbreom1{
+.u1{
     --my-start-left: 20%;   
-    animation: umbreom_movimento 10s infinite linear;
+    animation: u_movimento 10s infinite linear;
 }
-.umbreom2{
+.u2{
     --my-start-left: 40%;   
-    animation: umbreom_movimento 12s infinite linear;
+    animation: u_movimento 12s infinite linear;
 }
-.umbreom3{
+.u3{
     --my-start-left: 60%;  
-    animation: umbreom_movimento 14s infinite linear;
+    animation: u_movimento 14s infinite linear;
 }
-.umbreom4{ 
+.u4{ 
     --my-start-left: 80%;   
-    animation: umbreom_movimento 16s infinite linear;
+    animation: u_movimento 16s infinite linear;
 }
 
 
-@keyframes umbreom_movimento{
+@keyframes u_movimento{
     0%{
         left: var(--my-start-left);
         opacity: 0; 
@@ -670,36 +670,36 @@ body {
 
 
 
-.froslass{
+.monstro8{
     position: absolute;
     width: 12vw;
     z-index: 1;
     cursor: pointer;
 }
 
-.froslass1{
+.r1{
     --my-start-left: 10%;   
     --my-start-bottom: 40%;  
-    animation: froslass_movimento 8s infinite linear;
+    animation: r_movimento 8s infinite linear;
 }
-.froslass2{
+.r2{
     --my-start-left: 30%;   
     --my-start-bottom: 60%;  
-    animation: froslass_movimento 9s infinite linear;
+    animation: r_movimento 9s infinite linear;
 }
-.froslass3{
+.r3{
     --my-start-left: 50%;  
     --my-start-bottom: 40%;  
-    animation: froslass_movimento 7s infinite linear;
+    animation: r_movimento 7s infinite linear;
 }
-.froslass4{ 
+.r4{ 
     --my-start-left: 70%;   
     --my-start-bottom: 60%;  
-    animation: froslass_movimento 6s infinite linear;
+    animation: r_movimento 6s infinite linear;
 }
 
 
-@keyframes froslass_movimento{
+@keyframes r_movimento{
     0%{
         left: var(--my-start-left);
         bottom: var(--my-start-bottom);
@@ -718,36 +718,36 @@ body {
 
 
 
-.abra{
+.monstro7{
     position: absolute;
     width: 14vw;
     z-index: 1;
     cursor: pointer;
 }
 
-.abra1{
+.a1{
     --my-start-left: 10%;   
     --my-start-bottom: 70%;  
-    animation: abra_movimento 5s infinite linear;
+    animation: a_movimento 5s infinite linear;
 }
-.abra2{
+.a2{
     --my-start-left: 10%;   
     --my-start-bottom: 0%;  
-    animation: abra_movimento 1s infinite linear;
+    animation: a_movimento 1s infinite linear;
 }
-.abra3{
+.a3{
     --my-start-left: 80%;  
     --my-start-bottom: 20%;  
-    animation: abra_movimento 2s infinite linear;
+    animation: a_movimento 2s infinite linear;
 }
-.abra4{ 
+.a4{ 
     --my-start-left: 80%;   
     --my-start-bottom: 75%;  
-    animation: abra_movimento 3s infinite linear;
+    animation: a_movimento 3s infinite linear;
 }
 
 
-@keyframes abra_movimento{
+@keyframes a_movimento{
     0%{
         left: var(--my-start-left);
         bottom: var(--my-start-bottom);
@@ -767,33 +767,33 @@ body {
 
 
 
-.gengar{
+.monstro9{
     position: absolute;
     width: 20vw;
     z-index: 1;
     cursor: pointer;
 }
 
-.gengar1{
+.g1{
     left: 5%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
-.gengar2{
+.g2{
     left: 25%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
-.gengar3{
+.g3{
     left: 50%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
-.gengar4{
+.g4{
     left: 75%;
-    animation: litwick_movimento 5s infinite linear;
+    animation: l_movimento 5s infinite linear;
 }
 
 
 
-.lampent{
+.monstro10{
     position: absolute;
     width: 15vw;
     z-index: 1;
@@ -801,25 +801,25 @@ body {
     bottom: 0%;
 }
 
-.lampent1{
+.b1{
     left: 10%;   
-    animation: lampent_movimento 10s infinite linear;
+    animation: b_movimento 10s infinite linear;
 }
-.lampent2{
+.b2{
     left: 30%;   
-    animation: lampent_movimento 12s infinite linear;
+    animation: b_movimento 12s infinite linear;
 }
-.lampent3{
+.b3{
     left: 50%;  
-    animation: lampent_movimento 14s infinite linear;
+    animation: b_movimento 14s infinite linear;
 }
-.lampent4{ 
+.b4{ 
     left: 70%;   
-    animation: lampent_movimento 16s infinite linear;
+    animation: b_movimento 16s infinite linear;
 }
 
 
-@keyframes lampent_movimento{
+@keyframes b_movimento{
     0%{
         opacity: 0; 
     }

@@ -88,17 +88,15 @@ body {
 }
 
 #nuvens{
-    animation: nuvem_movimento1 45s infinite linear; 
     width:20%;   
     position: absolute;
     top:10%;
-    left:50%;
+    left:70%;
   
 }
 
 
 #nuvens2{
-    animation: nuvem_movimento2 40s infinite linear; 
     width:20%;   
     position: absolute;
     top:-5%;
@@ -107,7 +105,6 @@ body {
 }
 
 #nuvens3{
-    animation: nuvem_movimento3 35s infinite linear; 
     width:20%;   
     position: absolute;
     top:5%;
@@ -291,7 +288,7 @@ body {
     position: absolute;
     left: 30%;
     width: 45vw;
-    top: 20%;
+    top: 15%;
     z-index: 2;
 }
 

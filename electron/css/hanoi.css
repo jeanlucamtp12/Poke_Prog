@@ -163,48 +163,32 @@ body{
 }
 
 
-#magnemite{
+#robo1{
     width: 7vw;
     position: absolute;
     right: 5%;
     transform: rotate(0.9turn);
     top: 10%
 }
-#magnemite2{
+#robo2{
     width: 15vw;
     position: absolute;
     right: 15%;
     top: 10%
 }
-#magneton{
+#robo3{
     width: 15vw;
     position: absolute;
     left: 3%;
     top: 10%
 }
-#magneton2{
+#robo4{
     width: 10vw;
     transform: scaleX(-1);
     position: absolute;
     left: 20%;
     top: 10%
 }
-
-#magnezone{
-    width: 14vw;
-    position: absolute;
-    left: 55%;
-    top: 10%
-}
-
-
-
-
-
-
-
-
-
 
 
 

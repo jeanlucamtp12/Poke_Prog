@@ -1,0 +1,273 @@
+* {
+    user-select: none;
+}
+
+
+body {
+    background: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
+    overflow: hidden; 
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.teclado{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -5vw;
+    background-color:  #18c4e0;
+    z-index: 2;
+    border: solid 2px white;
+}
+
+.letras1:hover, .letras2:hover, .letras3:hover, .letras4:hover, .letras5:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.letras1,.letras2,.letras3,.letras4,.letras5{
+    margin: auto;
+    text-align: center;
+    width: 25vw;
+}
+
+
+.letras1 h6, .letras2 h6, .letras3 h6, .letras4 h6, .letras5 h6{
+    font-size: 1vw;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+
+
+.caixaConteudo {
+    text-align: center;
+}
+
+.caixaConteudo img{
+    width: 10.5vw;
+}
+
+.textoCaixa{
+    font-size: 1.2vw;
+    margin-top: -6vw;
+    margin-left: 46vw;
+    margin-right: 46vw;
+}
+
+.tela {
+    padding: 1vw;
+    display: flex;
+    flex-direction: row; 
+}
+
+.caixaResposta {
+    border: 2px solid white;
+    width: 45vw;
+    height: 8vw;
+    margin-top: 5vw;
+    margin-left: 1vw;
+    background-color: linear-gradient( #18c4e0, #a3c6d4) no-repeat;
+}
+
+#botaoResposta {
+    height: 2vw;
+    width: 5vw;
+    font-size: 1vw;
+    margin-left: 50%;
+    margin-top: 1vw;
+    border-radius: 1vw;
+
+    color: #000000;
+    background-color: #61cddd;
+}
+
+#botaoResposta:hover {
+    transform: scale(1);
+}
+#botaoDeletar {
+    height: 2vw;
+    width: 5vw;
+    font-size: 1vw;
+    margin-left: 50%;
+    margin-top: 1vw;
+    border-radius: 1vw;
+    color: #000000;
+    background-color: #61cddd;
+}
+
+#botaoDeletar:hover {
+    transform: scale(1);
+}
+
+.filhoCaixaS{
+    width: 5vw;
+    display: inline-block;
+    height: 5vw;
+    flex-wrap: wrap;
+    margin-left: 5vw;
+    margin-top: 2vw;
+}
+
+.inicial {
+    margin-left: 2vw;
+    width: 20vw;
+}
+.inicial h6{
+    font-weight: bold; 
+    margin-left: 1.5vw; 
+    font-size: 1vw;
+}
+.inicial h2{
+    font-size: 1vw;   
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    z-index: 2;
+    color: rgb(0, 0, 0);
+    border: solid 2px white;
+    border-radius: 5%;
+    background-color: white;
+}
+.inicial img {
+    margin-top: 1vw;
+    width: 10vw;
+    animation: movimentoAjuda 5s infinite linear;
+}
+.inicial:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@keyframes movimentoAjuda {
+    0% {
+        transform: translate(-10%, -50%);
+    }
+    50% {
+        transform: translate(-30%, -30%);
+    }
+    100% {
+        transform: translate(-10%, -50%);
+    }
+}
+
+#slot1 img{
+    width: 100%;
+    margin-top: 2vw;
+}
+
+#A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L, #M, #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z{
+    position: absolute;
+    width: 3vw;
+}
+
+
+@keyframes movimentoLetras {
+    0% {
+        transform: translate(-100%, -30%) scale(1);
+    }
+    25% {
+        transform: translate(-10%, -50%) scale(1.02);
+    }
+    50% {
+        transform: translate(-60%, -50%) scale(1);
+    }
+    75% {
+        transform: translate(-30%, -90%) translateY(-10%) scale(1.02);
+    }
+    100% {
+        transform: translate(-100%, -30%) scale(1);
+    }
+}
+.a{
+    animation: movimentoLetras 4s infinite linear;
+}
+.b{
+    animation: movimentoLetras 3s infinite linear;
+}
+.c{
+    animation: movimentoLetras 3s infinite linear;
+}
+.d{
+    animation: movimentoLetras 2s infinite linear;
+}
+.f{
+    animation: movimentoLetras 1.4s infinite linear;
+}
+.e{
+    animation: movimentoLetras 1.02s infinite linear;
+}
+.g{
+    animation: movimentoLetras 1.5s infinite linear;
+}
+.h{
+    animation: movimentoLetras 1.16s infinite linear;
+}
+.i{
+    animation: movimentoLetras 4s infinite linear;
+}
+.j{
+    animation: movimentoLetras 2s infinite linear;
+}
+.k{
+    animation: movimentoLetras 1.79s infinite linear;
+}
+.l{
+    animation: movimentoLetras 1.8s infinite linear;
+}
+.m{
+    animation: movimentoLetras 3.37s infinite linear;
+}
+.n{
+    animation: movimentoLetras 2.1s infinite linear;
+}
+.o{
+    animation: movimentoLetras 3.5s infinite linear;
+}
+.p{
+    animation: movimentoLetras 1.64s infinite linear;
+}
+.q{
+    animation: movimentoLetras 5s infinite linear;
+}
+.r{
+    animation: movimentoLetras 3.2s infinite linear;
+}
+.s{
+    animation: movimentoLetras 1s infinite linear;
+}
+.t{
+    animation: movimentoLetras 4s infinite linear;
+}
+.u{
+    animation: movimentoLetras 1.6s infinite linear;
+}
+.v{
+    animation: movimentoLetras 2.63s infinite linear;
+}
+.w{
+    animation: movimentoLetras 3.62s infinite linear;
+}
+.x{
+    animation: movimentoLetras 2.65s infinite linear;
+}
+.y{
+    animation: movimentoLetras 2.5s infinite linear;
+}
+.z{
+    animation: movimentoLetras 1.35s infinite linear;
+}
+
+
+
+.swal2-popup{
+    font-size: 1vw;
+}
+
+

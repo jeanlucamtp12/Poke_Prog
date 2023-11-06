@@ -4,9 +4,10 @@
     user-select: none;
 }
 
-body{
+body {
     overflow: hidden;
 }
+
 :root {
     --my-start-bottom: 18%;
     --my-end-bottom: 18%;
@@ -61,9 +62,7 @@ body{
 }
 
 .movimento {
-
     animation: inicial_movimento 1s infinite linear;
-
 }
 
 
@@ -90,13 +89,14 @@ body{
     z-index: 1;
 }
 
-.pikachu {
+.digiGenheiro {
     position: absolute;
     width: 9.5%;
-    bottom: 22%;
-    --left-start-pikachu: 0%;
-    left:  var(--left-start-pikachu);
-    z-index: 1;
+    --my-start-bottom: 22%;
+    bottom: var(--my-start-bottom);
+    --left-start-digiGenheiro: 0%;
+    left: var(--left-start-digiGenheiro);
+    z-index: 1;  
 }
 
 
@@ -104,9 +104,11 @@ body{
     0% {
         transform: rotate(0);
     }
+
     50% {
         transform: rotate(180deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -116,9 +118,9 @@ body{
     position: absolute;
     width: 12%;
     bottom: 18%;
-    left:  91%;
+    left: 91%;
     z-index: 1;
-    animation:  ajudante_movimento 30s  linear;
+    animation: ajudante_movimento 30s linear;
     animation-play-state: paused;
     z-index: 2;
 
@@ -127,18 +129,20 @@ body{
 
 @keyframes ajudante_movimento {
     0% {
-       left: 90.5%;
+        left: 90.5%;
     }
+
     50% {
         left: 60%;
     }
+
     100% {
         left: -20%;
     }
 }
 
 
-.viga{
+.viga {
     position: absolute;
     width: 30%;
     bottom: 18%;
@@ -149,17 +153,19 @@ body{
     0% {
         width: 25%;
     }
+
     50% {
-       width: 25%;
+        width: 25%;
     }
+
     100% {
-      width: 25%;
+        width: 25%;
     }
 }
 
 
 @media screen and (max-width: 1200px) {
-    .pikachu {
+    .digiGenheiro {
         bottom: 8%;
     }
 
@@ -170,33 +176,37 @@ body{
 
 
 .movimentoD {
-    animation:  inicial_movimentoDireita 1s infinite linear;
+    animation: inicial_movimentoDireita 1s infinite linear;
 
 }
 
 
-@keyframes inicial_movimentoDireita{
-    0%, 100% {
-        left: calc(var(--left-start-pikachu) + 1%);
+@keyframes inicial_movimentoDireita {
+
+    0%,
+    100% {
+        left: calc(var(--left-start-digiGenheiro) + 1%);
     }
 }
 
 .movimentoE {
-    animation:  inicial_movimentoEsquerda 1s infinite linear;
+    animation: inicial_movimentoEsquerda 1s infinite linear;
 
 }
 
 
-@keyframes inicial_movimentoEsquerda{
-    0%, 100% {
-        left: calc(var(--left-start-pikachu) - 1%);
+@keyframes inicial_movimentoEsquerda {
+
+    0%,
+    100% {
+        left: calc(var(--left-start-digiGenheiro) - 1%);
     }
 }
 
 
 @keyframes inicial_movimento {
     0% {
-        bottom: var(--my-start-bottom); 
+        bottom: var(--my-start-bottom);
 
     }
 
@@ -228,7 +238,7 @@ body{
 
 
 
-.pokemon{
+.pokemon {
     position: absolute;
 }
 
@@ -236,7 +246,7 @@ body{
     position: absolute;
 }
 
-.rio{
+.rio {
     width: 95vw;
     height: 35vh;
     background: linear-gradient(#00ffd5, #1200b4, #00b2f8) no-repeat;
@@ -247,6 +257,7 @@ body{
     z-index: 1;
 
 }
+
 @media screen and (max-width: 1200px) {
     .rio {
         height: 10vh;
@@ -254,12 +265,16 @@ body{
 }
 
 @keyframes rio {
-    0%, 100% {
+
+    0%,
+    100% {
         clip-path: polygon(0% 70%, 100% 70%, 100% 100%, 0% 100%);
     }
+
     50% {
         clip-path: polygon(0% 65%, 100% 65%, 100% 100%, 0% 100%);
     }
+
     80% {
         clip-path: polygon(0% 68%, 100% 68%, 100% 100%, 0% 100%);
     }
@@ -267,37 +282,37 @@ body{
 
 
 
-.starmie{
-    width: 7%;
+.bombardeiro {
+    width: 6%;
     position: absolute;
     left: 85%;
-    animation: starmie_movimento 5s infinite linear;
+    animation: bombardeiro_movimento 5s infinite linear;
     z-index: 1;
 }
 
 
 
-.entrada{
+.entrada {
     position: absolute;
     width: 8%;
     left: -1%;
     bottom: 0%;
     z-index: 1;
-    
+
 }
 
-.saida{
+.saida {
     position: absolute;
     width: 8%;
     left: 94%;
     bottom: 0%;
     z-index: 1;
     height: 20%;
-    
+
 }
 
 
-.ponte{
+.ponte {
     position: absolute;
     width: 95%;
     height: 12%;
@@ -305,7 +320,7 @@ body{
     left: 3%;
     display: flex;
     flex-direction: row-reverse;
-    
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -314,29 +329,31 @@ body{
     }
 }
 
-.filhoPonte{ 
-    color:white; 
-    width: 10%; 
+.filhoPonte {
+    color: white;
+    width: 10%;
 }
 
-.filhoPonte img{ 
-    width: 100%;       
+.filhoPonte img {
+    width: 100%;
 }
- 
- 
 
 
-@keyframes starmie_movimento {
+
+
+@keyframes bombardeiro_movimento {
     0% {
         bottom: 1vw;
         left: 85%;
 
     }
+
     5% {
         bottom: 6vw;
         left: 85%;
     }
-    10%{
+
+    10% {
         bottom: 6vw;
         left: 85%;
     }
@@ -347,41 +364,46 @@ body{
     }
 
     30% {
-       /* transform: rotate(-15deg);      */
+        /* transform: rotate(-15deg);      */
     }
-    50% {
-       /* transform: rotate(-15deg);*/
-    } 
 
     50% {
-       /* transform: rotate(-15deg);*/
-    } 
+        /* transform: rotate(-15deg);*/
+    }
+
+    50% {
+        /* transform: rotate(-15deg);*/
+    }
+
     60% {
-       /* transform: rotate(3505deg);*/
+        /* transform: rotate(3505deg);*/
         left: 85%;
-    } 
+    }
+
     80% {
-       /* transform: rotate(6505deg);*/
-        left:  50%;
+        /* transform: rotate(6505deg);*/
+        left: 50%;
 
     }
-    90%{
-        left:  20%;
+
+    90% {
+        left: 20%;
         bottom: 10vw;
     }
+
     100% {
-       /* transform: rotate(9505deg);*/
-        left:  -10%;
+        /* transform: rotate(9505deg);*/
+        left: -10%;
         bottom: 10vw;
 
     }
-  
+
 
 }
 
 
 
-.mato{
+.mato {
     position: absolute;
     width: 4%;
     bottom: 0%;
@@ -389,7 +411,7 @@ body{
 
 }
 
-.tronco_queda{
+.tronco_queda {
     position: absolute;
     width: 4vw;
     left: 20%;
@@ -401,16 +423,18 @@ body{
     0% {
         top: -5%;
     }
+
     50% {
         top: 50%;
-    } 
+    }
+
     100% {
         top: 100%;
     }
-  
+
 }
 
-.vidas{
+.vidas {
     position: absolute;
     left: 2%;
     bottom: 30vw;
@@ -420,10 +444,13 @@ body{
     flex-direction: row;
 }
 
-.vidas1, .vidas2, .vidas3{
+.vidas1,
+.vidas2,
+.vidas3 {
     width: 1.5%;
 }
-.vidas img{
+
+.vidas img {
     width: 100%;
 }
 
@@ -432,58 +459,70 @@ body{
 
 /* Peixes e outros inimigos*/
 
-.goldeen, .seaking, .qwilfish, .basculin{
+.peixe1,
+.peixe2,
+.peixe3,
+.peixe4 {
     position: absolute;
     bottom: 0%;
     z-index: 2;
     width: 6%;
 }
-.goldeen{
+
+.peixe1 {
     --my-start-left: 10%;
     animation: animacao_peixe 9s infinite linear;
     transform: scaleX(-1);
     animation-play-state: paused;
 }
-.seaking{
+
+.peixe2 {
+    width: 5%;
     --my-start-left: 85%;
     animation: animacao_peixe 8s infinite linear;
     animation-play-state: paused;
-} 
-.qwilfish{
+}
+
+.peixe3 {
     width: 3.5%;
     --my-start-left: 60%;
     animation: animacao_peixe 11s infinite linear;
     animation-play-state: paused;
 }
-.basculin{
+
+.peixe4 {
     --my-start-left: 35%;
     animation: animacao_peixe 10s infinite linear;
     animation-play-state: paused;
-} 
+}
 
-.vidaExtra{
+.vidaExtra {
     position: absolute;
     width: 6.5vw;
     bottom: 8vw;
     left: 90%;
-    animation: animacao_drifloon 100s infinite linear;
+    animation: animacao_genio 100s infinite linear;
     z-index: 1;
 }
 
-.vidaExtra #vidaExtra{
+.vidaExtra #vidaExtra {
     width: 2vw;
 }
 
-.drifloon{
+.genio {
     width: 10.5vw;
     transform: scaleX(-1);
-} 
+}
 
-.textoVidaExtra h5, .textoVidaExtra .drifloonTexto, .textoVidaExtra .vidaTexto, .textoVidaExtra .exclamacao{
+.textoVidaExtra h5,
+.textoVidaExtra .genioTexto,
+.textoVidaExtra .vidaTexto,
+.textoVidaExtra .exclamacao {
     position: absolute;
     animation: piscarTelaTexto 0.9s steps(1, end) infinite;
 }
-.textoVidaExtra h5{
+
+.textoVidaExtra h5 {
     left: 30%;
     bottom: 29vw;
     width: 40vw;
@@ -492,7 +531,7 @@ body{
     color: rgb(255, 0, 0);
 }
 
-.textoVidaExtra .exclamacao{
+.textoVidaExtra .exclamacao {
     left: 27%;
     bottom: 29vw;
     width: 4vw;
@@ -500,11 +539,13 @@ body{
 
 
 
-.textoViga , .exclamacaoAzul{
+.textoViga,
+.exclamacaoAzul {
     position: absolute;
     animation: piscarTelaTexto 0.9s steps(1, end) infinite;
 }
-.textoViga{
+
+.textoViga {
     left: 30%;
     bottom: 22vw;
     width: 40vw;
@@ -514,7 +555,7 @@ body{
 }
 
 
-.exclamacaoAzul{
+.exclamacaoAzul {
     left: 28%;
     bottom: 22vw;
     width: 1.5vw;
@@ -522,130 +563,145 @@ body{
 
 
 
-@keyframes animacao_drifloon {
+@keyframes animacao_genio {
     0% {
-        left: 90%; 
+        left: 90%;
     }
-   
+
     50% {
-        left: 40%; 
+        left: 40%;
 
     }
+
     100% {
-        left: -10%; 
+        left: -10%;
     }
 }
 
-.mantine{
+.arqueiro {
     position: absolute;
     width: 15vw;
     bottom: 28vw;
     left: 88%;
     z-index: 2;
-} 
+}
 
 @keyframes animacao_peixe {
     0% {
-        left: var(--my-start-left); 
+        left: var(--my-start-left);
         opacity: 1;
     }
+
     30% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 1;
     }
+
     35% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 0;
     }
+
     40% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 1;
     }
+
     42% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 0;
     }
+
     45% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 1;
     }
+
     46% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 0;
     }
+
     47% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 1;
     }
+
     48% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 0.5;
 
     }
+
     49% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 0%;
         opacity: 0;
     }
+
     50% {
         left: calc(var(--my-start-left) + 5%);
         bottom: 50%;
         opacity: 1;
     }
+
     55% {
         bottom: 0%;
     }
+
     100% {
-        left: var(--my-start-left); 
+        left: var(--my-start-left);
 
     }
 }
 
 
-.mantyke1{
+.flecha1 {
     position: absolute;
     width: 6vw;
     --my-start-bottom: 40vw;
     left: 90%;
-    animation: animacao_mantyke 3s infinite linear;
+    animation: animacao_flecha 3s infinite linear;
     z-index: 2;
     transform: rotate(-40deg);
-} 
+}
 
-.mantyke2{
+.flecha2 {
     position: absolute;
     width: 6vw;
     --my-start-bottom: 35vw;
     left: 90%;
-    animation: animacao_mantyke 3s infinite linear;
+    animation: animacao_flecha 3s infinite linear;
     z-index: 2;
     transform: rotate(-40deg);
-} 
+}
 
-@keyframes animacao_mantyke {
+@keyframes animacao_flecha {
     0% {
         bottom: var(--my-start-bottom);
         left: 90%;
     }
+
     50% {
         bottom: calc(var(--my-start-bottom) - 50%);
         left: 60%;
     }
+
     100% {
         bottom: calc(var(--my-start-bottom) - 110%);
         left: 30%;
     }
 }
 
-.indicador{
+.indicador {
     position: absolute;
     bottom: 40vw;
     left: 45%;
@@ -683,12 +739,12 @@ body{
 
 }
 
-.indicador img{
+.indicador img {
     width: 4vw;
     animation: piscarTela 0.4s steps(1, end) infinite;
 }
 
-.sinalizacao{
+.sinalizacao {
     position: absolute;
     width: 4vw;
     left: 48%;
@@ -696,84 +752,148 @@ body{
     bottom: 3%;
     animation: piscarTela 0.4s steps(1, end) infinite;
 
-} 
+}
 
-.octillery{
+.peixao2 {
     position: absolute;
     width: 18vw;
     left: 25%;
     z-index: 2;
     --my-bottom: -6vw;
-    bottom: var(--my-bottom); 
+    bottom: var(--my-bottom);
     animation: animacao_pulo 14s infinite linear;
 
-} 
+}
 
-.tentacruel{
+.peixao1 {
     position: absolute;
     width: 21vw;
     --my-bottom: -7vw;
-    bottom: var(--my-bottom); 
+    bottom: var(--my-bottom);
     left: 65%;
     z-index: 2;
     animation: animacao_pulo 10s infinite linear;
     transform: scaleX(-1);
-} 
+}
 
 @keyframes animacao_pulo {
     0% {
         bottom: --my-bottom;
     }
+
     45% {
         bottom: --my-bottom;
         opacity: 1;
     }
+
     48% {
         bottom: --my-bottom;
         opacity: 1;
     }
+
     50% {
         bottom: --my-bottom;
         opacity: 0;
     }
+
     52% {
         opacity: 1;
         bottom: --my-bottom;
     }
+
     54% {
         opacity: 0;
         bottom: --my-bottom;
     }
+
     56% {
         opacity: 1;
         bottom: --my-bottom;
     }
+
     58% {
         opacity: 0;
         bottom: --my-bottom;
     }
+
     59% {
         opacity: 1;
         bottom: calc(var(--my-bottom) - 0.1vw);
     }
+
     60% {
         bottom: calc(var(--my-bottom) + 16vw);
     }
+
     80% {
         bottom: calc(var(--my-bottom) + 16vw);
     }
+
     90% {
         bottom: calc(var(--my-bottom) + 16vw);
     }
+
     98% {
         bottom: --my-bottom;
     }
+
     100% {
         bottom: --my-bottom;
     }
 
 }
 
-.swal2-popup{
+
+
+@keyframes digibot_ardente {
+
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    10% {
+        filter: hue-rotate(60deg);
+    }
+
+    20% {
+        filter: hue-rotate(120deg);
+    }
+
+    30% {
+        filter: hue-rotate(180deg);
+    }
+
+    40% {
+        filter: hue-rotate(240deg);
+    }
+
+    50% {
+        filter: hue-rotate(300deg);
+    }
+
+    60% {
+        filter: hue-rotate(360deg);
+    }
+
+    70% {
+        filter: hue-rotate(60deg);
+    }
+
+    80% {
+        filter: hue-rotate(120deg);
+    }
+
+    90% {
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        filter: hue-rotate(240deg);
+    }
+
+}
+
+
+.swal2-popup {
     font-size: 1vw;
 }

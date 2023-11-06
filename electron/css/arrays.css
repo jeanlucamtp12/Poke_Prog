@@ -16,7 +16,7 @@ body{
 }
 
 
-#falink{
+#lanca{
     animation: raio_movimento 5s infinite linear;
     width: 5vw;   
     position: absolute;
@@ -77,7 +77,7 @@ body{
 
 }
 #nuvens{
-    animation: nuvem_movimento1 40s infinite linear; 
+    /*animation: nuvem_movimento1 40s infinite linear; */
     width:20%;   
     position: absolute;
     bottom: 30vw;
@@ -87,28 +87,35 @@ body{
 
 
 #nuvens2{
-    animation: nuvem_movimento2 30s infinite linear; 
+   /*animation: nuvem_movimento2 30s infinite linear; */
     width:20%;   
     position: absolute;
-    bottom:35vw;
+    bottom:40vw;
     left:25%;
 
 }
 
 #nuvens3{
-    animation: nuvem_movimento3 30s infinite linear; 
+    /*animation: nuvem_movimento3 30s infinite linear; */
     width:20%;   
     position: absolute;
-    bottom: 38vw;
+    bottom: 37vw;
     left:0%;
 }
 
+#nuvens4{
+    /*animation: nuvem_movimento3 30s infinite linear; */
+    width:20%;   
+    position: absolute;
+    bottom: 44vw;
+    left:75%;
+}
 
 
-.poke{
+.digiTor{
     position: absolute;
     bottom: 0%;
-    --left-start-timburr: 40vw;
+    --left-start-timburr: 35vw;
     left:  var(--left-start-timburr);
     z-index: 1;
     width:12vw;
@@ -245,16 +252,16 @@ body{
     width: 2.5vw;
 }
 
-.togepi, .pichu{
+.bebe2, .bebe1{
     position: absolute;
     width: 6vw;
 }
 
-.togepi{
+.bebe2{
     bottom: 30vw;
     left: 88%;
 }
-.pichu{
+.bebe1{
     bottom: 30vw;
     left: 7%;
 }

@@ -58,7 +58,7 @@ body {
     width: 14vw;
 }
 
-.poke {
+.digibot {
     position: absolute;
     bottom: 11vw;
     left: 22vw;
@@ -92,7 +92,7 @@ body {
     width: 20%;
 }
 
-.pokeAdversario {
+.digiAdversario {
     position: absolute;
     bottom: 22vw;
     left: 63vw;
@@ -284,16 +284,16 @@ button:hover{
 }
 
 
-.pokeAdversario2, .pokeAdversario3{
+.digiAdversario2, .digiAdversario3{
     position: absolute;
     width: 11vw;
     z-index: 1;
 }
-.pokeAdversario2{
+.digiAdversario2{
     left: 57vw;
     bottom: 24vw;
 }
-.pokeAdversario3{
+.digiAdversario3{
     left: 75vw;
     bottom: 23vw;
 }
@@ -367,10 +367,10 @@ button:hover{
 }
 
 
-.pokeAdversario4{
+.digiAdversario4{
     position: absolute;
     bottom: 14vw;
-    left: 50vw;
+    left: 55vw;
     width: 38vw;
     z-index: 1;
 }
@@ -378,14 +378,14 @@ button:hover{
 .adversario4{
     position: absolute;
     bottom: 25vw;
-    left: 80vw;
+    left: 85vw;
     width: 18vw;
 }
 
 .base4 {
     position: absolute;
     bottom: 11vw;
-    left: 60vw;
+    left: 65vw;
     width: 18vw;
 }
 
