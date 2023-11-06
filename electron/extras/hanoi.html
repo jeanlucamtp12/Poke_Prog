@@ -18,11 +18,11 @@
     <div class="tela">
 
 
-        <div class="pokemon">
-            <img id="magnemite" src="../img/extras/1.gif"></img>
-            <img id="magnemite2" src="../img/extras/v4.gif"></img>
-            <img id="magneton" src="../img/extras/v3.gif"></img>
-            <img id="magneton2" src="../img/extras/v4.gif"></img>
+        <div class="digibots">
+            <img id="robo1" src="../img/extras/1.gif"></img>
+            <img id="robo2" src="../img/extras/v4.gif"></img>
+            <img id="robo3" src="../img/extras/v3.gif"></img>
+            <img id="robo4" src="../img/extras/v4.gif"></img>
         </div>
         <img class="raio" src="../img/extras/raio.gif"></img>
        
@@ -109,7 +109,7 @@
     var contador = 0;
 
 
-    const removerMagnemite = (e, pino, id) => { //funcao para realizar alteracao nos vetores de posicao de pecas
+    const removerRobo = (e, pino, id) => { //funcao para realizar alteracao nos vetores de posicao de pecas
 
         if (e.includes('2')) {
             for (var i = 4; i >= 0; i--) {
@@ -312,7 +312,7 @@
                 verificaEstaca(estaca1, imagem, pino);
                 estaca1 = estaca1 + 1;
                 decrementarEstacas(classeImagem, estaca1);
-                removerMagnemite(classeImagem, "1", imagem);
+                removerRobo(classeImagem, "1", imagem);
             } else {
                 exibeNotificação("error", "Pino indisponivel", "");
             }
@@ -327,7 +327,7 @@
                 verificaEstaca(estaca2, imagem, pino);
                 estaca2 = estaca2 + 1;
                 decrementarEstacas(classeImagem, estaca2);
-                removerMagnemite(classeImagem, "2", imagem);
+                removerRobo(classeImagem, "2", imagem);
             } else {
                 exibeNotificação("error", "Pino indisponivel", "");
             }
@@ -351,7 +351,7 @@
                     verificaEstaca(estaca3, imagem, pino);
                     estaca3 = estaca3 + 1;
                     decrementarEstacas(classeImagem, estaca3);
-                    removerMagnemite(classeImagem, "3", imagem);
+                    removerRobo(classeImagem, "3", imagem);
                 } else {
                     exibeNotificação("error", "Pino indisponivel", "");
                 }
