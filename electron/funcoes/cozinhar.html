@@ -19,22 +19,19 @@
 
 
 
-        <div class="cherrim" style="display: block">
-            <img class="cherrim" id="cherrim" src="../img/recursividade/m1.gif">
+        <div class="m1" style="display: block">
+            <img class="m1" id="m1" src="../img/recursividade/m1.gif">
         </div>
 
-        <div class="Weezing">
-            <img class="Weezing" id="Weezing" style="display: none;" src="../img/recursividade/m2.gif">
+        <div class="m2">
+            <img class="m2" id="m2" style="display: block;" src="../img/recursividade/m2.gif">
         </div>
 
- 
-
-
-        <div>
-            <div class="grimer">
-                <img class="grimer" id="grimer" style="display: none;" src="../img/recursividade/m3.gif">
-            </div>
+    
+        <div class="m3">
+            <img class="m3" id="m3" style="display: block;" src="../img/recursividade/m3.gif">
         </div>
+        
 
 
 
@@ -227,6 +224,26 @@
 
     <script>
 
+
+        var dx;
+        var px;
+        var vel;
+        var temp;
+        var personagem;
+
+        function inicia() {
+            dx = 0;
+            px = 0;
+            vel = 0.5;
+            personagem = document.querySelector(".personagem");
+            document.addEventListener('keydown', mover);
+            document.addEventListener('keyup', soltar);
+            personagem.style.left = px + "%";
+            temp = setInterval(atualizaFrame, 18);
+        }
+
+
+
         var wall = document.querySelector(".wall");  //definicao de variavel e laco for para projetar as ceramicas da cozinha
 
         for (var i = 0; i < 100; i++) {
@@ -245,55 +262,55 @@
             if (vidas == 3) {
                 document.querySelector(".vidas3").remove();
                 vidas = vidas - 1;
+                return;
             } else if (vidas == 2) {
                 document.querySelector(".vidas2").remove();
                 vidas = vidas - 1;
-                document.querySelector('.vida').style.animationPlayState = 'running';
-                document.querySelector('.vida2').style.animationPlayState = 'running';
+                return;
             } else if (vidas == 1) {
                 document.querySelector(".vidas1").remove();
                 vidas = vidas - 1;
+                return;
             } else if (vidas == 0) {
-
                 exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente!!", './cozinhar.html');
             }
         }
 
         const loop = setInterval(() => { //loop para detectar colisoes e realizar operacoes
 
-            var scorbunny = document.getElementById("personagem");
-            scorbunny.getBoundingClientRect();
+            var perso = document.getElementById("personagem");
+            perso.getBoundingClientRect();
 
             //estrutura para detectar colisao com inimigos
-            if ((scorbunny.x < cherrim.x + cherrim.width && scorbunny.x + scorbunny.width > cherrim.x && scorbunny.y < cherrim.y + cherrim.height && scorbunny.y + scorbunny.height > cherrim.y)) {
+            if ((perso.x < m1.x + m1.width && perso.x + perso.width > m1.x && perso.y < m1.y + m1.height && perso.y + perso.height > m1.y)) {
                 personagem.style.bottom = "1%";
-                personagem.style.left = "0%";
+                px = 0;
                 valor = "livre";
                 alteraVida();
             }
 
 
-            if ((scorbunny.x < grimer.x + grimer.width && scorbunny.x + scorbunny.width > grimer.x && scorbunny.y < grimer.y + grimer.height && scorbunny.y + scorbunny.height > grimer.y)) {
+            if ((perso.x < m3.x + m3.width && perso.x + perso.width > m3.x && perso.y < m3.y + m3.height && perso.y + perso.height > m3.y)) {
                 personagem.style.bottom = "1%";
-                personagem.style.left = "0%";
+                px = 0;
                 valor = "livre";
                 alteraVida();
             }
 
-            if ((scorbunny.x < Weezing.x + Weezing.width && scorbunny.x + scorbunny.width > Weezing.x && scorbunny.y < Weezing.y + Weezing.height && scorbunny.y + scorbunny.height > Weezing.y)) {
+            if ((perso.x < m2.x + m2.width && perso.x + perso.width > m2.x && perso.y < m2.y + m2.height && perso.y + perso.height > m2.y)) {
                 personagem.style.bottom = "1%";
-                personagem.style.left = "0%";
+                px = 0;
                 valor = "livre";
                 alteraVida();
             }
 
             //estrutura para detectar colisao com alimentos e bloquear e desbloquear novos inimigos 
-            if ((scorbunny.x < ingrediente.x + ingrediente.width && scorbunny.x + scorbunny.width > ingrediente.x && scorbunny.y < ingrediente.y + ingrediente.height && scorbunny.y + scorbunny.height > ingrediente.y)) {
+            if ((perso.x < ingrediente.x + ingrediente.width && perso.x + perso.width > ingrediente.x && perso.y < ingrediente.y + ingrediente.height && perso.y + perso.height > ingrediente.y)) {
 
                 if (atualiza == 9) {
-                    scorbunny.style.display = "none";
+                    perso.style.display = "none";
 
-                    exibeNotificação("success", "Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!", './funcoes.html');
+                    exibeNotificação("success", "Você Coletou Todos os Ingredientes! Vamos a Proxima Tarefa!", './funcoes.html?valor=1');
                 }
                 if ((ingrediente.src).includes("2.png") || (ingrediente.src).includes("4.png") || (ingrediente.src).includes("6.png") || (ingrediente.src).includes("8.png")) {
                     document.getElementById("p" + (contadorPizza)).style.backgroundColor = "green";
@@ -303,15 +320,13 @@
                     alteraAlimentos(1);
                 }
                 if (contadorBolo == 3) {
-                    document.getElementById("Weezing").style.display = "block";
-                    document.querySelector(".Weezing").style.animationPlayState = "running";
+                    document.querySelector(".m2").style.animationPlayState = "running";
                 } else if (contadorBolo == 4) {
-                    document.getElementById("grimer").style.display = "block";
-                    document.querySelector(".grimer").style.animationPlayState = "running";
+                    document.querySelector(".m3").style.animationPlayState = "running";
                 }
 
             }
-        }, 5);
+        }, 50);
 
 
         const alteraAlimentos = (num) => {  //funcao para alterar a posicao dos alimentos de forma aleatoria
@@ -346,38 +361,8 @@
         //funcoes para realizar movimentacao de personagem
 
 
-
-        const moverDireita = () => {
-            document.getElementById("personagem").style.transform = "scaleX(1)";
-
-            const el = document.querySelector('.personagem');
-            const value = getComputedStyle(el).getPropertyValue('left');
-            var remove_string = value.replace('px', '');
-            var valorNum = parseInt(remove_string);
-            var numPx = valorNum + 10;
-            var soma = parseInt(value) + 20;
-            personagem.style.left = soma + "px";
-
-        }
-
-        const moverEsquerda = () => {
-            if ((personagem.offsetLeft >= 0)) {
-
-                document.getElementById("personagem").style.transform = "scaleX(-1)";
-                const el = document.querySelector('.personagem');
-                const value = getComputedStyle(el).getPropertyValue('left');
-                var remove_string = value.replace('px', '');
-                var valorNum = parseInt(remove_string);
-                var numPx = valorNum + 10;
-                var soma = parseInt(value) - 20;
-                personagem.style.left = soma + "px";
-            }
-        }
-
         const moverCima = () => {
-            // document.getElementById("personagem").src = "../img/recursividade/1_cima.png";
-            const el = document.querySelector('.personagem');
-            const value = getComputedStyle(el).getPropertyValue('bottom');
+            const value = getComputedStyle(personagem).getPropertyValue('bottom');
             var remove_string = value.replace('px', '');
             var valorNum = parseInt(remove_string);
             var numPx = valorNum + 10;
@@ -385,14 +370,21 @@
             personagem.style.bottom = soma + "px";
         }
 
+        const moverDireita = () => {
+            dx = 1;
+            document.getElementById("personagem").style.transform = "scaleX(1)";
+        }
 
-        const personagem = document.querySelector('.personagem');
-
+        const moverEsquerda = () => {
+            dx = -1;
+            document.getElementById("personagem").style.transform = "scaleX(-1)";
+        }
 
         const mover = () => {
+            var tecla = event.keyCode;
+
 
             //variaveis para capturar tecla e elementos presentes no cenario
-            var tecla = event.keyCode;
             var chao = document.querySelector('.bloco4');
             var per = document.getElementById("personagem");
             var escadas = document.querySelectorAll("#escada1, #escada2, #escada3, #escada4, #escada5");
@@ -419,11 +411,13 @@
                     var teleport = "teleport1";
                 } else if (per.x > portaAberta2.x) {
                     var teleport = "teleport3";
-                }
+                } 
+
+
 
                 setTimeout(function () {
                     personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
+                    px = 0;
                     document.getElementById("teleport2").style.display = 'block';
                     document.getElementById(teleport).style.display = 'block';
                 }, 500);
@@ -433,6 +427,7 @@
                     document.getElementById(teleport).style.display = 'none';
                 }, 1000);
             }
+
 
             if (tecla == 39 && valor == "livre") {
                 moverDireita();
@@ -456,13 +451,39 @@
             }
         }
 
-        document.addEventListener('keydown', mover); //detecta movimentacao, via clique de teclas
+        const soltar = () => {
+            var tecla = event.keyCode;
+            if (tecla == 39) {
+                dx = 0;
+            }
+            if (tecla == 37) {
+                dx = 0;
+            }
+        }
+
+        const atualizaFrame = () => {
+
+            // Verifica se a nova posição está dentro dos limites
+            if (px < 0) {
+                px = 1;
+            } else if (px > 90) {
+                px = 89;
+            } else {
+                px += dx * vel;
+                personagem.style.left = px + "%";
+                personagem.style.right = px + "%";
+            }
+        }
+
+        inicia();
+
+
 
         const voltar_menu = () => { //tecla de atalho para voltar ao menu de fases
             var tecla = event.keyCode;
 
             if (tecla == 27) {
-                window.location.href = '../telaInicial/city.html';
+                window.location.href = './funcoes.html';
             }
         }
         document.addEventListener('keydown', voltar_menu);

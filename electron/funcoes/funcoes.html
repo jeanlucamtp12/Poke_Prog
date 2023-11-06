@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" id="diretorio" href="../css/funcoesHome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../sweetalert/sweetalert.js"></script>
     <script src="../telaInicial/dialogos.js"></script>
     <title>Document</title>
 </head>
@@ -36,7 +37,9 @@
 
     <div class="campo">
 
-
+        <div class="home" onclick="window.location.href='../telaInicial/city.html'">
+            <img src="../img/home/home.png"><img>
+        </div>
 
         <div class="parede1">
             <img class="parede1" src="../img/recursividade/chao.jpg">
@@ -96,7 +99,7 @@
 
 
         <div class="porta0">
-            <img class="porta0" src="../img/recursividade/porta.png">
+            <img class="porta0" src="../img/recursividade/porta.png" onclick="encerrarFase()">
         </div>
 
 
@@ -115,15 +118,12 @@
 
         <div>
             <div class="quadro">
-                <img src="../img/recursividade/cerulean.webp">
+                <img src="../img/recursividade/usina.png">
             </div>
         </div>
 
         <div class="wall" style="opacity: 0.1;"></div>
 
-        <div>
-            <img id="rotom" class="rotom" src="../img/funcoes/rotom.png"></img>
-        </div>
 
         <div>
             <a href="#" onclick="iniciarFase(3)"><img id="cortadorR" class="cortadorR"
@@ -176,6 +176,10 @@
                 <h3>Congelar os Alimentos</h3>
             </div>
 
+            <div class="textoEncerrar">
+                <h3>&nbsp&nbsp&nbsp&nbspAo completar as missoes,<br> clique na porta para encerrar!</h3>
+            </div>
+
         </div>
 
 
@@ -205,6 +209,12 @@
 
 <script>
 
+    var url = new URLSearchParams(window.location.search);
+    var valor = url.get('valor');
+    var valor = parseInt(valor);
+
+    console.log(valor);
+
     var j = 50;
     for (var i = 1; j <= 100; i++) {
 
@@ -223,16 +233,6 @@
         body.appendChild(img);
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
     var dialogo = "";
@@ -254,8 +254,6 @@
     }
 
 
-
-
     function exibirTexto() {
         verificaClick = "true";
         //document.getElementById("dialogo").textContent = "";
@@ -268,8 +266,6 @@
         document.querySelector(".mapa").style.opacity = "1";
         document.getElementById("telaTransparente").style.display = "none";
     }
-
-
 
 
     function iniciarFase(val) {
@@ -328,15 +324,22 @@
 
 
     const voltar_menu = () => {
-            var tecla = event.keyCode;
+        var tecla = event.keyCode;
 
 
-            if (tecla == 27) {
-                window.location.href = '../telaInicial/city.html';
-            }
+        if (tecla == 27) {
+            window.location.href = '../telaInicial/city.html';
         }
-        document.addEventListener('keydown', voltar_menu);
+    }
+    document.addEventListener('keydown', voltar_menu);
 
 
+    function encerrarFase(){
+        if(valor == 1){
+            exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=5');
+        }else{
+            exibeNotificação("error", "Você precisa realizar ao menos uma tarefa!", './funcoes.html');
+        }
+    }
 
 </script>

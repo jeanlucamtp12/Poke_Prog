@@ -310,6 +310,8 @@
         img.draggable = "false";
         img.removeEventListener('dragstart', moverAlimento);
         removerPosAnterior(imagem, classeImagem);
+
+        img.draggable = false;
     }
 
     const removerPosAnterior = (imagem, classeImagem) => { //funcao para remover alimentos de caixa de itens ao arrasta-lo
@@ -568,8 +570,7 @@
         }
 
         window.alert("Você consertou a geladeira! Vamos a Proxima Tarefa!");
-
-        window.location.href = './funcoes.html';
+        window.location.href = './funcoes.html?valor=1';
     }
 
 
@@ -579,7 +580,7 @@
 
 
         if (tecla == 27) {
-            window.location.href = '../telaInicial/city.html';
+            window.location.href = './funcoes.html';
         }
     }
     document.addEventListener('keydown', voltar_menu);

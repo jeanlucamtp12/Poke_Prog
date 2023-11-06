@@ -17,17 +17,17 @@
 
     <div class="campo">
 
-        <div class="dewgong">
-            <img class="dewgong" id="dewgong" style="display: block" src="../img/recursividade/m7.gif">
+        <div class="m7">
+            <img class="m7" id="m7" style="display: block" src="../img/recursividade/m7.gif">
         </div>
 
-        <div class="pidgeot">
-            <img class="pidgeot" id="pidgeot" style="display: none" src="../img/recursividade/m8.gif">
+        <div class="m8">
+            <img class="m8" id="m8" style="display: block" src="../img/recursividade/m8.gif">
         </div>
 
 
-        <div class="hoppip">
-            <img class="hoppip" id="hoppip" style="display: none;" src="../img/recursividade/m6.gif">
+        <div class="m6">
+            <img class="m6" id="m6" style="display: block;" src="../img/recursividade/m6.gif">
         </div>
 
 
@@ -150,7 +150,7 @@
 
         <div>
             <div class="quadro">
-                <img src="../img/recursividade/cerulean.webp">
+                <img src="../img/recursividade/usina.png">
             </div>
         </div>
 
@@ -229,6 +229,26 @@
 
     <script>
 
+
+        var dx;
+        var px;
+        var vel;
+        var temp;
+        var personagem;
+
+        function inicia() {
+            dx = 0;
+            px = 0;
+            vel = 0.5;
+            personagem = document.querySelector(".personagem");
+            document.addEventListener('keydown', mover);
+            document.addEventListener('keyup', soltar);
+            personagem.style.left = px + "%";
+            temp = setInterval(atualizaFrame, 18);
+        }
+
+
+
         var vidas = 3;
 
         var wall = document.querySelector(".wall");   //projeta as ceramicas do cenario 
@@ -262,60 +282,58 @@
             if (vidas == 3) {
                 document.querySelector(".vidas3").remove();
                 vidas = vidas - 1;
+                return;
             } else if (vidas == 2) {
                 document.querySelector(".vidas2").remove();
                 vidas = vidas - 1;
-                document.querySelector('.vida').style.animationPlayState = 'running';
-                document.querySelector('.vida2').style.animationPlayState = 'running';
-
-
+                return;
             } else if (vidas == 1) {
                 document.querySelector(".vidas1").remove();
                 vidas = vidas - 1;
+                return;
             } else if (vidas == 0) {
-
-
                 exibeNotificação("error", "Você perdeu todas as vidas! Clique para tentar novamente!!", './funcoesLavadeira.html');
             }
         }
         const loop = setInterval(() => {
 
-            var scorbunny = document.getElementById("personagem");
-            scorbunny.getBoundingClientRect();
-            var hoppipL = document.querySelectorAll("#hoppip");
+            var perso = document.getElementById("personagem");
+            perso.getBoundingClientRect();
 
             //lacos for para detectar colisao com inimigos e roupas 
-            for (var i = 0; i < hoppipL.length; i++) {
-                if ((scorbunny.x < hoppipL[i].x + hoppipL[i].width && scorbunny.x + scorbunny.width > hoppipL[i].x && scorbunny.y < hoppipL[i].y + hoppipL[i].height && scorbunny.y + scorbunny.height > hoppipL[i].y)) {
-                    personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
-                    valor = "livre";
-                    contador = contador - 1;
-                    alteraVida();
-                }
-            }
-
-            if ((scorbunny.x < dewgong.x + dewgong.width && scorbunny.x + scorbunny.width > dewgong.x && scorbunny.y < dewgong.y + dewgong.height && scorbunny.y + scorbunny.height > dewgong.y)) {
+            if ((perso.x < m6.x + m6.width && perso.x + perso.width > m6.x && perso.y < m6.y + m6.height && perso.y + perso.height > m6.y)) {
                 personagem.style.bottom = "1%";
                 personagem.style.left = "0%";
                 valor = "livre";
+                px = 0;
+                contador = contador - 1;
+                alteraVida();
+            }
+         
+
+            if ((perso.x < m7.x + m7.width && perso.x + perso.width > m7.x && perso.y < m7.y + m7.height && perso.y + perso.height > m7.y)) {
+                personagem.style.bottom = "1%";
+                personagem.style.left = "0%";
+                valor = "livre";
+                px = 0;
                 contador = contador - 1;
                 alteraVida();
             }
 
-            if ((scorbunny.x < pidgeot.x + pidgeot.width && scorbunny.x + scorbunny.width > pidgeot.x && scorbunny.y < pidgeot.y + pidgeot.height && scorbunny.y + scorbunny.height > pidgeot.y)) {
+            if ((perso.x < m8.x + m8.width && perso.x + perso.width > m8.x && perso.y < m8.y + m8.height && perso.y + perso.height > m8.y)) {
                 personagem.style.bottom = "1%";
                 personagem.style.left = "0%";
                 valor = "livre";
+                px = 0;
                 contador = contador - 1;
                 alteraVida();
             }
 
-            if ((scorbunny.x < roupa.x + roupa.width && scorbunny.x + scorbunny.width > roupa.x && scorbunny.y < roupa.y + roupa.height && scorbunny.y + scorbunny.height > roupa.y)) {
+            if ((perso.x < roupa.x + roupa.width && perso.x + perso.width > roupa.x && perso.y < roupa.y + roupa.height && perso.y + perso.height > roupa.y)) {
                 if (atualiza == 9) {
-                    scorbunny.style.display = "none";
+                    personagem.style.display = "none";
 
-                    exibeNotificação("success", "Você Coletou Todas as Peças! Vamos a Proxima Tarefa!", './funcoes.html');
+                    exibeNotificação("success", "Você Coletou Todas as Peças! Vamos a Proxima Tarefa!", './funcoes.html?valor=1');
                 }
 
                 if ((roupa.src).includes("1.png") || (roupa.src).includes("4.png") || (roupa.src).includes("7.png")) {
@@ -331,16 +349,16 @@
                 }
 
                 if (atualiza == 3) {
-                    document.getElementById("pidgeot").style.display = "block";
-                    document.querySelector(".pidgeot").style.animationPlayState = "running";
+                    document.getElementById("m8").style.display = "block";
+                    document.querySelector(".m8").style.animationPlayState = "running";
                 }
 
                 if (atualiza == 6) {
-                    document.getElementById("hoppip").style.display = "block";
-                    document.querySelector(".hoppip").style.animationPlayState = "running";
+                    document.getElementById("m6").style.display = "block";
+                    document.querySelector(".m6").style.animationPlayState = "running";
                 }
             }
-        }, 5);
+        }, 50);
 
         const alteraAlimentos = (num) => {
 
@@ -383,35 +401,10 @@
         var locEntrada2 = localizacaoEntradaP2.left + window.pageXOffset;
 
         //funcoes para mover personagem ao pressionar tecla designada
-        const moverDireita = () => {
-            document.getElementById("personagem").style.transform = "scaleX(1)";
-            const el = document.querySelector('.personagem');
-            const value = getComputedStyle(el).getPropertyValue('left');
-            var remove_string = value.replace('px', '');
-            var valorNum = parseInt(remove_string);
-            var numPx = valorNum + 10;
-            var soma = parseInt(value) + 20;
-            personagem.style.left = soma + "px";
 
-        }
-
-        const moverEsquerda = () => {
-            if ((personagem.offsetLeft >= 0)) {
-
-                document.getElementById("personagem").style.transform = "scaleX(-1)";
-                const el = document.querySelector('.personagem');
-                const value = getComputedStyle(el).getPropertyValue('left');
-                var remove_string = value.replace('px', '');
-                var valorNum = parseInt(remove_string);
-                var numPx = valorNum + 10;
-                var soma = parseInt(value) - 20;
-                personagem.style.left = soma + "px";
-            }
-        }
-
+        
         const moverCima = () => {
-            const el = document.querySelector('.personagem');
-            const value = getComputedStyle(el).getPropertyValue('bottom');
+            const value = getComputedStyle(personagem).getPropertyValue('bottom');
             var remove_string = value.replace('px', '');
             var valorNum = parseInt(remove_string);
             var numPx = valorNum + 10;
@@ -419,19 +412,30 @@
             personagem.style.bottom = soma + "px";
         }
 
-        const personagem = document.querySelector('.personagem');
+        const moverDireita = () => {
+            dx = 1;
+            document.getElementById("personagem").style.transform = "scaleX(1)";
+        }
+
+        const moverEsquerda = () => {
+            dx = -1;
+            document.getElementById("personagem").style.transform = "scaleX(-1)";
+        }
 
         const mover = () => {
             var tecla = event.keyCode;
+
+
+            //variaveis para capturar tecla e elementos presentes no cenario
             var chao = document.querySelector('.bloco4');
             var per = document.getElementById("personagem");
             var escadas = document.querySelectorAll("#escada1, #escada2, #escada3, #escada4, #escada5");
 
-            for (var i = 0; i < escadas.length; i++) {
+            for (var i = 0; i < escadas.length; i++) { //pega referencia da localizacao das escadas
                 escadas[i].getBoundingClientRect();
-                listaEscada.push(escadas[i]);
             }
-            var posicaoPer = window.getComputedStyle(per).bottom;
+
+            //acessa os atributos das portas de teletransporte
             var portaAberta1 = document.getElementById("portaAberta1");
             var portaAberta2 = document.getElementById("portaAberta2");
             var portaAberta3 = document.getElementById("portaAberta3");
@@ -441,17 +445,21 @@
             portaAberta2.getBoundingClientRect();
             portaAberta3.getBoundingClientRect();
 
+
+            //verifica colisao com as portas de teletransporte e realiza a movimentacao do personagem
             if ((per.x < portaAberta1.x + portaAberta1.width && per.x + per.width > portaAberta1.x && per.y < portaAberta1.y + portaAberta1.height && per.y + per.height > portaAberta1.y) || (per.x < portaAberta2.x + portaAberta2.width && per.x + per.width > portaAberta2.x && per.y < portaAberta2.y + portaAberta2.height && per.y + per.height > portaAberta2.y) || (per.x < portaAberta3.x + portaAberta3.width && per.x + per.width > portaAberta3.x && per.y < portaAberta3.y + portaAberta3.height && per.y + per.height > portaAberta3.y)) {
 
                 if (per.x + 100 > portaAberta2.x && per.x < 500) {
                     var teleport = "teleport1";
                 } else if (per.x > portaAberta2.x) {
                     var teleport = "teleport3";
-                }
+                } 
+
+
 
                 setTimeout(function () {
                     personagem.style.bottom = "1%";
-                    personagem.style.left = "0%";
+                    px = 0;
                     document.getElementById("teleport2").style.display = 'block';
                     document.getElementById(teleport).style.display = 'block';
                 }, 500);
@@ -460,37 +468,66 @@
                     document.getElementById("teleport2").style.display = 'none';
                     document.getElementById(teleport).style.display = 'none';
                 }, 1000);
-
             }
+
 
             if (tecla == 39 && valor == "livre") {
                 moverDireita();
-
             } else if (tecla == 37 && valor == "livre") {
                 moverEsquerda();
             }
 
-            else if (tecla == 38) { //x=lagura y=altura
+            else if (tecla == 38) { //realiza movimentacao para cima, caso esteja em cima de uma escada
 
                 for (var i = 0; i < escadas.length; i++) {
-                    if ((per.x + 30 < escadas[i].x + escadas[i].width && per.x - 30 + per.width > escadas[i].x) && (per.y < escadas[i].y + 0 + escadas[i].height && per.y - 0 + per.height > escadas[i].y)) {
+
+                    if ((per.x + 30 < escadas[i].x + escadas[i].width && per.x - 30 + per.width > escadas[i].x) && (per.y < escadas[i].y + (-10) + escadas[i].height && per.y - (-10) + per.height > escadas[i].y)) {
                         valor = "bloqueado";
                         moverCima();
                     }
+
                     if (per.y + per.height <= escadas[i].y) {
                         valor = "livre";
                     }
                 }
             }
         }
-        document.addEventListener('keydown', mover);  //atalho para retornar ao menu de fases
+
+        const soltar = () => {
+            var tecla = event.keyCode;
+            if (tecla == 39) {
+                dx = 0;
+            }
+            if (tecla == 37) {
+                dx = 0;
+            }
+        }
+
+        const atualizaFrame = () => {
+
+            // Verifica se a nova posição está dentro dos limites
+            if (px < 0) {
+                px = 1;
+            } else if (px > 90) {
+                px = 89;
+            } else {
+                px += dx * vel;
+                personagem.style.left = px + "%";
+                personagem.style.right = px + "%";
+            }
+        }
+
+        inicia();
+
+
+
 
         const voltar_menu = () => {
             var tecla = event.keyCode;
 
 
             if (tecla == 27) {
-                window.location.href = '../telaInicial/city.html';
+                window.location.href = './funcoes.html';
             }
         }
         document.addEventListener('keydown', voltar_menu);

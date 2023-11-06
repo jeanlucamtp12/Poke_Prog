@@ -107,23 +107,21 @@
         <img id="raio" src="../img/arrays/raio.gif">
 
         <div>
-            <div class="combee">
-                <img id="combee2" src="../img/funcoes/fase1/bat.gif">
+            <div class="bats">
+                <img id="bat2" src="../img/funcoes/fase1/bat.gif">
             </div>
-            <div class="combee">
-                <img id="combee3" src="../img/funcoes/fase1/bat.gif">
+            <div class="bats">
+                <img id="bat3" src="../img/funcoes/fase1/bat.gif">
             </div>
-            <div class="combee">
-                <img id="combee4" src="../img/funcoes/fase1/bat.gif">
+            <div class="bats">
+                <img id="bat4" src="../img/funcoes/fase1/bat.gif">
             </div>
-            <div class="combee">
-                <img id="combee5" src="../img/funcoes/fase1/bat.gif">
+            <div class="bats">
+                <img id="bat5" src="../img/funcoes/fase1/bat.gif">
             </div>
-            <div class="combee">
-
-
+            <div class="bats">
                 <div>
-                    <img class="vespiqueen" src="../img/funcoes/fase1/batR.gif">
+                    <img class="rainha" src="../img/funcoes/fase1/batR.gif">
                 </div>
             </div>
 
@@ -139,13 +137,13 @@
 
 
 
-                 <div class="pokeInfo" id="pokeInfo"  style="display: none;">
+                 <div class="info" id="info"  style="display: none;">
                    <h5>DigiTarta está brilhante, quando ela começar a mudar de cor,<br> você pode apertar espaço para ficar invencivel por um tempo!</h5>
                     <img class="exclamacao" src="../img/repeticao/exclamacao.png"></img>
                </div>
            
 
-            <img class='poke' id="poke" src="../img/recursividade/cortar/tartaruga.gif">
+            <img class='digiBot' id="digiBot" src="../img/recursividade/cortar/tartaruga.gif">
 
             <div class="cortador">
                 <img class="cortador" id="cortador" src="../img/funcoes/cortadorM.gif">
@@ -176,16 +174,16 @@
             </div>
 
 
-            <div class="wormadam1">
-                <img class="wormadam1" id="wormadam1" src="../img/recursividade/cortar/w1.gif">
+            <div class="worm1">
+                <img class="worm1" id="worm1" src="../img/recursividade/cortar/w1.gif">
             </div>
 
-            <div class="wormadam2">
-                <img class="wormadam2" id="wormadam2" src="../img/recursividade/cortar/w2.gif">
+            <div class="worm2">
+                <img class="worm2" id="worm2" src="../img/recursividade/cortar/w2.gif">
             </div>
 
-            <div class="wormadam3">
-                <img class="wormadam3" id="wormadam3" src="../img/recursividade/cortar/w3.gif">
+            <div class="worm3">
+                <img class="worm3" id="worm3" src="../img/recursividade/cortar/w3.gif">
             </div>
 
 
@@ -197,9 +195,30 @@
 </html>
 <script>
 
+    var dx;
+    var px;
+    var vel;
+    var temp;
+    var personagem;
+
+    function inicia() {
+        dx = 0;
+        px = 50;
+        vel = 0.5;
+        personagem = document.querySelector(".digiBot");
+        document.addEventListener('keydown', mover);
+        document.addEventListener('keyup', soltar);
+        personagem.style.left = px + "%";
+        temp = setInterval(atualizaFrame, 18);
+    }
+
+    var teclaPressionada = false;
+
+
+
     //defini as frutas que cairam do ceu
     var frutas = document.querySelectorAll("div.frutasQ #fruta, div.frutasQ #legume, div.frutasQ #verdura");
-    var versaoPoke = false
+    var versaoDigi = false
 
     //seta um inmtervalo para que as frutas comecem a cair
     setInterval(function () {
@@ -232,11 +251,11 @@
     spacebar = false;
 
     //captura via variaveis os personagens que iram compor a fase
-    var animacaoOriginal = document.getElementById("poke").style.animation;
+    var animacaoOriginal = document.getElementById("digiBot").style.animation;
     const raio = document.querySelector('#raio');
-    var combees = document.querySelectorAll("div.combee #combee2, div.combee #combee3, div.combee #combee4, div.combee #combee4, div.combee #combee5, div.combee #combee6");
+    var bats = document.querySelectorAll("div.bats #bat2, div.bats #bat3, div.bats #bat4, div.bats #bat4, div.bats #bat5, div.bats #bat6");
     let j = 0;
-    const chandelure = document.querySelector('#poke');
+    const tartaruga = document.querySelector('#digiBot');
 
     const loop = setInterval(() => { //loop para gerar de forma aleatoria a posicao dos raios de energia
         const posicoesRaio = ["18", "27", "37.5", "53", "75", "83"];
@@ -246,9 +265,9 @@
     }, 5000);
 
     const resetar = () => { //reseta a posicao das abelhas
-        for (var i = 0; i < combees.length; i++) {
-            combees[i].style.animation = "";
-            combees[i].style.display = "block";
+        for (var i = 0; i < bats.length; i++) {
+            bats[i].style.animation = "";
+            bats[i].style.display = "block";
         }
         raio.style.animation = ""; //reseta a animacao do raio de energia
     }
@@ -261,66 +280,66 @@
 
     const loop2 = setInterval(() => { //loop para verificar colisoes e realizar operacoes
 
-        chandelure.getBoundingClientRect();
+        tartaruga.getBoundingClientRect();
 
         if(energias == 5 || energias == 2){
-            document.getElementById("poke").style.animation = "chandelure_ardente 0.5s infinite linear";
+            document.getElementById("digiBot").style.animation = "tartaruga_ardente 0.5s infinite linear";
             if( botaoP == false){
-                document.getElementById("pokeInfo").style.display = "block";
+                document.getElementById("info").style.display = "block";
                 botaoP = true;
             }
-            versaoPoke = true;            
+            versaoDigi = true;            
         }else if(energias == 3 || energias == 0){
             spacebar = false;
-            document.getElementById("pokeInfo").style.display = "none";
-            document.getElementById("poke").style.animation = "none";
-            document.getElementById("poke").style.width = "7vw";
+            document.getElementById("info").style.display = "none";
+            document.getElementById("digiBot").style.animation = "none";
+            document.getElementById("digiBot").style.width = "7vw";
             
 
 
-            versaoPoke = false;
+            versaoDigi = false;
         }
 
-        for (var i = 0; i < combees.length; i++) { //verifica colisao com abelhas
-            if ((chandelure.x + 30 < combees[i].x + combees[i].width && chandelure.x - 30 + chandelure.width > combees[i].x) && (chandelure.y + 30 < combees[i].y + combees[i].height && chandelure.y - 30 + chandelure.height > combees[i].y)) {
+        for (var i = 0; i < bats.length; i++) { //verifica colisao com abelhas
+            if ((tartaruga.x + 30 < bats[i].x + bats[i].width && tartaruga.x - 30 + tartaruga.width > bats[i].x) && (tartaruga.y + 30 < bats[i].y + bats[i].height && tartaruga.y - 30 + tartaruga.height > bats[i].y)) {
 
                 raio.style.animation = 'none';
                 resetar();
-                combees[i].style.animation = 'none';
-                if((versaoPoke == true && spacebar == false) || (versaoPoke == false)){
+                bats[i].style.animation = 'none';
+                if((versaoDigi == true && spacebar == false) || (versaoDigi == false)){
                     if (vidas == 3) {
                     document.querySelector(".vidas3").remove();
-                    combees[i].style.animation = 'none';
+                    bats[i].style.animation = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 2) {
                     document.querySelector(".vidas2").remove();
-                    combees[i].style.animation = 'none';
+                    bats[i].style.animation = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 1) {
                     document.querySelector(".vidas1").remove();
                     document.querySelector("#vidasTexto").style.display = "none";
-                    combees[i].style.animation = 'none';
+                    bats[i].style.animation = 'none';
                     vidas = vidas - 1;
                 } else if (vidas == 0) {
-                    document.querySelector(".poke").style.display = "none";
+                    document.querySelector(".digiBot").style.display = "none";
                     exibeNotificação("error", "Você Perdeu Todas as Vidas! Clique para Tentar Novamente", './funcoesCortador.html');
                     return;
                 }
                 }
 
-                const idCombee = combees[i].id;
+                const idBat = bats[i].id;
 
                 (function (id) {
                     setTimeout(function () {
                         document.getElementById(id).style.animation = '';
                     }, 10);
-                })(idCombee);
+                })(idBat);
             }
         }
 
 
         //verifica colisao com  raios de energia e realiza operacoes, bem como mover o cortador e cortar a grama
-        if ((chandelure.x + 30 < raio.x + raio.width && chandelure.x - 30 + chandelure.width > raio.x) && (chandelure.y + 30 < raio.y + raio.height && chandelure.y - 30 + chandelure.height > raio.y)) {
+        if ((tartaruga.x + 30 < raio.x + raio.width && tartaruga.x - 30 + tartaruga.width > raio.x) && (tartaruga.y + 30 < raio.y + raio.height && tartaruga.y - 30 + tartaruga.height > raio.y)) {
 
             raio.style.display = 'none';
             if (energias == 6) {
@@ -368,8 +387,9 @@
     const loopVitoria = setInterval(() => { //loop de vitoria para verificar a coleta de alimentos, vidas restantes e raios de energia coletados
         if (vidas >= 0 && energias == 0 && bananas == 0 && alfaces == 0 && tomates == 0) {
             if (vitoriaLoop == "false"){
-                document.querySelector(".poke").style.display = "none";
-                exibeNotificação("success", "Você concluiu a fase! Vamos as perguntas da fase!", '../Quizes/quizEntreFases.html?fase=5');
+                document.querySelector(".digiBot").style.display = "none";
+
+                exibeNotificação("success", "Você concluiu a fase!  Vamos a Proxima Tarefa!", './funcoes.html?valor=1');
                 return;
             }
             vitoriaLoop = "true";
@@ -382,10 +402,10 @@
 
     const loop3 = setInterval(() => { //loop para verificar colisao com os alimentos 
 
-        chandelure.getBoundingClientRect();
+        tartaruga.getBoundingClientRect();
 
         for (var i = 0; i < frutas.length; i++) {
-            if ((chandelure.x + 30 < frutas[i].x + frutas[i].width && chandelure.x - 30 + chandelure.width > frutas[i].x) && (chandelure.y + 30 < frutas[i].y + frutas[i].height && chandelure.y - 30 + chandelure.height > frutas[i].y)) {
+            if ((tartaruga.x + 30 < frutas[i].x + frutas[i].width && tartaruga.x - 30 + tartaruga.width > frutas[i].x) && (tartaruga.y + 30 < frutas[i].y + frutas[i].height && tartaruga.y - 30 + tartaruga.height > frutas[i].y)) {
                 const elementoId = frutas[i].id;
 
                 document.getElementById("verdura").style.animation = 'none';
@@ -450,69 +470,68 @@
     }
 
 
-    //funcoes para mover personagem
-    const personagem = document.querySelector('.poke');
-
-        
-    const larguraTela = window.innerWidth;
-    const limiteDireito = larguraTela - personagem.offsetWidth;
-
     const moverDireita = () => {
-
-        if (document.querySelector('.poke').offsetLeft <= limiteDireito) {
-
-
-        document.getElementById("poke").style.transform = "scaleX(1)";
-        const el = document.querySelector('.poke');
-        const value = getComputedStyle(el).getPropertyValue('left');
-        var remove_string = value.replace('px', '');
-        var valorNum = parseInt(remove_string);
-        var numPx = valorNum + 10;
-        var soma = parseInt(value) + 20;
-        personagem.style.left = soma + "px";
-        }
+        dx = 1;
+        personagem.style.transform = "scaleX(1)";
     }
 
     const moverEsquerda = () => {
-
-        if ((personagem.offsetLeft >= 0)) {
-
-        document.getElementById("poke").style.transform = "scaleX(-1)";
-        const el = document.querySelector('.poke');
-        const value = getComputedStyle(el).getPropertyValue('left');
-        var remove_string = value.replace('px', '');
-        var valorNum = parseInt(remove_string);
-        var numPx = valorNum + 10;
-        var soma = parseInt(value) - 20;
-        personagem.style.left = soma + "px";
-        }
+        dx = -1;
+        personagem.style.transform = "scaleX(-1)";
     }
 
     const mover = () => {
         var tecla = event.keyCode;
+
         if (tecla == 39) {
+            teclaPressionada = true;
             moverDireita();
         }
         if (tecla == 37) {
+            teclaPressionada = true;
             moverEsquerda();
         }
-        if (tecla == 32 && versaoPoke == true) {
+        if (tecla == 32 && versaoDigi == true) {
             spacebar = true;
-            document.getElementById("pokeInfo").style.display = "none";
-            document.getElementById("poke").style.width = "10vw";
-            document.getElementById("poke").style.animation = animacaoOriginal;
-            document.getElementById("poke").style.animationPlayState = "running";
-           // document.getElementById("poke").src = "../img/recursividade/cortar/tartarugaEsp.gif";
+            document.getElementById("info").style.display = "none";
+            document.getElementById("digiBot").style.width = "10vw";
+            document.getElementById("digiBot").style.animation = animacaoOriginal;
+            document.getElementById("digiBot").style.animationPlayState = "running";
         }
     }
 
-    document.addEventListener('keydown', mover);
+    const soltar = () => {
+        var tecla = event.keyCode;
+        if (tecla == 39) {
+            dx = 0;
+        }
+        if (tecla == 37) {
+            dx = 0;
+        }
+    }
+
+    const atualizaFrame = () => {
+
+        // Verifica se a nova posição está dentro dos limites
+        if (px < 0) {
+            px = 1;
+        } else if (px > 90) {
+            px = 89;
+        } else {
+            px += dx * vel;
+            personagem.style.left = px + "%";
+            personagem.style.right = px + "%";
+        }
+    }
+
+    inicia();
+
 
     const voltar_menu = () => { //tecla de atalho para retornar ao menu de fases
             var tecla = event.keyCode;
 
             if (tecla == 27) {
-                window.location.href = '../telaInicial/city.html';
+                window.location.href = './funcoes.html';
             }
         }
         document.addEventListener('keydown', voltar_menu);
